@@ -1,0 +1,2065 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+	<sys:String x:Key="K0001"  xml:space="preserve">Androidシステムを再インストールすると、</sys:String>
+	<sys:String x:Key="K0002"  xml:space="preserve">デバイスソフトウェアの問題を修正し、時間のかかる修理を回避するか、遅い電話を高速化する</sys:String>
+	<sys:String x:Key="K0003"  xml:space="preserve">完全に電源が入らないデバイスを回復する</sys:String>
+	<sys:String x:Key="K0004"  xml:space="preserve">PINを紛失した場合にデバイスをリセットする</sys:String>
+	<sys:String x:Key="K0005"  xml:space="preserve">デバイスとPC間のデータのバックアップと復元</sys:String>
+	<sys:String x:Key="K0006"  xml:space="preserve">ログイン</sys:String>
+	<sys:String x:Key="K0007"  xml:space="preserve">自動サインイン…</sys:String>
+	<sys:String x:Key="K0008"  xml:space="preserve">パーソナライズされたソフトウェア更新</sys:String>
+	<sys:String x:Key="K0009"  xml:space="preserve">便利なバックアップ/復元ツール</sys:String>
+	<sys:String x:Key="K0010"  xml:space="preserve">サインインまたはサインアップ</sys:String>
+	<sys:String x:Key="K0011"  xml:space="preserve">従来のログイン</sys:String>
+	<sys:String x:Key="K0012"  xml:space="preserve">または</sys:String>
+	<sys:String x:Key="K0013"  xml:space="preserve">ユーザー名/メール</sys:String>
+	<sys:String x:Key="K0014"  xml:space="preserve">パスワード</sys:String>
+	<sys:String x:Key="K0015"  xml:space="preserve">キャプチャ</sys:String>
+	<sys:String x:Key="K0016"  xml:space="preserve">自動ログイン</sys:String>
+	<sys:String x:Key="K0017"  xml:space="preserve">パスワードを保存する</sys:String>
+	<sys:String x:Key="K0018"  xml:space="preserve">サインイン</sys:String>
+	<sys:String x:Key="K0019"  xml:space="preserve">ログアウト</sys:String>
+	<sys:String x:Key="K0020"  xml:space="preserve">Lenovo IDでサインイン</sys:String>
+	<sys:String x:Key="K0021"  xml:space="preserve">ユーザー名かパスワードが無効.</sys:String>
+	<sys:String x:Key="K0022"  xml:space="preserve">パスワードを変更してください</sys:String>
+	<sys:String x:Key="K0023"  xml:space="preserve">以前のパスワード</sys:String>
+	<sys:String x:Key="K0024"  xml:space="preserve">新しいパスワード</sys:String>
+	<sys:String x:Key="K0025"  xml:space="preserve">パスワードを認証する</sys:String>
+	<sys:String x:Key="K0026"  xml:space="preserve">6文字未満</sys:String>
+	<sys:String x:Key="K0027"  xml:space="preserve">パスワードが合わない</sys:String>
+	<sys:String x:Key="K0028"  xml:space="preserve">間違った古いパスワード</sys:String>
+	<sys:String x:Key="K0029"  xml:space="preserve">パスワードをお忘れですか</sys:String>
+	<sys:String x:Key="K0030"  xml:space="preserve">パスワードを再設定する</sys:String>
+	<sys:String x:Key="K0031"  xml:space="preserve">ユーザー名</sys:String>
+	<sys:String x:Key="K0032"  xml:space="preserve">電子メールアドレス</sys:String>
+	<sys:String x:Key="K0033"  xml:space="preserve">検証コード</sys:String>
+	<sys:String x:Key="K0034"  xml:space="preserve">认证コードが正しくありません</sys:String>
+	<sys:String x:Key="K0035"  xml:space="preserve">ユーザーが存在しません</sys:String>
+	<sys:String x:Key="K0036"  xml:space="preserve">提出する</sys:String>
+	<sys:String x:Key="K0037"  xml:space="preserve">ユーザー名とメールアドレスが必要です</sys:String>
+	<sys:String x:Key="K0038"  xml:space="preserve">自動生成されたパスワードはあなたのメールアドレスに送信されました. 初めてログインしたときは必ず変更してください.</sys:String>
+	<sys:String x:Key="K0039"  xml:space="preserve">サービスを利用できません.ネットワークを確認してください.</sys:String>
+	<sys:String x:Key="K0040"  xml:space="preserve">パスワードを入力してください.</sys:String>
+	<sys:String x:Key="K0041"  xml:space="preserve">必須</sys:String>
+	<sys:String x:Key="K0042"  xml:space="preserve">間違ったメールフォーマット</sys:String>
+	<sys:String x:Key="K0043"  xml:space="preserve">登録</sys:String>
+	<sys:String x:Key="K0044"  xml:space="preserve">&#x0a;新しいパスワードは古いものと同じではありません。</sys:String>
+	<sys:String x:Key="K0045"  xml:space="preserve">新しいパスワードを使用して再ログインしてください.</sys:String>
+	<sys:String x:Key="K0046"  xml:space="preserve">スキップしてマイデバイスに移動</sys:String>
+	<sys:String x:Key="K0047"  xml:space="preserve">アンドロイドシステムを再インストールする</sys:String>
+	<sys:String x:Key="K0048"  xml:space="preserve">デバイスを起動できません</sys:String>
+	<sys:String x:Key="K0049"  xml:space="preserve">解除パスワードの紛失</sys:String>
+	<sys:String x:Key="K0050"  xml:space="preserve">救出準備（接続機器）</sys:String>
+	<sys:String x:Key="K0051"  xml:space="preserve">Fastbootモード</sys:String>
+	<sys:String x:Key="K0052"  xml:space="preserve">USBデバッグモード</sys:String>
+	<sys:String x:Key="K0053"  xml:space="preserve">パワーオフモード</sys:String>
+	<sys:String x:Key="K0054"  xml:space="preserve">fastbootモードでデバイスを接続する</sys:String>
+	<sys:String x:Key="K0055"  xml:space="preserve">1.デバイスの電源を切ります。</sys:String>
+	<sys:String x:Key="K0056"  xml:space="preserve">2. USBケーブルをPCに接続します。</sys:String>
+	<sys:String x:Key="K0057"  xml:space="preserve">3.ボリュームダウンキーを押し続け、USBケーブルをデバイスに接続します。電話のディスプレイに緑のAndroidが表示されたら、ボリュームダウンキーを放します。</sys:String>
+	<sys:String x:Key="K0058"  xml:space="preserve">デバイスがfastboot flashをサポートしているかどうかを確認する</sys:String>
+	<sys:String x:Key="K0059"  xml:space="preserve">製品名を入力して検索</sys:String>
+	<sys:String x:Key="K0060"  xml:space="preserve">上記の手順に従って、デバイスをFastbootモードで起動します。</sys:String>
+	<sys:String x:Key="K0061"  xml:space="preserve">お使いのデバイスはfastbootフラッシュをサポートしていません。レスキュープロセスを続行するには、この手順をスキップしてください。</sys:String>
+	<sys:String x:Key="K0062"  xml:space="preserve">デバイスをデバッグモードで接続する</sys:String>
+	<sys:String x:Key="K0063"  xml:space="preserve">次の状況では、[OK]をクリックして次の手順に進みます：</sys:String>
+	<sys:String x:Key="K0064"  xml:space="preserve">1.デッドデバイス。</sys:String>
+	<sys:String x:Key="K0065"  xml:space="preserve">2. fastbootモードに切り替えることができません。</sys:String>
+	<sys:String x:Key="K0066"  xml:space="preserve">3.デバッグモードをアクティブにできません。</sys:String>
+	<sys:String x:Key="K0067"  xml:space="preserve">最近これらのデバイスを使用しました。&#x0a;救助するものを選択しますか？</sys:String>
+	<sys:String x:Key="K0068"  xml:space="preserve">他のデバイス</sys:String>
+	<sys:String x:Key="K0069"  xml:space="preserve">デバイス名を選択または入力します</sys:String>
+	<sys:String x:Key="K0070"  xml:space="preserve">デバイス情報をロードしている</sys:String>
+	<sys:String x:Key="K0071"  xml:space="preserve">警告</sys:String>
+	<sys:String x:Key="K0072"  xml:space="preserve">解決:</sys:String>
+	<sys:String x:Key="K0073"  xml:space="preserve">検索するモデルを選択します。</sys:String>
+	<sys:String x:Key="K0074"  xml:space="preserve">モデル名がわかりませんか？</sys:String>
+	<sys:String x:Key="K0075"  xml:space="preserve">モデルの名前については、デバイスまたはデバイスパッケージの外観を確認してください。</sys:String>
+	<sys:String x:Key="K0076"  xml:space="preserve">モデル</sys:String>
+	<sys:String x:Key="K0077"  xml:space="preserve">PN</sys:String>
+	<sys:String x:Key="K0078"  xml:space="preserve">トラックID</sys:String>
+	<sys:String x:Key="K0079"  xml:space="preserve">IMEI</sys:String>
+	<sys:String x:Key="K0080"  xml:space="preserve">IMEI1</sys:String>
+	<sys:String x:Key="K0081"  xml:space="preserve">IMEI2</sys:String>
+	<sys:String x:Key="K0082"  xml:space="preserve">SN</sys:String>
+	<sys:String x:Key="K0083"  xml:space="preserve">レノボによる設計　　中国製&#x0a;</sys:String>
+	<sys:String x:Key="K0084"  xml:space="preserve">ハードウェアコードを選択します。</sys:String>
+	<sys:String x:Key="K0085"  xml:space="preserve">HWコードの入手方法?</sys:String>
+	<sys:String x:Key="K0086"  xml:space="preserve">携帯電話または梱包箱でHWコードを入手してください.</sys:String>
+	<sys:String x:Key="K0087"  xml:space="preserve">モデルの名前</sys:String>
+	<sys:String x:Key="K0088"  xml:space="preserve">HWコード</sys:String>
+	<sys:String x:Key="K0089"  xml:space="preserve">国</sys:String>
+	<sys:String x:Key="K0090"  xml:space="preserve">SIMカウント</sys:String>
+	<sys:String x:Key="K0091"  xml:space="preserve">メモリー</sys:String>
+	<sys:String x:Key="K0092"  xml:space="preserve">現在のデバイスを読み取る</sys:String>
+	<sys:String x:Key="K0093"  xml:space="preserve">今すぐ救出</sys:String>
+	<sys:String x:Key="K0094"  xml:space="preserve">デバイスを選択する</sys:String>
+	<sys:String x:Key="K0095"  xml:space="preserve">レノボ</sys:String>
+	<sys:String x:Key="K0096"  xml:space="preserve">モトローラ</sys:String>
+	<sys:String x:Key="K0097"  xml:space="preserve">ターゲットファームウェア：</sys:String>
+	<sys:String x:Key="K0098"  xml:space="preserve">適切なファームウェアと一致しません。.&#x0a;手動で手動でファームウェアを選択することができます。</sys:String>
+	<sys:String x:Key="K0099"  xml:space="preserve">- ターゲットファームウェアがデバイスモデルと一致していることを確認します&#x0a;- Rescueファームウェアの更新により、デバイス内のすべてのデータが削除されます。</sys:String>
+	<sys:String x:Key="K0100"  xml:space="preserve">ダウンロード</sys:String>
+	<sys:String x:Key="K0101"  xml:space="preserve">ダウンロード中</sys:String>
+	<sys:String x:Key="K0102"  xml:space="preserve">救助</sys:String>
+	<sys:String x:Key="K0103"  xml:space="preserve">救助中…</sys:String>
+	<sys:String x:Key="K0104"  xml:space="preserve">条件のチェック…</sys:String>
+	<sys:String x:Key="K0105"  xml:space="preserve">国家コードの設定に失敗しました.&#x0a;設備情報をチェックしてください.</sys:String>
+	<sys:String x:Key="K0106"  xml:space="preserve">国家コードの設定が完了します.&#x0a;ヒントに従って装置を起動する.</sys:String>
+	<sys:String x:Key="K0107"  xml:space="preserve">救援ソフトウェアの更新により、連絡先、写真、ビデオ、音楽などのすべてのデータが削除されます。</sys:String>
+	<sys:String x:Key="K0108"  xml:space="preserve">あなたの個人データはバックアップされていますか?</sys:String>
+	<sys:String x:Key="K0109"  xml:space="preserve">あなたは救援したいのですか?</sys:String>
+	<sys:String x:Key="K0110"  xml:space="preserve">SDカードが挿入され、空き容量が2G以上であることを確認してください.</sys:String>
+	<sys:String x:Key="K0111"  xml:space="preserve">救助は完了しました.</sys:String>
+	<sys:String x:Key="K0112"  xml:space="preserve">入力された情報が接続機器と一致しません&#x0a;あなたの端末は[{0}]です.&#x0a;適用しますか？</sys:String>
+	<sys:String x:Key="K0113"  xml:space="preserve">このデバイスはサポートされていません.</sys:String>
+	<sys:String x:Key="K0114"  xml:space="preserve">&#x0a;    接続されているデバイスは一致しません.&#x0a;それらを挿入してから再試行してください.</sys:String>
+	<sys:String x:Key="K0115"  xml:space="preserve">音量の「+」キーと「 - 」キーの両方を押しながらデバイスをコンピュータに接続します. フラッシュプロセスの開始後にキーを離れてください.</sys:String>
+	<sys:String x:Key="K0116"  xml:space="preserve">音量「 - 」キーを押しながらデバイスをコンピュータに接続します. フラッシュプロセスの開始後にキーを離れてください.</sys:String>
+	<sys:String x:Key="K0117"  xml:space="preserve">音量の「+」キーと「 - 」キーの両方を押しながらデバイスをコンピュータに接続します. フラッシュプロセスの開始後にキーを離れてください.</sys:String>
+	<sys:String x:Key="K0118"  xml:space="preserve">国番号設定に失敗しました.</sys:String>
+	<sys:String x:Key="K0119"  xml:space="preserve">設備情報をチェックしてください.</sys:String>
+	<sys:String x:Key="K0120"  xml:space="preserve">国家コードの設定が完了します.</sys:String>
+	<sys:String x:Key="K0121"  xml:space="preserve">ヒントに従って装置を起動する.</sys:String>
+	<sys:String x:Key="K0122"  xml:space="preserve">入力された情報が接続機器と一致しません</sys:String>
+	<sys:String x:Key="K0123"  xml:space="preserve">私たちはあなたのために正しいものを合わせました.</sys:String>
+	<sys:String x:Key="K0124"  xml:space="preserve">それを使いたいですか？</sys:String>
+	<sys:String x:Key="K0125"  xml:space="preserve">装置接続中…</sys:String>
+	<sys:String x:Key="K0126"  xml:space="preserve">1 .携帯電話とUSBケーブルの接続を切断する.&#x0a;2 .デバイスの電源を閉じて、電池を取り出す.&#x0a;3 .「確定」ボタンを押し続ける.</sys:String>
+	<sys:String x:Key="K0127"  xml:space="preserve">デバイスとUSBケーブルの接続を切断してオフにしてください…「確定」ボタンをクリックして継続してください.</sys:String>
+	<sys:String x:Key="K0128"  xml:space="preserve">1.端末の電源が切れていて、PCに接続されていないことを確認します.&#x0a;.&#x0a;2. vol「+」&quot;+&quot;のボタンを押し、同時にUSBでデバイスをPCに接続します.&#x0a;3. オーケーボタンをクリックして続けてください.</sys:String>
+	<sys:String x:Key="K0129"  xml:space="preserve">1.端末の電源が切れていて、PCに接続されていないことを確認します。&#x0a;2.音量「+」と「-」ボタンを押して、同時にUSBでデバイスをPCに接続します。&#x0a;3. [オーケー]ボタンをクリックして続行します。&#x0a;4.進行が始まったら、音量「+」と「-」ボタンを離します。</sys:String>
+	<sys:String x:Key="K0130"  xml:space="preserve">1.端末の電源が切れていて、PCに接続されていないことを確認します..&#x0a;2. vol「+」 &quot;+&quot;ボタンと同時にUSB経由でPCとデバイスを接続する.&#x0a;3. OKボタンをクリックして続けてください.&#x0a;4. 進行開始後、vol&quot;+&quot;  のボタンを解放してください.</sys:String>
+	<sys:String x:Key="K0131"  xml:space="preserve">1.端末の電源を入れます。&#x0a;2. 国番号を設定するには、電話ダイヤルでキーシーケンス####682#を入力してください。&#x0a;3. 国番号設定インターフェースに入った後、プロンプトに従って関連操作を完了してください。</sys:String>
+	<sys:String x:Key="K0132"  xml:space="preserve">デバイスを接続して点滅させる</sys:String>
+	<sys:String x:Key="K0133"  xml:space="preserve">ファクトリモードをクリーンアップする</sys:String>
+	<sys:String x:Key="K0134"  xml:space="preserve">ファストブートフラッシュ</sys:String>
+	<sys:String x:Key="K0135"  xml:space="preserve">ファストブートモードに入るのを待っています</sys:String>
+	<sys:String x:Key="K0136"  xml:space="preserve">国コードファイルをアップロードする</sys:String>
+	<sys:String x:Key="K0137"  xml:space="preserve">1.デバイスの電源が切れていて、PCに接続されていないことを確認してください。&#x0a;2.音量「+」、「 - 」と電源キーを同時に押し、振動したらすべてのキーを放します。&#x0a;3.デバイスをUSB経由でPCに接続し、[OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0138"  xml:space="preserve">国コードの設定に失敗しました。&#x0a;外付けストレージカードが挿入されていることを確認して、もう一度点滅させてください。</sys:String>
+	<sys:String x:Key="K0139"  xml:space="preserve">ファクトリモードをクリーンアップできませんでした。 点滅を再試行するか、サービスセンターに連絡してください。</sys:String>
+	<sys:String x:Key="K0140"  xml:space="preserve">Fastbootモードで接続されているデバイスがないためフラッシュが失敗しました。&#x0a;フラッシュの指示に従って再試行してください。</sys:String>
+	<sys:String x:Key="K0141"  xml:space="preserve">フラッシュ失敗。もう一度やり直してください。</sys:String>
+	<sys:String x:Key="K0142"  xml:space="preserve">デバイスが接続されていることを確認し、右側のフラッシュの指示に従ってください。</sys:String>
+	<sys:String x:Key="K0143"  xml:space="preserve">右側のFlashの指示に従って、デバイスがFastbootモードで接続されていることを確認してください。</sys:String>
+	<sys:String x:Key="K0144"  xml:space="preserve">ファストブートモードで接続されているデバイスがありません。&#x0a;もう一度選択してください。</sys:String>
+	<sys:String x:Key="K0145"  xml:space="preserve">1.装置の電源を入れます。&#x0a;2.国番号を設定するには、デバイスDialerでキーシーケンス####6020#を入力してください。&#x0a;3.国番号設定インターフェースに入った後、プロンプトに従って関連な操作を完了します。</sys:String>
+	<sys:String x:Key="K0146"  xml:space="preserve">現在のクライアントバージョンはこのデバイスの点滅をサポートしていません。最新のものにアップグレードしてください。</sys:String>
+	<sys:String x:Key="K0147"  xml:space="preserve">国コードの設定を開始</sys:String>
+	<sys:String x:Key="K0148"  xml:space="preserve">1.電話ダイヤルに####6020#というキーシーケンスを入力して国番号を設定してください。&#x0a;2.国番号設定インターフェースに入った後、プロンプトに従って関連な操作を完了します。</sys:String>
+	<sys:String x:Key="K0149"  xml:space="preserve">1.デバイスの電源を切り、バッテリーを取り外します。&#x0a;2. USBケーブルでデバイスをPCに接続し、[OK]をクリックして続行します。</sys:String>
+	<sys:String x:Key="K0150"  xml:space="preserve">お使いの携帯がファストブートフラッシュモードでPCに接続されていない場合は、次の手順に従ってファストブートフラッシュモードに入ります。&#x0a;1.携帯の電源を切ること。&#x0a;2. ファストブートフラッシュモードが表示されるまで、「 - 」ボタンと電源ボタンを同時に押します。&#x0a;3.携帯をPCに接続します。</sys:String>
+	<sys:String x:Key="K0151"  xml:space="preserve">ファストブートモードに入るのを待つ</sys:String>
+	<sys:String x:Key="K0152"  xml:space="preserve">指令を切断する</sys:String>
+	<sys:String x:Key="K0153"  xml:space="preserve">シェルのテスト</sys:String>
+	<sys:String x:Key="K0154"  xml:space="preserve">再生ファイルを携帯電話にダウンロードする</sys:String>
+	<sys:String x:Key="K0155"  xml:space="preserve">接続命令</sys:String>
+	<sys:String x:Key="K0156"  xml:space="preserve">1.電話機の電源が切れていることを確認してください。&#x0a;2. USBケーブルでPCと電話機を接続し、[オーケー]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0157"  xml:space="preserve">バッテリーを取り外してUSBケーブルに接続してください…続行するにはオーケーボタンをクリックしてください.</sys:String>
+	<sys:String x:Key="K0158"  xml:space="preserve">1.装置の電源を入れます。&#x0a;2.電話ダイヤルに####6020#というキーシーケンスを入力して国番号を設定してください。&#x0a;3.国番号設定インターフェースに入った後、プロンプトに従って関連な操作を完了します。</sys:String>
+	<sys:String x:Key="K0159"  xml:space="preserve">1.装置の電源を入れます。&#x0a;2.国番号を設定するには、電話ダイヤルにキーシーケンス####682#を入力してください。&#x0a;3. 国番号設定インターフェースに入った後、プロンプトに従って関連な操作を完了します。</sys:String>
+	<sys:String x:Key="K0160"  xml:space="preserve">1.電話機の電源が切れていて、PCに接続されていないことを確認します。&#x0a;2.音量「+」ボタンを押して、同時にUSBを介してPCと電話を接続します。&#x0a;3. [オーケー]ボタンをクリックして続行します。&#x0a;4.進行が始まったら、音量の「+」ボタンを放します。</sys:String>
+	<sys:String x:Key="K0161"  xml:space="preserve">1.装置の電源を入れます.&#x0a;2.国番号設定を終了するには：USBデバッグをオンにして、PCに電話機の接続を許可します.&#x0a;3.国番号設定インターフェースに入った後、プロンプトに従って関連な操作を完了します.</sys:String>
+	<sys:String x:Key="K0162"  xml:space="preserve">1.電話機の電源が切れていて、PCに接続されていないことを確認します.&#x0a;2. vol &quot;+&quot;と &quot; - &quot;ボタンを押して、同時にUSBでPCと電話を接続します.&#x0a;3. [オーケー]ボタンをクリックして続行します.</sys:String>
+	<sys:String x:Key="K0163"  xml:space="preserve">1.電話機の電源が切れていて、PCに接続されていないことを確認します。&#x0a;2.音量「+」を押します。 ボタンを押し、同時にUSBでPCと電話を接続します。&#x0a;3.音量「+」を解除します。 電話で[ダウンロード]を選択します。&#x0a;4. [オーケー]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0164"  xml:space="preserve">デバイスの電源を切り、PCから切断し、[OK]をクリックして続行します。</sys:String>
+	<sys:String x:Key="K0165"  xml:space="preserve">1.電話機の電源が切れていて、PCに接続されていないことを確認します。&#x0a;2. ファストブートフラッシュモードが表示されるまで、音量 &quot; - &quot;ボタンと電源ボタンを同時に押します。&#x0a;3.電話をUSB経由で接続します。</sys:String>
+	<sys:String x:Key="K0166"  xml:space="preserve">デバイスが2G RAMタブレットであることを確認してください。そうしないと、フラッシュ後に起動できません。</sys:String>
+	<sys:String x:Key="K0167"  xml:space="preserve">デバイスが1G RAMタブレットであることを確認してください。そうしないと、フラッシュ後に起動できません。</sys:String>
+	<sys:String x:Key="K0168"  xml:space="preserve">デバイスが再起動するまで辛抱強く待ちます。 通常、2分以上かかります。</sys:String>
+	<sys:String x:Key="K0169"  xml:space="preserve">フラッシング完了。電源キーを押してデバイスを再起動します。</sys:String>
+	<sys:String x:Key="K0170"  xml:space="preserve">アプリで検出された情報.</sys:String>
+	<sys:String x:Key="K0171"  xml:space="preserve">1つの機器だけが接続されていることを確認してください.</sys:String>
+	<sys:String x:Key="K0172"  xml:space="preserve">デバイスが接続されていないことを確認してください.</sys:String>
+	<sys:String x:Key="K0173"  xml:space="preserve">フラッシュが進行中です.引退を続ける</sys:String>
+	<sys:String x:Key="K0174"  xml:space="preserve">フラッシュが進行中です. しばらくお待ちください.</sys:String>
+	<sys:String x:Key="K0175"  xml:space="preserve">電話による救助はまだ完了していません。</sys:String>
+	<sys:String x:Key="K0176"  xml:space="preserve">サポートされていないデバイス</sys:String>
+	<sys:String x:Key="K0177"  xml:space="preserve">すぐに利用可能な機能</sys:String>
+	<sys:String x:Key="K0178"  xml:space="preserve">* .mbnファイルが見つかりません.</sys:String>
+	<sys:String x:Key="K0179"  xml:space="preserve">抽出失敗！PCディスクのスペースが足りないので、もう一度片付けてみてください.</sys:String>
+	<sys:String x:Key="K0180"  xml:space="preserve">抽出に失敗しました. * .mbnファイルが見つかりません.</sys:String>
+	<sys:String x:Key="K0181"  xml:space="preserve">操作に失敗しました！</sys:String>
+	<sys:String x:Key="K0182"  xml:space="preserve">ツールボックス</sys:String>
+	<sys:String x:Key="K0183"  xml:space="preserve">クリップボード</sys:String>
+	<sys:String x:Key="K0184"  xml:space="preserve">デバイスとPC間でテキストをコピーする</sys:String>
+	<sys:String x:Key="K0185"  xml:space="preserve">デバイスのクリップボードにコピー</sys:String>
+	<sys:String x:Key="K0186"  xml:space="preserve">電話からのクリップボード</sys:String>
+	<sys:String x:Key="K0187"  xml:space="preserve">(テキストのみがサポートされています. ファイル管理を使用してファイルを転送します.)</sys:String>
+	<sys:String x:Key="K0188"  xml:space="preserve">クリップボードの内容</sys:String>
+	<sys:String x:Key="K0189"  xml:space="preserve">USBケーブルでデバイスをPCに接続する</sys:String>
+	<sys:String x:Key="K0190"  xml:space="preserve">Build Number </sys:String>
+	<sys:String x:Key="K0191"  xml:space="preserve">1. USBケーブルで機器を接続する</sys:String>
+	<sys:String x:Key="K0192"  xml:space="preserve">2. USBデバッグをオンにします。</sys:String>
+	<sys:String x:Key="K0193"  xml:space="preserve">設定>システム*>開発者オプション> USBデバッグ</sys:String>
+	<sys:String x:Key="K0194"  xml:space="preserve">オン</sys:String>
+	<sys:String x:Key="K0195"  xml:space="preserve">USBデバッグ</sys:String>
+	<sys:String x:Key="K0196"  xml:space="preserve">USB接続時のデバッグモード</sys:String>
+	<sys:String x:Key="K0197"  xml:space="preserve">「開発者向けオプション」が見つかりませんか？</sys:String>
+	<sys:String x:Key="K0198"  xml:space="preserve">設定> システム* > 電話/タブレット情報</sys:String>
+	<sys:String x:Key="K0199"  xml:space="preserve">>について</sys:String>
+	<sys:String x:Key="K0200"  xml:space="preserve">ペイント</sys:String>
+	<sys:String x:Key="K0201"  xml:space="preserve">を7回タップする</sys:String>
+	<sys:String x:Key="K0202"  xml:space="preserve">（* Android 8.0以降）</sys:String>
+	<sys:String x:Key="K0203"  xml:space="preserve">3.認可</sys:String>
+	<sys:String x:Key="K0204"  xml:space="preserve">USBデバッグを許可しますか？</sys:String>
+	<sys:String x:Key="K0205"  xml:space="preserve">常にこのコンピュータからのデバッグを許可する</sys:String>
+	<sys:String x:Key="K0206"  xml:space="preserve">GIFメーカー</sys:String>
+	<sys:String x:Key="K0207"  xml:space="preserve">PCの写真からGIFを作る</sys:String>
+	<sys:String x:Key="K0208"  xml:space="preserve">キャンセル</sys:String>
+	<sys:String x:Key="K0209"  xml:space="preserve">コピーする</sys:String>
+	<sys:String x:Key="K0210"  xml:space="preserve">追加する</sys:String>
+	<sys:String x:Key="K0211"  xml:space="preserve">ライン</sys:String>
+	<sys:String x:Key="K0212"  xml:space="preserve">楕円</sys:String>
+	<sys:String x:Key="K0213"  xml:space="preserve">矩形</sys:String>
+	<sys:String x:Key="K0214"  xml:space="preserve">テキスト</sys:String>
+	<sys:String x:Key="K0215"  xml:space="preserve">カット</sys:String>
+	<sys:String x:Key="K0216"  xml:space="preserve">キャラクター</sys:String>
+	<sys:String x:Key="K0217"  xml:space="preserve">色</sys:String>
+	<sys:String x:Key="K0218"  xml:space="preserve">元に戻す</sys:String>
+	<sys:String x:Key="K0219"  xml:space="preserve">最小化</sys:String>
+	<sys:String x:Key="K0220"  xml:space="preserve">最大化</sys:String>
+	<sys:String x:Key="K0221"  xml:space="preserve">Font</sys:String>
+	<sys:String x:Key="K0222"  xml:space="preserve">線の太さ</sys:String>
+	<sys:String x:Key="K0223"  xml:space="preserve">Zoom</sys:String>
+	<sys:String x:Key="K0224"  xml:space="preserve">クリップしますか</sys:String>
+	<sys:String x:Key="K0225"  xml:space="preserve">GIFを作成する</sys:String>
+	<sys:String x:Key="K0226"  xml:space="preserve">GIFの作成中…</sys:String>
+	<sys:String x:Key="K0227"  xml:space="preserve">出力サイズ：</sys:String>
+	<sys:String x:Key="K0228"  xml:space="preserve">フレームレート：</sys:String>
+	<sys:String x:Key="K0229"  xml:space="preserve">保存経路：</sys:String>
+	<sys:String x:Key="K0230"  xml:space="preserve">保存する</sys:String>
+	<sys:String x:Key="K0231"  xml:space="preserve">GIFへの動画</sys:String>
+	<sys:String x:Key="K0232"  xml:space="preserve">GIFへの写真</sys:String>
+	<sys:String x:Key="K0233"  xml:space="preserve">PG、PNG、JPEG、およびBMP画像形式がサポートされています。</sys:String>
+	<sys:String x:Key="K0234"  xml:space="preserve">着メロメーカー</sys:String>
+	<sys:String x:Key="K0235"  xml:space="preserve">音楽を読み込む中</sys:String>
+	<sys:String x:Key="K0236"  xml:space="preserve">着信音ファイルの作成に失敗しました</sys:String>
+	<sys:String x:Key="K0237"  xml:space="preserve">着信音の保存に成功しました.</sys:String>
+	<sys:String x:Key="K0238"  xml:space="preserve">デバイスに十分なスペースがありません</sys:String>
+	<sys:String x:Key="K0239"  xml:space="preserve">編集した音楽は保存されていません. 本当に終了しますか</sys:String>
+	<sys:String x:Key="K0240"  xml:space="preserve">着信音の長さは4秒未満であり、保存することはできません！</sys:String>
+	<sys:String x:Key="K0241"  xml:space="preserve">通知の着信音は20秒以内にする必要があります.</sys:String>
+	<sys:String x:Key="K0242"  xml:space="preserve">着信音は40秒以内にする必要があります.</sys:String>
+	<sys:String x:Key="K0243"  xml:space="preserve">選択したファイル：</sys:String>
+	<sys:String x:Key="K0244"  xml:space="preserve">着信音の種類: </sys:String>
+	<sys:String x:Key="K0245"  xml:space="preserve">呼び出す着メロ</sys:String>
+	<sys:String x:Key="K0246"  xml:space="preserve">通知着信音</sys:String>
+	<sys:String x:Key="K0247"  xml:space="preserve">サウンド設定</sys:String>
+	<sys:String x:Key="K0248"  xml:space="preserve">PCに保存する</sys:String>
+	<sys:String x:Key="K0249"  xml:space="preserve">電話で保存する</sys:String>
+	<sys:String x:Key="K0250"  xml:space="preserve">開始として設定する</sys:String>
+	<sys:String x:Key="K0251"  xml:space="preserve">終了として設定する</sys:String>
+	<sys:String x:Key="K0252"  xml:space="preserve">あなたの音楽から着メロを作る</sys:String>
+	<sys:String x:Key="K0253"  xml:space="preserve">着信音を設定しています</sys:String>
+	<sys:String x:Key="K0254"  xml:space="preserve">ボタンをクリックして携帯電話のスクリーンキャプチャを有効にします.</sys:String>
+	<sys:String x:Key="K0255"  xml:space="preserve">スクリーンキャプチャ</sys:String>
+	<sys:String x:Key="K0256"  xml:space="preserve">あなたの携帯電話の録画画面をビデオとして</sys:String>
+	<sys:String x:Key="K0257"  xml:space="preserve">デバイスをUSB経由で接続して画面を記録します。</sys:String>
+	<sys:String x:Key="K0258"  xml:space="preserve">サポート</sys:String>
+	<sys:String x:Key="K0259"  xml:space="preserve">フォーラム</sys:String>
+	<sys:String x:Key="K0260"  xml:space="preserve">ヒント</sys:String>
+	<sys:String x:Key="K0261"  xml:space="preserve">製品名で検索</sys:String>
+	<sys:String x:Key="K0262"  xml:space="preserve">ルックアップ保証</sys:String>
+	<sys:String x:Key="K0263"  xml:space="preserve">保証</sys:String>
+	<sys:String x:Key="K0264"  xml:space="preserve">シリアル番号で検索するか、登録済みのデバイスの1つを選択してください</sys:String>
+	<sys:String x:Key="K0265"  xml:space="preserve">製品名やモデルが分からない場合</sys:String>
+	<sys:String x:Key="K0266"  xml:space="preserve">検索結果がありません。</sys:String>
+	<sys:String x:Key="K0267"  xml:space="preserve">検索中</sys:String>
+	<sys:String x:Key="K0268"  xml:space="preserve">シリアル番号</sys:String>
+	<sys:String x:Key="K0269"  xml:space="preserve">マシンタイプモデル</sys:String>
+	<sys:String x:Key="K0270"  xml:space="preserve">出荷先</sys:String>
+	<sys:String x:Key="K0271"  xml:space="preserve">保証内容</sys:String>
+	<sys:String x:Key="K0272"  xml:space="preserve">下記で製品の保証を検索</sys:String>
+	<sys:String x:Key="K0273"  xml:space="preserve">保証状況</sys:String>
+	<sys:String x:Key="K0274"  xml:space="preserve">有効期限</sys:String>
+	<sys:String x:Key="K0275"  xml:space="preserve">残日数</sys:String>
+	<sys:String x:Key="K0276"  xml:space="preserve">開始日</sys:String>
+	<sys:String x:Key="K0277"  xml:space="preserve">終了日</sys:String>
+	<sys:String x:Key="K0278"  xml:space="preserve">状態</sys:String>
+	<sys:String x:Key="K0279"  xml:space="preserve">ガイド</sys:String>
+	<sys:String x:Key="K0280"  xml:space="preserve">ソフトウェアの更新</sys:String>
+	<sys:String x:Key="K0281"  xml:space="preserve">言語</sys:String>
+	<sys:String x:Key="K0282"  xml:space="preserve">資源管理</sys:String>
+	<sys:String x:Key="K0283"  xml:space="preserve">について</sys:String>
+	<sys:String x:Key="K0284"  xml:space="preserve">フィードバック</sys:String>
+	<sys:String x:Key="K0285"  xml:space="preserve">最新のSoftware Fixアップデートがあります。</sys:String>
+	<sys:String x:Key="K0286"  xml:space="preserve">クライアントのアップグレード</sys:String>
+	<sys:String x:Key="K0287"  xml:space="preserve">サイズ：</sys:String>
+	<sys:String x:Key="K0288"  xml:space="preserve">サイズ：{0}</sys:String>
+	<sys:String x:Key="K0289"  xml:space="preserve">内容を更新する:</sys:String>
+	<sys:String x:Key="K0290"  xml:space="preserve">今すぐアップグレード</sys:String>
+	<sys:String x:Key="K0291"  xml:space="preserve">結構です</sys:String>
+	<sys:String x:Key="K0292"  xml:space="preserve">このバージョンについてもう一度思い出させないでください</sys:String>
+	<sys:String x:Key="K0293"  xml:space="preserve">ダウンロード中</sys:String>
+	<sys:String x:Key="K0294"  xml:space="preserve">ダウンロード中。 しばらくお待ちください...</sys:String>
+	<sys:String x:Key="K0295"  xml:space="preserve">インストール</sys:String>
+	<sys:String x:Key="K0296"  xml:space="preserve">クライアントの更新が進行中です。 終了しますか？</sys:String>
+	<sys:String x:Key="K0297"  xml:space="preserve">English</sys:String>
+	<sys:String x:Key="K0298"  xml:space="preserve">言語を変更するとアプリケーションが自動的に再起動されます.</sys:String>
+	<sys:String x:Key="K0299"  xml:space="preserve">アプリケーションは自動的に再起動します.すべての操作が完了したか、または後に再起動することを選択できます.</sys:String>
+	<sys:String x:Key="K0300"  xml:space="preserve">後で再起動する</sys:String>
+	<sys:String x:Key="K0301"  xml:space="preserve">今すぐ再起動</sys:String>
+	<sys:String x:Key="K0302"  xml:space="preserve">3.デバイスの音量小キーを押したまま、USBケーブルをデバイスに接続します。&#x0a;4.電話のディスプレイに緑色のAndroidが表示されたら、デバイスの音量小キーを放します。</sys:String>
+	<sys:String x:Key="K0303"  xml:space="preserve">リソースの名前</sys:String>
+	<sys:String x:Key="K0304"  xml:space="preserve">リソースの種類</sys:String>
+	<sys:String x:Key="K0305"  xml:space="preserve">ダウンロード状況</sys:String>
+	<sys:String x:Key="K0306"  xml:space="preserve">より多くの情報</sys:String>
+	<sys:String x:Key="K0307"  xml:space="preserve">起動しません</sys:String>
+	<sys:String x:Key="K0308"  xml:space="preserve">リソース情報</sys:String>
+	<sys:String x:Key="K0309"  xml:space="preserve">ファイルの名前</sys:String>
+	<sys:String x:Key="K0310"  xml:space="preserve">保存経路</sys:String>
+	<sys:String x:Key="K0311"  xml:space="preserve">ファイルサイズ</sys:String>
+	<sys:String x:Key="K0312"  xml:space="preserve">同期中</sys:String>
+	<sys:String x:Key="K0313"  xml:space="preserve">進行中</sys:String>
+	<sys:String x:Key="K0314"  xml:space="preserve">ダウンロードセンター</sys:String>
+	<sys:String x:Key="K0315"  xml:space="preserve">ダウンロードの位置：</sys:String>
+	<sys:String x:Key="K0316"  xml:space="preserve">情報</sys:String>
+	<sys:String x:Key="K0317"  xml:space="preserve">救助に行く</sys:String>
+	<sys:String x:Key="K0318"  xml:space="preserve">一致したデバイス</sys:String>
+	<sys:String x:Key="K0319"  xml:space="preserve">リソースを削除したいですか？</sys:String>
+	<sys:String x:Key="K0320"  xml:space="preserve">一時停止</sys:String>
+	<sys:String x:Key="K0321"  xml:space="preserve">最大5つのファイルを同時にダウンロードできます。お待ちください。</sys:String>
+	<sys:String x:Key="K0322"  xml:space="preserve">ここからダウンロードセンターを探す</sys:String>
+	<sys:String x:Key="K0323"  xml:space="preserve">MD5チェックが失敗しました.</sys:String>
+	<sys:String x:Key="K0324"  xml:space="preserve">ダウンロードに失敗しました</sys:String>
+	<sys:String x:Key="K0325"  xml:space="preserve">スペースが足りません.</sys:String>
+	<sys:String x:Key="K0326"  xml:space="preserve">資源が存在しない</sys:String>
+	<sys:String x:Key="K0327"  xml:space="preserve">オーケー</sys:String>
+	<sys:String x:Key="K0328"  xml:space="preserve">変化なし.</sys:String>
+	<sys:String x:Key="K0329"  xml:space="preserve">解凍失敗。</sys:String>
+	<sys:String x:Key="K0330"  xml:space="preserve">名前をつけて失敗しました.</sys:String>
+	<sys:String x:Key="K0331"  xml:space="preserve">審査に失敗しました</sys:String>
+	<sys:String x:Key="K0332"  xml:space="preserve">警告：あなたはランダムなオペレーターによって審査されていません.この不具合が記録され、審査が行われます.テストは今再起動する予定です.すべてのテストに従って説明してください.</sys:String>
+	<sys:String x:Key="K0333"  xml:space="preserve">始められない</sys:String>
+	<sys:String x:Key="K0334"  xml:space="preserve">デバイスが接続されていません</sys:String>
+	<sys:String x:Key="K0335"  xml:space="preserve">使用中のデバイス</sys:String>
+	<sys:String x:Key="K0336"  xml:space="preserve">デバイスが処理を完了するのを待ってください.</sys:String>
+	<sys:String x:Key="K0337"  xml:space="preserve">失敗しました</sys:String>
+	<sys:String x:Key="K0338"  xml:space="preserve">クライアント</sys:String>
+	<sys:String x:Key="K0339"  xml:space="preserve">Software Fixクライアントのアップグレード</sys:String>
+	<sys:String x:Key="K0340"  xml:space="preserve">更新する必要があります.</sys:String>
+	<sys:String x:Key="K0341"  xml:space="preserve">クライアントアップグレード</sys:String>
+	<sys:String x:Key="K0342"  xml:space="preserve">プラグインのアップグレード</sys:String>
+	<sys:String x:Key="K0343"  xml:space="preserve">アップグレードが必要です</sys:String>
+	<sys:String x:Key="K0344"  xml:space="preserve">アップグレードタスクなし</sys:String>
+	<sys:String x:Key="K0345"  xml:space="preserve">!     更新しないと使用できません.</sys:String>
+	<sys:String x:Key="K0346"  xml:space="preserve">システム処理中。少々お待ちください</sys:String>
+	<sys:String x:Key="K0347"  xml:space="preserve">プラグインを追加して失敗します。もう一度やってみてください.</sys:String>
+	<sys:String x:Key="K0348"  xml:space="preserve">ロード中</sys:String>
+	<sys:String x:Key="K0349"  xml:space="preserve">チェックツールのバージョンが失敗しました.もう一度やってみてください！</sys:String>
+	<sys:String x:Key="K0350"  xml:space="preserve">あなたのデバイスを接続してください</sys:String>
+	<sys:String x:Key="K0351"  xml:space="preserve">チェックサムに失敗しました!</sys:String>
+	<sys:String x:Key="K0352"  xml:space="preserve">十分なスペースがありません</sys:String>
+	<sys:String x:Key="K0353"  xml:space="preserve">あなたはすでに最新版を持っています</sys:String>
+	<sys:String x:Key="K0354"  xml:space="preserve">ダウンロード完了</sys:String>
+	<sys:String x:Key="K0355"  xml:space="preserve">新しいバージョンが利用可能です. ダウンロードして更新するために、オーケーを押します.</sys:String>
+	<sys:String x:Key="K0356"  xml:space="preserve">新しいバージョンがダウンロードされました.</sys:String>
+	<sys:String x:Key="K0357"  xml:space="preserve">!ダウンロードは失敗しました.もう一度試してみてください.</sys:String>
+	<sys:String x:Key="K0358"  xml:space="preserve">ネットワーク接続を確認してください.</sys:String>
+	<sys:String x:Key="K0359"  xml:space="preserve">インターネット接続なし</sys:String>
+	<sys:String x:Key="K0360"  xml:space="preserve">致命的な誤り: {0}</sys:String>
+	<sys:String x:Key="K0361"  xml:space="preserve">プラグインを更新する必要があります.</sys:String>
+	<sys:String x:Key="K0362"  xml:space="preserve">プラグインのアップデートが進行中です.お待ちください.</sys:String>
+	<sys:String x:Key="K0363"  xml:space="preserve">プラグインの追加に失敗しました</sys:String>
+	<sys:String x:Key="K0364"  xml:space="preserve">プラグインのダウンロードに失敗しました. もう一度やり直してください.</sys:String>
+	<sys:String x:Key="K0365"  xml:space="preserve">インストール中</sys:String>
+	<sys:String x:Key="K0366"  xml:space="preserve">十分なスペースがありません</sys:String>
+	<sys:String x:Key="K0367"  xml:space="preserve">ダウンロードしたプラグインをインストールしてください.</sys:String>
+	<sys:String x:Key="K0368"  xml:space="preserve">キャンセル後、</sys:String>
+	<sys:String x:Key="K0369"  xml:space="preserve">をクリックしてページを更新してください</sys:String>
+	<sys:String x:Key="K0370"  xml:space="preserve">完了</sys:String>
+	<sys:String x:Key="K0371"  xml:space="preserve">アップデートに失敗しました</sys:String>
+	<sys:String x:Key="K0372"  xml:space="preserve">更新が成功しました</sys:String>
+	<sys:String x:Key="K0373"  xml:space="preserve">プラグインを更新する必要があります</sys:String>
+	<sys:String x:Key="K0374"  xml:space="preserve">最初にプラグインをインストールしてください.</sys:String>
+	<sys:String x:Key="K0375"  xml:space="preserve">応答しません</sys:String>
+	<sys:String x:Key="K0376"  xml:space="preserve">もう一度やり直してください</sys:String>
+	<sys:String x:Key="K0377"  xml:space="preserve">確認中…</sys:String>
+	<sys:String x:Key="K0378"  xml:space="preserve">サイズ</sys:String>
+	<sys:String x:Key="K0379"  xml:space="preserve">USB経由でデバイスを接続する</sys:String>
+	<sys:String x:Key="K0380"  xml:space="preserve">最新のアンドロイドシステムにアップグレードする</sys:String>
+	<sys:String x:Key="K0381"  xml:space="preserve">最新のセキュリティパッチを適用する</sys:String>
+	<sys:String x:Key="K0382"  xml:space="preserve">あなたのバージョンは最新のものです.</sys:String>
+	<sys:String x:Key="K0383"  xml:space="preserve">警告：</sys:String>
+	<sys:String x:Key="K0384"  xml:space="preserve">アップグレード前にデータをバックアップしてください.</sys:String>
+	<sys:String x:Key="K0385"  xml:space="preserve">更新中…</sys:String>
+	<sys:String x:Key="K0386"  xml:space="preserve">終了</sys:String>
+	<sys:String x:Key="K0387"  xml:space="preserve">失敗</sys:String>
+	<sys:String x:Key="K0388"  xml:space="preserve">ダウンロードに失敗しました. PCのディスク容量が足りません.クリーンアップしてからもう一度お試しください.</sys:String>
+	<sys:String x:Key="K0389"  xml:space="preserve">ダウンロード失敗！ファイルが見つかりません!後でもう一度試みてください.</sys:String>
+	<sys:String x:Key="K0390"  xml:space="preserve">ダウンロード失敗！チェックサム失敗!</sys:String>
+	<sys:String x:Key="K0391"  xml:space="preserve">救助は失敗しました</sys:String>
+	<sys:String x:Key="K0392"  xml:space="preserve">システムの再起動に失敗しました</sys:String>
+	<sys:String x:Key="K0393"  xml:space="preserve">ファイル転送失敗!</sys:String>
+	<sys:String x:Key="K0394"  xml:space="preserve">リソースのダウンロードに失敗しました.</sys:String>
+	<sys:String x:Key="K0395"  xml:space="preserve">HWコード</sys:String>
+	<sys:String x:Key="K0396"  xml:space="preserve">ローカルディスクのROMを選択してください.</sys:String>
+	<sys:String x:Key="K0397"  xml:space="preserve">進む</sys:String>
+	<sys:String x:Key="K0398"  xml:space="preserve">{0}以上のメモリスペースを確保するために、ファイルを消去してください.</sys:String>
+	<sys:String x:Key="K0399"  xml:space="preserve">デバイスを PC に接続したままにしてください </sys:String>
+	<sys:String x:Key="K0400"  xml:space="preserve">あるいはフラッシュが失敗する.</sys:String>
+	<sys:String x:Key="K0401"  xml:space="preserve">アップグレードしたいんですか？</sys:String>
+	<sys:String x:Key="K0402"  xml:space="preserve">パーセント</sys:String>
+	<sys:String x:Key="K0403"  xml:space="preserve">速度</sys:String>
+	<sys:String x:Key="K0404"  xml:space="preserve">フラッシュ失敗、 設定ファイルが無効です. もう一度やり直してください.</sys:String>
+	<sys:String x:Key="K0405"  xml:space="preserve">ファームウェアを削除しますか？</sys:String>
+	<sys:String x:Key="K0406"  xml:space="preserve">HWコードが無効です.</sys:String>
+	<sys:String x:Key="K0407"  xml:space="preserve">ダウンロードに失敗しました！ ファイルが存在しません.</sys:String>
+	<sys:String x:Key="K0408"  xml:space="preserve">ダウンロードに失敗しました！ チェックサムが失敗しました.</sys:String>
+	<sys:String x:Key="K0409"  xml:space="preserve">ダウンロードに失敗しました！ PCのディスク容量が十分ではありません.片付けてからやり直してください.</sys:String>
+	<sys:String x:Key="K0410"  xml:space="preserve">ネットワーク接続に失敗しました.確認してください.</sys:String>
+	<sys:String x:Key="K0411"  xml:space="preserve">Romをダウンロードしています.</sys:String>
+	<sys:String x:Key="K0412"  xml:space="preserve">ROMパス</sys:String>
+	<sys:String x:Key="K0413"  xml:space="preserve">抽出失敗</sys:String>
+	<sys:String x:Key="K0414"  xml:space="preserve">Romの抽出…</sys:String>
+	<sys:String x:Key="K0415"  xml:space="preserve">フラッシュ成功!</sys:String>
+	<sys:String x:Key="K0416"  xml:space="preserve">フラッシュが進行中です. 装置を取り外さないでください.</sys:String>
+	<sys:String x:Key="K0417"  xml:space="preserve">ROMを削除</sys:String>
+	<sys:String x:Key="K0418"  xml:space="preserve">ダウンロード, 摘録</sys:String>
+	<sys:String x:Key="K0419"  xml:space="preserve">デバイスが認識されない場合は、やり直してください.</sys:String>
+	<sys:String x:Key="K0420"  xml:space="preserve">モデル名、HWコード</sys:String>
+	<sys:String x:Key="K0421"  xml:space="preserve">携帯電話での認証を再テストし、「システム設定の変更を許可する」を閉鎖し、再び開くこと.</sys:String>
+	<sys:String x:Key="K0422"  xml:space="preserve">伝送中…</sys:String>
+	<sys:String x:Key="K0423"  xml:space="preserve">完成</sys:String>
+	<sys:String x:Key="K0424"  xml:space="preserve">コンピュータから取り外さないでください.</sys:String>
+	<sys:String x:Key="K0425"  xml:space="preserve">デバイスでUSBデバッグモードが有効になっていることを確認してください.</sys:String>
+	<sys:String x:Key="K0426"  xml:space="preserve">Romを更新する</sys:String>
+	<sys:String x:Key="K0427"  xml:space="preserve">HWコード：</sys:String>
+	<sys:String x:Key="K0428"  xml:space="preserve">すでに最新版です!</sys:String>
+	<sys:String x:Key="K0429"  xml:space="preserve">輸入</sys:String>
+	<sys:String x:Key="K0430"  xml:space="preserve">デバイスのメモリを</sys:String>
+	<sys:String x:Key="K0431"  xml:space="preserve">十分に確保してください.</sys:String>
+	<sys:String x:Key="K0432"  xml:space="preserve">更新成功!</sys:String>
+	<sys:String x:Key="K0433"  xml:space="preserve">私のデバイス</sys:String>
+	<sys:String x:Key="K0434"  xml:space="preserve">USB経由で接続</sys:String>
+	<sys:String x:Key="K0435"  xml:space="preserve">接続する前にUSBデバッグを有効にする</sys:String>
+	<sys:String x:Key="K0436"  xml:space="preserve">WiFi接続に移動</sys:String>
+	<sys:String x:Key="K0437"  xml:space="preserve">USB接続に移動</sys:String>
+	<sys:String x:Key="K0438"  xml:space="preserve">Android10および11</sys:String>
+	<sys:String x:Key="K0439"  xml:space="preserve">Android 7.1以前</sys:String>
+	<sys:String x:Key="K0440"  xml:space="preserve">Android 8.0および9.0</sys:String>
+	<sys:String x:Key="K0441"  xml:space="preserve">APKバージョンの確認</sys:String>
+	<sys:String x:Key="K0442"  xml:space="preserve">APKのアンインストール</sys:String>
+	<sys:String x:Key="K0443"  xml:space="preserve">アンインストール成功</sys:String>
+	<sys:String x:Key="K0444"  xml:space="preserve">APKのインストール</sys:String>
+	<sys:String x:Key="K0445"  xml:space="preserve">デバイスデータを読み込む</sys:String>
+	<sys:String x:Key="K0446"  xml:space="preserve">デバイスデータの読み込み成功</sys:String>
+	<sys:String x:Key="K0447"  xml:space="preserve">WiFi経由で接続</sys:String>
+	<sys:String x:Key="K0448"  xml:space="preserve">PCと同じWiFiにあなたの電話を接続してください。</sys:String>
+	<sys:String x:Key="K0449"  xml:space="preserve">デバイスヘルプアプリがインストールされていない場合は、次のリンクからモバイルアシスタントアプリをダウンロードしてインストールします </sys:String>
+	<sys:String x:Key="K0450"  xml:space="preserve">デバイスにデバイスヘルプアプリがインストールされている場合は、それを使用して次のQRコードをスキャンして接続します。</sys:String>
+	<sys:String x:Key="K0451"  xml:space="preserve">新しいデバイスが見つかりました</sys:String>
+	<sys:String x:Key="K0452"  xml:space="preserve">1. USBデバッグをオンにします。</sys:String>
+	<sys:String x:Key="K0453"  xml:space="preserve">2.認可</sys:String>
+	<sys:String x:Key="K0454"  xml:space="preserve">授権</sys:String>
+	<sys:String x:Key="K0455"  xml:space="preserve">モデルの名前:</sys:String>
+	<sys:String x:Key="K0456"  xml:space="preserve">モデル：</sys:String>
+	<sys:String x:Key="K0457"  xml:space="preserve">バッテリー：</sys:String>
+	<sys:String x:Key="K0458"  xml:space="preserve">プロセッサ：</sys:String>
+	<sys:String x:Key="K0459"  xml:space="preserve">IMEI：</sys:String>
+	<sys:String x:Key="K0460"  xml:space="preserve">IMEI1：</sys:String>
+	<sys:String x:Key="K0461"  xml:space="preserve">IMEI2：</sys:String>
+	<sys:String x:Key="K0462"  xml:space="preserve">SN：</sys:String>
+	<sys:String x:Key="K0463"  xml:space="preserve">内部記憶装置：</sys:String>
+	<sys:String x:Key="K0464"  xml:space="preserve">外部記憶装置：</sys:String>
+	<sys:String x:Key="K0465"  xml:space="preserve">コピーしました</sys:String>
+	<sys:String x:Key="K0466"  xml:space="preserve">他のデバイス</sys:String>
+	<sys:String x:Key="K0467"  xml:space="preserve">現行版：</sys:String>
+	<sys:String x:Key="K0468"  xml:space="preserve">アンドロイドのバージョン：</sys:String>
+	<sys:String x:Key="K0469"  xml:space="preserve">の空き容量/</sys:String>
+	<sys:String x:Key="K0470"  xml:space="preserve">利用不可</sys:String>
+	<sys:String x:Key="K0471"  xml:space="preserve">わからない</sys:String>
+	<sys:String x:Key="K0472"  xml:space="preserve">キャプチャ画面</sys:String>
+	<sys:String x:Key="K0473"  xml:space="preserve">リフレッシュ</sys:String>
+	<sys:String x:Key="K0474"  xml:space="preserve">アプリ</sys:String>
+	<sys:String x:Key="K0475"  xml:space="preserve">ピクチャー</sys:String>
+	<sys:String x:Key="K0476"  xml:space="preserve">音楽</sys:String>
+	<sys:String x:Key="K0477"  xml:space="preserve">ビデオ</sys:String>
+	<sys:String x:Key="K0478"  xml:space="preserve">連絡先</sys:String>
+	<sys:String x:Key="K0479"  xml:space="preserve">SMS</sys:String>
+	<sys:String x:Key="K0480"  xml:space="preserve">ファイル</sys:String>
+	<sys:String x:Key="K0481"  xml:space="preserve">バックアップ/復元</sys:String>
+	<sys:String x:Key="K0482"  xml:space="preserve">システムアプリ</sys:String>
+	<sys:String x:Key="K0483"  xml:space="preserve">私のアプリ</sys:String>
+	<sys:String x:Key="K0484"  xml:space="preserve">輸出</sys:String>
+	<sys:String x:Key="K0485"  xml:space="preserve">アンインストール</sys:String>
+	<sys:String x:Key="K0486"  xml:space="preserve">検索</sys:String>
+	<sys:String x:Key="K0487"  xml:space="preserve">名前</sys:String>
+	<sys:String x:Key="K0488"  xml:space="preserve">データ使用量</sys:String>
+	<sys:String x:Key="K0489"  xml:space="preserve">バージョン</sys:String>
+	<sys:String x:Key="K0490"  xml:space="preserve">アンインストール確認</sys:String>
+	<sys:String x:Key="K0491"  xml:space="preserve">このアプリをアンインストールしますか？</sys:String>
+	<sys:String x:Key="K0492"  xml:space="preserve">選択したアプリをアンインストールしますか?</sys:String>
+	<sys:String x:Key="K0493"  xml:space="preserve">アプリのアンインストール</sys:String>
+	<sys:String x:Key="K0494"  xml:space="preserve">アプリのアンインストール</sys:String>
+	<sys:String x:Key="K0495"  xml:space="preserve">アンインストールが完了しました</sys:String>
+	<sys:String x:Key="K0496"  xml:space="preserve">ファイルを選ぶ</sys:String>
+	<sys:String x:Key="K0497"  xml:space="preserve">アプリのインストール…</sys:String>
+	<sys:String x:Key="K0498"  xml:space="preserve">APPのインストール</sys:String>
+	<sys:String x:Key="K0499"  xml:space="preserve">インストール完了</sys:String>
+	<sys:String x:Key="K0500"  xml:space="preserve">アプリケーションのエクスポート</sys:String>
+	<sys:String x:Key="K0501"  xml:space="preserve">USB接続携帯を使ってAPPをインストールする</sys:String>
+	<sys:String x:Key="K0502"  xml:space="preserve">USB接続携帯を使ってAPPをアンインストールする</sys:String>
+	<sys:String x:Key="K0503"  xml:space="preserve">あなたの電話でこのオプションを使用してアクセス許可を確認します.</sys:String>
+	<sys:String x:Key="K0504"  xml:space="preserve">使用権限を有するアプリケーション</sys:String>
+	<sys:String x:Key="K0505"  xml:space="preserve">オフ</sys:String>
+	<sys:String x:Key="K0506"  xml:space="preserve">利用アクセス</sys:String>
+	<sys:String x:Key="K0507"  xml:space="preserve">利用許可</sys:String>
+	<sys:String x:Key="K0508"  xml:space="preserve">使用する権限は、あなたが使用している他のアプリケーションおよび周波数を追跡することを許可することを許可して、およびあなたのキャリア、言語の設定とその他の詳細な情報を追跡することができます.</sys:String>
+	<sys:String x:Key="K0509"  xml:space="preserve">通話記録</sys:String>
+	<sys:String x:Key="K0510"  xml:space="preserve">連絡先を追加する</sys:String>
+	<sys:String x:Key="K0511"  xml:space="preserve">通話タイプ</sys:String>
+	<sys:String x:Key="K0512"  xml:space="preserve">日付</sys:String>
+	<sys:String x:Key="K0513"  xml:space="preserve">期間</sys:String>
+	<sys:String x:Key="K0514"  xml:space="preserve">すべて</sys:String>
+	<sys:String x:Key="K0515"  xml:space="preserve">グループ</sys:String>
+	<sys:String x:Key="K0516"  xml:space="preserve">グループ化されていない</sys:String>
+	<sys:String x:Key="K0517"  xml:space="preserve">新しいグループ名を入力してください:</sys:String>
+	<sys:String x:Key="K0518"  xml:space="preserve">数</sys:String>
+	<sys:String x:Key="K0519"  xml:space="preserve">详情</sys:String>
+	<sys:String x:Key="K0520"  xml:space="preserve">編集する</sys:String>
+	<sys:String x:Key="K0521"  xml:space="preserve">連絡先を編集する</sys:String>
+	<sys:String x:Key="K0522"  xml:space="preserve">+ アバターを追加する</sys:String>
+	<sys:String x:Key="K0523"  xml:space="preserve">空アドレスを追加できません</sys:String>
+	<sys:String x:Key="K0524"  xml:space="preserve">グループ:</sys:String>
+	<sys:String x:Key="K0525"  xml:space="preserve">ホーム</sys:String>
+	<sys:String x:Key="K0526"  xml:space="preserve">モバイル</sys:String>
+	<sys:String x:Key="K0527"  xml:space="preserve">作業</sys:String>
+	<sys:String x:Key="K0528"  xml:space="preserve">その他</sys:String>
+	<sys:String x:Key="K0529"  xml:space="preserve">+ 追加行</sys:String>
+	<sys:String x:Key="K0530"  xml:space="preserve">お誕生日</sys:String>
+	<sys:String x:Key="K0531"  xml:space="preserve">ノート:</sys:String>
+	<sys:String x:Key="K0532"  xml:space="preserve">連絡先をインポートしています…</sys:String>
+	<sys:String x:Key="K0533"  xml:space="preserve">連絡先をエクスポートしています…</sys:String>
+	<sys:String x:Key="K0534"  xml:space="preserve">選択した連絡先を削除しますか？</sys:String>
+	<sys:String x:Key="K0535"  xml:space="preserve">通話ログのエクスポート</sys:String>
+	<sys:String x:Key="K0536"  xml:space="preserve">呼び出しログのインポート</sys:String>
+	<sys:String x:Key="K0537"  xml:space="preserve">受け取った</sys:String>
+	<sys:String x:Key="K0538"  xml:space="preserve">逃した</sys:String>
+	<sys:String x:Key="K0539"  xml:space="preserve">ダイヤル済み</sys:String>
+	<sys:String x:Key="K0540"  xml:space="preserve">選択した通話記録を削除するかどうか</sys:String>
+	<sys:String x:Key="K0541"  xml:space="preserve">この操作をキャンセルしますか?</sys:String>
+	<sys:String x:Key="K0542"  xml:space="preserve">導出完了しました</sys:String>
+	<sys:String x:Key="K0543"  xml:space="preserve">導入完了しました</sys:String>
+	<sys:String x:Key="K0544"  xml:space="preserve">成功しました。</sys:String>
+	<sys:String x:Key="K0545"  xml:space="preserve">修正日</sys:String>
+	<sys:String x:Key="K0546"  xml:space="preserve">アーティスト</sys:String>
+	<sys:String x:Key="K0547"  xml:space="preserve">アルバム</sys:String>
+	<sys:String x:Key="K0548"  xml:space="preserve">ベルに設定</sys:String>
+	<sys:String x:Key="K0549"  xml:space="preserve">コール</sys:String>
+	<sys:String x:Key="K0550"  xml:space="preserve">お知らせ</sys:String>
+	<sys:String x:Key="K0551"  xml:space="preserve">警報 </sys:String>
+	<sys:String x:Key="K0552"  xml:space="preserve">着信音の設定に成功しました.</sys:String>
+	<sys:String x:Key="K0553"  xml:space="preserve">着信音の設定に失敗しました.</sys:String>
+	<sys:String x:Key="K0554"  xml:space="preserve">音楽の導入中</sys:String>
+	<sys:String x:Key="K0555"  xml:space="preserve">音楽を導き出す</sys:String>
+	<sys:String x:Key="K0556"  xml:space="preserve">選択した音楽を削除しますか？</sys:String>
+	<sys:String x:Key="K0557"  xml:space="preserve">申し訳ありませんが、プレーヤーはこのようなオーディオファイルをサポートしていません.</sys:String>
+	<sys:String x:Key="K0558"  xml:space="preserve">カメラ</sys:String>
+	<sys:String x:Key="K0559"  xml:space="preserve">アルバムに戻る</sys:String>
+	<sys:String x:Key="K0560"  xml:space="preserve">写真のインポート</sys:String>
+	<sys:String x:Key="K0561"  xml:space="preserve">写真のエクスポート</sys:String>
+	<sys:String x:Key="K0562"  xml:space="preserve">この写真を削除しますか？</sys:String>
+	<sys:String x:Key="K0563"  xml:space="preserve">選択した写真をお削除しますか?</sys:String>
+	<sys:String x:Key="K0564"  xml:space="preserve">その写真はあなたの携帯電話にはもう存在しません. リストを更新してもう一度やり直してください.</sys:String>
+	<sys:String x:Key="K0565"  xml:space="preserve">画像の読み込みに失敗しました. リストを更新してもう一度やり直してください.</sys:String>
+	<sys:String x:Key="K0566"  xml:space="preserve">ビデオ導入中</sys:String>
+	<sys:String x:Key="K0567"  xml:space="preserve">ビデオの導出</sys:String>
+	<sys:String x:Key="K0568"  xml:space="preserve">タイプ</sys:String>
+	<sys:String x:Key="K0569"  xml:space="preserve">選択した動画を削除しますか?</sys:String>
+	<sys:String x:Key="K0570"  xml:space="preserve">なし</sys:String>
+	<sys:String x:Key="K0571"  xml:space="preserve">はい</sys:String>
+	<sys:String x:Key="K0572"  xml:space="preserve">必ず携帯電話で「はい」を選択してから、下のように「確認」ボタンを押してください.</sys:String>
+	<sys:String x:Key="K0573"  xml:space="preserve">確認する</sys:String>
+	<sys:String x:Key="K0574"  xml:space="preserve">内容：</sys:String>
+	<sys:String x:Key="K0575"  xml:space="preserve">連絡先の保存</sys:String>
+	<sys:String x:Key="K0576"  xml:space="preserve">応答</sys:String>
+	<sys:String x:Key="K0577"  xml:space="preserve">ヒント：&#x0a; </sys:String>
+	<sys:String x:Key="K0578"  xml:space="preserve">入りました</sys:String>
+	<sys:String x:Key="K0579"  xml:space="preserve">単語を入力しました</sys:String>
+	<sys:String x:Key="K0580"  xml:space="preserve">送る</sys:String>
+	<sys:String x:Key="K0581"  xml:space="preserve">進む:</sys:String>
+	<sys:String x:Key="K0582"  xml:space="preserve">進む</sys:String>
+	<sys:String x:Key="K0583"  xml:space="preserve">削除する</sys:String>
+	<sys:String x:Key="K0584"  xml:space="preserve">メッセージ削除中</sys:String>
+	<sys:String x:Key="K0585"  xml:space="preserve">削除確認</sys:String>
+	<sys:String x:Key="K0586"  xml:space="preserve">このメッセージを削除しますか?</sys:String>
+	<sys:String x:Key="K0587"  xml:space="preserve">選択した連絡先のSMSを削除しますか？</sys:String>
+	<sys:String x:Key="K0588"  xml:space="preserve">メッセージを導き出す</sys:String>
+	<sys:String x:Key="K0589"  xml:space="preserve">SMS送信が完了しました.</sys:String>
+	<sys:String x:Key="K0590"  xml:space="preserve">メッセージ送信中…</sys:String>
+	<sys:String x:Key="K0591"  xml:space="preserve">私のコンピューター</sys:String>
+	<sys:String x:Key="K0592"  xml:space="preserve">内部ストレージ</sys:String>
+	<sys:String x:Key="K0593"  xml:space="preserve">外部ストレージ</sys:String>
+	<sys:String x:Key="K0594"  xml:space="preserve">バックアップ</sys:String>
+	<sys:String x:Key="K0595"  xml:space="preserve">リストア</sys:String>
+	<sys:String x:Key="K0596"  xml:space="preserve">ワンキークローン</sys:String>
+	<sys:String x:Key="K0597"  xml:space="preserve">ノート：</sys:String>
+	<sys:String x:Key="K0598"  xml:space="preserve">入力できます</sys:String>
+	<sys:String x:Key="K0599"  xml:space="preserve">50</sys:String>
+	<sys:String x:Key="K0600"  xml:space="preserve">データのバックアップは時間がかかりますが、切断しないでください.</sys:String>
+	<sys:String x:Key="K0601"  xml:space="preserve">バックアップが完了し、</sys:String>
+	<sys:String x:Key="K0602"  xml:space="preserve">が成功しました</sys:String>
+	<sys:String x:Key="K0603"  xml:space="preserve">バックアップの日</sys:String>
+	<sys:String x:Key="K0604"  xml:space="preserve">ノート</sys:String>
+	<sys:String x:Key="K0605"  xml:space="preserve">摘録</sys:String>
+	<sys:String x:Key="K0606"  xml:space="preserve">バックアップファイルの解放</sys:String>
+	<sys:String x:Key="K0607"  xml:space="preserve">解放する</sys:String>
+	<sys:String x:Key="K0608"  xml:space="preserve">バックアップファイルの解放に成功しました.</sys:String>
+	<sys:String x:Key="K0609"  xml:space="preserve">バックアップファイルの解放に失敗しました.</sys:String>
+	<sys:String x:Key="K0610"  xml:space="preserve">バックアップファイルは既に存在しています</sys:String>
+	<sys:String x:Key="K0611"  xml:space="preserve">選択したバックアップファイルを削除しますか？</sys:String>
+	<sys:String x:Key="K0612"  xml:space="preserve">持続する</sys:String>
+	<sys:String x:Key="K0613"  xml:space="preserve">復元には時間がかかりますが、切断しないでください.</sys:String>
+	<sys:String x:Key="K0614"  xml:space="preserve">復元が完了し、</sys:String>
+	<sys:String x:Key="K0615"  xml:space="preserve">デバイスの空き容量が不足しています. 復元は実行されません. バックアップファイルを「摘録」して、1つずつ導入してください.</sys:String>
+	<sys:String x:Key="K0616"  xml:space="preserve">まだバックアップしていません.</sys:String>
+	<sys:String x:Key="K0617"  xml:space="preserve">バックアップに失敗しました.しばらくしてからもう一度試してください.</sys:String>
+	<sys:String x:Key="K0618"  xml:space="preserve">復元に失敗しました.しばらくしてからもう一度試してください.</sys:String>
+	<sys:String x:Key="K0619"  xml:space="preserve">失敗しました.</sys:String>
+	<sys:String x:Key="K0620"  xml:space="preserve">保存経路：</sys:String>
+	<sys:String x:Key="K0621"  xml:space="preserve">変化する</sys:String>
+	<sys:String x:Key="K0622"  xml:space="preserve">見る</sys:String>
+	<sys:String x:Key="K0623"  xml:space="preserve">利用できるスペースが足りません.</sys:String>
+	<sys:String x:Key="K0624"  xml:space="preserve">から：</sys:String>
+	<sys:String x:Key="K0625"  xml:space="preserve">まで：</sys:String>
+	<sys:String x:Key="K0626"  xml:space="preserve">新しい機器を接続する</sys:String>
+	<sys:String x:Key="K0627"  xml:space="preserve">次</sys:String>
+	<sys:String x:Key="K0628"  xml:space="preserve">バック</sys:String>
+	<sys:String x:Key="K0629"  xml:space="preserve">導出</sys:String>
+	<sys:String x:Key="K0630"  xml:space="preserve">フリースペース：</sys:String>
+	<sys:String x:Key="K0631"  xml:space="preserve">使用スペース：</sys:String>
+	<sys:String x:Key="K0632"  xml:space="preserve">導入</sys:String>
+	<sys:String x:Key="K0633"  xml:space="preserve">クローニングが終了しました.</sys:String>
+	<sys:String x:Key="K0634"  xml:space="preserve">成功しました: </sys:String>
+	<sys:String x:Key="K0635"  xml:space="preserve">, 失敗しました</sys:String>
+	<sys:String x:Key="K0636"  xml:space="preserve">やり直し</sys:String>
+	<sys:String x:Key="K0637"  xml:space="preserve">失敗しました</sys:String>
+	<sys:String x:Key="K0638"  xml:space="preserve">完成する</sys:String>
+	<sys:String x:Key="K0639"  xml:space="preserve">キャンセル中</sys:String>
+	<sys:String x:Key="K0640"  xml:space="preserve">閉じる</sys:String>
+	<sys:String x:Key="K0641"  xml:space="preserve">画像の導き出すを失敗した!</sys:String>
+	<sys:String x:Key="K0642"  xml:space="preserve">写真を導き出して成功した!</sys:String>
+	<sys:String x:Key="K0643"  xml:space="preserve">画像の読み込みに失敗しました.</sys:String>
+	<sys:String x:Key="K0644"  xml:space="preserve">アルバムの画像のアップロ—ドに失敗した!</sys:String>
+	<sys:String x:Key="K0645"  xml:space="preserve">アプリ、選択した </sys:String>
+	<sys:String x:Key="K0646"  xml:space="preserve">アプリ、サイズ</sys:String>
+	<sys:String x:Key="K0647"  xml:space="preserve">アルバム、選択しました</sys:String>
+	<sys:String x:Key="K0648"  xml:space="preserve">あなたのストレージが不足しているかもしれないので、チェックしてください.</sys:String>
+	<sys:String x:Key="K0649"  xml:space="preserve">動画を選択しました </sys:String>
+	<sys:String x:Key="K0650"  xml:space="preserve">ビデオ、サイズ </sys:String>
+	<sys:String x:Key="K0651"  xml:space="preserve">フォルダを選択してください</sys:String>
+	<sys:String x:Key="K0652"  xml:space="preserve">アンドロイドパッケージ</sys:String>
+	<sys:String x:Key="K0653"  xml:space="preserve">導出失敗</sys:String>
+	<sys:String x:Key="K0654"  xml:space="preserve">すべての連絡先が導入されている</sys:String>
+	<sys:String x:Key="K0655"  xml:space="preserve">連絡先の導入に失敗しました</sys:String>
+	<sys:String x:Key="K0656"  xml:space="preserve">導入されたファイルは無効になりますので、チェックしてください.</sys:String>
+	<sys:String x:Key="K0657"  xml:space="preserve">コールログの導入に失敗しました</sys:String>
+	<sys:String x:Key="K0658"  xml:space="preserve">動画数の取得に失敗しました</sys:String>
+	<sys:String x:Key="K0659"  xml:space="preserve">接続が切断された可能性があります.確認してください</sys:String>
+	<sys:String x:Key="K0660"  xml:space="preserve">動画リストの読み込みに失敗しました</sys:String>
+	<sys:String x:Key="K0661"  xml:space="preserve">リフレッシュしてみてください</sys:String>
+	<sys:String x:Key="K0662"  xml:space="preserve">バックアップ</sys:String>
+	<sys:String x:Key="K0663"  xml:space="preserve">データをバックアップしてる、切断しないでください.</sys:String>
+	<sys:String x:Key="K0664"  xml:space="preserve">復元中、切断しないでください.</sys:String>
+	<sys:String x:Key="K0665"  xml:space="preserve">導入情報</sys:String>
+	<sys:String x:Key="K0666"  xml:space="preserve">ビデオの導入に成功するしました!</sys:String>
+	<sys:String x:Key="K0667"  xml:space="preserve">ビデオの導出に失敗しました</sys:String>
+	<sys:String x:Key="K0668"  xml:space="preserve">ビデオロード失敗</sys:String>
+	<sys:String x:Key="K0669"  xml:space="preserve">選択したファイルが間違っています</sys:String>
+	<sys:String x:Key="K0670"  xml:space="preserve">警告！</sys:String>
+	<sys:String x:Key="K0671"  xml:space="preserve">デバイスの切り替え中、しばらくお待ちください..&#x0a;</sys:String>
+	<sys:String x:Key="K0672"  xml:space="preserve">デバイスの切り替えに失敗しました.もう一度選択してください.</sys:String>
+	<sys:String x:Key="K0673"  xml:space="preserve">音楽ファイルが存在しないか開くことができないため、新しいファイルを選択してください.</sys:String>
+	<sys:String x:Key="K0674"  xml:space="preserve">画像</sys:String>
+	<sys:String x:Key="K0675"  xml:space="preserve">アンドロイドアプリケーション</sys:String>
+	<sys:String x:Key="K0676"  xml:space="preserve">このアプリをインストールしますか？</sys:String>
+	<sys:String x:Key="K0677"  xml:space="preserve">携帯電話でこのオプションを選択して、アンインストールを許可する</sys:String>
+	<sys:String x:Key="K0678"  xml:space="preserve">デバイスの切り替えに失敗しました.後でもう一度試すことができます.</sys:String>
+	<sys:String x:Key="K0679"  xml:space="preserve">導入失敗</sys:String>
+	<sys:String x:Key="K0680"  xml:space="preserve">選択済み</sys:String>
+	<sys:String x:Key="K0681"  xml:space="preserve">新しいデバイスが古いデバイスの内容に覆われている可能性があるかどうかを確認してください.</sys:String>
+	<sys:String x:Key="K0682"  xml:space="preserve">削除済み!</sys:String>
+	<sys:String x:Key="K0683"  xml:space="preserve">家族</sys:String>
+	<sys:String x:Key="K0684"  xml:space="preserve">お友達</sys:String>
+	<sys:String x:Key="K0685"  xml:space="preserve">同僚</sys:String>
+	<sys:String x:Key="K0686"  xml:space="preserve">電話を追加</sys:String>
+	<sys:String x:Key="K0687"  xml:space="preserve">USB接続</sys:String>
+	<sys:String x:Key="K0688"  xml:space="preserve">電話</sys:String>
+	<sys:String x:Key="K0689"  xml:space="preserve">個人データを削除する</sys:String>
+	<sys:String x:Key="K0690"  xml:space="preserve">個人データファイル</sys:String>
+	<sys:String x:Key="K0691"  xml:space="preserve">個人データを含む一部のファイルを削除できませんでした. 下記のフォルダを確認し、自分で個人データを削除してください.</sys:String>
+	<sys:String x:Key="K0692"  xml:space="preserve">削除できるリソースが見つかりませんでした</sys:String>
+	<sys:String x:Key="K0693"  xml:space="preserve">削除中...</sys:String>
+	<sys:String x:Key="K0694"  xml:space="preserve">ストップ</sys:String>
+	<sys:String x:Key="K0695"  xml:space="preserve">個人データは見つかりませんでした.</sys:String>
+	<sys:String x:Key="K0696"  xml:space="preserve">たとえば、導入された写真、ビデオ、オーディオ、SMS、連絡先ファイル、デバイスのバックアップファイル、その他の一時的なファイルなどの個人データファイルが見つかる場合があります.</sys:String>
+	<sys:String x:Key="K0697"  xml:space="preserve">スキャニング </sys:String>
+	<sys:String x:Key="K0698"  xml:space="preserve">とった</sys:String>
+	<sys:String x:Key="K0699"  xml:space="preserve">待っている</sys:String>
+	<sys:String x:Key="K0700"  xml:space="preserve">削除しますか？</sys:String>
+	<sys:String x:Key="K0701"  xml:space="preserve">削除できませんでした</sys:String>
+	<sys:String x:Key="K0702"  xml:space="preserve">救助を完了できませんでした！</sys:String>
+	<sys:String x:Key="K0703"  xml:space="preserve">スクリーンキャプチャを導き出す…</sys:String>
+	<sys:String x:Key="K0704"  xml:space="preserve">使用後は必ず個人情報を削除してください.</sys:String>
+	<sys:String x:Key="K0705"  xml:space="preserve">登録済みデバイス</sys:String>
+	<sys:String x:Key="K0706"  xml:space="preserve">デバイスの登録がありません</sys:String>
+	<sys:String x:Key="K0707"  xml:space="preserve">新しいデバイスが接続されました。アカウントに登録しますか？</sys:String>
+	<sys:String x:Key="K0708"  xml:space="preserve">このデバイスの登録を解除しますか？</sys:String>
+	<sys:String x:Key="K0709"  xml:space="preserve">インストールに失敗しました！</sys:String>
+	<sys:String x:Key="K0710"  xml:space="preserve">Mobile Assistant App がSoftware Fixに&#x0a;よってデバイスにインストールされた場合</sys:String>
+	<sys:String x:Key="K0711"  xml:space="preserve">情報</sys:String>
+	<sys:String x:Key="K0712"  xml:space="preserve">消去してもよろしいですか？</sys:String>
+	<sys:String x:Key="K0713"  xml:space="preserve">Cには十分な空き領域がありません。 いくつかを解放してから、もう一度試してください。</sys:String>
+	<sys:String x:Key="K0714"  xml:space="preserve">一致するファームウェアを待つ</sys:String>
+	<sys:String x:Key="K0715"  xml:space="preserve">転送中</sys:String>
+	<sys:String x:Key="K0716"  xml:space="preserve">Software Fixのフィードバック</sys:String>
+	<sys:String x:Key="K0717"  xml:space="preserve">名前：</sys:String>
+	<sys:String x:Key="K0718"  xml:space="preserve">前を入力してください</sys:String>
+	<sys:String x:Key="K0719"  xml:space="preserve">Eメール：</sys:String>
+	<sys:String x:Key="K0720"  xml:space="preserve">コメント：</sys:String>
+	<sys:String x:Key="K0721"  xml:space="preserve">メールアドレスを教えてください</sys:String>
+	<sys:String x:Key="K0722"  xml:space="preserve">質問、問題、アドバイスなど、Software Fixを使用するときにやりたいことを何でも共有してください</sys:String>
+	<sys:String x:Key="K0723"  xml:space="preserve">商品の名前：</sys:String>
+	<sys:String x:Key="K0724"  xml:space="preserve">製品名を入力してください</sys:String>
+	<sys:String x:Key="K0725"  xml:space="preserve">モデル名を入力してください</sys:String>
+	<sys:String x:Key="K0726"  xml:space="preserve">デバイス情報</sys:String>
+	<sys:String x:Key="K0727"  xml:space="preserve">フィードバックが以下のデバイス情報に関連していない場合は、チェックを外してください。</sys:String>
+	<sys:String x:Key="K0728"  xml:space="preserve">ログをアップロードする</sys:String>
+	<sys:String x:Key="K0729"  xml:space="preserve">分析のためにアプリケーションログをアップロードするには、このオプションにチェックマークを付けます</sys:String>
+	<sys:String x:Key="K0730"  xml:space="preserve">フィードバックへの対応</sys:String>
+	<sys:String x:Key="K0731"  xml:space="preserve">あなたのフィードバック（続き）</sys:String>
+	<sys:String x:Key="K0732"  xml:space="preserve">あなたのフィードバック</sys:String>
+	<sys:String x:Key="K0733"  xml:space="preserve">フィードバックが送信されました。</sys:String>
+	<sys:String x:Key="K0734"  xml:space="preserve">フィードバックを送信できませんでした。</sys:String>
+	<sys:String x:Key="K0735"  xml:space="preserve">1.このファームウェアはインドカスタマイズ版のみのタブレット用です。お使いのデバイスがインドの一般バージョンである場合は、Lenovo TB-7304Fを選択してください。一般版とカスタマイズ版を混在させることはできません。&#x0a;2.デバイスの電源を切り、PCから取り外し、[OK]をクリックして続行します。 </sys:String>
+	<sys:String x:Key="K0736"  xml:space="preserve">お使いのデバイスのバージョンは最新バージョンです。もう一度Rescueを実行しますか？</sys:String>
+	<sys:String x:Key="K0737"  xml:space="preserve">3.必要な権限のいずれかが拒否された場合、モバイルアシスタントアプリは正しく機能しません。 Androidのシステム設定でアプリの権限に移動し、再度承認することができます。</sys:String>
+	<sys:String x:Key="K0738"  xml:space="preserve">接続し、進行しない場合はデバイスの画面のロックを解除します</sys:String>
+	<sys:String x:Key="K0739"  xml:space="preserve">USBデバッグを許可するには、携帯電話でこのオプションをオンにします</sys:String>
+	<sys:String x:Key="K0740"  xml:space="preserve">コンピュータのSoftware Fixキーフィンガープリントは</sys:String>
+	<sys:String x:Key="K0741"  xml:space="preserve">モバイル接続が認識されません.</sys:String>
+	<sys:String x:Key="K0742"  xml:space="preserve">電話を切断してからもう一度接続してください.</sys:String>
+	<sys:String x:Key="K0743"  xml:space="preserve">否む</sys:String>
+	<sys:String x:Key="K0744"  xml:space="preserve">許可する</sys:String>
+	<sys:String x:Key="K0745"  xml:space="preserve">1.デバイスで、「システム設定の変更を許可する」をオンにしてから、Mobile Assistantアプリに戻ります。</sys:String>
+	<sys:String x:Key="K0746"  xml:space="preserve">Mobile Assistant</sys:String>
+	<sys:String x:Key="K0747"  xml:space="preserve">システム設定の変更を許可する</sys:String>
+	<sys:String x:Key="K0748"  xml:space="preserve">この権利は、アプリケーションがシステム構成を変更することを可能にします.</sys:String>
+	<sys:String x:Key="K0749"  xml:space="preserve">2. Mobile Assistantアプリで、要求された権限を許可します。</sys:String>
+	<sys:String x:Key="K0750"  xml:space="preserve">モバイルアシスタントのダイヤルと管理電話を許可しますか?</sys:String>
+	<sys:String x:Key="K0751"  xml:space="preserve">6の1</sys:String>
+	<sys:String x:Key="K0752"  xml:space="preserve">元のバックアップファイルを上書きしますか？&#x0a;保持する場合は[いいえ]ボタンをクリックして、新しいものを作成します。</sys:String>
+	<sys:String x:Key="K0753"  xml:space="preserve">接続に失敗しました</sys:String>
+	<sys:String x:Key="K0754"  xml:space="preserve">ユーザー名かパスワードが無効。</sys:String>
+	<sys:String x:Key="K0755"  xml:space="preserve">戻る</sys:String>
+	<sys:String x:Key="K0756"  xml:space="preserve">コンピューター</sys:String>
+	<sys:String x:Key="K0757"  xml:space="preserve">端末</sys:String>
+	<sys:String x:Key="K0758"  xml:space="preserve">MAアプリのバージョンの確認</sys:String>
+	<sys:String x:Key="K0759"  xml:space="preserve">MAアプリのインストール</sys:String>
+	<sys:String x:Key="K0760"  xml:space="preserve">MAアプリのインストールに成功しました</sys:String>
+	<sys:String x:Key="K0761"  xml:space="preserve">接続に成功しました</sys:String>
+	<sys:String x:Key="K0762"  xml:space="preserve">デバイスデータの読み込みに成功しました</sys:String>
+	<sys:String x:Key="K0763"  xml:space="preserve">着信音の設定に成功します。</sys:String>
+	<sys:String x:Key="K0764"  xml:space="preserve">すべて選択</sys:String>
+	<sys:String x:Key="K0765"  xml:space="preserve">MAアプリのバージョンが一致していません</sys:String>
+	<sys:String x:Key="K0766"  xml:space="preserve">MAアプリのバージョンが一致しています</sys:String>
+	<sys:String x:Key="K0767"  xml:space="preserve">ファームウェアが一致するまで待ち、デバイスのプラグを抜かないでください</sys:String>
+	<sys:String x:Key="K0768"  xml:space="preserve">接続に失敗しました。デバイスを再接続して、再試行してください。</sys:String>
+	<sys:String x:Key="K0769"  xml:space="preserve">デバイスでこの権限をオンにしてください。</sys:String>
+	<sys:String x:Key="K0770"  xml:space="preserve">必要なアクション</sys:String>
+	<sys:String x:Key="K0771"  xml:space="preserve">前</sys:String>
+	<sys:String x:Key="K0772"  xml:space="preserve">チュートリアル</sys:String>
+	<sys:String x:Key="K0773"  xml:space="preserve">着信音は40秒未満にすることをお勧めします。</sys:String>
+	<sys:String x:Key="K0774"  xml:space="preserve">通知の着信音は20秒未満にすることをお勧めします。</sys:String>
+	<sys:String x:Key="K0775"  xml:space="preserve">アシスタントアプリのアンインストール</sys:String>
+	<sys:String x:Key="K0776"  xml:space="preserve">アシスタントアプリのアンインストールに成功しました</sys:String>
+	<sys:String x:Key="K0777"  xml:space="preserve">点滅中は終了できません。</sys:String>
+	<sys:String x:Key="K0778"  xml:space="preserve">バックアップを暗号化する</sys:String>
+	<sys:String x:Key="K0779"  xml:space="preserve">パスワードを設定してください</sys:String>
+	<sys:String x:Key="K0780"  xml:space="preserve">バックアップを保護するためにパスワードを入力します。</sys:String>
+	<sys:String x:Key="K0781"  xml:space="preserve">パスワードを忘れると、バックアップのロックを解除できなくなることに注意してください。</sys:String>
+	<sys:String x:Key="K0782"  xml:space="preserve">パスワードを照合します</sys:String>
+	<sys:String x:Key="K0783"  xml:space="preserve">4文字未満。 短すぎる。</sys:String>
+	<sys:String x:Key="K0784"  xml:space="preserve">PCに十分な空き容量がありません。 いくつかを解放してから、再試行してください。</sys:String>
+	<sys:String x:Key="K0785"  xml:space="preserve">パスワードを入力する</sys:String>
+	<sys:String x:Key="K0786"  xml:space="preserve">パスワードを入力してバックアップのロックを解除します</sys:String>
+	<sys:String x:Key="K0787"  xml:space="preserve">処理</sys:String>
+	<sys:String x:Key="K0788"  xml:space="preserve">パスワードが間違っています。</sys:String>
+	<sys:String x:Key="K0789"  xml:space="preserve">接続中、デバイスに移動し、デバイスヘルプアプリの「許可が必要です」プロンプトを許可してください。 または、初めての場合は、モトローラのプライバシーポリシーに同意してから、デバイスを再接続してください。</sys:String>
+	<sys:String x:Key="K0790"  xml:space="preserve">デバイス画面のユーザー同意プロンプトを確認し、バックアップを開始するために許可してください。</sys:String>
+	<sys:String x:Key="K0791"  xml:space="preserve">ユーザーの同意プロンプトで拒否したため、バックアップは開始されません。 ユーザーの同意プロンプトを許可すると、新しいバックアップを開始できます。</sys:String>
+	<sys:String x:Key="K0792"  xml:space="preserve">接続に失敗しました。デバイスを再接続してください。デバイスにデバイスヘルプAPPのプロンプトが表示された場合は、モトローラのプライバシーポリシーに同意することを忘れないでください。</sys:String>
+	<sys:String x:Key="K0793"  xml:space="preserve">ターゲットファームウェアがデバイスモデルと一致していることを確認してください。 点滅すると、デバイスからすべてのデータが削除されます。</sys:String>
+	<sys:String x:Key="K0794"  xml:space="preserve">USB経由で接続する前に、USBデバッグを有効にします。</sys:String>
+	<sys:String x:Key="K0795"  xml:space="preserve">サインイン…</sys:String>
+	<sys:String x:Key="K0796"  xml:space="preserve">パスワードを設定しないでよろしいですか？</sys:String>
+	<sys:String x:Key="K0797"  xml:space="preserve">デバイスヘルプに電話の発信と管理を許可しますか？</sys:String>
+	<sys:String x:Key="K0798"  xml:space="preserve">警告：レスキューが点滅します。デバイスのプラグを抜かないでください。</sys:String>
+	<sys:String x:Key="K0799"  xml:space="preserve">Mobile Assistantに音声の録音を許可しますか？</sys:String>
+	<sys:String x:Key="K0800"  xml:space="preserve">リマインダー</sys:String>
+	<sys:String x:Key="K0801"  xml:space="preserve">ユーザーの同意プロンプトを拒否したため、接続に失敗しました。 デバイスを再接続して、再試行できます。</sys:String>
+	<sys:String x:Key="K0802"  xml:space="preserve">を救助するのが初めての場合は、最初に対応するUSBドライバーをインストールしてください。</sys:String>
+	<sys:String x:Key="K0803"  xml:space="preserve">ここからダウンロード。</sys:String>
+	<sys:String x:Key="K0804"  xml:space="preserve">1. 音量大、音量小、電源ボタンを同時に押して、電話をUSBケーブルに接続します。&#x0a;2. OKボタンを押した後、音量大、音量小、電源ボタンを放します。</sys:String>
+	<sys:String x:Key="K0805"  xml:space="preserve">1.デバイスをUSBケーブルから外します。&#x0a;2.音量大、音量小、電源ボタンを同時に押して、電話をUSBケーブルに再接続します。&#x0a;3.OKボタンを押した後、音量大、音量小、電源ボタンを放します。</sys:String>
+	<sys:String x:Key="K0806"  xml:space="preserve">1.デバイスの電源を切り、PCから切断します。&#x0a;2.音量大ボタン、音量小ボタン、電源ボタンを押し続け、電話の左側のType-CポートをUSBケーブルに接続します。&#x0a;3.進行が始まったら、すべてのキーを放します。</sys:String>
+	<sys:String x:Key="K0807"  xml:space="preserve">次のQRコードをスキャンして接続します。</sys:String>
+	<sys:String x:Key="K0808"  xml:space="preserve">この情報はお役に立ちましたか？</sys:String>
+	<sys:String x:Key="K0809"  xml:space="preserve">もっと...</sys:String>
+	<sys:String x:Key="K0810"  xml:space="preserve">Lenovo Phones</sys:String>
+	<sys:String x:Key="K0811"  xml:space="preserve">Lenovo Tablets</sys:String>
+	<sys:String x:Key="K0812"  xml:space="preserve">MOTO Phones</sys:String>
+	<sys:String x:Key="K0813"  xml:space="preserve">Lenovo Phone</sys:String>
+	<sys:String x:Key="K0814"  xml:space="preserve">Lenovo Tablet</sys:String>
+	<sys:String x:Key="K0815"  xml:space="preserve">MOTO Phone</sys:String>
+	<sys:String x:Key="K0816"  xml:space="preserve">さらにコメントを添えて返信してください。</sys:String>
+	<sys:String x:Key="K0817"  xml:space="preserve">すべてのAndroidデバイスを切断し、デバイスが接続されていないことを確認してから、Rescueを再試行してください。 Rescueは、デバイスの接続方法を案内します。</sys:String>
+	<sys:String x:Key="K0818"  xml:space="preserve">他のAndroidデバイスを切断し、接続されているデバイスが1つだけであることを確認してから、Rescueを再試行してください。</sys:String>
+	<sys:String x:Key="K0819"  xml:space="preserve">Android仮想デバイスが検出されました。エミュレートされたデバイスをすべて削除してください。 また、物理的なAndroidデバイスが1つだけ接続されていることを確認してから、Rescueを再試行してください。</sys:String>
+	<sys:String x:Key="K0820"  xml:space="preserve">Android仮想デバイスが検出されました。デバイスを削除し、デバイスが接続されていないことを確認してから、レスキューを再試行してください。 Rescueは、デバイスの接続方法を案内します。</sys:String>
+	<sys:String x:Key="K0821"  xml:space="preserve">レスキューフラッシュが数回行われたことに気づきましたが、それでも失敗しました。</sys:String>
+	<sys:String x:Key="K0822"  xml:space="preserve">私たちはそれを提案します：</sys:String>
+	<sys:String x:Key="K0826"  xml:space="preserve">カスタマーサービスセンターに行き、専門的なサポートを受けることができます。</sys:String>
+	<sys:String x:Key="K0827"  xml:space="preserve">また、とチャットすることができます</sys:String>
+	<sys:String x:Key="K0828"  xml:space="preserve">仮想エージェント</sys:String>
+	<sys:String x:Key="K0829"  xml:space="preserve">Software Fixログは、さらなる分析に役立ちます。ログをアップロードするにはログをアップロードしますか？</sys:String>
+	<sys:String x:Key="K0830"  xml:space="preserve">適切なファームウェアにマッチできません。いくつかの重要な情報は、デバイスから読み取ることはできません。</sys:String>
+	<sys:String x:Key="K0831"  xml:space="preserve">デバイスをUSBデバッグモードで接続し、「現在のデバイスを読む」ボタンをクリックします。</sys:String>
+	<sys:String x:Key="K0832"  xml:space="preserve">ファームウェアを手動で選択しようとします。&#x0a;もしまだマッチしていない場合、このデバイスはサポートされません。</sys:String>
+	<sys:String x:Key="K0833"  xml:space="preserve">私は、Lenovoプライバシーポリシーに同意します</sys:String>
+	<sys:String x:Key="K0834"  xml:space="preserve">Software Fixはレスキューフラッシュやロードデバイスのデータをバックアップするためにデバイス情報を読む必要があります。お使いのデバイスに移動し、ポップアップ許可を承認してください。</sys:String>
+	<sys:String x:Key="K0835"  xml:space="preserve">デバイスタイプを選択</sys:String>
+	<sys:String x:Key="K0836"  xml:space="preserve">プライバシーポリシー</sys:String>
+	<sys:String x:Key="K0837"  xml:space="preserve">お使いのデバイスがFastBootモードをサポートしている場合は、デバイスをfastbootモードに入るように指示に従ってください。&#x0a;確認しない場合は、入力することができます入力名を検索し、チェックします。</sys:String>
+	<sys:String x:Key="K0838"  xml:space="preserve">お使いのデバイスがFastBootモードをサポートしていない場合は、電源をオンにするには、指示に従ってください。</sys:String>
+	<sys:String x:Key="K0839"  xml:space="preserve">電源オフモードでは、製品に精通している必要があります。あなたがそれについてわからないならば、fastbootモードまたはUSBデバッグモードに入ってください。</sys:String>
+	<sys:String x:Key="K0840"  xml:space="preserve">デバイスがfastbootをサポートしている場合は、' fastboot mode 'を選択します。確認していない場合は、検索して' fastbootモード'画面をチェックしてください。</sys:String>
+	<sys:String x:Key="K0841"  xml:space="preserve">お使いのデバイスが電源をオンにする場合は、' USBデバッグモード'を選択します。USBデバッグモードを有効にする方法を知ることができます。</sys:String>
+	<sys:String x:Key="K0842"  xml:space="preserve">お使いのデバイスがfastbootをサポートしていない電源をオンにすることができない場合は、'電源オフモード'を選択し、' OK 'をクリックして続行します。</sys:String>
+	<sys:String x:Key="K0843"  xml:space="preserve">お使いのデバイスは、FastBootフラッシュをサポートしていない、USBデバッグモードまたは電源オフモードを試してください。</sys:String>
+	<sys:String x:Key="K0844"  xml:space="preserve">モデル名、入力して検索できます</sys:String>
+	<sys:String x:Key="K0845"  xml:space="preserve">モデル番号を入力することができます</sys:String>
+	<sys:String x:Key="K0846"  xml:space="preserve">製品名は、検索に入力することができます</sys:String>
+	<sys:String x:Key="K0847"  xml:space="preserve">rasa.page.link/ma</sys:String>
+	<sys:String x:Key="K0848"  xml:space="preserve">ありがとうございました！</sys:String>
+	<sys:String x:Key="K0849"  xml:space="preserve">あなたのコメントに感謝します。</sys:String>
+	<sys:String x:Key="K0850"  xml:space="preserve">説明</sys:String>
+	<sys:String x:Key="K0851"  xml:space="preserve">ログインページが完全にロードされていない場合は、ここをクリックしてリロードしてください。</sys:String>
+	<sys:String x:Key="K0852"  xml:space="preserve">現在の操作が進行中のため、終了できません。</sys:String>
+	<sys:String x:Key="K0853"  xml:space="preserve">あなたの名前：</sys:String>
+	<sys:String x:Key="K0854"  xml:space="preserve">1.デバイスをUSBケーブルから外します。&#x0a;2.VOLUME_UPと電源ボタンを押して[ブートモードの選択]インターフェイスを開きます。&#x0a;3. VOLUME_UPボタンでFastbootモードを選択します。&#x0a;4. VOLUME_DOWNを押して、ファストブートモードに入ります。&#x0a;5. 次に、電話をUSBケーブルでPCに接続します。&#x0a;6. [OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0855"  xml:space="preserve">1.電話をUSBケーブルから外します。&#x0a;2.デバイスの電源を切り、バッテリーを取り外します。&#x0a;3.[OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0856"  xml:space="preserve">1.デバイスの電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2. vol &quot;+ &quot;ボタンと&quot;-&quot;ボタンを押して、デバイスをUSB経由でPCに同時に接続します。&#x0a;3.[OK]ボタンをクリックして続行します。&#x0a;4.進行が始まったら、vol &quot;+ &quot;と&quot;-&quot;ボタンを離します。</sys:String>
+	<sys:String x:Key="K0857"  xml:space="preserve">1.デバイスの電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2. vol &quot;+ &quot;ボタンを押し、同時にUSB経由でデバイスをPCに接続します。&#x0a;3.進行が始まったら音量キーを離します。</sys:String>
+	<sys:String x:Key="K0858"  xml:space="preserve">1.デバイスの電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2. vol &quot;+ &quot;ボタンを押し、同時にUSB経由でデバイスをPCに接続します。&#x0a;3. Lenovo LOGOが電話に表示されたら、vol &quot;+ &quot;をリリースし、電話で[ダウンロード]を選択します。</sys:String>
+	<sys:String x:Key="K0859"  xml:space="preserve">1.デバイスの電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2.vol &quot;+ &quot;、&quot;-&quot;、電源キーを同時に押し、バイブレーション後にすべてのキーを放します。&#x0a;3.デバイスをUSB経由でPCに接続し、[OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0860"  xml:space="preserve">1.デバイスの電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2.vol &quot;+ &quot;、&quot;-&quot;、および電源キーを同時に押し、振動した後にすべてのキーを放します。&#x0a;3.USB経由でデバイスをPCに接続します。</sys:String>
+	<sys:String x:Key="K0861"  xml:space="preserve">1.デバイスの電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2. vol &quot;+ &quot;ボタンと&quot;-&quot;ボタンを同時に押し、USB経由でデバイスをPCに接続します。&#x0a;3.進行が始まったら、音量キーを放します。</sys:String>
+	<sys:String x:Key="K0862"  xml:space="preserve">1.デバイスの電源がオフになっていることを確認します。&#x0a;2.USBケーブルを介してデバイスをPCに接続し、[OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0863"  xml:space="preserve">1.電話の電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2. vol &quot;+ &quot;と&quot;-&quot;ボタンを押して、同時にUSB経由で電話をPCに接続します。&#x0a;3. [OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0864"  xml:space="preserve">1.電話の電源がオフになっていることを確認します。&#x0a;2. USBケーブルを介して電話をPCに接続し、[OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0865"  xml:space="preserve">1.デバイスの電源を切り、PCに接続しないでください。 &#x0a;2.vol &quot;-&quot;を押して、デバイスをUSBケーブルでPCに接続します。 &#x0a;3. [OK]ボタンをクリックして続行します。 &#x0a;4.進行が始まったらvol &quot;-&quot;をリリースします。 &#x0a;5.注：デバイスが充電モードに入る場合は、USBケーブルを外し、30秒待ってデバイスを再接続してから、指示に従って再度レスキューを実行してください。</sys:String>
+	<sys:String x:Key="K0866"  xml:space="preserve">1.デバイスの電源を切り、PCに接続しないでください。 &#x0a;2. vol &quot;-&quot;を押して、デバイスをUSBケーブルでPCに接続します。 &#x0a;3. OKボタンを押してからvol &quot;-&quot;を離します。 &#x0a;4.注：デバイスが充電モードに入る場合は、USBケーブルを外し、30秒待ってデバイスを再接続してから、指示に従って再度レスキューを実行してください。</sys:String>
+	<sys:String x:Key="K0867"  xml:space="preserve">1.デバイスの電源を切り、PCから切断します。&#x0a;2.スマートフォンの「音量+」「音量-」ボタンと電源ボタンを押したまま、スマートフォンの左側のType-CポートをUSBケーブルに接続します。&#x0a;3.進行が始まったら、すべてのキーを放します。</sys:String>
+	<sys:String x:Key="K0868"  xml:space="preserve">1.デバイスの電源を入れます。&#x0a;2。ダイヤラでキーシーケンス#### 6020＃を入力して、国コードを設定してください。&#x0a;3.国コード設定インターフェースに入った後、プロンプトに従って関連する操作を完了します。</sys:String>
+	<sys:String x:Key="K0869"  xml:space="preserve">1.デバイスの電源を入れます。&#x0a;2。国コードを設定するには、デバイスダイヤラでキーシーケンス####682#を入力してください。&#x0a;3.国コード設定インターフェースに入った後、プロンプトに従って関連する操作を完了します。</sys:String>
+	<sys:String x:Key="K0870"  xml:space="preserve">1.デバイスの電源を入れます。&#x0a;2.ダイヤラでキーシーケンス####682#を入力して、国コードを設定してください。&#x0a;3.国コード設定インターフェースに入った後、プロンプトに従って関連する操作を完了します。</sys:String>
+	<sys:String x:Key="K0871"  xml:space="preserve">1.デバイスの電源を入れます。&#x0a;2。国コード設定を完了するには：USBデバッグをオンにし、PCに電話の接続を許可します。&#x0a;3.国コード設定インターフェースに入った後、プロンプトに従って関連する操作を完了します。</sys:String>
+	<sys:String x:Key="K0872"  xml:space="preserve">1.電話の電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2.Fastboot FlashModeが表示されるまでvol &quot;-&quot;ボタンと電源ボタンを同時に押します。&#x0a;3.USB経由で電話を接続します。</sys:String>
+	<sys:String x:Key="K0873"  xml:space="preserve">デバイスが接続され、Fastbootフラッシュモードになっていることを確認し、左側のフラッシュの指示に従います。</sys:String>
+	<sys:String x:Key="K0874"  xml:space="preserve">デバイスが接続されていることを確認し、左側のフラッシュの指示に従います。</sys:String>
+	<sys:String x:Key="K0875"  xml:space="preserve">国コード設定：</sys:String>
+	<sys:String x:Key="K0876"  xml:space="preserve">切断手順</sys:String>
+	<sys:String x:Key="K0877"  xml:space="preserve">デバイスをUSBケーブルから外し、電源を切ります... [OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0878"  xml:space="preserve">電話に回復ファイルをダウンロード</sys:String>
+	<sys:String x:Key="K0879"  xml:space="preserve">Fastbootフラッシュブートローダー</sys:String>
+	<sys:String x:Key="K0880"  xml:space="preserve">Fastbootフラッシュシングルパーティション</sys:String>
+	<sys:String x:Key="K0881"  xml:space="preserve">Fastbootフラッシュシングルパーティションbootloader_a</sys:String>
+	<sys:String x:Key="K0882"  xml:space="preserve">Fastbootフラッシュシングルパーティションbootloader_b</sys:String>
+	<sys:String x:Key="K0883"  xml:space="preserve">QDLoaderCOMポートを見つける</sys:String>
+	<sys:String x:Key="K0884"  xml:space="preserve">点滅が完了しました。電源キーを押してデバイスを再起動します。</sys:String>
+	<sys:String x:Key="K0885"  xml:space="preserve">フラッシュ実行中</sys:String>
+	<sys:String x:Key="K0886"  xml:space="preserve">デバイスがFastbootFlashモードではなく、PCに接続されている場合は、次の手順を実行します。&#x0a;1.デバイスの電源を切ります。&#x0a;2.Fastboot Flash Modeが表示されるまで、音量小ボタンと電源ボタンを同時に押します。&#x0a;3.デバイスをPCに接続します。</sys:String>
+	<sys:String x:Key="K0887"  xml:space="preserve">電話機をUSBケーブルから外し、電源を切ってください... [OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K0888"  xml:space="preserve">指示に従ってデバイスを PC に接続し直してください</sys:String>
+	<sys:String x:Key="K0889"  xml:space="preserve">左側のフラッシュの指示に従って、デバイスが接続されていることを確認してください。</sys:String>
+	<sys:String x:Key="K0890"  xml:space="preserve">右側のフラッシュの指示に従って、デバイスが接続されていることを確認してください。</sys:String>
+	<sys:String x:Key="K0891"  xml:space="preserve">バッテリーを取り外し、USBケーブルに接続してください...続行するには[OK]ボタンをクリックしてください。</sys:String>
+	<sys:String x:Key="K0892"  xml:space="preserve">デバイスを削除し、fastbootモードでデバイスをPCに接続します</sys:String>
+	<sys:String x:Key="K0894"  xml:space="preserve">Fastbootモードで接続されているデバイスはありません。&#x0a;もう一度選択してください。</sys:String>
+	<sys:String x:Key="K0895"  xml:space="preserve">fastbootモードに入るのを待つ</sys:String>
+	<sys:String x:Key="K0896"  xml:space="preserve">再起動を待つ</sys:String>
+	<sys:String x:Key="K0897"  xml:space="preserve">デバイスが正しく接続されていません。次の手順に従って、デバイスを通常の状態に戻します。&#x0a;1.電源キーを長押ししてデバイスを起動します。デバイスが「Lenovo」ロゴ画面で動かなくなったり、自動起動したりする場合がありますが、問題ありません。&#x0a;2。次に、電源キーを押してデバイスの電源を切ります。</sys:String>
+	<sys:String x:Key="K0898"  xml:space="preserve">ここからダウンロード</sys:String>
+	<sys:String x:Key="K0899"  xml:space="preserve">1. [今すぐシステムを再起動する]を選択し、電源キーを押してデバイスを起動します。&#x0a;2。起動するまで数分かかります。しばらくお待ちください。</sys:String>
+	<sys:String x:Key="K0900"  xml:space="preserve">お使いのデバイスは正常に機能しておらず、サポートが必要ですか？ Android OSを更新して、ソフトウェア関連の問題の解決に役立てます</sys:String>
+	<sys:String x:Key="K0901"  xml:space="preserve">PCからデバイスデータを管理できます</sys:String>
+	<sys:String x:Key="K0902"  xml:space="preserve">資格のあるUSBケーブルがあることを確認してください</sys:String>
+	<sys:String x:Key="K0903"  xml:space="preserve">電話/タブレット/スマートデバイスの充電残量が60％以上であることを確認してください</sys:String>
+	<sys:String x:Key="K0904"  xml:space="preserve">PCにファームウェアファイルをダウンロードして解凍するための15GB以上のスペースがあることを確認してください</sys:String>
+	<sys:String x:Key="K0905"  xml:space="preserve">上級/以前のSoftware Fixユーザーへの注意：</sys:String>
+	<sys:String x:Key="K0906"  xml:space="preserve">デバイスがfastbootモードをサポートしていることがわかっている場合は、fastbootモードを介してデバイスを直接接続できます。</sys:String>
+	<sys:String x:Key="K0907"  xml:space="preserve">IMEIが見つからない場合は、ここをクリックしてください。</sys:String>
+	<sys:String x:Key="K0908"  xml:space="preserve">デバイスを接続する</sys:String>
+	<sys:String x:Key="K0909"  xml:space="preserve">デバイスをデバッグモードでPCに接続すると、Software Fixが一致するファームウェアを取得してレスキューを実行します。</sys:String>
+	<sys:String x:Key="K0910"  xml:space="preserve">タブレットがデバッグモードをオンにできない場合はどうなりますか？</sys:String>
+	<sys:String x:Key="K0911"  xml:space="preserve">ファストブートモードでデバイスをPCに接続すると、Software Fixが一致するファームウェアを取得してレスキューを実行します。</sys:String>
+	<sys:String x:Key="K0912"  xml:space="preserve">fastbootモードでデバイスを接続します。次の手順に従ってください。</sys:String>
+	<sys:String x:Key="K0913"  xml:space="preserve">手順1.デバイスの電源を切ります。</sys:String>
+	<sys:String x:Key="K0914"  xml:space="preserve">手順2. USBケーブルをPCのUSBポートに直接接続してください。&#x0a;(最適なパフォーマンスと安定性のため、USBハブを介した接続は避けてください。)</sys:String>
+	<sys:String x:Key="K0915"  xml:space="preserve">手順3.デバイスの音量小キーを押したまま、USBケーブルをデバイスに接続します。</sys:String>
+	<sys:String x:Key="K0916"  xml:space="preserve">手順4.電話のディスプレイに緑色のAndroidが表示されたら、デバイスの音量小キーを放します。</sys:String>
+	<sys:String x:Key="K0917"  xml:space="preserve">電源を入れることができないデバイスの場合：</sys:String>
+	<sys:String x:Key="K0918"  xml:space="preserve">SIMカードスロットを引き出し、IMEIを見つけます</sys:String>
+	<sys:String x:Key="K0919"  xml:space="preserve">ダイヤラキーボード*#06#</sys:String>
+	<sys:String x:Key="K0920"  xml:space="preserve">に行く</sys:String>
+	<sys:String x:Key="K0921"  xml:space="preserve">ファームウェアを取得するために手動で選択する場合は、ここをクリックしてください。</sys:String>
+	<sys:String x:Key="K0922"  xml:space="preserve">Fastbootの選択</sys:String>
+	<sys:String x:Key="K0923"  xml:space="preserve">手動選択</sys:String>
+	<sys:String x:Key="K0924"  xml:space="preserve">デバイスパッケージボックス</sys:String>
+	<sys:String x:Key="K0925"  xml:space="preserve">方法</sys:String>
+	<sys:String x:Key="K0926"  xml:space="preserve">お使いの携帯電話の15桁のIMEIを入力してください。機種を確認し、対応するファームウェアを検索します:</sys:String>
+	<sys:String x:Key="K0927"  xml:space="preserve">IMEIを見つける方法は？</sys:String>
+	<sys:String x:Key="K0928"  xml:space="preserve">電話レスキュー</sys:String>
+	<sys:String x:Key="K0929"  xml:space="preserve">タブレット</sys:String>
+	<sys:String x:Key="K0930"  xml:space="preserve">タブレットレスキュー</sys:String>
+	<sys:String x:Key="K0931"  xml:space="preserve">商品名</sys:String>
+	<sys:String x:Key="K0932"  xml:space="preserve">もっと</sys:String>
+	<sys:String x:Key="K0933"  xml:space="preserve">適切なファームウェアと一致しません。</sys:String>
+	<sys:String x:Key="K0934"  xml:space="preserve">手動でファームウェアを選択できます。</sys:String>
+	<sys:String x:Key="K0935"  xml:space="preserve">デバイスからキー情報を読み取れないため、デバイスを切断し、fastbootモードに再エントリーして接続してください。</sys:String>
+	<sys:String x:Key="K0936"  xml:space="preserve">あなたのIMEIは{0}です</sys:String>
+	<sys:String x:Key="K0937"  xml:space="preserve">適切なファームウェアに一致しませんサポートsupport @ motorola . comから助けを探してください</sys:String>
+	<sys:String x:Key="K0938"  xml:space="preserve">あなたのIMEIを入力してください。</sys:String>
+	<sys:String x:Key="K0939"  xml:space="preserve">情報収集</sys:String>
+	<sys:String x:Key="K0940"  xml:space="preserve">効果的なアフターサービスを維持するために、情報を収集します。続行する場合は、「続行」ボタンを選択します。</sys:String>
+	<sys:String x:Key="K0941"  xml:space="preserve">起動するのに数分かかります、待ってください。</sys:String>
+	<sys:String x:Key="K0942"  xml:space="preserve">すべてのAndroidデバイスの接続を解除し、どのデバイスも接続されていないことを確認してから、再度Rescueを実行してください。</sys:String>
+	<sys:String x:Key="K0943"  xml:space="preserve">適切なファームウェアにマッチしません。&#x0a;USBデバッグモードでデバイスを接続しようとすることができます。&#x0a;もしまだ一致していない場合、このデバイスはサポートされていません。</sys:String>
+	<sys:String x:Key="K0944"  xml:space="preserve">パワーアップできないデバイスについて:</sys:String>
+	<sys:String x:Key="K0945"  xml:space="preserve">アンドロイド8.0以上</sys:String>
+	<sys:String x:Key="K0946"  xml:space="preserve">電話について</sys:String>
+	<sys:String x:Key="K0947"  xml:space="preserve">Rescueによる書き込みは、すでに複数回正常に完了しています。</sys:String>
+	<sys:String x:Key="K0948"  xml:space="preserve">フラッシュ後、問題は解決しましたか？</sys:String>
+	<sys:String x:Key="K0949"  xml:space="preserve">そうでなければ、更なる分析のために以下の情報を我々に共有してください？</sys:String>
+	<sys:String x:Key="K0950"  xml:space="preserve">レスキューフラッシュ前にデバイスの問題とステータスを説明します。</sys:String>
+	<sys:String x:Key="K0951"  xml:space="preserve">レスキューフラッシュ後にデバイスのステータスを説明します</sys:String>
+	<sys:String x:Key="K0952"  xml:space="preserve">お使いのデバイスに次の情報が一致するかどうかを確認してください&#x0a;&#x0a;製品名：{0}&#x0a;&#x0a;モデル名：{1}</sys:String>
+	<sys:String x:Key="K0953"  xml:space="preserve">お使いのデバイスに次の情報が一致するかどうかを確認してください&#x0a;&#x0a;モデル名{0}&#x0a;&#x0a;モデル番号{1}</sys:String>
+	<sys:String x:Key="K0954"  xml:space="preserve">デバイスの種類に従って、「電話」または「タブレット」または「スマートデバイス」をクリックします。</sys:String>
+	<sys:String x:Key="K0955"  xml:space="preserve">適切なファームウェアをお使いの携帯電話に一致した後、ターゲットのファームウェアファイルをダウンロードしてダウンロード'をクリックします。</sys:String>
+	<sys:String x:Key="K0956"  xml:space="preserve">終了をダウンロードした後、'救助を開始します'をクリックして点滅します。</sys:String>
+	<sys:String x:Key="K0957"  xml:space="preserve">あなたのタブレットでデバッグモードを可能にするために指示に従ってください、そして、それをUSBケーブルでPCに接続してください。</sys:String>
+	<sys:String x:Key="K0958"  xml:space="preserve">それから、Software Fixはあなたの接続されたタブレットのために適切なファームウェアにマッチします。</sys:String>
+	<sys:String x:Key="K0959"  xml:space="preserve">タブレットのSN番号を入力し、[拡大鏡]ボタンをクリックして、適切なファームウェアに一致します。タブレットのSN番号がわからない場合は、「SNの検索方法」リンクをクリックします。</sys:String>
+	<sys:String x:Key="K0960"  xml:space="preserve">タブレットの適切なファームウェアが一致したら、[ダウンロード]をクリックしてターゲットファームウェアファイルをダウンロードします。</sys:String>
+	<sys:String x:Key="K0961"  xml:space="preserve">お使いの携帯電話のIMEI番号を入力し、「拡大鏡」ボタンをクリックして適切なファームウェアを検索してください。</sys:String>
+	<sys:String x:Key="K0962"  xml:space="preserve">接続されているデバイスが 1 つだけであることを確認してから、Rescue を再試行してください。</sys:String>
+	<sys:String x:Key="K0963"  xml:space="preserve">トップから</sys:String>
+	<sys:String x:Key="K0964"  xml:space="preserve">チュートリアル - デバイスをRescueする方法</sys:String>
+	<sys:String x:Key="K0965"  xml:space="preserve">「権限が必要です」というプロンプトを拒否したため、接続に失敗しました。 デバイスを再接続して、再試行できます。</sys:String>
+	<sys:String x:Key="K0966"  xml:space="preserve">次の手順に従ってください。&#x0a;1.デバイスの電源を切ります。&#x0a;2.USBケーブルをPCに接続します&#x0a;3.デバイスの音量小キーを押したまま、USBケーブルをデバイスに接続します。&#x0a;4.電話のディスプレイに緑色のAndroidが表示されたら、音量小キーを放します。</sys:String>
+	<sys:String x:Key="K0967"  xml:space="preserve">デバイスに充電アイコンが表示されている場合は、デバイスを再接続して再試行してください。</sys:String>
+	<sys:String x:Key="K0968"  xml:space="preserve">Software Fix は、PC に接続されているデバイスを検出し、デバイスのファームウェアを照合します。 [OK] をクリックして詳細を確認し、[キャンセル] をクリックして手動選択を続行します。</sys:String>
+	<sys:String x:Key="K0969"  xml:space="preserve">ファームウェアマッチングを終了してもよろしいですか？</sys:String>
+	<sys:String x:Key="K0970"  xml:space="preserve">1.デバイスの電源がオフになっていて、PCに接続されていないことを確認します。&#x0a;2.vol &quot;+ &quot;ボタンを押し、同時にUSB経由でデバイスをPCに接続します。&#x0a;3. [OK]ボタンをクリックして続行します。&#x0a;4.進行が始まったら、vol &quot;+ &quot;ボタンを離します。&#x0a;5.注：デバイスに表示されている充電アイコンが表示されている場合は、デバイスを再接続してからやり直してください。</sys:String>
+	<sys:String x:Key="K0971"  xml:space="preserve">1.デバイスの電源が切れていることを確認します。&#x0a;2. USBケーブルでデバイスをPCで接続し、[OK]ボタンをクリックして続行します。&#x0a;3.注：デバイスに表示されている充電アイコンが表示されたら、デバイスを再接続してからやり直してください。</sys:String>
+	<sys:String x:Key="K0972"  xml:space="preserve">1.デバイスの電源を切って、PCから外します。&#x0a;2.ボリュームアップキーを押しながら、USBケーブルでデバイスをPCに接続します。&#x0a;3. [OK]をクリックして続行します。&#x0a;4.進行状況が開始された後にボリュームキーを放します。&#x0a;5.注：デバイスに表示されている充電アイコンが表示されている場合は、デバイスを再接続してからやり直してください。</sys:String>
+	<sys:String x:Key="K0973"  xml:space="preserve">1.電源を切ってください。&#x0a;2.装置をUSBケーブルでPCに接続し、[OK]をクリックして続行します。&#x0a;3.注：デバイスに表示されている充電アイコンが表示されたら、デバイスを再接続してからやり直してください。</sys:String>
+	<sys:String x:Key="K0974"  xml:space="preserve">USBデバッグモードを有効にする方法がわかっている場合は、デバッグモードでデバイスを接続できます。Software Fixはあなたのためにファームウェアを自動的に一致させることができます。</sys:String>
+	<sys:String x:Key="K0975"  xml:space="preserve">ほとんどのデバイスは、IMEIを自動的に読み取ることができるモードにデバイスを切り替えることができます。これを行う方法についての指示を見たいですか？</sys:String>
+	<sys:String x:Key="K0976"  xml:space="preserve">あなたはすでにあなたのデバイスの名前とモデルを知っていますか？その場合は、手動メソッドを使用してデバイスを選択してください。</sys:String>
+	<sys:String x:Key="K0977"  xml:space="preserve">私たちはあなたのデバイスモデルを見つけるのに問題があるようです。良いニュースは試してみるための追加のオプションがあります。下記のオプションを選択してください。</sys:String>
+	<sys:String x:Key="K0978"  xml:space="preserve">IMEIは無効です</sys:String>
+	<sys:String x:Key="K0979"  xml:space="preserve">あなたのIMEIは無効です、もう一度確認してください。</sys:String>
+	<sys:String x:Key="K0980"  xml:space="preserve">Software Fix は、デバイスのモデル名にエラーがあることを検出しました。フラッシュによるデバイスの損傷を避けるために、Software Fix はカスタマー センターに問い合わせるか、Web サイト [a]https://motorola-global-portal.custhelp.com[/a]。</sys:String>
+	<sys:String x:Key="K0981"  xml:space="preserve">デバイスにほとんど適している次のオプションのいずれかを選択し、Software Fixは一致したファームウェアを確認できます。</sys:String>
+	<sys:String x:Key="K0982"  xml:space="preserve">Software Fix が、お使いのデバイスに対応するファームウェアを提供します。</sys:String>
+	<sys:String x:Key="K0983"  xml:space="preserve">インターネットなし、後でもう一度やり直してください。</sys:String>
+	<sys:String x:Key="K0984"  xml:space="preserve">あなたのイメイはです </sys:String>
+	<sys:String x:Key="K0985"  xml:space="preserve">あなたのPCはディスク容量が不十分です。これはSoftware Fixの通常の使用に影響を与える可能性があります。ディスク容量を消去してください。</sys:String>
+	<sys:String x:Key="K0986"  xml:space="preserve">1.電源アダプタを取り外します。&#x0a;2.ボリュームアップとボリュームダウンキーを同時に押してから、アダプタを再接続します。&#x0a;3.両方のボリュームキーを放します。&#x0a;4.装置をUSB Type-CケーブルでPCに接続します。</sys:String>
+	<sys:String x:Key="K0987"  xml:space="preserve">1.デバイスのレスキューは成功し、USB Type-Cケーブルを取り外します。&#x0a;2.起動に数分かかります、お待ちください。</sys:String>
+	<sys:String x:Key="K0988"  xml:space="preserve">FastBootモードをオンにする方法</sys:String>
+	<sys:String x:Key="K0989"  xml:space="preserve">無効なIMEI番号</sys:String>
+	<sys:String x:Key="K0990"  xml:space="preserve">再選択</sys:String>
+	<sys:String x:Key="K0991"  xml:space="preserve">1. デバイスの電源が切れており、PCに接続されていないことを確認します。&#x0a;2. 音量＋ボタンを押したまま、USB経由でデバイスをPCに接続します。&#x0a;3. [OK] ボタンをクリックして続行します。&#x0a;4. 処理が開始されたら、音量＋ボタンを離します。</sys:String>
+	<sys:String x:Key="K0992"  xml:space="preserve">接続されている機器がファームウェアと一致しない場合は、一致したものに変更してください。&#x0a;あなたのデバイスは{0}です</sys:String>
+	<sys:String x:Key="K0993"  xml:space="preserve">画像が接続されているデバイスと一致するかどうかを確認してください</sys:String>
+	<sys:String x:Key="K0994"  xml:space="preserve">www.lenovo.com/privacy/</sys:String>
+	<sys:String x:Key="K0995"  xml:space="preserve">道</sys:String>
+	<sys:String x:Key="K0996"  xml:space="preserve">15桁</sys:String>
+	<sys:String x:Key="K0997"  xml:space="preserve">携帯電話がFastBootモードをサポートしていない場合はどうなりますか？ここをクリック：</sys:String>
+	<sys:String x:Key="K0998"  xml:space="preserve">お勧め</sys:String>
+	<sys:String x:Key="K0999"  xml:space="preserve">チュートリアルに従ってデバイスをPCに接続してください。その後、Software Fixが案内し、お使いのデバイスに対応するファームウェアを照合します。</sys:String>
+	<sys:String x:Key="K1000"  xml:space="preserve">あなたがすでにあなたが持っているモデルを知っている場合は、リストからそれを選択してから、次に何をするかを表示します。</sys:String>
+	<sys:String x:Key="K1001"  xml:space="preserve">商品名を見つける方法</sys:String>
+	<sys:String x:Key="K1002"  xml:space="preserve">デバイスの検索</sys:String>
+	<sys:String x:Key="K1003"  xml:space="preserve">フラッシュの指示</sys:String>
+	<sys:String x:Key="K1004"  xml:space="preserve">ステップ2：&amp;#x0a;「電話情報」画面で、「モデルとアンプ」を選択します。ハードウェアのメニュー開いたら、下の[次の]ボタンをクリックします。</sys:String>
+	<sys:String x:Key="K1005"  xml:space="preserve">ステップ3：&#x0a;これであなたの携帯電話のモデル番号を見ることができるはずです。ほとんどのモデル番号は 'XT'で始まります。</sys:String>
+	<sys:String x:Key="K1006"  xml:space="preserve">ファームウェアが一致しています...</sys:String>
+	<sys:String x:Key="K1007"  xml:space="preserve">Software Fixはあなたのデバイスを接続し、あなたの携帯電話のファームウェアを見つけるための手順を通してあなたを歩きます。</sys:String>
+	<sys:String x:Key="K1008"  xml:space="preserve">手順3.デバイスの音量小キーを押したまま、USBケーブルをデバイスに接続します。&#x0a;手順4.電話のディスプレイに緑色のAndroidが表示されたら、デバイスの音量小キーを放します。</sys:String>
+	<sys:String x:Key="K1009"  xml:space="preserve">USBケーブル接続プロセス</sys:String>
+	<sys:String x:Key="K1010"  xml:space="preserve">リストからモデルを選択してください</sys:String>
+	<sys:String x:Key="K1011"  xml:space="preserve">以下のようにファームウェアを選択したら、ファームウェアがデバイスに一致することを確認してください。</sys:String>
+	<sys:String x:Key="K1012"  xml:space="preserve">ファームウェアリクエストを復元するには、デバイスをFastBootモードに切り替えてPCに接続します。Software Fixはあなたのためのチュートリアルを提供します、あなたは見たいですか？</sys:String>
+	<sys:String x:Key="K1013"  xml:space="preserve">チュートリアル - FastBootモードに切り替える方法</sys:String>
+	<sys:String x:Key="K1014"  xml:space="preserve">段階的な指示に従って、デバイスを USB ケーブルに接続します。 正常に接続されると、Software Fix は使用する正しいファームウェアを確認します</sys:String>
+	<sys:String x:Key="K1015"  xml:space="preserve">チップ：ポートレートモードでタブレットを使用してください。</sys:String>
+	<sys:String x:Key="K1016"  xml:space="preserve">ワンクリッククローンフォースが停止しました！</sys:String>
+	<sys:String x:Key="K1017"  xml:space="preserve">救助を開始します</sys:String>
+	<sys:String x:Key="K1018"  xml:space="preserve">再生する</sys:String>
+	<sys:String x:Key="K1019"  xml:space="preserve">アプリケーションをご利用いただきありがとうございます。</sys:String>
+	<sys:String x:Key="K1020"  xml:space="preserve">私たちがそれをより良くすることができるように、以下の質問に答えるのに少し時間をかけてください。</sys:String>
+	<sys:String x:Key="K1021"  xml:space="preserve">1. Software Fixアプリケーションをどのように評価しますか？</sys:String>
+	<sys:String x:Key="K1022"  xml:space="preserve">2.このアプリケーションは役に立ちましたか？</sys:String>
+	<sys:String x:Key="K1023"  xml:space="preserve">アプリケーションを評価してください。</sys:String>
+	<sys:String x:Key="K1024"  xml:space="preserve">アプリケーションがあなたに役立つかどうか教えてください。</sys:String>
+	<sys:String x:Key="K1025"  xml:space="preserve">この調査を完了してくれてありがとう！</sys:String>
+	<sys:String x:Key="K1026"  xml:space="preserve">ステップを入力するには、ドロップダウンメニューオプションを選択できます。</sys:String>
+	<sys:String x:Key="K1027"  xml:space="preserve">スクリーンミラー</sys:String>
+	<sys:String x:Key="K1028"  xml:space="preserve">スクリーンミラーリングとPCへの投影</sys:String>
+	<sys:String x:Key="K1029"  xml:space="preserve">デバイスネットワーク接続が失敗しました。</sys:String>
+	<sys:String x:Key="K1030"  xml:space="preserve">スクリーンミラーには、デバイスとPCが同じネットワークセグメントにあります。デバイスをPCで同じWiFiに接続してからもう一度やり直してください。</sys:String>
+	<sys:String x:Key="K1031"  xml:space="preserve">利用可能なWiFiがない場合は、モバイルホットスポットを介して接続できます。</sys:String>
+	<sys:String x:Key="K1033"  xml:space="preserve">Software Fixスクリーンミラーリングは、モバイルアシストアプリで使用する必要があります。あなたの装置にMAアプリをインストールしましたか？</sys:String>
+	<sys:String x:Key="K1034"  xml:space="preserve">デバイスをPCに接続してMAアプリをインストールしてください。</sys:String>
+	<sys:String x:Key="K1035"  xml:space="preserve">デバイスを接続する前に、USBデバッグを開始するには、次の3つの手順を参照してください。</sys:String>
+	<sys:String x:Key="K1036"  xml:space="preserve">デバイスをPCで同じWiFiに接続し、次に次の[スタート]ボタンをクリックしてスクリーンミラーリングを開始します。</sys:String>
+	<sys:String x:Key="K1037"  xml:space="preserve">WiFi経由でスクリーンミラーリングを使用してください</sys:String>
+	<sys:String x:Key="K1038"  xml:space="preserve">1. デバイスとPCを同じWiFiに接続します。</sys:String>
+	<sys:String x:Key="K1039"  xml:space="preserve">2. Mobile Assistant Appを使用して、次のQRコードをスキャンして接続します。</sys:String>
+	<sys:String x:Key="K1040"  xml:space="preserve">3.以下の「スタート」ボタンをクリックして画面のミラーリングを開始します。</sys:String>
+	<sys:String x:Key="K1041"  xml:space="preserve">QRコードをスキャンしたくない場合は、接続してください。MAでIPを直接入力することができ、IPアドレスは</sys:String>
+	<sys:String x:Key="K1042"  xml:space="preserve">新しいデバイス接続が検出され、ファームウェアに一致するのを待ちます</sys:String>
+	<sys:String x:Key="K1043"  xml:space="preserve">レスキューデバイスが入力されたIMEI番号と同じであることを確認してください。</sys:String>
+	<sys:String x:Key="K1045"  xml:space="preserve">Software Fixがデバイスに接続されていることを検出しましたが、バックグラウンドでファームウェアと自動的に一致します。</sys:String>
+	<sys:String x:Key="K1046"  xml:space="preserve">{0}番号を入力するか、自分でファームウェアを手動で選択してみてください。</sys:String>
+	<sys:String x:Key="K1047"  xml:space="preserve">ミラーデバイスにアプリをインストールします</sys:String>
+	<sys:String x:Key="K1048"  xml:space="preserve">Software Fixスクリーンミラーリングは、モバイルアシスタントアプリで使用する必要があります。あなたの装置にMAアプリをインストールしましたか？</sys:String>
+	<sys:String x:Key="K1049"  xml:space="preserve">インストールされていない</sys:String>
+	<sys:String x:Key="K1050"  xml:space="preserve">既にインストール</sys:String>
+	<sys:String x:Key="K1051"  xml:space="preserve">モバイルアシスタントアプリをインストールする方法</sys:String>
+	<sys:String x:Key="K1052"  xml:space="preserve">方法1</sys:String>
+	<sys:String x:Key="K1053"  xml:space="preserve">方法2</sys:String>
+	<sys:String x:Key="K1054"  xml:space="preserve">1. Mobile Assistantアプリをデバイスにダウンロードします</sys:String>
+	<sys:String x:Key="K1055"  xml:space="preserve">2.デバイスにLMSA.APKを実行します。</sys:String>
+	<sys:String x:Key="K1056"  xml:space="preserve">3.インストールが完了したら、[OK]をクリックして続行します。</sys:String>
+	<sys:String x:Key="K1057"  xml:space="preserve">1.装置をUSBケーブルでPCに接続します。</sys:String>
+	<sys:String x:Key="K1058"  xml:space="preserve">2.デバイスでUSBデバッグを有効にします。</sys:String>
+	<sys:String x:Key="K1059"  xml:space="preserve">3. Software Fixを自動的にデバイスにインストールしてアクティブに接続します。</sys:String>
+	<sys:String x:Key="K1060"  xml:space="preserve">USBデバッグをオンにするには？</sys:String>
+	<sys:String x:Key="K1061"  xml:space="preserve">新しいデバイス接続が検出され、ミラーに準備します。</sys:String>
+	<sys:String x:Key="K1062"  xml:space="preserve">モバイルホットスポットをオンにする方法</sys:String>
+	<sys:String x:Key="K1063"  xml:space="preserve">まず、デバイスのホットスポットをオンにします。</sys:String>
+	<sys:String x:Key="K1064"  xml:space="preserve">次に、ホットスポット名とパスワードを設定します。</sys:String>
+	<sys:String x:Key="K1065"  xml:space="preserve">最後に、このホットスポットをPCに接続します。</sys:String>
+	<sys:String x:Key="K1066"  xml:space="preserve">USBデバッグをオンにする方法</sys:String>
+	<sys:String x:Key="K1067"  xml:space="preserve">QRコードを接続するようにスキャンしたくない場合は、直接IPをMAに入力できます。あなたのIPアドレスです</sys:String>
+	<sys:String x:Key="K1068"  xml:space="preserve">モバイルホットスポットをオンにするには？</sys:String>
+	<sys:String x:Key="K1069"  xml:space="preserve">ファームウェアのマッチングを待つ新しいデバイス接続が検出されました...</sys:String>
+	<sys:String x:Key="K1070"  xml:space="preserve">接続しているデバイスのモデル名は、入力されたIMEIと一致しません。あなたのデバイスは{0}です。接続されているデバイスを使用して、ファームウェアの救助を再試行しますか？</sys:String>
+	<sys:String x:Key="K1071"  xml:space="preserve">スクリーンミラーには、デバイスとPCが同じネットワークセグメントにあります。デバイスをPCで同じWiFiに接続してからもう一度やり直してください。</sys:String>
+	<sys:String x:Key="K1072"  xml:space="preserve">あなたはアクセスできます</sys:String>
+	<sys:String x:Key="K1073"  xml:space="preserve">オンラインフォーラム</sys:String>
+	<sys:String x:Key="K1074"  xml:space="preserve">同様の問題に遭遇した場合は、他のユーザーに尋ねます。</sys:String>
+	<sys:String x:Key="K1075"  xml:space="preserve">前の操作が正しくなく、デバイスは接続されていませんでした。以下の手順に従って再操作できます。&#x0a;&#x0a;1.デバイスの電源を切ります。&#x0a;&#x0a;2.デバイスの電源を入れます。&#x0a;&#x0a;3.デバイスの電源が切れてPCに接続されていないことを確認します。&#x0a;&#x0a;4. VOUS &quot;+&quot;ボタンを押して、USBを介してPCでデバイスを同時に押します。&#x0a;&#x0a;5.進行状況が開始された後にボリュームキーをリリースします。</sys:String>
+	<sys:String x:Key="K1076"  xml:space="preserve">USBケーブルを取り外すことができます。</sys:String>
+	<sys:String x:Key="K1077"  xml:space="preserve">Software Fixはデバイスのヘルプを介して接続されていることを検出しました。続行するには切断してください。</sys:String>
+	<sys:String x:Key="K1078"  xml:space="preserve">Android 10以上</sys:String>
+	<sys:String x:Key="K1079"  xml:space="preserve">を選択</sys:String>
+	<sys:String x:Key="K1080"  xml:space="preserve">Android版</sys:String>
+	<sys:String x:Key="K1081"  xml:space="preserve">あなたのデバイスのうち、チュートリアルステップに従ってください。</sys:String>
+	<sys:String x:Key="K1082"  xml:space="preserve">Android版の検索方法</sys:String>
+	<sys:String x:Key="K1083"  xml:space="preserve">&#x0a;お使いの携帯電話では、「設定」 - >「電話情報」画面を開きます。</sys:String>
+	<sys:String x:Key="K1084"  xml:space="preserve">ステップ1：&#x0a;お使いの携帯電話では、「設定」 - >「電話情報」画面を開きます。開いたら、下の[次の]ボタンをクリックします。</sys:String>
+	<sys:String x:Key="K1085"  xml:space="preserve">お使いの携帯電話で、「設定」  -> 「システム」*  ->「電話情報」画面を開きます。&#x0a;（* Android 8.0以降）</sys:String>
+	<sys:String x:Key="K1086"  xml:space="preserve">タブレットで、「設定」 - >「システム*」 - >「タブレット情報」画面を開きます。&#x0a;（* Android 8.0以降）</sys:String>
+	<sys:String x:Key="K1087"  xml:space="preserve">タブレットで、「設定」 - >「システム」*  - >「タブレット情報」を開きます。（* Android 8.0以降）</sys:String>
+	<sys:String x:Key="K1088"  xml:space="preserve">（設定 - > システム -> タブレット情報 → ビルド番号）&#x0a;タブレットの現在のビルドバージョンフォーマットのようなものです。</sys:String>
+	<sys:String x:Key="K1089"  xml:space="preserve">タブレットの現在のビルドバージョンフォーマットのようなものです。</sys:String>
+	<sys:String x:Key="K1090"  xml:space="preserve">その他の例外</sys:String>
+	<sys:String x:Key="K1091"  xml:space="preserve">Android 7.0以前</sys:String>
+	<sys:String x:Key="K1092"  xml:space="preserve">デバイスの電源を切ってから電源を入れてもう一度やり直してください。それでもうまくいかない場合は、Software Fixはお客様センターに手助けをすることをお勧めします。</sys:String>
+	<sys:String x:Key="K1093"  xml:space="preserve">モデル名が欠落しました</sys:String>
+	<sys:String x:Key="K1094"  xml:space="preserve">Software Fixは、デバイスレスキュー機能を使用するために、いくつかのデバイスドライバをPCにインストールします。次の手順に従ってください。</sys:String>
+	<sys:String x:Key="K1095"  xml:space="preserve">削除終了、{0} 成功した、{1} が失敗しました。</sys:String>
+	<sys:String x:Key="K1096"  xml:space="preserve">{0} 許可が必要です。電話で許可して「続行」をクリックしてください。</sys:String>
+	<sys:String x:Key="K1097"  xml:space="preserve">1. [設定]に移動し、上部の検索ボックスで[ビルド]をタップし、検索結果リストで[ビルド番号]を選択します。</sys:String>
+	<sys:String x:Key="K1098"  xml:space="preserve">2.「ビルド番号」を7回タップします。</sys:String>
+	<sys:String x:Key="K1099"  xml:space="preserve">3. 「設定」を終了してから再度開きます。上部の検索ボックスに「USB」と入力し、検索結果から「USBデバッグ」を選択して、次のページで「開発者向けオプション」と「USBデバッグ」を有効にします。</sys:String>
+	<sys:String x:Key="K1100"  xml:space="preserve">1. [設定]に移動し、上部の検索ボックスで[情報]をタップし、検索結果リストで[デバイス情報]を選択します。</sys:String>
+	<sys:String x:Key="K1101"  xml:space="preserve">2.「Legion OS」を7回見つけてタップします。</sys:String>
+	<sys:String x:Key="K1102"  xml:space="preserve">1. [設定]に移動し、上部の検索ボックスで[情報]をタップし、検索結果リストで[タブレット情報]を選択します。</sys:String>
+	<sys:String x:Key="K1103"  xml:space="preserve">2.「ビルド番号」または「ソフトウェアバージョン」を探して7回タップしてください。</sys:String>
+	<sys:String x:Key="K1104"  xml:space="preserve">このページで「ビルド番号」が見つからない場合は、「Androidバージョン」をタップすると、次のページで「ビルド番号」を見つけられることがあります。</sys:String>
+	<sys:String x:Key="K1105"  xml:space="preserve">デバイスシステムの対応する言語で検索してください。</sys:String>
+	<sys:String x:Key="K1106"  xml:space="preserve">中国本土で販売されているタブレットは現在サポートされていません。強制救助これらの装置は危険になります。</sys:String>
+	<sys:String x:Key="K1107"  xml:space="preserve">3. [上の検索]ボックスの[設定]に進み、[USB]を[USB]をタップし、[検索結果]リストで[USB デバッグ]を選択します。次のページの「開発者向けオプション」と「USB デバッグ」。</sys:String>
+	<sys:String x:Key="K1108"  xml:space="preserve">3. [設定]に移動し、上部の検索ボックスで[USB]をタップし、検索結果リストで[USBデバッグ]を選択します。 次のページのアクティブな「開発者向けオプション」と「USBデバッグ」。</sys:String>
+	<sys:String x:Key="K1109"  xml:space="preserve">写真とビデオの承認</sys:String>
+	<sys:String x:Key="K1110"  xml:space="preserve">{0}を撮ってビデオを録音することを許可しますか？</sys:String>
+	<sys:String x:Key="K1111"  xml:space="preserve">アプリを使っています</sys:String>
+	<sys:String x:Key="K1112"  xml:space="preserve">今回だけ</sys:String>
+	<sys:String x:Key="K1113"  xml:space="preserve">MAアプリがForefrontで実行されていることを確認してください。</sys:String>
+	<sys:String x:Key="K1114"  xml:space="preserve">Lang Timeのためにデバイスからフレームデータを受信できません、ネット接続MyBeが損なわれました！ミラーを終了しますか？</sys:String>
+	<sys:String x:Key="K1115"  xml:space="preserve">レスキューフラッシュは何度も失敗しました、あなたはできる</sys:String>
+	<sys:String x:Key="K1116"  xml:space="preserve">フィードバックを送信してください</sys:String>
+	<sys:String x:Key="K1117"  xml:space="preserve">助けのために私たちに。</sys:String>
+	<sys:String x:Key="K1118"  xml:space="preserve">PN：</sys:String>
+	<sys:String x:Key="K1119"  xml:space="preserve">Software Fixはあなたのデバイスがすでに最新バージョンのファームウェアを持っていることを検出しました。高バージョンの後にリスキューを実行してください。</sys:String>
+	<sys:String x:Key="K1120"  xml:space="preserve">スクリーンミラーデバイス接続が失われました！</sys:String>
+	<sys:String x:Key="K1121"  xml:space="preserve">Software Fix IMEIを通してモデルを見つけるには、ファームウェアと一致するために下のリストからデバイス情報を選択できます。</sys:String>
+	<sys:String x:Key="K1122"  xml:space="preserve">デバイスの船から場所を選択してください</sys:String>
+	<sys:String x:Key="K1123"  xml:space="preserve">次に、適切なファームウェアに一致するために詳細情報を選択してください。</sys:String>
+	<sys:String x:Key="K1124"  xml:space="preserve">モデル名を選択または入力する</sys:String>
+	<sys:String x:Key="K1125"  xml:space="preserve">HWコード：</sys:String>
+	<sys:String x:Key="K1126"  xml:space="preserve">国：</sys:String>
+	<sys:String x:Key="K1127"  xml:space="preserve">SIM：</sys:String>
+	<sys:String x:Key="K1128"  xml:space="preserve">メモリー ：</sys:String>
+	<sys:String x:Key="K1129"  xml:space="preserve">救助の前にあなたのデバイスがオンになることができますか？</sys:String>
+	<sys:String x:Key="K1130"  xml:space="preserve">レスキュー後のあなたのデバイスの電源を入れることができますか？</sys:String>
+	<sys:String x:Key="K1131"  xml:space="preserve">これがチュートリアルです。</sys:String>
+	<sys:String x:Key="K1132"  xml:space="preserve">あなたはもっと救助チュートリアルが必要ですか？</sys:String>
+	<sys:String x:Key="K1133"  xml:space="preserve">ファームウェアを下りましたか？</sys:String>
+	<sys:String x:Key="K1134"  xml:space="preserve">入力IMEI/SNを入力してください</sys:String>
+	<sys:String x:Key="K1135"  xml:space="preserve">マニュアルモデル名を選択します</sys:String>
+	<sys:String x:Key="K1136"  xml:space="preserve">ファストブートモードでデバイスを接続してください</sys:String>
+	<sys:String x:Key="K1137"  xml:space="preserve">USBデバッグモードでデバイスを接続してください</sys:String>
+	<sys:String x:Key="K1138"  xml:space="preserve">ファームウェアのマッチ方法は何ですか？</sys:String>
+	<sys:String x:Key="K1139"  xml:space="preserve">適切なファームウェアに一致させることができますか？</sys:String>
+	<sys:String x:Key="K1140"  xml:space="preserve">あなたのデバイスを正常に救いましたか？</sys:String>
+	<sys:String x:Key="K1141"  xml:space="preserve">パスワードをリセットできます。</sys:String>
+	<sys:String x:Key="K1142"  xml:space="preserve">アカウントとパスワードを覚えていますか？</sys:String>
+	<sys:String x:Key="K1143"  xml:space="preserve">Lenovoアカウントを登録できます。</sys:String>
+	<sys:String x:Key="K1144"  xml:space="preserve">GoogleまたはFBアカウントでログインできます。（マイクロソフトなど）</sys:String>
+	<sys:String x:Key="K1145"  xml:space="preserve">Lenovoアカウントはありますか？</sys:String>
+	<sys:String x:Key="K1146"  xml:space="preserve">ページは空白の/黒い画面を示しています。</sys:String>
+	<sys:String x:Key="K1147"  xml:space="preserve">ページにインターネットなしのページを尋ねられます。</sys:String>
+	<sys:String x:Key="K1148"  xml:space="preserve">ポップアップウィンドウはどのようなものですか？</sys:String>
+	<sys:String x:Key="K1149"  xml:space="preserve">ポップアップログインウィンドウが表示されますか？</sys:String>
+	<sys:String x:Key="K1150"  xml:space="preserve">次の質問は、あなたの問題を理解し、あなたの痛みの点を解決するのに役立ちます。</sys:String>
+	<sys:String x:Key="K1151"  xml:space="preserve">どの機能を使用していますか？</sys:String>
+	<sys:String x:Key="K1152"  xml:space="preserve">選択する必要があります。</sys:String>
+	<sys:String x:Key="K1153"  xml:space="preserve">パスワードをリセットする（lenovo.com）</sys:String>
+	<sys:String x:Key="K1154"  xml:space="preserve">ログインウィンドウの右上の[更新]ボタンをクリックしましたか？</sys:String>
+	<sys:String x:Key="K1155"  xml:space="preserve">Software Fixはデバイスモデルが次のとおりです：</sys:String>
+	<sys:String x:Key="K1156"  xml:space="preserve">お使いのデバイスのシリアル番号（SN）に対応するモデルは、現在 Software Fix のサポート対象外となっております。</sys:String>
+	<sys:String x:Key="K1157"  xml:space="preserve">15桁のIMEIを入力してください</sys:String>
+	<sys:String x:Key="K1158"  xml:space="preserve">おめでとう！</sys:String>
+	<sys:String x:Key="K1159"  xml:space="preserve">お使いのデバイスは Rescue ソフトウェアのアップデートを正常に完了しました</sys:String>
+	<sys:String x:Key="K1160"  xml:space="preserve">この良いニュースを友達と共有してください：</sys:String>
+	<sys:String x:Key="K1161"  xml:space="preserve">レガシーログインはまもなく廃止されます。ここをクリックして、Lenovo IDにサインアップしてログインしてください。</sys:String>
+	<sys:String x:Key="K1163"  xml:space="preserve">救助が開始する前に、Software Fixは適切なファームウェアに一致するようにタブレットSNを要求します。シリアル番号（SNまたはS/N）を入力してください。</sys:String>
+	<sys:String x:Key="K1164"  xml:space="preserve">救助装置が入力されたSN番号と同じであることを確認してください。</sys:String>
+	<sys:String x:Key="K1165"  xml:space="preserve">SNを見つける方法は？</sys:String>
+	<sys:String x:Key="K1166"  xml:space="preserve">シリアル番号を確認するには、次の 5 つの方法を参照してください。</sys:String>
+	<sys:String x:Key="K1167"  xml:space="preserve">タブレットにTF/SIMトレイがある場合。ラベルにSNを見つけることができます</sys:String>
+	<sys:String x:Key="K1168"  xml:space="preserve">タブレットがオンになっている場合。</sys:String>
+	<sys:String x:Key="K1169"  xml:space="preserve">1.移動します</sys:String>
+	<sys:String x:Key="K1170"  xml:space="preserve">2.エントリ</sys:String>
+	<sys:String x:Key="K1171"  xml:space="preserve">3.次の3つのオプションのいずれか</sys:String>
+	<sys:String x:Key="K1172"  xml:space="preserve">4. snを見つけます</sys:String>
+	<sys:String x:Key="K1173"  xml:space="preserve">デバイスパッケージボックスのラベルでSNを見つける</sys:String>
+	<sys:String x:Key="K1174"  xml:space="preserve">デバイス製品ラベルの後ろ</sys:String>
+	<sys:String x:Key="K1181"  xml:space="preserve">SNが見つからない場合は、ここをクリックしてください。</sys:String>
+	<sys:String x:Key="K1182"  xml:space="preserve">8桁のSNを入力してください</sys:String>
+	<sys:String x:Key="K1183"  xml:space="preserve">無効なSN番号</sys:String>
+	<sys:String x:Key="K1184"  xml:space="preserve">SNを入力してください...</sys:String>
+	<sys:String x:Key="K1185"  xml:space="preserve">Software Fixは、ファームウェアを自動マッチングできます。</sys:String>
+	<sys:String x:Key="K1186"  xml:space="preserve">USBデバッグモードをオンにして、タブレットをPCに接続する方法をお見せします。Software Fixは、それがどのモデルであるかを確認できます。</sys:String>
+	<sys:String x:Key="K1187"  xml:space="preserve">あなたのsnは{0}です</sys:String>
+	<sys:String x:Key="K1175"  xml:space="preserve">USBデバッグモードをオンにする方法がわかっている場合は、デバッグモードを介してデバイスを直接接続できます。</sys:String>
+	<sys:String x:Key="K1176"  xml:space="preserve">使用しているデバイスを選択してください。</sys:String>
+	<sys:String x:Key="K1177"  xml:space="preserve">Software Fix アプリケーションを使用して {0} を救出しました! #RescueBySoftwareFix&#x0a;</sys:String>
+	<sys:String x:Key="K1178"  xml:space="preserve">システム処理中はデバイスを操作しないでください</sys:String>
+	<sys:String x:Key="K1188"  xml:space="preserve">アプリサイズ</sys:String>
+	<sys:String x:Key="K1189"  xml:space="preserve">通知センター</sys:String>
+	<sys:String x:Key="K1190"  xml:space="preserve">センターをダウンロードします</sys:String>
+	<sys:String x:Key="K1191"  xml:space="preserve">フラッシュに使用されるリソースのダウンロードまたはダウンロードされたリソースは、ここに表示されます</sys:String>
+	<sys:String x:Key="K1192"  xml:space="preserve">設定</sys:String>
+	<sys:String x:Key="K1193"  xml:space="preserve">ここでは、ユーザーガイドを表示し、クライアントの言語を変更し、Software Fixクライアントを更新できます</sys:String>
+	<sys:String x:Key="K1194"  xml:space="preserve">ユーザー情報</sys:String>
+	<sys:String x:Key="K1195"  xml:space="preserve">登録デバイスはここに表示されます</sys:String>
+	<sys:String x:Key="K1196"  xml:space="preserve">ヘルプ</sys:String>
+	<sys:String x:Key="K1197"  xml:space="preserve">他の助けを得る</sys:String>
+	<sys:String x:Key="K1198"  xml:space="preserve">復元します</sys:String>
+	<sys:String x:Key="K1179"  xml:space="preserve">サーバーエラーが発生しました。しばらく経ってからもう一度お試しください。</sys:String>
+	<sys:String x:Key="K1199"  xml:space="preserve">{0} PCを使用してデバイスを使用してください。{1}デバイスを使用して、再試行してください。</sys:String>
+	<sys:String x:Key="K1200"  xml:space="preserve">切断します</sys:String>
+	<sys:String x:Key="K1201"  xml:space="preserve">電源を切る</sys:String>
+	<sys:String x:Key="K1202"  xml:space="preserve">デバイスが正しく検出されませんでした。</sys:String>
+	<sys:String x:Key="K1203"  xml:space="preserve">フラッシュツールの実行エラー</sys:String>
+	<sys:String x:Key="K1204"  xml:space="preserve">救助プロセスの異常な終了。</sys:String>
+	<sys:String x:Key="K1205"  xml:space="preserve">ファームウェアがデバイスと一致しません。モデル名を再確認して再試行してください。</sys:String>
+	<sys:String x:Key="K1206"  xml:space="preserve">その他の救助エラー。</sys:String>
+	<sys:String x:Key="K1207"  xml:space="preserve">処理中の救助...</sys:String>
+	<sys:String x:Key="K1208"  xml:space="preserve">重要 - プロセスが完了するまで、デバイスが USB ケーブルに接続されたままであることを確認してください。</sys:String>
+	<sys:String x:Key="K1209"  xml:space="preserve">デバイスが電源が切れていることを確認し、PCに切断し、[OK]をクリックして続行します。</sys:String>
+	<sys:String x:Key="K1210"  xml:space="preserve">以下の手順に従ってデバイスを接続します。&#x0a;ステップ 1 - 音量を上げるボタンを押し続けます&#x0a;ステップ 2 - 音量を上げるボタンを押し続け、デバイスを PC に接続します</sys:String>
+	<sys:String x:Key="K1211"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください：&#x0a;ステップ1 - 音量上げボタンと音量下げボタンを押して保持する&#x0a;ステップ2 - 音量上げボタンと音量下げボタンを押し続け、デバイスをPCに接続する</sys:String>
+	<sys:String x:Key="K1212"  xml:space="preserve">以下の手順に従ってデバイスを接続してください：&#x0a;ステップ1 - 電源ボタン、音量上ボタン、音量下ボタンを同時に押し続け、バイブレーション後にすべてのボタンを離してください&#x0a;ステップ2 - USBケーブルでデバイスをPCに接続してください。</sys:String>
+	<sys:String x:Key="K1213"  xml:space="preserve">以下の手順に従ってデバイスを接続します:&#x0a;ステップ 1 - USB ケーブルでデバイスを PC に接続します</sys:String>
+	<sys:String x:Key="K1214"  xml:space="preserve">以下の手順に従ってデバイスを接続します。&#x0a;ステップ 1 - 電源アダプターを取り外します&#x0a;ステップ 2 - 音量を上げるボタンと音量を下げるボタンを同時に押したままにして、アダプターを再接続します&#x0a;ステップ 3 - 両方の音量ボタンを放します&#x0a;ステップ 4 - USB Type-C ケーブルでデバイスを PC に接続します</sys:String>
+	<sys:String x:Key="K1215"  xml:space="preserve">以下の手順に従ってデバイスを接続します:&#x0a;ステップ 1 - デバイスの電源を切ります&#x0a;ステップ 2 - 音量を上げるボタンと音量を下げるボタンを押したままにして、USB ケーブルでデバイスを PC に接続します</sys:String>
+	<sys:String x:Key="K1216"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください:&#x0a;ステップ 1 - デバイスの電源を切ります&#x0a;ステップ 2 - 電源ボタン、音量を上げるボタンと音量を下げるボタンを同時に押し続け、振動したらすべてのボタンを放します &#x0a;ステップ 3 - USB ケーブルでデバイスを PC に接続する</sys:String>
+	<sys:String x:Key="K1217"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください：&#x0a;ステップ1 - デバイスの電源をオフにします&#x0a;ステップ2 - 電源ボタン、音量アップボタン、音量ダウンボタンを同時に押し、しばらく待ってからUSBケーブルを使ってデバイスの左側のType-CポートをPCに接続します</sys:String>
+	<sys:String x:Key="K1218"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください：&#x0a;ステップ1 - デバイスの電源をオフにする&#x0a;ステップ2 - 音量上ボタンを押しながら、デバイスをUSBケーブルでPCに接続する&#x0a;ステップ3 - Lenovoロゴが表示されたら、音量上ボタンを離して、電話で「ダウンロード」を選択します。</sys:String>
+	<sys:String x:Key="K1219"  xml:space="preserve">以下の手順に従ってデバイスを接続します:&#x0a;ステップ 1 - デバイスの電源を切ります&#x0a;ステップ 2 - 音量を上げるボタンを押したまま、同時に USB ケーブルでデバイスを PC に接続します</sys:String>
+	<sys:String x:Key="K1220"  xml:space="preserve">以下の手順に従ってデバイスを接続します。&#x0a;ステップ 1 - デバイスの電源を切ります&#x0a;ステップ 2 - 音量ダウン ボタンを押したまま、同時に USB ケーブルでデバイスを PC に接続します&#x0a;注意 - デバイスが充電モードになった場合は、USB ケーブルを取り外し、30 秒待って上記の手順をやり直してください&#x0a;</sys:String>
+	<sys:String x:Key="K1221"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください：&#x0a;ステップ1 - デバイスの電源を切る&#x0a;ステップ2 - 電源ボタン、音量アップボタン、音量ダウンボタンを同時に押し、USBケーブルでデバイスをPCに接続する</sys:String>
+	<sys:String x:Key="K1222"  xml:space="preserve">以下の手順に従ってデバイスを接続します。&#x0a;ステップ 1 - デバイスの電源を切ります&#x0a;ステップ 2 - USB ケーブルでデバイスを PC に接続します&#x0a;注 - 充電アイコンが表示される場合 デバイス上で、デバイスを再接続してもう一度お試しください</sys:String>
+	<sys:String x:Key="K1223"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください:&#x0a;ステップ 1 - バッテリーを取り外します&#x0a;ステップ 2 - USB ケーブルでデバイスを PC に接続します&#x0a;</sys:String>
+	<sys:String x:Key="K1224"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください:&#x0a;ステップ 1 - デバイスの電源を切ります&#x0a;ステップ 2 - USB ケーブルでデバイスを PC に接続します&#x0a;</sys:String>
+	<sys:String x:Key="K1225"  xml:space="preserve">デバイスが救助プロセスを開始しない場合は、デバイスを再接続して再び救助することができます。&#x0a;ステップ1 - デバイスの電源&#x0a;ステップ2 - ボリュームダウンボタンを押し続け、同時にUSBケーブルを介してデバイスをPCに接続します&#x0a;注 - デバイスが充電モードに入る場合は、USBケーブルを切断して、30秒がステップ上で再Doをやり直すのを待ってください</sys:String>
+	<sys:String x:Key="K1226"  xml:space="preserve">デバイスが救助プロセスを開始しない場合は、デバイスを再接続して再び救助することができます。&#x0a;ステップ1 - デバイスの電源&#x0a;ステップ2 - 電源ボタンを押し続け、ボリュームアップとボリュームダウンボタンを同時に押してから、USBケーブルを介してデバイスをPCに接続します</sys:String>
+	<sys:String x:Key="K1228"  xml:space="preserve">ステップ1 - デバイスをUSBケーブルから切断します。&#x0a;ステップ2 - ボリュームアップキーとパワーキーを同時に押してBoot Mode Selection UIに入ります。このUIが表示されると、2つのキーを離します。&#x0a;ステップ3 - ボリュームアップキーを押してFastboot Modeオプションにスクロールします。&#x0a;ステップ4 - ボリュームダウンキーを押してFastboot Modeに入ることを確認します（バーコードが表示されます）。&#x0a;ステップ5 - 電話をPCにUSBケーブルで接続します。&#x0a;ステップ6 - [OK]ボタンをクリックして続行します。</sys:String>
+	<sys:String x:Key="K1229"  xml:space="preserve">救出成功、デバイスを起動するために以下の手順に従ってください。&#x0a;ステップ1 - 電池を携帯電話に戻し、電源キーを長押ししてデバイスを起動してください。&#x0a;ステップ2 - 起動に数分かかる場合がありますので、お待ちください。</sys:String>
+	<sys:String x:Key="K1230"  xml:space="preserve">ボリュームアップボタンをリリースします</sys:String>
+	<sys:String x:Key="K1231"  xml:space="preserve">ボリュームダウンボタンをリリースします</sys:String>
+	<sys:String x:Key="K1232"  xml:space="preserve">ボリュームアップとボリュームダウンボタンをリリースします</sys:String>
+	<sys:String x:Key="K1233"  xml:space="preserve">電源ボタンをリリース、ボリュームアップ、ボリュームダウンボタン</sys:String>
+	<sys:String x:Key="K1234"  xml:space="preserve">デバイスがプロパリーに接続できます。以下の手順に従って、接続を適切に作成します&#x0a;ステップ1 - デバイスを再起動するためのロングプレス電源キー。デバイスが「Lenovo」のロゴ画面に貼り付けられているか、オートブートされていることがわかります。それは大丈夫です&#x0a;ステップ2 - 次に、電源キーを押してデバイスをオフにします</sys:String>
+	<sys:String x:Key="K1235"  xml:space="preserve">デバイスを救出しようとする試みについては、パワーオフステップに従う必要があります。</sys:String>
+	<sys:String x:Key="K1236"  xml:space="preserve">_#電源オフデバイス：_#&#x0a;&#x0a;_#シナリオ1_#-通常のシステム状態で、__電源__ボタンを押して、システムプロンプトに従って正常にシャットダウンします。&#x0a;&#x0a;_#シナリオ2_#-__シナリオ1__、その他の__デバイスブラックスクリーン、レスキューが失敗しました...__シナリオ、フォースパワーオフデバイスを__実行__する（バッテリーボリューム >30％が推奨）：</sys:String>
+	<sys:String x:Key="K1237"  xml:space="preserve">_#電源_#と_#ボリュームダウンボタン_#を_#12秒_#以上押し続け、デバイスを強制的に強制的に押し出します。</sys:String>
+	<sys:String x:Key="K1238"  xml:space="preserve">userDataの消去に失敗しました。</sys:String>
+	<sys:String x:Key="K1239"  xml:space="preserve">フラッシュブートローダーが失敗しました。</sys:String>
+	<sys:String x:Key="K1240"  xml:space="preserve">アシスタントアプリのインストールに失敗しました。デバイスの空きスペースが不十分です。</sys:String>
+	<sys:String x:Key="K1241"  xml:space="preserve">フラッシュによって引き起こされるデバイスの損傷を避けるために、Software Fixはヘルプのためにカスタマーセンターに行くことを推奨します。</sys:String>
+	<sys:String x:Key="K1242"  xml:space="preserve">あなたが今日救助を使った理由を教えてください：</sys:String>
+	<sys:String x:Key="K1243"  xml:space="preserve">私は自分のデバイスで最新の更新を持っているのが好きです。</sys:String>
+	<sys:String x:Key="K1244"  xml:space="preserve">私のデバイスは満足しておらず、救助がそれを修正するのに役立つことを望んでいます。</sys:String>
+	<sys:String x:Key="K1245"  xml:space="preserve">やや難しい</sys:String>
+	<sys:String x:Key="K1246"  xml:space="preserve">簡単です</sys:String>
+	<sys:String x:Key="K1247"  xml:space="preserve">簡単</sys:String>
+	<sys:String x:Key="K1248"  xml:space="preserve">とても困難でした</sys:String>
+	<sys:String x:Key="K1249"  xml:space="preserve">1.デバイスの救助は成功します&#x0a;2.起動に数分かかります、お待ちください</sys:String>
+	<sys:String x:Key="K1250"  xml:space="preserve">Eメール</sys:String>
+	<sys:String x:Key="K1251"  xml:space="preserve">住所</sys:String>
+	<sys:String x:Key="K1252"  xml:space="preserve">バックアップ リソースを確認してください</sys:String>
+	<sys:String x:Key="K1253"  xml:space="preserve">Rescue 用にデバイスを接続する手順に従ってください。Rescue プロセスを終了しますか、それとも続行しますか?</sys:String>
+	<sys:String x:Key="K1254"  xml:space="preserve">強制終了</sys:String>
+	<sys:String x:Key="K1255"  xml:space="preserve">救助を続ける</sys:String>
+	<sys:String x:Key="K1256"  xml:space="preserve">デバイスで、「デバイス設定」 - > 'Arout'画面を開きます。</sys:String>
+	<sys:String x:Key="K1257"  xml:space="preserve">デバイスを選択します</sys:String>
+	<sys:String x:Key="K1258"  xml:space="preserve">スマートデバイス</sys:String>
+	<sys:String x:Key="K1259"  xml:space="preserve">デバイスパッケージボックスのラベルでモデル名を見つける</sys:String>
+	<sys:String x:Key="K1260"  xml:space="preserve">電話</sys:String>
+	<sys:String x:Key="K1261"  xml:space="preserve">タブレット</sys:String>
+	<sys:String x:Key="K1262"  xml:space="preserve">スマートデバイス</sys:String>
+	<sys:String x:Key="K1264"  xml:space="preserve">ステップ2</sys:String>
+	<sys:String x:Key="K1263"  xml:space="preserve">ステップ1</sys:String>
+	<sys:String x:Key="K1265"  xml:space="preserve">ステップ3</sys:String>
+	<sys:String x:Key="K1266"  xml:space="preserve">パッケージの検索</sys:String>
+	<sys:String x:Key="K1267"  xml:space="preserve">Software Fix は、お使いのデバイスがエンタープライズ デバイスであることを検出しました。デバイスを救出する前に、エンタープライズ管理者に連絡してロックを解除することをお勧めします。</sys:String>
+	<sys:String x:Key="K1268"  xml:space="preserve">バッテリーを取り外します</sys:String>
+	<sys:String x:Key="K1269"  xml:space="preserve">デバイスの接続がタイムアウトしました。接続プロンプトに従って、デバイスを再接続して救助してください。</sys:String>
+	<sys:String x:Key="K1270"  xml:space="preserve">USBケーブルを介してデバイスをPCに接続します</sys:String>
+	<sys:String x:Key="K1271"  xml:space="preserve">Lenovoのロゴが電話に表示されたら、ボリュームアップボタンをリリースし、電話でダウンロードを選択します</sys:String>
+	<sys:String x:Key="K1272"  xml:space="preserve">音量を上げるボタンと音量を下げるボタンを同時に押し続けます。&#x0a;次に、USBケーブルを介してデバイスをPCに接続します</sys:String>
+	<sys:String x:Key="K1273"  xml:space="preserve">ボリュームアップボタンを押し続け、同時にUSBケーブルを介してデバイスをPCに接続します</sys:String>
+	<sys:String x:Key="K1274"  xml:space="preserve">電源ボタンを押し続け、ボリュームアップとボリュームダウンボタンを同時に押し、振動後にすべてのボタンを解放します</sys:String>
+	<sys:String x:Key="K1275"  xml:space="preserve">電源ボタンを押し続け、ボリュームアップとボリュームダウンボタンを同時に押します&#x0a;次に、USBケーブルを介してデバイスの左側からPCにタイプCポートを接続します</sys:String>
+	<sys:String x:Key="K1276"  xml:space="preserve">音量ダウンボタンを押しながら、USBケーブルでデバイスをPCに接続します。</sys:String>
+	<sys:String x:Key="K1277"  xml:space="preserve">電源ボタンを押し続け、ボリュームアップとボリュームダウンボタンを同時に押します&#x0a;次に、USBケーブルを介してデバイスをPCに接続します</sys:String>
+	<sys:String x:Key="K1278"  xml:space="preserve">ボリュームアップボタンを押し続けます&#x0a;次に、USBケーブルを介してデバイスをPCに接続します</sys:String>
+	<sys:String x:Key="K1279"  xml:space="preserve">注 - デバイスが充電モードになった場合は、USB ケーブルを取り外し、30 秒待ってから上記の手順をやり直してください</sys:String>
+	<sys:String x:Key="K1280"  xml:space="preserve">注 - デバイスに充電アイコンが表示されている場合は、デバイスを再接続してもう一度お試しください</sys:String>
+	<sys:String x:Key="K1281"  xml:space="preserve">電源オフの状態で、コンピュート パックのボリューム アップ キーを押します。</sys:String>
+	<sys:String x:Key="K1282"  xml:space="preserve">音量アップ キーを押し続け、タイプ C ケーブルをコンピュート パック (黒い USB ポート) に挿入します。</sys:String>
+	<sys:String x:Key="K1283"  xml:space="preserve">最初にデバイスからアダプターを取り外してから、音量を上げるキーを押します</sys:String>
+	<sys:String x:Key="K1284"  xml:space="preserve">ボリュームアップキーとプラグインアダプターを同時に押し続けます</sys:String>
+	<sys:String x:Key="K1285"  xml:space="preserve">デバイスが FASTBOOTモードで起動したら、キーを押して放し、デバイスを USB ケーブルで PC に接続します</sys:String>
+	<sys:String x:Key="K1286"  xml:space="preserve">フレーム装置からアダプターを取り外します</sys:String>
+	<sys:String x:Key="K1287"  xml:space="preserve">デバイスとPCをUSBケーブルで接続する。</sys:String>
+	<sys:String x:Key="K1288"  xml:space="preserve">電源アダプタをデバイスに接続します</sys:String>
+	<sys:String x:Key="K1289"  xml:space="preserve">Rescue を開始する前に、デバイスに必要なソフトウェアを確認することが重要です。 シリアル番号 (SN または S/N) を入力してください:</sys:String>
+	<sys:String x:Key="K1290"  xml:space="preserve">スマートデバイスの救助</sys:String>
+	<sys:String x:Key="K1291"  xml:space="preserve">スマートデバイスの適切なファームウェアが一致したら、[ダウンロード]をクリックしてターゲットファームウェアファイルをダウンロードします。</sys:String>
+	<sys:String x:Key="K1292"  xml:space="preserve">スマートデバイスのSN番号を入力し、[拡大鏡]ボタンをクリックして、適切なファームウェアに一致します。&#x0a;スマートデバイスのSN番号がわからない場合は、「SNの検索方法」リンクをクリックします。</sys:String>
+	<sys:String x:Key="K1293"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください：&#x0a;ステップ1- 電源オフ状態で、コンピュータパックの音量アップキーを押します。&#x0a;ステップ2- 音量アップキーを押したまま、タイプCケーブルをコンピュータパックの黒いUSBポートに挿入します。</sys:String>
+	<sys:String x:Key="K1294"  xml:space="preserve">以下の手順に従ってデバイスを接続してください。&#x0a;ステップ1 - デバイスからアダプターを取り外し、ボリュームアップキーを押します。&#x0a;ステップ2 - ボリュームアップキーを押し続け、同時にアダプターを挿します。&#x0a;ステップ3 - デバイスがFASTBOOTモードに起動したら、キーの押しを解除して、USBケーブルでPCにデバイスを接続します。&#x0a;このモデルを初めて救出する場合は、指示書をダウンロードし、ドライバーを構成する手順に従ってください。</sys:String>
+	<sys:String x:Key="K1295"  xml:space="preserve">デバイスを接続するために、以下の手順に従ってください：&#x0a;ステップ1-フレームデバイスからアダプタを取り外します。&#x0a;ステップ2-USBデータケーブルを使用してデバイスをPCに接続します。&#x0a;ステップ3-パワーアダプタをデバイスに接続します。</sys:String>
+	<sys:String x:Key="K1296"  xml:space="preserve">通知はありません。</sys:String>
+	<sys:String x:Key="K1297"  xml:space="preserve">Software Fix はレスキュー用の C++ ライブラリをインストールします。 確認してOKボタンをクリックしてください。</sys:String>
+	<sys:String x:Key="K1298"  xml:space="preserve">VC++ running time チェック</sys:String>
+	<sys:String x:Key="K1299"  xml:space="preserve">以下の手順に従ってデバイスを接続してください：&#x0a;ステップ1 - デバイスを電源オフにします。&#x0a;ステップ2 - SIM針でForceDownloadモードホールを押し続けます。&#x0a;ステップ3 - USBケーブルでデバイスをPCに接続します。</sys:String>
+	<sys:String x:Key="K1300"  xml:space="preserve">SIM針を離す</sys:String>
+	<sys:String x:Key="K1310"  xml:space="preserve">救助を完了したので、PCから大量のダウンロードされたファームウェアファイルを削除しますか？</sys:String>
+	<sys:String x:Key="K1311"  xml:space="preserve">二度と聞かないで</sys:String>
+	<sys:String x:Key="K1312"  xml:space="preserve">まったく満足していません</sys:String>
+	<sys:String x:Key="K1313"  xml:space="preserve">非常に満足</sys:String>
+	<sys:String x:Key="K1301"  xml:space="preserve">へようこそSoftware Fix</sys:String>
+	<sys:String x:Key="K1302"  xml:space="preserve">携帯電話のソフトウェアを更新する簡単な方法</sys:String>
+	<sys:String x:Key="K1303"  xml:space="preserve">レスキューを使用する理由はデバイスに役立ちます。</sys:String>
+	<sys:String x:Key="K1304"  xml:space="preserve">デバイスでソフトウェアの完全な更新を実行することができるさまざまな理由があります。</sys:String>
+	<sys:String x:Key="K1305"  xml:space="preserve"> -    現在のソフトウェアが必要です</sys:String>
+	<sys:String x:Key="K1306"  xml:space="preserve"> -    最近のソフトウェアアップデートを受信した後、デバイスに問題があります</sys:String>
+	<sys:String x:Key="K1307"  xml:space="preserve"> -    デバイスがゆっくりと実行されている、電源を入れられない、または常に電源を切っている</sys:String>
+	<sys:String x:Key="K1308"  xml:space="preserve"> -    サードパーティのアプリが気付いていない問題を引き起こしている可能性があります</sys:String>
+	<sys:String x:Key="K1314"  xml:space="preserve"> -    完全なソフトウェアアップデートを実行すると、すべてのコンテンツがクリアされ、デバイスを元の設定に戻します</sys:String>
+	<sys:String x:Key="K1315"  xml:space="preserve">-    ストレージスペースを低く走るデバイスは、パフォーマンスの問題を示す場合があります</sys:String>
+	<sys:String x:Key="K1316"  xml:space="preserve">USBケーブルをPCに接続します</sys:String>
+	<sys:String x:Key="K1317"  xml:space="preserve">ボリュームアップボタンを押し続け、デバイスを同時にUSBケーブルに接続します</sys:String>
+	<sys:String x:Key="K1318"  xml:space="preserve">電源ボタンを押し続け、ボリュームアップとボリュームダウンボタンを同時に押します&#x0a;次に、デバイスをUSBケーブルに接続します</sys:String>
+	<sys:String x:Key="K1319"  xml:space="preserve">ボリュームダウンボタンを押し続けて、デバイスをUSBケーブルに同時に接続します。</sys:String>
+	<sys:String x:Key="K1320"  xml:space="preserve">電源ボタンを押し続け、ボリュームアップとボリュームダウンボタンを同時に押します&#x0a;次に、デバイスの左側からUSBケーブルにタイプCポートを接続します</sys:String>
+	<sys:String x:Key="K1321"  xml:space="preserve">ボリュームを上げ、ボリュームダウンボタンを押し続けます&#x0a;次に、デバイスをUSBケーブルに接続します</sys:String>
+	<sys:String x:Key="K1322"  xml:space="preserve">マーケティング/モデルを見つけて、それに応じて以下にあるラベルのSNを探しています。</sys:String>
+	<sys:String x:Key="K1323"  xml:space="preserve">販売</sys:String>
+	<sys:String x:Key="K1324"  xml:space="preserve">ストラップの内側</sys:String>
+	<sys:String x:Key="K1325"  xml:space="preserve">デバイスの裏側</sys:String>
+	<sys:String x:Key="K1326"  xml:space="preserve">デバイスのサイドバック側</sys:String>
+	<sys:String x:Key="K1327"  xml:space="preserve">デバイスの底面</sys:String>
+	<sys:String x:Key="K1328"  xml:space="preserve">背面の左下隅</sys:String>
+	<sys:String x:Key="K1329"  xml:space="preserve">バックアップ/復元</sys:String>
+	<sys:String x:Key="K1330"  xml:space="preserve">ファイルエラー、削除して再試行してください。</sys:String>
+	<sys:String x:Key="K1331"  xml:space="preserve">WIFI 接続が安定していません。WIFI 接続を介したバックアップの復元に失敗した可能性があります。 バックアップと復元を行うには、デバイスを USB ケーブルで接続することをお勧めします。</sys:String>
+	<sys:String x:Key="K1332"  xml:space="preserve">Software Fixは、デバイスのIMEI/SNを介してファームウェアをマッチングすることができます</sys:String>
+	<sys:String x:Key="K1333"  xml:space="preserve">の認証に失敗しました。救助を試み、救助中もネットワーク接続を維持することができます。</sys:String>
+	<sys:String x:Key="K1334"  xml:space="preserve">アドレス追加</sys:String>
+	<sys:String x:Key="K1335"  xml:space="preserve"> Eメールの追加</sys:String>
+	<sys:String x:Key="K1336"  xml:space="preserve">はUSB接続</sys:String>
+	<sys:String x:Key="K1337"  xml:space="preserve">バックアップとリカバリ</sys:String>
+	<sys:String x:Key="K1338"  xml:space="preserve">デバイスとPC間のデータ</sys:String>
+	<sys:String x:Key="K1339"  xml:space="preserve">デバイスが</sys:String>
+	<sys:String x:Key="K1340"  xml:space="preserve">, ここをクリックして操作チュートリアルをご覧ください。</sys:String>
+	<sys:String x:Key="K1341"  xml:space="preserve">手順3. 電源ボタンと音量低下ボタンを同時に押します。&#x0a;手順4. 振動したら、電源ボタンと音量低下ボタンを離すと、デバイスに高速モードが表示されます。次に、USBケーブルをデバイスに接続します。</sys:String>
+	<sys:String x:Key="K1342"  xml:space="preserve">電話</sys:String>
+	<sys:String x:Key="K1343"  xml:space="preserve">以下の手順に従ってデバイスを接続してください：&#x0a;ステップ1 - リカバリボタンを押し、デバイスに電源アダプターを接続し、リカバリボタンを押し続けます。&#x0a;ステップ2 - 10秒後、リカバリボタンを離します。&#x0a;ステップ3 - USBタイプCケーブルでデバイスをPCに接続します。</sys:String>
+	<sys:String x:Key="K1344"  xml:space="preserve">救出に成功しました。USB Type C ケーブルを取り外してください。</sys:String>
+	<sys:String x:Key="K1345"  xml:space="preserve">電源アダプターを抜いてください。</sys:String>
+	<sys:String x:Key="K1346"  xml:space="preserve">連絡グループはありません！</sys:String>
+	<sys:String x:Key="K1347"  xml:space="preserve">PCのディスクがいっぱいです！</sys:String>
+	<sys:String x:Key="K1348"  xml:space="preserve">Flashに失敗しました。接続プロンプトに従ってデバイスを再接続してください。</sys:String>
+	<sys:String x:Key="K1349"  xml:space="preserve">Software Fixはデバイスがフラッシュロックされていることを検出しました。フラッシュによって引き起こされるデバイスの損傷を避けるために、Software Fixはヘルプのためにカスタマーセンターに行くことを推奨します。</sys:String>
+	<sys:String x:Key="K1350"  xml:space="preserve">ドライバーのインストールヘルプ</sys:String>
+	<sys:String x:Key="K1351"  xml:space="preserve">申し訳ございませんが、現時点では、お使いのデバイスで利用できるファームウェアはありません。</sys:String>
+	<sys:String x:Key="K1352"  xml:space="preserve">クリップボードの内容を入力してください</sys:String>
+	<sys:String x:Key="K1353"  xml:space="preserve">タイムインターセプト</sys:String>
+	<sys:String x:Key="K1354"  xml:space="preserve">始まる時間</sys:String>
+	<sys:String x:Key="K1355"  xml:space="preserve">終了時間</sys:String>
+	<sys:String x:Key="K1356"  xml:space="preserve">Legion phone</sys:String>
+	<sys:String x:Key="K1357"  xml:space="preserve">これがあなたのデバイスであることを確認してください:</sys:String>
+	<sys:String x:Key="K1358"  xml:space="preserve">警告: お使いのデバイスは保証対象外です。</sys:String>
+	<sys:String x:Key="K1360"  xml:space="preserve">残り 3 か月</sys:String>
+	<sys:String x:Key="K1361"  xml:space="preserve">残り0ヶ月</sys:String>
+	<sys:String x:Key="K1362"  xml:space="preserve">Motorola は新しいデバイスへのアップグレードを推奨しています</sys:String>
+	<sys:String x:Key="K1363"  xml:space="preserve">Motorola はサービス プランの延長を推奨しています</sys:String>
+	<sys:String x:Key="K1364"  xml:space="preserve">保証期間内</sys:String>
+	<sys:String x:Key="K1365"  xml:space="preserve">保証対象外</sys:String>
+	<sys:String x:Key="K1366"  xml:space="preserve">に保証 &amp; サービス</sys:String>
+	<sys:String x:Key="K1367"  xml:space="preserve">保証ステータス</sys:String>
+	<sys:String x:Key="K1368"  xml:space="preserve">現在のサービス &amp;  サポートステータス</sys:String>
+	<sys:String x:Key="K1369"  xml:space="preserve">今</sys:String>
+	<sys:String x:Key="K1370"  xml:space="preserve">有効期限</sys:String>
+	<sys:String x:Key="K1371"  xml:space="preserve">発送先:アメリカ合衆国</sys:String>
+	<sys:String x:Key="K1373"  xml:space="preserve">経由で接続します</sys:String>
+	<sys:String x:Key="K1374"  xml:space="preserve">USB</sys:String>
+	<sys:String x:Key="K1375"  xml:space="preserve">接続中は、デバイスに移動し、デバイス ヘルプ アプリの「権限が必要です」プロンプトを許可してください。 または、初めての場合は、Motorola プライバシー ポリシーに同意してから、デバイスを再接続してください。</sys:String>
+	<sys:String x:Key="K1376"  xml:space="preserve">ショット</sys:String>
+	<sys:String x:Key="K1377"  xml:space="preserve">ストレージ:</sys:String>
+	<sys:String x:Key="K1378"  xml:space="preserve">外部ストレージ:</sys:String>
+	<sys:String x:Key="K1379"  xml:space="preserve">アシスタント アプリのアンインストールに失敗しました</sys:String>
+	<sys:String x:Key="K1380"  xml:space="preserve">アシスタント アプリのインストールに失敗しました</sys:String>
+	<sys:String x:Key="K1381"  xml:space="preserve">デバイスデータのロードに失敗しました</sys:String>
+	<sys:String x:Key="K1382"  xml:space="preserve">始める</sys:String>
+	<sys:String x:Key="K1383"  xml:space="preserve">フリースペース</sys:String>
+	<sys:String x:Key="K1384"  xml:space="preserve">使用済みスペース</sys:String>
+	<sys:String x:Key="K1385"  xml:space="preserve">接続済み</sys:String>
+	<sys:String x:Key="K1386"  xml:space="preserve">あなたの</sys:String>
+	<sys:String x:Key="K1387"  xml:space="preserve">クローン作成が完了しました！</sys:String>
+	<sys:String x:Key="K1388"  xml:space="preserve">クーポンコード</sys:String>
+	<sys:String x:Key="K1389"  xml:space="preserve">私たちは Motorola の顧客としての忠誠心を大切にしています。</sys:String>
+	<sys:String x:Key="K1390"  xml:space="preserve">感謝の気持ちを込めて、チェックアウト時にこのクーポン コードを使用して、新しいスマートフォンを {0} Moto Care の保証購入から除外されます。</sys:String>
+	<sys:String x:Key="K1391"  xml:space="preserve">追加</sys:String>
+	<sys:String x:Key="K1392"  xml:space="preserve">ディスカウントコード：</sys:String>
+	<sys:String x:Key="K1393"  xml:space="preserve">このクーポンは他のクーポンと併用することはできません。</sys:String>
+	<sys:String x:Key="K1394"  xml:space="preserve">今すぐ購入</sys:String>
+	<sys:String x:Key="K1395"  xml:space="preserve">パスワードを入力してください</sys:String>
+	<sys:String x:Key="K1396"  xml:space="preserve">確認用のパスワードを入力してください</sys:String>
+	<sys:String x:Key="K1397"  xml:space="preserve">それはあなたの{0}にバックアップ中です、お待ちください...</sys:String>
+	<sys:String x:Key="K1398"  xml:space="preserve">月</sys:String>
+	<sys:String x:Key="K1399"  xml:space="preserve">{0} のバックアップが完了しました。</sys:String>
+	<sys:String x:Key="K1401"  xml:space="preserve">クーポンは、Motorola.com が当暦年の携帯電話に対してのみ提供している割引に追加されます。</sys:String>
+	<sys:String x:Key="K1402"  xml:space="preserve">復元したい項目を選択します</sys:String>
+	<sys:String x:Key="K1403"  xml:space="preserve">選択する</sys:String>
+	<sys:String x:Key="K1404"  xml:space="preserve">プロジェクト</sys:String>
+	<sys:String x:Key="K1405"  xml:space="preserve">それはあなたの{0}に復元中です、お待ちください...</sys:String>
+	<sys:String x:Key="K1406"  xml:space="preserve">データの復元には時間がかかります。 しばらくお待ちください…</sys:String>
+	<sys:String x:Key="K1407"  xml:space="preserve">{0} の復元が完了しました。</sys:String>
+	<sys:String x:Key="K1408"  xml:space="preserve">ファイルが無効です</sys:String>
+	<sys:String x:Key="K1409"  xml:space="preserve">見つかりません</sys:String>
+	<sys:String x:Key="K1410"  xml:space="preserve">Wi-Fi</sys:String>
+	<sys:String x:Key="K1411"  xml:space="preserve">2. デバイス ヘルプ アプリがデバイスにインストールされている場合は、それを使用して次の QR コードをスキャンして接続します。</sys:String>
+	<sys:String x:Key="K1412"  xml:space="preserve">3. デバイス ヘルプ アプリがインストールされていない場合は、次のサイトからモバイル アシスタント アプリをダウンロードしてインストールします。</sys:String>
+	<sys:String x:Key="K1413"  xml:space="preserve">内容を入力してください</sys:String>
+	<sys:String x:Key="K1414"  xml:space="preserve">プレビュー効果</sys:String>
+	<sys:String x:Key="K1415"  xml:space="preserve">MP3オーディオファイルを追加</sys:String>
+	<sys:String x:Key="K1417"  xml:space="preserve">スイッチングデバイスタイプ:</sys:String>
+	<sys:String x:Key="K1418"  xml:space="preserve">ファイルの点滅が異常です。 デバイスの損傷を避けるため、[OK] をクリックして点滅しているファイルを削除し、再ダウンロードしてください。</sys:String>
+	<sys:String x:Key="K1419"  xml:space="preserve">フィードバックをお送りください。</sys:String>
+	<sys:String x:Key="K1420"  xml:space="preserve">1. 携帯電話でデバイス ヘルプ アプリを検索します。</sys:String>
+	<sys:String x:Key="K1421"  xml:space="preserve">2. Device Help アプリ内で、画面上部のハチドリのアイコンをタップし、「スキャンして接続」オプションを選択します。</sys:String>
+	<sys:String x:Key="K1422"  xml:space="preserve">3. デバイス ヘルプ アプリを使用して以下のコードをスキャンし、WiFi を使用して接続します。</sys:String>
+	<sys:String x:Key="K1423"  xml:space="preserve">4. お使いの携帯電話にデバイスヘルプアプリがプリインストールされていない場合は、以下のボタンをクリックしてください</sys:String>
+	<sys:String x:Key="K1424"  xml:space="preserve">を表示してQRコードをスキャンし、モバイルアシスタントアプリをダウンロードします。アプリを手動でインストールしたら、アプリを起動し、ステップ3でQRコードをスキャンしてください。</sys:String>
+	<sys:String x:Key="K1425"  xml:space="preserve">ネットワークが安定しているかどうかを確認し、再度レスキューを試みてください。</sys:String>
+	<sys:String x:Key="K1426"  xml:space="preserve">認証情報</sys:String>
+	<sys:String x:Key="K1427"  xml:space="preserve">幅</sys:String>
+	<sys:String x:Key="K1428"  xml:space="preserve">高い</sys:String>
+	<sys:String x:Key="K1429"  xml:space="preserve">詳細</sys:String>
+	<sys:String x:Key="K1430"  xml:space="preserve">Software Fix一致ファームウェアの選択</sys:String>
+	<sys:String x:Key="K1431"  xml:space="preserve">デバイス情報</sys:String>
+	<sys:String x:Key="K1432"  xml:space="preserve">デバイスで録画が完了したら、「リフレッシュ」ボタンを選択してここに録画ファイルを表示します。</sys:String>
+	<sys:String x:Key="K1433"  xml:space="preserve">USBケーブルでデバイスを接続してください</sys:String>
+	<sys:String x:Key="K1434"  xml:space="preserve">異なるデバイスを選択してください</sys:String>
+	<sys:String x:Key="K1435"  xml:space="preserve">メロディー</sys:String>
+	<sys:String x:Key="K1436"  xml:space="preserve">連絡先の詳細</sys:String>
+	<sys:String x:Key="K1437"  xml:space="preserve">設定を変更し、録音を開始するには、デバイスを確認してください。</sys:String>
+	<sys:String x:Key="K1438"  xml:space="preserve">接続中...</sys:String>
+	<sys:String x:Key="K1439"  xml:space="preserve">Wi-Fi 接続が不安定です。USB 接続に変更するか続行してください。</sys:String>
+	<sys:String x:Key="K1440"  xml:space="preserve">Wi-Fi接続が不安定なので、USB接続に切り替えることをお勧めします。</sys:String>
+	<sys:String x:Key="K1441"  xml:space="preserve">デバイスの電源をオフにする</sys:String>
+	<sys:String x:Key="K1442"  xml:space="preserve">Lenovo はサービスプランの延長をお勧めします</sys:String>
+	<sys:String x:Key="K1443"  xml:space="preserve">Lenovo は新しいデバイスへのアップグレードを推奨します</sys:String>
+	<sys:String x:Key="K1444"  xml:space="preserve">拒否</sys:String>
+	<sys:String x:Key="K1445"  xml:space="preserve">同意する</sys:String>
+	<sys:String x:Key="K1446"  xml:space="preserve">モバイル アシスタント アプリの通知をインストールする</sys:String>
+	<sys:String x:Key="K1447"  xml:space="preserve">Software Fix がデバイスをより適切に管理できるように、My Device および BackupとRestore モジュールにアクセスするには MA アプリをインストールする必要があります。</sys:String>
+	<sys:String x:Key="K1448"  xml:space="preserve">出口</sys:String>
+	<sys:String x:Key="K1449"  xml:space="preserve">接続プロセスが終了しました</sys:String>
+	<sys:String x:Key="K1450"  xml:space="preserve">モバイル アシスタント アプリのインストールを拒否したため、[マイ デバイス]、[バックアップと復元] などにアクセスできません。</sys:String>
+	<sys:String x:Key="K1451"  xml:space="preserve">デバイスは FASTBOOT モードで接続されているため、切り替えることはできません。</sys:String>
+	<sys:String x:Key="K1452"  xml:space="preserve">フラッシュに失敗しました。 USBケーブルまたはUSBポートが緩んでいます。 しっかりと差し込んでから、もう一度お試しください。&#x0a; (USBポートハブの使用はお勧めできません。)</sys:String>
+	<sys:String x:Key="K1453"  xml:space="preserve">Moto E13 (XT2345), Moto G14 (XT2341), Moto G04 (XT2421), Moto G35 5G (XT2433)</sys:String>
+	<sys:String x:Key="K1454"  xml:space="preserve">fastboot デバイスが見つかりません。デバイスのドライバーが正しくインストールされていない可能性があります。</sys:String>
+	<sys:String x:Key="K1455"  xml:space="preserve">デバイスを PC と同じ WiFi に接続します。</sys:String>
+	<sys:String x:Key="K1456"  xml:space="preserve">携帯電話でデバイス ヘルプ アプリを検索します。</sys:String>
+	<sys:String x:Key="K1457"  xml:space="preserve">Device Help アプリ内で、画面上部のハチドリのアイコンをタップし、「スキャンして接続」オプションを選択します。</sys:String>
+	<sys:String x:Key="K1458"  xml:space="preserve">WiFi を使用して接続するには、デバイス ヘルプ アプリを使用してコードをスキャンします。</sys:String>
+	<sys:String x:Key="K1459"  xml:space="preserve">お使いのデバイスは、他の地域からのファームウェアのフラッシュをサポートしていません</sys:String>
+	<sys:String x:Key="K1461"  xml:space="preserve">スマートフォンにデバイス ヘルプ アプリがインストールされていない場合は、[a]rasa.page.link/ma[/a] からモバイル アシスタント アプリをインストールしてください。 インストールしたら、アプリを使用して上記の QR コードをスキャンします。</sys:String>
+	<sys:String x:Key="K1462"  xml:space="preserve">その他の接続方法はこちらからご覧いただけます</sys:String>
+	<sys:String x:Key="K1463"  xml:space="preserve">WiFi 経由で携帯電話を Software Fix に接続します</sys:String>
+	<sys:String x:Key="K1464"  xml:space="preserve">WIFIに接続するには、以下の手順に従ってください。</sys:String>
+	<sys:String x:Key="K1465"  xml:space="preserve">WiFi を使用して携帯電話を Software Fix に接続し、デバイス情報を読み取り、ファームウェアを照合します。</sys:String>
+	<sys:String x:Key="K1466"  xml:space="preserve">IMEIを手動で入力する</sys:String>
+	<sys:String x:Key="K1467"  xml:space="preserve">モデルを選択してください</sys:String>
+	<sys:String x:Key="K1468"  xml:space="preserve">指示に従って携帯電話のモデルを選択してください</sys:String>
+	<sys:String x:Key="K1469"  xml:space="preserve">正しいファームウェアと一致するように携帯電話の IMEI を入力してください</sys:String>
+	<sys:String x:Key="K1460"  xml:space="preserve">追加の接続方法</sys:String>
+	<sys:String x:Key="K1470"  xml:space="preserve">デバイスにハードウェアの問題があるかどうかをすばやく確認します</sys:String>
+	<sys:String x:Key="K1471"  xml:space="preserve">下のコードを Device Help または Mobile Assistant アプリを使用してスキャンして、WiFi を使用して接続してください</sys:String>
+	<sys:String x:Key="K1472"  xml:space="preserve">WiFi 接続手順を表示する</sys:String>
+	<sys:String x:Key="K1473"  xml:space="preserve">自分で実行する</sys:String>
+	<sys:String x:Key="K1474"  xml:space="preserve">ハードウェアテスト</sys:String>
+	<sys:String x:Key="K1475"  xml:space="preserve">お使いの携帯電話のデバイス ヘルプ アプリのバージョンはハードウェア テストをサポートしていません。&#x0a;ハードウェア テストをサポートするためにモバイル アシスタント アプリをインストールしますか?</sys:String>
+	<sys:String x:Key="K1476"  xml:space="preserve">WIFIに接続するには、以下の手順に従ってください。</sys:String>
+	<sys:String x:Key="K1477"  xml:space="preserve">デバイスとPCが同じWi-Fiネットワークに接続されていることを確認してください</sys:String>
+	<sys:String x:Key="K1478"  xml:space="preserve">接続されたデバイスが出荷時のソフトウェアの期待値と一致しないため、Rescue を実行できません。&#x0a;&#x0a;を郵送するか、認定された Motorola サービス センターを見つけて、期待値にプログラムし直してください。</sys:String>
+	<sys:String x:Key="K1479"  xml:space="preserve">デバイスヘルプアプリを開いてください&#x0a;- アプリが開いたら、「ソフトウェア修正」カードをタップします&#x0a;- 接続スキャン」オプションを選択します&#x0a;- 必要なアクセス許可を付与します</sys:String>
+	<sys:String x:Key="K1480"  xml:space="preserve">画像に表示されているQRコードをスキャンし、プロンプトが表示されたらPIN番号を入力してください。&#x0a;PIN番号を入力すると、デバイスはWi-Fi経由で自動的に接続され、Software Fixアプリに詳細が表示されます。</sys:String>
+	<sys:String x:Key="K1481"  xml:space="preserve">お使いのデバイスにデバイスヘルプアプリがない場合は、以下の手順に従って、お使いのデバイスにモバイルアシスタント「MA」アプリをインストールしてください：&#x0a;- 画像に表示されているQRコードをスキャンして、MAアプリのapkファイルをダウンロードしてください。&#x0a;- プロンプトが表示されたら、アプリをインストールします。&#x0a;- インストールが完了したら、MAアプリを開きます。</sys:String>
+	<sys:String x:Key="K1482"  xml:space="preserve">MAアプリで、「QRコードをスキャン」オプションを選択します。&#x0a;- 選択したら、写真の承認の許可を必ず承諾してください。</sys:String>
+	<sys:String x:Key="K1483"  xml:space="preserve">テスト項目</sys:String>
+	<sys:String x:Key="K1484"  xml:space="preserve">結果</sys:String>
+	<sys:String x:Key="K1485"  xml:space="preserve">読み取り結果</sys:String>
+	<sys:String x:Key="K1486"  xml:space="preserve">ハードウェアテストの開始</sys:String>
+	<sys:String x:Key="K1487"  xml:space="preserve">デバイスをチェックして、どのハードウェア テストを開始できるかを確認してください</sys:String>
+	<sys:String x:Key="K1488"  xml:space="preserve">テストを終了する</sys:String>
+	<sys:String x:Key="K1490"  xml:space="preserve">キャンセル・レスキュー</sys:String>
+	<sys:String x:Key="K1489"  xml:space="preserve">Rescue ソフトウェアのアップデートを続行します</sys:String>
+	<sys:String x:Key="K1491"  xml:space="preserve">未検証</sys:String>
+	<sys:String x:Key="K1492"  xml:space="preserve">正常</sys:String>
+	<sys:String x:Key="K1493"  xml:space="preserve">未検出</sys:String>
+	<sys:String x:Key="K1494"  xml:space="preserve">オーディオ接続</sys:String>
+	<sys:String x:Key="K1495"  xml:space="preserve">バックライト</sys:String>
+	<sys:String x:Key="K1496"  xml:space="preserve">バッテリー</sys:String>
+	<sys:String x:Key="K1497"  xml:space="preserve">ブルートゥース</sys:String>
+	<sys:String x:Key="K1498"  xml:space="preserve">画面</sys:String>
+	<sys:String x:Key="K1499"  xml:space="preserve">イヤースピーカー</sys:String>
+	<sys:String x:Key="K1500"  xml:space="preserve">イヤホン</sys:String>
+	<sys:String x:Key="K1501"  xml:space="preserve">閃光</sys:String>
+	<sys:String x:Key="K1502"  xml:space="preserve">フロントカメラ</sys:String>
+	<sys:String x:Key="K1503"  xml:space="preserve">GPS</sys:String>
+	<sys:String x:Key="K1504"  xml:space="preserve">重力センサー</sys:String>
+	<sys:String x:Key="K1505"  xml:space="preserve">マイクロフォン</sys:String>
+	<sys:String x:Key="K1506"  xml:space="preserve">マルチタッチ</sys:String>
+	<sys:String x:Key="K1507"  xml:space="preserve">近接センサー</sys:String>
+	<sys:String x:Key="K1508"  xml:space="preserve">モバイルネットワーク</sys:String>
+	<sys:String x:Key="K1509"  xml:space="preserve">受信機</sys:String>
+	<sys:String x:Key="K1510"  xml:space="preserve">リアカメラ</sys:String>
+	<sys:String x:Key="K1511"  xml:space="preserve">タッチスクリーン</sys:String>
+	<sys:String x:Key="K1512"  xml:space="preserve">スピーカー</sys:String>
+	<sys:String x:Key="K1513"  xml:space="preserve">音量ボタン</sys:String>
+	<sys:String x:Key="K1514"  xml:space="preserve">振動</sys:String>
+	<sys:String x:Key="K1515"  xml:space="preserve">Wi-Fi</sys:String>
+	<sys:String x:Key="K1516"  xml:space="preserve">バックアップしたいファイルを選択します</sys:String>
+	<sys:String x:Key="K1517"  xml:space="preserve">ファイル</sys:String>
+	<sys:String x:Key="K1518"  xml:space="preserve">ディスプレイ解像度設定を125%または100%に調整してください。そうすれば、表示切り落としの問題が発生しないようにできます。</sys:String>
+	<sys:String x:Key="K1519"  xml:space="preserve">デバイスの接続</sys:String>
+	<sys:String x:Key="K1520"  xml:space="preserve">デバイスを接続し、デバイスに以下に示す認証コードを入力します。</sys:String>
+	<sys:String x:Key="K1521"  xml:space="preserve">検証コード</sys:String>
+	<sys:String x:Key="K1522"  xml:space="preserve">ハードウェアのテストは行っていないようです。 やめますか？</sys:String>
+	<sys:String x:Key="K1523"  xml:space="preserve">現在利用できます。</sys:String>
+	<sys:String x:Key="K1548"  xml:space="preserve">このデバイスを初めてレスキューする場合は、最初に USB ドライバーをインストールしてください</sys:String>
+	<sys:String x:Key="K1549"  xml:space="preserve">「下のリンクをクリックしてダウンロードしてください」</sys:String>
+	<sys:String x:Key="K1550"  xml:space="preserve">解凍する</sys:String>
+	<sys:String x:Key="K1551"  xml:space="preserve">ドライバーを手動でインストールする</sys:String>
+	<sys:String x:Key="K1552"  xml:space="preserve">「救出プロセスを終了する必要がない限り、[キャンセル]をクリックしないでください。」</sys:String>
+	<sys:String x:Key="K1553"  xml:space="preserve">再試行して、fastboot デバイスの接続プロンプトが表示された後、デバイスが fastboot モードに正しく入ることを確認してください。</sys:String>
+	<sys:String x:Key="K1554"  xml:space="preserve">このデバイスを初めてレスキューする場合は、最初に USB ドライバーをインストールしてください:&#x0a;&#x0a;ステップ 1: 以下のリンクをクリックしてダウンロード&#x0a;ステップ 2: 解凍&#x0a;ステップ 3: ドライバーを手動でインストールします&#x0a;&#x0a;注: レスキュー プロセスを終了する必要がない限り、[キャンセル] をクリックしないでください。&#x0a;</sys:String>
+	<sys:String x:Key="K1555"  xml:space="preserve">ファームウェアが見つかりません</sys:String>
+	<sys:String x:Key="K1556"  xml:space="preserve">ハードウェアテスト</sys:String>
+	<sys:String x:Key="K1557"  xml:space="preserve">fastboot デバイスが見つかりませんでした。</sys:String>
+	<sys:String x:Key="K1558"  xml:space="preserve">fastboot デバイスが見つかりませんでした。 デバイスが Fastboot モードで接続されており、デバイス マネージャーで USB ポートが正しく検出されていることを確認してください。</sys:String>
+	<sys:String x:Key="K1559"  xml:space="preserve">ステップ1 - デバイスをUSBケーブルから切断します。&#x0a;ステップ2 - ボリュームアップキーとパワーキーを同時に押してBoot Mode Selection UIに入ります。このUIが表示されると、2つのキーを離します。&#x0a;ステップ3 - ボリュームアップキーを押してFastboot Modeオプションにスクロールします。&#x0a;ステップ4 - ボリュームダウンキーを押してFastboot Modeに入ることを確認します（バーコードが表示されます）。&#x0a;ステップ5 - 電話をPCにUSBケーブルで接続します。</sys:String>
+	<sys:String x:Key="K1560"  xml:space="preserve">ファストブートモードに切り替える</sys:String>
+	<sys:String x:Key="K1561"  xml:space="preserve">ファストブートモードを待つ</sys:String>
+	<sys:String x:Key="K1562"  xml:space="preserve">バットファイルによるフラッシュ</sys:String>
+	<sys:String x:Key="K1563"  xml:space="preserve">リブート</sys:String>
+	<sys:String x:Key="K1564"  xml:space="preserve">フラッシュファイルをロードする</sys:String>
+	<sys:String x:Key="K1565"  xml:space="preserve">Wi-Fi経由でデバイスを接続する</sys:String>
+	<sys:String x:Key="K1566"  xml:space="preserve">デバイスとの接続方法を選択してください</sys:String>
+	<sys:String x:Key="K1567"  xml:space="preserve">接続を維持するために、デバイス上で {0} アプリが開いたままであることを確認してください。</sys:String>
+	<sys:String x:Key="K1568"  xml:space="preserve">これ</sys:String>
+	<sys:String x:Key="K1569"  xml:space="preserve">インストレーション・モバイル・アシスタント</sys:String>
+	<sys:String x:Key="K1570"  xml:space="preserve">QRコードをスキャンしてMobile Assistantアプリをダウンロード</sys:String>
+	<sys:String x:Key="K1571"  xml:space="preserve">デバイスを使用して左側の QR コードをスキャンします。 モバイル アシスタント APP をインストールし、インストールしたらアプリを起動します。</sys:String>
+	<sys:String x:Key="K1572"  xml:space="preserve">モバイルアシスタントAPPを使用してQRコードをスキャンし、WIFIを介して接続します。その後、デバイス上のPINコードを入力し、接続のセキュリティを確認してください。</sys:String>
+	<sys:String x:Key="K1573"  xml:space="preserve">スキャンして接続」オプションを選択します。</sys:String>
+	<sys:String x:Key="K1574"  xml:space="preserve">ドライバーのインストールが完了していることを確認してください。</sys:String>
+	<sys:String x:Key="K1575"  xml:space="preserve">ファストブート接続</sys:String>
+	<sys:String x:Key="K1576"  xml:space="preserve">IMEIを入力してください</sys:String>
+	<sys:String x:Key="K1577"  xml:space="preserve">WiFi接続</sys:String>
+	<sys:String x:Key="K1578"  xml:space="preserve">モデルの選択</sys:String>
+	<sys:String x:Key="K1579"  xml:space="preserve">ステップバイステップのガイドに従って、USB ケーブルを使用してデバイスを接続します</sys:String>
+	<sys:String x:Key="K1580"  xml:space="preserve">デバイスの IMEI を手動で入力します</sys:String>
+	<sys:String x:Key="K1581"  xml:space="preserve">Wi-Fi を使用して携帯電話を接続し、IMEI を読み取ります</sys:String>
+	<sys:String x:Key="K1582"  xml:space="preserve">モデルのリストから携帯電話を手動で選択します</sys:String>
+	<sys:String x:Key="K1583"  xml:space="preserve">[r]*#06#[/r] と入力して、デバイスの IMEI をプレビューしてください。</sys:String>
+	<sys:String x:Key="K1584"  xml:space="preserve">携帯電話を PC に接続する</sys:String>
+	<sys:String x:Key="K1585"  xml:space="preserve">携帯電話のモデルを正しく検出するには、画面上の指示に従って、USB ケーブルを使用して携帯電話と PC を接続してください。</sys:String>
+	<sys:String x:Key="K1586"  xml:space="preserve">[b6]*注意[/b6] - すべてのデバイスがこのモードをサポートしているわけではありません。&#x0a;不明な場合は、「IMEI の入力」を使用してください。 オプションと Software Fix は正しい指示を提供できます。</sys:String>
+	<sys:String x:Key="K1587"  xml:space="preserve">これまで以上に簡単にデバイスを管理</sys:String>
+	<sys:String x:Key="K1588"  xml:space="preserve">読み取りデバイス、お待ちください...</sys:String>
+	<sys:String x:Key="K1589"  xml:space="preserve">ファームウェアを救出:</sys:String>
+	<sys:String x:Key="K1590"  xml:space="preserve">ファームウェアのバージョン:</sys:String>
+	<sys:String x:Key="K1591"  xml:space="preserve">もっと詳しく知る</sys:String>
+	<sys:String x:Key="K1592"  xml:space="preserve">デバイス上の既存の Google アカウントは、セキュリティと盗難防止の目的で削除されません。</sys:String>
+	<sys:String x:Key="K1594"  xml:space="preserve">Rescue ソフトウェアのアップデートでは、写真、ビデオ、音楽、SMS、ダウンロードしたファイルを含むすべての個人データが削除されます。 Rescue を開始する前に、バックアップと復元機能を使用することをお勧めします</sys:String>
+	<sys:String x:Key="K1593"  xml:space="preserve">- ターゲット ファームウェアがデバイス モデルと一致していることを確認してください。&#x0a;- レスキュー ソフトウェアのアップデートにより、連絡先、写真、動画、音楽などのすべてのデータが消去されます。&#x0a;- デバイス レスキューでは Google は削除されないことに注意してください。 アカウント。</sys:String>
+	<sys:String x:Key="K1595"  xml:space="preserve">- ターゲットのファームウェアがデバイスのモデルと一致していることを確認してください。&#x0a;- デバイスのレスキューはリスクを伴う行為であるため、レスキューの前にまずユーザーデータをバックアップすることをお勧めします。&#x0a;- デバイスのレスキューでは Google は削除されないことに注意してください。 アカウント。</sys:String>
+	<sys:String x:Key="K1597"  xml:space="preserve">リソースを解凍しています...</sys:String>
+	<sys:String x:Key="K1598"  xml:space="preserve">携帯電話にインストールされているデバイス ヘルプ アプリは、SMS メッセージとダウンロード ファイルのバックアップ機能をサポートしていません。&#x0a;SMS メッセージのバックアップ機能とファイルのダウンロードをサポートするために、モバイル アシスタント アプリをインストールして起動しますか?</sys:String>
+	<sys:String x:Key="K1599"  xml:space="preserve">よくある質問</sys:String>
+	<sys:String x:Key="K1600"  xml:space="preserve">Flash ツールの解凍に失敗しました。</sys:String>
+	<sys:String x:Key="K1596"  xml:space="preserve">解凍中</sys:String>
+	<sys:String x:Key="K1601"  xml:space="preserve">SMS を復元するためには、Software Fix がデバイスで権限を取得する必要があります。デバイスで権限を付与してください。</sys:String>
+	<sys:String x:Key="K1602"  xml:space="preserve">モバイル アシスタントをデバイスのデフォルトの SMS アプリとして設定します。</sys:String>
+	<sys:String x:Key="K1603"  xml:space="preserve">Software Fix は、レスキューを続行できるようにデバイス ドライバを PC にインストールします。同意してインストール手順を続行するには [OK] をクリックし、レスキューを終了する場合は [キャンセル] をクリックします。</sys:String>
+	<sys:String x:Key="K1604"  xml:space="preserve">メッセージをデバイスのデフォルトの SMS アプリとして設定します。</sys:String>
+	<sys:String x:Key="K1605"  xml:space="preserve">SMS アプリの変更を承認するには、デバイスでこのオプションをオンにします。</sys:String>
+	<sys:String x:Key="K1606"  xml:space="preserve">レスキューを続行できるように、Software Fix がデバイス ドライバを PC にダウンロードしてインストールします。同意してインストール手順を続行するには [OK] をクリックし、レスキューを終了する場合は [キャンセル] をクリックします。</sys:String>
+	<sys:String x:Key="K1607"  xml:space="preserve">中国本土ユーザーには適用されません</sys:String>
+	<sys:String x:Key="K1608"  xml:space="preserve">一部のテスト ケースでは、デバイスの Type-C インターフェイスを占有する必要がある場合があります。WIFI 経由で Software Fix に接続することをお勧めします。</sys:String>
+	<sys:String x:Key="K1609"  xml:space="preserve">今日</sys:String>
+	<sys:String x:Key="K1610"  xml:space="preserve">Moto Care&#x0a;延長サービスプラン</sys:String>
+	<sys:String x:Key="K1611"  xml:space="preserve">タブレットからのメールや通話ログのバックアップはサポートされていません。</sys:String>
+	<sys:String x:Key="K1612"  xml:space="preserve">メールや通話ログのタブレットへの復元はサポートされていません。</sys:String>
+	<sys:String x:Key="K1613"  xml:space="preserve">ショップ・ナウ</sys:String>
+	<sys:String x:Key="K1614"  xml:space="preserve">デバイスを接続するための以下の手順に従ってください：&#x0a;ステップ1 - 音量アップボタンを押し続けます。&#x0a;ステップ2 - 音量アップボタンを押したまま、デバイスの左側のType-CポートをUSBケーブルを介してPCに接続します。</sys:String>
+	<sys:String x:Key="K1615"  xml:space="preserve">1. Rescue を実行するときは、デバイスに付属の USB ケーブルを使用することをお勧めします。</sys:String>
+	<sys:String x:Key="K1616"  xml:space="preserve">2. 低品質の USB ケーブルを使用すると、Rescue アップデート中に障害が発生する可能性があります。</sys:String>
+	<sys:String x:Key="K1617"  xml:space="preserve">ご注意ください：</sys:String>
+	<sys:String x:Key="K1620"  xml:space="preserve">リカバリファイルを電話機にダウンロード - 再試行</sys:String>
+	<sys:String x:Key="K1621"  xml:space="preserve">切断命令 - 再試行</sys:String>
+	<sys:String x:Key="K1618"  xml:space="preserve">1. お使いの携帯電話はサードパーティのサービスによって管理されています。&#x0a;&#x0a;2. ソフトウェアを更新できますが、[c color='#FF0000']サードパーティとすべてのユーザーデータは削除されません[/c]。</sys:String>
+	<sys:String x:Key="K1619"  xml:space="preserve">デバイスの企業属性またはその他の理由により、デバイス内の個人データが消去されておらず、デバイスの設定メニューにある「工場出荷時のリセット」オプションを有効にすることができませんでした。</sys:String>
+	<sys:String x:Key="K1622"  xml:space="preserve">デバイス上の個人データを保持しますか、それとも消去しますか?&#x0a;- デバイスにソフトウェアの問題が発生している可能性がある場合は、すべての個人データを消去することをお勧めします.</sys:String>
+	<sys:String x:Key="K1623"  xml:space="preserve">はい、デバイスのデータを消去します</sys:String>
+	<sys:String x:Key="K1624"  xml:space="preserve">いいえ、デバイスのデータは保持します</sys:String>
+	<sys:String x:Key="K1625"  xml:space="preserve">フォルダーをロードする</sys:String>
+	<sys:String x:Key="K1626"  xml:space="preserve">ファイルをコピーする</sys:String>
+	<sys:String x:Key="K1627"  xml:space="preserve">アクティブなパーティションを設定する</sys:String>
+	<sys:String x:Key="K1628"  xml:space="preserve">通話記録</sys:String>
+	<sys:String x:Key="K1629"  xml:space="preserve">1. ダウンロードしたファームウェアがデバイスのモデルと一致していることを確認してください。</sys:String>
+	<sys:String x:Key="K1630"  xml:space="preserve">2. デバイスのリカバリー（回復）はリスクを伴う行為です。回復を行う前に、まずユーザーデータをバックアップすることをお勧めします。（エンタープライズデバイスの場合、回復はデバイスデータを削除しません。）</sys:String>
+	<sys:String x:Key="K1631"  xml:space="preserve">3. ソフトウェア アップデートでは、セキュリティ上の理由から、既存の Google アカウントはデバイスから削除されません。</sys:String>
+	<sys:String x:Key="K1632"  xml:space="preserve">隠れる</sys:String>
+	<sys:String x:Key="K1633"  xml:space="preserve">最大3台のデバイスを接続可能</sys:String>
+	<sys:String x:Key="K1634"  xml:space="preserve">ダウンロードしたファイル:</sys:String>
+	<sys:String x:Key="K1635"  xml:space="preserve">新しいデバイスの追加</sys:String>
+	<sys:String x:Key="K1636"  xml:space="preserve">フラッシュに失敗しました。以下の手順で再試行してください：&#x0a;Step-1: デバイスの接続を解除し、電源を切ります。&#x0a;Step-2: 音量を下げるキーと電源キーを同時に押し続けます。&#x0a;ステップ-3: バイブレーションが鳴ったらキーを離すと、デバイスにFastmodeが表示されます。&#x0a;ステップ-4: デバイスをUSBケーブルに接続し、「OK」をクリックします。</sys:String>
+	<sys:String x:Key="K1637"  xml:space="preserve">ストレージを選択します:</sys:String>
+	<sys:String x:Key="K1638"  xml:space="preserve">ログのコピー</sys:String>
+	<sys:String x:Key="K1639"  xml:space="preserve">batファイルによるフラッシュ - 再試行</sys:String>
+	<sys:String x:Key="K1640"  xml:space="preserve">再接続の指示</sys:String>
+	<sys:String x:Key="K1641"  xml:space="preserve">注-デバイスが充電モードに入った場合は、USBケーブルを外し、30秒待ってから上記の手順をやり直してください（fastbootモードではデバイスを接続しないでください）。</sys:String>
+	<sys:String x:Key="K1642"  xml:space="preserve">ドライバーのダウンロードに失敗しました。</sys:String>
+	<sys:String x:Key="K1643"  xml:space="preserve">ドライバーのチェックとインストール</sys:String>
+	<sys:String x:Key="K1644"  xml:space="preserve">複数デバイスのレスキューは電話タイプのみ対応。</sys:String>
+	<sys:String x:Key="K1645"  xml:space="preserve">デバイスリストに戻る</sys:String>
+	<sys:String x:Key="K1646"  xml:space="preserve">お待ちください</sys:String>
+	<sys:String x:Key="K1647"  xml:space="preserve">準備ができて</sys:String>
+	<sys:String x:Key="K1648"  xml:space="preserve">合格</sys:String>
+	<sys:String x:Key="K1649"  xml:space="preserve">失敗</sys:String>
+	<sys:String x:Key="K1650"  xml:space="preserve">やめる</sys:String>
+	<sys:String x:Key="K1651"  xml:space="preserve">プロセスに入る前に、点滅していないデバイスをすべて取り外してください。</sys:String>
+	<sys:String x:Key="K1652"  xml:space="preserve">レスキュー終了</sys:String>
+	<sys:String x:Key="K1653"  xml:space="preserve">リード・デバイス・モード</sys:String>
+	<sys:String x:Key="K1654"  xml:space="preserve">ボリュームアップとボリュームダウンのキーを同時に押し続けます。&#x0a;デバイスをPCに接続します。</sys:String>
+	<sys:String x:Key="K1655"  xml:space="preserve">ユーザーデータを消去する必要があるかどうかを選択する</sys:String>
+	<sys:String x:Key="K1656"  xml:space="preserve">Rescue を実行している既存のデバイスは、それ以上のデバイス接続に対応できません。 Rescue が完了するまで待ってから、次のデバイスを接続してください.</sys:String>
+	<sys:String x:Key="K1657"  xml:space="preserve">救出プロセスを終了しました。</sys:String>
+	<sys:String x:Key="K1658"  xml:space="preserve">注文の有効期限が切れました</sys:String>
+	<sys:String x:Key="K1659"  xml:space="preserve">現在の IMEI カウントが枯渇しました</sys:String>
+	<sys:String x:Key="K1660"  xml:space="preserve">1.ダウンロードしたファームウェアがデバイスのモデルと一致していることを確認してください.</sys:String>
+	<sys:String x:Key="K1661"  xml:space="preserve">2.ソフトウェア更新により、すべての個人ファイルが削除されます。</sys:String>
+	<sys:String x:Key="K1662"  xml:space="preserve">3. レスキュープロセスが完了するまで、デバイスが USB ケーブルと PC に接続されたままであることを確認してください。</sys:String>
+	<sys:String x:Key="K1663"  xml:space="preserve">再試行するには、デバイスを PC から取り外し、電源がオフになっていることを確認してから再試行してください。</sys:String>
+	<sys:String x:Key="K1664"  xml:space="preserve">あなたのファイルをデバイスに戻しますか？</sys:String>
+	<sys:String x:Key="K1665"  xml:space="preserve">デバイスを接続するために以下の手順に従ってください：&#x0a;ステップ1 - キーボードベースを抜きます&#x0a;ステップ2 - 音量アップボタンを押しながら、下部のType-Cポートに接続します</sys:String>
+	<sys:String x:Key="K1666"  xml:space="preserve">今すぐ購入</sys:String>
+	<sys:String x:Key="K1667"  xml:space="preserve">単一のデバイス</sys:String>
+	<sys:String x:Key="K1668"  xml:space="preserve">1時間料金</sys:String>
+	<sys:String x:Key="K1669"  xml:space="preserve">合計</sys:String>
+	<sys:String x:Key="K1670"  xml:space="preserve">1台の電話でのみ利用可能</sys:String>
+	<sys:String x:Key="K1671"  xml:space="preserve">Software Fix クライアントのすべての機能を使用する</sys:String>
+	<sys:String x:Key="K1672"  xml:space="preserve">有効期間は1ヶ月</sys:String>
+	<sys:String x:Key="K1673"  xml:space="preserve">ベストセラー</sys:String>
+	<sys:String x:Key="K1674"  xml:space="preserve">1->10 デバイス</sys:String>
+	<sys:String x:Key="K1675"  xml:space="preserve">あなたは節約します</sys:String>
+	<sys:String x:Key="K1676"  xml:space="preserve">10 台の電話でのみ利用可能</sys:String>
+	<sys:String x:Key="K1677"  xml:space="preserve">マンスリーパス</sys:String>
+	<sys:String x:Key="K1678"  xml:space="preserve">最もコスト効率が高い</sys:String>
+	<sys:String x:Key="K1679"  xml:space="preserve">電話デバイスの無制限の使用</sys:String>
+	<sys:String x:Key="K1680"  xml:space="preserve">Software Fix クライアントのすべての機能にアクセスするにはわずか 1 か月</sys:String>
+	<sys:String x:Key="K1681"  xml:space="preserve">すべての機能を含める</sys:String>
+	<sys:String x:Key="K1682"  xml:space="preserve">購入済み？</sys:String>
+	<sys:String x:Key="K1683"  xml:space="preserve">Software Fix クライアントのすべての機能を利用するには、特別なプランを購入してください。</sys:String>
+	<sys:String x:Key="K1684"  xml:space="preserve">Software Fix はユーザーに包括的なモバイル デバイス ソリューションを提供します。 Software Fix メンバーシップを購入すると、最大 3 台のモバイル デバイスを同時にレスキューできます。</sys:String>
+	<sys:String x:Key="K1685"  xml:space="preserve">現在、無料トライアル段階にあります</sys:String>
+	<sys:String x:Key="K1686"  xml:space="preserve">- {1} 台のうち {0} 台の空きデバイスが Rescue を完了しました。</sys:String>
+	<sys:String x:Key="K1687"  xml:space="preserve">- すべての機能を引き続き使用するには、月額プランを選択してください。</sys:String>
+	<sys:String x:Key="K1688"  xml:space="preserve">購入の概要</sys:String>
+	<sys:String x:Key="K1689"  xml:space="preserve">Software Fixアカウント</sys:String>
+	<sys:String x:Key="K1690"  xml:space="preserve">アクティブな購入</sys:String>
+	<sys:String x:Key="K1691"  xml:space="preserve">追加のアクセスを購入する</sys:String>
+	<sys:String x:Key="K1692"  xml:space="preserve">購入履歴</sys:String>
+	<sys:String x:Key="K1693"  xml:space="preserve">私のデバイスでは Rescue のアップデートが失敗します。返金をリクエストできますか?</sys:String>
+	<sys:String x:Key="K1694"  xml:space="preserve">デバイスが Software Fix の機能を正常に完了すると、払い戻しは許可されなくなります。 払い戻しステータス = 許可されません (または</sys:String>
+	<sys:String x:Key="K1695"  xml:space="preserve">ここをクリック</sys:String>
+	<sys:String x:Key="K1696"  xml:space="preserve">まだ利用可能な場合は詳細をご覧ください)</sys:String>
+	<sys:String x:Key="K1697"  xml:space="preserve">購入をキャンセルしたい場合はどうすればよいですか?</sys:String>
+	<sys:String x:Key="K1698"  xml:space="preserve">各プレミアム購入は 30 日間有効です</sys:String>
+	<sys:String x:Key="K1699"  xml:space="preserve">レスキューが 30 日以内に完了した場合は、払い戻しの対象にはなりません。</sys:String>
+	<sys:String x:Key="K1700"  xml:space="preserve">「現在の購入」セクションで使用されているIMEIカウントを確認してください。 IMEI が使用されていない場合は、Motorola カスタマー ケア センターに連絡して返金を開始してください。</sys:String>
+	<sys:String x:Key="K1701"  xml:space="preserve">返金</sys:String>
+	<sys:String x:Key="K1702"  xml:space="preserve">注文IDの表示</sys:String>
+	<sys:String x:Key="K1703"  xml:space="preserve">返金のキャンセル</sys:String>
+	<sys:String x:Key="K1704"  xml:space="preserve">購入したアクセス</sys:String>
+	<sys:String x:Key="K1705"  xml:space="preserve">購入日</sys:String>
+	<sys:String x:Key="K1706"  xml:space="preserve">有効期限</sys:String>
+	<sys:String x:Key="K1707"  xml:space="preserve">Macアドレス</sys:String>
+	<sys:String x:Key="K1708"  xml:space="preserve">パッケージ</sys:String>
+	<sys:String x:Key="K1709"  xml:space="preserve">使用中のデバイス数</sys:String>
+	<sys:String x:Key="K1710"  xml:space="preserve">現在の購入品</sys:String>
+	<sys:String x:Key="K1713"  xml:space="preserve">内部</sys:String>
+	<sys:String x:Key="K1711"  xml:space="preserve">SDカード</sys:String>
+	<sys:String x:Key="K1712"  xml:space="preserve">SDカードが見つかりません</sys:String>
+	<sys:String x:Key="K1714"  xml:space="preserve">購入内容を確認する</sys:String>
+	<sys:String x:Key="K1715"  xml:space="preserve">プレミアムユーザー</sys:String>
+	<sys:String x:Key="K1716"  xml:space="preserve">残り日数</sys:String>
+	<sys:String x:Key="K1717"  xml:space="preserve">返金してよろしいですか?</sys:String>
+	<sys:String x:Key="K1718"  xml:space="preserve">今すぐ返金すると、Software Fix クライアントのすべての機能を楽しむことができなくなります</sys:String>
+	<sys:String x:Key="K1719"  xml:space="preserve">それでも払い戻し</sys:String>
+	<sys:String x:Key="K1720"  xml:space="preserve">あきらめる</sys:String>
+	<sys:String x:Key="K1721"  xml:space="preserve">注文ID</sys:String>
+	<sys:String x:Key="K1722"  xml:space="preserve">現在の注文 ID を覚えておいてから、Motorola カスタマー ケア センターに連絡して返金を開始してください。</sys:String>
+	<sys:String x:Key="K1723"  xml:space="preserve">マンスリーパスのご案内</sys:String>
+	<sys:String x:Key="K1724"  xml:space="preserve">単一デバイス情報</sys:String>
+	<sys:String x:Key="K1725"  xml:space="preserve">使用されるIMEI数</sys:String>
+	<sys:String x:Key="K1726"  xml:space="preserve">残りのIMEI数</sys:String>
+	<sys:String x:Key="K1727"  xml:space="preserve">アクティブ</sys:String>
+	<sys:String x:Key="K1728"  xml:space="preserve">期限切れ</sys:String>
+	<sys:String x:Key="K1729"  xml:space="preserve">返金されました</sys:String>
+	<sys:String x:Key="K1730"  xml:space="preserve">購入が成功した後は、現在の Mac アドレスでのみ電話を救出してください。</sys:String>
+	<sys:String x:Key="K1731"  xml:space="preserve">fastbootデバイスが見つかりません：&#x0a;ステップ-1: デバイスの接続を外し、電源を切ります。&#x0a;Step-2: 音量を下げるキーと電源キーを同時に押し続けます。&#x0a;ステップ-3: 振動したらキーを離すと、デバイスにFastmodeが表示されます。&#x0a;ステップ-4: デバイスをUSBケーブルに接続し、「OK」をクリックします。</sys:String>
+	<sys:String x:Key="K1732"  xml:space="preserve">Rescue ソフトウェアのアップデートを開始する準備はできていますか?</sys:String>
+	<sys:String x:Key="K1733"  xml:space="preserve">レスキューに戻る</sys:String>
+	<sys:String x:Key="K1734"  xml:space="preserve">接続デバイスのフラッシュを開始しました</sys:String>
+	<sys:String x:Key="K1735"  xml:space="preserve">ファームウェアのフラッシュ中</sys:String>
+	<sys:String x:Key="K1736"  xml:space="preserve">Fastboot フラッシュによるユーザー データの消去</sys:String>
+	<sys:String x:Key="K1737"  xml:space="preserve">ホームページ</sys:String>
+	<sys:String x:Key="K1738"  xml:space="preserve">B2B+ パス情報</sys:String>
+	<sys:String x:Key="K1739"  xml:space="preserve">接続機器のフラッシュを開始</sys:String>
+	<sys:String x:Key="K1740"  xml:space="preserve">Fastboot Flash によるユーザー データの消去</sys:String>
+	<sys:String x:Key="K1741"  xml:space="preserve">ファームウェアのフラッシュが開始されました</sys:String>
+	<sys:String x:Key="K1742"  xml:space="preserve">フラッシュファイルが異常です。デバイスの損傷を避けるため、ダウンロードセンターからフラッシュファイルを削除し、再ダウンロードしてください。</sys:String>
+	<sys:String x:Key="K1743"  xml:space="preserve">batファイルによるフラッシュ-個人情報の保護</sys:String>
+	<sys:String x:Key="K1746"  xml:space="preserve">Fastbootフラッシュ-個人データを保持</sys:String>
+	<sys:String x:Key="K1747"  xml:space="preserve">デバイスを取り外し、fastbootモードでデバイスをPCに接続 - 再試行</sys:String>
+	<sys:String x:Key="K1748"  xml:space="preserve">デバイスのモデル名が正しくありません。以下の手順で再試行してください：&#x0a;1. デバイスの接続を解除する&#x0a;2. OKをクリックします。</sys:String>
+	<sys:String x:Key="K1749"  xml:space="preserve">画像が接続されたデバイスと一致するかチェック - 再試行</sys:String>
+	<sys:String x:Key="K1750"  xml:space="preserve">モデル名のチェックに失敗しました。</sys:String>
+	<sys:String x:Key="K1751"  xml:space="preserve">「設定」に移動し、上部の検索ボックスに「バージョン情報」と入力して、検索結果リストから「タブレット情報」を選択します。</sys:String>
+	<sys:String x:Key="K1752"  xml:space="preserve">「ビルド番号」または「ソフトウェアバージョン」を探して7回タップしてください。</sys:String>
+	<sys:String x:Key="K1753"  xml:space="preserve">「設定」に移動し、上部の検索ボックスで、検索結果リストに「USB デバッグ」と入力します。次のページで「開発者向けオプション」と「USB デバッグ」を有効にします。</sys:String>
+	<sys:String x:Key="K1754"  xml:space="preserve">タブレットからPCにUSBを接続します。</sys:String>
+	<sys:String x:Key="K1755"  xml:space="preserve">タブレットのソフトウェアを簡単にアップデートする方法</sys:String>
+	<sys:String x:Key="K1756"  xml:space="preserve">USB接続</sys:String>
+	<sys:String x:Key="K1757"  xml:space="preserve">USBケーブル接続でデバイスを効率的に管理</sys:String>
+	<sys:String x:Key="K1758"  xml:space="preserve">Wi-Fiを使ってタブレットを接続し、ファームウェアを合わせる</sys:String>
+	<sys:String x:Key="K1759"  xml:space="preserve">シリアル番号を入力してください</sys:String>
+	<sys:String x:Key="K1760"  xml:space="preserve">デバイスのシリアル番号を手動で入力してください</sys:String>
+	<sys:String x:Key="K1761"  xml:space="preserve">文字が無効です</sys:String>
+	<sys:String x:Key="K1762"  xml:space="preserve">fastbootデバイスが検出されません。デバイスがfastbootモードでないことを確認してから再試行してください。	</sys:String>
+	<sys:String x:Key="K1763"  xml:space="preserve">ブートローダーを再起動する</sys:String>
+	<sys:String x:Key="K1764"  xml:space="preserve">手順2. 電源ボタンと音量低下ボタンを同時に押します。&#x0a;手順3. 振動したら、電源ボタンと音量低下ボタンを離すと、デバイスに高速モードが表示されます。次に、USBケーブルをデバイスに接続します。</sys:String>
+	<sys:String x:Key="K1765"  xml:space="preserve">お使いのデバイス {0} は fastboot モードのフラッシュをサポートしていません。fastboot モードを終了して、以下から最適なオプションを選択してください。</sys:String>
+	<sys:String x:Key="K1766"  xml:space="preserve">販売モデル:</sys:String>
+	<sys:String x:Key="K1769"  xml:space="preserve"> </sys:String>
+	<sys:String x:Key="K1770"  xml:space="preserve">レスキューとスマートアシスタントがソフトウェア修正に</sys:String>
+	<sys:String x:Key="K1771"  xml:space="preserve">デバイスが切断されました。最初からやり直して再試行してください。</sys:String>
+	<sys:String x:Key="K1772"  xml:space="preserve">現在のアカウントにはすでに購入済みのパッケージがありますので、購入したコンピューターで使用してください。</sys:String>
+	<sys:String x:Key="K1773"  xml:space="preserve">画像に表示されているQRコードをスキャンし、プロンプトが表示されたらPIN番号を入力してください。&#x0a;- PIN番号を入力したら、ファイル管理へのアクセスを許可する権限を必ず承認してください&#x0a;- デバイスはWi-Fi経由で自動的に接続され、Software Fixアプリに詳細が表示されます</sys:String>
+	<sys:String x:Key="K1774"  xml:space="preserve">すべて選択解除</sys:String>
+	<sys:String x:Key="K1775"  xml:space="preserve">お使いのデバイスで、タブレットを使用して左側のQRコードをスキャンします。モバイルアシスタントアプリをインストールし、インストールしたらアプリを起動します。</sys:String>
+	<sys:String x:Key="K1776"  xml:space="preserve">モバイルアシスタントアプリを使用して、「QRコードをスキャン」オプションを選択します</sys:String>
+	<sys:String x:Key="K1777"  xml:space="preserve">左側のコードをスキャンしてWi-Fi経由でPCに接続します</sys:String>
+	<sys:String x:Key="K1778"  xml:space="preserve">デバイスのシリアル番号をプレビューするには、設定に[r]####2222#[/r]と入力してください。</sys:String>
+	<sys:String x:Key="K1779"  xml:space="preserve">デバイスをPCと同じWiFiに接続します</sys:String>
+	<sys:String x:Key="K1781"  xml:space="preserve">現在のスロットを読む</sys:String>
+	<sys:String x:Key="K1782"  xml:space="preserve">レスキューを開始する前に、ソフトウェア修正ではタブレットのシリアル番号が適切なファームウェアと一致する必要があります。シリアル番号 (SN または S/N) を入力してください:</sys:String>
+	<sys:String x:Key="K1783"  xml:space="preserve">4G を超える大きなファイルをバックアップしようとしているため、バックアップ プロセスが失敗する可能性があります。したがって、4G を超えるファイルは除外します。</sys:String>
+	<sys:String x:Key="K1784"  xml:space="preserve">リカバリーファイルを携帯電話にダウンロード-個人データを保持</sys:String>
+	<sys:String x:Key="K1785"  xml:space="preserve">ファイルのインポート......</sys:String>
+	<sys:String x:Key="K1786"  xml:space="preserve">ファイルをエクスポートしています......</sys:String>
+	<sys:String x:Key="K1787"  xml:space="preserve">レシピ実行環境チェック</sys:String>
+	<sys:String x:Key="K1788"  xml:space="preserve">救助支援</sys:String>
+	<sys:String x:Key="K1789"  xml:space="preserve">PCドライバーがインストールされました</sys:String>
+	<sys:String x:Key="K1790"  xml:space="preserve">インストール中のデバイスドライバー...</sys:String>
+	<sys:String x:Key="K1791"  xml:space="preserve">デバイスドライバーの検出を待機中</sys:String>
+	<sys:String x:Key="k1792"  xml:space="preserve">フラッシュが失敗しました！レスキューの前にデバイスの電源を入れたり切ったりしてみてください。</sys:String>
+	<sys:String x:Key="K1793"  xml:space="preserve">Software Fix</sys:String>
+	<sys:String x:Key="K1794"  xml:space="preserve">バージョン</sys:String>
+	<sys:String x:Key="K1795"  xml:space="preserve">アイテム、</sys:String>
+	<sys:String x:Key="K1796"  xml:space="preserve">選択された項目</sys:String>
+	<sys:String x:Key="K1797"  xml:space="preserve">デバイスにMobile Assistantアプリをインストールしてください </sys:String>
+	<sys:String x:Key="K1798"  xml:space="preserve">お使いのデバイスにインストールされている「Device Help」アプリは、SMS、通話ログ、ファイルのバックアップをサポートしていません</sys:String>
+	<sys:String x:Key="K1799"  xml:space="preserve">りんごのエクスポートを含めるには、ここに表示されているQRコードをスキャンして、モバイルアシスタントをインストールして起動してください。</sys:String>
+	<sys:String x:Key="K1800"  xml:space="preserve">ファイルエクスポート</sys:String>
+	<sys:String x:Key="K1801"  xml:space="preserve">ファイルインポート</sys:String>
+	<sys:String x:Key="K1802"  xml:space="preserve">フラッシュに失敗しました。デバイスがfastbootモードでないことを確認してから再試行してください。</sys:String>
+	<sys:String x:Key="K1803"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください：&#x0a;ステップ 1 - デバイスの接続を解除し、音量アップキーと電源キーを同時に押します。&#x0a;ステップ 2 - ブートモード選択UIが表示されたらキーを離し、音量アップキーを押してFastbootモードを選択します。&#x0a;ステップ3 - 音量を下げるキーを押してFastbootモードに入り、デバイスをPCに接続します。</sys:String>
+	<sys:String x:Key="K1832"  xml:space="preserve">フラッシュツールの実行に失敗しました！PCを再起動し、アンチウイルスソフトを無効にしてから再試行することをお勧めします。</sys:String>
+	<sys:String x:Key="K1833"  xml:space="preserve">テキスト、写真、ビデオなどを含むすべてのデータは、Rescue 中にデバイスから消去されます。まずデータをバックアップしますか?</sys:String>
+	<sys:String x:Key="K1834"  xml:space="preserve">はい、救助をキャンセルします</sys:String>
+	<sys:String x:Key="K1835"  xml:space="preserve">救助を続ける</sys:String>
+	<sys:String x:Key="K1836"  xml:space="preserve">問題を解決しようとしている場合、[c color='#FF0000']デバイスからすべてのファイルを削除することをお勧めします[/c]。&#x0a;どうしますか？</sys:String>
+	<sys:String x:Key="K1837"  xml:space="preserve">セキュリティ保護のため、Google アカウントをクリアすることはできません。</sys:String>
+	<sys:String x:Key="K1838"  xml:space="preserve">データを消去しない</sys:String>
+	<sys:String x:Key="K1839"  xml:space="preserve">すべてのデータを消去</sys:String>
+	<sys:String x:Key="K1840"  xml:space="preserve">インストール中... お待ちください</sys:String>
+	<sys:String x:Key="K1844"  xml:space="preserve">送信中...</sys:String>
+	<sys:String x:Key="K1845"  xml:space="preserve">デバイスにモバイルアシスタントアプリをインストールするには、「OK」ボタンを選択してください。</sys:String>
+	<sys:String x:Key="K1846"  xml:space="preserve">このアプリはデバイスとPCアプリ間の通信を管理するために使用されています。</sys:String>
+	<sys:String x:Key="K1847"  xml:space="preserve">バックアップと復元を実行するときは、USB ケーブルを使用することをお勧めします。</sys:String>
+	<sys:String x:Key="K1848"  xml:space="preserve">バックアップと復元モジュールは、モバイル アシスタント アプリの接続のみをサポートします。モバイルアシスタントアプリを引き続き使用しますか?</sys:String>
+	<sys:String x:Key="K1849"  xml:space="preserve">デバイスのデバイス ヘルプ WiFi 接続を切断し、USB ケーブルを使用して PC をデバイスに接続してください。&#x0a;バックアップと復元モジュールは、モバイル アシスタント アプリの接続のみをサポートします。MA アプリをインストールしますか?</sys:String>
+	<sys:String x:Key="K1850"  xml:space="preserve">バックアップ＆復元モジュールはモバイルアシスタントアプリの接続のみをサポートします</sys:String>
+	<sys:String x:Key="K1851"  xml:space="preserve">1 台</sys:String>
+	<sys:String x:Key="K1852"  xml:space="preserve">無料トライアル期間はもうすぐ終わります</sys:String>
+	<sys:String x:Key="K1853"  xml:space="preserve">無料トライアル期間は終了しました</sys:String>
+	<sys:String x:Key="K1854"  xml:space="preserve">デバイスを接続しています...お待ちください</sys:String>
+	<sys:String x:Key="K1855"  xml:space="preserve">フラッシュに失敗しました。以下の方法でfastbootモードを終了し、再試行してください。&#x0a;方法1. 電源キーを長押しします。&#x0a;方法2. 音量アップキー＋音量ダウンキー＋電源キーを同時に5秒間長押しします。</sys:String>
+	<sys:String x:Key="K1856"  xml:space="preserve">ダウンロードパスは50文字以上です。もう一度選択してください。</sys:String>
+	<sys:String x:Key="K1857"  xml:space="preserve">継続的なサポートと機能強化を維持し、すべての Motorola および Lenovo Android デバイスをサポートするためにソフトウェア修正が利用可能であることを保証するには、プレミアム料金が必要です。</sys:String>
+	<sys:String x:Key="K1858"  xml:space="preserve">- ニーズに合わせて柔軟に価格設定&#x0a;- 購入ごとに 30 日間のアクセスが付与され、サブスクリプションは不要&#x0a;- プレミアムを購入すると、最大 3 台のデバイスを同時にサポートする Rescue サポートが含まれます</sys:String>
+	<sys:String x:Key="K1859"  xml:space="preserve">デバイスを接続するには、以下の手順に従ってください</sys:String>
+	<sys:String x:Key="K1860"  xml:space="preserve">ステップ1 - デバイスの電源を切る</sys:String>
+	<sys:String x:Key="K1861"  xml:space="preserve">ステップ2 - デバイスのボリュームダウンとボリュームアップキーを押し続けます。次に、USBケーブルをデバイスに接続します（次のページがポップアップするまでキーを離さないでください）。&#x0a;デバイスが充電モードになった場合は、USBケーブルを外し、30秒待ってから上記の手順をやり直してください。</sys:String>
+	<sys:String x:Key="K1862"  xml:space="preserve">ステップ3 - 音量を下げるボタンと上げるボタンを離します。</sys:String>
+	<sys:String x:Key="K1863"  xml:space="preserve">ログイン期限が切れました。再度ログインしてください。</sys:String>
+	<sys:String x:Key="K1864"  xml:space="preserve">ステップ1 -&#x0a;- [bc color='#1E88E5' weight=800]電源ボタン[/bc]を押し、[bc color='#1E88E5' weight=800]電源オフアイコン[/bc]をタップして、[bc color='#1E88E5' weight=800]デバイスの電源を切ってください[/bc]。&#x0a;- それが機能しない場合は、別の方法として、[bc color='#1E88E5' weight=800]音量アップボタンと電源ボタンを同時に長押し[/bc]し、デバイスに電源オフアイコンが表示されるまで待ってから、電源オフアイコンをタップしてデバイスの電源を切ってください。</sys:String>
+	<sys:String x:Key="K1865"  xml:space="preserve">ステップ1 - デバイスを[bc color='#1E88E5' weight=800]強制電源オフ[/bc]するには、[bc color='#1E88E5' weight=800]音量ダウンボタン[/bc]と[bc color='#1E88E5' weight=800]電源ボタンを12秒以上同時に長押し[/bc]します。この方法はあらゆる状態（[bc color='#1E88E5' weight=800]ブラックスクリーン、再起動ループ、フリーズ[/bc]）で有効です。</sys:String>
+	<sys:String x:Key="K1866"  xml:space="preserve">ステップ2 - [bc color='#1E88E5' weight=800]USBケーブル[/bc]を準備し、[bc color='#1E88E5' weight=800]パソコンに接続してください[/bc]。</sys:String>
+	<sys:String x:Key="K1867"  xml:space="preserve">ステップ3 - &#x0a; - [bc color='#1E88E5' weight=800]音量アップボタンを長押ししたまま[/bc]&#x0a; - [bc color='#1E88E5' weight=800]USBケーブルでデバイスをPCに接続してください[/bc]。その間&#x0a; - [bc color='#1E88E5' weight=800]音量アップボタンは放さないでください[/bc]</sys:String>
+	<sys:String x:Key="K1868"  xml:space="preserve">ステップ4 - デバイスが検出されるとこのメッセージは自動的に閉じます。その時点で[bc color='#1E88E5' weight=800]音量アップボタンから手を離してください[/bc]。</sys:String>
+	<sys:String x:Key="K1869"  xml:space="preserve">ステップ3 - [bc color='#1E88E5' weight=800]ボタンを押し続け[/bc]、[bc color='#1E88E5' weight=800]音量アップボタン + 音量ダウンボタン[/bc]を同時に押します。[bc color='#1E88E5' weight=800]ボタンを押したまま、USBケーブルをデバイスに接続してください。[/bc]</sys:String>
+	<sys:String x:Key="K1870"  xml:space="preserve">Step 4 - [bc color='#1E88E5' weight=800]デバイスが検出されると、このメッセージは自動的に閉じます[/bc]。その時点で[bc color='#1E88E5' weight=800]音量アップボタンと音量ダウンボタンを離してください[/bc]。</sys:String>
+	<sys:String x:Key="K1871"  xml:space="preserve">Step 3 - タブレットの以下の3つのボタンを[bc color='#1E88E5' weight=800]押し続けてください[/bc]：[bc color='#1E88E5' weight=800]音量アップボタン + 音量ダウンボタン + 電源ボタン[/bc]。 [bc color='#1E88E5' weight=800]振動後にすべてのボタンを離してください[/bc]。</sys:String>
+	<sys:String x:Key="K1872"  xml:space="preserve">Step 4 - [bc color='#1E88E5' weight=800]接続[/bc]デバイスを[bc color='#1E88E5' weight=800]USBケーブル[/bc]でPCに。</sys:String>
+	<sys:String x:Key="K1873"  xml:space="preserve">ステップ2 - [bc color='#1E88E5' weight=800]デバイスを直接接続し[/bc]、[bc color='#1E88E5' weight=800]USBケーブル[/bc]を使用してPCに接続してください。</sys:String>
+	<sys:String x:Key="K1874"  xml:space="preserve">ステップ3 - [bc color='#1E88E5' weight=800]USBケーブル[/bc]で[bc color='#1E88E5' weight=800]デバイスをPCに接続[/bc]します。[bc color='#1E88E5' weight=800]音量ダウンボタンと電源ボタンを同時に長押し[/bc]します。</sys:String>
+	<sys:String x:Key="K1875"  xml:space="preserve">ステップ4 - このメッセージは[bc color='#1E88E5' weight=800]デバイスが検出されると自動的に閉じます[/bc]。その時点で[bc color='#1E88E5' weight=800]音量ダウンボタンと電源ボタンを離す[/bc]ことができます。</sys:String>
+	<sys:String x:Key="K1876"  xml:space="preserve">Step 3 - タブレットを[bc color='#1E88E5' weight=800]横向きで持ち[/bc]、[bc color='#1E88E5' weight=800]音量アップボタンを押し続け[/bc]、デバイス下部のポートをUSBケーブルでPCに[bc color='#1E88E5' weight=800]接続します[/bc]。[bc color='#1E88E5' weight=800]音量アップボタンは放さないでください[/bc]。</sys:String>
+	<sys:String x:Key="K1877"  xml:space="preserve">Step 4 - デバイスが検出され次第、[bc color='#1E88E5' weight=800]メッセージは自動的に閉じます。その時に音量アップボタンを放してください。[/bc]</sys:String>
+	<sys:String x:Key="K1878"  xml:space="preserve">ステップ1 - [bc color='#1E88E5' weight=800]タブレットをキーボードから取り外し[/bc]、[bc color='#1E88E5' weight=800]タブレットの電源を切ってください[/bc]</sys:String>
+	<sys:String x:Key="K1879"  xml:space="preserve">ステップ1：設定メニューを開き、検索アイコンを選択してください。</sys:String>
+	<sys:String x:Key="K1880"  xml:space="preserve">ステップ2：検索フィールドに「####2222#」を入力してください。</sys:String>
+	<sys:String x:Key="K1881"  xml:space="preserve">ステップ3：初めて入力する際、メッセージが表示されるまで数分かかる場合があります。</sys:String>
+	<sys:String x:Key="K1882"  xml:space="preserve">クリックしてご覧ください。</sys:String>
+	<sys:String x:Key="K1883"  xml:space="preserve">大きなファイル</sys:String>
+	<sys:String x:Key="K1884"  xml:space="preserve">オーバー4G</sys:String>
+	<sys:String x:Key="K1885"  xml:space="preserve">現在のクライアントバージョンはこのデバイスのフラッシングをサポートしません。OKボタンをクリックしてください、Software Fixはクライアントのアップグレードにガイドします。</sys:String>
+	<sys:String x:Key="K1886"  xml:space="preserve">下のアニメーションに従ってアプリ内で認証してください。</sys:String>
+	<sys:String x:Key="K1887"  xml:space="preserve">「全ファイルアクセス」で「Mobile Assistant」アプリをクリック</sys:String>
+	<sys:String x:Key="K1888"  xml:space="preserve">「すべてのファイルの管理アクセスを許可」に「有効にする」をクリック</sys:String>
+	<sys:String x:Key="K1889"  xml:space="preserve">大きなファイル（4 GB より大きい）をエクスポートしようとしていますが、エクスポート処理が失敗する可能性があります。そのため、4 GB より大きいファイルはフィルタリングして除外します。</sys:String>
+	<sys:String x:Key="K1890"  xml:space="preserve">4 GB より大きい大きなファイルをインポートしようとしていますが、インポート処理が失敗する可能性があります。したがって、4 GB より大きいファイルはフィルタリングして除外します。</sys:String>
+	<sys:String x:Key="K1891"  xml:space="preserve">デバイスに移動し、SMSアプリをクリックしてください。</sys:String>
+	<sys:String x:Key="K1400"  xml:space="preserve">デバイスを切断しないでください。</sys:String>
+	<sys:String x:Key="K1892"  xml:space="preserve">エラー</sys:String>
+	<sys:String x:Key="K1893"  xml:space="preserve">現在、ソフトウェア修正はAndroid 15デバイスのSMSバックアップと復元をサポートしていません。</sys:String>
+	<sys:String x:Key="K1990"  xml:space="preserve">ソフトウェア フィックスは、デバイス ポートが異常であることを検出しました。デバイスを切断し、次の手順に従って再試行してください。</sys:String>
+	<sys:String x:Key="K1991"  xml:space="preserve">携帯電話にリカバリファイルをダウンロード-個人データを保持-再試行</sys:String>
+	<sys:String x:Key="K1992"  xml:space="preserve">保証期間外のソフトウェアアップデートサポート</sys:String>
+	<sys:String x:Key="K1993"  xml:space="preserve">保証期間中のデバイスソフトウェアアップデートには料金は必要ありません</sys:String>
+	<sys:String x:Key="K1996"  xml:space="preserve">私のデバイス</sys:String>
+	<sys:String x:Key="K1997"  xml:space="preserve">データ転送</sys:String>
+	<sys:String x:Key="K1998"  xml:space="preserve">SMS、連絡先、写真、音楽などを古い携帯電話から新しい Moto 携帯電話に転送します。</sys:String>
+	<sys:String x:Key="K1999"  xml:space="preserve">アプリをインストールするには、携帯電話のカメラで QR コードをスキャンします。</sys:String>
+	<sys:String x:Key="K2000"  xml:space="preserve">ステップバイステップの手順を見る</sys:String>
+	<sys:String x:Key="K2001"  xml:space="preserve">古いデバイスから新しいデバイスにデータを簡単に転送</sys:String>
+	<sys:String x:Key="K2002"  xml:space="preserve">- Software Fix PC アプリでデータ転送機能を選択します。&#x0a;- 新しいデバイスのカメラを使用して QR コードをスキャンし、Mobile Assistant アプリをダウンロードしてインストールします。</sys:String>
+	<sys:String x:Key="K2003"  xml:space="preserve">インストールしたら、デバイス上のアプリを開き、モバイル アシスタントを探して開きます。</sys:String>
+	<sys:String x:Key="K2004"  xml:space="preserve">- 「データ転送」タイルを選択します。&#x0a;- 初めて起動する場合は、ファイルにアクセスするための権限を与える必要があります。</sys:String>
+	<sys:String x:Key="K2005"  xml:space="preserve">- 「すべてのファイルへのアクセス」Google メニューが表示されます。&#x0a;- モバイル アシスタント アプリを選択し、「すべてのファイルの管理へのアクセスを許可する」を有効にします。&#x0a;ページ上部の戻る矢印を選択して、メイン ページに戻ります。</sys:String>
+	<sys:String x:Key="K2006"  xml:space="preserve">- 「データ転送」タイルを選択します。&#x0a; - 新しいデバイスを使用する場合は、一番下の「データ受信」オプションを選択します。</sys:String>
+	<sys:String x:Key="K2007"  xml:space="preserve">-下部にあるリンクをタップして、古いデバイスに Mobile Assistant アプリをインストールします。&#x0a;- 古いデバイスのカメラを使用して QR コードをスキャンします。</sys:String>
+	<sys:String x:Key="K2008"  xml:space="preserve">- 「データ転送」タイルを選択します。 &#x0a;- 古いデバイスの「データ送信」オプションを選択します。</sys:String>
+	<sys:String x:Key="K2009"  xml:space="preserve">- 古いデバイスのタイプを選択します。&#x0a;- この例では、Motorola を使用します。</sys:String>
+	<sys:String x:Key="K2010"  xml:space="preserve">デバイスは接続を確立し始めます。&#x0a;古いデバイスに新しいデバイスのアイコンが表示されます。古いデバイスのアイコンが表示されたらタップすると、安全な接続が開始されます。</sys:String>
+	<sys:String x:Key="K2011"  xml:space="preserve">- 新しいデバイスが古いデバイスを見つけられない場合は、すべてのデバイスで WLAN が有効になっていることを確認してください。&#x0a;- それでも問題が解決しない場合は、両方のデバイスでアプリを閉じて、最初からやり直してください。</sys:String>
+	<sys:String x:Key="K2012"  xml:space="preserve">古いデバイスが見つかり、アイコンをタップすると、接続が開始されます。</sys:String>
+	<sys:String x:Key="K2013"  xml:space="preserve">- 古いデバイスにコードが表示されます。&#x0a;- 新しいデバイスのフィールドにコードを入力します。</sys:String>
+	<sys:String x:Key="K2014"  xml:space="preserve">接続が成功すると、古いデバイスに新しいデバイスに転送できるデータのリストが表示されます。</sys:String>
+	<sys:String x:Key="K2015"  xml:space="preserve">新しいデバイスに転送する必要があるファイルの種類を選択します。&#x0a;ファイルを転送している間は、両方のデバイスでモバイル アシスタントを開いたままアクティブにしておいてください。</sys:String>
+	<sys:String x:Key="K2016"  xml:space="preserve">ファイルの転送が開始されます。</sys:String>
+	<sys:String x:Key="K2017"  xml:space="preserve">SMS メッセージを転送するときに、Mobile Assistant アプリをデフォルトの SMS アプリとして設定するように求められます。</sys:String>
+	<sys:String x:Key="K2018"  xml:space="preserve">すべてのファイルが転送されると、データ転送が完了したことを示すメッセージが表示されます。</sys:String>
+	<sys:String x:Key="K2019"  xml:space="preserve">SMS メッセージが転送された場合は、メッセージ アプリをデフォルトの SMS アプリとして設定するように求められます。</sys:String>
+	<sys:String x:Key="K2020"  xml:space="preserve">これで、モバイル アシスタント アプリを閉じることができ、ファイルは新しいデバイスで利用できるようになります。</sys:String>
+	<sys:String x:Key="K2021"  xml:space="preserve">古いデバイスに Mobile Assistant をインストールした後、アプリを見つけて開きます。&#x0a;すべての許可プロンプトに必ず同意してください。</sys:String>
+	<sys:String x:Key="K2022"  xml:space="preserve">データ</sys:String>
+	<sys:String x:Key="K2023"  xml:space="preserve">移行</sys:String>
+	<sys:String x:Key="K2024"  xml:space="preserve">オプション</sys:String>
+	<sys:String x:Key="K2025"  xml:space="preserve">ほとんどのデバイスで使用可能</sys:String>
+	<sys:String x:Key="K2026"  xml:space="preserve">ステップ3. デバイスの音量ダウンキーを押したまま、USBケーブルをデバイスに接続します。</sys:String>
+	<sys:String x:Key="K2027"  xml:space="preserve">ステップ4. デバイスに「Fastboot Mode」の文字が表示されたら、音量ダウンキーを離します。</sys:String>
+	<sys:String x:Key="K2028"  xml:space="preserve">ここをクリック</sys:String>
+	<sys:String x:Key="K2029"  xml:space="preserve">このオプションを使用するモデル番号のリスト</sys:String>
+	<sys:String x:Key="K2030"  xml:space="preserve">ステップ3. 電源ボタンと音量ダウンボタンを同時に押し続けます</sys:String>
+	<sys:String x:Key="K2031"  xml:space="preserve">ステップ4. デバイスの振動が感じられ、デバイス画面にFastbootモードが表示されたら、ボタンを放します。</sys:String>
+	<sys:String x:Key="K2032"  xml:space="preserve">ステップ5. USBケーブルをデバイスに接続します</sys:String>
+	<sys:String x:Key="K2033"  xml:space="preserve">オプション 2 モデル:</sys:String>
+	<sys:String x:Key="K2034"  xml:space="preserve">どのオプションを使用するかわからない場合は、</sys:String>
+	<sys:String x:Key="K2035"  xml:space="preserve">15桁のIMEIを手動で入力して正しい手順を確認してください</sys:String>
+	<sys:String x:Key="K2036"  xml:space="preserve">ここをクリック</sys:String>
+	<sys:String x:Key="K2037"  xml:space="preserve">各オプションをクリックして詳細をご覧ください</sys:String>
+	<sys:String x:Key="K2038"  xml:space="preserve">パスにスペースを含めることはできません。スペースを含めると、一部のデバイスの復旧に影響します。</sys:String>
+	<sys:String x:Key="K2039"  xml:space="preserve">トラブルシューティング</sys:String>
+	<sys:String x:Key="K2040"  xml:space="preserve">救助開始</sys:String>
+	<sys:String x:Key="K2041"  xml:space="preserve">役立つトラブルシューティング手順</sys:String>
+	<sys:String x:Key="K2042"  xml:space="preserve">最初に試す推奨手順:</sys:String>
+	<sys:String x:Key="K2043"  xml:space="preserve">バッテリーを最低60%まで充電してください。&#x0a;バッテリーが切れていたり、ほとんど充電されていない場合は、更新に問題が生じる可能性があります。</sys:String>
+	<sys:String x:Key="K2044"  xml:space="preserve">デバイスを取り外し、電源を入れ直してやり直してください</sys:String>
+	<sys:String x:Key="K2045"  xml:space="preserve">USB 接続を確認し、デバイスを再度差し込んでみてください。</sys:String>
+	<sys:String x:Key="K2046"  xml:space="preserve">それでもサポートが必要な場合は、</sys:String>
+	<sys:String x:Key="K2047"  xml:space="preserve">コンピュータを再起動してから、Rescue ソフトウェアの更新を再度実行してください。</sys:String>
+	<sys:String x:Key="K2048"  xml:space="preserve">USB ケーブルを交換するか、PC の別の USB ポートに接続してみてください。&#x0a;(USB ポート ハブの使用は推奨されません)</sys:String>
+	<sys:String x:Key="K2049"  xml:space="preserve">十分なディスク容量があることを確認してください。</sys:String>
+	<sys:String x:Key="K2050"  xml:space="preserve">チュートリアルに従って進めてください。</sys:String>
+	<sys:String x:Key="K2051"  xml:space="preserve">デバイスを電源オフにするために手順に従ってください。</sys:String>
+	<sys:String x:Key="K2052"  xml:space="preserve">ステップ 1 - 電源ボタンを押し続けてください。電源オフのアイコンがデバイスに表示されるまで押し続けてください。その後、電源オフのアイコンをタップしてデバイスを電源オフにしてください。</sys:String>
+	<sys:String x:Key="K2053"  xml:space="preserve">ステップ1 - [bc color='#1E88E5' weight=800]音量アップボタンと電源ボタンを同時に長押しします[/bc]。 [bc color='#1E88E5' weight=800]デバイスに電源オフのアイコンが表示されるまで[/bc]続け、その後で電源オフアイコンをタップして[bc color='#1E88E5' weight=800]デバイスの電源を切ります[/bc]。</sys:String>
+	<sys:String x:Key="K2054"  xml:space="preserve">Software Fix は、ファームウェアのダウンロード パスにスペースが含まれていることを検出しました。これにより、ファームウェアの更新が失敗する可能性があります。デバイスの修復を確実に行うために、ダウンロード パスからスペースを削除してください。</sys:String>
+	<sys:String x:Key="K2055"  xml:space="preserve">Android 15 デバイスでは、モバイル アシスタント アプリで SMS 権限の問題が発生した場合、完全な機能を確保するために、ユーザーは SMS 権限を手動で付与する必要があります。設定パス: [設定] -> [アプリ] -> [モバイル アシスタント] を開き、右上隅の [...] をタップし、制限された設定を許可し、権限をクリック -> SMS -> 許可します。セットアップ後に接続が失われた場合は、再接続してサービスを再開してください。</sys:String>
+	<sys:String x:Key="K2056"  xml:space="preserve">誤ったデバイスポートが検出されました。デバイス接続のチュートリアルを再確認し、もう一度お試しください。</sys:String>
+	<sys:String x:Key="K2057"  xml:space="preserve">ファストブートモードでデバイスを接続しないでください。</sys:String>
+	<sys:String x:Key="K2058"  xml:space="preserve">誤ったデバイスポートが検出されました。デバイスを切断し、電源を入れ直してから、チュートリアルに従ってfastbootモードに入ってください。</sys:String>
+	<sys:String x:Key="K2059"  xml:space="preserve">デバイスの救出を成功させるためには、PCにVisual C++環境がインストールされている必要があります。Software Fixは、必要なVisual C++コンポーネントをPCにインストールします。「OK」をクリックして確認し、インストールを続行してください。</sys:String>
+	<sys:String x:Key="K2060"  xml:space="preserve">4.デバイスの復旧が完了したら、不要なファームウェアを迅速に削除して、ストレージリソースを解放することをお勧めします。</sys:String>
+	<sys:String x:Key="K2061"  xml:space="preserve">レスキューはデバイス内の個人データを削除しません。続行するにはOKボタンをクリックしてください。</sys:String>
+	<sys:String x:Key="K2062"  xml:space="preserve">分かった </sys:String>
+	<sys:String x:Key="K2063"  xml:space="preserve">ソフトウェア修正の概要</sys:String>
+	<sys:String x:Key="K2064"  xml:space="preserve">デバイスのソフトウェアを更新する簡単な方法</sys:String>
+	<sys:String x:Key="K2065"  xml:space="preserve">MotorolaとLenovoの両方の携帯電話、タブレット、スマートデバイスに対応</sys:String>
+	<sys:String x:Key="K2066"  xml:space="preserve">電源が入らないデバイスの復旧、ソフトウェアの不具合の修正、または最新のアップデートが必要な場合に、お手伝いしますか？</sys:String>
+	<sys:String x:Key="K2067"  xml:space="preserve">レスキュー機能は、ソフトウェアが最新の状態に保たれることを確認し、ソフトウェア関連の問題を解決するのに役立ちます。</sys:String>
+	<sys:String x:Key="K2068"  xml:space="preserve">Androidデバイスを常に最新の状態に保つことは、最高のパフォーマンスを維持し、セキュリティを強化し、最新の機能を利用するために不可欠です。</sys:String>
+	<sys:String x:Key="K2069"  xml:space="preserve">レスキューソフトウェアのアップデート – ステップ1</sys:String>
+	<sys:String x:Key="K2070"  xml:space="preserve">デバイスのソフトウェアをアップデートすることは、それほど難しくありません。</sys:String>
+	<sys:String x:Key="K2071"  xml:space="preserve">最初のステップは、アップデートが必要なデバイスの種類を選択することです。携帯電話、タブレット、またはスマートデバイス？</sys:String>
+	<sys:String x:Key="K2072"  xml:space="preserve">レスキューソフトウェアのアップデート – ステップ2</sys:String>
+	<sys:String x:Key="K2073"  xml:space="preserve">正しいソフトウェアに一致させるために、デバイスから15桁のIMEIを入力する必要があります。</sys:String>
+	<sys:String x:Key="K2074"  xml:space="preserve">4つのオプションの中から、IMEIを読み取ってほしいものを選択してください。</sys:String>
+	<sys:String x:Key="K2075"  xml:space="preserve">分からない場合は、「IMEI入力」を選択してください。15桁のIMEIを簡単に見つける方法をお教えします。</sys:String>
+	<sys:String x:Key="K2076"  xml:space="preserve">バックアップと復元でデータを保護してください。更新前にすべてを安全にしておきましょう</sys:String>
+	<sys:String x:Key="K2077"  xml:space="preserve">デバイスのアップデートはワクワクしますが、データの安全性を確保したいと思います。</sys:String>
+	<sys:String x:Key="K2078"  xml:space="preserve">大切なファイル、SMS、写真、動画、音楽などを完全にバックアップしてください。</sys:String>
+	<sys:String x:Key="K2079"  xml:space="preserve">アップデートが完了したら、ファイルを簡単に復元できます。</sys:String>
+	<sys:String x:Key="K2080"  xml:space="preserve">デバイスを常に良好な状態に保つ</sys:String>
+	<sys:String x:Key="K2081"  xml:space="preserve">デバイスの機能をテストする方法を学ぶ</sys:String>
+	<sys:String x:Key="K2082"  xml:space="preserve">カメラ、スピーカー、タッチスクリーン、WiFiなどのハードウェア機能を簡単にテストする</sys:String>
+	<sys:String x:Key="K2083"  xml:space="preserve">ソフトウェアの問題ですか、それともハードウェアの問題ですか？ テストを行えば、ハードウェアに関する問題があるかどうかが簡単にわかります。</sys:String>
+	<sys:String x:Key="K2084"  xml:space="preserve">モートローラやレノボの新機器に個人データを簡単に移行できます。</sys:String>
+	<sys:String x:Key="K2085"  xml:space="preserve">デバイスの切り替えをお考えですか？お手伝いいたします。</sys:String>
+	<sys:String x:Key="K2086"  xml:space="preserve">Mobile Assistantアプリを使って、古い携帯電話やタブレットから新しい携帯電話に簡単にファイルを移動できます。</sys:String>
+	<sys:String x:Key="K2087"  xml:space="preserve">次のファイルをサポートします: SMS、写真、ビデオ、音楽、通話履歴、連絡先、ファイル — あなたが決めます。</sys:String>
+	<sys:String x:Key="K2088"  xml:space="preserve">ヘルプアイコン -> ソフトウェア修正概要メニューからいつでも機能のハイライトを再生できます</sys:String>
+	<sys:String x:Key="K2089"  xml:space="preserve">私たちは、あなたが現在使用しているモバイルアシスタント（MA）のバージョンが古くなっていることを検出しました。最高のエクスペリエンスとセキュリティを確保するために、最新バージョンをインストールすることをお勧めします。</sys:String>
+	<sys:String x:Key="K2090"  xml:space="preserve">現在お使いのデバイスのモバイルアシスタント（MA）のバージョンは古く、クライアント接続機能をサポートしていません。通常使用を確保するには、最新バージョンにアップグレードしてください。</sys:String>
+	<sys:String x:Key="K2091"  xml:space="preserve">ステップ1 - デバイスを切断する</sys:String>
+	<sys:String x:Key="K2092"  xml:space="preserve">ステップ2 - 音量アップキーと電源キーを同時に長押しし、ブートモード選択UIが表示されたらキーを離す</sys:String>
+	<sys:String x:Key="K2093"  xml:space="preserve">ステップ3 - 音量アップキーを押してFastbootモードを選択する</sys:String>
+	<sys:String x:Key="K2094"  xml:space="preserve">ステップ4 - 音量ダウンキーを押してFastbootモードに入る</sys:String>
+	<sys:String x:Key="K2095"  xml:space="preserve">ステップ5 - デバイスをPCに接続する</sys:String>
+	<sys:String x:Key="K2096"  xml:space="preserve">ステップ3 - 音量ダウンボタンと電源ボタンを同時に長押しします。ボタンを押したままUSBケーブルをデバイスに接続します。</sys:String>
+	<sys:String x:Key="K2097"  xml:space="preserve">ファームウェア書き込み暗号化</sys:String>
+	<sys:String x:Key="K2098"  xml:space="preserve">ファームウェア書き込み暗号化 - 再試行</sys:String>
+	<sys:String x:Key="K2099"  xml:space="preserve">チップ不一致。ファームウェアがデバイスと一致していることを確認してください。</sys:String>
+	<sys:String x:Key="K2100"  xml:space="preserve">書き込みに失敗しました。以下の手順に従って操作を続行してください：&#x0a;ステップ1 - [bc color='#1E88E5' weight=800]お使いのデバイスをPCから切断してください[/bc]&#x0a;ステップ2 - [bc color='#1E88E5' weight=800]チュートリアルに従って[/bc] [bc color='#1E88E5' weight=800]再試行してください[/bc]</sys:String>
+	<sys:String x:Key="K2101"  xml:space="preserve">フラッシュファイルが異常です。ツールとファームウェアを削除し、再ダウンロードして再度お試しください。</sys:String>
+	<sys:String x:Key="K2102"  xml:space="preserve">デバイス上のソフトウェアを更新、復元または修正してください。</sys:String>
+	<sys:String x:Key="K2103"  xml:space="preserve">カメラ、タッチスクリーン、オーディオ、Bluetooth などをテストしてください</sys:String>
+	<sys:String x:Key="K2104"  xml:space="preserve">デバイスのソフトウェアを更新する前にデータをバックアップしてください</sys:String>
+	<sys:String x:Key="K2105"  xml:space="preserve">古いデバイスからSMS、連絡先、写真などを新しいMotoデバイスに転送する</sys:String>
+	<sys:String x:Key="K2106"  xml:space="preserve">ソフトウェア修正の概要を見る前に、現在の処理が完了するまでお待ちください。</sys:String>
+	<sys:String x:Key="K2107"  xml:space="preserve">ステップ1 - 画面に[bc color='#1E88E5' weight=800]シャットダウン[/bc]オプションが表示されるまで[bc color='#1E88E5' weight=800]電源ボタン[/bc]を[bc color='#1E88E5' weight=800]長押し[/bc]し、表示されたらタップしてシャットダウンを確定します。</sys:String>
+	<sys:String x:Key="K2108"  xml:space="preserve">QDLoader COMポートを検索 - 再試行</sys:String>
+	<sys:String x:Key="K2109"  xml:space="preserve">   - 中国大陆で販売されたタブレットは現在サポートされていません。強制的なフラッシュは、保護メカニズムを引き起こし、タブレットを損傷する可能性があります。&#x0a;   - （デバイスが中国版でない場合は、このメッセージを無視してください。）</sys:String>
+	<sys:String x:Key="K2110"  xml:space="preserve">動作方法：両方のデバイスを Wi-Fi で接続し、転送するファイルを選択し、残りの処理はアプリが行います。</sys:String>
+	<sys:String x:Key="K2111"  xml:space="preserve">レスキューファームウェアがデバイスと一致しません。	</sys:String>
+	<sys:String x:Key="K2112"  xml:space="preserve">重要</sys:String>
+	<sys:String x:Key="K2113"  xml:space="preserve">1. デバイスのリカバリーはリスクを伴う行為です。リカバリーを行う前に、まずユーザーデータをバックアップすることをお勧めします。</sys:String>
+	<sys:String x:Key="K2114"  xml:space="preserve"> </sys:String>
+	<sys:String x:Key="K2115"  xml:space="preserve">2. データがバックアップされていない場合は、ソフトウェアを更新する前にバックアップと復元機能を使用してください。</sys:String>
+	<sys:String x:Key="K2116"  xml:space="preserve">ソフトウェア更新</sys:String>
+	<sys:String x:Key="K2118"  xml:space="preserve">ステップ2 - デバイスのボリュームアップとボリュームダウンのキーを押し続け、USBケーブルをデバイスに接続します（次のページがポップアップするまでキーを離さないでください）。</sys:String>
+	<sys:String x:Key="K2119"  xml:space="preserve">スキップ</sys:String>
+	<sys:String x:Key="K2120"  xml:space="preserve">ステップ3. デバイスの音量ダウンキーを押しながら、USBケーブルをデバイスに接続します。&#x0a;ステップ4. 電話のディスプレイにFastboot Modeの文字が表示されたら、デバイスの音量ダウンキーを離します。</sys:String>
+	<sys:String x:Key="K2121"  xml:space="preserve">点滅リトライ-個人データを保持</sys:String>
+	<sys:String x:Key="K2122"  xml:space="preserve">ステップ1-&#x0a;- 電源ボタンを5秒以上長押しし、画面に電源オフアイコンが表示されるまで待ちます。&#x0a;- 電源オフアイコンをタップしてタブレットの電源を切ります</sys:String>
+	<sys:String x:Key="K2123"  xml:space="preserve">ステップ1 -&#x0a;- 画面に「電源オフ」アイコンが表示されるまで、電源ボタンを押したままにしてください。&#x0a;- 「電源オフ」アイコンをタップしてタブレットをシャットダウンしてください。</sys:String>
+	<sys:String x:Key="K2124"  xml:space="preserve">1. お使いの携帯電話は現在特別な接続状態にあり、重要なシステムファイルの破損やハードウェア障害が原因である可能性があります。&#x0a;2. 推奨アクション:&#x0a; - 電源ボタンを10秒間長押ししてデバイスを強制再起動し、再度お試しください。&#x0a; - それでも問題が解決しない場合は、モトローラ正規サービスセンターにご相談ください。</sys:String>
+	<sys:String x:Key="K2125"  xml:space="preserve">フラッシュが失敗しました。デバイスがファストブートモードから出ていることを確認してもう一度試してください。&#x0a;（電源ボタンを押しても反応がない場合は、音量アップ、音量ダウン、電源ボタンを同時に長押ししてデバイスを再起動してみてください。）</sys:String>
+	<sys:String x:Key="K2126"  xml:space="preserve">非常に不満</sys:String>
+	<sys:String x:Key="K2127"  xml:space="preserve">不満</sys:String>
+	<sys:String x:Key="K2128"  xml:space="preserve">満足</sys:String>
+	<sys:String x:Key="K2129"  xml:space="preserve">アップデートを続行</sys:String>
+	<sys:String x:Key="K2130"  xml:space="preserve">デバイスに関する重要な情報</sys:String>
+	<sys:String x:Key="K2131"  xml:space="preserve">1. すべてのファイル、アプリ、個人データがデバイスから削除されます。</sys:String>
+	<sys:String x:Key="K2132"  xml:space="preserve">2. ソフトウェアアップデートを続行する前に、データのバックアップを強くお勧めします。</sys:String>
+	<sys:String x:Key="K2133"  xml:space="preserve">3. 有効なサービス記録を保持するため、デバイス情報が収集されます。</sys:String>
+	<sys:String x:Key="K2134"  xml:space="preserve">ソフトウェアアップデートを続行</sys:String>
+	<sys:String x:Key="K2135"  xml:space="preserve">この機能は、デバイスがFastBootモードで接続されている間はサポートされません。デバイスを取り外し、表示される手順に従って接続してください。</sys:String>
+	<sys:String x:Key="K2137"  xml:space="preserve">Fastbootモードでデバイスを接続 - 再試行</sys:String>
+	<sys:String x:Key="K2138"  xml:space="preserve">開始する</sys:String>
+	<sys:String x:Key="K2139"  xml:space="preserve">質問の種類：</sys:String>
+	<sys:String x:Key="K2140"  xml:space="preserve">Software Fixのご使用中に、ご質問・問題点・ご提案などがございましたら、何でもお知らせください。</sys:String>
+	<sys:String x:Key="K2141"  xml:space="preserve">Software Fix は、レスキューフラッシュやバックアップのためのデバイスデータの読み込みなどを行うために、デバイス情報を読み取る必要があります。デバイスからいくつかの権限を承認していただく必要があります。デバイスにアクセスし、ポップアップ表示される権限要求をすべて承認してください。</sys:String>
+	<sys:String x:Key="K2142"  xml:space="preserve">デバイスのソフトウェアアップデートが正常に完了しました。アップデートは{0}分で完了しました。お疲れ様でした！</sys:String>
+	<sys:String x:Key="K2143"  xml:space="preserve">ソフトウェアアップデートの復元 – ステップ 3</sys:String>
+	<sys:String x:Key="K2144"  xml:space="preserve">正しいファームウェアと一致させるために、お使いのデバイスのシリアル番号を入力してください。</sys:String>
+	<sys:String x:Key="K2145"  xml:space="preserve">「シリアル番号を入力」を選択すると、お使いのタブレットのシリアル番号を簡単に見つける方法が表示されます。</sys:String>
+	<sys:String x:Key="K2146"  xml:space="preserve">デバイスの接続がタイムアウトしました。接続を切断し、電源オフモードで再接続してください。</sys:String>
+	<sys:String x:Key="K2136"  xml:space="preserve">FastBoot デバイスが見つかりませんでした。もう一度試してください:&#x0a;Step-1: デバイスを切断して電源をオフにします。&#x0a;Step-2: 音量ダウンボタンと電源ボタンを同時に長押しします。&#x0a;Step-3: 振動したらボタンを離すと、デバイスに「FastBoot Mode」と表示されます。&#x0a;Step-4: USBケーブルでデバイスを接続し、「OK」をクリックします。</sys:String>
+	<sys:String x:Key="K2147"  xml:space="preserve">バックアップと復元を行うには、デバイスをUSBケーブルでコンピューターに接続してください。</sys:String>
+	<sys:String x:Key="K2148"  xml:space="preserve">現在のデバイスの接続がタイムアウトしました。デバイスを取り外し、再度接続してください。</sys:String>
+	<sys:String x:Key="K2149"  xml:space="preserve">ログイン時にどのような問題が発生しましたか？</sys:String>
+	<sys:String x:Key="K2150"  xml:space="preserve">Lenovoアカウントがありません</sys:String>
+	<sys:String x:Key="K2151"  xml:space="preserve">Lenovoパスワードを忘れました</sys:String>
+	<sys:String x:Key="K2152"  xml:space="preserve">パスワードをリセットしてください（Lenovo.com）</sys:String>
+	<sys:String x:Key="K2153"  xml:space="preserve">ページに空白の画面が表示されます</sys:String>
+	<sys:String x:Key="K2154"  xml:space="preserve">ログインウィンドウの右上にある更新ボタンをクリックしてください。</sys:String>
+	<sys:String x:Key="K2155"  xml:space="preserve">ページがカラフルな円で回転したまま停止します</sys:String>
+	<sys:String x:Key="K2156"  xml:space="preserve">グラフィック検証に失敗しました / 危険な環境に関するヒント</sys:String>
+	<sys:String x:Key="K2157"  xml:space="preserve">HTTP2_プロトコル_エラー</sys:String>
+	<sys:String x:Key="K2158"  xml:space="preserve">リクエストがロックされています</sys:String>
+	<sys:String x:Key="K2159"  xml:space="preserve">問題のトラブルシューティングのため、IPアドレスを収集してもよろしいですか？</sys:String>
+	<sys:String x:Key="K2160"  xml:space="preserve">[c color='#FF0000']デバイスの状態が無効です！[/c]&#x0a;接続を切断し、[b weight=600]完全に電源をオフにした後[/b]、チュートリアルに従って[b weight=600]Fastbootモードで再起動[/b]してください。</sys:String>
+	<sys:String x:Key="K2161"  xml:space="preserve">注 - デバイスが充電モードになった場合は、USBケーブルを抜き、30秒待ってから上記の手順を再実行してください [ch color='#FF0000' size = 12](Fastbootモードでデバイスを接続しないでください)[/ch]</sys:String>
+	<sys:String x:Key="K2162"  xml:space="preserve">デバイスの接続がタイムアウトしました。接続を切断し、[b weight=600]電源オフ[/b]モードで再接続してください。</sys:String>
+	<sys:String x:Key="K2163"  xml:space="preserve">デバイスの救出を成功させるためには、お使いのPCに[bch color='#DC143C' weight=800 size=20]Visual C++[/bch]環境がインストールされている必要があります。ソフトウェア修正プログラムが必要なVisual C++コンポーネントをPCにインストールします。インストールを確認して続行するには[ch color='#0000FF' weight=900]「OK」[/ch]をクリックしてください。</sys:String>
+	<sys:String x:Key="K2164"  xml:space="preserve">フラッシュに失敗しました！&#x0a;デバイスの接続を切断し、完全に電源をオフにしてから、チュートリアルに従ってFastbootモードで再起動してください。&#x0a;&#x0a;[b weight=600]注[/b] - 電源を切れませんか？音量アップ＋音量ダウン＋電源キーを同時に長押しして強制再起動してください。</sys:String>
+	<sys:String x:Key="K2165"  xml:space="preserve">フラッシュに失敗しました！&#x0a;お使いのデバイスの接続を切断し、完全に電源をオフにしてから、もう一度試してください。&#x0a;&#x0a;[b weight=600]注記[/b] - 電源を切れませんか？音量アップ＋音量ダウン＋電源キーを同時に長押しして強制再起動してください。</sys:String>
+	<sys:String x:Key="K2166"  xml:space="preserve">再試行: Fastboot フラッシュ - 個人データを保持</sys:String>
+	<sys:String x:Key="K2167"  xml:space="preserve">再試行: Fastboot フラッシュ</sys:String>
+	<sys:String x:Key="K2168"  xml:space="preserve">再試行: Fastbootモードでデバイスを接続</sys:String>
+	<sys:String x:Key="K2169"  xml:space="preserve">Wi-Fiでデバイスを接続</sys:String>
+	<sys:String x:Key="K2170"  xml:space="preserve">QDLoader COMポートを検索中 - 2回目再試行</sys:String>
+	<sys:String x:Key="K2171"  xml:space="preserve">ファームウェア書き込み - 再試行</sys:String>
+	<sys:String x:Key="K2172"  xml:space="preserve">デバイスを接続してフラッシングを行います - 再試行</sys:String>
+	<sys:String x:Key="K2173"  xml:space="preserve">ファームウェアのフラッシング暗号化 - 2回目を再試行</sys:String>
+	<sys:String x:Key="K2174"  xml:space="preserve">切断指示 - 2回目を再試行</sys:String>
+	<sys:String x:Key="K2175"  xml:space="preserve">ユーザープロフィール</sys:String>
+	<sys:String x:Key="K2176"  xml:space="preserve">ユーザー名</sys:String>
+	<sys:String x:Key="K2177"  xml:space="preserve">すべてのタブレットは USB デバッグモードをサポートしています。USB デバッグモードをオンにしてタブレットを PC に接続する方法をご紹介します。その後、Software Fix がファームウェアを自動的に一致させます；</sys:String>
+	<sys:String x:Key="K2178"  xml:space="preserve">ほとんどのスマホはファストブートモードをサポートしています。ファストブートモードをオンにしてスマホを PC に接続する方法をご紹介します。その後、Software Fix が機種を確認できるようになります；</sys:String>
+	<sys:String x:Key="K2179"  xml:space="preserve">デバイスを読み取る</sys:String>
+	<sys:String x:Key="K2180"  xml:space="preserve">フラッシュ失敗！&#x0a;お使いのコンピュータのデバイスマネージャー内のポートドライバーを確認し、[bh weight=600 size = 14]MediaTek Inc. 公式ドライバー[/bh] を使用していることを確認してください。&#x0a;サードパーティ製ドライバーがインストールされている場合は、手動でそれに切り替えてから再試行してください。</sys:String>
+	<sys:String x:Key="K2181"  xml:space="preserve">デバイスモードを確認する</sys:String>
+	<sys:String x:Key="K2182"  xml:space="preserve">重要なお知らせ - Google アカウントは削除されません</sys:String>
+	<sys:String x:Key="K2183"  xml:space="preserve">デバイスレスキュー [c color='#FF4042'] では、現在このデバイスに関連付けられている Google アカウント (FRP) [/c] は削除されません。</sys:String>
+	<sys:String x:Key="K2184"  xml:space="preserve">Google アカウントは削除されないことを理解しています</sys:String>
+	<sys:String x:Key="K2185"  xml:space="preserve">分かりました、続けて</sys:String>
+	<sys:String x:Key="K2186"  xml:space="preserve">ログイン</sys:String>
+	<sys:String x:Key="K2187"  xml:space="preserve">お使いのデバイスが [bc weight=500 color='#D92D20']QDLoader 9008 モード[/bc] で検出されました。これは深刻なシステム障害を示しています。この状態では、Software Fix Rescue は適用できません。&#x0a;&#x0a;モトローラ正規サービスセンターでの専門的な修理をご利用ください。</sys:String>
+	<sys:String x:Key="K2188"  xml:space="preserve">[bc color='#D92D20' weight=500]お使いのデバイスドライバーに異常があるか、非Moto公式ドライバーが使用されている[/bc]ことが検出されました。これにより、デバイスが正しく認識されなかったり、通信が中断されたりする可能性があります。&#x0a;&#x0a;最新のMoto公式ドライバーに更新しますか？&#x0a;[h size = 12]（注：この操作では既存のドライバーはアンインストールされません。）[/h]</sys:String>
+	<sys:String x:Key="K2189"  xml:space="preserve">お使いのデバイスが[bc weight=500 color='#D92D20']MediaTek Inc.非公式ドライバー[/bc]を使用していることが検出されました！&#x0a;まずそのドライバーをアンインストールしてから、再フラッシュを試してください。</sys:String>
+	<sys:String x:Key="K2190"  xml:space="preserve">ドライバーのインストールに失敗しました。もう一度お試しください。</sys:String>
+	<sys:String x:Key="K2191"  xml:space="preserve">USB書き込み速度が遅く、タイムアウトが発生しました！&#x0a;USBケーブルまたはUSBポートを交換するか（USBハブの使用は推奨しません）、パソコンを再起動してからもう一度お試しください。</sys:String>
+	<sys:String x:Key="K2192"  xml:space="preserve">Fastboot 再起動</sys:String>
+	<sys:String x:Key="K2193"  xml:space="preserve">[ログイン] をクリックして再試行してください</sys:String>
+	<sys:String x:Key="K2194"  xml:space="preserve">以下の手順に従ってデバイスを接続してください。&#x0a; &#x0a;ステップ 1: デバイスの電源を切ります。&#x0a; &#x0a;ステップ2：SIMニードルでシステムホールを押し続けます&#x0a; &#x0a;ステップ3：USBタイプAポートを介してデバイスをPCに接続します。&#x0a; &#x0a;ステップ4: プロセスが開始したら、SIM ニードルを離します。</sys:String>
+	<sys:String x:Key="K2195"  xml:space="preserve">以下の手順に従ってデバイスを接続してください。&#x0a;ステップ 1 - デバイスの電源を切る&#x0a;ステップ 2 - SIM ニードルでシステムホールを押し続ける&#x0a;ステップ 3 - USB タイプ A ポート経由でデバイスを PC に接続します。&#x0a;ステップ 4 - プロセスが開始したら SIM ニードルを離します。</sys:String>
+	<sys:String x:Key="K2196"  xml:space="preserve">接続しているデバイスのモデル名が、入力されたIMEIと一致しません。お使いのデバイスは {0} です。フラッシュ処理を再開してください。</sys:String>
+	<sys:String x:Key="K2197"  xml:space="preserve">ファイルのバックアップが完了しました！</sys:String>
+	<sys:String x:Key="K2198"  xml:space="preserve">読み込み中... しばらくお待ちください</sys:String>
+	<sys:String x:Key="K2199"  xml:space="preserve">ファイルの復元が完了しました！</sys:String>
+	<sys:String x:Key="K2200"  xml:space="preserve">MA を最新バージョンにアップグレードしてください。</sys:String>
+	<sys:String x:Key="K2201"  xml:space="preserve">ネットワークが不安定です。アプリを再起動して、もう一度試してください。</sys:String>
+	<sys:String x:Key="K2202"  xml:space="preserve">デバイスの説明:</sys:String>
+	<sys:String x:Key="K2203"  xml:space="preserve">デバイスインスタンスパス:</sys:String>
+	<sys:String x:Key="K2204"  xml:space="preserve">メーカー:</sys:String>
+	<sys:String x:Key="K2205"  xml:space="preserve">ドライバー提供:</sys:String>
+	<sys:String x:Key="K2206"  xml:space="preserve">ドライバーバージョン:</sys:String>
+	<sys:String x:Key="K2207"  xml:space="preserve">ポートステータス:</sys:String>
+	<sys:String x:Key="K2208"  xml:space="preserve">デバイスの接続が失われました。再接続してデータ転送を続行しますか?</sys:String>
+	<sys:String x:Key="K2209"  xml:space="preserve">はい、再接続して続行</sys:String>
+	<sys:String x:Key="K2210"  xml:space="preserve">いいえ、転送を終了してください</sys:String>
+	<sys:String x:Key="K2211"  xml:space="preserve">接続が失われました</sys:String>
+	<sys:String x:Key="K2212"  xml:space="preserve">デバイスが切断されました</sys:String>
+	<sys:String x:Key="K2213"  xml:space="preserve">デバイスの接続が失われました。ホームページに戻り、モバイルアシスタントアプリを再接続してください。</sys:String>
+	<sys:String x:Key="K2214"  xml:space="preserve">接続の中断</sys:String>
+	<sys:String x:Key="K2215"  xml:space="preserve">ソフトウェア接続が切断されたか、再びタイムアウトになりました。データを転送するには、デバイスを再接続してください。</sys:String>
+	<sys:String x:Key="K2216"  xml:space="preserve">現在接続されているデバイスが [bc color='#D92D20' weight=500]サードパーティ製ドライバー {0}[/bc] を使用していることが検出され、認識異常が発生しています。&#x0a;[bc color='#D92D20' weight=500]このサードパーティ製ドライバーをアンインストール[/bc]して、フラッシュを続行してもよろしいですか？&#x0a;&#x0a;[b weight=500]注：[/b] このドライバーに依存している他のアプリケーションがお使いのパソコン上にある場合、アンインストール後にそれらのアプリケーションがデバイスを正常に認識できなくなる可能性があります。</sys:String>
+	<sys:String x:Key="K2217"  xml:space="preserve">デバイスドライバが正常に切り替わりました</sys:String>
+	<sys:String x:Key="K2218"  xml:space="preserve">デバイスドライバが正常にアンインストールされました</sys:String>
+	<sys:String x:Key="K2219"  xml:space="preserve">デバイスドライバをアンインストールできませんでした</sys:String>
+	<sys:String x:Key="K2220"  xml:space="preserve">デバイスドライバの切り替えが失敗しました</sys:String>
+	<sys:String x:Key="K2221"  xml:space="preserve">同意します</sys:String>
+	<sys:String x:Key="K2222"  xml:space="preserve">レノボのプライバシーポリシー</sys:String>
+	<sys:String x:Key="K2223"  xml:space="preserve">Software Fix では Google アカウントを削除できないことを認めます</sys:String>
+	<sys:String x:Key="K2224"  xml:space="preserve">ファイルは正常にインポートされました</sys:String>
+	<sys:String x:Key="K2225"  xml:space="preserve">ファイルのインポートに失敗</sys:String>
+	<sys:String x:Key="K2226"  xml:space="preserve">ログインタイムアウト。クライアントにもう一度ログインしてください。</sys:String>
+	<sys:String x:Key="K2227"  xml:space="preserve">フラッシュポートの応答がタイムアウトしました。&#x0a;デバイスポートドライバ [bc color=' #D92D20 'weight=500'] が異常に動作しているか、Moto 公式ではないドライバが使用中であることが検出されました [/bc]。&#x0a;&#x0a;レスキュープロセスを再試行してください。必要なドライバーが自動的にインストールされます。</sys:String>
+	<sys:String x:Key="K2228"  xml:space="preserve">データを復元すると、連絡先を除くすべてのデータタイプで重複排除がデフォルトで有効になります。</sys:String>
+	<sys:String x:Key="K2229"  xml:space="preserve">データの整理</sys:String>
+	<sys:String x:Key="K2230"  xml:space="preserve">ダウンロードパスが無効です</sys:String>
+	<sys:String x:Key="K2231"  xml:space="preserve">デバイスに十分な空き容量がありません。空き容量を増やしてから、やり直してください。</sys:String>
+	<sys:String x:Key="K2232"  xml:space="preserve">ネットワークが不安定です。後でもう一度試してください。</sys:String>
+</ResourceDictionary>

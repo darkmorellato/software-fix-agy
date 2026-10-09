@@ -1,0 +1,2065 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+	<sys:String x:Key="K0001"  xml:space="preserve">重装Android系统可以</sys:String>
+	<sys:String x:Key="K0002"  xml:space="preserve">修复设备软件问题，避免费时的维修或加快手机速度</sys:String>
+	<sys:String x:Key="K0003"  xml:space="preserve">恢复完全无法开机的设备</sys:String>
+	<sys:String x:Key="K0004"  xml:space="preserve">重置PIN丢失的设备</sys:String>
+	<sys:String x:Key="K0005"  xml:space="preserve">在设备和PC之间备份与还原数据</sys:String>
+	<sys:String x:Key="K0006"  xml:space="preserve">登录</sys:String>
+	<sys:String x:Key="K0007"  xml:space="preserve">自动登录中</sys:String>
+	<sys:String x:Key="K0008"  xml:space="preserve">个性化软件更新</sys:String>
+	<sys:String x:Key="K0009"  xml:space="preserve">有用的备份/还原工具</sys:String>
+	<sys:String x:Key="K0010"  xml:space="preserve">登录或注册</sys:String>
+	<sys:String x:Key="K0011"  xml:space="preserve">登录Software Fix账号</sys:String>
+	<sys:String x:Key="K0012"  xml:space="preserve">或</sys:String>
+	<sys:String x:Key="K0013"  xml:space="preserve">用户名/邮箱</sys:String>
+	<sys:String x:Key="K0014"  xml:space="preserve">密码</sys:String>
+	<sys:String x:Key="K0015"  xml:space="preserve">验证码</sys:String>
+	<sys:String x:Key="K0016"  xml:space="preserve">自动登录</sys:String>
+	<sys:String x:Key="K0017"  xml:space="preserve">保存密码</sys:String>
+	<sys:String x:Key="K0018"  xml:space="preserve">登录</sys:String>
+	<sys:String x:Key="K0019"  xml:space="preserve">登出</sys:String>
+	<sys:String x:Key="K0020"  xml:space="preserve">登录Lenovo ID账号</sys:String>
+	<sys:String x:Key="K0021"  xml:space="preserve">无效的用户名或者密码。</sys:String>
+	<sys:String x:Key="K0022"  xml:space="preserve">修改密码</sys:String>
+	<sys:String x:Key="K0023"  xml:space="preserve">旧密码</sys:String>
+	<sys:String x:Key="K0024"  xml:space="preserve">新密码</sys:String>
+	<sys:String x:Key="K0025"  xml:space="preserve">确认密码</sys:String>
+	<sys:String x:Key="K0026"  xml:space="preserve">少于6个字符</sys:String>
+	<sys:String x:Key="K0027"  xml:space="preserve">密码不匹配</sys:String>
+	<sys:String x:Key="K0028"  xml:space="preserve">错误的旧密码</sys:String>
+	<sys:String x:Key="K0029"  xml:space="preserve">忘记密码</sys:String>
+	<sys:String x:Key="K0030"  xml:space="preserve">重置密码</sys:String>
+	<sys:String x:Key="K0031"  xml:space="preserve">用户名</sys:String>
+	<sys:String x:Key="K0032"  xml:space="preserve">邮箱地址</sys:String>
+	<sys:String x:Key="K0033"  xml:space="preserve">验证码</sys:String>
+	<sys:String x:Key="K0034"  xml:space="preserve">验证码错误</sys:String>
+	<sys:String x:Key="K0035"  xml:space="preserve">用户不存在</sys:String>
+	<sys:String x:Key="K0036"  xml:space="preserve">提交</sys:String>
+	<sys:String x:Key="K0037"  xml:space="preserve">用户名和电子邮件为必填项</sys:String>
+	<sys:String x:Key="K0038"  xml:space="preserve">自动生成的密码已通过电子邮件发送给您。登录后修改密码。</sys:String>
+	<sys:String x:Key="K0039"  xml:space="preserve">服务不可用。请检查您的网络。</sys:String>
+	<sys:String x:Key="K0040"  xml:space="preserve">输入密码</sys:String>
+	<sys:String x:Key="K0041"  xml:space="preserve">必填项</sys:String>
+	<sys:String x:Key="K0042"  xml:space="preserve">错误的邮箱地址</sys:String>
+	<sys:String x:Key="K0043"  xml:space="preserve">登记</sys:String>
+	<sys:String x:Key="K0044"  xml:space="preserve">新密码必须与以前的密码不同。</sys:String>
+	<sys:String x:Key="K0045"  xml:space="preserve">使用新密码登录。</sys:String>
+	<sys:String x:Key="K0046"  xml:space="preserve">跳过并进入“我的设备”</sys:String>
+	<sys:String x:Key="K0047"  xml:space="preserve">重装Android系统</sys:String>
+	<sys:String x:Key="K0048"  xml:space="preserve">设备无法启动</sys:String>
+	<sys:String x:Key="K0049"  xml:space="preserve">解锁PIN码丢失</sys:String>
+	<sys:String x:Key="K0050"  xml:space="preserve">刷机准备（连接设备）</sys:String>
+	<sys:String x:Key="K0051"  xml:space="preserve">Fastboot模式</sys:String>
+	<sys:String x:Key="K0052"  xml:space="preserve">USB调试模式</sys:String>
+	<sys:String x:Key="K0053"  xml:space="preserve">关机模式</sys:String>
+	<sys:String x:Key="K0054"  xml:space="preserve">通过Fastboot模式连接设备</sys:String>
+	<sys:String x:Key="K0055"  xml:space="preserve">1. 关闭设备电源。</sys:String>
+	<sys:String x:Key="K0056"  xml:space="preserve">2. 连接USB线到电脑。</sys:String>
+	<sys:String x:Key="K0057"  xml:space="preserve">3. 按住音量&quot;-&quot;键，然后将USB线连接到您的设备。 在手机显示屏上看到绿色的Android时，松开音量&quot;-&quot;键。</sys:String>
+	<sys:String x:Key="K0058"  xml:space="preserve">检查您的设备是否支持fastboot模式刷机</sys:String>
+	<sys:String x:Key="K0059"  xml:space="preserve">输入产品名称去搜索</sys:String>
+	<sys:String x:Key="K0060"  xml:space="preserve">请按照上面的说明进行操作，以将设备切换至Fastboot模式。</sys:String>
+	<sys:String x:Key="K0061"  xml:space="preserve">您的设备不支持Fastboot模式刷机，跳过此步骤继续进行刷机。</sys:String>
+	<sys:String x:Key="K0062"  xml:space="preserve">使用USB调试模式连接设备</sys:String>
+	<sys:String x:Key="K0063"  xml:space="preserve">对于以下情况，可以单击“确定”转到下一步：</sys:String>
+	<sys:String x:Key="K0064"  xml:space="preserve">1. 设备无法开机</sys:String>
+	<sys:String x:Key="K0065"  xml:space="preserve">2. 不能切换到Fastboot模式</sys:String>
+	<sys:String x:Key="K0066"  xml:space="preserve">3. 无法激活调试模式</sys:String>
+	<sys:String x:Key="K0067"  xml:space="preserve">您最近使用过这些设备。&#x0a;您想对其中一个进行刷机吗？</sys:String>
+	<sys:String x:Key="K0068"  xml:space="preserve">其他设备</sys:String>
+	<sys:String x:Key="K0069"  xml:space="preserve">选择或输入设备名称</sys:String>
+	<sys:String x:Key="K0070"  xml:space="preserve">加载设备信息…</sys:String>
+	<sys:String x:Key="K0071"  xml:space="preserve">警告</sys:String>
+	<sys:String x:Key="K0072"  xml:space="preserve">解决方案：</sys:String>
+	<sys:String x:Key="K0073"  xml:space="preserve">选择型号去搜索</sys:String>
+	<sys:String x:Key="K0074"  xml:space="preserve">不知道型号名字？</sys:String>
+	<sys:String x:Key="K0075"  xml:space="preserve">检查设备或设备的外部包装以获取型号名称。</sys:String>
+	<sys:String x:Key="K0076"  xml:space="preserve">型号</sys:String>
+	<sys:String x:Key="K0077"  xml:space="preserve">PN</sys:String>
+	<sys:String x:Key="K0078"  xml:space="preserve">Track ID</sys:String>
+	<sys:String x:Key="K0079"  xml:space="preserve">IMEI</sys:String>
+	<sys:String x:Key="K0080"  xml:space="preserve">IMEI 1</sys:String>
+	<sys:String x:Key="K0081"  xml:space="preserve">IMEI 2</sys:String>
+	<sys:String x:Key="K0082"  xml:space="preserve">SN</sys:String>
+	<sys:String x:Key="K0083"  xml:space="preserve">联想设计      中国制作</sys:String>
+	<sys:String x:Key="K0084"  xml:space="preserve">选择硬件代码</sys:String>
+	<sys:String x:Key="K0085"  xml:space="preserve">如何获得硬件代码？</sys:String>
+	<sys:String x:Key="K0086"  xml:space="preserve">在移动设备或者包装盒上获取硬件代码。</sys:String>
+	<sys:String x:Key="K0087"  xml:space="preserve">设备名称</sys:String>
+	<sys:String x:Key="K0088"  xml:space="preserve">硬件代码</sys:String>
+	<sys:String x:Key="K0089"  xml:space="preserve">国家</sys:String>
+	<sys:String x:Key="K0090"  xml:space="preserve">SIM卡数量</sys:String>
+	<sys:String x:Key="K0091"  xml:space="preserve">手机内存</sys:String>
+	<sys:String x:Key="K0092"  xml:space="preserve">匹配已连接设备的ROM</sys:String>
+	<sys:String x:Key="K0093"  xml:space="preserve">立即刷机</sys:String>
+	<sys:String x:Key="K0094"  xml:space="preserve">选择您的设备</sys:String>
+	<sys:String x:Key="K0095"  xml:space="preserve">联想</sys:String>
+	<sys:String x:Key="K0096"  xml:space="preserve">摩托罗拉</sys:String>
+	<sys:String x:Key="K0097"  xml:space="preserve">刷机包：</sys:String>
+	<sys:String x:Key="K0098"  xml:space="preserve">不能匹配到合适的刷机包。&#x0a;您可以尝试在关机模式页面中手动选择。</sys:String>
+	<sys:String x:Key="K0099"  xml:space="preserve">- 确保目标固件与您的设备型号相匹配&#x0a;- 刷机会删除设备中的所有数据。</sys:String>
+	<sys:String x:Key="K0100"  xml:space="preserve">下载</sys:String>
+	<sys:String x:Key="K0101"  xml:space="preserve">下载中</sys:String>
+	<sys:String x:Key="K0102"  xml:space="preserve">刷机</sys:String>
+	<sys:String x:Key="K0103"  xml:space="preserve">刷机中…</sys:String>
+	<sys:String x:Key="K0104"  xml:space="preserve">正在识别设备…</sys:String>
+	<sys:String x:Key="K0105"  xml:space="preserve">设置国家代码失败。&#x0a;请检查您的设备。</sys:String>
+	<sys:String x:Key="K0106"  xml:space="preserve">设置国家代码成功。&#x0a;请按照提示启动您的手机。</sys:String>
+	<sys:String x:Key="K0107"  xml:space="preserve">刷机软件更新将删除所有数据，包括联系人、照片、视频和音乐。</sys:String>
+	<sys:String x:Key="K0108"  xml:space="preserve">您的个人数据备份了吗？</sys:String>
+	<sys:String x:Key="K0109"  xml:space="preserve">确定要刷机吗？</sys:String>
+	<sys:String x:Key="K0110"  xml:space="preserve">插入一张有2G可用空间的SD卡。</sys:String>
+	<sys:String x:Key="K0111"  xml:space="preserve">刷机完成。</sys:String>
+	<sys:String x:Key="K0112"  xml:space="preserve">您选择的设备与连接设备不匹配。&#x0a;您的设备是{0}。&#x0a;&#x0a;是否要使用它？</sys:String>
+	<sys:String x:Key="K0113"  xml:space="preserve">不支持此设备。</sys:String>
+	<sys:String x:Key="K0114"  xml:space="preserve">匹配刷机包失败。&#x0a;重连您的设备，然后重试。&#x0a;</sys:String>
+	<sys:String x:Key="K0115"  xml:space="preserve">同时按住音量&quot;+&quot;，&quot;-&quot; 键，然后将设备连接到电脑。当刷机开始之后放开手机按键。</sys:String>
+	<sys:String x:Key="K0116"  xml:space="preserve">同时按住音量&quot;-&quot;键，然后将设备连接到电脑。当刷机开始之后放开手机按键。</sys:String>
+	<sys:String x:Key="K0117"  xml:space="preserve">同时按住音量&quot;+&quot;键，然后将设备连接到电脑。当刷机开始之后放开手机按键。</sys:String>
+	<sys:String x:Key="K0118"  xml:space="preserve">国家代码设置失败。</sys:String>
+	<sys:String x:Key="K0119"  xml:space="preserve">请检查您的设备信息。</sys:String>
+	<sys:String x:Key="K0120"  xml:space="preserve">国家代码设置成功。</sys:String>
+	<sys:String x:Key="K0121"  xml:space="preserve">请按照提示启动您的手机。</sys:String>
+	<sys:String x:Key="K0122"  xml:space="preserve">您选择的设备与连接设备不匹配。</sys:String>
+	<sys:String x:Key="K0123"  xml:space="preserve">为您匹配到了一个正确的设备。</sys:String>
+	<sys:String x:Key="K0124"  xml:space="preserve">要使用它吗？</sys:String>
+	<sys:String x:Key="K0125"  xml:space="preserve">连接设备中…</sys:String>
+	<sys:String x:Key="K0126"  xml:space="preserve">1. 断开设备与USB线的连接。&#x0a;2. 关闭设备电源，然后取出电池。&#x0a;3. 单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0127"  xml:space="preserve">断开设备与USB线的连接，关机，然后单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0128"  xml:space="preserve">1. 关机，断开设备与电脑的连接。&#x0a; 2. 按住音量&quot;+&quot; 键，然后通过USB线连接设备与电脑。&#x0a; 3. 单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0129"  xml:space="preserve">1. 关机，断开设备与电脑的连接。&#x0a;2. 按住音量 &quot;+&quot; 和 &quot;-&quot; 键，然后通过USB线连接设备与电脑.&#x0a;3. 单击“确定”继续。&#x0a;4. 当刷机进度开始之后，放开&quot;+&quot;和 &quot;-&quot;键。</sys:String>
+	<sys:String x:Key="K0130"  xml:space="preserve">1. 关机，断开设备与电脑的连接。&#x0a;2. 按住音量 &quot;+&quot;然后通过USB线连接设备与电脑&#x0a;3.  单击“确定”继续。&#x0a;4. 当刷机进度开始之后，放开音量&quot;+&quot;键。</sys:String>
+	<sys:String x:Key="K0131"  xml:space="preserve">1. 开机.&#x0a;2. 在手机拨号面板中, 输入 ####682#设置国家代码。&#x0a;3. 进入国家代码设置页面, 按照页面上的提示进行操作。</sys:String>
+	<sys:String x:Key="K0132"  xml:space="preserve">连接设备并刷机</sys:String>
+	<sys:String x:Key="K0133"  xml:space="preserve">清除工厂模式</sys:String>
+	<sys:String x:Key="K0134"  xml:space="preserve">Fastboot模式刷机</sys:String>
+	<sys:String x:Key="K0135"  xml:space="preserve">等待进入Fasboot刷机模式</sys:String>
+	<sys:String x:Key="K0136"  xml:space="preserve">推送设置国家代码的文件</sys:String>
+	<sys:String x:Key="K0137"  xml:space="preserve">1. 关机，断开设备与电脑的连接。&#x0a;2. 同时按住音量&quot;+&quot;， &quot;-&quot; 和开机键，当设备震动时，放开所有按键&#x0a;3.通过USB线连接设备与电脑，然后单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0138"  xml:space="preserve">国家代码设置失败。&#x0a;检查是否插入了外部存储卡，然后尝试再次刷机。</sys:String>
+	<sys:String x:Key="K0139"  xml:space="preserve">清除工厂模式失败。请您重试刷机或者去服务中心寻找帮助。</sys:String>
+	<sys:String x:Key="K0140"  xml:space="preserve">刷机失败，因为没有fastboot模式连接的设备。&#x0a;请您按照刷机说明重试刷机。</sys:String>
+	<sys:String x:Key="K0141"  xml:space="preserve">刷机失败，请重试。</sys:String>
+	<sys:String x:Key="K0142"  xml:space="preserve">检查设备是否已连接，然后按照右侧的刷机提示进行操作。</sys:String>
+	<sys:String x:Key="K0143"  xml:space="preserve">检查已连接设备是否为Fastboot模式，然后按照右侧的刷机提示进行操作。</sys:String>
+	<sys:String x:Key="K0144"  xml:space="preserve">没有设备以fastboot模式进行连接。&#x0a;请重试。</sys:String>
+	<sys:String x:Key="K0145"  xml:space="preserve">1. 开机。&#x0a;2. 在手机拨号面板中，输入####6020#去设置国家代码&#x0a;3. 进入国家代码设置页面, 按照页面上的提示进行操作。</sys:String>
+	<sys:String x:Key="K0146"  xml:space="preserve">当前Software Fix客户端不支持此设备的刷机，请您更新Software Fix客户端到最新版本。</sys:String>
+	<sys:String x:Key="K0147"  xml:space="preserve">开始设置国家代码</sys:String>
+	<sys:String x:Key="K0148"  xml:space="preserve">1. 在手机拨号面板中，输入####6020#去设置国家代码&#x0a;2. 进入国家代码设置页面, 按照页面上的提示进行操作。</sys:String>
+	<sys:String x:Key="K0149"  xml:space="preserve">1. 关机并移除设备电池。&#x0a;2. 通过USB线连接设备与电脑，然后单击“确认”继续。</sys:String>
+	<sys:String x:Key="K0150"  xml:space="preserve">如果您的设备没有以fasboot模式连接到电脑,请执行以下操作：&#x0a;1. 关机。&#x0a;2. 同时按住音量&quot;-&quot;键与开机键，直到手机进入到Fastboot模式。&#x0a;3. 连接设备到电脑。</sys:String>
+	<sys:String x:Key="K0151"  xml:space="preserve">等待设备进入到Fastboot模式</sys:String>
+	<sys:String x:Key="K0152"  xml:space="preserve">断开连接说明</sys:String>
+	<sys:String x:Key="K0153"  xml:space="preserve">Shell test</sys:String>
+	<sys:String x:Key="K0154"  xml:space="preserve">将恢复文件下载到设备</sys:String>
+	<sys:String x:Key="K0155"  xml:space="preserve">连接说明</sys:String>
+	<sys:String x:Key="K0156"  xml:space="preserve">1.关机。&#x0a;2. 通过USB线连接设备与电脑，然后单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0157"  xml:space="preserve">移除电池，通过USB线连接设备与电脑，然后单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0158"  xml:space="preserve">1. 开机.&#x0a;2. 在手机拨号面板中, 输入 ####6020#设置国家代码。&#x0a;3. 进入国家代码设置页面, 按照页面上的提示进行操作。</sys:String>
+	<sys:String x:Key="K0159"  xml:space="preserve">1. 开机.&#x0a;2. 在手机拨号面板中, 输入 ####682#设置国家代码。&#x0a;3. 进入国家代码设置页面, 按照页面上的提示进行操作。</sys:String>
+	<sys:String x:Key="K0160"  xml:space="preserve">1.关机，断开设备与PC的连接。&#x0a;2. 按住音量&quot;+&quot;键，然后通过USB线连接设备与电脑。&#x0a;3. 单击“确定”继续。&#x0a;4. 当刷机进度开始之后，是否所有的按键。</sys:String>
+	<sys:String x:Key="K0161"  xml:space="preserve">1. 开机。&#x0a;2. 设置国家代码：打开设备USB调试，通过USB线连接设备与电脑，并授权PC与设备连接。&#x0a;3. 在设备上，等待设备进入到国家代码设置页面，然后按照页面上的说明进行操作。</sys:String>
+	<sys:String x:Key="K0162"  xml:space="preserve">1. 关机，断开设备与电脑的连接。&#x0a;2.按住音量&quot;+&quot;和&quot;-&quot;键，通过USB线连接设备与电脑。&#x0a;3. 单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0163"  xml:space="preserve">1. 关机，断开设备与电脑的连接。&#x0a;2. 按住音量&quot;+&quot;键，通过USB线连接设备与电脑。&#x0a;3. 松开音量&quot;+&quot;键，然后在手机上选择“Download”。&#x0a;4. 单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0164"  xml:space="preserve">关机，断开设备与电脑的连接，然后单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0165"  xml:space="preserve">1. 关机，断开设备与电脑的连接。&#x0a;2. 同时按住音量&quot;+&quot;和开机键，直到设备进入到Fastboot模式。&#x0a;3. 通过USB线连接设备与电脑。</sys:String>
+	<sys:String x:Key="K0166"  xml:space="preserve">确保设备是2G RAM的平板，否则刷机后将无法开机。</sys:String>
+	<sys:String x:Key="K0167"  xml:space="preserve">确保设备是1G RAM的平板，否则刷机后将无法开机。</sys:String>
+	<sys:String x:Key="K0168"  xml:space="preserve">请耐心等待设备重启。通常需要2分钟以上。</sys:String>
+	<sys:String x:Key="K0169"  xml:space="preserve">刷机完成。请按电源键重新启动设备。</sys:String>
+	<sys:String x:Key="K0170"  xml:space="preserve">应用检测到的信息。</sys:String>
+	<sys:String x:Key="K0171"  xml:space="preserve">确保仅连接一台设备。</sys:String>
+	<sys:String x:Key="K0172"  xml:space="preserve">确保未连接任何设备。</sys:String>
+	<sys:String x:Key="K0173"  xml:space="preserve">正在进行刷机。继续退出吗？</sys:String>
+	<sys:String x:Key="K0174"  xml:space="preserve">正在进行刷机。请稍等片刻。</sys:String>
+	<sys:String x:Key="K0175"  xml:space="preserve">手机刷机尚未完成。</sys:String>
+	<sys:String x:Key="K0176"  xml:space="preserve">不支援的设备</sys:String>
+	<sys:String x:Key="K0177"  xml:space="preserve">目前不支持</sys:String>
+	<sys:String x:Key="K0178"  xml:space="preserve">找不到.mbn文件。</sys:String>
+	<sys:String x:Key="K0179"  xml:space="preserve">提取失败。释放PC上的空间，然后重试。</sys:String>
+	<sys:String x:Key="K0180"  xml:space="preserve">提取失败：找不到* .mbn文件</sys:String>
+	<sys:String x:Key="K0181"  xml:space="preserve">运行配置失败！</sys:String>
+	<sys:String x:Key="K0182"  xml:space="preserve">工具箱</sys:String>
+	<sys:String x:Key="K0183"  xml:space="preserve">剪贴板</sys:String>
+	<sys:String x:Key="K0184"  xml:space="preserve">在设备和PC之间复制文本</sys:String>
+	<sys:String x:Key="K0185"  xml:space="preserve">复制到设备剪贴板</sys:String>
+	<sys:String x:Key="K0186"  xml:space="preserve">从设备剪贴板粘贴</sys:String>
+	<sys:String x:Key="K0187"  xml:space="preserve">（剪贴板仅支持文本。要传输文件，请使用“文件”。）</sys:String>
+	<sys:String x:Key="K0188"  xml:space="preserve">剪贴板内容</sys:String>
+	<sys:String x:Key="K0189"  xml:space="preserve">使用USB线将设备连接到PC</sys:String>
+	<sys:String x:Key="K0190"  xml:space="preserve">内部编号</sys:String>
+	<sys:String x:Key="K0191"  xml:space="preserve">1.用USB线连接设备</sys:String>
+	<sys:String x:Key="K0192"  xml:space="preserve">2.打开USB调试。</sys:String>
+	<sys:String x:Key="K0193"  xml:space="preserve">设置 >系统* >开发人员选项 >USB调试</sys:String>
+	<sys:String x:Key="K0194"  xml:space="preserve">开启</sys:String>
+	<sys:String x:Key="K0195"  xml:space="preserve">USB调试</sys:String>
+	<sys:String x:Key="K0196"  xml:space="preserve">连接USB时的USB调试模式</sys:String>
+	<sys:String x:Key="K0197"  xml:space="preserve">找不到“开发人员选项”？</sys:String>
+	<sys:String x:Key="K0198"  xml:space="preserve">设置 >系统* >关于手机/平板电脑</sys:String>
+	<sys:String x:Key="K0199"  xml:space="preserve">>点击</sys:String>
+	<sys:String x:Key="K0200"  xml:space="preserve">编辑</sys:String>
+	<sys:String x:Key="K0201"  xml:space="preserve">7次</sys:String>
+	<sys:String x:Key="K0202"  xml:space="preserve">（*自Android 8.0起）</sys:String>
+	<sys:String x:Key="K0203"  xml:space="preserve">3.授权</sys:String>
+	<sys:String x:Key="K0204"  xml:space="preserve">允许USB调试？</sys:String>
+	<sys:String x:Key="K0205"  xml:space="preserve">一律允许使用这台计算机</sys:String>
+	<sys:String x:Key="K0206"  xml:space="preserve">GIF制作工具</sys:String>
+	<sys:String x:Key="K0207"  xml:space="preserve">选择PC上的图片制作GIF动画</sys:String>
+	<sys:String x:Key="K0208"  xml:space="preserve">取消</sys:String>
+	<sys:String x:Key="K0209"  xml:space="preserve">复制</sys:String>
+	<sys:String x:Key="K0210"  xml:space="preserve">新增</sys:String>
+	<sys:String x:Key="K0211"  xml:space="preserve">线</sys:String>
+	<sys:String x:Key="K0212"  xml:space="preserve">椭圆</sys:String>
+	<sys:String x:Key="K0213"  xml:space="preserve">长方形</sys:String>
+	<sys:String x:Key="K0214"  xml:space="preserve">文字</sys:String>
+	<sys:String x:Key="K0215"  xml:space="preserve">剪切</sys:String>
+	<sys:String x:Key="K0216"  xml:space="preserve">特点</sys:String>
+	<sys:String x:Key="K0217"  xml:space="preserve">颜色</sys:String>
+	<sys:String x:Key="K0218"  xml:space="preserve">撤消</sys:String>
+	<sys:String x:Key="K0219"  xml:space="preserve">最小化</sys:String>
+	<sys:String x:Key="K0220"  xml:space="preserve">最大化</sys:String>
+	<sys:String x:Key="K0221"  xml:space="preserve">字体</sys:String>
+	<sys:String x:Key="K0222"  xml:space="preserve">线条粗细</sys:String>
+	<sys:String x:Key="K0223"  xml:space="preserve">缩放</sys:String>
+	<sys:String x:Key="K0224"  xml:space="preserve">要剪辑吗？</sys:String>
+	<sys:String x:Key="K0225"  xml:space="preserve">创建GIF</sys:String>
+	<sys:String x:Key="K0226"  xml:space="preserve">创建动画GIF…</sys:String>
+	<sys:String x:Key="K0227"  xml:space="preserve">输出尺寸：</sys:String>
+	<sys:String x:Key="K0228"  xml:space="preserve">帧率：</sys:String>
+	<sys:String x:Key="K0229"  xml:space="preserve">存到：</sys:String>
+	<sys:String x:Key="K0230"  xml:space="preserve">保存</sys:String>
+	<sys:String x:Key="K0231"  xml:space="preserve">视频转GIF</sys:String>
+	<sys:String x:Key="K0232"  xml:space="preserve">GIF图片集</sys:String>
+	<sys:String x:Key="K0233"  xml:space="preserve">支持JPG，PNG，JPEG和BMP图像格式。</sys:String>
+	<sys:String x:Key="K0234"  xml:space="preserve">铃声制作器</sys:String>
+	<sys:String x:Key="K0235"  xml:space="preserve">正在载入音乐</sys:String>
+	<sys:String x:Key="K0236"  xml:space="preserve">无法保存铃声</sys:String>
+	<sys:String x:Key="K0237"  xml:space="preserve">铃声已保存</sys:String>
+	<sys:String x:Key="K0238"  xml:space="preserve">设备上没有足够的空间</sys:String>
+	<sys:String x:Key="K0239"  xml:space="preserve">要退出而不保存音乐编辑内容吗？</sys:String>
+	<sys:String x:Key="K0240"  xml:space="preserve">铃声必须超过4秒。</sys:String>
+	<sys:String x:Key="K0241"  xml:space="preserve">通知铃声必须少于20秒。</sys:String>
+	<sys:String x:Key="K0242"  xml:space="preserve">通话铃声必须少于40秒。</sys:String>
+	<sys:String x:Key="K0243"  xml:space="preserve">所选文件：</sys:String>
+	<sys:String x:Key="K0244"  xml:space="preserve">铃声类型：</sys:String>
+	<sys:String x:Key="K0245"  xml:space="preserve">通话铃声</sys:String>
+	<sys:String x:Key="K0246"  xml:space="preserve">通知铃声</sys:String>
+	<sys:String x:Key="K0247"  xml:space="preserve">声音设定：</sys:String>
+	<sys:String x:Key="K0248"  xml:space="preserve">保存到电脑</sys:String>
+	<sys:String x:Key="K0249"  xml:space="preserve">保存到设备</sys:String>
+	<sys:String x:Key="K0250"  xml:space="preserve">设为开始</sys:String>
+	<sys:String x:Key="K0251"  xml:space="preserve">设为结束</sys:String>
+	<sys:String x:Key="K0252"  xml:space="preserve">用音乐制作铃声</sys:String>
+	<sys:String x:Key="K0253"  xml:space="preserve">储存铃声</sys:String>
+	<sys:String x:Key="K0254"  xml:space="preserve">单击该按钮可在设备上启用屏幕录制。</sys:String>
+	<sys:String x:Key="K0255"  xml:space="preserve">录屏</sys:String>
+	<sys:String x:Key="K0256"  xml:space="preserve">录制设备屏幕</sys:String>
+	<sys:String x:Key="K0257"  xml:space="preserve">通过USB将设备连接到录制屏幕。</sys:String>
+	<sys:String x:Key="K0258"  xml:space="preserve">支持</sys:String>
+	<sys:String x:Key="K0259"  xml:space="preserve">论坛</sys:String>
+	<sys:String x:Key="K0260"  xml:space="preserve">Tips</sys:String>
+	<sys:String x:Key="K0261"  xml:space="preserve">按产品名称搜索</sys:String>
+	<sys:String x:Key="K0262"  xml:space="preserve">查找保修</sys:String>
+	<sys:String x:Key="K0263"  xml:space="preserve">保修单</sys:String>
+	<sys:String x:Key="K0264"  xml:space="preserve">按序列号搜索或选择已注册的设备之一</sys:String>
+	<sys:String x:Key="K0265"  xml:space="preserve">帮我找到我的产品/序列号/IMEI</sys:String>
+	<sys:String x:Key="K0266"  xml:space="preserve">没有产品符合该查询。</sys:String>
+	<sys:String x:Key="K0267"  xml:space="preserve">搜寻中</sys:String>
+	<sys:String x:Key="K0268"  xml:space="preserve">序列号</sys:String>
+	<sys:String x:Key="K0269"  xml:space="preserve">机器型号</sys:String>
+	<sys:String x:Key="K0270"  xml:space="preserve">销售地区</sys:String>
+	<sys:String x:Key="K0271"  xml:space="preserve">保固详情</sys:String>
+	<sys:String x:Key="K0272"  xml:space="preserve">搜索您的权利</sys:String>
+	<sys:String x:Key="K0273"  xml:space="preserve">质保状态</sys:String>
+	<sys:String x:Key="K0274"  xml:space="preserve">截止日期</sys:String>
+	<sys:String x:Key="K0275"  xml:space="preserve">剩余天数</sys:String>
+	<sys:String x:Key="K0276"  xml:space="preserve">开始日期</sys:String>
+	<sys:String x:Key="K0277"  xml:space="preserve">结束日期</sys:String>
+	<sys:String x:Key="K0278"  xml:space="preserve">状态</sys:String>
+	<sys:String x:Key="K0279"  xml:space="preserve">使用指南</sys:String>
+	<sys:String x:Key="K0280"  xml:space="preserve">软件升级</sys:String>
+	<sys:String x:Key="K0281"  xml:space="preserve">语言</sys:String>
+	<sys:String x:Key="K0282"  xml:space="preserve">资源管理</sys:String>
+	<sys:String x:Key="K0283"  xml:space="preserve">关于</sys:String>
+	<sys:String x:Key="K0284"  xml:space="preserve">反馈</sys:String>
+	<sys:String x:Key="K0285"  xml:space="preserve">Software Fix已是最新版本。</sys:String>
+	<sys:String x:Key="K0286"  xml:space="preserve">更新客户端</sys:String>
+	<sys:String x:Key="K0287"  xml:space="preserve">大小：</sys:String>
+	<sys:String x:Key="K0288"  xml:space="preserve">大小：{0}</sys:String>
+	<sys:String x:Key="K0289"  xml:space="preserve">更新内容：</sys:String>
+	<sys:String x:Key="K0290"  xml:space="preserve">现在升级</sys:String>
+	<sys:String x:Key="K0291"  xml:space="preserve">不用了，谢谢</sys:String>
+	<sys:String x:Key="K0292"  xml:space="preserve">不要再为此版本提醒我</sys:String>
+	<sys:String x:Key="K0293"  xml:space="preserve">正在下载...</sys:String>
+	<sys:String x:Key="K0294"  xml:space="preserve">正在下载。 请稍候...</sys:String>
+	<sys:String x:Key="K0295"  xml:space="preserve">安装</sys:String>
+	<sys:String x:Key="K0296"  xml:space="preserve">客户端更新正在进行中。继续退出吗？</sys:String>
+	<sys:String x:Key="K0297"  xml:space="preserve">English</sys:String>
+	<sys:String x:Key="K0298"  xml:space="preserve">更改语言后，应用程序将重新启动。</sys:String>
+	<sys:String x:Key="K0299"  xml:space="preserve">该应用程序将自动重启。确保操作已完成，或选择稍后重新启动。</sys:String>
+	<sys:String x:Key="K0300"  xml:space="preserve">稍后重启</sys:String>
+	<sys:String x:Key="K0301"  xml:space="preserve">现在重启</sys:String>
+	<sys:String x:Key="K0302"  xml:space="preserve">3. 按住设备上的音量下键，然后连接USB 线连接到设备。&#x0a;4. 当手机上显示绿色的 Android，松开设备上的音量下键。</sys:String>
+	<sys:String x:Key="K0303"  xml:space="preserve">资源名称</sys:String>
+	<sys:String x:Key="K0304"  xml:space="preserve">资源类型</sys:String>
+	<sys:String x:Key="K0305"  xml:space="preserve">下载状态</sys:String>
+	<sys:String x:Key="K0306"  xml:space="preserve">更多信息</sys:String>
+	<sys:String x:Key="K0307"  xml:space="preserve">未开始</sys:String>
+	<sys:String x:Key="K0308"  xml:space="preserve">资源信息</sys:String>
+	<sys:String x:Key="K0309"  xml:space="preserve">文档名称</sys:String>
+	<sys:String x:Key="K0310"  xml:space="preserve">存放路径</sys:String>
+	<sys:String x:Key="K0311"  xml:space="preserve">文件大小</sys:String>
+	<sys:String x:Key="K0312"  xml:space="preserve">正在同步</sys:String>
+	<sys:String x:Key="K0313"  xml:space="preserve">进行中</sys:String>
+	<sys:String x:Key="K0314"  xml:space="preserve">下载完成</sys:String>
+	<sys:String x:Key="K0315"  xml:space="preserve">下载位置：</sys:String>
+	<sys:String x:Key="K0316"  xml:space="preserve">提示</sys:String>
+	<sys:String x:Key="K0317"  xml:space="preserve">去刷机</sys:String>
+	<sys:String x:Key="K0318"  xml:space="preserve">匹配设备</sys:String>
+	<sys:String x:Key="K0319"  xml:space="preserve">您确定要删除资源吗？</sys:String>
+	<sys:String x:Key="K0320"  xml:space="preserve">暂停</sys:String>
+	<sys:String x:Key="K0321"  xml:space="preserve">最多可以同时下载5个文件，请等待。</sys:String>
+	<sys:String x:Key="K0322"  xml:space="preserve">在此处查找下载</sys:String>
+	<sys:String x:Key="K0323"  xml:space="preserve">MD5检查失败</sys:String>
+	<sys:String x:Key="K0324"  xml:space="preserve">下载失败</sys:String>
+	<sys:String x:Key="K0325"  xml:space="preserve">没有足够的空间。</sys:String>
+	<sys:String x:Key="K0326"  xml:space="preserve">资源不存在。</sys:String>
+	<sys:String x:Key="K0327"  xml:space="preserve">确定</sys:String>
+	<sys:String x:Key="K0328"  xml:space="preserve">未改变</sys:String>
+	<sys:String x:Key="K0329"  xml:space="preserve">解压失败。</sys:String>
+	<sys:String x:Key="K0330"  xml:space="preserve">重命名失败。</sys:String>
+	<sys:String x:Key="K0331"  xml:space="preserve">审核失败</sys:String>
+	<sys:String x:Key="K0332"  xml:space="preserve">警告：随机操作员审核失败。将记录此故障，并将进行检查。测试将重新开始。认真遵循测试说明。</sys:String>
+	<sys:String x:Key="K0333"  xml:space="preserve">无法启动</sys:String>
+	<sys:String x:Key="K0334"  xml:space="preserve">未连接设备</sys:String>
+	<sys:String x:Key="K0335"  xml:space="preserve">设备在使用</sys:String>
+	<sys:String x:Key="K0336"  xml:space="preserve">请等待设备完成处理。</sys:String>
+	<sys:String x:Key="K0337"  xml:space="preserve">失败的</sys:String>
+	<sys:String x:Key="K0338"  xml:space="preserve">客户端</sys:String>
+	<sys:String x:Key="K0339"  xml:space="preserve">Software Fix客户端升级</sys:String>
+	<sys:String x:Key="K0340"  xml:space="preserve">需要更新。</sys:String>
+	<sys:String x:Key="K0341"  xml:space="preserve">客户端升级</sys:String>
+	<sys:String x:Key="K0342"  xml:space="preserve">插件升级</sys:String>
+	<sys:String x:Key="K0343"  xml:space="preserve">需要升级</sys:String>
+	<sys:String x:Key="K0344"  xml:space="preserve">没有升级任务</sys:String>
+	<sys:String x:Key="K0345"  xml:space="preserve">！请升级到新版本。</sys:String>
+	<sys:String x:Key="K0346"  xml:space="preserve">系统处理中，请稍等片刻。</sys:String>
+	<sys:String x:Key="K0347"  xml:space="preserve">插件添加失败，请重新尝试。</sys:String>
+	<sys:String x:Key="K0348"  xml:space="preserve">载入中···</sys:String>
+	<sys:String x:Key="K0349"  xml:space="preserve">获取版本信息失败，请重新尝试。</sys:String>
+	<sys:String x:Key="K0350"  xml:space="preserve">请连接您的设备</sys:String>
+	<sys:String x:Key="K0351"  xml:space="preserve">校验和失败</sys:String>
+	<sys:String x:Key="K0352"  xml:space="preserve">设备空间不足</sys:String>
+	<sys:String x:Key="K0353"  xml:space="preserve">Software Fix已经是最新版本。</sys:String>
+	<sys:String x:Key="K0354"  xml:space="preserve">下载完成</sys:String>
+	<sys:String x:Key="K0355"  xml:space="preserve">发现新版本，单击“确定”下载并更新。</sys:String>
+	<sys:String x:Key="K0356"  xml:space="preserve">新版本下载完成。</sys:String>
+	<sys:String x:Key="K0357"  xml:space="preserve">下载失败，请重新尝试。</sys:String>
+	<sys:String x:Key="K0358"  xml:space="preserve">网络连接失败，请检查网络。</sys:String>
+	<sys:String x:Key="K0359"  xml:space="preserve">无网络。</sys:String>
+	<sys:String x:Key="K0360"  xml:space="preserve">发生错误：{0}</sys:String>
+	<sys:String x:Key="K0361"  xml:space="preserve">需要更新插件。</sys:String>
+	<sys:String x:Key="K0362"  xml:space="preserve">插件更新中，请稍等。</sys:String>
+	<sys:String x:Key="K0363"  xml:space="preserve">插件添加失败！</sys:String>
+	<sys:String x:Key="K0364"  xml:space="preserve">插件下载失败，请重新尝试。</sys:String>
+	<sys:String x:Key="K0365"  xml:space="preserve">安装中···</sys:String>
+	<sys:String x:Key="K0366"  xml:space="preserve">设备空间不足。</sys:String>
+	<sys:String x:Key="K0367"  xml:space="preserve">请安装已下载的插件。</sys:String>
+	<sys:String x:Key="K0368"  xml:space="preserve">取消后，点击</sys:String>
+	<sys:String x:Key="K0369"  xml:space="preserve">更新页面。</sys:String>
+	<sys:String x:Key="K0370"  xml:space="preserve">完成</sys:String>
+	<sys:String x:Key="K0371"  xml:space="preserve">更新失败</sys:String>
+	<sys:String x:Key="K0372"  xml:space="preserve">更新成功</sys:String>
+	<sys:String x:Key="K0373"  xml:space="preserve">插件需要更新</sys:String>
+	<sys:String x:Key="K0374"  xml:space="preserve">请先安装插件。</sys:String>
+	<sys:String x:Key="K0375"  xml:space="preserve">无响应。</sys:String>
+	<sys:String x:Key="K0376"  xml:space="preserve">请重新尝试。</sys:String>
+	<sys:String x:Key="K0377"  xml:space="preserve">检查中···</sys:String>
+	<sys:String x:Key="K0378"  xml:space="preserve">大小</sys:String>
+	<sys:String x:Key="K0379"  xml:space="preserve">通过USB连接设备</sys:String>
+	<sys:String x:Key="K0380"  xml:space="preserve">升级到最新的Android系统</sys:String>
+	<sys:String x:Key="K0381"  xml:space="preserve">应用最新的安全补丁</sys:String>
+	<sys:String x:Key="K0382"  xml:space="preserve">当前已是最新版本。</sys:String>
+	<sys:String x:Key="K0383"  xml:space="preserve">警告：</sys:String>
+	<sys:String x:Key="K0384"  xml:space="preserve">升级之前请备份数据</sys:String>
+	<sys:String x:Key="K0385"  xml:space="preserve">升级中···</sys:String>
+	<sys:String x:Key="K0386"  xml:space="preserve">完成</sys:String>
+	<sys:String x:Key="K0387"  xml:space="preserve">失败</sys:String>
+	<sys:String x:Key="K0388"  xml:space="preserve">下载失败，请清理电脑磁盘空间后重试。</sys:String>
+	<sys:String x:Key="K0389"  xml:space="preserve">下载失败，未找到文件，请稍后再试。</sys:String>
+	<sys:String x:Key="K0390"  xml:space="preserve">下载失败，文件校验失败</sys:String>
+	<sys:String x:Key="K0391"  xml:space="preserve">刷机失败</sys:String>
+	<sys:String x:Key="K0392"  xml:space="preserve">系统重启失败</sys:String>
+	<sys:String x:Key="K0393"  xml:space="preserve">文件传输失败</sys:String>
+	<sys:String x:Key="K0394"  xml:space="preserve">资源下载失败。</sys:String>
+	<sys:String x:Key="K0395"  xml:space="preserve">硬件代码</sys:String>
+	<sys:String x:Key="K0396"  xml:space="preserve">请选择本地磁盘中的刷机包。</sys:String>
+	<sys:String x:Key="K0397"  xml:space="preserve">继续</sys:String>
+	<sys:String x:Key="K0398"  xml:space="preserve">需要至少{0}的存储空间。</sys:String>
+	<sys:String x:Key="K0399"  xml:space="preserve">保持设备连接到PC</sys:String>
+	<sys:String x:Key="K0400"  xml:space="preserve">或刷机失败。</sys:String>
+	<sys:String x:Key="K0401"  xml:space="preserve">确定要升级吗？</sys:String>
+	<sys:String x:Key="K0402"  xml:space="preserve">百分之</sys:String>
+	<sys:String x:Key="K0403"  xml:space="preserve">速度</sys:String>
+	<sys:String x:Key="K0404"  xml:space="preserve">刷机失败，配置文件无效，请重新尝试</sys:String>
+	<sys:String x:Key="K0405"  xml:space="preserve">确定删除刷机包？</sys:String>
+	<sys:String x:Key="K0406"  xml:space="preserve">无效的硬件代码</sys:String>
+	<sys:String x:Key="K0407"  xml:space="preserve">下载失败：文件不存在。</sys:String>
+	<sys:String x:Key="K0408"  xml:space="preserve">下载失败：文件校验失败。</sys:String>
+	<sys:String x:Key="K0409"  xml:space="preserve">下载失败：请清理电脑磁盘空间后重试。</sys:String>
+	<sys:String x:Key="K0410"  xml:space="preserve">网络连接失败。</sys:String>
+	<sys:String x:Key="K0411"  xml:space="preserve">正在下载刷机包···</sys:String>
+	<sys:String x:Key="K0412"  xml:space="preserve">刷机包路径</sys:String>
+	<sys:String x:Key="K0413"  xml:space="preserve">提取失败</sys:String>
+	<sys:String x:Key="K0414"  xml:space="preserve">正在解压刷机包···</sys:String>
+	<sys:String x:Key="K0415"  xml:space="preserve">刷机成功</sys:String>
+	<sys:String x:Key="K0416"  xml:space="preserve">正在进行Flash！请勿断开设备连接。</sys:String>
+	<sys:String x:Key="K0417"  xml:space="preserve">删除刷机包</sys:String>
+	<sys:String x:Key="K0418"  xml:space="preserve">下载，解压</sys:String>
+	<sys:String x:Key="K0419"  xml:space="preserve">如果该设备无法识别，请重试。</sys:String>
+	<sys:String x:Key="K0420"  xml:space="preserve">型号名称，硬件代码</sys:String>
+	<sys:String x:Key="K0421"  xml:space="preserve">请在设备上重试，关闭“允许修改系统设置”，然后再次打开。</sys:String>
+	<sys:String x:Key="K0422"  xml:space="preserve">传输中···</sys:String>
+	<sys:String x:Key="K0423"  xml:space="preserve">已完成</sys:String>
+	<sys:String x:Key="K0424"  xml:space="preserve">保持设备与计算机连接。</sys:String>
+	<sys:String x:Key="K0425"  xml:space="preserve">检查设备是否启用了USB调试模式。</sys:String>
+	<sys:String x:Key="K0426"  xml:space="preserve">更新刷机包</sys:String>
+	<sys:String x:Key="K0427"  xml:space="preserve">硬件代码：</sys:String>
+	<sys:String x:Key="K0428"  xml:space="preserve">设备已经是最新版本</sys:String>
+	<sys:String x:Key="K0429"  xml:space="preserve">导入</sys:String>
+	<sys:String x:Key="K0430"  xml:space="preserve">检查该设备</sys:String>
+	<sys:String x:Key="K0431"  xml:space="preserve">存储容量充足</sys:String>
+	<sys:String x:Key="K0432"  xml:space="preserve">更新成功</sys:String>
+	<sys:String x:Key="K0433"  xml:space="preserve">我的设备</sys:String>
+	<sys:String x:Key="K0434"  xml:space="preserve">通过USB连接</sys:String>
+	<sys:String x:Key="K0435"  xml:space="preserve">连接前启用USB调试</sys:String>
+	<sys:String x:Key="K0436"  xml:space="preserve">转到WiFi连接</sys:String>
+	<sys:String x:Key="K0437"  xml:space="preserve">转到USB连接</sys:String>
+	<sys:String x:Key="K0438"  xml:space="preserve">Android 10和11</sys:String>
+	<sys:String x:Key="K0439"  xml:space="preserve">Android 7.1或更早版本</sys:String>
+	<sys:String x:Key="K0440"  xml:space="preserve">Android 8和9</sys:String>
+	<sys:String x:Key="K0441"  xml:space="preserve">检查APK版本</sys:String>
+	<sys:String x:Key="K0442"  xml:space="preserve">卸载apk</sys:String>
+	<sys:String x:Key="K0443"  xml:space="preserve">卸载成功</sys:String>
+	<sys:String x:Key="K0444"  xml:space="preserve">安装apk</sys:String>
+	<sys:String x:Key="K0445"  xml:space="preserve">加载设备内容</sys:String>
+	<sys:String x:Key="K0446"  xml:space="preserve">加载设备内容成功</sys:String>
+	<sys:String x:Key="K0447"  xml:space="preserve">通过WiFi连接</sys:String>
+	<sys:String x:Key="K0448"  xml:space="preserve">请将您的设备与电脑连接到同一WiFi。</sys:String>
+	<sys:String x:Key="K0449"  xml:space="preserve">如果未安装Device Help应用，请从以下位置下载并安装Mobile Assistant：</sys:String>
+	<sys:String x:Key="K0450"  xml:space="preserve">如果您的设备中安装了Device Help 应用，请使用它扫描以下二维码进行连接。</sys:String>
+	<sys:String x:Key="K0451"  xml:space="preserve">发现新设备</sys:String>
+	<sys:String x:Key="K0452"  xml:space="preserve">1.打开USB调试。</sys:String>
+	<sys:String x:Key="K0453"  xml:space="preserve">2.授权</sys:String>
+	<sys:String x:Key="K0454"  xml:space="preserve">授权</sys:String>
+	<sys:String x:Key="K0455"  xml:space="preserve">型号名称：</sys:String>
+	<sys:String x:Key="K0456"  xml:space="preserve">型号：</sys:String>
+	<sys:String x:Key="K0457"  xml:space="preserve">电池：</sys:String>
+	<sys:String x:Key="K0458"  xml:space="preserve">处理器：</sys:String>
+	<sys:String x:Key="K0459"  xml:space="preserve">IMEI：</sys:String>
+	<sys:String x:Key="K0460"  xml:space="preserve">IMEI 1：</sys:String>
+	<sys:String x:Key="K0461"  xml:space="preserve">IMEI 2：</sys:String>
+	<sys:String x:Key="K0462"  xml:space="preserve">SN：</sys:String>
+	<sys:String x:Key="K0463"  xml:space="preserve">内部存储：</sys:String>
+	<sys:String x:Key="K0464"  xml:space="preserve">外部存储：</sys:String>
+	<sys:String x:Key="K0465"  xml:space="preserve">已复制</sys:String>
+	<sys:String x:Key="K0466"  xml:space="preserve">其他设备</sys:String>
+	<sys:String x:Key="K0467"  xml:space="preserve">当前版本：</sys:String>
+	<sys:String x:Key="K0468"  xml:space="preserve">安卓版本：</sys:String>
+	<sys:String x:Key="K0469"  xml:space="preserve">可用，共</sys:String>
+	<sys:String x:Key="K0470"  xml:space="preserve">不支持</sys:String>
+	<sys:String x:Key="K0471"  xml:space="preserve">未知</sys:String>
+	<sys:String x:Key="K0472"  xml:space="preserve">截屏</sys:String>
+	<sys:String x:Key="K0473"  xml:space="preserve">刷新</sys:String>
+	<sys:String x:Key="K0474"  xml:space="preserve">应用</sys:String>
+	<sys:String x:Key="K0475"  xml:space="preserve">图片</sys:String>
+	<sys:String x:Key="K0476"  xml:space="preserve">歌曲</sys:String>
+	<sys:String x:Key="K0477"  xml:space="preserve">视频</sys:String>
+	<sys:String x:Key="K0478"  xml:space="preserve">通讯录</sys:String>
+	<sys:String x:Key="K0479"  xml:space="preserve">短信</sys:String>
+	<sys:String x:Key="K0480"  xml:space="preserve">文件</sys:String>
+	<sys:String x:Key="K0481"  xml:space="preserve">备份还原</sys:String>
+	<sys:String x:Key="K0482"  xml:space="preserve">系统应用</sys:String>
+	<sys:String x:Key="K0483"  xml:space="preserve">个人应用</sys:String>
+	<sys:String x:Key="K0484"  xml:space="preserve">导出</sys:String>
+	<sys:String x:Key="K0485"  xml:space="preserve">卸载</sys:String>
+	<sys:String x:Key="K0486"  xml:space="preserve">搜索</sys:String>
+	<sys:String x:Key="K0487"  xml:space="preserve">名称</sys:String>
+	<sys:String x:Key="K0488"  xml:space="preserve">已使用</sys:String>
+	<sys:String x:Key="K0489"  xml:space="preserve">版本</sys:String>
+	<sys:String x:Key="K0490"  xml:space="preserve">确认卸载</sys:String>
+	<sys:String x:Key="K0491"  xml:space="preserve">卸载此应用？</sys:String>
+	<sys:String x:Key="K0492"  xml:space="preserve">卸载选定的应用？</sys:String>
+	<sys:String x:Key="K0493"  xml:space="preserve">卸载应用</sys:String>
+	<sys:String x:Key="K0494"  xml:space="preserve">卸载应用中···</sys:String>
+	<sys:String x:Key="K0495"  xml:space="preserve">卸载完成</sys:String>
+	<sys:String x:Key="K0496"  xml:space="preserve">选择文件</sys:String>
+	<sys:String x:Key="K0497"  xml:space="preserve">安装应用中···</sys:String>
+	<sys:String x:Key="K0498"  xml:space="preserve">安装应用</sys:String>
+	<sys:String x:Key="K0499"  xml:space="preserve">安装完成</sys:String>
+	<sys:String x:Key="K0500"  xml:space="preserve">正在导出应用···</sys:String>
+	<sys:String x:Key="K0501"  xml:space="preserve">使用USB连接设备以安装应用。</sys:String>
+	<sys:String x:Key="K0502"  xml:space="preserve">使用USB连接设备以卸载应用。</sys:String>
+	<sys:String x:Key="K0503"  xml:space="preserve">在您的设备上选中此选项以授权使用权限。</sys:String>
+	<sys:String x:Key="K0504"  xml:space="preserve">应用授权</sys:String>
+	<sys:String x:Key="K0505"  xml:space="preserve">关闭</sys:String>
+	<sys:String x:Key="K0506"  xml:space="preserve">授权</sys:String>
+	<sys:String x:Key="K0507"  xml:space="preserve">允许</sys:String>
+	<sys:String x:Key="K0508"  xml:space="preserve">通过该授权允许应用获取当前运行的其他应用及其使用频率、运营商、语言设置和其他详细信息。</sys:String>
+	<sys:String x:Key="K0509"  xml:space="preserve">通话记录</sys:String>
+	<sys:String x:Key="K0510"  xml:space="preserve">添加联系人</sys:String>
+	<sys:String x:Key="K0511"  xml:space="preserve">通话类型</sys:String>
+	<sys:String x:Key="K0512"  xml:space="preserve">日期</sys:String>
+	<sys:String x:Key="K0513"  xml:space="preserve">时长</sys:String>
+	<sys:String x:Key="K0514"  xml:space="preserve">所有联系人</sys:String>
+	<sys:String x:Key="K0515"  xml:space="preserve">群组</sys:String>
+	<sys:String x:Key="K0516"  xml:space="preserve">未分组</sys:String>
+	<sys:String x:Key="K0517"  xml:space="preserve">新建群组名称：</sys:String>
+	<sys:String x:Key="K0518"  xml:space="preserve">号码</sys:String>
+	<sys:String x:Key="K0519"  xml:space="preserve">详情</sys:String>
+	<sys:String x:Key="K0520"  xml:space="preserve">编辑</sys:String>
+	<sys:String x:Key="K0521"  xml:space="preserve">编辑联系人</sys:String>
+	<sys:String x:Key="K0522"  xml:space="preserve">添加头像</sys:String>
+	<sys:String x:Key="K0523"  xml:space="preserve">无法添加空联系人。</sys:String>
+	<sys:String x:Key="K0524"  xml:space="preserve">团体：</sys:String>
+	<sys:String x:Key="K0525"  xml:space="preserve">家</sys:String>
+	<sys:String x:Key="K0526"  xml:space="preserve">手机</sys:String>
+	<sys:String x:Key="K0527"  xml:space="preserve">单位</sys:String>
+	<sys:String x:Key="K0528"  xml:space="preserve">其他</sys:String>
+	<sys:String x:Key="K0529"  xml:space="preserve">附加行</sys:String>
+	<sys:String x:Key="K0530"  xml:space="preserve">生日</sys:String>
+	<sys:String x:Key="K0531"  xml:space="preserve">备注：</sys:String>
+	<sys:String x:Key="K0532"  xml:space="preserve">正在导入联络人...</sys:String>
+	<sys:String x:Key="K0533"  xml:space="preserve">正在导出联系人...</sys:String>
+	<sys:String x:Key="K0534"  xml:space="preserve">删除所选的联系人？</sys:String>
+	<sys:String x:Key="K0535"  xml:space="preserve">正在导出通话记录</sys:String>
+	<sys:String x:Key="K0536"  xml:space="preserve">正在导入通话记录...</sys:String>
+	<sys:String x:Key="K0537"  xml:space="preserve">呼入</sys:String>
+	<sys:String x:Key="K0538"  xml:space="preserve">未接</sys:String>
+	<sys:String x:Key="K0539"  xml:space="preserve">呼出</sys:String>
+	<sys:String x:Key="K0540"  xml:space="preserve">确定删除所选的通话记录？</sys:String>
+	<sys:String x:Key="K0541"  xml:space="preserve">取消此操作？</sys:String>
+	<sys:String x:Key="K0542"  xml:space="preserve">导出完成</sys:String>
+	<sys:String x:Key="K0543"  xml:space="preserve">导入完成</sys:String>
+	<sys:String x:Key="K0544"  xml:space="preserve">已成功。</sys:String>
+	<sys:String x:Key="K0545"  xml:space="preserve">修改时间</sys:String>
+	<sys:String x:Key="K0546"  xml:space="preserve">艺术家</sys:String>
+	<sys:String x:Key="K0547"  xml:space="preserve">专辑</sys:String>
+	<sys:String x:Key="K0548"  xml:space="preserve">设置铃声</sys:String>
+	<sys:String x:Key="K0549"  xml:space="preserve">电话</sys:String>
+	<sys:String x:Key="K0550"  xml:space="preserve">通知</sys:String>
+	<sys:String x:Key="K0551"  xml:space="preserve">闹铃</sys:String>
+	<sys:String x:Key="K0552"  xml:space="preserve">铃声设置完成</sys:String>
+	<sys:String x:Key="K0553"  xml:space="preserve">铃声设置失败</sys:String>
+	<sys:String x:Key="K0554"  xml:space="preserve">正在导入歌曲…</sys:String>
+	<sys:String x:Key="K0555"  xml:space="preserve">正在导出歌曲…</sys:String>
+	<sys:String x:Key="K0556"  xml:space="preserve">确定删除所选的歌曲？</sys:String>
+	<sys:String x:Key="K0557"  xml:space="preserve">播放器不支持这种音频文件类型。</sys:String>
+	<sys:String x:Key="K0558"  xml:space="preserve">相机照片</sys:String>
+	<sys:String x:Key="K0559"  xml:space="preserve">回到专辑</sys:String>
+	<sys:String x:Key="K0560"  xml:space="preserve">正在导入图片…</sys:String>
+	<sys:String x:Key="K0561"  xml:space="preserve">正在导出图片…</sys:String>
+	<sys:String x:Key="K0562"  xml:space="preserve">确定删除这张图片？</sys:String>
+	<sys:String x:Key="K0563"  xml:space="preserve">确定删除所选的图片？</sys:String>
+	<sys:String x:Key="K0564"  xml:space="preserve">在您的设备上没有找到相关图片。请尝试刷新列表。</sys:String>
+	<sys:String x:Key="K0565"  xml:space="preserve">无法加载图片。请尝试刷新列表。</sys:String>
+	<sys:String x:Key="K0566"  xml:space="preserve">正在导入视频文件…</sys:String>
+	<sys:String x:Key="K0567"  xml:space="preserve">正在导出视频文件...</sys:String>
+	<sys:String x:Key="K0568"  xml:space="preserve">类型</sys:String>
+	<sys:String x:Key="K0569"  xml:space="preserve">确定删除所选的视频？</sys:String>
+	<sys:String x:Key="K0570"  xml:space="preserve">否</sys:String>
+	<sys:String x:Key="K0571"  xml:space="preserve">是</sys:String>
+	<sys:String x:Key="K0572"  xml:space="preserve">在您的设备屏幕上选择“是”，然后点击下面的“确定”按钮。</sys:String>
+	<sys:String x:Key="K0573"  xml:space="preserve">确定</sys:String>
+	<sys:String x:Key="K0574"  xml:space="preserve">内容：</sys:String>
+	<sys:String x:Key="K0575"  xml:space="preserve">保存联系人</sys:String>
+	<sys:String x:Key="K0576"  xml:space="preserve">回复</sys:String>
+	<sys:String x:Key="K0577"  xml:space="preserve">提示：&#x0a; </sys:String>
+	<sys:String x:Key="K0578"  xml:space="preserve">已输入</sys:String>
+	<sys:String x:Key="K0579"  xml:space="preserve">个字符</sys:String>
+	<sys:String x:Key="K0580"  xml:space="preserve">发送</sys:String>
+	<sys:String x:Key="K0581"  xml:space="preserve">转发：</sys:String>
+	<sys:String x:Key="K0582"  xml:space="preserve">转发</sys:String>
+	<sys:String x:Key="K0583"  xml:space="preserve">删除</sys:String>
+	<sys:String x:Key="K0584"  xml:space="preserve">正在删除短信…</sys:String>
+	<sys:String x:Key="K0585"  xml:space="preserve">删除确认</sys:String>
+	<sys:String x:Key="K0586"  xml:space="preserve">确定删除这条短信吗？</sys:String>
+	<sys:String x:Key="K0587"  xml:space="preserve">确定删除所选联系人的短信吗？</sys:String>
+	<sys:String x:Key="K0588"  xml:space="preserve">正在导出短信…</sys:String>
+	<sys:String x:Key="K0589"  xml:space="preserve">短信已发送</sys:String>
+	<sys:String x:Key="K0590"  xml:space="preserve">正在发送短信…</sys:String>
+	<sys:String x:Key="K0591"  xml:space="preserve">我的电脑</sys:String>
+	<sys:String x:Key="K0592"  xml:space="preserve">内部存储空间</sys:String>
+	<sys:String x:Key="K0593"  xml:space="preserve">外部存储空间</sys:String>
+	<sys:String x:Key="K0594"  xml:space="preserve">备份</sys:String>
+	<sys:String x:Key="K0595"  xml:space="preserve">还原</sys:String>
+	<sys:String x:Key="K0596"  xml:space="preserve">一键换机</sys:String>
+	<sys:String x:Key="K0597"  xml:space="preserve">备注：</sys:String>
+	<sys:String x:Key="K0598"  xml:space="preserve">您可以最多输入</sys:String>
+	<sys:String x:Key="K0599"  xml:space="preserve">50</sys:String>
+	<sys:String x:Key="K0600"  xml:space="preserve">备份设备里的数据会耗费不少时间，备份时请保持一直连接设备。</sys:String>
+	<sys:String x:Key="K0601"  xml:space="preserve">备份已完成，</sys:String>
+	<sys:String x:Key="K0602"  xml:space="preserve">成功</sys:String>
+	<sys:String x:Key="K0603"  xml:space="preserve">备份日期</sys:String>
+	<sys:String x:Key="K0604"  xml:space="preserve">备注</sys:String>
+	<sys:String x:Key="K0605"  xml:space="preserve">导出</sys:String>
+	<sys:String x:Key="K0606"  xml:space="preserve">正在释放提取备份文件…</sys:String>
+	<sys:String x:Key="K0607"  xml:space="preserve">提取中</sys:String>
+	<sys:String x:Key="K0608"  xml:space="preserve">释放提取备份文件成功。</sys:String>
+	<sys:String x:Key="K0609"  xml:space="preserve">释放提取备份文件失败。</sys:String>
+	<sys:String x:Key="K0610"  xml:space="preserve">备份文件已经存在</sys:String>
+	<sys:String x:Key="K0611"  xml:space="preserve">确定删除所选的备份文件吗？</sys:String>
+	<sys:String x:Key="K0612"  xml:space="preserve">继续</sys:String>
+	<sys:String x:Key="K0613"  xml:space="preserve">还原数据会耗费不少时间，还原时请保持一直连接设备。</sys:String>
+	<sys:String x:Key="K0614"  xml:space="preserve">还原已完成，</sys:String>
+	<sys:String x:Key="K0615"  xml:space="preserve">设备空闲存储空间不足以还原所有文件。&#x0a;您可以先释放备份中的文件，然后逐个导入这些文件。</sys:String>
+	<sys:String x:Key="K0616"  xml:space="preserve">您还没有备份设备数据。</sys:String>
+	<sys:String x:Key="K0617"  xml:space="preserve">备份失败，请稍后重试。</sys:String>
+	<sys:String x:Key="K0618"  xml:space="preserve">还原失败，请稍后重试。</sys:String>
+	<sys:String x:Key="K0619"  xml:space="preserve">失败。</sys:String>
+	<sys:String x:Key="K0620"  xml:space="preserve">存储路径：</sys:String>
+	<sys:String x:Key="K0621"  xml:space="preserve">更改</sys:String>
+	<sys:String x:Key="K0622"  xml:space="preserve">打开</sys:String>
+	<sys:String x:Key="K0623"  xml:space="preserve">设备空闲存储空间不足。</sys:String>
+	<sys:String x:Key="K0624"  xml:space="preserve">从：</sys:String>
+	<sys:String x:Key="K0625"  xml:space="preserve">到：</sys:String>
+	<sys:String x:Key="K0626"  xml:space="preserve">请连接新设备</sys:String>
+	<sys:String x:Key="K0627"  xml:space="preserve">下一步</sys:String>
+	<sys:String x:Key="K0628"  xml:space="preserve">返回</sys:String>
+	<sys:String x:Key="K0629"  xml:space="preserve">导出中</sys:String>
+	<sys:String x:Key="K0630"  xml:space="preserve">可用空间：</sys:String>
+	<sys:String x:Key="K0631"  xml:space="preserve">已用空间：</sys:String>
+	<sys:String x:Key="K0632"  xml:space="preserve">导入中</sys:String>
+	<sys:String x:Key="K0633"  xml:space="preserve">一键换机已完成！</sys:String>
+	<sys:String x:Key="K0634"  xml:space="preserve">成功：</sys:String>
+	<sys:String x:Key="K0635"  xml:space="preserve">，失败：</sys:String>
+	<sys:String x:Key="K0636"  xml:space="preserve">重试</sys:String>
+	<sys:String x:Key="K0637"  xml:space="preserve">已失败</sys:String>
+	<sys:String x:Key="K0638"  xml:space="preserve">已完成</sys:String>
+	<sys:String x:Key="K0639"  xml:space="preserve">取消中</sys:String>
+	<sys:String x:Key="K0640"  xml:space="preserve">关闭</sys:String>
+	<sys:String x:Key="K0641"  xml:space="preserve">无法导出图片</sys:String>
+	<sys:String x:Key="K0642"  xml:space="preserve">图片已导出</sys:String>
+	<sys:String x:Key="K0643"  xml:space="preserve">无法加载图片</sys:String>
+	<sys:String x:Key="K0644"  xml:space="preserve">无法加载相册图片</sys:String>
+	<sys:String x:Key="K0645"  xml:space="preserve">应用，已选择</sys:String>
+	<sys:String x:Key="K0646"  xml:space="preserve">应用，大小</sys:String>
+	<sys:String x:Key="K0647"  xml:space="preserve">专辑，已选择</sys:String>
+	<sys:String x:Key="K0648"  xml:space="preserve">尝试释放存储空间。</sys:String>
+	<sys:String x:Key="K0649"  xml:space="preserve">视频，已选择</sys:String>
+	<sys:String x:Key="K0650"  xml:space="preserve">视频，大小</sys:String>
+	<sys:String x:Key="K0651"  xml:space="preserve">选择文件夹</sys:String>
+	<sys:String x:Key="K0652"  xml:space="preserve">安卓包</sys:String>
+	<sys:String x:Key="K0653"  xml:space="preserve">导出失败</sys:String>
+	<sys:String x:Key="K0654"  xml:space="preserve">已导入所有联系人</sys:String>
+	<sys:String x:Key="K0655"  xml:space="preserve">无法导入联系人</sys:String>
+	<sys:String x:Key="K0656"  xml:space="preserve">检查联系文件的格式。</sys:String>
+	<sys:String x:Key="K0657"  xml:space="preserve">无法导入通话记录</sys:String>
+	<sys:String x:Key="K0658"  xml:space="preserve">获取视频数量失败</sys:String>
+	<sys:String x:Key="K0659"  xml:space="preserve">检查您的设备是否已连接。</sys:String>
+	<sys:String x:Key="K0660"  xml:space="preserve">无法加载视频列表</sys:String>
+	<sys:String x:Key="K0661"  xml:space="preserve">尝试刷新</sys:String>
+	<sys:String x:Key="K0662"  xml:space="preserve">备份</sys:String>
+	<sys:String x:Key="K0663"  xml:space="preserve">备份数据。 保持设备连接。</sys:String>
+	<sys:String x:Key="K0664"  xml:space="preserve">恢复设备。 保持设备连接。</sys:String>
+	<sys:String x:Key="K0665"  xml:space="preserve">导入信息</sys:String>
+	<sys:String x:Key="K0666"  xml:space="preserve">视频已导出</sys:String>
+	<sys:String x:Key="K0667"  xml:space="preserve">无法导出视频</sys:String>
+	<sys:String x:Key="K0668"  xml:space="preserve">无法加载视频</sys:String>
+	<sys:String x:Key="K0669"  xml:space="preserve">选择了错误的文件</sys:String>
+	<sys:String x:Key="K0670"  xml:space="preserve">警告！</sys:String>
+	<sys:String x:Key="K0671"  xml:space="preserve">切换设备，请稍候...</sys:String>
+	<sys:String x:Key="K0672"  xml:space="preserve">无法切换设备。 再试一次。</sys:String>
+	<sys:String x:Key="K0673"  xml:space="preserve">找不到或打开音乐文件。 尝试选择其他文件。</sys:String>
+	<sys:String x:Key="K0674"  xml:space="preserve">图像</sys:String>
+	<sys:String x:Key="K0675"  xml:space="preserve">安卓应用</sys:String>
+	<sys:String x:Key="K0676"  xml:space="preserve">安装这个程序？</sys:String>
+	<sys:String x:Key="K0677"  xml:space="preserve">在您的设备上选中此选项以授权卸载。</sys:String>
+	<sys:String x:Key="K0678"  xml:space="preserve">无法切换设备。 稍后再试。</sys:String>
+	<sys:String x:Key="K0679"  xml:space="preserve">导入失败</sys:String>
+	<sys:String x:Key="K0680"  xml:space="preserve">已选：</sys:String>
+	<sys:String x:Key="K0681"  xml:space="preserve">用旧设备内容覆盖新设备？</sys:String>
+	<sys:String x:Key="K0682"  xml:space="preserve">已删除</sys:String>
+	<sys:String x:Key="K0683"  xml:space="preserve">家人</sys:String>
+	<sys:String x:Key="K0684"  xml:space="preserve">朋友</sys:String>
+	<sys:String x:Key="K0685"  xml:space="preserve">合作伙伴</sys:String>
+	<sys:String x:Key="K0686"  xml:space="preserve">电话号码</sys:String>
+	<sys:String x:Key="K0687"  xml:space="preserve">USB已连接</sys:String>
+	<sys:String x:Key="K0688"  xml:space="preserve">手机</sys:String>
+	<sys:String x:Key="K0689"  xml:space="preserve">删除个人数据</sys:String>
+	<sys:String x:Key="K0690"  xml:space="preserve">个人数据</sys:String>
+	<sys:String x:Key="K0691"  xml:space="preserve">无法删除包含个人数据的文件。 查看下面列出的文件夹，然后尝试删除您的个人数据。</sys:String>
+	<sys:String x:Key="K0692"  xml:space="preserve">找不到可删除的资源</sys:String>
+	<sys:String x:Key="K0693"  xml:space="preserve">删除中……</sys:String>
+	<sys:String x:Key="K0694"  xml:space="preserve">停止</sys:String>
+	<sys:String x:Key="K0695"  xml:space="preserve">找不到个人数据。</sys:String>
+	<sys:String x:Key="K0696"  xml:space="preserve">“找到了个人数据文件；例如导出的图片，视频，音频，SMS，联系人，设备备份文件和其他临时文件。&#x0a;&#x0a;删除？”</sys:String>
+	<sys:String x:Key="K0697"  xml:space="preserve">扫描中……</sys:String>
+	<sys:String x:Key="K0698"  xml:space="preserve">知道了</sys:String>
+	<sys:String x:Key="K0699"  xml:space="preserve">等待中</sys:String>
+	<sys:String x:Key="K0700"  xml:space="preserve">删除？</sys:String>
+	<sys:String x:Key="K0701"  xml:space="preserve">删除失败</sys:String>
+	<sys:String x:Key="K0702"  xml:space="preserve">无法完成刷机！</sys:String>
+	<sys:String x:Key="K0703"  xml:space="preserve">导出录屏文件……</sys:String>
+	<sys:String x:Key="K0704"  xml:space="preserve">请记住在使用后删除您的个人数据。</sys:String>
+	<sys:String x:Key="K0705"  xml:space="preserve">已注册设备</sys:String>
+	<sys:String x:Key="K0706"  xml:space="preserve">未注册设备</sys:String>
+	<sys:String x:Key="K0707"  xml:space="preserve">新设备已连接，是否将此设备注册到您的账号中？</sys:String>
+	<sys:String x:Key="K0708"  xml:space="preserve">取消注册该设备？</sys:String>
+	<sys:String x:Key="K0709"  xml:space="preserve">安装失败</sys:String>
+	<sys:String x:Key="K0710"  xml:space="preserve">如果Software Fix已将Mobile Assistant App安装在设备中</sys:String>
+	<sys:String x:Key="K0711"  xml:space="preserve">提示</sys:String>
+	<sys:String x:Key="K0712"  xml:space="preserve">您确定要删除吗？</sys:String>
+	<sys:String x:Key="K0713"  xml:space="preserve">电脑没有足够的可用空间。 释放一些，然后重试。</sys:String>
+	<sys:String x:Key="K0714"  xml:space="preserve">正在识别设备</sys:String>
+	<sys:String x:Key="K0715"  xml:space="preserve">传输中</sys:String>
+	<sys:String x:Key="K0716"  xml:space="preserve">Software Fix的反馈</sys:String>
+	<sys:String x:Key="K0717"  xml:space="preserve">名称：</sys:String>
+	<sys:String x:Key="K0718"  xml:space="preserve">请输入您的姓名</sys:String>
+	<sys:String x:Key="K0719"  xml:space="preserve">邮件：</sys:String>
+	<sys:String x:Key="K0720"  xml:space="preserve">评论：</sys:String>
+	<sys:String x:Key="K0721"  xml:space="preserve">请输入您的电子邮件地址</sys:String>
+	<sys:String x:Key="K0722"  xml:space="preserve">与我们分享任何与Software Fix这款软件相关的内容，例如遇到的问题，或相关的建议。</sys:String>
+	<sys:String x:Key="K0723"  xml:space="preserve">产品名称：</sys:String>
+	<sys:String x:Key="K0724"  xml:space="preserve">请输入产品名称</sys:String>
+	<sys:String x:Key="K0725"  xml:space="preserve">请输入型号名称</sys:String>
+	<sys:String x:Key="K0726"  xml:space="preserve">附加设备信息</sys:String>
+	<sys:String x:Key="K0727"  xml:space="preserve">如果您的反馈与以下设备信息无关，请取消选中它。</sys:String>
+	<sys:String x:Key="K0728"  xml:space="preserve">上传记录</sys:String>
+	<sys:String x:Key="K0729"  xml:space="preserve">勾选此选项以上传应用程序日志以进行分析</sys:String>
+	<sys:String x:Key="K0730"  xml:space="preserve">对您的反馈的回应</sys:String>
+	<sys:String x:Key="K0731"  xml:space="preserve">您的反馈（续）</sys:String>
+	<sys:String x:Key="K0732"  xml:space="preserve">您的反馈</sys:String>
+	<sys:String x:Key="K0733"  xml:space="preserve">反馈已成功提交。</sys:String>
+	<sys:String x:Key="K0734"  xml:space="preserve">无法提交反馈。</sys:String>
+	<sys:String x:Key="K0735"  xml:space="preserve">1.此刷机包仅适用于印度定制版平板电脑，如果您的设备是印度通用版，请选择Lenovo TB-7304F。 常规版本和自定义版本不能混用。&#x0a;2.关闭设备电源，将其与PC断开连接，然后单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0736"  xml:space="preserve">您的设备版本是最新版本，是否要再次进行刷机？</sys:String>
+	<sys:String x:Key="K0737"  xml:space="preserve">3.如果所需的权限之一被拒绝，则Mobile Assistant App将无法正常工作。 您可以转到“安卓系统设置”中的“应用权限”，然后再次对其进行授权。</sys:String>
+	<sys:String x:Key="K0738"  xml:space="preserve">正在连接，如果没有进度，请解锁设备的屏幕</sys:String>
+	<sys:String x:Key="K0739"  xml:space="preserve">在您的设备上选中此选项以授权USB调试。</sys:String>
+	<sys:String x:Key="K0740"  xml:space="preserve">计算机的Software Fix密钥指纹为：</sys:String>
+	<sys:String x:Key="K0741"  xml:space="preserve">无法识别移动连接。</sys:String>
+	<sys:String x:Key="K0742"  xml:space="preserve">断开设备的连接，然后重新连接。</sys:String>
+	<sys:String x:Key="K0743"  xml:space="preserve">拒绝</sys:String>
+	<sys:String x:Key="K0744"  xml:space="preserve">允许</sys:String>
+	<sys:String x:Key="K0745"  xml:space="preserve">1.在设备上，打开“允许修改系统设置”，然后返回到Mobile Assistant App。</sys:String>
+	<sys:String x:Key="K0746"  xml:space="preserve">Mobile Assistant</sys:String>
+	<sys:String x:Key="K0747"  xml:space="preserve">允许修改系统设置</sys:String>
+	<sys:String x:Key="K0748"  xml:space="preserve">此权限允许应用修改系统设置。</sys:String>
+	<sys:String x:Key="K0749"  xml:space="preserve">2.在Mobile Assistant应用中，允许请求的权限。</sys:String>
+	<sys:String x:Key="K0750"  xml:space="preserve">允许Mobile Assistant拨打和管理电话吗？</sys:String>
+	<sys:String x:Key="K0751"  xml:space="preserve">1 of 6</sys:String>
+	<sys:String x:Key="K0752"  xml:space="preserve">是否要覆盖原始备份文件&#x0a;如果要保留该文件，请单击“否”按钮，然后创建一个新文件。</sys:String>
+	<sys:String x:Key="K0753"  xml:space="preserve">连接失败</sys:String>
+	<sys:String x:Key="K0754"  xml:space="preserve">无效的用户名或密码。</sys:String>
+	<sys:String x:Key="K0755"  xml:space="preserve">返回</sys:String>
+	<sys:String x:Key="K0756"  xml:space="preserve">电脑</sys:String>
+	<sys:String x:Key="K0757"  xml:space="preserve">设备</sys:String>
+	<sys:String x:Key="K0758"  xml:space="preserve">检查Mobile Assistant程序版本</sys:String>
+	<sys:String x:Key="K0759"  xml:space="preserve">安装Mobile Assistant</sys:String>
+	<sys:String x:Key="K0760"  xml:space="preserve">成功安装Mobile Assistant</sys:String>
+	<sys:String x:Key="K0761"  xml:space="preserve">连接成功</sys:String>
+	<sys:String x:Key="K0762"  xml:space="preserve">加载设备数据成功</sys:String>
+	<sys:String x:Key="K0763"  xml:space="preserve">成功设置铃声。</sys:String>
+	<sys:String x:Key="K0764"  xml:space="preserve">全选</sys:String>
+	<sys:String x:Key="K0765"  xml:space="preserve">Mobile Assistant版本不匹配</sys:String>
+	<sys:String x:Key="K0766"  xml:space="preserve">Mobile Assistant版本已匹配</sys:String>
+	<sys:String x:Key="K0767"  xml:space="preserve">正在匹配刷机包，请勿拔除设备。</sys:String>
+	<sys:String x:Key="K0768"  xml:space="preserve">连接失败，请重新连接设备，然后重试。</sys:String>
+	<sys:String x:Key="K0769"  xml:space="preserve">请在您的设备上启用此权限。</sys:String>
+	<sys:String x:Key="K0770"  xml:space="preserve">请执行以下操作</sys:String>
+	<sys:String x:Key="K0771"  xml:space="preserve">上一步</sys:String>
+	<sys:String x:Key="K0772"  xml:space="preserve">教程</sys:String>
+	<sys:String x:Key="K0773"  xml:space="preserve">建议通话铃声小于40秒。</sys:String>
+	<sys:String x:Key="K0774"  xml:space="preserve">建议通知铃声少于20秒。</sys:String>
+	<sys:String x:Key="K0775"  xml:space="preserve">卸载Mobile Assistant</sys:String>
+	<sys:String x:Key="K0776"  xml:space="preserve">卸载Mobile Assistant成功</sys:String>
+	<sys:String x:Key="K0777"  xml:space="preserve">刷机过程中不可以退出</sys:String>
+	<sys:String x:Key="K0778"  xml:space="preserve">加密备份</sys:String>
+	<sys:String x:Key="K0779"  xml:space="preserve">设置密码</sys:String>
+	<sys:String x:Key="K0780"  xml:space="preserve">输入密码以保护您的备份。</sys:String>
+	<sys:String x:Key="K0781"  xml:space="preserve">请注意，如果忘记了密码，则备份将无法再解锁。</sys:String>
+	<sys:String x:Key="K0782"  xml:space="preserve">验证密码</sys:String>
+	<sys:String x:Key="K0783"  xml:space="preserve">少于4个字符，太短。</sys:String>
+	<sys:String x:Key="K0784"  xml:space="preserve">PC没有足够的可用空间，释放一些，然后重试。</sys:String>
+	<sys:String x:Key="K0785"  xml:space="preserve">输入密码</sys:String>
+	<sys:String x:Key="K0786"  xml:space="preserve">输入备份密码</sys:String>
+	<sys:String x:Key="K0787"  xml:space="preserve">进行中</sys:String>
+	<sys:String x:Key="K0788"  xml:space="preserve">密码错误。</sys:String>
+	<sys:String x:Key="K0789"  xml:space="preserve">正在连接，请转到您的设备并允许Device Help App出现“需要权限”提示。 或者，如果是第一次，请同意《摩托罗拉隐私权政策》，然后重新连接设备。</sys:String>
+	<sys:String x:Key="K0790"  xml:space="preserve">请检查设备屏幕上的用户同意提示，并允许它开始备份。</sys:String>
+	<sys:String x:Key="K0791"  xml:space="preserve">由于您在用户同意提示上被拒绝，因此无法开始备份。 一旦允许用户同意提示，您就可以开始新的备份。</sys:String>
+	<sys:String x:Key="K0792"  xml:space="preserve">连接失败，请重新连接设备，如果设备上出现设备帮助应用程序提示，请不要忘记同意摩托罗拉隐私政策。</sys:String>
+	<sys:String x:Key="K0793"  xml:space="preserve">请确保刷机包与您的设备型号匹配。请注意刷机将删除设备中所有个人数据。</sys:String>
+	<sys:String x:Key="K0794"  xml:space="preserve">在通过USB连接之前启用USB调试。</sys:String>
+	<sys:String x:Key="K0795"  xml:space="preserve">登录……</sys:String>
+	<sys:String x:Key="K0796"  xml:space="preserve">您确定不设置密码吗？</sys:String>
+	<sys:String x:Key="K0797"  xml:space="preserve">允许设备帮助拨打和管理电话？</sys:String>
+	<sys:String x:Key="K0798"  xml:space="preserve">警告：正在刷机，请勿拔除设备！</sys:String>
+	<sys:String x:Key="K0799"  xml:space="preserve">允许Mobile Assistant录制音频吗？</sys:String>
+	<sys:String x:Key="K0800"  xml:space="preserve">提醒</sys:String>
+	<sys:String x:Key="K0801"  xml:space="preserve">连接失败，因为您拒绝了用户同意提示。您可以重新连接设备并重新选择。</sys:String>
+	<sys:String x:Key="K0802"  xml:space="preserve">如果这是您第一次刷机，请先安装相应的USB驱动程序。</sys:String>
+	<sys:String x:Key="K0803"  xml:space="preserve">在这里下载。</sys:String>
+	<sys:String x:Key="K0804"  xml:space="preserve">1. 同时按住音量&quot;+&quot;， &quot;- &quot;和电源按钮，将手机通过USB线连接到电脑。&#x0a;2.按下“确定”按钮后，松开所有按钮。</sys:String>
+	<sys:String x:Key="K0805"  xml:space="preserve">1. 断开设备与USB线的连接。&#x0a;2.同时按音量&quot;+&quot;,&quot;-&quot;和电源键，将手机重新连接到USB线。&#x0a;3.按下“确定”按钮后，松开音量&quot;+“，&quot;-“和电源键。</sys:String>
+	<sys:String x:Key="K0806"  xml:space="preserve">1.关闭设备电源，并将其与PC断开；&#x0a;2.同时按音量&quot;+&quot;,&quot;-&quot;和电源键，然后将手机左侧的Type-C端口连接到USB线；&#x0a;3.在进度开始后松开所有按钮。</sys:String>
+	<sys:String x:Key="K0807"  xml:space="preserve">使用它扫描以下二维码进行连接。</sys:String>
+	<sys:String x:Key="K0808"  xml:space="preserve">以上这条回复有帮助吗？</sys:String>
+	<sys:String x:Key="K0809"  xml:space="preserve">更多…</sys:String>
+	<sys:String x:Key="K0810"  xml:space="preserve">联想手机</sys:String>
+	<sys:String x:Key="K0811"  xml:space="preserve">联想平板</sys:String>
+	<sys:String x:Key="K0812"  xml:space="preserve">摩托罗拉手机</sys:String>
+	<sys:String x:Key="K0813"  xml:space="preserve">联想手机</sys:String>
+	<sys:String x:Key="K0814"  xml:space="preserve">联想平板</sys:String>
+	<sys:String x:Key="K0815"  xml:space="preserve">摩托罗拉手机</sys:String>
+	<sys:String x:Key="K0816"  xml:space="preserve">请回复我们，并提供您进一步的评论。</sys:String>
+	<sys:String x:Key="K0817"  xml:space="preserve">请断开所有安卓设备的连接。 刷机介绍将指导您如何连接设备。</sys:String>
+	<sys:String x:Key="K0818"  xml:space="preserve">请断开其他安卓设备，并确保仅连接一个设备，然后重试刷机。</sys:String>
+	<sys:String x:Key="K0819"  xml:space="preserve">检测到安卓虚拟设备，请移除所有仿真的安卓设备。 确保仅连接一台物理安卓设备，然后重试刷机。</sys:String>
+	<sys:String x:Key="K0820"  xml:space="preserve">检测到安卓虚拟设备，请移除，并确保未连接任何设备，然后重试刷机。 刷机功能将指导您如何连接设备。</sys:String>
+	<sys:String x:Key="K0821"  xml:space="preserve">我们注意到该设备已经完成了多次刷机，但一直失败。</sys:String>
+	<sys:String x:Key="K0822"  xml:space="preserve">我们建议：</sys:String>
+	<sys:String x:Key="K0826"  xml:space="preserve">您可以前往客户服务中心寻求专业帮助。</sys:String>
+	<sys:String x:Key="K0827"  xml:space="preserve">您也可以询问我们的</sys:String>
+	<sys:String x:Key="K0828"  xml:space="preserve">虚拟客服。</sys:String>
+	<sys:String x:Key="K0829"  xml:space="preserve">Software Fix日志有助于进一步分析，是否要上传日志？&#x0a;- 要上传，请选择“是”。&#x0a;- 不上传，请选择“否”。</sys:String>
+	<sys:String x:Key="K0830"  xml:space="preserve">无法匹配相应的固件。某些关键信息无法从设备中读取。</sys:String>
+	<sys:String x:Key="K0831"  xml:space="preserve">与相应的固件不匹配。&#x0a;您可以尝试以USB调试模式连接设备，然后单击“读取当前设备”按钮。&#x0a;如果仍然没有匹配的固件，则不支持此设备</sys:String>
+	<sys:String x:Key="K0832"  xml:space="preserve">与相应的固件不匹配。&#x0a;您可以手动选择一个固件。&#x0a;如果仍然没有匹配的固件，则不支持此设备。</sys:String>
+	<sys:String x:Key="K0833"  xml:space="preserve">我同意联想的隐私政策</sys:String>
+	<sys:String x:Key="K0834"  xml:space="preserve">Software Fix需要您授权获取相应权限，才能读取设备信息或数据以执行刷机、备份等操作。请在设备上查看系统授权提示并允许。</sys:String>
+	<sys:String x:Key="K0835"  xml:space="preserve">选择设备类型</sys:String>
+	<sys:String x:Key="K0836"  xml:space="preserve">联想隐私政策</sys:String>
+	<sys:String x:Key="K0837"  xml:space="preserve">如果您的设备支持Fastboot模式，请按照说明使您的设备进入Fastboot模式。&#x0a;&#x0a;如果不确定，可以输入产品名称进行搜索，然后进行检查。</sys:String>
+	<sys:String x:Key="K0838"  xml:space="preserve">如果您的设备不支持Fastboot模式，并且可以开机，请按照说明在Android系统中启用USB调试。</sys:String>
+	<sys:String x:Key="K0839"  xml:space="preserve">关机模式要求您熟悉产品。如果您不确定，请进入Fastboot模式或USB调试模式。</sys:String>
+	<sys:String x:Key="K0840"  xml:space="preserve">如果您的设备支持Fastboot模式，请选择“Fastboot模式”。如果您不确定，可以在“Fastboot模式”屏幕上搜索和检查。</sys:String>
+	<sys:String x:Key="K0841"  xml:space="preserve">如果您的设备可以开机，请选择“USB调试模式”。您可以了解如何在“USB调试模式”屏幕上启用USB调试。</sys:String>
+	<sys:String x:Key="K0842"  xml:space="preserve">如果您的设备不支持Fastboot并且无法开机，请选择“关机模式”，然后单击“确定”继续。</sys:String>
+	<sys:String x:Key="K0843"  xml:space="preserve">您的设备不支持Fastboot模式刷机，请尝试USB调试模式或关机模式。</sys:String>
+	<sys:String x:Key="K0844"  xml:space="preserve">型号名称，可以输入搜索</sys:String>
+	<sys:String x:Key="K0845"  xml:space="preserve">型号，可输入搜索（SKU）</sys:String>
+	<sys:String x:Key="K0846"  xml:space="preserve">产品名称，可以输入搜索</sys:String>
+	<sys:String x:Key="K0847"  xml:space="preserve">这里</sys:String>
+	<sys:String x:Key="K0848"  xml:space="preserve">谢谢！</sys:String>
+	<sys:String x:Key="K0849"  xml:space="preserve">感谢您的反馈。</sys:String>
+	<sys:String x:Key="K0850"  xml:space="preserve">提示</sys:String>
+	<sys:String x:Key="K0851"  xml:space="preserve">如果登录页面未完全加载，请单击此处重新加载。</sys:String>
+	<sys:String x:Key="K0852"  xml:space="preserve">由于当前操作正在进行中，因此无法退出。</sys:String>
+	<sys:String x:Key="K0853"  xml:space="preserve">您的称呼：</sys:String>
+	<sys:String x:Key="K0854"  xml:space="preserve">1. 断开设备与 USB 线的连接。&#x0a;2.按音量&quot;+&quot; 和电源按钮进入Select Boot Mode 界面。&#x0a;3.按音量&quot;+&quot;选择Fastboot模式。&#x0a;4.按音量&quot;-&quot;进入Fastboot模式。&#x0a;5.然后使用 USB 数据线将手机连接到PC。&#x0a;6.单击“确定”按钮继续。</sys:String>
+	<sys:String x:Key="K0855"  xml:space="preserve">1. 断开手机与 USB线的连接。&#x0a;2.关闭设备电源并取出电池。&#x0a;3.单击“确定”按钮继续。</sys:String>
+	<sys:String x:Key="K0856"  xml:space="preserve">1. 确保您的设备已关机且未连接到PC。&#x0a;2.同时按音量&quot;+&quot;和&quot;-&quot;键，同时通过USB线将设备与PC连接。&#x0a;3.单击“确定”按钮继续。&#x0a;4.进度开始后松开音量 &quot;+&quot; 和 &quot;-&quot; 键。</sys:String>
+	<sys:String x:Key="K0857"  xml:space="preserve">1. 确保您的设备已关机且未连接到PC。&#x0a;2.按音量&quot;+&quot;键，同时通过USB线将设备与PC连接。&#x0a;3.进度开始后松开音量“+”键。</sys:String>
+	<sys:String x:Key="K0858"  xml:space="preserve">1. 确保您的设备已关机且未连接到PC。&#x0a;2.按下音量&quot;+&quot;键，同时通过USB将设备与PC连接。&#x0a;3.当手机上出现Lenovo LOGO时，松开音量 &quot;+&quot;，在手机上选择下载。</sys:String>
+	<sys:String x:Key="K0859"  xml:space="preserve">1. 确保您的设备已关机且未连接到PC。&#x0a;2.同时按下音量&quot;+&quot;、&quot;-&quot;和电源键，振动后松开所有按键。&#x0a;3.通过USB线将设备与PC连接，然后单击确定按钮继续。</sys:String>
+	<sys:String x:Key="K0860"  xml:space="preserve">1. 确保您的设备已关机且未连接到PC。&#x0a;2.同时按下音量 &quot;+&quot;, &quot;-&quot; 和电源键，振动后松开所有按键。&#x0a;3.通过USB线将设备与PC连接。</sys:String>
+	<sys:String x:Key="K0861"  xml:space="preserve">1. 确保您的设备已关机且未连接到PC。&#x0a;2.同时按下音量&quot;+&quot;和&quot;-&quot;键，同时通过USB线将设备与PC连接。&#x0a;3.进度开始后松开音量键。</sys:String>
+	<sys:String x:Key="K0862"  xml:space="preserve">1. 确保您的设备已关闭。&#x0a;2.通过 USB线将设备与 PC 连接，然后单击“确定”按钮继续。</sys:String>
+	<sys:String x:Key="K0863"  xml:space="preserve">1. 确保您的手机已关机且未连接到PC。&#x0a;2.同时按音量&quot;+&quot;和&quot;-&quot;键，同时通过USB线将手机与PC连接。&#x0a;3.单击“确定”按钮继续。</sys:String>
+	<sys:String x:Key="K0864"  xml:space="preserve">1. 确保您的手机已关机。&#x0a;2.通过 USB 线将手机与 PC 连接，然后单击“确定”按钮继续。</sys:String>
+	<sys:String x:Key="K0865"  xml:space="preserve">1. 确保您的手机已关机且未连接到PC。&#x0a;2.按住音量 &quot;-&quot; 键并使用 USB线将设备连接到PC。 &#x0a;3.单击“确定”按钮继续。 &#x0a;4.进度开始后松开音量&quot;-&quot;键。 &#x0a;5.注意：如果设备进入充电模式，请断开USB线并等待30秒重新连接设备，然后按照说明再次进行刷机。</sys:String>
+	<sys:String x:Key="K0866"  xml:space="preserve">1. 关闭设备电源，不连接电脑。 &#x0a;2.按住音量 &quot;-&quot;键 并使用 USB 线将设备连接到PC。 &#x0a;3.按“确定”按钮后松开音量&quot;-&quot;键。 &#x0a;4.注意：如果设备进入充电模式，请断开USB线并等待30秒重新连接设备，然后按照说明再次进行刷机。</sys:String>
+	<sys:String x:Key="K0867"  xml:space="preserve">1. 关闭设备电源，并断开与 PC 的连接。&#x0a;2.按住手机音量&quot;+&quot;，&quot;-&quot;和电源键，将手机左侧的Type-C端口连接到USB线。&#x0a;3.进度开始后松开所有按键。</sys:String>
+	<sys:String x:Key="K0868"  xml:space="preserve">1. 开机。&#x0a;2.请在电话拨号器上输入按键序列####6020# 以设置国家/地区代码。&#x0a;3.进入国家代码设置界面后，根据提示完成相关操作。</sys:String>
+	<sys:String x:Key="K0869"  xml:space="preserve">1. 开机。&#x0a;2.请在设备拨号器上输入按键序列####682# 以设置国家/地区代码。&#x0a;3.进入国家代码设置界面后，根据提示完成相关操作。</sys:String>
+	<sys:String x:Key="K0870"  xml:space="preserve">1. 打开设备电源。&#x0a;2.请在电话拨号器上输入按键序列####682# 以设置国家/地区代码。&#x0a;3.进入国家代码设置界面后，根据提示完成相关操作。</sys:String>
+	<sys:String x:Key="K0871"  xml:space="preserve">1. 开机。&#x0a;2.完成国家代码设置：打开USB调试并授权PC连接手机。&#x0a;3.进入国家代码设置界面后，根据提示完成相关操作。</sys:String>
+	<sys:String x:Key="K0872"  xml:space="preserve">1.确保您的手机处于关机状态且未连接到PC。&#x0a;2.同时按下音量&quot;-&quot;和电源键直到显示Fastboot模式。&#x0a;3.通过 USB线连接手机。</sys:String>
+	<sys:String x:Key="K0873"  xml:space="preserve">检查设备是否已连接并处于 Fastboot Flash 模式，然后按照左侧的刷机说明进行操作。</sys:String>
+	<sys:String x:Key="K0874"  xml:space="preserve">检查设备是否已连接，然后按照左侧的刷机说明进行操作。</sys:String>
+	<sys:String x:Key="K0875"  xml:space="preserve">国家代码设置：</sys:String>
+	<sys:String x:Key="K0876"  xml:space="preserve">断开指令</sys:String>
+	<sys:String x:Key="K0877"  xml:space="preserve">断开设备与USB线的连接并关机... 单击确定按钮继续。</sys:String>
+	<sys:String x:Key="K0878"  xml:space="preserve">将恢复文件下载到手机</sys:String>
+	<sys:String x:Key="K0879"  xml:space="preserve">Fastboot刷引导加载程序</sys:String>
+	<sys:String x:Key="K0880"  xml:space="preserve">Fastboot刷单分区</sys:String>
+	<sys:String x:Key="K0881"  xml:space="preserve">Fastboot刷单分区bootloader_a</sys:String>
+	<sys:String x:Key="K0882"  xml:space="preserve">Fastboot刷单分区bootloader_b</sys:String>
+	<sys:String x:Key="K0883"  xml:space="preserve">查找 QDLoader COM端口</sys:String>
+	<sys:String x:Key="K0884"  xml:space="preserve">刷机完成。按电源键重启设备。</sys:String>
+	<sys:String x:Key="K0885"  xml:space="preserve">设备刷机中</sys:String>
+	<sys:String x:Key="K0886"  xml:space="preserve">如果您的设备未处于 Fastboot刷机模式，且未连接到PC，请执行以下操作：&#x0a;1. 关机。&#x0a;2.同时按下音量“-”和电源键，直到显示 Fastboot刷机模式。&#x0a;3.将设备连接到PC。</sys:String>
+	<sys:String x:Key="K0887"  xml:space="preserve">请断开手机与USB线的连接并关闭它... 单击“确定”按钮继续。</sys:String>
+	<sys:String x:Key="K0888"  xml:space="preserve">请按照说明重新尝试将设备连接到您的电脑</sys:String>
+	<sys:String x:Key="K0889"  xml:space="preserve">请确保您的设备已按照左侧的刷机说明进行连接！</sys:String>
+	<sys:String x:Key="K0890"  xml:space="preserve">请确保您的设备已按照右侧的刷机说明进行连接！</sys:String>
+	<sys:String x:Key="K0891"  xml:space="preserve">请取出电池并连接到USB线...单击确定按钮继续。</sys:String>
+	<sys:String x:Key="K0892"  xml:space="preserve">先断开设备连接，然后将设备切换到Fastboot 模式再连接电脑</sys:String>
+	<sys:String x:Key="K0894"  xml:space="preserve">在 Fastboot 模式下没有连接设备。&#x0a;请重新选择。</sys:String>
+	<sys:String x:Key="K0895"  xml:space="preserve">等待进入Fastboot模式</sys:String>
+	<sys:String x:Key="K0896"  xml:space="preserve">等待重启</sys:String>
+	<sys:String x:Key="K0897"  xml:space="preserve">您的设备连接不正确，请按照以下步骤使您的设备恢复正常。&#x0a;1.长按电源键启动您的设备。您可能会看到设备卡在“Lenovo”徽标屏幕上或自动启动，这没关系。&#x0a;2.然后按电源键关闭设备。</sys:String>
+	<sys:String x:Key="K0898"  xml:space="preserve">在这里下载</sys:String>
+	<sys:String x:Key="K0899"  xml:space="preserve">1.选择立即重启然后按电源键启动设备。&#x0a;2.开机需要几分钟，请稍候。</sys:String>
+	<sys:String x:Key="K0900"  xml:space="preserve">您的设备工作不正常，需要帮助？更新 Android 操作系统以帮助解决软件相关问题</sys:String>
+	<sys:String x:Key="K0901"  xml:space="preserve">您可以从您的PC管理设备数据</sys:String>
+	<sys:String x:Key="K0902"  xml:space="preserve">确保您的USB线可以正常使用</sys:String>
+	<sys:String x:Key="K0903"  xml:space="preserve">确保手机/平板电脑/智能设备电量在60％或更高</sys:String>
+	<sys:String x:Key="K0904"  xml:space="preserve">检查您的PC是否有 15GB 或更多空间来下载和解压固件文件</sys:String>
+	<sys:String x:Key="K0905"  xml:space="preserve">Software Fix高级用户或老用户请注意：</sys:String>
+	<sys:String x:Key="K0906"  xml:space="preserve">如果您知道您的设备支持 fastboot 模式，您可以通过 fastboot 模式直接连接设备。</sys:String>
+	<sys:String x:Key="K0907"  xml:space="preserve">如果您找不到您的 IMEI，请单击此处：</sys:String>
+	<sys:String x:Key="K0908"  xml:space="preserve">连接设备</sys:String>
+	<sys:String x:Key="K0909"  xml:space="preserve">使用调试模式将您的设备连接到PC，Software Fix 将会为您匹配到刷机的固件。</sys:String>
+	<sys:String x:Key="K0910"  xml:space="preserve">如果我的平板电脑无法打开调试模式怎么办？</sys:String>
+	<sys:String x:Key="K0911"  xml:space="preserve">使用 fastboot 模式将您的设备连接到PC，Software Fix 将会为您匹配到刷机的固件。</sys:String>
+	<sys:String x:Key="K0912"  xml:space="preserve">使用 fastboot 模式连接设备，请按照以下步骤操作：</sys:String>
+	<sys:String x:Key="K0913"  xml:space="preserve">步骤 1. 关闭您的设备。</sys:String>
+	<sys:String x:Key="K0914"  xml:space="preserve">步骤 2. 将 USB 数据线直接连接到 PC 的 USB 端口。&#x0a;(为了获得最佳性能和稳定性，请避免通过 USB 集线器连接。)</sys:String>
+	<sys:String x:Key="K0915"  xml:space="preserve">步骤 3. 按住设备上的音量下键，然后连接USB 线连接到设备。</sys:String>
+	<sys:String x:Key="K0916"  xml:space="preserve">步骤 4. 当手机上显示绿色的 Android，松开设备上的音量下键。</sys:String>
+	<sys:String x:Key="K0917"  xml:space="preserve">对于无法开机的设备：</sys:String>
+	<sys:String x:Key="K0918"  xml:space="preserve">拔出SIM卡槽，在上面找到IMEI</sys:String>
+	<sys:String x:Key="K0919"  xml:space="preserve">拨号键盘*#06#</sys:String>
+	<sys:String x:Key="K0920"  xml:space="preserve">进入</sys:String>
+	<sys:String x:Key="K0921"  xml:space="preserve">如果您想手动选择获取固件，请单击此处：</sys:String>
+	<sys:String x:Key="K0922"  xml:space="preserve">快速启动选择</sys:String>
+	<sys:String x:Key="K0923"  xml:space="preserve">手动选择</sys:String>
+	<sys:String x:Key="K0924"  xml:space="preserve">设备包装盒</sys:String>
+	<sys:String x:Key="K0925"  xml:space="preserve">方法</sys:String>
+	<sys:String x:Key="K0926"  xml:space="preserve">请输入您的手机15位IMEI，我们将检查手机型号以找到匹配的固件：</sys:String>
+	<sys:String x:Key="K0927"  xml:space="preserve">如何找到IMEI？</sys:String>
+	<sys:String x:Key="K0928"  xml:space="preserve">手机刷机</sys:String>
+	<sys:String x:Key="K0929"  xml:space="preserve">平板</sys:String>
+	<sys:String x:Key="K0930"  xml:space="preserve">平板刷机</sys:String>
+	<sys:String x:Key="K0931"  xml:space="preserve">产品名称</sys:String>
+	<sys:String x:Key="K0932"  xml:space="preserve">更多</sys:String>
+	<sys:String x:Key="K0933"  xml:space="preserve">不能匹配到合适的刷机包。</sys:String>
+	<sys:String x:Key="K0934"  xml:space="preserve">您可以尝试手动选择合适的固件。</sys:String>
+	<sys:String x:Key="K0935"  xml:space="preserve">无法从设备中读取到关键信息，请断开设备后再重新进入fastboot模式并连接。</sys:String>
+	<sys:String x:Key="K0936"  xml:space="preserve">您的IMEI是{0}</sys:String>
+	<sys:String x:Key="K0937"  xml:space="preserve">与相应的固件不匹配，请从支持网站：support.motorola.com寻求帮助</sys:String>
+	<sys:String x:Key="K0938"  xml:space="preserve">请输入您的IMEI…</sys:String>
+	<sys:String x:Key="K0939"  xml:space="preserve">信息收集</sys:String>
+	<sys:String x:Key="K0940"  xml:space="preserve">为了保持有效的售后服务，此时将收集您的信息。如果要继续，请选择“继续”按钮。</sys:String>
+	<sys:String x:Key="K0941"  xml:space="preserve">开机需要几分钟，请稍候。</sys:String>
+	<sys:String x:Key="K0942"  xml:space="preserve">请断开所有Android设备的连接，确保没有连接任何设备，然后重试刷机。</sys:String>
+	<sys:String x:Key="K0943"  xml:space="preserve">相应的固件不匹配。&#x0a;您可以尝试以USB调试模式连接设备。&#x0a;如果仍然没有匹配的设备，则不支持此设备。</sys:String>
+	<sys:String x:Key="K0944"  xml:space="preserve">对于无法通电的设备：</sys:String>
+	<sys:String x:Key="K0945"  xml:space="preserve">Android 8.0或更高版本</sys:String>
+	<sys:String x:Key="K0946"  xml:space="preserve">关于电话</sys:String>
+	<sys:String x:Key="K0947"  xml:space="preserve">我们注意到，刷机已经成功地做了好几次。</sys:String>
+	<sys:String x:Key="K0948"  xml:space="preserve">您的问题解决了吗？</sys:String>
+	<sys:String x:Key="K0949"  xml:space="preserve">如果没有，您能否分享信息给我们，以便我们进一步分析？</sys:String>
+	<sys:String x:Key="K0950"  xml:space="preserve">刷机之前，您设备的问题和状态：</sys:String>
+	<sys:String x:Key="K0951"  xml:space="preserve">刷机之后，您设备的问题和状态：</sys:String>
+	<sys:String x:Key="K0952"  xml:space="preserve">请确认以下信息是否与您的设备匹配:&#x0a;&#x0a;产品名称：{0}&#x0a;&#x0a;型号名称：{1}</sys:String>
+	<sys:String x:Key="K0953"  xml:space="preserve">请确认以下信息是否与您的设备匹配:&#x0a;&#x0a;型号名称：{0}&#x0a;&#x0a;设备型号：{1}</sys:String>
+	<sys:String x:Key="K0954"  xml:space="preserve">按照您的设备类型，单击“手机”或“平板电脑”或“智能设备”。</sys:String>
+	<sys:String x:Key="K0955"  xml:space="preserve">为您的手机匹配正确的固件后，单击“下载”以下载目标固件文件。</sys:String>
+	<sys:String x:Key="K0956"  xml:space="preserve">下载完成后，点击“开始刷机”进行刷机。</sys:String>
+	<sys:String x:Key="K0957"  xml:space="preserve">按照说明在平板电脑中启用调试模式，然后通过 USB 线将其连接到 PC。</sys:String>
+	<sys:String x:Key="K0958"  xml:space="preserve">然后 Software Fix 将为您连接的平板电脑匹配正确的固件，单击“下载”以下载目标固件文件。</sys:String>
+	<sys:String x:Key="K0959"  xml:space="preserve">输入您平板SN编号，然后单击“放大镜”按钮以匹配正确的固件。如果您不知道平板的SN号，请单击“如何找到SN？”链接。</sys:String>
+	<sys:String x:Key="K0960"  xml:space="preserve">您的平板匹配到正确的固件文件之后，单击“下载”以下载目标固件文件。</sys:String>
+	<sys:String x:Key="K0961"  xml:space="preserve">输入您手机的 IMEI 号码，然后单击“放大镜”按钮以匹配正确的固件。</sys:String>
+	<sys:String x:Key="K0962"  xml:space="preserve">请确保仅连接一台设备，然后重试刷机。</sys:String>
+	<sys:String x:Key="K0963"  xml:space="preserve">取消置顶</sys:String>
+	<sys:String x:Key="K0964"  xml:space="preserve">教程 - 您的设备如何刷机</sys:String>
+	<sys:String x:Key="K0965"  xml:space="preserve">连接失败，因为您拒绝了“需要权限” 提示。 您可以重新连接设备并重试。</sys:String>
+	<sys:String x:Key="K0966"  xml:space="preserve">请按照以下步骤操作：&#x0a;1. 关闭您的设备。&#x0a;2. 连接USB线到PC。&#x0a;3. 按住设备上的音量下键，然后将 USB 线连接到设备。&#x0a;4. 一旦在手机显示屏上看到绿色的 Android，松开音量下键。</sys:String>
+	<sys:String x:Key="K0967"  xml:space="preserve">如果您看到设备上显示充电图标，请重新连接设备并重试。</sys:String>
+	<sys:String x:Key="K0968"  xml:space="preserve">Software Fix 检测连接到 PC 的设备，并匹配该设备的固件。 单击“确定”查看详细信息，单击“取消”继续手动选择。</sys:String>
+	<sys:String x:Key="K0969"  xml:space="preserve">是否确定退出固件匹配？</sys:String>
+	<sys:String x:Key="K0970"  xml:space="preserve">1.确保您的设备已关机且未连接到PC。&#x0a;2.按音量&quot;+&quot;键，同时通过USB线将设备与PC连接。&#x0a;3.单击“确定”按钮继续。&#x0a;4.进度开始后松开音量 &quot;+&quot; 键。&#x0a;5.注意：如果看到设备上显示的充电图标，请重新连接设备并重试。 </sys:String>
+	<sys:String x:Key="K0971"  xml:space="preserve">1.确保您的设备已关机。&#x0a;2.通过USB接口将设备连接到PC，然后单击“确定”按钮继续。&#x0a;3.注意：如果看到设备上显示的充电图标，请重新连接设备并重试。</sys:String>
+	<sys:String x:Key="K0972"  xml:space="preserve">1.设备关机，并且从PC断开连接。&#x0a;2.按住音量上键，使用USB接口将设备连接到PC。&#x0a;3.单击“确定”继续。&#x0a;4.在进程开始后，释放音量键。&#x0a;5.注意：如果看到设备上显示的充电图标，请重新连接设备并重试。</sys:String>
+	<sys:String x:Key="K0973"  xml:space="preserve">1.设备关机。&#x0a;2.使用USB接口将设备连接到PC，然后单击“确定”继续。&#x0a;3.注意：如果看到设备上显示的充电图标，请重新连接设备并重试。</sys:String>
+	<sys:String x:Key="K0974"  xml:space="preserve">如果您知道如何启用USB调试模式，则可以通过调试模式连接设备。Software Fix可以为您自动匹配固件。</sys:String>
+	<sys:String x:Key="K0975"  xml:space="preserve">大多数设备都支持，将设备切换到可以自动读取IMEI的模式。您想查看关于如何执行此操作的说明吗？</sys:String>
+	<sys:String x:Key="K0976"  xml:space="preserve">您已经知道您的设备名称和型号吗？如果知道，请使用手动方法选择您的设备。</sys:String>
+	<sys:String x:Key="K0977"  xml:space="preserve">我们似乎无法找到您的设备型号。好消息是有其他选择尝试。请在下面选择最适合您的选项：</sys:String>
+	<sys:String x:Key="K0978"  xml:space="preserve">IMEI无效</sys:String>
+	<sys:String x:Key="K0979"  xml:space="preserve">您的IMEI无效，请检查并再次尝试。</sys:String>
+	<sys:String x:Key="K0980"  xml:space="preserve">Software Fix检测到您的设备型号名称错误，为避免刷机损坏设备，Software Fix建议您前往客户中心寻求帮助或者通过网站[a]https://motorola-global-portal.custhelp.com[/a]。</sys:String>
+	<sys:String x:Key="K0981"  xml:space="preserve">Software Fix为您匹配到了以下固件，请从中选择与您设备匹配的一个用于刷机。</sys:String>
+	<sys:String x:Key="K0982"  xml:space="preserve">Software Fix将为您提供匹配的固件。</sys:String>
+	<sys:String x:Key="K0983"  xml:space="preserve">没有网络，请稍后再试。</sys:String>
+	<sys:String x:Key="K0984"  xml:space="preserve">您的IMEI是 </sys:String>
+	<sys:String x:Key="K0985"  xml:space="preserve">您的PC没有足够的磁盘空间，这可能会影响Software Fix的正常使用。请清理磁盘空间。</sys:String>
+	<sys:String x:Key="K0986"  xml:space="preserve">1.移除电源适配器。&#x0a;2.同时按住音量上键和音量下键，然后重新连接适配器。&#x0a;3.释放音量键。&#x0a;4.使用USB Type-C数据线将设备连接到PC。</sys:String>
+	<sys:String x:Key="K0987"  xml:space="preserve">1.您的设备刷机成功，断开USB Type-C数据线。&#x0a;2.需要几分钟才能启动，请稍候。</sys:String>
+	<sys:String x:Key="K0988"  xml:space="preserve">如何开启快速启动模式</sys:String>
+	<sys:String x:Key="K0989"  xml:space="preserve">IMEI号无效</sys:String>
+	<sys:String x:Key="K0990"  xml:space="preserve">重新选择</sys:String>
+	<sys:String x:Key="K0991"  xml:space="preserve">1.确保您的设备断电未并且连接到PC。&#x0a;2.按VOL“+”按钮，并同时通过USB将设备连接。&#x0a;3.单击“确定”按钮继续。&#x0a;4.进程开始后释放Vol“+”按钮。</sys:String>
+	<sys:String x:Key="K0992"  xml:space="preserve">连接的设备与固件不匹配，请更改为匹配的设备。&#x0a;您的设备是{0}</sys:String>
+	<sys:String x:Key="K0993"  xml:space="preserve">检查镜像文件是否与已连接的设备匹配</sys:String>
+	<sys:String x:Key="K0994"  xml:space="preserve">www.lenovo.com/privacy/</sys:String>
+	<sys:String x:Key="K0995"  xml:space="preserve">路径</sys:String>
+	<sys:String x:Key="K0996"  xml:space="preserve">15位数</sys:String>
+	<sys:String x:Key="K0997"  xml:space="preserve">如果我的手机不支持FastBoot模式怎么办？点击这里：</sys:String>
+	<sys:String x:Key="K0998"  xml:space="preserve">推荐</sys:String>
+	<sys:String x:Key="K0999"  xml:space="preserve">请按照教程将设备连接到您的电脑。随后Software Fix 将引导您并为您的设备匹配相应的固件。</sys:String>
+	<sys:String x:Key="K1000"  xml:space="preserve">如果您已经知道您的设备名称，您可以列表中选择它，然后Software Fix将显示下一步该做什么。</sys:String>
+	<sys:String x:Key="K1001"  xml:space="preserve">如何查找产品名称</sys:String>
+	<sys:String x:Key="K1002"  xml:space="preserve">在设备上查找</sys:String>
+	<sys:String x:Key="K1003"  xml:space="preserve">刷机指令</sys:String>
+	<sys:String x:Key="K1004"  xml:space="preserve">第2步：&amp;#x0a;在“关于手机”界面中，选择“型号和硬件”菜单。打开后，选择下面的“下一步”按钮。</sys:String>
+	<sys:String x:Key="K1005"  xml:space="preserve">第3步：&#x0a;您现在应该能够看到手机的型号。大多数型号以'XT'开头。</sys:String>
+	<sys:String x:Key="K1006"  xml:space="preserve">固件匹配......</sys:String>
+	<sys:String x:Key="K1007"  xml:space="preserve">Software Fix将指导您连接设备到PC，并帮您找到正确的固件。</sys:String>
+	<sys:String x:Key="K1008"  xml:space="preserve">步骤 3. 按住设备上的音量下键，然后连接USB 线连接到设备。&#x0a;步骤 4. 当手机上显示绿色的 Android，松开设备上的音量下键。</sys:String>
+	<sys:String x:Key="K1009"  xml:space="preserve">USB线连接程序</sys:String>
+	<sys:String x:Key="K1010"  xml:space="preserve">从列表中选择设备</sys:String>
+	<sys:String x:Key="K1011"  xml:space="preserve">您选择的固件信息如下，请确保该固件与您的设备匹配。</sys:String>
+	<sys:String x:Key="K1012"  xml:space="preserve">您的设备需要连接到fastboot模式才能进行刷机。是否需要查看设备连接教程？</sys:String>
+	<sys:String x:Key="K1013"  xml:space="preserve">教程 – 如何切换到Fastboot模式</sys:String>
+	<sys:String x:Key="K1014"  xml:space="preserve">按照分步说明将您的设备连接到 USB 数据线。 连接成功后，Software Fix 将确认要使用的正确固件</sys:String>
+	<sys:String x:Key="K1015"  xml:space="preserve">提示：请在纵向模式下使用平板电脑。</sys:String>
+	<sys:String x:Key="K1016"  xml:space="preserve">一键式克隆强制停止了！</sys:String>
+	<sys:String x:Key="K1017"  xml:space="preserve">开始刷机</sys:String>
+	<sys:String x:Key="K1018"  xml:space="preserve">重播</sys:String>
+	<sys:String x:Key="K1019"  xml:space="preserve">感谢您使用我们的应用程序。</sys:String>
+	<sys:String x:Key="K1020"  xml:space="preserve">请花一些时间回答以下问题，以便我们做得更好。</sys:String>
+	<sys:String x:Key="K1021"  xml:space="preserve">1. 您如何评价 Software Fix 应用程序？</sys:String>
+	<sys:String x:Key="K1022"  xml:space="preserve">2. 这个应用程序对您有帮助吗？</sys:String>
+	<sys:String x:Key="K1023"  xml:space="preserve">请给我们的程序打分。</sys:String>
+	<sys:String x:Key="K1024"  xml:space="preserve">请告诉我们程序是否对您有帮助。</sys:String>
+	<sys:String x:Key="K1025"  xml:space="preserve">感谢您完成此次调查！</sys:String>
+	<sys:String x:Key="K1026"  xml:space="preserve">您可以选择输入步骤的任何下拉菜单选项。</sys:String>
+	<sys:String x:Key="K1027"  xml:space="preserve">屏幕投屏</sys:String>
+	<sys:String x:Key="K1028"  xml:space="preserve">屏幕镜像和投影到您的PC</sys:String>
+	<sys:String x:Key="K1029"  xml:space="preserve">设备网络连接失败。</sys:String>
+	<sys:String x:Key="K1030"  xml:space="preserve">屏幕镜像需要您的设备，PC位于同一网络段中。将设备连接到使用PC的相同WiFi后再次尝试。</sys:String>
+	<sys:String x:Key="K1031"  xml:space="preserve">如果您没有WiFi可用，则可以通过移动热点连接。</sys:String>
+	<sys:String x:Key="K1033"  xml:space="preserve">Software Fix屏幕镜像需要与移动辅助应用程序一起使用。您是否在设备上安装了MA应用程序？</sys:String>
+	<sys:String x:Key="K1034"  xml:space="preserve">请将设备连接到PC以安装MA应用。</sys:String>
+	<sys:String x:Key="K1035"  xml:space="preserve">在连接设备之前，请参阅以下3个步骤启动USB调试：</sys:String>
+	<sys:String x:Key="K1036"  xml:space="preserve">使用PC将设备连接到相同的WiFi，然后单击以下“开始”按钮开始屏幕镜像。</sys:String>
+	<sys:String x:Key="K1037"  xml:space="preserve">通过WiFi使用屏幕镜像</sys:String>
+	<sys:String x:Key="K1038"  xml:space="preserve">1.确保PC和设备连接在同一WiFi。</sys:String>
+	<sys:String x:Key="K1039"  xml:space="preserve">2.使用Mobile Assistant应用程序扫描以下二维码来连接。</sys:String>
+	<sys:String x:Key="K1040"  xml:space="preserve">3.单击以下“开始”按钮开始屏幕镜像。</sys:String>
+	<sys:String x:Key="K1041"  xml:space="preserve">如果您不想扫描二维码来连接。您可以直接在MA中输入IP，您的IP地址是</sys:String>
+	<sys:String x:Key="K1042"  xml:space="preserve">检测到新的设备连接，等待匹配固件</sys:String>
+	<sys:String x:Key="K1043"  xml:space="preserve">请确保刷机设备的IMEI与输入的IMEI号码相同。</sys:String>
+	<sys:String x:Key="K1045"  xml:space="preserve">Software Fix已检测到您已连接到设备，将自动匹配后台的固件。</sys:String>
+	<sys:String x:Key="K1046"  xml:space="preserve">您可以尝试输入{0}编号或手动选择固件。</sys:String>
+	<sys:String x:Key="K1047"  xml:space="preserve">在镜像设备上安装应用程序</sys:String>
+	<sys:String x:Key="K1048"  xml:space="preserve">Software Fix屏幕镜像需要与移动助手应用程序一起使用。您是否在设备上安装了MA应用程序？</sys:String>
+	<sys:String x:Key="K1049"  xml:space="preserve">未安装</sys:String>
+	<sys:String x:Key="K1050"  xml:space="preserve">已安装</sys:String>
+	<sys:String x:Key="K1051"  xml:space="preserve">如何安装移动助理应用程序</sys:String>
+	<sys:String x:Key="K1052"  xml:space="preserve">方法1.</sys:String>
+	<sys:String x:Key="K1053"  xml:space="preserve">方法2.</sys:String>
+	<sys:String x:Key="K1054"  xml:space="preserve">1.将Mobile Assistant App下载到您的设备</sys:String>
+	<sys:String x:Key="K1055"  xml:space="preserve">2.在您的设备上安装并运行Mobile Assistant。</sys:String>
+	<sys:String x:Key="K1056"  xml:space="preserve">3.安装完成后，单击“确定”继续。</sys:String>
+	<sys:String x:Key="K1057"  xml:space="preserve">1.用USB数据线将设备连接到PC。</sys:String>
+	<sys:String x:Key="K1058"  xml:space="preserve">2.在您的设备上启用USB调试。</sys:String>
+	<sys:String x:Key="K1059"  xml:space="preserve">3.等待Software Fix自动将MA安装到您的设备并主动连接。</sys:String>
+	<sys:String x:Key="K1060"  xml:space="preserve">如何打开USB调试？</sys:String>
+	<sys:String x:Key="K1061"  xml:space="preserve">检测到新的设备连接，准备镜像......</sys:String>
+	<sys:String x:Key="K1062"  xml:space="preserve">如何打开移动热点</sys:String>
+	<sys:String x:Key="K1063"  xml:space="preserve">首先，打开设备上的热点。</sys:String>
+	<sys:String x:Key="K1064"  xml:space="preserve">然后，配置热点名称和密码。</sys:String>
+	<sys:String x:Key="K1065"  xml:space="preserve">最后，将此热点连接在PC上。</sys:String>
+	<sys:String x:Key="K1066"  xml:space="preserve">如何打开USB调试</sys:String>
+	<sys:String x:Key="K1067"  xml:space="preserve">如果您不想扫描二维码来连接，则可以直接在MA中输入IP。您的IP地址是</sys:String>
+	<sys:String x:Key="K1068"  xml:space="preserve">如何打开移动热点？</sys:String>
+	<sys:String x:Key="K1069"  xml:space="preserve">检测到新的设备连接，等待匹配固件......</sys:String>
+	<sys:String x:Key="K1070"  xml:space="preserve">您连接的设备的型号名称与IMEI不匹配。您的设备是{0}。您是否希望使用连接的设备将固件重新匹配刷机？</sys:String>
+	<sys:String x:Key="K1071"  xml:space="preserve">屏幕镜像需要您的设备，PC位于同一网络段中。请使用PC将设备连接到同一WiFi后再试一次。</sys:String>
+	<sys:String x:Key="K1072"  xml:space="preserve">您可以访问</sys:String>
+	<sys:String x:Key="K1073"  xml:space="preserve">在线论坛</sys:String>
+	<sys:String x:Key="K1074"  xml:space="preserve">并询问其他用户如果遇到类似的问题。</sys:String>
+	<sys:String x:Key="K1075"  xml:space="preserve">您以前的操作不正确，设备未连接。您可以按照以下步骤重新操作：&#x0a;&#x0a;1.关闭设备。&#x0a;&#x0a;2.打开设备。&#x0a;&#x0a;3.确保您的设备已关闭，未连接到PC。&#x0a;&#x0a;4.按VOL“+”按钮，并同时通过USB连接PC。&#x0a;&#x0a;5.在刷机开始后释放音量键。</sys:String>
+	<sys:String x:Key="K1076"  xml:space="preserve">您的USB线可以拔掉了。</sys:String>
+	<sys:String x:Key="K1077"  xml:space="preserve">Software Fix已检测到您的设备通过Device Help连接，请断开连接以继续。</sys:String>
+	<sys:String x:Key="K1078"  xml:space="preserve">Android 10或更高版本</sys:String>
+	<sys:String x:Key="K1079"  xml:space="preserve">选择</sys:String>
+	<sys:String x:Key="K1080"  xml:space="preserve">Android版本</sys:String>
+	<sys:String x:Key="K1081"  xml:space="preserve">您的设备并按照教程步骤操作：</sys:String>
+	<sys:String x:Key="K1082"  xml:space="preserve">如何找到Android版本</sys:String>
+	<sys:String x:Key="K1083"  xml:space="preserve">&#x0a;在您的手机上，打开“设置” - >“关于手机”界面。</sys:String>
+	<sys:String x:Key="K1084"  xml:space="preserve">第1步：&#x0a;在您的手机上，打开“设置” - >“关于手机”界面。打开后，选择下面的“下一步”按钮。</sys:String>
+	<sys:String x:Key="K1085"  xml:space="preserve">在您的手机上，打开“设置” - >“系统*” - >“关于手机“。&#x0a;（*自Android 8.0以来）</sys:String>
+	<sys:String x:Key="K1086"  xml:space="preserve">在您的平板电脑上，打开“设置” - >“系统*” - >“关于平板电脑”。&#x0a;（*自Android 8.0以来）</sys:String>
+	<sys:String x:Key="K1087"  xml:space="preserve">在您的平板电脑上，打开“设置” - >“系统 ”* - >“关于平板电脑”。（*自Android 8.0以来）</sys:String>
+	<sys:String x:Key="K1088"  xml:space="preserve">（设置 - >系统 - >关于平板电脑 - >版本号）&#x0a;您的平板电脑当前版本号格式，如：</sys:String>
+	<sys:String x:Key="K1089"  xml:space="preserve">您的平板电脑当前版本号格式，如：</sys:String>
+	<sys:String x:Key="K1090"  xml:space="preserve">其他特殊</sys:String>
+	<sys:String x:Key="K1091"  xml:space="preserve">Android 7.0或更早版本</sys:String>
+	<sys:String x:Key="K1092"  xml:space="preserve">请关闭设备，然后打开它并重试。如果它仍然不起作用，Software Fix建议您转到客户中心寻求帮助。</sys:String>
+	<sys:String x:Key="K1093"  xml:space="preserve">设备名称缺失</sys:String>
+	<sys:String x:Key="K1094"  xml:space="preserve">Software Fix将在您的PC上安装一些设备驱动程序以使用设备刷机功能。请按照以下步骤继续。</sys:String>
+	<sys:String x:Key="K1095"  xml:space="preserve">删除已完成，{0} 成功，{1} 失败。</sys:String>
+	<sys:String x:Key="K1096"  xml:space="preserve">{0} 需要您的许可。请在手机上允许它，然后单击“继续”。</sys:String>
+	<sys:String x:Key="K1097"  xml:space="preserve">1.转到“设置”，在顶部搜索框中，输入“版本”，在搜索结果列表中选择“版本号”。</sys:String>
+	<sys:String x:Key="K1098"  xml:space="preserve">2.点击“版本号”7次。</sys:String>
+	<sys:String x:Key="K1099"  xml:space="preserve">3. 退出“设置”，然后重新打开。在顶部搜索框中输入“USB”，从搜索结果中选择“USB 调试”，然后在下一页面启用“开发者选项”和“USB 调试”。</sys:String>
+	<sys:String x:Key="K1100"  xml:space="preserve">1.转到“设置”首页，在顶部搜索框中，输入“关于”，在搜索结果列表中选择“关于本机”。</sys:String>
+	<sys:String x:Key="K1101"  xml:space="preserve">2.找到并点击“Legion OS”7次。</sys:String>
+	<sys:String x:Key="K1102"  xml:space="preserve">1.转到“设置”首页，在顶部搜索框中，输入“关于”，在搜索结果列表中选择“关于平板电脑”。</sys:String>
+	<sys:String x:Key="K1103"  xml:space="preserve">2. 找到并点击&quot;版本号&quot;或&quot;软件版本&quot;7次。</sys:String>
+	<sys:String x:Key="K1104"  xml:space="preserve">有极低概率此页面上找不到“版本号”。如果找不到，请您点击“Android 版本”，在下一个页面将会找到“版本号”。</sys:String>
+	<sys:String x:Key="K1105"  xml:space="preserve">请搜索设备系统的相应语言。</sys:String>
+	<sys:String x:Key="K1106"  xml:space="preserve">目前暂时不支持中国区的设备，强刷中国区的设备，会有风险。</sys:String>
+	<sys:String x:Key="K1107"  xml:space="preserve">3.转到“设置”，在顶部搜索框上，输入“USB”，在搜索结果列表中选择“USB 调试”。在下一页中打开“开发者选项”和“USB 调试”。</sys:String>
+	<sys:String x:Key="K1108"  xml:space="preserve">3.转到“设置”，在顶部搜索框上，输入“USB”，在搜索结果列表中选择“USB 调试”。在下一页中打开“开发者选项”和“USB 调试”。</sys:String>
+	<sys:String x:Key="K1109"  xml:space="preserve">图片和视频授权</sys:String>
+	<sys:String x:Key="K1110"  xml:space="preserve">允许{0}拍照和录制视频？</sys:String>
+	<sys:String x:Key="K1111"  xml:space="preserve">在使用该应用程序时</sys:String>
+	<sys:String x:Key="K1112"  xml:space="preserve">只有这次</sys:String>
+	<sys:String x:Key="K1113"  xml:space="preserve">请确保 MA 应用程序在最前端运行！</sys:String>
+	<sys:String x:Key="K1114"  xml:space="preserve">长时间无法从设备接收帧数据，网络连接可能丢失！ 你想退出镜像吗？</sys:String>
+	<sys:String x:Key="K1115"  xml:space="preserve">刷机失败了很多次，您可以</sys:String>
+	<sys:String x:Key="K1116"  xml:space="preserve">提交反馈意见</sys:String>
+	<sys:String x:Key="K1117"  xml:space="preserve">向我们寻求帮助。</sys:String>
+	<sys:String x:Key="K1118"  xml:space="preserve">PN：</sys:String>
+	<sys:String x:Key="K1119"  xml:space="preserve">Software Fix检测到您的设备已拥有最新版本的固件，请在较高版本发布后刷机。</sys:String>
+	<sys:String x:Key="K1120"  xml:space="preserve">投屏设备连接丢失！</sys:String>
+	<sys:String x:Key="K1121"  xml:space="preserve">Software Fix通过IMEI找到您的型号，您可以从下面的列表中选择您的设备信息以匹配固件。</sys:String>
+	<sys:String x:Key="K1122"  xml:space="preserve">请选择设备出货地区</sys:String>
+	<sys:String x:Key="K1123"  xml:space="preserve">然后选择更多信息以匹配适当的固件。</sys:String>
+	<sys:String x:Key="K1124"  xml:space="preserve">选择或输入型号名称</sys:String>
+	<sys:String x:Key="K1125"  xml:space="preserve">硬件代码：</sys:String>
+	<sys:String x:Key="K1126"  xml:space="preserve">国家：</sys:String>
+	<sys:String x:Key="K1127"  xml:space="preserve">SIM：</sys:String>
+	<sys:String x:Key="K1128"  xml:space="preserve">手机内存：</sys:String>
+	<sys:String x:Key="K1129"  xml:space="preserve">刷机前，您的设备可以正常开机吗？</sys:String>
+	<sys:String x:Key="K1130"  xml:space="preserve">刷机后，您的设备可以正常开机吗？</sys:String>
+	<sys:String x:Key="K1131"  xml:space="preserve">这是教程。</sys:String>
+	<sys:String x:Key="K1132"  xml:space="preserve">您需要更多的刷机教程吗？</sys:String>
+	<sys:String x:Key="K1133"  xml:space="preserve">您能成功下载固件吗？</sys:String>
+	<sys:String x:Key="K1134"  xml:space="preserve">输入IMEI/SN</sys:String>
+	<sys:String x:Key="K1135"  xml:space="preserve">手动选择设备的型号</sys:String>
+	<sys:String x:Key="K1136"  xml:space="preserve">通过FastBoot模式连接设备</sys:String>
+	<sys:String x:Key="K1137"  xml:space="preserve">通过USB调试模式连接设备</sys:String>
+	<sys:String x:Key="K1138"  xml:space="preserve">您的固件匹配方式是什么？</sys:String>
+	<sys:String x:Key="K1139"  xml:space="preserve">您匹配到正确的固件了吗？</sys:String>
+	<sys:String x:Key="K1140"  xml:space="preserve">您的设备刷机成功了吗？</sys:String>
+	<sys:String x:Key="K1141"  xml:space="preserve">您可以重置密码。</sys:String>
+	<sys:String x:Key="K1142"  xml:space="preserve">您还记得您的帐户和密码吗？</sys:String>
+	<sys:String x:Key="K1143"  xml:space="preserve">您可以注册联想帐户。</sys:String>
+	<sys:String x:Key="K1144"  xml:space="preserve">您可以使用Google或Facebook帐户登录。（Microsoft等）</sys:String>
+	<sys:String x:Key="K1145"  xml:space="preserve">您有联想账户吗？</sys:String>
+	<sys:String x:Key="K1146"  xml:space="preserve">页面显示空白/黑屏。</sys:String>
+	<sys:String x:Key="K1147"  xml:space="preserve">页面提示无互联网。</sys:String>
+	<sys:String x:Key="K1148"  xml:space="preserve">弹出窗口是什么样的？</sys:String>
+	<sys:String x:Key="K1149"  xml:space="preserve">您看到一个弹出的登录窗口了吗？</sys:String>
+	<sys:String x:Key="K1150"  xml:space="preserve">以下问题将帮助我们了解您的问题并解决您的痛点。</sys:String>
+	<sys:String x:Key="K1151"  xml:space="preserve">您使用的是哪个功能？</sys:String>
+	<sys:String x:Key="K1152"  xml:space="preserve">您需要选择一个！</sys:String>
+	<sys:String x:Key="K1153"  xml:space="preserve">重置密码（lenovo.com）</sys:String>
+	<sys:String x:Key="K1154"  xml:space="preserve">您是否已单击登录窗口右上角的刷新按钮？</sys:String>
+	<sys:String x:Key="K1155"  xml:space="preserve">Software Fix检测到您的设备模型是：</sys:String>
+	<sys:String x:Key="K1156"  xml:space="preserve">Software Fix 未匹配到您设备的SN对应的镜像</sys:String>
+	<sys:String x:Key="K1157"  xml:space="preserve">请输入您的15位IMEI</sys:String>
+	<sys:String x:Key="K1158"  xml:space="preserve">恭喜！</sys:String>
+	<sys:String x:Key="K1159"  xml:space="preserve">您的设备已成功完成软件更新。</sys:String>
+	<sys:String x:Key="K1160"  xml:space="preserve">与您的朋友分享这个好消息：</sys:String>
+	<sys:String x:Key="K1161"  xml:space="preserve">Software Fix账号登录将很快弃用，请单击此处注册Lenovo ID登录。</sys:String>
+	<sys:String x:Key="K1163"  xml:space="preserve">在刷机开始之前，Software Fix需要您平板电脑的SN来匹配合适的固件。请输入您的序列号（SN或S/N）：</sys:String>
+	<sys:String x:Key="K1164"  xml:space="preserve">请确保刷机设备与输入的SN号相同。</sys:String>
+	<sys:String x:Key="K1165"  xml:space="preserve">如何找到SN？</sys:String>
+	<sys:String x:Key="K1166"  xml:space="preserve">请参考以下五种方法查找您的序列号：</sys:String>
+	<sys:String x:Key="K1167"  xml:space="preserve">如果您的平板有TF/SIM卡托盘。您可以在标签上找到SN</sys:String>
+	<sys:String x:Key="K1168"  xml:space="preserve">如果您的平板可以打开。</sys:String>
+	<sys:String x:Key="K1169"  xml:space="preserve">1. 点击</sys:String>
+	<sys:String x:Key="K1170"  xml:space="preserve">2. 进入</sys:String>
+	<sys:String x:Key="K1171"  xml:space="preserve">3. 以下三个选项之一</sys:String>
+	<sys:String x:Key="K1172"  xml:space="preserve">4. 找到SN</sys:String>
+	<sys:String x:Key="K1173"  xml:space="preserve">在设备外包装盒标签上找到SN</sys:String>
+	<sys:String x:Key="K1174"  xml:space="preserve">设备产品标签的背面</sys:String>
+	<sys:String x:Key="K1181"  xml:space="preserve">如果找不到SN，请单击此处：</sys:String>
+	<sys:String x:Key="K1182"  xml:space="preserve">请输入您的8位SN</sys:String>
+	<sys:String x:Key="K1183"  xml:space="preserve">无效的SN号</sys:String>
+	<sys:String x:Key="K1184"  xml:space="preserve">请输入您的SN...</sys:String>
+	<sys:String x:Key="K1185"  xml:space="preserve">Software Fix可以为您自动匹配固件。</sys:String>
+	<sys:String x:Key="K1186"  xml:space="preserve">让我们向您展示如何通过打开USB调试模式将平板电脑连接到PC。然后，Software Fix将能够检查其是什么型号。</sys:String>
+	<sys:String x:Key="K1187"  xml:space="preserve">您的SN是{0}</sys:String>
+	<sys:String x:Key="K1175"  xml:space="preserve">如果您知道如何打开USB调试模式，则可以通过调试模式直接连接设备。</sys:String>
+	<sys:String x:Key="K1176"  xml:space="preserve">选择您使用的设备。</sys:String>
+	<sys:String x:Key="K1177"  xml:space="preserve">我刚刚使用 Software Fix 应用程序救回了我的 {0}！ #RescueBySoftware Fix&#x0a;</sys:String>
+	<sys:String x:Key="K1178"  xml:space="preserve">系统处理中，请不要操作设备</sys:String>
+	<sys:String x:Key="K1188"  xml:space="preserve">应用大小</sys:String>
+	<sys:String x:Key="K1189"  xml:space="preserve">通知中心</sys:String>
+	<sys:String x:Key="K1190"  xml:space="preserve">下载中心</sys:String>
+	<sys:String x:Key="K1191"  xml:space="preserve">此处显示正在下载或下载完成的刷机资源</sys:String>
+	<sys:String x:Key="K1192"  xml:space="preserve">设置</sys:String>
+	<sys:String x:Key="K1193"  xml:space="preserve">在这里，您可以查看用户指南，更改客户端的语言并更新Software Fix客户端</sys:String>
+	<sys:String x:Key="K1194"  xml:space="preserve">用户信息</sys:String>
+	<sys:String x:Key="K1195"  xml:space="preserve">您的注册设备在此处显示</sys:String>
+	<sys:String x:Key="K1196"  xml:space="preserve">帮助</sys:String>
+	<sys:String x:Key="K1197"  xml:space="preserve">获得其他帮助</sys:String>
+	<sys:String x:Key="K1198"  xml:space="preserve">恢复</sys:String>
+	<sys:String x:Key="K1179"  xml:space="preserve">服务器错误，请稍后重试。</sys:String>
+	<sys:String x:Key="K1199"  xml:space="preserve">请{0}设备与PC的连接，然后{1}，再重试。</sys:String>
+	<sys:String x:Key="K1200"  xml:space="preserve">断开</sys:String>
+	<sys:String x:Key="K1201"  xml:space="preserve">关机</sys:String>
+	<sys:String x:Key="K1202"  xml:space="preserve">未正确检测到设备。</sys:String>
+	<sys:String x:Key="K1203"  xml:space="preserve">刷机工具执行错误</sys:String>
+	<sys:String x:Key="K1204"  xml:space="preserve">刷机过程异常终止。</sys:String>
+	<sys:String x:Key="K1205"  xml:space="preserve">刷机固件与您的设备不匹配，重新查看您设备的型号名称，然后重试。</sys:String>
+	<sys:String x:Key="K1206"  xml:space="preserve">其他刷机错误。</sys:String>
+	<sys:String x:Key="K1207"  xml:space="preserve">刷机中...</sys:String>
+	<sys:String x:Key="K1208"  xml:space="preserve">重要提示 - 请确保设备保持与 USB 线的连接，直至该过程完成。</sys:String>
+	<sys:String x:Key="K1209"  xml:space="preserve">确保您的设备已关机并断开与PC的连接，然后单击“确定”继续。</sys:String>
+	<sys:String x:Key="K1210"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;第 1 步 - 按住音量调高按钮&#x0a;第 2 步 - 按住音量调高并将设备连接到电脑</sys:String>
+	<sys:String x:Key="K1211"  xml:space="preserve">按照以下步骤连接设备：&#x0a;步骤1 - 按住音量上键和音量下键&#x0a;步骤2 - 继续按住音量上键和音量下键，然后将设备连接到PC</sys:String>
+	<sys:String x:Key="K1212"  xml:space="preserve">按照以下步骤连接设备：&#x0a;步骤1 - 同时按住电源键，音量上键和音量下键，设备振动后释放所有按键&#x0a;步骤2 - 通过USB数据线将设备连接到PC</sys:String>
+	<sys:String x:Key="K1213"  xml:space="preserve">请按照以下步骤连接设备：第 1 步 - 通过 USB 线将设备连接到 PC</sys:String>
+	<sys:String x:Key="K1214"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;步骤 1 - 卸下电源适配器&#x0a;步骤 2 - 同时按住音量增大和音量减小按钮，然后重新连接适配器&#x0a;步骤 3 - 松开两个音量按钮&#x0a;步骤 4 - 通过 USB Type-C 数据线将设备连接到 PC</sys:String>
+	<sys:String x:Key="K1215"  xml:space="preserve">请按照以下步骤连接设备：“第 1 步 - 关闭设备电源”第 2 步 - 按住音量上键和音量下键，然后通过 USB 线将设备连接到 PC</sys:String>
+	<sys:String x:Key="K1216"  xml:space="preserve">按照以下步骤连接设备：&#x0a;步骤 1 - 关闭设备电源&#x0a;步骤 2-同时按住电源键、音量上键和音量下键，振动后松开所有按钮&#x0a;步骤 3 - 通过 USB 线将设备连接到 PC</sys:String>
+	<sys:String x:Key="K1217"  xml:space="preserve">按照以下步骤连接设备：&#x0a;步骤1 - 关机&#x0a;步骤2 - 同时按住电源键，音量上键和音量下键，然后通过USB数据线将type -C端口从设备的左侧连接到PC</sys:String>
+	<sys:String x:Key="K1218"  xml:space="preserve">按照以下步骤连接设备：&#x0a;步骤1 - 关机&#x0a;步骤2 - 按住音量上键，然后通过USB数据线将设备连接到PC&#x0a;步骤3 - 当Lenovo图标在手机上显示时，松开音量上键，然后在手机上选择Download</sys:String>
+	<sys:String x:Key="K1219"  xml:space="preserve">请按照以下步骤连接设备：“第 1 步 - 关闭设备电源”第 2 步 - 按住音量增大按钮，同时通过 USB 线将设备连接到电脑</sys:String>
+	<sys:String x:Key="K1220"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;步骤 1 - 关闭设备电源&#x0a;步骤 2 - 按住音量下键，同时通过 USB 线将设备连接到 PC&#x0a;注意 - 如果设备进入 充电模式，请断开USB线并等待30秒重新执行上述步骤&#x0a;</sys:String>
+	<sys:String x:Key="K1221"  xml:space="preserve">按以下步骤连接设备：&#x0a;步骤1 - 关机&#x0a;步骤2 - 同时按住电源键、音量上键和音量下键，然后通过USB线将设备连接到电脑</sys:String>
+	<sys:String x:Key="K1222"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;步骤 1 - 关闭设备电源&#x0a;步骤 2 - 通过 USB 线将设备连接到 PC&#x0a;注意 - 如果您看到设备上显示充电图标，请重新连接设备 然后再试一次</sys:String>
+	<sys:String x:Key="K1223"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;步骤 1 - 取出电池&#x0a;步骤 2 - 通过 USB 线将设备连接到 PC&#x0a;</sys:String>
+	<sys:String x:Key="K1224"  xml:space="preserve">请按照以下步骤连接设备：“第 1 步 - 关闭设备电源”第 2 步 - 通过 USB 线将设备连接到 PC”</sys:String>
+	<sys:String x:Key="K1225"  xml:space="preserve">如果您的设备未开始刷机过程，您可以重新连接设备再次刷机。&#x0a;步骤1 - 关机&#x0a;步骤2 - 按住音量下键，同时通过USB数据线将设备连接到PC&#x0a;注意 - 如果设备进入充电模式，请断开USB数据线并等待30秒再重试以上步骤</sys:String>
+	<sys:String x:Key="K1226"  xml:space="preserve">如果您的设备未开始刷机过程，则可以重新连接设备以再次刷机。&#x0a;步骤1 - 关机&#x0a;步骤2 - 同时按住电源键，音量上键和音量下键按钮，然后通过USB数据线将设备连接到PC</sys:String>
+	<sys:String x:Key="K1228"  xml:space="preserve">步骤1-断开设备与USB线的连接。&#x0a;步骤2-同时按下音量上键和电源键进入Select Boot Mode界面，当Select Boot Mode界面出现后，释放所有按键。&#x0a;步骤3-按音量上键滚动到快速Fastboot Mode。&#x0a;步骤4-按音量下键确认进入Fastboot Mode（确认后，您将在屏幕上看到条形码）。&#x0a;步骤5-然后使用USB线将手机连接到PC。&#x0a;步骤6-单击“确定”按钮继续。&#x0a;</sys:String>
+	<sys:String x:Key="K1229"  xml:space="preserve">刷机成功，请按以下步骤启动设备。&#x0a;步骤1 - 请将电池重新插入到手机中，然后长按电源键启动设备。&#x0a;步骤2 - 开机可能需要几分钟，请耐心等待。</sys:String>
+	<sys:String x:Key="K1230"  xml:space="preserve">松开音量上键</sys:String>
+	<sys:String x:Key="K1231"  xml:space="preserve">松开音量下键</sys:String>
+	<sys:String x:Key="K1232"  xml:space="preserve">松开音量上键和音量下键</sys:String>
+	<sys:String x:Key="K1233"  xml:space="preserve">松开电源键，音量上键和音量下键</sys:String>
+	<sys:String x:Key="K1234"  xml:space="preserve">您的设备可能连接不正确，请按照以下步骤正确连接&#x0a;步骤1 - 长按电源键重启设备。您可能会看到该设备卡在“Lenovo”页面或自动启动，那不影响后续操作&#x0a;步骤2 - 然后按电源键关闭设备</sys:String>
+	<sys:String x:Key="K1235"  xml:space="preserve">对于任何拯救设备的尝试，您都需要关机：</sys:String>
+	<sys:String x:Key="K1236"  xml:space="preserve">_#关机：_#&#x0a;&#x0a;_#方案1_#-在系统正常状态下，按下__电源键__并根据系统提示正常关闭设备。&#x0a;&#x0a;_#方案2_#-除了__方案1__，其他如__黑屏，刷机失败...__的方案，可执行__强制__关机（建议 电池量>30％）：</sys:String>
+	<sys:String x:Key="K1237"  xml:space="preserve">按住_#电源键_#和_#音量下键_#持续_#12秒_#或更长时间，以强制关机。</sys:String>
+	<sys:String x:Key="K1238"  xml:space="preserve">擦除用户数据失败。</sys:String>
+	<sys:String x:Key="K1239"  xml:space="preserve">刷机引导加载程序失败。</sys:String>
+	<sys:String x:Key="K1240"  xml:space="preserve">助手应用程序安装失败。设备的剩余空间不足。</sys:String>
+	<sys:String x:Key="K1241"  xml:space="preserve">为了避免刷机造成的设备损坏，Software Fix建议您去客户中心寻求帮助。</sys:String>
+	<sys:String x:Key="K1242"  xml:space="preserve">请告诉我们您今天使用刷机的原因：</sys:String>
+	<sys:String x:Key="K1243"  xml:space="preserve">我只是喜欢在设备上进行最新更新。</sys:String>
+	<sys:String x:Key="K1244"  xml:space="preserve">我的设备不满意，希望刷机能帮助修复它。</sys:String>
+	<sys:String x:Key="K1245"  xml:space="preserve">比较困难</sys:String>
+	<sys:String x:Key="K1246"  xml:space="preserve">比较容易</sys:String>
+	<sys:String x:Key="K1247"  xml:space="preserve">容易</sys:String>
+	<sys:String x:Key="K1248"  xml:space="preserve">非常困难</sys:String>
+	<sys:String x:Key="K1249"  xml:space="preserve">1.您的设备刷机成功&#x0a;2.开机需要几分钟，请稍候</sys:String>
+	<sys:String x:Key="K1250"  xml:space="preserve">电子邮件</sys:String>
+	<sys:String x:Key="K1251"  xml:space="preserve">地址</sys:String>
+	<sys:String x:Key="K1252"  xml:space="preserve">请检查您的备份资源</sys:String>
+	<sys:String x:Key="K1253"  xml:space="preserve">请按照步骤连接您的设备以进行刷机，您真的要退出刷机流程还是继续？</sys:String>
+	<sys:String x:Key="K1254"  xml:space="preserve">强制关闭</sys:String>
+	<sys:String x:Key="K1255"  xml:space="preserve">继续刷机</sys:String>
+	<sys:String x:Key="K1256"  xml:space="preserve">在设备上，打开“设备设置”  - >“关于”界面。</sys:String>
+	<sys:String x:Key="K1257"  xml:space="preserve">选择一个设备</sys:String>
+	<sys:String x:Key="K1258"  xml:space="preserve">智能设备</sys:String>
+	<sys:String x:Key="K1259"  xml:space="preserve">在设备外包装盒的标签上查找型号名称</sys:String>
+	<sys:String x:Key="K1260"  xml:space="preserve">电话</sys:String>
+	<sys:String x:Key="K1261"  xml:space="preserve">平板电脑</sys:String>
+	<sys:String x:Key="K1262"  xml:space="preserve">智能设备</sys:String>
+	<sys:String x:Key="K1264"  xml:space="preserve">步骤 2</sys:String>
+	<sys:String x:Key="K1263"  xml:space="preserve">步骤 1</sys:String>
+	<sys:String x:Key="K1265"  xml:space="preserve">步骤 3</sys:String>
+	<sys:String x:Key="K1266"  xml:space="preserve">在外包装盒中查找</sys:String>
+	<sys:String x:Key="K1267"  xml:space="preserve">Software Fix检测到您的设备是企业设备，建议您在刷机之前先联系企业管理员解锁设备。</sys:String>
+	<sys:String x:Key="K1268"  xml:space="preserve">拆下电池</sys:String>
+	<sys:String x:Key="K1269"  xml:space="preserve">您的设备连接已超时，请按照连接提示重新连接您的设备以刷机。</sys:String>
+	<sys:String x:Key="K1270"  xml:space="preserve">通过USB将设备连接到PC</sys:String>
+	<sys:String x:Key="K1271"  xml:space="preserve">当Lenovo图标在手机上显示时，释放音量按钮，然后在手机上选择下载</sys:String>
+	<sys:String x:Key="K1272"  xml:space="preserve">同时按住音量上键和音量下键&#x0a;然后通过USB将设备连接到PC</sys:String>
+	<sys:String x:Key="K1273"  xml:space="preserve">按住音量上键，并同时通过USB将设备连接到PC</sys:String>
+	<sys:String x:Key="K1274"  xml:space="preserve">按住电源键，同时按下音量上键和音量下键，振动后释放所有按钮</sys:String>
+	<sys:String x:Key="K1275"  xml:space="preserve">同时按住电源键，音量上键和音量下键&#x0a;然后通过USB将Type-C端口从设备的左侧连接到PC</sys:String>
+	<sys:String x:Key="K1276"  xml:space="preserve">按住音量下键，并同时通过USB将设备连接到PC</sys:String>
+	<sys:String x:Key="K1277"  xml:space="preserve">同时按住电源键，音量上键和音量下键&#x0a;然后通过USB将设备连接到PC</sys:String>
+	<sys:String x:Key="K1278"  xml:space="preserve">按住音量下键按钮&#x0a;然后通过USB将设备连接到PC</sys:String>
+	<sys:String x:Key="K1279"  xml:space="preserve">注意 - 如果设备进入充电模式，请断开 USB 数据线并等待 30 秒重新执行上述步骤</sys:String>
+	<sys:String x:Key="K1280"  xml:space="preserve">注意 - 如果您看到设备上显示充电图标，请重新连接设备并重试</sys:String>
+	<sys:String x:Key="K1281"  xml:space="preserve">保持关机状态，按下计算盒上的音量上键。</sys:String>
+	<sys:String x:Key="K1282"  xml:space="preserve">按住音量上键并使用type-C数据线将计算盒连接到电脑（黑色USB口）。</sys:String>
+	<sys:String x:Key="K1283"  xml:space="preserve">拔掉设备上的电源适配器，然后按住音量上键</sys:String>
+	<sys:String x:Key="K1284"  xml:space="preserve">按住音量上键同时连接电源适配器</sys:String>
+	<sys:String x:Key="K1285"  xml:space="preserve">一旦设备启动到FASTBOOT模式，松开按键，然后使用 USB 线将设备连接到电脑</sys:String>
+	<sys:String x:Key="K1286"  xml:space="preserve">从智能相框拔掉充电器</sys:String>
+	<sys:String x:Key="K1287"  xml:space="preserve">用USB线将设备连接到电脑。</sys:String>
+	<sys:String x:Key="K1288"  xml:space="preserve">将电源充电线与设备相连</sys:String>
+	<sys:String x:Key="K1289"  xml:space="preserve">在刷机开始之前，确认您的设备需要哪些软件非常重要。 请输入您的序列号（SN 或 S/N）：</sys:String>
+	<sys:String x:Key="K1290"  xml:space="preserve">智能设备刷机</sys:String>
+	<sys:String x:Key="K1291"  xml:space="preserve">您的智能设备匹配到适当的固件后，点击“下载”按钮下载目标固件。</sys:String>
+	<sys:String x:Key="K1292"  xml:space="preserve">输入智能设备的SN号，然后单击“放大镜”按钮以匹配正确的固件。&#x0a;如果您不知道智能设备的SN号，请单击“如何找到SN？”链接。</sys:String>
+	<sys:String x:Key="K1293"  xml:space="preserve">按以下步骤连接设备：&#x0a;步骤1 - 在关机状态下，按住运算盒上的音量上键。&#x0a;步骤2 - 持续按住音量上键，并将Type C线插入运算盒（黑色USB端口）。</sys:String>
+	<sys:String x:Key="K1294"  xml:space="preserve">按照以下步骤连接设备：&#x0a;步骤1 - 先将适配器从设备上拔下，然后按音量增加键。&#x0a;步骤2 - 一边持续按住音量增加键，一边插入适配器。&#x0a;步骤3 - 当设备进入FASTBOOT模式时，松开按键，然后使用USB线将设备连接到电脑。&#x0a;如果您是第一次为此型号刷机，请下载说明文档，按照步骤安装驱动程序。</sys:String>
+	<sys:String x:Key="K1295"  xml:space="preserve">按照操作提示连接设备：&#x0a;步骤1 - 从智能相框上拔下适配器&#x0a;步骤2 - 使用USB数据线将设备连接到PC&#x0a;步骤3 - 将电源适配器连接到设备</sys:String>
+	<sys:String x:Key="K1296"  xml:space="preserve">没有通知。</sys:String>
+	<sys:String x:Key="K1297"  xml:space="preserve">为了刷机Software Fix将安装一个C++库。 请确认并单击确定按钮。</sys:String>
+	<sys:String x:Key="K1298"  xml:space="preserve">VC++ running time 检查</sys:String>
+	<sys:String x:Key="K1299"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;步骤1 - 关机&#x0a;步骤2 - 使用SIM卡针持续按住ForceDownload模式孔&#x0a;步骤3 - 通过USB线将设备连接到电脑上</sys:String>
+	<sys:String x:Key="K1300"  xml:space="preserve">释放SIM卡针</sys:String>
+	<sys:String x:Key="K1310"  xml:space="preserve">由于您已经完成了刷机，您想从PC上删除下载的大型固件文件吗？</sys:String>
+	<sys:String x:Key="K1311"  xml:space="preserve">不再重复提醒</sys:String>
+	<sys:String x:Key="K1312"  xml:space="preserve">非常不满意</sys:String>
+	<sys:String x:Key="K1313"  xml:space="preserve">非常满意</sys:String>
+	<sys:String x:Key="K1301"  xml:space="preserve">欢迎使用 Software Fix</sys:String>
+	<sys:String x:Key="K1302"  xml:space="preserve">一种更新手机软件的简单方法</sys:String>
+	<sys:String x:Key="K1303"  xml:space="preserve">为什么使用刷机有助于设备：</sys:String>
+	<sys:String x:Key="K1304"  xml:space="preserve">在设备上运行该软件完整更新的原因有很多，对以下情况会有帮助：</sys:String>
+	<sys:String x:Key="K1305"  xml:space="preserve"> -    保持最新的更新</sys:String>
+	<sys:String x:Key="K1306"  xml:space="preserve"> -    最近的软件更新后，您的设备上出现了一些问题</sys:String>
+	<sys:String x:Key="K1307"  xml:space="preserve"> -    您的设备运行缓慢，无法开机或总自动关机</sys:String>
+	<sys:String x:Key="K1308"  xml:space="preserve"> -    也许第三方应用程序引起的未知问题</sys:String>
+	<sys:String x:Key="K1314"  xml:space="preserve"> -    运行完整的软件更新将清除所有内容，并将设备恢复到原始设置</sys:String>
+	<sys:String x:Key="K1315"  xml:space="preserve"> -    存储空间不足可能引起的设备性能问题</sys:String>
+	<sys:String x:Key="K1316"  xml:space="preserve">将USB线连接到PC</sys:String>
+	<sys:String x:Key="K1317"  xml:space="preserve">按住音量上键，并同时将设备连接到USB线</sys:String>
+	<sys:String x:Key="K1318"  xml:space="preserve">同时按住电源按钮，音量上键和音量下键&#x0a;然后将设备连接到USB线</sys:String>
+	<sys:String x:Key="K1319"  xml:space="preserve">按住音量下键，并同时将设备连接到USB线</sys:String>
+	<sys:String x:Key="K1320"  xml:space="preserve">同时按住电源按钮，音量上键和音量下键&#x0a;然后将Type-C端口从设备的左侧连接到USB线</sys:String>
+	<sys:String x:Key="K1321"  xml:space="preserve">按住音量上键和音量下键&#x0a;然后将设备连接到USB线</sys:String>
+	<sys:String x:Key="K1322"  xml:space="preserve">请根据设备市场名/型号并相应地在下方标签上查找 SN：</sys:String>
+	<sys:String x:Key="K1323"  xml:space="preserve">市场名</sys:String>
+	<sys:String x:Key="K1324"  xml:space="preserve">带子的内侧</sys:String>
+	<sys:String x:Key="K1325"  xml:space="preserve">设备背面</sys:String>
+	<sys:String x:Key="K1326"  xml:space="preserve">设备的侧背面</sys:String>
+	<sys:String x:Key="K1327"  xml:space="preserve">设备底部</sys:String>
+	<sys:String x:Key="K1328"  xml:space="preserve">后侧左下角</sys:String>
+	<sys:String x:Key="K1329"  xml:space="preserve">备份还原</sys:String>
+	<sys:String x:Key="K1330"  xml:space="preserve">文件错误，删除并重试。</sys:String>
+	<sys:String x:Key="K1331"  xml:space="preserve">WIFI连接不稳定，通过WIFI连接备份还原可能会失败。 我们建议您通过 USB 数据线连接您的设备以进行备份和还原。</sys:String>
+	<sys:String x:Key="K1332"  xml:space="preserve">Software Fix可以通过您的设备IMEI/SN匹配固件</sys:String>
+	<sys:String x:Key="K1333"  xml:space="preserve">身份验证失败，您可以尝试刷机，并在进行刷机时保持网络连接。</sys:String>
+	<sys:String x:Key="K1334"  xml:space="preserve">添加地址</sys:String>
+	<sys:String x:Key="K1335"  xml:space="preserve">添加邮件地址</sys:String>
+	<sys:String x:Key="K1336"  xml:space="preserve">通过USB连接</sys:String>
+	<sys:String x:Key="K1337"  xml:space="preserve">备份和恢复</sys:String>
+	<sys:String x:Key="K1338"  xml:space="preserve">设备与PC之间的数据</sys:String>
+	<sys:String x:Key="K1339"  xml:space="preserve">如果您的设备是</sys:String>
+	<sys:String x:Key="K1340"  xml:space="preserve">，点击此处查看操作教程。</sys:String>
+	<sys:String x:Key="K1341"  xml:space="preserve">步骤 3. 同时按住电源和音量下键按钮。&#x0a;步骤 4. 振动后松开按键，您将在设备上看到Fastmode。然后将USB数据线连接到设备。</sys:String>
+	<sys:String x:Key="K1342"  xml:space="preserve">电话</sys:String>
+	<sys:String x:Key="K1343"  xml:space="preserve">按以下步骤连接设备：&#x0a;步骤1 - 按下Recovery按钮，然后将电源适配器插入设备并持续按住Recovery按钮。&#x0a;步骤2 - 10秒后，释放Recovery按钮。&#x0a;步骤3 - 使用USB Type C线将设备连接到PC。</sys:String>
+	<sys:String x:Key="K1344"  xml:space="preserve">刷机成功。请拔掉USB Type C线。</sys:String>
+	<sys:String x:Key="K1345"  xml:space="preserve">拔掉电源适配器。</sys:String>
+	<sys:String x:Key="K1346"  xml:space="preserve">没有联系人分组！</sys:String>
+	<sys:String x:Key="K1347"  xml:space="preserve">PC的磁盘已满！</sys:String>
+	<sys:String x:Key="K1348"  xml:space="preserve">刷机失败，请按照连接提示重新连接您的设备以刷机。</sys:String>
+	<sys:String x:Key="K1349"  xml:space="preserve">Software Fix检测到您的设备被锁定。为了避免刷机造成的设备损坏，Software Fix建议您去客户中心寻求帮助。</sys:String>
+	<sys:String x:Key="K1350"  xml:space="preserve">驱动程序安装帮助</sys:String>
+	<sys:String x:Key="K1351"  xml:space="preserve">抱歉，目前您的设备没有可用的固件。</sys:String>
+	<sys:String x:Key="K1352"  xml:space="preserve">请输入剪贴板中的内容</sys:String>
+	<sys:String x:Key="K1353"  xml:space="preserve">时间截取</sys:String>
+	<sys:String x:Key="K1354"  xml:space="preserve">开始时间</sys:String>
+	<sys:String x:Key="K1355"  xml:space="preserve">时间结束</sys:String>
+	<sys:String x:Key="K1356"  xml:space="preserve">Legion phone</sys:String>
+	<sys:String x:Key="K1357"  xml:space="preserve">请确认这是您的设备：</sys:String>
+	<sys:String x:Key="K1358"  xml:space="preserve">警告：您的设备已过保修期。</sys:String>
+	<sys:String x:Key="K1360"  xml:space="preserve">还剩3个月</sys:String>
+	<sys:String x:Key="K1361"  xml:space="preserve">剩余 0 个月</sys:String>
+	<sys:String x:Key="K1362"  xml:space="preserve">摩托罗拉建议升级到新设备</sys:String>
+	<sys:String x:Key="K1363"  xml:space="preserve">摩托罗拉建议延长您的服务计划</sys:String>
+	<sys:String x:Key="K1364"  xml:space="preserve">保修期内</sys:String>
+	<sys:String x:Key="K1365"  xml:space="preserve">超出保修期</sys:String>
+	<sys:String x:Key="K1366"  xml:space="preserve">保修 &amp; 服务</sys:String>
+	<sys:String x:Key="K1367"  xml:space="preserve">质保状态</sys:String>
+	<sys:String x:Key="K1368"  xml:space="preserve">当前服务 &amp; 支援状况</sys:String>
+	<sys:String x:Key="K1369"  xml:space="preserve">现在</sys:String>
+	<sys:String x:Key="K1370"  xml:space="preserve">到期时间</sys:String>
+	<sys:String x:Key="K1371"  xml:space="preserve">收货地点：美国</sys:String>
+	<sys:String x:Key="K1373"  xml:space="preserve">连接方式</sys:String>
+	<sys:String x:Key="K1374"  xml:space="preserve">USB</sys:String>
+	<sys:String x:Key="K1375"  xml:space="preserve">正在连接，请转到您的设备并允许设备帮助应用程序的“需要权限”提示。 或者如果是第一次，请同意摩托罗拉隐私政策，然后重新连接设备。</sys:String>
+	<sys:String x:Key="K1376"  xml:space="preserve">截屏</sys:String>
+	<sys:String x:Key="K1377"  xml:space="preserve">内部存储：</sys:String>
+	<sys:String x:Key="K1378"  xml:space="preserve">外部存储：</sys:String>
+	<sys:String x:Key="K1379"  xml:space="preserve">卸载助手应用失败</sys:String>
+	<sys:String x:Key="K1380"  xml:space="preserve">安装助手 App 失败</sys:String>
+	<sys:String x:Key="K1381"  xml:space="preserve">加载设备数据失败</sys:String>
+	<sys:String x:Key="K1382"  xml:space="preserve">开始</sys:String>
+	<sys:String x:Key="K1383"  xml:space="preserve">可用空间</sys:String>
+	<sys:String x:Key="K1384"  xml:space="preserve">已用空间</sys:String>
+	<sys:String x:Key="K1385"  xml:space="preserve">已连接</sys:String>
+	<sys:String x:Key="K1386"  xml:space="preserve">你的</sys:String>
+	<sys:String x:Key="K1387"  xml:space="preserve">克隆完成！</sys:String>
+	<sys:String x:Key="K1388"  xml:space="preserve">优惠券代码</sys:String>
+	<sys:String x:Key="K1389"  xml:space="preserve">我们重视您作为摩托罗拉客户的忠诚度！</sys:String>
+	<sys:String x:Key="K1390"  xml:space="preserve">为了表示感谢，请使用此优惠券代码购买 Moto Care 保修可享受 {0} 的折扣。</sys:String>
+	<sys:String x:Key="K1391"  xml:space="preserve">额外的</sys:String>
+	<sys:String x:Key="K1392"  xml:space="preserve">优惠码：</sys:String>
+	<sys:String x:Key="K1393"  xml:space="preserve">此优惠券不能与任何其他优惠券结合使用。</sys:String>
+	<sys:String x:Key="K1394"  xml:space="preserve">立即购买</sys:String>
+	<sys:String x:Key="K1395"  xml:space="preserve">请输入密码</sys:String>
+	<sys:String x:Key="K1396"  xml:space="preserve">请输入验证密码</sys:String>
+	<sys:String x:Key="K1397"  xml:space="preserve">它正在为您的{0}进行备份，请稍候...</sys:String>
+	<sys:String x:Key="K1398"  xml:space="preserve">月</sys:String>
+	<sys:String x:Key="K1399"  xml:space="preserve">您的 {0} 备份已完成！</sys:String>
+	<sys:String x:Key="K1401"  xml:space="preserve">优惠券是 Motorola.com 仅针对当前日历年手机提供的任何折扣的补充。</sys:String>
+	<sys:String x:Key="K1402"  xml:space="preserve">选择您要恢复的项目</sys:String>
+	<sys:String x:Key="K1403"  xml:space="preserve">选择</sys:String>
+	<sys:String x:Key="K1404"  xml:space="preserve">项目</sys:String>
+	<sys:String x:Key="K1405"  xml:space="preserve">它正在您的{0}上恢复，请稍候...</sys:String>
+	<sys:String x:Key="K1406"  xml:space="preserve">恢复数据需要时间。 请稍候…</sys:String>
+	<sys:String x:Key="K1407"  xml:space="preserve">您的 {0} 还原已完成！</sys:String>
+	<sys:String x:Key="K1408"  xml:space="preserve">文件无效</sys:String>
+	<sys:String x:Key="K1409"  xml:space="preserve">未找到</sys:String>
+	<sys:String x:Key="K1410"  xml:space="preserve">WiFi连接</sys:String>
+	<sys:String x:Key="K1411"  xml:space="preserve">2. 如果您的设备中安装了Device Help App，请使用它扫描以下二维码进行连接。</sys:String>
+	<sys:String x:Key="K1412"  xml:space="preserve">3. 如果没有安装设备帮助应用程序，请从以下位置下载并安装手机助手应用程序</sys:String>
+	<sys:String x:Key="K1413"  xml:space="preserve">请输入内容</sys:String>
+	<sys:String x:Key="K1414"  xml:space="preserve">预览效果</sys:String>
+	<sys:String x:Key="K1415"  xml:space="preserve">添加 MP3 音频文件</sys:String>
+	<sys:String x:Key="K1417"  xml:space="preserve">切换装置类型：</sys:String>
+	<sys:String x:Key="K1418"  xml:space="preserve">刷机文件异常。为避免损坏您的设备，请单击“确定”删除刷机文件并重新下载。</sys:String>
+	<sys:String x:Key="K1419"  xml:space="preserve">您可以向我们发送反馈。</sys:String>
+	<sys:String x:Key="K1420"  xml:space="preserve">1. 在您的手机上搜索设备帮助应用程序。</sys:String>
+	<sys:String x:Key="K1421"  xml:space="preserve">2. 在设备帮助应用程序中，点击屏幕顶部的蜂鸟图标，然后选择“扫描连接”选项。</sys:String>
+	<sys:String x:Key="K1422"  xml:space="preserve">3. 使用 Device Help 应用程序扫描下面的代码以使用 WiFi 连接：</sys:String>
+	<sys:String x:Key="K1423"  xml:space="preserve">4. 如果您的手机没有预装设备帮助应用程序，请单击</sys:String>
+	<sys:String x:Key="K1424"  xml:space="preserve">以显示并扫描二维码下载手机助手应用程序。手动安装应用程序后，请启动应用程序并扫描步骤 3 中的二维码。</sys:String>
+	<sys:String x:Key="K1425"  xml:space="preserve">请检查您的网络是否稳定，再次尝试刷机。</sys:String>
+	<sys:String x:Key="K1426"  xml:space="preserve">认证信息</sys:String>
+	<sys:String x:Key="K1427"  xml:space="preserve">宽</sys:String>
+	<sys:String x:Key="K1428"  xml:space="preserve">高</sys:String>
+	<sys:String x:Key="K1429"  xml:space="preserve">详细</sys:String>
+	<sys:String x:Key="K1430"  xml:space="preserve">选择Software Fix匹配的固件</sys:String>
+	<sys:String x:Key="K1431"  xml:space="preserve">设备信息</sys:String>
+	<sys:String x:Key="K1432"  xml:space="preserve">设备上录屏完成后，请选择“刷新”按钮查看记录文件</sys:String>
+	<sys:String x:Key="K1433"  xml:space="preserve">请通过USB数据线连接您的设备</sys:String>
+	<sys:String x:Key="K1434"  xml:space="preserve">请选择不同的设备</sys:String>
+	<sys:String x:Key="K1435"  xml:space="preserve">歌曲</sys:String>
+	<sys:String x:Key="K1436"  xml:space="preserve">联系人详情</sys:String>
+	<sys:String x:Key="K1437"  xml:space="preserve">请检查您的设备以更改设置并开始录制。</sys:String>
+	<sys:String x:Key="K1438"  xml:space="preserve">正在连接…</sys:String>
+	<sys:String x:Key="K1439"  xml:space="preserve">Wi-Fi 连接不稳定，请更改为 USB 连接或继续。</sys:String>
+	<sys:String x:Key="K1440"  xml:space="preserve">Wi-Fi连接不稳定，建议您切换到USB连接。</sys:String>
+	<sys:String x:Key="K1441"  xml:space="preserve">关闭设备电源</sys:String>
+	<sys:String x:Key="K1442"  xml:space="preserve">联想建议延长您的服务计划</sys:String>
+	<sys:String x:Key="K1443"  xml:space="preserve">联想建议升级到新设备</sys:String>
+	<sys:String x:Key="K1444"  xml:space="preserve">拒绝</sys:String>
+	<sys:String x:Key="K1445"  xml:space="preserve">同意</sys:String>
+	<sys:String x:Key="K1446"  xml:space="preserve">安装手机助手应用通知</sys:String>
+	<sys:String x:Key="K1447"  xml:space="preserve">我们需要安装MA应用程序来访问“我的设备”和“备份和恢复”模块，以便Software Fix可以更好地管理您的设备。</sys:String>
+	<sys:String x:Key="K1448"  xml:space="preserve">退出</sys:String>
+	<sys:String x:Key="K1449"  xml:space="preserve">连接进程终止</sys:String>
+	<sys:String x:Key="K1450"  xml:space="preserve">由于您拒绝安装手机助手应用程序，您无法访问“我的设备”、“备份和恢复”等。</sys:String>
+	<sys:String x:Key="K1451"  xml:space="preserve">该设备通过 FASTBOOT 模式连接，无法切换到该模式。</sys:String>
+	<sys:String x:Key="K1452"  xml:space="preserve">刷机失败。 USB 数据线或 USB 端口松动，请确保插紧后重试。&#x0a;（不建议使用USB集线器。）</sys:String>
+	<sys:String x:Key="K1453"  xml:space="preserve">Moto E13 (XT2345), Moto G14 (XT2341), Moto G04 (XT2421), Moto G35 5G (XT2433)</sys:String>
+	<sys:String x:Key="K1454"  xml:space="preserve">没有找到fastboot设备，可能是设备的驱动程序安装不正确！</sys:String>
+	<sys:String x:Key="K1455"  xml:space="preserve">将您的设备与 PC 连接到同一 WiFi。</sys:String>
+	<sys:String x:Key="K1456"  xml:space="preserve">在手机上搜索设备帮助应用程序。</sys:String>
+	<sys:String x:Key="K1457"  xml:space="preserve">在设备帮助应用程序中，点击屏幕顶部的蜂鸟图标，然后选择“扫描以连接”选项。</sys:String>
+	<sys:String x:Key="K1458"  xml:space="preserve">使用设备帮助应用程序扫描代码以使用 WiFi 进行连接。</sys:String>
+	<sys:String x:Key="K1459"  xml:space="preserve">您的设备不支持刷写其他地区的固件</sys:String>
+	<sys:String x:Key="K1461"  xml:space="preserve">如果您的手机未安装设备帮助应用程序，请从 [a]rasa.page.link/ma[/a] 安装Mobile Assistant应用程序。 安装后，使用该应用程序扫描上面的二维码。</sys:String>
+	<sys:String x:Key="K1462"  xml:space="preserve">可以在此处找到其他连接方式</sys:String>
+	<sys:String x:Key="K1463"  xml:space="preserve">通过 WiFi 将手机连接到 Software Fix</sys:String>
+	<sys:String x:Key="K1464"  xml:space="preserve">请按照以下步骤连接WIFI</sys:String>
+	<sys:String x:Key="K1465"  xml:space="preserve">使用WiFi将手机连接到Software Fix，读取设备信息并匹配固件</sys:String>
+	<sys:String x:Key="K1466"  xml:space="preserve">手动输入 IMEI</sys:String>
+	<sys:String x:Key="K1467"  xml:space="preserve">选择您的型号</sys:String>
+	<sys:String x:Key="K1468"  xml:space="preserve">按照说明选择您的手机型号</sys:String>
+	<sys:String x:Key="K1469"  xml:space="preserve">输入手机的 IMEI 以匹配正确的固件</sys:String>
+	<sys:String x:Key="K1460"  xml:space="preserve">其他连接方式</sys:String>
+	<sys:String x:Key="K1470"  xml:space="preserve">快速检查您的设备是否存在任何硬件问题</sys:String>
+	<sys:String x:Key="K1471"  xml:space="preserve">使用Device help 或 Mobile Assistant App扫描下方二维码即可使用WiFi连接</sys:String>
+	<sys:String x:Key="K1472"  xml:space="preserve">查看 WiFi 连接步骤</sys:String>
+	<sys:String x:Key="K1473"  xml:space="preserve">运行你自己的</sys:String>
+	<sys:String x:Key="K1474"  xml:space="preserve">硬件测试</sys:String>
+	<sys:String x:Key="K1475"  xml:space="preserve">您手机上的设备帮助应用程序版本不支持硬件测试。&#x0a;您要安装移动助手应用程序以支持硬件测试吗？</sys:String>
+	<sys:String x:Key="K1476"  xml:space="preserve">请按照以下步骤连接WIFI</sys:String>
+	<sys:String x:Key="K1477"  xml:space="preserve">确保您的设备和电脑都连接到同一个 Wi-Fi 网络</sys:String>
+	<sys:String x:Key="K1478"  xml:space="preserve">连接的设备与预期的出厂软件值不匹配，无法进行刷机。&#x0a;&#x0a;请邮寄设备或前往摩托罗拉授权服务中心进行修复。</sys:String>
+	<sys:String x:Key="K1479"  xml:space="preserve">在手机上打开“设备帮助”应用&#x0a;- 应用打开后，点击“软件修复”卡片。&#x0a;- 选择“扫描连接”选项。&#x0a;- 授予所需权限。</sys:String>
+	<sys:String x:Key="K1480"  xml:space="preserve">扫描图片中显示的二维码，并在提示时输入 PIN 码。&#x0a;输入 PIN 码后，您的设备将自动通过 Wi-Fi 连接，详细信息将显示在 Software Fix 应用中</sys:String>
+	<sys:String x:Key="K1481"  xml:space="preserve">如果您的设备没有设备帮助应用程序，请按照以下说明在您的设备上安装移动助手“MA”应用程序：&#x0a;- 扫描图片中显示的二维码下载 MA 应用程序 apk 文件&#x0a;- 出现提示后安装应用程序&#x0a;- 安装后，打开 MA 应用程序</sys:String>
+	<sys:String x:Key="K1482"  xml:space="preserve">在 MA 应用中，选择“扫描二维码”选项&#x0a;- 选择后，请务必接受授权图片的权限</sys:String>
+	<sys:String x:Key="K1483"  xml:space="preserve">测试项目</sys:String>
+	<sys:String x:Key="K1484"  xml:space="preserve">结果</sys:String>
+	<sys:String x:Key="K1485"  xml:space="preserve">读取结果</sys:String>
+	<sys:String x:Key="K1486"  xml:space="preserve">开始硬件测试</sys:String>
+	<sys:String x:Key="K1487"  xml:space="preserve">请检查您的设备以查看可以启动哪些硬件测试</sys:String>
+	<sys:String x:Key="K1488"  xml:space="preserve">完成测试</sys:String>
+	<sys:String x:Key="K1490"  xml:space="preserve">取消刷机</sys:String>
+	<sys:String x:Key="K1489"  xml:space="preserve">继续刷机更新软件</sys:String>
+	<sys:String x:Key="K1491"  xml:space="preserve">未测试</sys:String>
+	<sys:String x:Key="K1492"  xml:space="preserve">正常的</sys:String>
+	<sys:String x:Key="K1493"  xml:space="preserve">未被发现</sys:String>
+	<sys:String x:Key="K1494"  xml:space="preserve">音频连接</sys:String>
+	<sys:String x:Key="K1495"  xml:space="preserve">背光</sys:String>
+	<sys:String x:Key="K1496"  xml:space="preserve">电池</sys:String>
+	<sys:String x:Key="K1497"  xml:space="preserve">蓝牙</sys:String>
+	<sys:String x:Key="K1498"  xml:space="preserve">屏幕</sys:String>
+	<sys:String x:Key="K1499"  xml:space="preserve">入耳式扬声器</sys:String>
+	<sys:String x:Key="K1500"  xml:space="preserve">耳机</sys:String>
+	<sys:String x:Key="K1501"  xml:space="preserve">闪光</sys:String>
+	<sys:String x:Key="K1502"  xml:space="preserve">前置摄像头</sys:String>
+	<sys:String x:Key="K1503"  xml:space="preserve">全球定位系统</sys:String>
+	<sys:String x:Key="K1504"  xml:space="preserve">重力传感器</sys:String>
+	<sys:String x:Key="K1505"  xml:space="preserve">麦克风</sys:String>
+	<sys:String x:Key="K1506"  xml:space="preserve">多点触摸</sys:String>
+	<sys:String x:Key="K1507"  xml:space="preserve">接近传感器</sys:String>
+	<sys:String x:Key="K1508"  xml:space="preserve">移动网络</sys:String>
+	<sys:String x:Key="K1509"  xml:space="preserve">接收者</sys:String>
+	<sys:String x:Key="K1510"  xml:space="preserve">后置摄像头</sys:String>
+	<sys:String x:Key="K1511"  xml:space="preserve">触摸屏</sys:String>
+	<sys:String x:Key="K1512"  xml:space="preserve">扬声器</sys:String>
+	<sys:String x:Key="K1513"  xml:space="preserve">音量按钮</sys:String>
+	<sys:String x:Key="K1514"  xml:space="preserve">振动</sys:String>
+	<sys:String x:Key="K1515"  xml:space="preserve">Wi-Fi连接</sys:String>
+	<sys:String x:Key="K1516"  xml:space="preserve">选择您要备份的文件</sys:String>
+	<sys:String x:Key="K1517"  xml:space="preserve">文件</sys:String>
+	<sys:String x:Key="K1518"  xml:space="preserve">请将显示分辨率设置调整为125%或100%，以避免显示中断问题。</sys:String>
+	<sys:String x:Key="K1519"  xml:space="preserve">设备连接</sys:String>
+	<sys:String x:Key="K1520"  xml:space="preserve">连接设备并在设备上输入如下所示的验证码。</sys:String>
+	<sys:String x:Key="K1521"  xml:space="preserve">验证码</sys:String>
+	<sys:String x:Key="K1522"  xml:space="preserve">看来你没有进行过硬件测试。 你想停下来吗？</sys:String>
+	<sys:String x:Key="K1523"  xml:space="preserve">现在可用。</sys:String>
+	<sys:String x:Key="K1548"  xml:space="preserve">如果这是您第一次对该设备进行刷机，请先安装USB驱动程序</sys:String>
+	<sys:String x:Key="K1549"  xml:space="preserve">“点击以下链接即可下载”</sys:String>
+	<sys:String x:Key="K1550"  xml:space="preserve">解压</sys:String>
+	<sys:String x:Key="K1551"  xml:space="preserve">手动安装驱动程序</sys:String>
+	<sys:String x:Key="K1552"  xml:space="preserve">“除非您需要退出刷机过程，否则请不要单击‘取消’”</sys:String>
+	<sys:String x:Key="K1553"  xml:space="preserve">请重试并确保在出现 fastboot 设备连接提示后设备正确进入 fastboot 模式</sys:String>
+	<sys:String x:Key="K1554"  xml:space="preserve">如果这是您第一次对该设备进行刷机，请先安装 USB 驱动程序：&#x0a;&#x0a;Step-1：点击以下链接下载&#x0a;Step-2： 解压&#x0a;步骤3：手动安装驱动程序&#x0a;&#x0a;注意：除非您需要退出刷机过程，否则请勿单击“取消”。&#x0a;</sys:String>
+	<sys:String x:Key="K1555"  xml:space="preserve">未找到固件</sys:String>
+	<sys:String x:Key="K1556"  xml:space="preserve">硬件测试</sys:String>
+	<sys:String x:Key="K1557"  xml:space="preserve">未找到 fastboot 设备。</sys:String>
+	<sys:String x:Key="K1558"  xml:space="preserve">未找到 fastboot 设备。 请确保设备以快速启动模式连接，并且设备管理器中的 USB 端口被正确检测到！</sys:String>
+	<sys:String x:Key="K1559"  xml:space="preserve">步骤1-断开设备与USB线的连接。&#x0a;步骤2-同时按下音量上键和电源键进入Select Boot Mode界面，当Select Boot Mode界面出现后，释放所有按键。&#x0a;步骤3-按音量上键滚动到快速Fastboot Mode。&#x0a;步骤4-按音量下键确认进入Fastboot Mode（确认后，您将在屏幕上看到条形码）。&#x0a;步骤5-然后使用USB线将手机连接到PC。</sys:String>
+	<sys:String x:Key="K1560"  xml:space="preserve">切换到快速启动模式</sys:String>
+	<sys:String x:Key="K1561"  xml:space="preserve">等待快速启动模式</sys:String>
+	<sys:String x:Key="K1562"  xml:space="preserve">用bat文件刷机</sys:String>
+	<sys:String x:Key="K1563"  xml:space="preserve">重启</sys:String>
+	<sys:String x:Key="K1564"  xml:space="preserve">加载刷机文件</sys:String>
+	<sys:String x:Key="K1565"  xml:space="preserve">通过Wi-Fi连接设备</sys:String>
+	<sys:String x:Key="K1566"  xml:space="preserve">请选择与设备的连接方式</sys:String>
+	<sys:String x:Key="K1567"  xml:space="preserve">要保持连接，请确保您设备上的 {0} 应用程序保持打开状态。</sys:String>
+	<sys:String x:Key="K1568"  xml:space="preserve">这里</sys:String>
+	<sys:String x:Key="K1569"  xml:space="preserve">安装移动助手</sys:String>
+	<sys:String x:Key="K1570"  xml:space="preserve">扫描二维码下载手机助手应用程序</sys:String>
+	<sys:String x:Key="K1571"  xml:space="preserve">用设备扫描左侧的二维码。安装 &quot;手机助手 &quot;应用，安装完成后启动该应用。</sys:String>
+	<sys:String x:Key="K1572"  xml:space="preserve">使用手机助手应用程序扫描二维码，通过 WIFI 连接。然后在设备上输入 PIN 码，确保连接安全。</sys:String>
+	<sys:String x:Key="K1573"  xml:space="preserve">选择 &quot;扫描连接 &quot;选项。</sys:String>
+	<sys:String x:Key="K1574"  xml:space="preserve">请确保完成驱动程序安装。</sys:String>
+	<sys:String x:Key="K1575"  xml:space="preserve">快速启动连接</sys:String>
+	<sys:String x:Key="K1576"  xml:space="preserve">输入IMEI</sys:String>
+	<sys:String x:Key="K1577"  xml:space="preserve">WiFi 连接</sys:String>
+	<sys:String x:Key="K1578"  xml:space="preserve">选择型号</sys:String>
+	<sys:String x:Key="K1579"  xml:space="preserve">按照引导使用 USB 线连接您的设备以匹配固件</sys:String>
+	<sys:String x:Key="K1580"  xml:space="preserve">手动输入您设备的 IMEI</sys:String>
+	<sys:String x:Key="K1581"  xml:space="preserve">使用 Wi-Fi 连接手机读取 IMEI</sys:String>
+	<sys:String x:Key="K1582"  xml:space="preserve">从型号列表中手动选择您的手机</sys:String>
+	<sys:String x:Key="K1583"  xml:space="preserve">请输入[r]*#06#[/r]预览设备的IMEI。</sys:String>
+	<sys:String x:Key="K1584"  xml:space="preserve">将手机连接到电脑</sys:String>
+	<sys:String x:Key="K1585"  xml:space="preserve">为了正确检测您的手机型号，请按照屏幕上的说明操作，了解如何使用 USB 数据线连接手机和电脑。</sys:String>
+	<sys:String x:Key="K1586"  xml:space="preserve">[b6]*注意[/b6] - 并非所有设备都支持此模式。&#x0a;推荐您使用“输入IMEI”选项并且 Software Fix可以提供正确的指导说明。</sys:String>
+	<sys:String x:Key="K1587"  xml:space="preserve">比以往更轻松地管理您的设备</sys:String>
+	<sys:String x:Key="K1588"  xml:space="preserve">读取设备，请稍候...</sys:String>
+	<sys:String x:Key="K1589"  xml:space="preserve">刷机固件：</sys:String>
+	<sys:String x:Key="K1590"  xml:space="preserve">固件版本：</sys:String>
+	<sys:String x:Key="K1591"  xml:space="preserve">了解更多</sys:String>
+	<sys:String x:Key="K1592"  xml:space="preserve">出于安全和防盗目的，设备上的任何现有 Google 帐户都不会被删除。</sys:String>
+	<sys:String x:Key="K1594"  xml:space="preserve">刷机将删除所有个人数据，包括照片、视频、音乐、短信、下载的文件。 建议在开始刷机之前使用备份和恢复功能。</sys:String>
+	<sys:String x:Key="K1593"  xml:space="preserve">- 确保目标固件与您的设备型号匹配。&#x0a;- 刷机将删除所有数据,包括联系人、照片、视频和音乐。&#x0a;- 请注意,刷机不会删除您的 Google 帐户。</sys:String>
+	<sys:String x:Key="K1595"  xml:space="preserve">- 确保目标固件与您的设备型号匹配。&#x0a;- 刷机存在风险，建议您在刷机之前先备份用户数据。&#x0a;- 请注意，刷机不会删除您的 Google 帐户。</sys:String>
+	<sys:String x:Key="K1597"  xml:space="preserve">资源正在解压中...</sys:String>
+	<sys:String x:Key="K1598"  xml:space="preserve">您手机中安装的设备帮助应用程序不支持短信和下载文件的备份功能。&#x0a;您想安装并启动手机助手应用程序来支持短信备份和下载文件功能吗？</sys:String>
+	<sys:String x:Key="K1599"  xml:space="preserve">FAQ</sys:String>
+	<sys:String x:Key="K1600"  xml:space="preserve">Flash工具解压失败！</sys:String>
+	<sys:String x:Key="K1596"  xml:space="preserve">解压中</sys:String>
+	<sys:String x:Key="K1601"  xml:space="preserve">Software Fix需要权限才能恢复短信，请在设备上授予权限。</sys:String>
+	<sys:String x:Key="K1602"  xml:space="preserve">将手机助手设置为设备中的默认短信应用程序。</sys:String>
+	<sys:String x:Key="K1603"  xml:space="preserve">Software Fix 会将设备驱动程序安装到您的 PC 上，以便可以继续刷机，请单击“确定”同意并继续安装步骤，如果要终止刷机，请单击“取消”。</sys:String>
+	<sys:String x:Key="K1604"  xml:space="preserve">将“消息”设置为设备中的默认短信应用程序。</sys:String>
+	<sys:String x:Key="K1605"  xml:space="preserve">在您的设备上选中此选项以授权更改短信应用程序。</sys:String>
+	<sys:String x:Key="K1606"  xml:space="preserve">Software Fix 将下载并安装设备驱动程序到您的 PC，以便可以继续刷机，请单击“确定”同意并继续安装步骤，如果要终止刷机，请单击“取消”。</sys:String>
+	<sys:String x:Key="K1607"  xml:space="preserve">中国大陆用户不可用</sys:String>
+	<sys:String x:Key="K1608"  xml:space="preserve">部分测试用例可能需要占用您设备的type-c接口，建议您通过WIFI连接Software Fix。</sys:String>
+	<sys:String x:Key="K1609"  xml:space="preserve">今天</sys:String>
+	<sys:String x:Key="K1610"  xml:space="preserve">Moto Care&#x0a;延长服务计划 </sys:String>
+	<sys:String x:Key="K1611"  xml:space="preserve">不支持从平板电脑备份短信和通话日志。</sys:String>
+	<sys:String x:Key="K1612"  xml:space="preserve">不支持将短信和通话日志恢复到平板电脑。</sys:String>
+	<sys:String x:Key="K1613"  xml:space="preserve">立即购买！</sys:String>
+	<sys:String x:Key="K1614"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;步骤1 - 按住音量增加按钮&#x0a;步骤2 - 长按音量增加按钮，并通过USB数据线将设备左侧的Type-C端口连接到电脑。</sys:String>
+	<sys:String x:Key="K1615"  xml:space="preserve">1. 我们建议刷机时使用原厂 USB 线。</sys:String>
+	<sys:String x:Key="K1616"  xml:space="preserve">2. 若使用劣质 USB 线可能会导致刷机失败。</sys:String>
+	<sys:String x:Key="K1617"  xml:space="preserve">请注意：</sys:String>
+	<sys:String x:Key="K1620"  xml:space="preserve">将恢复文件下载到手机 - 重试</sys:String>
+	<sys:String x:Key="K1621"  xml:space="preserve">断开指令 - 重试</sys:String>
+	<sys:String x:Key="K1618"  xml:space="preserve">1. 您的手机由第三方服务管理。&#x0a;&#x0a;2. 您可以更新软件，但[c color='#FF0000']第三方服务及所有用户数据不会被删除[/c]。</sys:String>
+	<sys:String x:Key="K1619"  xml:space="preserve">由于设备的企业属性或其他原因，您设备中的个人数据未被清除，我们也无法激活设备设置菜单中的 “出厂重置 ”选项。</sys:String>
+	<sys:String x:Key="K1622"  xml:space="preserve">您想保留还是删除设备上的个人数据？&#x0a;- 对于可能遇到软件问题的设备，我们建议删除所有个人数据</sys:String>
+	<sys:String x:Key="K1623"  xml:space="preserve">是，清除设备数据</sys:String>
+	<sys:String x:Key="K1624"  xml:space="preserve">否，保留设备数据</sys:String>
+	<sys:String x:Key="K1625"  xml:space="preserve">加载文件夹</sys:String>
+	<sys:String x:Key="K1626"  xml:space="preserve">复制文件</sys:String>
+	<sys:String x:Key="K1627"  xml:space="preserve">设置启动分区</sys:String>
+	<sys:String x:Key="K1628"  xml:space="preserve">通话记录</sys:String>
+	<sys:String x:Key="K1629"  xml:space="preserve">1. 请检查下载的固件是否与您的设备型号匹配。</sys:String>
+	<sys:String x:Key="K1630"  xml:space="preserve">2. 刷机是一种有风险的行为，我们建议您在刷机之前先备份用户数据。（对于企业设备，刷机不会删除设备数据。）</sys:String>
+	<sys:String x:Key="K1631"  xml:space="preserve">3. 出于安全原因，软件更新不会从设备中删除现有的 Google 帐户。</sys:String>
+	<sys:String x:Key="K1632"  xml:space="preserve">隐藏</sys:String>
+	<sys:String x:Key="K1633"  xml:space="preserve">最多可连接三台设备</sys:String>
+	<sys:String x:Key="K1634"  xml:space="preserve">下载的文件：</sys:String>
+	<sys:String x:Key="K1635"  xml:space="preserve">添加新设备</sys:String>
+	<sys:String x:Key="K1636"  xml:space="preserve">刷机失败，请按照以下步骤重试：&#x0a;步骤 1：断开连接并关闭设备电源。&#x0a;步骤 2：同时按住音量下键和电源键。&#x0a;步骤 3：振动后松开按键，即可在设备上看到 Fastmode字样。&#x0a;步骤-4：将设备连接至 USB 数据线，然后单击 &quot;确定&quot;。</sys:String>
+	<sys:String x:Key="K1637"  xml:space="preserve">选择存储：</sys:String>
+	<sys:String x:Key="K1638"  xml:space="preserve">拷贝日志</sys:String>
+	<sys:String x:Key="K1639"  xml:space="preserve">使用 bat 文件刷机 - 重试</sys:String>
+	<sys:String x:Key="K1640"  xml:space="preserve">重连提示</sys:String>
+	<sys:String x:Key="K1641"  xml:space="preserve">注意 - 如果设备进入充电模式，请断开 USB 线，等待 30 秒后重新执行上述步骤（请勿通过 fastboot 模式连接设备）。</sys:String>
+	<sys:String x:Key="K1642"  xml:space="preserve">驱动程序下载失败，请重试或反馈给我们。</sys:String>
+	<sys:String x:Key="K1643"  xml:space="preserve">检查并安装驱动程序</sys:String>
+	<sys:String x:Key="K1644"  xml:space="preserve">多设备刷机仅支持手机类型。</sys:String>
+	<sys:String x:Key="K1645"  xml:space="preserve">返回设备列表</sys:String>
+	<sys:String x:Key="K1646"  xml:space="preserve">请稍等</sys:String>
+	<sys:String x:Key="K1647"  xml:space="preserve">刷机就绪</sys:String>
+	<sys:String x:Key="K1648"  xml:space="preserve">成功</sys:String>
+	<sys:String x:Key="K1649"  xml:space="preserve">失败</sys:String>
+	<sys:String x:Key="K1650"  xml:space="preserve">退出</sys:String>
+	<sys:String x:Key="K1651"  xml:space="preserve">请移除未开始刷机的所有设备后在进入流程...</sys:String>
+	<sys:String x:Key="K1652"  xml:space="preserve">刷机退出</sys:String>
+	<sys:String x:Key="K1653"  xml:space="preserve">读取设备模式</sys:String>
+	<sys:String x:Key="K1654"  xml:space="preserve">同时按住 &quot;音量上 &quot;和 &quot;音量下 &quot;键&#x0a;然后将设备连接到电脑</sys:String>
+	<sys:String x:Key="K1655"  xml:space="preserve">选择是否需要清除用户数据</sys:String>
+	<sys:String x:Key="K1656"  xml:space="preserve">当前刷机中的设备无法兼容更多设备连接，请等待刷机完成后再连接下一个设备。</sys:String>
+	<sys:String x:Key="K1657"  xml:space="preserve">您已退出刷机过程。</sys:String>
+	<sys:String x:Key="K1658"  xml:space="preserve">您的订单已过期</sys:String>
+	<sys:String x:Key="K1659"  xml:space="preserve">您当前的 IMEI 计数已用完</sys:String>
+	<sys:String x:Key="K1660"  xml:space="preserve">1.请检查下载的固件是否与您的设备型号相符。</sys:String>
+	<sys:String x:Key="K1661"  xml:space="preserve">2.软件更新将删除所有个人文件。</sys:String>
+	<sys:String x:Key="K1662"  xml:space="preserve">3. 请确保设备与 USB 数据线和 PC 的连接，直到刷机完成。</sys:String>
+	<sys:String x:Key="K1663"  xml:space="preserve">若要重试，请断开设备与 PC 的连接，并确保设备已关机。</sys:String>
+	<sys:String x:Key="K1664"  xml:space="preserve">您想将文件恢复到设备上吗？</sys:String>
+	<sys:String x:Key="K1665"  xml:space="preserve">请按照以下步骤连接您的设备：&#x0a;第 1 步 - 断开键盘底座的连接&#x0a;步骤 2 - 继续按住音量增加按钮并连接底部的 Type-C 端口</sys:String>
+	<sys:String x:Key="K1666"  xml:space="preserve">立即购买</sys:String>
+	<sys:String x:Key="K1667"  xml:space="preserve">单一设备</sys:String>
+	<sys:String x:Key="K1668"  xml:space="preserve">一次费用</sys:String>
+	<sys:String x:Key="K1669"  xml:space="preserve">全部的</sys:String>
+	<sys:String x:Key="K1670"  xml:space="preserve">仅适用于 1 部手机</sys:String>
+	<sys:String x:Key="K1671"  xml:space="preserve">使用 Software Fix 客户端的所有功能</sys:String>
+	<sys:String x:Key="K1672"  xml:space="preserve">有效期1个月</sys:String>
+	<sys:String x:Key="K1673"  xml:space="preserve">最畅销</sys:String>
+	<sys:String x:Key="K1674"  xml:space="preserve">1->10 设备</sys:String>
+	<sys:String x:Key="K1675"  xml:space="preserve">你会节省</sys:String>
+	<sys:String x:Key="K1676"  xml:space="preserve">仅适用于 10 部手机</sys:String>
+	<sys:String x:Key="K1677"  xml:space="preserve">月票</sys:String>
+	<sys:String x:Key="K1678"  xml:space="preserve">最具成本效益</sys:String>
+	<sys:String x:Key="K1679"  xml:space="preserve">无限制使用电话设备</sys:String>
+	<sys:String x:Key="K1680"  xml:space="preserve">有效期 1 个月可访问 Software Fix 客户端的所有功能</sys:String>
+	<sys:String x:Key="K1681"  xml:space="preserve">包括所有功能</sys:String>
+	<sys:String x:Key="K1682"  xml:space="preserve">已经购买了？</sys:String>
+	<sys:String x:Key="K1683"  xml:space="preserve">购买特别计划即可享受 Software Fix 客户端的所有功能。</sys:String>
+	<sys:String x:Key="K1684"  xml:space="preserve">Software Fix为用户提供全面的移动设备解决方案！ 购买Software Fix会员资格，您可以同时使用最多3台移动设备进行刷机。</sys:String>
+	<sys:String x:Key="K1685"  xml:space="preserve">您目前处于免费试用阶段</sys:String>
+	<sys:String x:Key="K1686"  xml:space="preserve">- {0} 个（共 {1} 个）免费设备已完成刷机。</sys:String>
+	<sys:String x:Key="K1687"  xml:space="preserve">- 选择月度套餐以继续使用所有功能。</sys:String>
+	<sys:String x:Key="K1688"  xml:space="preserve">采购概览</sys:String>
+	<sys:String x:Key="K1689"  xml:space="preserve">Software Fix账户</sys:String>
+	<sys:String x:Key="K1690"  xml:space="preserve">激活的购买订单</sys:String>
+	<sys:String x:Key="K1691"  xml:space="preserve">购买额外的访问权限</sys:String>
+	<sys:String x:Key="K1692"  xml:space="preserve">购买记录</sys:String>
+	<sys:String x:Key="K1693"  xml:space="preserve">我的设备上的 Rescue 更新失败，我可以申请退款吗？</sys:String>
+	<sys:String x:Key="K1694"  xml:space="preserve">一旦设备成功完成 Software Fix 中的某项功能，则不再允许退款 退款状态 = 不允许（或</sys:String>
+	<sys:String x:Key="K1695"  xml:space="preserve">点击这里</sys:String>
+	<sys:String x:Key="K1696"  xml:space="preserve">了解更多信息（如果仍然可用）</sys:String>
+	<sys:String x:Key="K1697"  xml:space="preserve">如果我想取消购买怎么办？</sys:String>
+	<sys:String x:Key="K1698"  xml:space="preserve">每次购买高级版的有效期为 30 天</sys:String>
+	<sys:String x:Key="K1699"  xml:space="preserve">如果在 30 天周期内成功完成刷机，则不再有资格获得退款</sys:String>
+	<sys:String x:Key="K1700"  xml:space="preserve">请检查“当前购买”部分中使用的 IMEI 计数。 如果没有使用 IMEI，请联系摩托罗拉客户服务中心发起退款。</sys:String>
+	<sys:String x:Key="K1701"  xml:space="preserve">退款</sys:String>
+	<sys:String x:Key="K1702"  xml:space="preserve">查看订单 ID</sys:String>
+	<sys:String x:Key="K1703"  xml:space="preserve">取消退款</sys:String>
+	<sys:String x:Key="K1704"  xml:space="preserve">已购买访问权限</sys:String>
+	<sys:String x:Key="K1705"  xml:space="preserve">购买日期</sys:String>
+	<sys:String x:Key="K1706"  xml:space="preserve">失效日期</sys:String>
+	<sys:String x:Key="K1707"  xml:space="preserve">MAC地址</sys:String>
+	<sys:String x:Key="K1708"  xml:space="preserve">套餐</sys:String>
+	<sys:String x:Key="K1709"  xml:space="preserve">使用中的设备数量</sys:String>
+	<sys:String x:Key="K1710"  xml:space="preserve">当前购买</sys:String>
+	<sys:String x:Key="K1713"  xml:space="preserve">内部的</sys:String>
+	<sys:String x:Key="K1711"  xml:space="preserve">SD卡</sys:String>
+	<sys:String x:Key="K1712"  xml:space="preserve">未找到 SD 卡</sys:String>
+	<sys:String x:Key="K1714"  xml:space="preserve">检查购买情况</sys:String>
+	<sys:String x:Key="K1715"  xml:space="preserve">高级用户</sys:String>
+	<sys:String x:Key="K1716"  xml:space="preserve">剩余天数</sys:String>
+	<sys:String x:Key="K1717"  xml:space="preserve">您确定要退款吗？</sys:String>
+	<sys:String x:Key="K1718"  xml:space="preserve">如果现在退款，您将无法享受Software Fix客户端的所有功能</sys:String>
+	<sys:String x:Key="K1719"  xml:space="preserve">仍退款</sys:String>
+	<sys:String x:Key="K1720"  xml:space="preserve">放弃</sys:String>
+	<sys:String x:Key="K1721"  xml:space="preserve">订单号</sys:String>
+	<sys:String x:Key="K1722"  xml:space="preserve">请记住当前的订单 ID，然后联系摩托罗拉客户服务中心发起退款。</sys:String>
+	<sys:String x:Key="K1723"  xml:space="preserve">月票信息</sys:String>
+	<sys:String x:Key="K1724"  xml:space="preserve">单个设备信息</sys:String>
+	<sys:String x:Key="K1725"  xml:space="preserve">使用的 IMEI 计数</sys:String>
+	<sys:String x:Key="K1726"  xml:space="preserve">剩余 IMEI 计数</sys:String>
+	<sys:String x:Key="K1727"  xml:space="preserve">已激活</sys:String>
+	<sys:String x:Key="K1728"  xml:space="preserve">已到期</sys:String>
+	<sys:String x:Key="K1729"  xml:space="preserve">已退款</sys:String>
+	<sys:String x:Key="K1730"  xml:space="preserve">购买成功后只能在当前Mac地址刷机手机。</sys:String>
+	<sys:String x:Key="K1731"  xml:space="preserve">未找到 fastboot 设备，请重试：&#x0a;步骤-1：断开连接并关闭设备电源。&#x0a;步骤-2：同时按住音量下键和电源键。&#x0a;步骤-3：振动后松开按键，即可在设备上看到 Fastmode。&#x0a;步骤-4：将设备连接至 USB 数据线，然后单击 &quot;确定&quot;。</sys:String>
+	<sys:String x:Key="K1732"  xml:space="preserve">您准备好开始​Rescue 软件更新了吗？​</sys:String>
+	<sys:String x:Key="K1733"  xml:space="preserve">返回刷机</sys:String>
+	<sys:String x:Key="K1734"  xml:space="preserve">闪烁已连接设备已启动</sys:String>
+	<sys:String x:Key="K1735"  xml:space="preserve">刷机中</sys:String>
+	<sys:String x:Key="K1736"  xml:space="preserve">Fastboot Flash 擦除用户数据</sys:String>
+	<sys:String x:Key="K1737"  xml:space="preserve">主页</sys:String>
+	<sys:String x:Key="K1738"  xml:space="preserve">B2B+通行证信息</sys:String>
+	<sys:String x:Key="K1739"  xml:space="preserve">连接设备开始刷机</sys:String>
+	<sys:String x:Key="K1740"  xml:space="preserve">Fastboot Flash 恢复用户数据</sys:String>
+	<sys:String x:Key="K1741"  xml:space="preserve">开始刷机</sys:String>
+	<sys:String x:Key="K1742"  xml:space="preserve">刷机文件异常。为避免损坏您的设备，请从下载中心删除刷机文件并重新下载。</sys:String>
+	<sys:String x:Key="K1743"  xml:space="preserve">Bat刷机 - 保留个人数据</sys:String>
+	<sys:String x:Key="K1746"  xml:space="preserve">Fastboot 刷机 - 保留个人数据</sys:String>
+	<sys:String x:Key="K1747"  xml:space="preserve">先断开设备连接，然后将设备切换到Fastboot 模式再连接电脑 - 重试</sys:String>
+	<sys:String x:Key="K1748"  xml:space="preserve">设备型号名称不正确。请按照以下步骤重试：&#x0a;1. 断开设备连接&#x0a;2. 单击确定</sys:String>
+	<sys:String x:Key="K1749"  xml:space="preserve">检查镜像文件是否与连接的设备匹配 - 重试</sys:String>
+	<sys:String x:Key="K1750"  xml:space="preserve">型号名称检查失败，请重试。</sys:String>
+	<sys:String x:Key="K1751"  xml:space="preserve">进入“设置”，在顶部的搜索框中输入“关于”，在搜索结果列表中选择“关于平板电脑”。</sys:String>
+	<sys:String x:Key="K1752"  xml:space="preserve">找到并点击&quot;版本号&quot;或&quot;软件版本&quot;7次。</sys:String>
+	<sys:String x:Key="K1753"  xml:space="preserve">进入“设置”，在顶部的搜索框中，在搜索结果列表中输入“USB调试”。在下一页上启用“开发者选项”和“USB调试”。</sys:String>
+	<sys:String x:Key="K1754"  xml:space="preserve">将平板电脑通过USB连接至PC。</sys:String>
+	<sys:String x:Key="K1755"  xml:space="preserve">更新平板电脑软件的简便方法</sys:String>
+	<sys:String x:Key="K1756"  xml:space="preserve">USB 连接</sys:String>
+	<sys:String x:Key="K1757"  xml:space="preserve">通过 USB 电缆连接高效管理您的设备</sys:String>
+	<sys:String x:Key="K1758"  xml:space="preserve">使用 Wi-Fi 连接设备以匹配固件</sys:String>
+	<sys:String x:Key="K1759"  xml:space="preserve">输入序列号</sys:String>
+	<sys:String x:Key="K1760"  xml:space="preserve">手动输入设备的 SN以匹配固件</sys:String>
+	<sys:String x:Key="K1761"  xml:space="preserve">字符无效</sys:String>
+	<sys:String x:Key="K1762"  xml:space="preserve">未检测到 fastboot 设备。请确保设备已退出 fastboot 模式，然后重试。	</sys:String>
+	<sys:String x:Key="K1763"  xml:space="preserve">重启bootloader</sys:String>
+	<sys:String x:Key="K1764"  xml:space="preserve">步骤 2. 同时按住电源键和音量下键。&#x0a;步骤 3. 振动后松开按键，您将在设备上看到Fastmode。然后将USB数据线连接到设备。</sys:String>
+	<sys:String x:Key="K1765"  xml:space="preserve">您的设备 {0} 不支持fastboot模式刷机，请退出fastboot模式，然后选择以下最适合您的选项：</sys:String>
+	<sys:String x:Key="K1766"  xml:space="preserve">销售型号：</sys:String>
+	<sys:String x:Key="K1769"  xml:space="preserve"> </sys:String>
+	<sys:String x:Key="K1770"  xml:space="preserve">刷机和智能助手现在是软件修复</sys:String>
+	<sys:String x:Key="K1771"  xml:space="preserve">设备已断开连接，请重新启动并重试。</sys:String>
+	<sys:String x:Key="K1772"  xml:space="preserve">您当前账户已有购买的套餐，请在购买的电脑上使用。</sys:String>
+	<sys:String x:Key="K1773"  xml:space="preserve">扫描图片中显示的二维码，并在提示时输入 PIN 码。&#x0a;- 输入 PIN 码后，请务必接受权限以允许访问管理文件&#x0a;- 您的设备将自动通过 Wi-Fi 连接，详细信息将显示在 Software Fix 应用中</sys:String>
+	<sys:String x:Key="K1774"  xml:space="preserve">全部取消选择</sys:String>
+	<sys:String x:Key="K1775"  xml:space="preserve">在您的设备上，使用平板电脑扫描左侧的二维码。安装移动助手应用程序并在安装后启动该应用程序</sys:String>
+	<sys:String x:Key="K1776"  xml:space="preserve">使用移动助手应用程序，选择“扫描二维码”选项</sys:String>
+	<sys:String x:Key="K1777"  xml:space="preserve">扫描左侧二维码，通过wifi连接PC</sys:String>
+	<sys:String x:Key="K1778"  xml:space="preserve">请在设置中输入[r]####2222#[/r]来预览设备的序列号</sys:String>
+	<sys:String x:Key="K1779"  xml:space="preserve">将设备与电脑连接到同一个 WiFi</sys:String>
+	<sys:String x:Key="K1781"  xml:space="preserve">读取当前启动分区</sys:String>
+	<sys:String x:Key="K1782"  xml:space="preserve">在刷机开始之前，Software Fix需要您平板电脑的序列号以找到匹配的固件。请输入您的序列号（SN 或 S/N）：</sys:String>
+	<sys:String x:Key="K1783"  xml:space="preserve">您正在尝试备份一个大于4G的大文件，备份过程可能会失败。所以我们会过滤掉超过4G的文件。</sys:String>
+	<sys:String x:Key="K1784"  xml:space="preserve">将恢复文件下载到手机-保留个人数据</sys:String>
+	<sys:String x:Key="K1785"  xml:space="preserve">导入文件中......</sys:String>
+	<sys:String x:Key="K1786"  xml:space="preserve">导出文件中......</sys:String>
+	<sys:String x:Key="K1787"  xml:space="preserve">执行环境检查</sys:String>
+	<sys:String x:Key="K1788"  xml:space="preserve">刷机支持</sys:String>
+	<sys:String x:Key="K1789"  xml:space="preserve">PC驱动程序已安装</sys:String>
+	<sys:String x:Key="K1790"  xml:space="preserve">正在安装设备驱动程序...</sys:String>
+	<sys:String x:Key="K1791"  xml:space="preserve">等待设备驱动程序检测</sys:String>
+	<sys:String x:Key="k1792"  xml:space="preserve">刷机失败！再次刷机前先尝试重启并关闭设备可能有助于解决某些特定类型的刷机问题。</sys:String>
+	<sys:String x:Key="K1793"  xml:space="preserve">Software Fix</sys:String>
+	<sys:String x:Key="K1794"  xml:space="preserve">版本</sys:String>
+	<sys:String x:Key="K1795"  xml:space="preserve">项目，</sys:String>
+	<sys:String x:Key="K1796"  xml:space="preserve">被选的项目</sys:String>
+	<sys:String x:Key="K1797"  xml:space="preserve">在您的设备上安装 Mobile Assistant 应用程序</sys:String>
+	<sys:String x:Key="K1798"  xml:space="preserve">安装在您设备上的应用不支持备份短信、通话记录或文件</sys:String>
+	<sys:String x:Key="K1799"  xml:space="preserve">要包含这些文件的导出，请扫描此处显示的QR码以安装并启动移动助手。</sys:String>
+	<sys:String x:Key="K1800"  xml:space="preserve">文件导出</sys:String>
+	<sys:String x:Key="K1801"  xml:space="preserve">文件导入</sys:String>
+	<sys:String x:Key="K1802"  xml:space="preserve">刷机失败。请确保设备已退出 fastboot 模式，然后重试。</sys:String>
+	<sys:String x:Key="K1803"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;步骤 1 - 断开设备连接，同时按下音量上键 + 电源键。&#x0a;步骤 2 - 显示Boot Mode选择界面后松开按键，按音量上键选择Fastboot Mode。&#x0a;步骤 3 - 按音量下键进入Fastboot Mode，然后将设备连接到电脑。</sys:String>
+	<sys:String x:Key="K1832"  xml:space="preserve">刷机工具运行失败！建议重新启动电脑并禁用杀毒软件，然后再试。</sys:String>
+	<sys:String x:Key="K1833"  xml:space="preserve">刷机期间，设备中的所有数据（包括文本、照片、视频等）都将被清除。您想先备份数据吗？​</sys:String>
+	<sys:String x:Key="K1834"  xml:space="preserve">是的，取消刷机</sys:String>
+	<sys:String x:Key="K1835"  xml:space="preserve">继续刷机</sys:String>
+	<sys:String x:Key="K1836"  xml:space="preserve">如果您正在尝试修复问题，[c color='#FF0000']建议清除设备中的所有文件[/c]。&#x0a;您想要做什么？</sys:String>
+	<sys:String x:Key="K1837"  xml:space="preserve">出于安全保护，Google 帐户无法清除。</sys:String>
+	<sys:String x:Key="K1838"  xml:space="preserve">不要删除我的数据</sys:String>
+	<sys:String x:Key="K1839"  xml:space="preserve">删除所有数据</sys:String>
+	<sys:String x:Key="K1840"  xml:space="preserve">正在安装...请等待</sys:String>
+	<sys:String x:Key="K1844"  xml:space="preserve">提交中...</sys:String>
+	<sys:String x:Key="K1845"  xml:space="preserve">选择“确定”按钮以将Mobile Assistant应用安装到您的设备上。</sys:String>
+	<sys:String x:Key="K1846"  xml:space="preserve">该应用程序用于管理设备与PC应用程序之间的通信。</sys:String>
+	<sys:String x:Key="K1847"  xml:space="preserve">运行备份和恢复时建议使用 USB 电缆。</sys:String>
+	<sys:String x:Key="K1848"  xml:space="preserve">备份和恢复模块仅支持手机助手应用连接。您是否继续使用手机助手应用程序？</sys:String>
+	<sys:String x:Key="K1849"  xml:space="preserve">请断开设备上的设备帮助 WiFi 连接，并使用 USB 数据线将 PC 连接到设备。&#x0a;备份和恢复模块仅支持移动助手应用程序连接。是否要安装 MA 应用程序？</sys:String>
+	<sys:String x:Key="K1850"  xml:space="preserve">备份和恢复模块仅支持手机助手应用程序连接</sys:String>
+	<sys:String x:Key="K1851"  xml:space="preserve">1个</sys:String>
+	<sys:String x:Key="K1852"  xml:space="preserve">免费试用期即将结束</sys:String>
+	<sys:String x:Key="K1853"  xml:space="preserve">免费试用期已结束</sys:String>
+	<sys:String x:Key="K1854"  xml:space="preserve">正在连接设备...请等待</sys:String>
+	<sys:String x:Key="K1855"  xml:space="preserve">刷机失败。请按照以下方法退出 fastboot 模式，然后重试。&#x0a;方法 1. 按住电源键。&#x0a;方法 2. 同时按住音量上键 + 音量下键 + 电源键 5秒钟。</sys:String>
+	<sys:String x:Key="K1856"  xml:space="preserve">您的下载路径超过50个字符，请重新选择。</sys:String>
+	<sys:String x:Key="K1857"  xml:space="preserve">需要支付额外费用来维持持续的支持和增强功能，并确保 Software Fix 仍然可用来支持所有摩托罗拉和联想 Android 设备。</sys:String>
+	<sys:String x:Key="K1858"  xml:space="preserve">- 灵活的定价可满足您的需求&#x0a;- 每次购买均可获得 30 天的访问权限，无需订阅&#x0a;- 高级购买包括同时为最多 3 台设备提供刷机支持</sys:String>
+	<sys:String x:Key="K1859"  xml:space="preserve">请按照步骤连接您的设备</sys:String>
+	<sys:String x:Key="K1860"  xml:space="preserve">步骤 1 - 关闭设备电源</sys:String>
+	<sys:String x:Key="K1861"  xml:space="preserve">步骤 2 - 按住设备上的音量下键和音量上键。然后将 USB 数据线连接到设备（在弹出下一页之前不要松开按键）。&#x0a;注意 - 如果设备进入充电模式，请断开 USB 数据线，等待 30 秒后重新执行上述步骤。</sys:String>
+	<sys:String x:Key="K1862"  xml:space="preserve">步骤 3 - 松开音量下键和音量上键。</sys:String>
+	<sys:String x:Key="K1863"  xml:space="preserve">登录已过期，请重新登录。</sys:String>
+	<sys:String x:Key="K1864"  xml:space="preserve">步骤1 -&#x0a;- 按下[bc color='#1E88E5' weight=800]电源按钮[/bc]，然后点击[bc color='#1E88E5' weight=800]关机图标[/bc]以[bc color='#1E88E5' weight=800]关闭设备电源[/bc]。&#x0a;- 如果该方法无效，另一种方式是[bc color='#1E88E5' weight=800]同时长按音量增大按钮和电源按钮[/bc]，直到设备上出现关机图标，然后点击该关机图标以关闭设备电源。</sys:String>
+	<sys:String x:Key="K1865"  xml:space="preserve">步骤1 - [bc color='#1E88E5' weight=800]同时按住音量减小键和电源键12秒或更长时间[/bc]，[bc color='#1E88E5' weight=800]强制关闭设备[/bc]。此方法适用于所有状态（[bc color='#1E88E5' weight=800]黑屏、重启循环、卡死[/bc]）。</sys:String>
+	<sys:String x:Key="K1866"  xml:space="preserve">第 2 步 - 将准备好的[bc color='#1E88E5' weight=800]数据线连接到PC[/bc]</sys:String>
+	<sys:String x:Key="K1867"  xml:space="preserve">步骤3 - &#x0a; - [bc color='#1E88E5' weight=800]长按[/bc][bc color='#1E88E5' weight=800]音量增大按钮[/bc]&#x0a; - 并[b weight=800]用USB数据线将设备连接到电脑[/b]&#x0a; - 在此期间，[bc color='#1E88E5' weight=800]不要松开[/bc]音量增大按钮</sys:String>
+	<sys:String x:Key="K1868"  xml:space="preserve">步骤4 - 此消息在设备被检测到后将自动关闭。届时，您可以[bc color='#1E88E5' weight=800]松开音量增大按钮[/bc]。</sys:String>
+	<sys:String x:Key="K1869"  xml:space="preserve">步骤 3 - [bc color='#1E88E5' weight=800]长按音量增加按钮 + 音量减少按钮[/bc]。[bc color='#1E88E5' weight=800]保持按钮按住并将 USB 数据线连接到设备。[/bc]</sys:String>
+	<sys:String x:Key="K1870"  xml:space="preserve">Step 4 - [bc color='#1E88E5' weight=800]此消息在设备被检测后将自动关闭[/bc]。届时，您可以[bc color='#1E88E5' weight=800]释放音量增加按钮 + 音量减少按钮。[/bc]</sys:String>
+	<sys:String x:Key="K1871"  xml:space="preserve">Step 3 - [bc color='#1E88E5' weight=800]长按[/bc]平板上的以下3个按钮：[bc color='#1E88E5' weight=800]音量增加按钮 + 音量减少按钮 + 电源按钮[/bc]。 [bc color='#1E88E5' weight=800]振动后松开所有按钮[/bc]。</sys:String>
+	<sys:String x:Key="K1872"  xml:space="preserve">Step 4 - 通过[bc color='#1E88E5' weight=800]USB数据线[/bc][bc color='#1E88E5' weight=800]连接[/bc]设备到电脑。</sys:String>
+	<sys:String x:Key="K1873"  xml:space="preserve">步骤 2 - 使用[bc color='#1E88E5' weight=800]USB数据线[/bc]，将设备[bc color='#1E88E5' weight=800]直接连接[/bc]到您的电脑。</sys:String>
+	<sys:String x:Key="K1874"  xml:space="preserve">步骤3 - 通过[bc color='#1E88E5' weight=800]USB数据线[/bc][bc color='#1E88E5' weight=800]将设备连接至电脑[/bc]。 [bc color='#1E88E5' weight=800]同时长按音量减和电源键[/bc]。</sys:String>
+	<sys:String x:Key="K1875"  xml:space="preserve">步骤4 - 此消息将在[bc color='#1E88E5' weight=800]设备被检测到后自动关闭[/bc]。届时，您可以[bc color='#1E88E5' weight=800]松开音量减键和电源键[/bc]。</sys:String>
+	<sys:String x:Key="K1876"  xml:space="preserve">Step 3 - 以[bc color='#1E88E5' weight=800]横向模式[/bc]握住平板，[bc color='#1E88E5' weight=800]按住音量增大按钮不松开[/bc]，并用USB数据线[bc color='#1E88E5' weight=800]将设备底部的端口连接[/bc]到电脑。[bc color='#1E88E5' weight=800]不要松开音量增大按钮[/bc]。</sys:String>
+	<sys:String x:Key="K1877"  xml:space="preserve">Step 4 - 一旦设备被检测到，[bc color='#1E88E5' weight=800]消息将自动关闭。届时您可以松开音量增大按钮。[/bc]</sys:String>
+	<sys:String x:Key="K1878"  xml:space="preserve">步骤 1 - [bc color='#1E88E5' weight=800]将平板与键盘断开连接[/bc]并[bc color='#1E88E5' weight=800]关闭平板电源[/bc]</sys:String>
+	<sys:String x:Key="K1879"  xml:space="preserve">步骤1：打开设置菜单并选择搜索图标。</sys:String>
+	<sys:String x:Key="K1880"  xml:space="preserve">步骤2：在搜索框中，输入####2222#。</sys:String>
+	<sys:String x:Key="K1881"  xml:space="preserve">步骤3：首次进入时，消息显示可能需要几分钟。</sys:String>
+	<sys:String x:Key="K1882"  xml:space="preserve">请点击查看。</sys:String>
+	<sys:String x:Key="K1883"  xml:space="preserve">大文件</sys:String>
+	<sys:String x:Key="K1884"  xml:space="preserve">超过4G</sys:String>
+	<sys:String x:Key="K1885"  xml:space="preserve">当前客户端版本不支持对此设备进行刷机。请点击确定按钮，Software Fix将引导您升级客户端。</sys:String>
+	<sys:String x:Key="K1886"  xml:space="preserve">请按照下面的动画在应用中授权。</sys:String>
+	<sys:String x:Key="K1887"  xml:space="preserve">在“所有文件访问”中点击“Mobile Assistant”应用</sys:String>
+	<sys:String x:Key="K1888"  xml:space="preserve">点击“启用”以“允许访问管理所有文件”</sys:String>
+	<sys:String x:Key="K1889"  xml:space="preserve">您正尝试导出一个大于4GB的大文件，而导出过程可能会失败。因此，我们将过滤掉超过4GB的文件。</sys:String>
+	<sys:String x:Key="K1890"  xml:space="preserve">您正尝试导入一个大于4GB的大文件，而导入过程可能会失败。因此，我们将过滤掉超过4GB的文件。</sys:String>
+	<sys:String x:Key="K1891"  xml:space="preserve">转到您的设备并点击SMS应用。</sys:String>
+	<sys:String x:Key="K1400"  xml:space="preserve">请不要断开设备连接。</sys:String>
+	<sys:String x:Key="K1892"  xml:space="preserve">错误</sys:String>
+	<sys:String x:Key="K1893"  xml:space="preserve">目前，Software Fix 不支持 Android 15 设备短信备份和恢复</sys:String>
+	<sys:String x:Key="K1990"  xml:space="preserve">Software Fix检测到设备端口异常。请断开设备连接并按照接下来的步骤重试。</sys:String>
+	<sys:String x:Key="K1991"  xml:space="preserve">将恢复文件下载到手机-保留个人数据-重试</sys:String>
+	<sys:String x:Key="K1992"  xml:space="preserve">保修期外软件更新支持</sys:String>
+	<sys:String x:Key="K1993"  xml:space="preserve">保修期内设备软件更新无需付费</sys:String>
+	<sys:String x:Key="K1996"  xml:space="preserve">我的设备</sys:String>
+	<sys:String x:Key="K1997"  xml:space="preserve">数据传输</sys:String>
+	<sys:String x:Key="K1998"  xml:space="preserve">将短信、联系人、照片、音乐等从旧设备传输到新的 Moto/Lenovo 设备。</sys:String>
+	<sys:String x:Key="K1999"  xml:space="preserve">使用设备的相机扫描二维码来安装应用程序：</sys:String>
+	<sys:String x:Key="K2000"  xml:space="preserve">查看分步说明</sys:String>
+	<sys:String x:Key="K2001"  xml:space="preserve">轻松将数据从旧设备传输到新设备</sys:String>
+	<sys:String x:Key="K2002"  xml:space="preserve">- 在 Software Fix PC 应用程序中选择数据传输功能。&#x0a;- 使用新设备的相机扫描二维码，下载并安装移动助手应用程序。</sys:String>
+	<sys:String x:Key="K2003"  xml:space="preserve">安装后，打开设备上的应用程序并找到移动助手并将其打开。</sys:String>
+	<sys:String x:Key="K2004"  xml:space="preserve">- 选择传输数据图块。&#x0a;- 首次启动时，需要提供访问文件的权限。</sys:String>
+	<sys:String x:Key="K2005"  xml:space="preserve">- 将显示“所有文件访问” Google 菜单。&#x0a;- 选择移动助手应用程序，然后启用“允许访问管理所有文件”&#x0a;选择页面顶部的后退箭头返回主页面。</sys:String>
+	<sys:String x:Key="K2006"  xml:space="preserve">- 选择“传输数据”图块。&#x0a;- 如果使用新设备，请选择底部的“接收数据”选项</sys:String>
+	<sys:String x:Key="K2007"  xml:space="preserve">- 点击底部的链接在旧设备上安装移动助手应用程序。&#x0a;- 使用旧设备上的相机扫描二维码。</sys:String>
+	<sys:String x:Key="K2008"  xml:space="preserve">- 选择传输数据图块。&#x0a;- 为旧设备选择“发送数据”选项。</sys:String>
+	<sys:String x:Key="K2009"  xml:space="preserve">- 选择旧设备的类型。&#x0a;- 在这个例子中，我们将使用摩托罗拉。</sys:String>
+	<sys:String x:Key="K2010"  xml:space="preserve">设备现在将开始建立连接。&#x0a;旧设备将显示为新设备图标。一旦看到旧设备图标，点击该图标即可启动安全连接。</sys:String>
+	<sys:String x:Key="K2011"  xml:space="preserve">- 如果新设备找不到旧设备，请确认它们都已启用 WLAN&#x0a;- 如果这不起作用，请尝试关闭两个设备上的应用程序并重新开始。</sys:String>
+	<sys:String x:Key="K2012"  xml:space="preserve">一旦找到旧设备并点击图标，连接就会开始。</sys:String>
+	<sys:String x:Key="K2013"  xml:space="preserve">- 旧设备将显示代码&#x0a;- 在新设备的字段中输入代码。</sys:String>
+	<sys:String x:Key="K2014"  xml:space="preserve">一旦连接成功，旧设备将显示可传输到新设备的数据列表。</sys:String>
+	<sys:String x:Key="K2015"  xml:space="preserve">选择需要传输到新设备的文件类型。&#x0a;确保在传输文件时两个设备上的移动助手都保持打开并处于活动状态。</sys:String>
+	<sys:String x:Key="K2016"  xml:space="preserve">文件现在将开始传输。</sys:String>
+	<sys:String x:Key="K2017"  xml:space="preserve">传输短信时，系统会提示您将手机助手应用设置为默认短信应用。</sys:String>
+	<sys:String x:Key="K2018"  xml:space="preserve">传输所有文件后，将看到一条消息，表明数据传输已完成。</sys:String>
+	<sys:String x:Key="K2019"  xml:space="preserve">如果短信已传输，现在系统会提示您将消息应用程序设置为默认短信应用程序。</sys:String>
+	<sys:String x:Key="K2020"  xml:space="preserve">现在可以关闭移动助理应用程序，并且文件现在应该可以在新设备上使用。</sys:String>
+	<sys:String x:Key="K2021"  xml:space="preserve">在旧设备上安装移动助手后，找到该应用程序并打开它..&#x0a;请确保接受所有权限提示。</sys:String>
+	<sys:String x:Key="K2022"  xml:space="preserve">数据</sys:String>
+	<sys:String x:Key="K2023"  xml:space="preserve">转移</sys:String>
+	<sys:String x:Key="K2024"  xml:space="preserve">选项</sys:String>
+	<sys:String x:Key="K2025"  xml:space="preserve">适用于大多数设备</sys:String>
+	<sys:String x:Key="K2026"  xml:space="preserve">步骤3. 按住设备上的音量下键，同时连接 USB 线</sys:String>
+	<sys:String x:Key="K2027"  xml:space="preserve">步骤4. 当设备上显示“Fastboot Mode”文本时，松开音量下键。</sys:String>
+	<sys:String x:Key="K2028"  xml:space="preserve">点击这里</sys:String>
+	<sys:String x:Key="K2029"  xml:space="preserve">使用该选项的型号列表</sys:String>
+	<sys:String x:Key="K2030"  xml:space="preserve">步骤3. 同时按住电源键和音量下键</sys:String>
+	<sys:String x:Key="K2031"  xml:space="preserve">步骤4. 一旦感觉到设备振动并且设备屏幕上显示快速启动模式，请松开按钮</sys:String>
+	<sys:String x:Key="K2032"  xml:space="preserve">步骤5. 将 USB 线连接到设备</sys:String>
+	<sys:String x:Key="K2033"  xml:space="preserve">选项 2 机型：</sys:String>
+	<sys:String x:Key="K2034"  xml:space="preserve">如果您不确定使用哪个选项，</sys:String>
+	<sys:String x:Key="K2035"  xml:space="preserve">手动输入 15 位 IMEI 以确认正确的步骤</sys:String>
+	<sys:String x:Key="K2036"  xml:space="preserve">点击这里</sys:String>
+	<sys:String x:Key="K2037"  xml:space="preserve">点击每个选项查看详细信息</sys:String>
+	<sys:String x:Key="K2038"  xml:space="preserve">路径不能包含空格，否则会影响某些设备的刷机</sys:String>
+	<sys:String x:Key="K2039"  xml:space="preserve">故障排除</sys:String>
+	<sys:String x:Key="K2040"  xml:space="preserve">重新开始刷机</sys:String>
+	<sys:String x:Key="K2041"  xml:space="preserve">有用的故障排除步骤</sys:String>
+	<sys:String x:Key="K2042"  xml:space="preserve">建议首先尝试的步骤：</sys:String>
+	<sys:String x:Key="K2043"  xml:space="preserve">将电池充电至至少 60%。&#x0a;电池没电或电量不足可能会导致更新问题</sys:String>
+	<sys:String x:Key="K2044"  xml:space="preserve">断开设备连接，关闭电源并重新开始</sys:String>
+	<sys:String x:Key="K2045"  xml:space="preserve">检查 USB 连接，并尝试重新插入您的设备。</sys:String>
+	<sys:String x:Key="K2046"  xml:space="preserve">如果仍然需要帮助：</sys:String>
+	<sys:String x:Key="K2047"  xml:space="preserve">重新启动计算机，然后再次运行刷机软件更新。</sys:String>
+	<sys:String x:Key="K2048"  xml:space="preserve">更换 USB 线或尝试将其连接到电脑上的其他 USB 端口。&#x0a;（不建议使用 USB 端口集线器）</sys:String>
+	<sys:String x:Key="K2049"  xml:space="preserve">确保有足够的可用磁盘空间。</sys:String>
+	<sys:String x:Key="K2050"  xml:space="preserve">请按照教程执行操作。</sys:String>
+	<sys:String x:Key="K2051"  xml:space="preserve">请按照步骤关闭您的设备.</sys:String>
+	<sys:String x:Key="K2052"  xml:space="preserve">步骤 1 - 长按电源键，直到设备上显示关机图标，然后轻触关机图标以关闭设备.</sys:String>
+	<sys:String x:Key="K2053"  xml:space="preserve">步骤1 - [bc color='#1E88E5' weight=800]同时长按音量增和电源键[/bc]，[bc color='#1E88E5' weight=800]直到设备上出现关机图标[/bc]，然后点击关机图标以[bc color='#1E88E5' weight=800]关闭设备电源[/bc]。</sys:String>
+	<sys:String x:Key="K2054"  xml:space="preserve">Software Fix 检测到您的固件下载路径包含空格，这可能会导致固件更新失败。为了确保成功拯救您的设备，我们恳请您从下载路径中删除所有空格。</sys:String>
+	<sys:String x:Key="K2055"  xml:space="preserve">在 Android 15 设备上，如果手机助手应用遇到短信权限问题，用户需要手动授予短信权限以确保功能完整。设置路径：打开设置 -> 应用 -> 手机助手 -> 点击右上角“...” -> 允许受限设置 -> 点击权限 -> 短信 -> 允许。如果设置后连接断开，请尝试重新连接以恢复服务。</sys:String>
+	<sys:String x:Key="K2056"  xml:space="preserve">检测到了错误的设备端口。建议您重新确认设备连接教程并重试。</sys:String>
+	<sys:String x:Key="K2057"  xml:space="preserve">请勿通过 fastboot 模式连接设备。</sys:String>
+	<sys:String x:Key="K2058"  xml:space="preserve">检测到了错误的设备端口。请断开设备并将其开关机，然后按照教程进入fastboot模式。</sys:String>
+	<sys:String x:Key="K2059"  xml:space="preserve">为确保您的设备刷机成功，您的电脑需要安装Visual C++环境。Software Fix将在您的电脑上安装所需的Visual C++组件。点击“确定”以确认并继续安装。</sys:String>
+	<sys:String x:Key="K2060"  xml:space="preserve">4.设备恢复完成后，建议立即删除任何不必要的固件，以释放存储资源。</sys:String>
+	<sys:String x:Key="K2061"  xml:space="preserve">刷机将不会删除设备中的个人数据，请点击OK按钮继续。</sys:String>
+	<sys:String x:Key="K2062"  xml:space="preserve">我明白了</sys:String>
+	<sys:String x:Key="K2063"  xml:space="preserve">软件修复概述</sys:String>
+	<sys:String x:Key="K2064"  xml:space="preserve">更新设备软件的简单方法</sys:String>
+	<sys:String x:Key="K2065"  xml:space="preserve">支持摩托罗拉和联想的手机、平板电脑和智能设备</sys:String>
+	<sys:String x:Key="K2066"  xml:space="preserve">需要帮助恢复无法开机的设备、修复软件问题，或者只是需要最新更新？</sys:String>
+	<sys:String x:Key="K2067"  xml:space="preserve">刷机功能将确保您的软件保持最新状态，并帮助解决与软件相关的问题。</sys:String>
+	<sys:String x:Key="K2068"  xml:space="preserve">保持您的安卓设备更新对于维持最佳性能、增强安全性以及解锁最新功能至关重要。</sys:String>
+	<sys:String x:Key="K2069"  xml:space="preserve">软件更新 – 步骤1</sys:String>
+	<sys:String x:Key="K2070"  xml:space="preserve">更新您设备上的软件并不难。</sys:String>
+	<sys:String x:Key="K2071"  xml:space="preserve">第一步是选择需要更新的设备类型。手机、平板电脑还是智能设备？</sys:String>
+	<sys:String x:Key="K2072"  xml:space="preserve">软件更新 – 步骤2</sys:String>
+	<sys:String x:Key="K2073"  xml:space="preserve">为了匹配正确的软件，需要输入您设备上的15位IMEI号码。</sys:String>
+	<sys:String x:Key="K2074"  xml:space="preserve">从4个选项中选择您希望读取IMEI的选项。</sys:String>
+	<sys:String x:Key="K2075"  xml:space="preserve">如果不确定，请选择“输入IMEI”，我们将向您展示如何轻松找到15位IMEI号码。</sys:String>
+	<sys:String x:Key="K2076"  xml:space="preserve">使用备份和恢复功能保护您的数据。在更新前确保一切数据安全</sys:String>
+	<sys:String x:Key="K2077"  xml:space="preserve">更新您的设备令人兴奋，但我们希望确保您的数据保持安全。</sys:String>
+	<sys:String x:Key="K2078"  xml:space="preserve">创建重要文件、短信、照片、视频、音乐等的完整备份。</sys:String>
+	<sys:String x:Key="K2079"  xml:space="preserve">更新完成后，可轻松恢复您的文件。</sys:String>
+	<sys:String x:Key="K2080"  xml:space="preserve">让您的设备保持良好运行</sys:String>
+	<sys:String x:Key="K2081"  xml:space="preserve">学习如何测试设备中的功能</sys:String>
+	<sys:String x:Key="K2082"  xml:space="preserve">轻松测试硬件功能，如相机、扬声器、触摸屏、WiFi等</sys:String>
+	<sys:String x:Key="K2083"  xml:space="preserve">是软件问题还是硬件问题？测试将很容易显示是否存在任何硬件问题。</sys:String>
+	<sys:String x:Key="K2084"  xml:space="preserve">轻松将个人数据转移到新的摩托罗拉或联想设备。</sys:String>
+	<sys:String x:Key="K2085"  xml:space="preserve">需要切换设备？我们帮您搞定。</sys:String>
+	<sys:String x:Key="K2086"  xml:space="preserve">使用 “手机助手” 应用程序，轻松将文件从旧手机或平板电脑迁移到新设备。</sys:String>
+	<sys:String x:Key="K2087"  xml:space="preserve">支持以下文件：短信、照片、视频、音乐、通话记录、联系人、文件 —— 由你决定。</sys:String>
+	<sys:String x:Key="K2088"  xml:space="preserve">随时从“帮助”图标 ->“软件修复概述”菜单重播功能亮点</sys:String>
+	<sys:String x:Key="K2089"  xml:space="preserve">我们检测到您当前使用的移动助手（MA）版本已过时。为了确保最佳体验和安全性，我们建议您安装最新版本。</sys:String>
+	<sys:String x:Key="K2090"  xml:space="preserve">您当前设备上的移动助手（MA）版本过低，不支持客户端连接功能。为确保正常使用，请升级到最新版本。</sys:String>
+	<sys:String x:Key="K2091"  xml:space="preserve">步骤1 - 断开设备连接</sys:String>
+	<sys:String x:Key="K2092"  xml:space="preserve">步骤2 - 同时按住音量上键 + 电源键，出现引导模式选择界面后松开按键</sys:String>
+	<sys:String x:Key="K2093"  xml:space="preserve">步骤3 - 按音量上键以选择Fastboot模式</sys:String>
+	<sys:String x:Key="K2094"  xml:space="preserve">步骤4 - 按下音量下键进入Fastboot模式</sys:String>
+	<sys:String x:Key="K2095"  xml:space="preserve">步骤5 - 将设备连接到PC</sys:String>
+	<sys:String x:Key="K2096"  xml:space="preserve">步骤3 - 按住音量下键 + 电源键。保持按键按下状态，并将USB线连接到设备。</sys:String>
+	<sys:String x:Key="K2097"  xml:space="preserve">加密写入固件中</sys:String>
+	<sys:String x:Key="K2098"  xml:space="preserve">加密刷机 - 重试</sys:String>
+	<sys:String x:Key="K2099"  xml:space="preserve">芯片不匹配。请确认固件与您的设备相符。</sys:String>
+	<sys:String x:Key="K2100"  xml:space="preserve">刷机失败，请按照以下步骤继续操作：&#x0a;步骤1 - [bc color='#1E88E5' weight=800]将您的设备从电脑断开连接[/bc]&#x0a;步骤2 - [bc color='#1E88E5' weight=800]按照教程重试[/bc]</sys:String>
+	<sys:String x:Key="K2101"  xml:space="preserve">刷机文件异常。请删除工具和固件，重新下载后再次尝试。</sys:String>
+	<sys:String x:Key="K2102"  xml:space="preserve">更新、恢复或修复您设备上的软件。</sys:String>
+	<sys:String x:Key="K2103"  xml:space="preserve">测试您的摄像头、触摸屏、音频、蓝牙等</sys:String>
+	<sys:String x:Key="K2104"  xml:space="preserve">在更新设备软件之前备份您的数据</sys:String>
+	<sys:String x:Key="K2105"  xml:space="preserve">将短信、联系人、照片等从旧设备传输到新Moto设备</sys:String>
+	<sys:String x:Key="K2106"  xml:space="preserve">请等待当前进程完成后再查看软件修复概述。</sys:String>
+	<sys:String x:Key="K2107"  xml:space="preserve">步骤1 - [bc color='#1E88E5' weight=800]长按电源键[/bc]直到屏幕上出现[bc color='#1E88E5' weight=800]关机[/bc]选项，然后点击确认关机。</sys:String>
+	<sys:String x:Key="K2108"  xml:space="preserve">查找 QDLoader COM 端口 - 重试</sys:String>
+	<sys:String x:Key="K2109"  xml:space="preserve">- 目前不支持在中国大陆销售的平板电脑。强制刷机会引发保护机制，损坏您的平板。&#x0a;（如果不是大陆版平板，请忽略此消息。）</sys:String>
+	<sys:String x:Key="K2110"  xml:space="preserve">工作方式：通过 Wi-Fi 连接两台设备，选择要传输的文件，其余的由应用程序处理。</sys:String>
+	<sys:String x:Key="K2111"  xml:space="preserve">刷机固件与设备不匹配，请检查设备型号并重试。</sys:String>
+	<sys:String x:Key="K2112"  xml:space="preserve">重要</sys:String>
+	<sys:String x:Key="K2113"  xml:space="preserve">1. 刷机是一种有风险的行为，我们建议您在刷机之前先备份用户数据。</sys:String>
+	<sys:String x:Key="K2114"  xml:space="preserve"> </sys:String>
+	<sys:String x:Key="K2115"  xml:space="preserve">2.如果您的数据没有备份，请在更新软件之前使用备份和恢复功能备份数据。</sys:String>
+	<sys:String x:Key="K2116"  xml:space="preserve">软件更新</sys:String>
+	<sys:String x:Key="K2118"  xml:space="preserve">步骤 2 - 同时按住设备上的音量上键和音量下键，并将 USB 数据线连接至设备（在弹出下一页之前不要松开按键）。</sys:String>
+	<sys:String x:Key="K2119"  xml:space="preserve">跳过</sys:String>
+	<sys:String x:Key="K2120"  xml:space="preserve">步骤3. 按住设备上的音量下键，并将USB线连接到设备。&#x0a;步骤4. 当手机屏幕上显示“Fastboot Mode”文本时，松开音量下键。</sys:String>
+	<sys:String x:Key="K2121"  xml:space="preserve">刷机重试-保留个人数据</sys:String>
+	<sys:String x:Key="K2122"  xml:space="preserve">步骤1-&#x0a;- 长按电源键5秒或以上，直至屏幕上出现关机图标。&#x0a;- 点击关机图标以关闭您的平板电脑。</sys:String>
+	<sys:String x:Key="K2123"  xml:space="preserve">步骤 1 -&#x0a;- 长按电源键，直到屏幕上出现关机图标。&#x0a;- 点击关机图标以关闭您的平板电脑。</sys:String>
+	<sys:String x:Key="K2124"  xml:space="preserve">1. 您的手机当前处于特殊连接状态，可能是由于系统关键文件损坏或硬件故障导致。&#x0a;2. 建议操作：&#x0a; - 长按电源键10秒强制重启设备，然后重试。&#x0a; - 若问题仍未解决，请前往摩托罗拉授权服务中心获取支持。</sys:String>
+	<sys:String x:Key="K2125"  xml:space="preserve">刷机失败。请确保设备已退出 fastboot 模式，然后重试。&#x0a;（如果按电源键无效，请尝试同时按住音量+、音量-和电源键来重启设备。）</sys:String>
+	<sys:String x:Key="K2126"  xml:space="preserve">非常不满意</sys:String>
+	<sys:String x:Key="K2127"  xml:space="preserve">不满意</sys:String>
+	<sys:String x:Key="K2128"  xml:space="preserve">满意</sys:String>
+	<sys:String x:Key="K2129"  xml:space="preserve">继续更新</sys:String>
+	<sys:String x:Key="K2130"  xml:space="preserve">关于您设备的重要信息</sys:String>
+	<sys:String x:Key="K2131"  xml:space="preserve">1. 所有文件、应用和个人数据都将从设备中移除。</sys:String>
+	<sys:String x:Key="K2132"  xml:space="preserve">2. 我们强烈建议您在继续软件更新之前备份您的数据。</sys:String>
+	<sys:String x:Key="K2133"  xml:space="preserve">3. 为了保持有效的服务记录，我们将收集设备信息。</sys:String>
+	<sys:String x:Key="K2134"  xml:space="preserve">继续软件更新</sys:String>
+	<sys:String x:Key="K2135"  xml:space="preserve">设备在快速启动模式下连接时不支持此功能。请断开设备连接并按照提供的说明进行连接。</sys:String>
+	<sys:String x:Key="K2137"  xml:space="preserve">以fastboot模式连接设备 - 重试</sys:String>
+	<sys:String x:Key="K2138"  xml:space="preserve">开始使用</sys:String>
+	<sys:String x:Key="K2139"  xml:space="preserve">问题类型：</sys:String>
+	<sys:String x:Key="K2140"  xml:space="preserve">请与我们分享您在使用 Software Fix 时遇到的任何问题，例如疑问、问题或建议。</sys:String>
+	<sys:String x:Key="K2141"  xml:space="preserve">Software Fix 需要读取设备信息才能进行刷机，或加载设备数据进行备份等。需要您批准设备中的某些权限。请前往您的设备并批准所有弹出的权限请求。</sys:String>
+	<sys:String x:Key="K2142"  xml:space="preserve">您已成功完成设备的软件更新。更新耗时 {0} 分钟。太棒了！</sys:String>
+	<sys:String x:Key="K2143"  xml:space="preserve">软件更新 – 步骤3</sys:String>
+	<sys:String x:Key="K2144"  xml:space="preserve">输入您设备的序列号以匹配正确的固件。</sys:String>
+	<sys:String x:Key="K2145"  xml:space="preserve">选择“输入序列号”，我们将向您展示如何轻松找到您平板电脑的序列号。</sys:String>
+	<sys:String x:Key="K2146"  xml:space="preserve">设备连接超时。请断开连接，重新以关机模式连接。</sys:String>
+	<sys:String x:Key="K2136"  xml:space="preserve">未找到 FastBoot 设备，请重试：&#x0a;步骤 1: 断开连接并关闭设备电源。&#x0a;步骤 2: 同时按住音量下键和电源键。&#x0a;步骤 3: 振动后松开按键，您将会看到设备上显示 FastBoot 模式。&#x0a;步骤 4: 连接设备至 USB 数据线，然后点击确定。</sys:String>
+	<sys:String x:Key="K2147"  xml:space="preserve">请通过 USB 数据线将您的设备连接到电脑进行备份和恢复。</sys:String>
+	<sys:String x:Key="K2148"  xml:space="preserve">当前设备连接已超时，请拔下设备并重新连接。</sys:String>
+	<sys:String x:Key="K2149"  xml:space="preserve">您在登录时遇到了什么问题？</sys:String>
+	<sys:String x:Key="K2150"  xml:space="preserve">没有联想账户</sys:String>
+	<sys:String x:Key="K2151"  xml:space="preserve">忘记联想密码</sys:String>
+	<sys:String x:Key="K2152"  xml:space="preserve">重置密码 (Lenovo.com)</sys:String>
+	<sys:String x:Key="K2153"  xml:space="preserve">页面显示空白</sys:String>
+	<sys:String x:Key="K2154"  xml:space="preserve">请点击登录窗口右上角的刷新按钮。</sys:String>
+	<sys:String x:Key="K2155"  xml:space="preserve">页面卡在旋转的彩色圆圈处</sys:String>
+	<sys:String x:Key="K2156"  xml:space="preserve">图形验证失败/危险环境提示</sys:String>
+	<sys:String x:Key="K2157"  xml:space="preserve">HTTP2 协议错误</sys:String>
+	<sys:String x:Key="K2158"  xml:space="preserve">请求已锁定</sys:String>
+	<sys:String x:Key="K2159"  xml:space="preserve">为了帮助解决问题，我们可以收集您的 IP 地址吗？</sys:String>
+	<sys:String x:Key="K2160"  xml:space="preserve">[c color='#FF0000']设备状态无效！[/c]&#x0a;请断开连接并[b weight=600]完全关闭电源[/b]，然后按照教程[b weight=600]重新启动到Fastboot模式[/b]。</sys:String>
+	<sys:String x:Key="K2161"  xml:space="preserve">注 - 如果设备进入充电模式，请断开USB数据线，等待30秒后重新执行上述步骤 [ch color='#FF0000' size = 12](请勿通过fastboot模式连接设备)[/ch]</sys:String>
+	<sys:String x:Key="K2162"  xml:space="preserve">您的设备连接已超时。请断开连接并在[b weight=600]关机模式[/b]下重新连接。</sys:String>
+	<sys:String x:Key="K2163"  xml:space="preserve">为确保成功修复您的设备，您的电脑需要安装[bch color='#DC143C' weight=800 size=20]Visual C++[/bch]环境。软件修复将在您的电脑上安装所需的Visual C++组件。点击[ch color='#0000FF' weight=900]“确定”[/ch]以确认并继续安装。</sys:String>
+	<sys:String x:Key="K2164"  xml:space="preserve">刷机失败！&#x0a;请断开设备连接并完全关闭电源，然后按照教程重新启动到Fastboot模式。&#x0a;&#x0a;[b weight=600]注[/b] - 无法关机？尝试同时按住音量上键 + 音量下键 + 电源键来强制重启。</sys:String>
+	<sys:String x:Key="K2165"  xml:space="preserve">刷机失败！&#x0a;断开您的设备连接并完全关闭电源，然后重试。&#x0a;&#x0a;[b weight=600]注[/b] - 无法关机？尝试同时按住音量上键 + 音量下键 + 电源键来强制重启。</sys:String>
+	<sys:String x:Key="K2166"  xml:space="preserve">重试: Fastboot 刷机 - 保留个人数据</sys:String>
+	<sys:String x:Key="K2167"  xml:space="preserve">重试: Fastboot 刷机</sys:String>
+	<sys:String x:Key="K2168"  xml:space="preserve">重试: 以Fastboot模式连接设备</sys:String>
+	<sys:String x:Key="K2169"  xml:space="preserve">通过 Wi-Fi 连接设备</sys:String>
+	<sys:String x:Key="K2170"  xml:space="preserve">查找 QDLoader COM 端口 - 第2次重试</sys:String>
+	<sys:String x:Key="K2171"  xml:space="preserve">固件刷写 - 重试</sys:String>
+	<sys:String x:Key="K2172"  xml:space="preserve">连接设备刷机 - 重试</sys:String>
+	<sys:String x:Key="K2173"  xml:space="preserve">加密刷机 - 第2次重试</sys:String>
+	<sys:String x:Key="K2174"  xml:space="preserve">断开连接指令 - 第2次重试</sys:String>
+	<sys:String x:Key="K2175"  xml:space="preserve">用户资料</sys:String>
+	<sys:String x:Key="K2176"  xml:space="preserve">用户名</sys:String>
+	<sys:String x:Key="K2177"  xml:space="preserve">所有平板支持 USB 调试模式：开启该模式连接电脑，Software Fix 即可自动匹配固件。</sys:String>
+	<sys:String x:Key="K2178"  xml:space="preserve">大多数手机均支持 Fastboot 模式。下面为您演示如何开启 Fastboot 模式以将手机连接至电脑，随后 Software Fix 将可为您检测机型；</sys:String>
+	<sys:String x:Key="K2179"  xml:space="preserve">读取设备</sys:String>
+	<sys:String x:Key="K2180"  xml:space="preserve">刷机失败！&#x0a;请检查电脑设备管理器中的端口驱动，并确保您正在使用 [bh weight=600 size = 14]MediaTek Inc. 官方驱动[/bh]。&#x0a;如果已安装第三方驱动，请手动切换到MediaTek Inc. 官方驱动并重试。</sys:String>
+	<sys:String x:Key="K2181"  xml:space="preserve">验证设备模式</sys:String>
+	<sys:String x:Key="K2182"  xml:space="preserve">重要通知 - 谷歌账号不会被删除</sys:String>
+	<sys:String x:Key="K2183"  xml:space="preserve">设备刷机[c color='#FF4042']不会删除当前与此设备关联的谷歌账户 (FRP) [/c]。</sys:String>
+	<sys:String x:Key="K2184"  xml:space="preserve">我已知悉谷歌账号不会被移除</sys:String>
+	<sys:String x:Key="K2185"  xml:space="preserve">我明白，继续</sys:String>
+	<sys:String x:Key="K2186"  xml:space="preserve">登录</sys:String>
+	<sys:String x:Key="K2187"  xml:space="preserve">您的设备被检测处于 [bc weight=500 color='#D92D20']QDLoader 9008 模式[/bc]，表明系统出现严重故障。在此状态下无法使用 Software Fix Rescue。&#x0a;&#x0a;建议您前往摩托罗拉授权服务中心进行专业维修。</sys:String>
+	<sys:String x:Key="K2188"  xml:space="preserve">检测到[bc color='#D92D20' weight=500]您的设备驱动异常或正在使用非Moto官方驱动[/bc]，这可能导致设备无法被正常识别或通讯中断。&#x0a;&#x0a;是否同意更新至最新Moto官方驱动？&#x0a;[h size = 12]（注：此操作不会卸载现有驱动）[/h]</sys:String>
+	<sys:String x:Key="K2189"  xml:space="preserve">检测到您的设备使用的是[bc weight=500 color='#D92D20']非MediaTek Inc.官方驱动[/bc] ！&#x0a;请先卸载该驱动，然后再重新尝试刷机。</sys:String>
+	<sys:String x:Key="K2190"  xml:space="preserve">驱动安装异常，请重试。</sys:String>
+	<sys:String x:Key="K2191"  xml:space="preserve">USB写入速率过慢导致刷机超时！&#x0a;请尝试更换USB线或USB端口（不建议使用 USB 集线器），或重启电脑后再试。</sys:String>
+	<sys:String x:Key="K2192"  xml:space="preserve">Fastboot重启</sys:String>
+	<sys:String x:Key="K2193"  xml:space="preserve">请单击 “登录” 重试</sys:String>
+	<sys:String x:Key="K2194"  xml:space="preserve">请按照以下步骤连接设备：&#x0a; &#x0a;步骤1 关闭设备电源&#x0a; &#x0a;步骤2 继续按下 SIM 针头上的系统孔&#x0a; &#x0a;步骤3 通过 USB A 型端口将设备连接到 PC&#x0a; &#x0a;步骤4 程序开始时松开 SIM 针头</sys:String>
+	<sys:String x:Key="K2195"  xml:space="preserve">请按照以下步骤连接设备：&#x0a;第 1 步 - 关闭设备电源&#x0a;第 2 步 - 继续按下 SIM 针头上的系统孔&#x0a;第 3 步 - 通过 USB A 型端口将设备连接到 PC&#x0a;第 4 步 - 过程开始时松开 SIM 针头</sys:String>
+	<sys:String x:Key="K2196"  xml:space="preserve">您连接的设备的型号名称与输入的 IMEI 不匹配。您的设备是 {0}。请重新启动刷新过程。</sys:String>
+	<sys:String x:Key="K2197"  xml:space="preserve">文件备份已完成！</sys:String>
+	<sys:String x:Key="K2198"  xml:space="preserve">正在加载... 请稍候</sys:String>
+	<sys:String x:Key="K2199"  xml:space="preserve">文件恢复完成！</sys:String>
+	<sys:String x:Key="K2200"  xml:space="preserve">请将您的 MA 升级到最新版本。</sys:String>
+	<sys:String x:Key="K2201"  xml:space="preserve">网络不稳定。请重新启动应用程序，然后重试。</sys:String>
+	<sys:String x:Key="K2202"  xml:space="preserve">设备描述：</sys:String>
+	<sys:String x:Key="K2203"  xml:space="preserve">设备实例路径：</sys:String>
+	<sys:String x:Key="K2204"  xml:space="preserve">制造商：</sys:String>
+	<sys:String x:Key="K2205"  xml:space="preserve">驱动程序提供：</sys:String>
+	<sys:String x:Key="K2206"  xml:space="preserve">驱动程序版本：</sys:String>
+	<sys:String x:Key="K2207"  xml:space="preserve">端口状态：</sys:String>
+	<sys:String x:Key="K2208"  xml:space="preserve">您的设备连接已断开。您想重新连接并继续数据传输吗？</sys:String>
+	<sys:String x:Key="K2209"  xml:space="preserve">是的，重新连接并继续</sys:String>
+	<sys:String x:Key="K2210"  xml:space="preserve">不，结束转移</sys:String>
+	<sys:String x:Key="K2211"  xml:space="preserve">连接丢失</sys:String>
+	<sys:String x:Key="K2212"  xml:space="preserve">设备已断开连接</sys:String>
+	<sys:String x:Key="K2213"  xml:space="preserve">您的设备连接已断开。请返回主页并重新连接移动助手应用程序。</sys:String>
+	<sys:String x:Key="K2214"  xml:space="preserve">连接中断</sys:String>
+	<sys:String x:Key="K2215"  xml:space="preserve">软件连接丢失或再次超时。请重新连接您的设备以开始数据传输。</sys:String>
+	<sys:String x:Key="K2216"  xml:space="preserve">检测到当前连接的设备正在使用 [bc color='#D92D20' weight=500]第三方驱动 {0}[/bc]，导致识别异常。&#x0a;是否同意 [bc color='#D92D20' weight=500]卸载该第三方驱动[/bc]，并继续尝试刷机？&#x0a;&#x0a;[b weight=500]注意：[/b] 若您的电脑上还有其他应用依赖此驱动，卸载后可能会影响这些应用对设备的正常识别。</sys:String>
+	<sys:String x:Key="K2217"  xml:space="preserve">设备驱动程序切换成功</sys:String>
+	<sys:String x:Key="K2218"  xml:space="preserve">设备驱动程序卸载成功</sys:String>
+	<sys:String x:Key="K2219"  xml:space="preserve">设备驱动程序卸载失败</sys:String>
+	<sys:String x:Key="K2220"  xml:space="preserve">设备驱动程序切换失败</sys:String>
+	<sys:String x:Key="K2221"  xml:space="preserve">我同意</sys:String>
+	<sys:String x:Key="K2222"  xml:space="preserve">联想隐私政策</sys:String>
+	<sys:String x:Key="K2223"  xml:space="preserve">我知悉Software Fix 无法移除 Google 账户</sys:String>
+	<sys:String x:Key="K2224"  xml:space="preserve">文件已成功导入</sys:String>
+	<sys:String x:Key="K2225"  xml:space="preserve">文件导入失败</sys:String>
+	<sys:String x:Key="K2226"  xml:space="preserve">登录超时。请重新登录客户端</sys:String>
+	<sys:String x:Key="K2227"  xml:space="preserve">刷机端口响应超时。&#x0a;检测到您的设备端口驱动程序 [bc color=' #D92D20 'weight=500'] 运行异常，或者正在使用非 Moto 官方驱动程序 [/bc]。&#x0a;&#x0a;请重试刷机流程。所需的驱动程序将自动安装。</sys:String>
+	<sys:String x:Key="K2228"  xml:space="preserve">恢复数据时，默认情况下，除联系人之外的所有数据类型都启用重复数据删除功能。</sys:String>
+	<sys:String x:Key="K2229"  xml:space="preserve">整理数据</sys:String>
+	<sys:String x:Key="K2230"  xml:space="preserve">下载路径无效</sys:String>
+	<sys:String x:Key="K2231"  xml:space="preserve">设备没有足够的可用空间。腾出一些空间，然后再试一次。</sys:String>
+	<sys:String x:Key="K2232"  xml:space="preserve">网络不稳定。请稍后再试。</sys:String>
+</ResourceDictionary>

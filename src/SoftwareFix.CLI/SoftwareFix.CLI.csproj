@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\SoftwareFix.Core\SoftwareFix.Core.csproj" />
+    <ProjectReference Include="..\SoftwareFix.Device\SoftwareFix.Device.csproj" />
+    <ProjectReference Include="..\SoftwareFix.Download\SoftwareFix.Download.csproj" />
+    <ProjectReference Include="..\SoftwareFix.Flash\SoftwareFix.Flash.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>

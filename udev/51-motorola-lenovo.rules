@@ -1,0 +1,25 @@
+# udev rules for Motorola & Lenovo Mobile Devices (Fastboot, ADB, EDL, MTK, Unisoc)
+# Copy to: /etc/udev/rules.d/51-motorola-lenovo.rules
+# Reload: sudo udevadm control --reload-rules && sudo udevadm trigger
+
+# Motorola (VID 22b8)
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e76", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e80", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2e81", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+SUBSYSTEM=="usb", ATTR{idVendor}=="22b8", ATTR{idProduct}=="2eb7", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+
+# Lenovo (VID 17ef)
+SUBSYSTEM=="usb", ATTR{idVendor}=="17ef", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+
+# Qualcomm Emergency Download Mode - EDL (VID 05c6, PID 9008)
+SUBSYSTEM=="usb", ATTR{idVendor}=="05c6", ATTR{idProduct}=="9008", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+
+# MediaTek Preloader & BootROM (VID 0e8d)
+SUBSYSTEM=="usb", ATTR{idVendor}=="0e8d", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+
+# Unisoc / Spreadtrum Download Mode (VID 1782)
+SUBSYSTEM=="usb", ATTR{idVendor}=="1782", MODE="0666", GROUP="plugdev", TAG+="uaccess"
+
+# Google / Android Fastboot Generic (VID 18d1)
+SUBSYSTEM=="usb", ATTR{idVendor}=="18d1", MODE="0666", GROUP="plugdev", TAG+="uaccess"

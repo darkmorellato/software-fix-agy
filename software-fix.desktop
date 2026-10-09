@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Software Fix
+Comment=Lenovo & Motorola Rescue and Smart Assistant
+Exec=SoftwareFix.UI
+Terminal=false
+Type=Application
+Icon=software-fix
+Categories=Utility;Development;
+Keywords=motorola;lenovo;rescue;fastboot;flash;rom;
