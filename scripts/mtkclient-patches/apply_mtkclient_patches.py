@@ -101,8 +101,6 @@ DOWNLOAD_METHOD = '''    def download_partition(self, partitionname: str, data: 
         while pos < len(data):
             chunk = bytes(data[pos:pos + chunk_size])
             pos += len(chunk)
-            if len(chunk) % 512:
-                chunk += b"\\x00" * (512 - (len(chunk) % 512))
             checksum = sum(chunk) & 0xFFFF
             if not self.xsend(0):
                 self.error("Error on sending host status")

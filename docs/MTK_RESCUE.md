@@ -91,6 +91,14 @@ Consequência prática: **apenas imagens oficiais assinadas passam** — exatame
 flash das ROMs oficiais faz. O `mtk-write-test` com bytes brutos NÃO passa neste DA; use-o
 apenas como diagnóstico do gate.
 
+> **Validado ao vivo (10/10/2026)**: `logo_a` gravado via modo download + releitura
+> conferindo 100% (`Verificação completa: todas as partições conferem`). Os checksums do
+> trace conferem com o arquivo real (5/5 blocos do `logo.img`).
+>
+> **Gotcha do último bloco**: enviar os bytes EXATOS do último bloco (ex.: `0x1F0480`) —
+> NÃO aplicar padding para 512 bytes; o DA conta os bytes recebidos e o excedente trava a
+> transferência (o USB para em ~86%). O SP Flash Tool também não aplica padding.
+
 ## Verificação pós-flash
 
 `mtk-flash --verify` relê as partições gravadas e compara **o prefixo** de cada uma com o
