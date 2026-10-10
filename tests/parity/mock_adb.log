@@ -1,8 +1,0 @@
-[mock] adb devices
-[mock] adb devices
-[mock] adb devices
-[mock] adb -s MOCKADB01 shell getprop ro.boot.hardware.sku
-[mock] adb -s MOCKADB01 shell getprop ro.product.model
-[mock] adb devices
-[mock] adb -s MOCKADB01 shell getprop ro.boot.hardware.sku
-[mock] adb -s MOCKADB01 shell getprop ro.product.model

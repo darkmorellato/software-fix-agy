@@ -27,3 +27,6 @@ download/
 src_decompiled/
 configs_and_manifests/
 decompilacao.log
+
+# Logs gerados pelos mocks de teste de paridade
+tests/parity/*.log
