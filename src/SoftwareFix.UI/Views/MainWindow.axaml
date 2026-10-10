@@ -21,7 +21,7 @@
                 
                 <!-- Título e Logo Oficial no Topo Esquerdo -->
                 <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" Margin="16,0,24,0">
-                    <Image Source="/Assets/software-fix.png" Width="22" Height="22" VerticalAlignment="Center" />
+                    <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="22" Height="22" VerticalAlignment="Center" />
                     <TextBlock Text="Software Fix v7.4.2.13" FontSize="13" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" />
                 </StackPanel>
 
