@@ -98,6 +98,35 @@ Dentro do zip: `SLA_Challenge.dll` (PE32 nativo), `flash_tool.exe` (SP Flash Too
 `FlashToolLib*.dll`, `FlashtoollibEx.dll`, `DA_A15_lamuc_FORBID_SIGNED.bin`,
 `console_mode.xsd`.
 
+### 1.4 Descobertas da 2ª rodada (10/10, 100% do Linux)
+
+- **A receita do resgate é pública**:
+  `https://rsddownload-secure.lenovo.com/Rescue_MTK_Lamu26_FastbootConnect_V1_20260107.json`
+  (S3 da Lenovo, leitura anônima; obtida da URL presignada que aparece no log do app).
+  Passos: `WaitConnectByFastboot` → `Sleep` → `ReadDeviceMode` → `LoadFiles` →
+  **`CopyFiles` (copia `DA_A15_lamuc_FORBID_SIGNED.bin` + `sign_info.txt` do ToolFolder
+  para o RomFolder)** → `FastbootShell` (current-slot) → `FastbootDeviceMatchCheck`
+  (LMSA.bat) → `EraseUserData` → **`Shell`: `flash_tool.exe -c download -d
+  "...DA_A15_lamuc_FORBID_SIGNED.bin" -s "...MT6768_Android_scatter.txt"`**
+  (com `LogMonitorActions`: ao ver "Search usb" → `fastboot oem shutdown`, que desliga o
+  aparelho para o usuário entrar em BROM) → retries (scatter `_reserve_userdata` para
+  manter dados) → `CopyLogs` de `SP_FT_Logs`. **A receita NÃO tem credenciais nem o
+  endereço do TSDC** — esses vêm de dentro do bundle LamuC.
+- **ROM e ferramenta públicos** (baixáveis do Linux): `fastboot_lamuc_g_user_15_VVTB35.41-87_d127d2_release-keys.zip`
+  (**6,7 GB** — scatter MT6768 + imagens + DA) e `LamuC_FlashTool_Console_LMSA_5.2404.03_release.zip`
+  (34 MB). Listagem do bucket é negada (somente GET de objetos).
+- **Artefatos do app decifrados offline (DPAPI machine-scope, SEM senha)** com as hives do
+  próprio disco: `Windows/System32/config/{SYSTEM,SECURITY}` + master key em
+  `Windows/System32/Microsoft/Protect/S-1-5-18/fea19208-7bcd-42cd-a1c7-2a9c40907e56`
+  (impacket: `dpapi.py masterkey -file <mk> -system SYSTEM -security SECURITY` →
+  `dpapi.py unprotect -file <blob> -key <hex>`). Decifrados: **log do app do resgate**
+  (683 linhas — o fluxo completo, incluindo a linha de comando do flash_tool) +
+  `flashrecords/rescueddevice/options/…check.json`. Cópias em
+  `~/.local/share/software-fix/analysis-2026-10-10/` (contém dados pessoais — não versionar).
+- **Onde as credenciais TSDC NÃO estão**: receita, linha de comando do flash_tool, hives de
+  registro (ASCII nem UTF-16). Hipótese atual: default embutido/obfuscado no bundle LamuC
+  (ou configuração efêmera da execução).
+
 ---
 
 ## 2. Mecanismo B — ODM socket + DataSignODM (implementado no port)
@@ -144,16 +173,20 @@ DA_...bin -s MT6768_Android_scatter.txt -u <user> -w <pwd>`), lendo o progresso 
 
 ## 4. Pendências / próximos passos
 
-1. **Capturar o host TSDC + credenciais `-u/-w`** — numa próxima execução no Windows:
-   - **ProcMon** mostra a linha de comando completa do `flash_tool.exe` (com `-u`/`-w`);
-   - **TCPView/Wireshark** filtrando `flash_tool.exe` mostram o host (conexão HTTP
-     pequena logo antes de `DA Connected`);
-   - alternativa: descriptografar `Software Fix\logs\<data>.log.dpapi` no Windows.
-2. **Linux**: avaliar **mtkclient** para o BROM (suporta MT6768) e conectar o caminho
-   de assinatura (TSDC ou ODM) conforme o item 1 — é o que destrava o resgate lamuc
-   100% no Linux.
-3. **Validar ao vivo o mecanismo B** no port (conta de serviço + rede onde
-   `ebiz-esb.cloud.motorola.net` resolve) — `software-fix odm-sign --imei <IMEI>`.
+1. **Teste com o aparelho (preparado, aguardando o usuário)** — com o G17 em BROM
+   (desligado + volume + USB): rodar **mtkclient** (já instalado no venv de análise:
+   `~/.hermes/cache/scratch/venv-dpapi/bin/mtk`) para handshake/leitura e avaliar se o
+   MT6768 é destravável via **payload genérico (sem SLA)** ou se precisaremos da
+   assinatura. Regra udev para `0e8d` já instalada; o port já identificou o aparelho
+   (`scan`: SKU XT2623-1 / moto g17).
+2. **ROM oficial pública** (6,7 GB) para o flash no Linux: baixar de
+   `https://rsddownload-secure.lenovo.com/fastboot_lamuc_g_user_15_VVTB35.41-87_d127d2_release-keys.zip`
+   quando formos executar o resgate de verdade.
+3. **Credenciais/host do TSDC** (SLA remoto): origem desconhecida (não está na receita,
+   na linha de comando nem nos hives). Se o mtkclient não bastar: capturar ao vivo no
+   Windows (ProcMon/TCPView) ou dissecar o bundle LamuC.
+4. **Validar o mecanismo B** no port (`software-fix odm-sign --imei <IMEI>`) quando houver
+   conta de serviço + rede onde `ebiz-esb.cloud.motorola.net` resolve.
 
 ## 5. Como testar o port
 
