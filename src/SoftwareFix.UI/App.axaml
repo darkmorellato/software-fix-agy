@@ -9,17 +9,36 @@
     </Application.DataTemplates>
 
     <Application.Resources>
-        <!-- Paleta Oficial Lenovo / Motorola Software Fix (Baseada nos Screenshots Oficiais) -->
-        <Color x:Key="TopBarBgColor">#00142B</Color>
-        <Color x:Key="ActiveTabTealColor">#005C7F</Color>
-        <Color x:Key="ActionPillTealColor">#006E8E</Color>
+        <!-- ================================================================ -->
+        <!-- Paleta Oficial — tokens extraídos dos XAML descompilados de      -->
+        <!-- lenovo.themes.generic (tema v6) e do Software Fix.exe.           -->
+        <!-- Referência completa: docs/DESIGN_TOKENS.md                       -->
+        <!-- ================================================================ -->
+        <Color x:Key="TopBarBgColor">#001429</Color>
+        <Color x:Key="ActiveTabTealColor">#005D7F</Color>
+        <Color x:Key="ActionPillTealColor">#005D7F</Color>
         <Color x:Key="WelcomeBgColor">#041122</Color>
         <Color x:Key="WelcomeCardBgColor">#0C233B</Color>
         <Color x:Key="WelcomeCardHoverColor">#133152</Color>
         <Color x:Key="LenovoRedColor">#E2231A</Color>
         <Color x:Key="NoticeOrangeColor">#FF6F43</Color>
-        <Color x:Key="GreenSuccessColor">#10B981</Color>
+        <Color x:Key="GreenSuccessColor">#40A995</Color>
         <Color x:Key="ConnectedWhiteBgColor">#FFFFFF</Color>
+
+        <!-- Tokens oficiais adicionais (tema lenovo.themes.generic v6) -->
+        <Color x:Key="V6PrimaryColor">#005D7F</Color>       <!-- azul-marinho primário (139x no tema) -->
+        <Color x:Key="V6DeepColor">#001429</Color>          <!-- fundo escuro (110x) -->
+        <Color x:Key="V6SteelColor">#345375</Color>         <!-- azul aço secundário (99x) -->
+        <Color x:Key="V6AccentColor">#43B5E2</Color>        <!-- azul claro de destaque (98x) -->
+        <Color x:Key="V6AccentLightColor">#6EC2ED</Color>   <!-- azul claro hover (29x) -->
+        <Color x:Key="V6MutedTextColor">#9FAEBF</Color>     <!-- texto secundário (65x) -->
+        <Color x:Key="V6BorderColor">#D4DCE3</Color>        <!-- bordas claras (49x) -->
+        <Color x:Key="V6DarkTextColor">#494949</Color>      <!-- texto escuro (29x) -->
+        <Color x:Key="V6SlateTextColor">#6D86AB</Color>     <!-- texto cinza-azulado (24x) -->
+        <Color x:Key="V6GrayTextColor">#AAAAAA</Color>      <!-- texto cinza (23x) -->
+        <Color x:Key="V6DangerColor">#FF4042</Color>        <!-- vermelho de erro (19x) -->
+        <Color x:Key="V6WarningColor">#FAAD14</Color>       <!-- amarelo de alerta (9x) -->
+        <Color x:Key="V6InfoSoftColor">#CEEAF9</Color>      <!-- azul suave informativo (13x) -->
 
         <!-- Pincéis (Brushes) -->
         <SolidColorBrush x:Key="TopBarBgBrush" Color="{StaticResource TopBarBgColor}" />
@@ -32,10 +51,16 @@
         <SolidColorBrush x:Key="NoticeOrangeBrush" Color="{StaticResource NoticeOrangeColor}" />
         <SolidColorBrush x:Key="GreenSuccessBrush" Color="{StaticResource GreenSuccessColor}" />
         <SolidColorBrush x:Key="ConnectedWhiteBgBrush" Color="{StaticResource ConnectedWhiteBgColor}" />
-        <SolidColorBrush x:Key="TextDarkNavyBrush" Color="#00142B" />
-        <SolidColorBrush x:Key="TextMutedBlueBrush" Color="#8FA7C2" />
+        <SolidColorBrush x:Key="TextDarkNavyBrush" Color="#001429" />
+        <SolidColorBrush x:Key="TextMutedBlueBrush" Color="#9FAEBF" />
         <SolidColorBrush x:Key="TextSpecsLabelBrush" Color="#64748B" />
         <SolidColorBrush x:Key="TextSpecsValueBrush" Color="#1E293B" />
+
+        <!-- Tokens oficiais V6 (brushes) -->
+        <SolidColorBrush x:Key="V6PrimaryBrush" Color="{StaticResource V6PrimaryColor}" />
+        <SolidColorBrush x:Key="V6AccentBrush" Color="{StaticResource V6AccentColor}" />
+        <SolidColorBrush x:Key="V6DangerBrush" Color="{StaticResource V6DangerColor}" />
+        <SolidColorBrush x:Key="V6WarningBrush" Color="{StaticResource V6WarningColor}" />
 
         <!-- Gradiente da Tela Welcome -->
         <LinearGradientBrush x:Key="WelcomeGradientBrush" StartPoint="0%,0%" EndPoint="100%,100%">
@@ -68,6 +93,9 @@
         <!-- Tab 7: Support -->
         <StreamGeometry x:Key="IconSupport">M12,1c-4.97,0 -9,4.03 -9,9v7c0,2.21 1.79,4 4,4h1v-8H5v-3c0,-3.87 3.13,-7 7,-7s7,3.13 7,7v3h-3v8h1c2.21,0 4,-1.79 4,-4v-7c0,-4.97 -4.03,-9 -9,-9z</StreamGeometry>
 
+        <!-- Ícone de celular (My Device) -->
+        <StreamGeometry x:Key="IconPhone">M17,1.01L7,1C5.9,1 5,1.9 5,3v18c0,1.1 0.9,2 2,2h10c1.1,0 2,-0.9 2,-2V3C19,1.9 18.1,1.01 17,1.01z M17,19H7V5h10V19z</StreamGeometry>
+
         <!-- Motorola Batwing Official Logo -->
         <StreamGeometry x:Key="IconMotorola">M12,2C6.48,2 2,6.48 2,12s4.48,10 10,10 10,-4.48 10,-10S17.52,2 12,2z M17.2,16.5c-1.3,0 -2.3,-1.2 -3.2,-2.7 -0.5,-0.9 -1,-1.8 -2,-1.8s-1.5,0.9 -2,1.8c-0.9,1.5 -1.9,2.7 -3.2,2.7 -1.2,0 -2.3,-0.8 -2.3,-2.3 0,-2.3 2.7,-6.2 5.5,-6.2 1,0 1.5,0.5 2,1.2 0.5,-0.7 1,-1.2 2,-1.2 2.8,0 5.5,3.9 5.5,6.2 0,1.5 -1.1,2.3 -2.3,2.3z</StreamGeometry>
 
@@ -93,7 +121,7 @@
         <!-- Estilo das Abas Superiores Oficiais -->
         <Style Selector="Button.TopTab">
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="#8FA7C2" />
+            <Setter Property="Foreground" Value="#9FAEBF" />
             <Setter Property="Padding" Value="14,8" />
             <Setter Property="Height" Value="60" />
             <Setter Property="CornerRadius" Value="0" />
@@ -110,7 +138,7 @@
             <Setter Property="FontWeight" Value="SemiBold" />
         </Style>
 
-        <!-- Botão de Ação Pill Oficial (Teal #006E8E) -->
+        <!-- Botão de Ação Pill Oficial (Teal #005D7F) -->
         <Style Selector="Button.ActionPill">
             <Setter Property="Background" Value="{StaticResource ActionPillTealBrush}" />
             <Setter Property="Foreground" Value="#FFFFFF" />
@@ -122,13 +150,13 @@
             <Setter Property="Cursor" Value="Hand" />
         </Style>
         <Style Selector="Button.ActionPill:pointerover">
-            <Setter Property="Background" Value="#0083AA" />
+            <Setter Property="Background" Value="#007DA6" />
         </Style>
 
         <!-- Botão Secundário / Voltar / Feedback -->
         <Style Selector="Button.SecondaryPill">
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="#8FA7C2" />
+            <Setter Property="Foreground" Value="#9FAEBF" />
             <Setter Property="FontSize" Value="12" />
             <Setter Property="Padding" Value="12,6" />
             <Setter Property="CornerRadius" Value="14" />
@@ -154,7 +182,7 @@
         </Style>
         <Style Selector="Button.WelcomeOptionCard:pointerover">
             <Setter Property="Background" Value="{StaticResource WelcomeCardHoverBrush}" />
-            <Setter Property="BorderBrush" Value="#006E8E" />
+            <Setter Property="BorderBrush" Value="#005D7F" />
         </Style>
     </Application.Styles>
 </Application>

@@ -39,6 +39,12 @@ public class DeviceRescueInfo
     public string ErasePersonalData { get; set; } = string.Empty;
     public string FdrAllowed { get; set; } = string.Empty;
     public int RescueMark { get; set; }
+
+    // Paridade com ReadPropertiesInFastboot.cs (descompilado) — campos adicionais lidos do fastboot
+    public string QcomVersion { get; set; } = string.Empty;     // ro.build.version.qcom
+    public string Emmc { get; set; } = string.Empty;            // emmc
+    public string AndroidVer { get; set; } = string.Empty;      // androidVer
+    public string IsWarrantyVoid { get; set; } = string.Empty;  // iswarrantyvoid
 }
 
 public class RomPackage
@@ -251,15 +257,12 @@ public class DeviceModelInfoListModel
     public List<DeviceModelInfoModel> MoreModelList { get; set; } = new();
 }
 
-// Official Request Wrapper matching RequestModel.cs
+// Official Request Wrapper — espelho 1:1 de RequestModel.cs (descompilado).
+// Ordem dos campos e semântica idênticas ao original:
+//   { "client": { "version": ... }, "dparams": ..., "language": ..., "windowsInfo": ... }
+// windowsInfo segue o formato "<SO>, <tipo>" (ex.: "Microsoft Windows 10 Pro, 64bit" no Windows).
 public class RequestEnvelope
 {
-    [JsonProperty("language")]
-    public string Language { get; set; } = "pt-BR";
-
-    [JsonProperty("windowsInfo")]
-    public string WindowsInfo { get; set; } = "Linux x86_64";
-
     [JsonProperty("client")]
     public Dictionary<string, string> Client { get; set; } = new()
     {
@@ -269,10 +272,26 @@ public class RequestEnvelope
     [JsonProperty("dparams")]
     public object? DParams { get; set; }
 
+    [JsonProperty("language")]
+    public string Language { get; set; } = "pt-BR";
+
+    [JsonProperty("windowsInfo")]
+    public string WindowsInfo { get; set; } = "Linux x86_64, 64bit";
+
     public RequestEnvelope(object? dparams = null)
     {
         DParams = dparams;
     }
+}
+
+// login_url/token_url devolvidos por CALL_API_URL {key:"TIP_URL"} (loginResModel.cs)
+public class LoginUrlModel
+{
+    [JsonProperty("login_url")]
+    public string? LoginUrl { get; set; }
+
+    [JsonProperty("token_url")]
+    public string? TokenUrl { get; set; }
 }
 
 public class DiagnosticItem

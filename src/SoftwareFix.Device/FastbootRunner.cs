@@ -10,7 +10,9 @@ namespace SoftwareFix.Device;
 
 public class FastbootRunner
 {
-    public string FastbootBinary { get; set; } = "fastboot";
+    /// <summary>Binário fastboot. Sobrescrevível via env SOFTWARE_FIX_FASTBOOT (também usado nos testes de paridade).</summary>
+    public string FastbootBinary { get; set; } =
+        Environment.GetEnvironmentVariable("SOFTWARE_FIX_FASTBOOT") ?? "fastboot";
 
     public async Task<List<string>> GetConnectedDevicesAsync()
     {
@@ -129,6 +131,12 @@ public class FastbootRunner
         info.ErasePersonalData = vars.GetValueOrDefault("erase_personal_data", "");
         info.FdrAllowed = vars.GetValueOrDefault("fdr-allowed", "");
 
+        // Paridade ReadPropertiesInFastboot.cs (lista completa de elementos)
+        info.QcomVersion = vars.GetValueOrDefault("ro.build.version.qcom", "");
+        info.Emmc = vars.GetValueOrDefault("emmc", "");
+        info.AndroidVer = vars.GetValueOrDefault("androidVer", "");
+        info.IsWarrantyVoid = vars.GetValueOrDefault("iswarrantyvoid", "");
+
         if (int.TryParse(vars.GetValueOrDefault("rescuemark", "0"), out int mark))
         {
             info.RescueMark = mark;
@@ -155,14 +163,19 @@ public class FastbootRunner
         var stdoutTask = process.StandardOutput.ReadToEndAsync();
         var stderrTask = process.StandardError.ReadToEndAsync();
 
-        if (await Task.WhenAny(Task.Run(() => process.WaitForExit(timeoutMs))) == Task.CompletedTask)
+        // Corrida: término normal vs. timeout.
+        // (O padrão anterior — `await Task.WhenAny(...) == Task.CompletedTask` — era
+        // sempre falso e fazia TODA chamada retornar "ERROR: timeout".)
+        var waitTask = process.WaitForExitAsync();
+        var completed = await Task.WhenAny(waitTask, Task.Delay(timeoutMs));
+        if (completed == waitTask)
         {
             string stdout = await stdoutTask;
             string stderr = await stderrTask;
             return string.IsNullOrEmpty(stdout) ? stderr : stdout + "\n" + stderr;
         }
 
-        try { process.Kill(); } catch { }
+        try { process.Kill(entireProcessTree: true); } catch { }
         return "ERROR: timeout";
     }
 }

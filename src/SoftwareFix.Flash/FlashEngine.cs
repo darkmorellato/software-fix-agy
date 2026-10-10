@@ -89,9 +89,13 @@ public class FlashEngine
 
             var cmd = adjustedCommands[i];
 
-            // Ignore skip commands as in FastbootFlash.cs
-            if (cmd.Operation.Contains("fb_mode_set") || cmd.Operation.Contains("fb_mode_clear"))
+            // Skip "oem fb_mode_set"/"oem fb_mode_clear" — réplica de FastbootFlash.cs
+            // (original: command.command.Contains("oem fb_mode_set") || ...fb_mode_clear).
+            // Nota: no XML, operation="oem" e var="fb_mode_set" montam o comando completo.
+            string fullArg = $"{cmd.Operation} {cmd.Partition}".Trim();
+            if (fullArg.Contains("oem fb_mode_set") || fullArg.Contains("oem fb_mode_clear"))
             {
+                LogReceived?.Invoke($"[{i + 1}/{adjustedCommands.Count}] [SKIP] {fullArg} (ignorado — como no app oficial)");
                 continue;
             }
 
@@ -111,19 +115,32 @@ public class FlashEngine
             var output = await _fastboot.RunCommandAsync(fastbootArg, cmd.TimeoutMs);
             LogReceived?.Invoke(output.Trim());
 
-            if (output.Contains("FAILED", StringComparison.OrdinalIgnoreCase) ||
-                output.Contains("ERROR", StringComparison.OrdinalIgnoreCase))
+            // Detecção de falha com a mesma semântica do original: Contains("fail") || Contains("error")
+            string outputLower = output.ToLowerInvariant();
+            bool cmdFailed = outputLower.Contains("fail") || outputLower.Contains("error");
+            if (cmdFailed)
             {
-                // In official app, failing to erase userdata doesn't fail entire flash if non-critical
-                if (!eraseUserData && cmd.Partition.Contains("userdata", StringComparison.OrdinalIgnoreCase))
+                if (outputLower.Contains("too many links"))
                 {
-                    LogReceived?.Invoke($"[AVISO] Partição {cmd.Partition} ignorada.");
+                    LogReceived?.Invoke("[ERRO] 'too many links' — o dispositivo foi removido/desconectado durante o flash (FailedByDeviceRemoved).");
+                }
+                if (outputLower.Contains("failed to write"))
+                {
+                    LogReceived?.Invoke("[DIAG] 'failed to write' detectado — executando 'oem partition dump logfs' (como o app oficial)...");
+                    var dump = await _fastboot.RunCommandAsync(serialPrefix + "oem partition dump logfs", 20000);
+                    LogReceived?.Invoke(dump.Trim());
+                }
+
+                if (cmd.Partition.Contains("userdata", StringComparison.OrdinalIgnoreCase))
+                {
+                    // Espelha Result.FASTBOOT_FLASH_ERASEDATE_FAILED do original
+                    LogReceived?.Invoke($"[ERRO] Falha ao apagar os dados (erase userdata) no comando {i + 1}. Reexecute o flash para tentar novamente.");
                 }
                 else
                 {
                     LogReceived?.Invoke($"[ERRO] Falha crítica no comando {i + 1}: {fastbootArg}");
-                    return false;
                 }
+                return false;
             }
 
             flashedBytes += cmd.FileSize;

@@ -5,7 +5,8 @@ namespace SoftwareFix.Core;
 
 public static class Configurations
 {
-    public const string Version = "7.4.2.13";
+    /// <summary>FileVersion oficial do Software Fix.exe (AssemblyInfo.cs descompilado).</summary>
+    public const string Version = "7.6.2.10";
     public const string BaseHttpUrl = "https://lsa.lenovo.com";
     public static string ServiceInterfaceUrl => BaseHttpUrl + "/Interface";
 
@@ -25,6 +26,22 @@ public static class Configurations
     public static string UrlRescueDegradeInfo => ServiceInterfaceUrl + "/dataCollection/rescueDegradeInfo.jhtml";
     public static string UrlUploadLog => ServiceInterfaceUrl + "/dataCollection/nativeToolLog.jhtml";
     public static string UrlCheckMaVersion => ServiceInterfaceUrl + "/apk/download.jhtml";
+
+    // --- Login / sessão (fluxo Lenovo ID OAuth — LenovoIdWindow/LenovoIdUserLogin) ---
+    public static string UrlLoginCallback => ServiceInterfaceUrl + "/user/getSFUserInfo.jhtml";
+    public static string UrlGuestLogin => ServiceInterfaceUrl + "/user/guestLogin.jhtml";
+    public static string UrlUserRecordLogin => ServiceInterfaceUrl + "/user/recordLogin.jhtml";
+    public static string UrlUserLogout => ServiceInterfaceUrl + "/user/logout.jhtml";
+    public static string UrlDisposeToken => ServiceInterfaceUrl + "/client/deleteToken.jhtml";
+
+    // --- Endpoints adicionais do plugin Rescue (WebServicesContext.cs descompilado) ---
+    public static string UrlGetRescueModelNames => ServiceInterfaceUrl + "/rescueDevice/getRescueModelNames.jhtml";
+    public static string UrlModelListByMarketName => ServiceInterfaceUrl + "/rescueDevice/modelListByMarketName.jhtml";
+    public static string UrlGetResourceManual => ServiceInterfaceUrl + "/rescueDevice/getResource.jhtml";
+    public static string UrlGetXamlList => ServiceInterfaceUrl + "/rescueDevice/getXamlList.jhtml";
+    public static string UrlHwDetection => ServiceInterfaceUrl + "/dataCollection/HwDetectionInfo.jhtml";
+    public static string UrlRescueSocialShare => ServiceInterfaceUrl + "/dataCollection/rescueSocialShare.jhtml";
+    public static string UrlSurveyRescueSuccess => ServiceInterfaceUrl + "/survey/saveRescueSuccessRecord.jhtml";
 
     public static string UserHome => Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 
@@ -57,6 +74,8 @@ public static class Configurations
     public static string ToolPath => Path.Combine(DownloadPath, "ToolFiles");
     public static string LogPath => Path.Combine(BaseDataPath, "logs");
     public static string TempPath => Path.Combine(BaseDataPath, "temp");
+    public static string SessionFile => Path.Combine(ConfigPath, "session.json");
+    public static string ClientUuidFile => Path.Combine(ConfigPath, "client_uuid");
 
     static Configurations()
     {

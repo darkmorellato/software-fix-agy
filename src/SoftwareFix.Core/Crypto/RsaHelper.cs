@@ -32,7 +32,14 @@ public static class RsaHelper
         return Convert.ToBase64String(encrypted);
     }
 
-    public static string GenerateDeviceFingerprint(RSA rsa, string token, string endpoint)
+    /// <summary>
+    /// Réplica exata de WebApiHttpRequest.CreateClientRequestFinger (descompilado):
+    /// payload = "{unix_ms}|{valor COMPLETO do header Authorization}|{segmento}interface",
+    /// cifrado em RSA/PKCS#1 v1.5 com a chave pública de /common/rsa.jhtml.
+    /// Atenção: usa o header Authorization completo (ex.: "Bearer &lt;jwt&gt;"),
+    /// exatamente como o original — não apenas o token.
+    /// </summary>
+    public static string GenerateDeviceFingerprint(RSA rsa, string authorizationHeaderValue, string endpoint)
     {
         long timestamp = DateTimeOffset.UtcNow.ToUnixTimeMilliseconds();
         string cleanEndpoint = endpoint.TrimEnd('/');
@@ -47,7 +54,7 @@ public static class RsaHelper
             cleanEndpoint = cleanEndpoint[..dot] + "interface";
         }
 
-        string rawPayload = $"{timestamp}|{token}|{cleanEndpoint}";
+        string rawPayload = $"{timestamp}|{authorizationHeaderValue}|{cleanEndpoint}";
         return EncryptWithPublicKey(rsa, rawPayload);
     }
 }

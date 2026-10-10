@@ -70,6 +70,24 @@ Os executáveis prontos serão gerados na pasta `dist/`:
 
 ---
 
+## 🔬 Paridade com o aplicativo oficial (v2)
+
+* **Contratos de rede 1:1** — headers, envelope JSON e assinatura `X-Device-Fingerprint` (RSA)
+  replicados de `lenovo.mbg.service.common.webservices` e validados ao vivo contra
+  `lsa.lenovo.com` (ver `docs/CONTRATOS_REDE.md`).
+* **Login Lenovo ID** — `software-fix login` obtém a URL OAuth2/PKCE oficial, abre no
+  navegador e valida o token WUST em `/user/getSFUserInfo.jhtml`, salvando a sessão em
+  `~/.config/software-fix/session.json`.
+* **Smoke test dos contratos** — `software-fix api-test`.
+* **Design tokens oficiais** — paleta, tipografia e componentes extraídos do tema v6
+  descompilado (ver `docs/DESIGN_TOKENS.md`).
+* **Testes de paridade sem hardware** — mocks de fastboot/adb em `tests/parity/`,
+  checklist completo em `docs/HOMOLOGACAO.md`.
+* **Referência de engenharia reversa** — código descompilado em `src_decompiled/`
+  (6.282 `.cs` + 358 `.xaml` + assets; relatório em `docs/RELATORIO_DESCOMPILACAO.md`).
+
+---
+
 ## 📂 Comparativo com o Aplicativo Windows Original
 
 | Recurso Original (Windows) | Equivalente no Port Linux | Vantagem do Port Linux |

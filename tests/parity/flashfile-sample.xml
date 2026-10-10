@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- =====================================================================
+     Fixture de teste de paridade — estrutura típica de um flashfile.xml
+     Motorola (rescue). Usado com tests/parity/mock_fastboot.sh, sem
+     hardware real, para validar o motor SoftwareFix.Flash.
+     ===================================================================== -->
+<flashing>
+  <header>
+    <phone_model model="urtxd" />
+    <software_version version="RZBS31.Q2-143-27-9" />
+  </header>
+  <steps>
+    <step operation="getvar" var="max-sparse-size" />
+    <step operation="oem" var="fb_mode_set" />
+    <step operation="flash" partition="bootloader" filename="bootloader.img" MD5="3f2a1111" />
+    <step operation="flash" partition="boot_a" filename="boot.img" MD5="8b1c2222" />
+    <step operation="flash" partition="super" filename="super.img" MD5="aa013333" />
+    <step operation="flash" partition="vbmeta_a" filename="vbmeta.img" MD5="bb024444" />
+    <step operation="erase" partition="userdata" />
+    <step operation="erase" partition="metadata" />
+    <step operation="erase" partition="misc" />
+    <step operation="oem" var="fb_mode_clear" />
+  </steps>
+</flashing>

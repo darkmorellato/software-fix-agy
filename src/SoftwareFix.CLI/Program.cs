@@ -199,6 +199,111 @@ class Program
                 }
             }
 
+            case "login":
+            {
+                var loginClient = new LenovoApiClient();
+                Console.WriteLine("[*] Preparando cliente (chave pública RSA)...");
+                await loginClient.InitializeAsync();
+
+                if (loginClient.HasSession)
+                {
+                    Console.WriteLine("[+] Sessão salva encontrada. Validando com o servidor...");
+                    var current = await loginClient.GetUserInfoAsync();
+                    if (current.Success)
+                    {
+                        Console.WriteLine($"[+] Sessão válida! Usuário: {current.Content?["name"] ?? current.Content?["email"] ?? "desconhecido"}");
+                        return 0;
+                    }
+                    Console.WriteLine("[!] Sessão expirada. Continue o login para renovar.");
+                    loginClient.ClearSession();
+                }
+
+                var loginUrls = await loginClient.GetLoginUrlAsync();
+                if (!loginUrls.Success || loginUrls.Content == null)
+                {
+                    Console.WriteLine($"[-] Falha ao obter URL de login: code={loginUrls.Code} desc={loginUrls.Desc}");
+                    return 1;
+                }
+
+                string loginUrl = loginUrls.Content.ToString()!;
+                if (!loginUrl.Contains("lenovoid.lang="))
+                {
+                    loginUrl += "&lenovoid.lang=pt_BR";
+                }
+
+                Console.WriteLine();
+                Console.WriteLine("[*] Abra a URL abaixo no navegador e faça login com sua conta Lenovo ID:");
+                Console.WriteLine();
+                Console.WriteLine("    " + loginUrl);
+                Console.WriteLine();
+                Console.WriteLine("[*] Após o login, você será redirecionado para uma página 'lenovoIdSuccess'.");
+                Console.WriteLine("    Copie a URL COMPLETA dessa página (contém 'lenovoid.wust=...') e cole aqui.");
+                Console.WriteLine("    (Ou cole apenas o valor do wust.)");
+                Console.WriteLine();
+                Console.Write("> URL/wust: ");
+                string? pasted = Console.ReadLine();
+                if (string.IsNullOrWhiteSpace(pasted))
+                {
+                    Console.WriteLine("[-] Entrada vazia. Abortado.");
+                    return 1;
+                }
+
+                var loginResult = await loginClient.LoginWithWustAsync(pasted);
+                if (loginResult.Success)
+                {
+                    Console.WriteLine("[+] Login validado com sucesso! Sessão salva em: " + Configurations.SessionFile);
+                    Console.WriteLine("    Usuário: " + (loginResult.Content?["name"] ?? loginResult.Content?["email"] ?? "(sem nome)"));
+                    return 0;
+                }
+                Console.WriteLine($"[-] Falha no login: code={loginResult.Code} desc={loginResult.Desc}");
+                return 1;
+            }
+
+            case "api-test":
+            {
+                Console.WriteLine("[*] Teste 1: POST /common/rsa.jhtml (chave pública RSA)");
+                var testClient = new LenovoApiClient();
+                await testClient.FetchPublicKeyAsync();
+                var ping = await testClient.GetLoginUrlAsync();
+                Console.WriteLine(ping.Success || ping.Code == "0000"
+                    ? "    [+] rsa.jhtml OK — chave pública obtida"
+                    : $"    [-] rsa.jhtml: {ping.Code} {ping.Desc}");
+
+                Console.WriteLine("[*] Teste 2: POST /dictionary/getApiInfo.jhtml {key:TIP_URL}");
+                if (ping.Success && ping.Content != null)
+                {
+                    string url = ping.Content.ToString()!;
+                    Console.WriteLine($"    [+] OAuth URL recebida: {url[..Math.Min(100, url.Length)]}...");
+                }
+                else
+                {
+                    Console.WriteLine($"    [-] Falha: code={ping.Code} desc={ping.Desc}");
+                }
+
+                Console.WriteLine("[*] Teste 3: GET /user/getSFUserInfo.jhtml SEM token (anônimo)");
+                var anon = new LenovoApiClient();
+                await anon.FetchPublicKeyAsync();
+                var anonymous = await anon.GetUserInfoAsync();
+                Console.WriteLine($"    [+] resposta do servidor: code={anonymous.Code} desc={anonymous.Desc}");
+                Console.WriteLine("        (code 410 'Missing device fingerprint' = contrato validado pelo servidor)");
+
+                Console.WriteLine("[*] Teste 4: validação da sessão salva (se existir)");
+                var sessionClient = new LenovoApiClient();
+                if (sessionClient.TryLoadSession())
+                {
+                    await sessionClient.FetchPublicKeyAsync();
+                    var authed = await sessionClient.GetUserInfoAsync();
+                    Console.WriteLine(authed.Success
+                        ? "    [+] Sessão autenticada — fingerprint RSA ACEITO pelo servidor"
+                        : $"    [-] Sessão rejeitada: code={authed.Code} desc={authed.Desc}");
+                }
+                else
+                {
+                    Console.WriteLine("    [i] Sem sessão salva — rode 'software-fix login' para autenticar.");
+                }
+                return 0;
+            }
+
             default:
                 PrintUsage();
                 return 1;
@@ -212,6 +317,8 @@ class Program
         Console.WriteLine("  software-fix match                 Query Lenovo servers for connected device ROM");
         Console.WriteLine("  software-fix download <url> [path] Download firmware ROM with progress & resume");
         Console.WriteLine("  software-fix flash <flashfile.xml> Flash firmware using Motorola fastboot steps");
+        Console.WriteLine("  software-fix login                 Autenticar com Lenovo ID (OAuth) e salvar a sessão");
+        Console.WriteLine("  software-fix api-test              Testar os contratos da API Lenovo (smoke test)");
         Console.WriteLine("  software-fix help                  Show this help message\n");
     }
 }

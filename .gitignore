@@ -22,3 +22,8 @@ ehthumbs.db
 dist/
 temp/
 download/
+
+# Artefatos gerados pela engenharia reversa (regeneráveis via scripts/)
+src_decompiled/
+configs_and_manifests/
+decompilacao.log

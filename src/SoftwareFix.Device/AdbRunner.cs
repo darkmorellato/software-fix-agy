@@ -26,7 +26,9 @@ public class AdbDeviceInfo
 
 public class AdbRunner
 {
-    public string AdbBinary { get; set; } = "adb";
+    /// <summary>Binário adb. Sobrescrevível via env SOFTWARE_FIX_ADB (também usado nos testes de paridade).</summary>
+    public string AdbBinary { get; set; } =
+        Environment.GetEnvironmentVariable("SOFTWARE_FIX_ADB") ?? "adb";
 
     public async Task<List<string>> GetConnectedDevicesAsync()
     {
@@ -127,14 +129,17 @@ public class AdbRunner
         var stdoutTask = process.StandardOutput.ReadToEndAsync();
         var stderrTask = process.StandardError.ReadToEndAsync();
 
-        if (await Task.WhenAny(Task.Run(() => process.WaitForExit(timeoutMs))) == Task.CompletedTask)
+        // Corrida: término normal vs. timeout (mesmo fix do FastbootRunner).
+        var waitTask = process.WaitForExitAsync();
+        var completed = await Task.WhenAny(waitTask, Task.Delay(timeoutMs));
+        if (completed == waitTask)
         {
             string stdout = await stdoutTask;
             string stderr = await stderrTask;
             return string.IsNullOrEmpty(stdout) ? stderr : stdout + "\n" + stderr;
         }
 
-        try { process.Kill(); } catch { }
+        try { process.Kill(entireProcessTree: true); } catch { }
         return "ERROR: timeout";
     }
 }
