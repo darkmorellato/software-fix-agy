@@ -247,7 +247,7 @@
                                 <TextBlock Text="🏠 Início" FontSize="12" VerticalAlignment="Center" />
                             </Button>
                             <Button Grid.Column="2" Classes="SecondaryPill" Content="Feedback" FontSize="12"
-                                    ToolTip.Tip="Enviar feedback (em breve)" />
+                                    ToolTip.Tip="Enviar feedback" Command="{Binding OpenFeedbackCommand}" />
                         </Grid>
                     </Grid>
                 </Grid>
@@ -437,16 +437,25 @@
             <Grid IsVisible="{Binding IsSectionMyDevice}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="28,20,56,18">
 
-                    <!-- Cabeçalho -->
-                    <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="0,0,0,16">
-                        <StackPanel Grid.Column="0">
-                            <TextBlock Text="Meu Aparelho" FontSize="22" FontWeight="Bold" Foreground="#001429" />
-                            <TextBlock Text="Gerenciamento de conteúdo e informações do dispositivo" FontSize="13" Foreground="#64748B" />
-                        </StackPanel>
-                        <Button Grid.Column="1" Classes="ActionPill" Command="{Binding JumpToRescueFromMyDeviceCommand}" Width="160" VerticalAlignment="Center">
-                            <TextBlock Text="Iniciar Resgate" HorizontalAlignment="Center" />
-                        </Button>
-                    </Grid>
+                    <!-- Cabeçalho hero (arte oficial) -->
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                <GradientStop Color="#10304F" Offset="0" />
+                                <GradientStop Color="#0B2038" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid ColumnDefinitions="*,Auto,Auto">
+                            <StackPanel Grid.Column="0" Spacing="3">
+                                <TextBlock Text="Meu Aparelho" FontSize="21" FontWeight="Bold" Foreground="#FFFFFF" />
+                                <TextBlock Text="Gerenciamento de conteúdo e informações do dispositivo" FontSize="13" Foreground="#9FBFE0" />
+                            </StackPanel>
+                            <PathIcon Grid.Column="1" Data="{StaticResource IconMyDevice}" Width="30" Height="30" Foreground="#3E7CB0" VerticalAlignment="Center" Opacity="0.6" Margin="0,0,16,0" />
+                            <Button Grid.Column="2" Classes="ActionPill" Command="{Binding JumpToRescueFromMyDeviceCommand}" Width="160" VerticalAlignment="Center">
+                                <TextBlock Text="Iniciar Resgate" HorizontalAlignment="Center" />
+                            </Button>
+                        </Grid>
+                    </Border>
 
                     <Grid Grid.Row="1" ColumnDefinitions="214,*">
 
@@ -638,11 +647,22 @@
             <Grid IsVisible="{Binding IsSectionHardware}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,Auto,*,Auto" Margin="40,24,56,16">
 
-                    <!-- Cabeçalho -->
-                    <StackPanel Grid.Row="0" Margin="0,0,0,16">
-                        <TextBlock Text="Hardware Test &amp; Diagnóstico" FontSize="22" FontWeight="Bold" Foreground="#001429" />
-                        <TextBlock Text="Verifique rapidamente se o seu dispositivo apresenta algum problema de hardware" FontSize="13" Foreground="#64748B" />
-                    </StackPanel>
+                    <!-- Cabeçalho hero (arte oficial: faixa azul-marinho) -->
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                <GradientStop Color="#10304F" Offset="0" />
+                                <GradientStop Color="#0B2038" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackPanel Grid.Column="0" Spacing="3">
+                                <TextBlock Text="Hardware Test &amp; Diagnóstico" FontSize="21" FontWeight="Bold" Foreground="#FFFFFF" />
+                                <TextBlock Text="Verifique rapidamente se o seu dispositivo apresenta algum problema de hardware" FontSize="13" Foreground="#9FBFE0" />
+                            </StackPanel>
+                            <PathIcon Grid.Column="1" Data="{StaticResource IconHardwareTest}" Width="30" Height="30" Foreground="#3E7CB0" VerticalAlignment="Center" Opacity="0.6" />
+                        </Grid>
+                    </Border>
 
                     <!-- Tabela oficial: duas colunas pareadas (Test item / Result) com zebra -->
                     <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="12" BorderBrush="#E2E8F0" BorderThickness="1" ClipToBounds="True" VerticalAlignment="Top">
@@ -737,10 +757,21 @@
             <!-- ============================================================== -->
             <Grid IsVisible="{Binding IsSectionToolbox}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="40,24,40,24">
-                    <StackPanel Grid.Row="0" Margin="0,0,0,20">
-                        <TextBlock Text="Ferramentas" FontSize="22" FontWeight="Bold" Foreground="#001429" />
-                        <TextBlock Text="Ferramentas avançadas de manutenção para dispositivos Motorola" FontSize="13" Foreground="#64748B" />
-                    </StackPanel>
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                <GradientStop Color="#10304F" Offset="0" />
+                                <GradientStop Color="#0B2038" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackPanel Grid.Column="0" Spacing="3">
+                                <TextBlock Text="Ferramentas" FontSize="21" FontWeight="Bold" Foreground="#FFFFFF" />
+                                <TextBlock Text="Ferramentas avançadas de manutenção para dispositivos Motorola" FontSize="13" Foreground="#9FBFE0" />
+                            </StackPanel>
+                            <PathIcon Grid.Column="1" Data="{StaticResource IconToolbox}" Width="30" Height="30" Foreground="#3E7CB0" VerticalAlignment="Center" Opacity="0.6" />
+                        </Grid>
+                    </Border>
 
                     <Grid Grid.Row="1" ColumnDefinitions="*,*,*" RowDefinitions="140,140" Margin="0,10,0,0">
                         <!-- Ferramenta 1: Captura de Tela -->
@@ -817,10 +848,21 @@
             <!-- ============================================================== -->
             <Grid IsVisible="{Binding IsSectionBackup}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="40,24,40,24">
-                    <StackPanel Grid.Row="0" Margin="0,0,0,20">
-                        <TextBlock Text="Backup e Restauração" FontSize="22" FontWeight="Bold" Foreground="#001429" />
-                        <TextBlock Text="Faça cópias de segurança locais dos seus dados antes de executar operações de reparo" FontSize="13" Foreground="#64748B" />
-                    </StackPanel>
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                <GradientStop Color="#10304F" Offset="0" />
+                                <GradientStop Color="#0B2038" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackPanel Grid.Column="0" Spacing="3">
+                                <TextBlock Text="Backup e Restauração" FontSize="21" FontWeight="Bold" Foreground="#FFFFFF" />
+                                <TextBlock Text="Faça cópias de segurança locais dos seus dados antes de executar operações de reparo" FontSize="13" Foreground="#9FBFE0" />
+                            </StackPanel>
+                            <PathIcon Grid.Column="1" Data="{StaticResource IconBackupRestore}" Width="30" Height="30" Foreground="#3E7CB0" VerticalAlignment="Center" Opacity="0.6" />
+                        </Grid>
+                    </Border>
 
                     <Grid Grid.Row="1" ColumnDefinitions="*,*">
                         <!-- Card Backup -->
@@ -851,10 +893,21 @@
             <!-- ============================================================== -->
             <Grid IsVisible="{Binding IsSectionTransfer}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*,Auto" Margin="40,24,56,20">
-                    <StackPanel Grid.Row="0" Margin="0,0,0,18">
-                        <TextBlock Text="Data Transfer" FontSize="22" FontWeight="Bold" Foreground="#001429" />
-                        <TextBlock Text="Transferência de conteúdo entre o PC e o seu dispositivo Moto" FontSize="13" Foreground="#64748B" />
-                    </StackPanel>
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                <GradientStop Color="#10304F" Offset="0" />
+                                <GradientStop Color="#0B2038" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackPanel Grid.Column="0" Spacing="3">
+                                <TextBlock Text="Data Transfer" FontSize="21" FontWeight="Bold" Foreground="#FFFFFF" />
+                                <TextBlock Text="Transferência de conteúdo entre o PC e o seu dispositivo Moto" FontSize="13" Foreground="#9FBFE0" />
+                            </StackPanel>
+                            <PathIcon Grid.Column="1" Data="{StaticResource IconDataTransfer}" Width="30" Height="30" Foreground="#3E7CB0" VerticalAlignment="Center" Opacity="0.6" />
+                        </Grid>
+                    </Border>
 
                     <Grid Grid.Row="1" ColumnDefinitions="*,64,*" VerticalAlignment="Top">
 
@@ -936,10 +989,21 @@
 
             <Grid IsVisible="{Binding IsSectionSupport}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="40,24,40,24">
-                    <StackPanel Grid.Row="0" Margin="0,0,0,20">
-                        <TextBlock Text="Suporte Oficial Motorola &amp; Lenovo" FontSize="22" FontWeight="Bold" Foreground="#001429" />
-                        <TextBlock Text="Documentação, garantia e canais de assistência técnica autorizada" FontSize="13" Foreground="#64748B" />
-                    </StackPanel>
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                                <GradientStop Color="#10304F" Offset="0" />
+                                <GradientStop Color="#0B2038" Offset="1" />
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Grid ColumnDefinitions="*,Auto">
+                            <StackPanel Grid.Column="0" Spacing="3">
+                                <TextBlock Text="Suporte Oficial Motorola &amp; Lenovo" FontSize="21" FontWeight="Bold" Foreground="#FFFFFF" />
+                                <TextBlock Text="Documentação, garantia e canais de assistência técnica autorizada" FontSize="13" Foreground="#9FBFE0" />
+                            </StackPanel>
+                            <PathIcon Grid.Column="1" Data="{StaticResource IconSupportChat}" Width="30" Height="30" Foreground="#3E7CB0" VerticalAlignment="Center" Opacity="0.6" />
+                        </Grid>
+                    </Border>
                     <StackPanel Grid.Row="1" Spacing="12">
                         <Border Background="#F8FAFC" CornerRadius="10" Padding="16" BorderBrush="#E2E8F0" BorderThickness="1">
                             <Grid ColumnDefinitions="*,Auto">
@@ -1076,7 +1140,7 @@
 
                 <!-- topo direito: Feedback + fechar -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,14,16,0" Spacing="8">
-                    <Button Classes="FeedbackPill" Content="Feedback" ToolTip.Tip="Enviar feedback (em breve)" />
+                    <Button Classes="FeedbackPill" Content="Feedback" ToolTip.Tip="Enviar feedback" Command="{Binding OpenFeedbackCommand}" />
                     <Button Classes="WindowClose" Content="✕" Command="{Binding CloseLoginScreenCommand}" ToolTip.Tip="Fechar" />
                 </StackPanel>
 
@@ -1120,6 +1184,44 @@
                 <Button Classes="LinkLike" Content="Continuar sem conta (modo local)" HorizontalAlignment="Center" VerticalAlignment="Bottom"
                         Margin="0,0,0,18" Command="{Binding CloseLoginScreenCommand}" />
             </Grid>
+
+            <!-- ============================================================== -->
+            <!-- MODAL: FEEDBACK (arte oficial: e-mail + perguntas + comentários) -->
+            <!-- ============================================================== -->
+            <Border Background="#80000000" IsVisible="{Binding ShowFeedbackModal}" ZIndex="106">
+                <Border Width="560" Background="#FFFFFF" CornerRadius="14" Padding="26" VerticalAlignment="Center" HorizontalAlignment="Center" BoxShadow="0 10 30 #00000060">
+                    <StackPanel Spacing="12">
+                        <TextBlock Text="Feedback do Software Fix" FontSize="19" FontWeight="Bold" Foreground="#001429" />
+                        <TextBlock Text="As respostas abaixo ajudam a entender seu resultado e a melhorar o app:" FontSize="12" Foreground="#64748B" TextWrapping="Wrap" />
+
+                        <TextBlock Text="E-mail (opcional)" FontSize="12" FontWeight="SemiBold" Foreground="#334155" />
+                        <TextBox Text="{Binding FeedbackEmail}" Watermark="seu@email.com" FontSize="13" />
+
+                        <TextBlock Text="Você conseguiu resgatar/atualizar seu aparelho?" FontSize="12" FontWeight="SemiBold" Foreground="#334155" />
+                        <StackPanel Orientation="Horizontal" Spacing="28">
+                            <RadioButton GroupName="fbRescued" Content="Sim" IsChecked="{Binding FeedbackRescuedYes}" Foreground="#005D7F" />
+                            <RadioButton GroupName="fbRescued" Content="Não" IsChecked="{Binding FeedbackRescuedNo}" Foreground="#005D7F" />
+                        </StackPanel>
+
+                        <TextBlock Text="O firmware correto foi encontrado para o seu aparelho?" FontSize="12" FontWeight="SemiBold" Foreground="#334155" />
+                        <StackPanel Orientation="Horizontal" Spacing="28">
+                            <RadioButton GroupName="fbFirmware" Content="Sim" IsChecked="{Binding FeedbackFirmwareYes}" Foreground="#005D7F" />
+                            <RadioButton GroupName="fbFirmware" Content="Não" IsChecked="{Binding FeedbackFirmwareNo}" Foreground="#005D7F" />
+                        </StackPanel>
+
+                        <TextBlock Text="Comentários" FontSize="12" FontWeight="SemiBold" Foreground="#334155" />
+                        <TextBox Text="{Binding FeedbackComments}" AcceptsReturn="True" Height="76" TextWrapping="Wrap" FontSize="13"
+                                 Watermark="Conte como foi sua experiência (opcional)..." />
+
+                        <TextBlock Text="{Binding FeedbackSentText}" FontSize="12" Foreground="#159A6B" TextWrapping="Wrap" />
+
+                        <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Right">
+                            <Button Classes="SecondaryPill" Content="Cancelar" Command="{Binding CloseFeedbackCommand}" />
+                            <Button Classes="ActionPill" Content="Enviar" Command="{Binding SendFeedbackCommand}" />
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </Border>
 
             <!-- ============================================================== -->
             <!-- MODAL: SELEÇÃO MANUAL DE MODELO                                -->

@@ -83,6 +83,56 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     private bool _showImeiModal;
 
+    // ---- Feedback (arte oficial: e-mail + perguntas Sim/Não + comentários) ----
+    [ObservableProperty] private bool _showFeedbackModal;
+    [ObservableProperty] private string _feedbackEmail = "";
+    [ObservableProperty] private string _feedbackComments = "";
+    [ObservableProperty] private string _feedbackSentText = "";
+    [ObservableProperty] private bool _feedbackRescuedYes;
+    [ObservableProperty] private bool _feedbackRescuedNo;
+    [ObservableProperty] private bool _feedbackFirmwareYes;
+    [ObservableProperty] private bool _feedbackFirmwareNo;
+
+    partial void OnFeedbackRescuedYesChanged(bool value) { if (value) FeedbackRescuedNo = false; }
+    partial void OnFeedbackRescuedNoChanged(bool value) { if (value) FeedbackRescuedYes = false; }
+    partial void OnFeedbackFirmwareYesChanged(bool value) { if (value) FeedbackFirmwareNo = false; }
+    partial void OnFeedbackFirmwareNoChanged(bool value) { if (value) FeedbackFirmwareYes = false; }
+
+    [RelayCommand]
+    private void OpenFeedback() => ShowFeedbackModal = true;
+
+    [RelayCommand]
+    private void CloseFeedback()
+    {
+        ShowFeedbackModal = false;
+        FeedbackSentText = "";
+    }
+
+    [RelayCommand]
+    private void SendFeedback()
+    {
+        try
+        {
+            var dir = System.IO.Path.Combine(
+                Environment.GetFolderPath(Environment.SpecialFolder.UserProfile),
+                ".local", "share", "software-fix", "feedback");
+            System.IO.Directory.CreateDirectory(dir);
+            var file = System.IO.Path.Combine(dir, $"feedback-{DateTime.Now:yyyyMMdd-HHmmss}.txt");
+            System.IO.File.WriteAllText(file,
+                $"Data: {DateTime.Now:yyyy-MM-dd HH:mm}\n" +
+                $"E-mail: {FeedbackEmail}\n" +
+                $"Conseguiu resgatar/atualizar: {(FeedbackRescuedYes ? "Sim" : FeedbackRescuedNo ? "Não" : "(não respondeu)")}\n" +
+                $"Firmware correto encontrado: {(FeedbackFirmwareYes ? "Sim" : FeedbackFirmwareNo ? "Não" : "(não respondeu)")}\n" +
+                $"Comentários: {FeedbackComments}\n");
+            FeedbackSentText = "Feedback registrado — obrigado! Sua opinião ajuda a melhorar o app.";
+            AddLog("[Feedback] Registrado em " + file);
+        }
+        catch (Exception ex)
+        {
+            FeedbackSentText = "Não foi possível registrar: " + ex.Message;
+        }
+    }
+
     [ObservableProperty]
     private string _inputImeiText = "";
 
