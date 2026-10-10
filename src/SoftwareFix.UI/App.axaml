@@ -128,14 +128,36 @@
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Cursor" Value="Hand" />
         </Style>
+        <!-- ====================================================================
+             Estados interativos com CONTRASTE GARANTIDO (hover/pressed).
+             O FluentTheme pinta o /template/ ContentPresenter nesses estados com
+             brushes claros — sobre nossos cards claros o texto branco sumia.
+             Os overrides abaixo forçam fundo + borda de alto contraste em TODOS
+             os botões custom, mantendo o texto sempre legível.
+             ==================================================================== -->
+
+        <!-- Abas superiores -->
         <Style Selector="Button.TopTab:pointerover">
-            <Setter Property="Background" Value="#0A223B" />
             <Setter Property="Foreground" Value="#FFFFFF" />
         </Style>
+        <Style Selector="Button.TopTab:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#0A223B" />
+            <Setter Property="BorderBrush" Value="#0A223B" />
+        </Style>
+        <Style Selector="Button.TopTab:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#0F2A45" />
+        </Style>
         <Style Selector="Button.TopTab.Active">
-            <Setter Property="Background" Value="{StaticResource ActiveTabTealBrush}" />
             <Setter Property="Foreground" Value="#FFFFFF" />
             <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style Selector="Button.TopTab.Active /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource ActiveTabTealBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource ActiveTabTealBrush}" />
+        </Style>
+        <Style Selector="Button.TopTab.Active:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#00719B" />
+            <Setter Property="BorderBrush" Value="#00719B" />
         </Style>
 
         <!-- Botão de Ação Pill Oficial (Teal #005D7F) -->
@@ -150,13 +172,20 @@
             <Setter Property="Cursor" Value="Hand" />
         </Style>
         <Style Selector="Button.ActionPill:pointerover">
+            <Setter Property="Foreground" Value="#FFFFFF" />
+        </Style>
+        <Style Selector="Button.ActionPill:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="#007DA6" />
+            <Setter Property="BorderBrush" Value="#007DA6" />
+        </Style>
+        <Style Selector="Button.ActionPill:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#004E6B" />
         </Style>
 
-        <!-- Botão Secundário / Voltar / Feedback -->
+        <!-- Botão Secundário / Voltar / Feedback / "Testar" -->
         <Style Selector="Button.SecondaryPill">
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="#9FAEBF" />
+            <Setter Property="Foreground" Value="#6D86AB" />
             <Setter Property="FontSize" Value="12" />
             <Setter Property="Padding" Value="12,6" />
             <Setter Property="CornerRadius" Value="14" />
@@ -165,8 +194,18 @@
             <Setter Property="Cursor" Value="Hand" />
         </Style>
         <Style Selector="Button.SecondaryPill:pointerover">
-            <Setter Property="Background" Value="#132B45" />
             <Setter Property="Foreground" Value="#FFFFFF" />
+        </Style>
+        <Style Selector="Button.SecondaryPill:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#132B45" />
+            <Setter Property="BorderBrush" Value="#3E5871" />
+        </Style>
+        <Style Selector="Button.SecondaryPill:pressed">
+            <Setter Property="Foreground" Value="#FFFFFF" />
+        </Style>
+        <Style Selector="Button.SecondaryPill:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#0C1B2E" />
+            <Setter Property="BorderBrush" Value="#0C1B2E" />
         </Style>
 
         <!-- Cards Interativos da Tela Welcome -->
@@ -180,8 +219,12 @@
             <Setter Property="VerticalAlignment" Value="Stretch" />
             <Setter Property="Cursor" Value="Hand" />
         </Style>
-        <Style Selector="Button.WelcomeOptionCard:pointerover">
+        <Style Selector="Button.WelcomeOptionCard:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{StaticResource WelcomeCardHoverBrush}" />
+            <Setter Property="BorderBrush" Value="#005D7F" />
+        </Style>
+        <Style Selector="Button.WelcomeOptionCard:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#0A1E33" />
             <Setter Property="BorderBrush" Value="#005D7F" />
         </Style>
     </Application.Styles>
