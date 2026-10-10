@@ -612,15 +612,26 @@ class Program
                 string? dir = GetArg(args, "--dir");
                 if (string.IsNullOrEmpty(dir) || !Directory.Exists(dir))
                 {
-                    Console.WriteLine("Usage: software-fix mtk-flash --dir <pasta-da-ROM-extraída> [--dry-run] [--only p1,p2] [--slotted] [--fix-boot] [--verify] [--yes]");
+                    Console.WriteLine("Usage: software-fix mtk-flash --dir <pasta-da-ROM-extraída> [--dry-run] [--only p1,p2] [--slotted] [--keep-data] [--fix-boot] [--verify] [--yes]");
                     Console.WriteLine("  Usa o *scatter*.txt da ROM para montar o plano partição→imagem.");
+                    Console.WriteLine("  --keep-data: atualização MANTENDO os dados do cliente (scatter *_reserve_userdata*).");
                     return 1;
                 }
 
-                var plan = MtkFlashPlan.Build(dir, GetArg(args, "--only"), HasFlag(args, "--slotted"));
+                bool keepData = HasFlag(args, "--keep-data");
+                if (keepData && HasFlag(args, "--fix-boot"))
+                {
+                    Console.WriteLine("[-] --keep-data e --fix-boot são incompatíveis: a correção de boot apaga");
+                    Console.WriteLine("    metadata/misc, o que destruiria as chaves dos dados do cliente. Escolha um modo.");
+                    return 1;
+                }
+
+                var plan = MtkFlashPlan.Build(dir, GetArg(args, "--only"), HasFlag(args, "--slotted"), keepData);
                 if (plan.Count == 0)
                 {
-                    Console.WriteLine("[-] Nenhum par partição→imagem encontrado (procurei *scatter*.txt na pasta).");
+                    Console.WriteLine(keepData
+                        ? "[-] Não encontrei o scatter *_reserve_userdata* nesta ROM (necessário para manter os dados)."
+                        : "[-] Nenhum par partição→imagem encontrado (procurei *scatter*.txt na pasta).");
                     return 1;
                 }
 
@@ -633,6 +644,12 @@ class Program
                     Console.WriteLine($"    - {p} ← {Path.GetFileName(f)} ({size / (1024 * 1024)} MB)");
                 }
                 Console.WriteLine($"    TOTAL: {total / (1024 * 1024)} MB");
+                if (keepData)
+                {
+                    Console.WriteLine("    [i] MODO MANTER DADOS: o userdata NÃO será gravado; sem limpezas de boot;");
+                    Console.WriteLine("        o aparelho do cliente mantém fotos, contas e arquivos. Use quando o celular");
+                    Console.WriteLine("        está funcionando e você só quer ATUALIZAR para a ROM mais nova.");
+                }
                 if (HasFlag(args, "--fix-boot"))
                 {
                     Console.WriteLine("    [+] --fix-boot: após o flash: lê misc + apaga metadata + misc + reinicia no sistema (resgate completo em 1 sessão).");
@@ -917,7 +934,8 @@ class Program
         Console.WriteLine("  software-fix mtk-connect               Conecta via PreLoader e lê o GPT (somente leitura)");
         Console.WriteLine("  software-fix mtk-dump [--partitions p1,p2] [--out dir]   Dump (leitura) de partições");
         Console.WriteLine("  software-fix mtk-write-test [--partition mrdump]         Teste de escrita (regrava idêntico + verifica)");
-        Console.WriteLine("  software-fix mtk-flash --dir <rom> [--dry-run] [--fix-boot] [--verify]  Flash das partições via scatter da ROM");
+        Console.WriteLine("  software-fix mtk-flash --dir <rom> [--dry-run] [--keep-data|--fix-boot] [--verify]  Flash via scatter da ROM");
+        Console.WriteLine("      (--keep-data = atualizar mantendo os dados do cliente; --fix-boot = resgate completo)");
         Console.WriteLine("  software-fix mtk-fix-boot              Corrige o estado de boot (misc/metadata) e reinicia no sistema");
         Console.WriteLine("  software-fix mtk-roms                  Lista as ROMs baixadas (pasta de downloads) e o estado");
         Console.WriteLine("  software-fix help                  Show this help message\n");

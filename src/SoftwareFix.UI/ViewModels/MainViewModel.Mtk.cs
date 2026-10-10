@@ -45,12 +45,24 @@ public partial class MainViewModel
     [ObservableProperty] private bool _mtkRunning;
     [ObservableProperty] private bool _mtkCanStart;
     [ObservableProperty] private bool _mtkFixBoot = true;
+    [ObservableProperty] private bool _mtkFixBootEnabled = true;
+    [ObservableProperty] private int _mtkModeIndex; // 0 = resgate completo (apaga); 1 = manter dados do cliente
     [ObservableProperty] private double _mtkProgress;
     [ObservableProperty] private MtkRomEntry? _mtkSelectedRom;
 
     public ObservableCollection<MtkRomEntry> MtkRoms { get; } = new();
 
     partial void OnMtkSelectedRomChanged(MtkRomEntry? value) => UpdateMtkCanStart();
+
+    partial void OnMtkModeIndexChanged(int value)
+    {
+        bool keep = value == 1;
+        if (keep) MtkFixBoot = false;
+        MtkFixBootEnabled = !keep;
+        AddLog(keep
+            ? "[Assistente MTK] Modo: MANTER DADOS do cliente (userdata preservado; correção de boot desativada)."
+            : "[Assistente MTK] Modo: resgate completo (apaga os dados do aparelho).");
+    }
 
     // ============================ COMANDOS ============================
 
@@ -174,17 +186,20 @@ public partial class MainViewModel
         MtkProgress = 0;
         try
         {
-            var plan = MtkFlashPlan.Build(rom.Path, null, false);
+            bool keepData = MtkModeIndex == 1;
+            var plan = MtkFlashPlan.Build(rom.Path, null, false, keepData);
             if (plan.Count == 0)
             {
-                MtkResultText = "ROM sem plano válido (scatter não encontrado ou vazio).";
+                MtkResultText = keepData
+                    ? "ROM sem o scatter *_reserve_userdata* (necessário para manter os dados do cliente)."
+                    : "ROM sem plano válido (scatter não encontrado ou vazio).";
                 AddLog("[Assistente MTK] " + MtkResultText);
                 return;
             }
             long totalBytes = 0;
             foreach (var p in plan) totalBytes += new FileInfo(p.File).Length;
-            AddLog($"[Assistente MTK] Plano: {plan.Count} partições, {totalBytes / (1024L * 1024 * 1024.0):F2} GB — ROM {rom.Name}");
-            if (MtkFixBoot) AddLog("[Assistente MTK] Correção de boot ATIVA (lê misc + apaga metadata/misc + reinicia).");
+            AddLog($"[Assistente MTK] Modo: {(keepData ? "MANTER DADOS do cliente" : "resgate completo")}. Plano: {plan.Count} partições, {totalBytes / (1024L * 1024 * 1024.0):F2} GB — ROM {rom.Name}");
+            if (MtkFixBoot && !keepData) AddLog("[Assistente MTK] Correção de boot ATIVA (lê misc + apaga metadata/misc + reinicia).");
 
             // Passo 1: aguardar a desconexão (se houver algo no USB)
             var t0 = DateTime.Now;
@@ -207,7 +222,7 @@ public partial class MainViewModel
             string script = Path.Combine(runDir, "rescue.script");
 
             var lines = plan.Select(p => $"w {p.Partition} {p.File}").ToList();
-            if (MtkFixBoot)
+            if (MtkFixBoot && !keepData)
             {
                 lines.Add($"r misc {miscPath}");
                 lines.Add("e metadata");
@@ -266,9 +281,11 @@ public partial class MainViewModel
             {
                 MtkProgress = 100;
                 MtkStatusText = "Concluído — o aparelho está reiniciando no sistema.";
-                MtkResultText = "SUCESSO! Resgate/atualização concluído. Aguarde o boot (a primeira inicialização pode demorar alguns minutos).";
+                MtkResultText = keepData
+                    ? "SUCESSO! Atualização concluída com os DADOS DO CLIENTE PRESERVADOS. Aguarde o boot."
+                    : "SUCESSO! Resgate/atualização concluído. Aguarde o boot (a primeira inicialização pode demorar alguns minutos).";
                 AddLog("[Assistente MTK] " + MtkResultText);
-                if (MtkFixBoot && File.Exists(miscPath)) MtkMiscDiag = DiagnoseMiscFile(miscPath);
+                if (MtkFixBoot && !keepData && File.Exists(miscPath)) MtkMiscDiag = DiagnoseMiscFile(miscPath);
             }
             else if (r.Wedged)
             {

@@ -104,6 +104,29 @@ apenas como diagnóstico do gate.
 `mtk-flash --verify` relê as partições gravadas e compara **o prefixo** de cada uma com o
 arquivo da ROM (as imagens costumam ser menores que a partição), reportando OK/DIVERGENTE.
 
+## Modo "manter os dados do cliente" (atualização sem apagar) — paridade com o tool oficial
+
+O resgate oficial tem DUAS variantes de scatter na mesma ROM:
+
+- `MT6768_Android_scatter.txt` → resgate completo (grava o `userdata.img` = aparelho limpo);
+- **`MT6768_Android_scatter_reserve_userdata.txt`** → *"Keep personal data"*: o flash é
+  IDÊNTICO, só que o `userdata` fica `is_download: false` (não é gravado). Nada mais muda.
+
+No port:
+
+    software-fix mtk-flash --dir <rom> --keep-data        # atualização mantendo os dados
+    software-fix mtk-flash --dir <rom> --fix-boot          # resgate completo (apaga)
+
+Regras:
+- `--keep-data` **seleciona automaticamente o scatter `*reserve*`** (se a ROM não tiver,
+  o comando avisa e não prossegue).
+- **`--keep-data` e `--fix-boot` são MUTUAMENTE EXCLUSIVOS** — a correção de boot apaga
+  `metadata`/`misc`, que contêm as chaves de criptografia do userdata: apagá-las com os
+  dados preservados = **dados ilegíveis**. O comando recusa a combinação.
+- Use `--keep-data` apenas em aparelho FUNCIONANDO que você quer atualizar (a ROM deve
+  ser ≥ a versão atual do aparelho). No assistente da GUI, o modo tem a opção
+  "Atualização MANTENDO os dados do cliente" (desativa a correção de boot sozinho).
+
 ## Primeiro boot / resgate do estado de boot (VALIDADO 10/10 no G17)
 
 Aparelho que ficou preso no PreLoader depois do flash (tela preta, loop de `0e8d:2000`):

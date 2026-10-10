@@ -13,10 +13,26 @@ namespace SoftwareFix.Device;
 /// </summary>
 public static class MtkFlashPlan
 {
-    public static List<(string Partition, string File)> Build(string dir, string? onlyCsv, bool slotted)
+    public static List<(string Partition, string File)> Build(string dir, string? onlyCsv, bool slotted, bool keepData = false)
     {
-        var scatter = Directory.EnumerateFiles(dir, "*scatter*.txt", SearchOption.TopDirectoryOnly)
-            .OrderBy(f => f.Length).FirstOrDefault();
+        var candidates = Directory.EnumerateFiles(dir, "*scatter*.txt", SearchOption.TopDirectoryOnly).ToList();
+        string? scatter;
+        if (keepData)
+        {
+            // Modo "manter os dados do cliente": usa o scatter oficial *_reserve_userdata*
+            // (o MESMO flash, com o userdata em is_download:false — igual ao tool oficial).
+            scatter = candidates
+                .Where(f => Path.GetFileName(f).Contains("reserve", StringComparison.OrdinalIgnoreCase))
+                .OrderBy(f => f.Length).FirstOrDefault();
+            if (scatter == null) return new List<(string, string)>(); // chamador avisa: ROM sem scatter reserve
+        }
+        else
+        {
+            scatter = candidates
+                .Where(f => !Path.GetFileName(f).Contains("reserve", StringComparison.OrdinalIgnoreCase))
+                .OrderBy(f => f.Length).FirstOrDefault()
+                ?? candidates.OrderBy(f => f.Length).FirstOrDefault();
+        }
         if (scatter == null) return new List<(string, string)>();
 
         var pairs = ParseScatter(scatter, dir);

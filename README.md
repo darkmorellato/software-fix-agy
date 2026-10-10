@@ -76,6 +76,11 @@ software-fix mtk-flash --dir <pasta-da-ROM-extraída> --fix-boot --verify
 #   → o comando guia o ritual: desconectar o cabo, desligar (Power 20-30s),
 #     reconectar SEGURANDO Volume ↓; depois é só aguardar.
 
+# 1b) ATUALIZAR MANTENDO OS DADOS DO CLIENTE (sem formatar):
+software-fix mtk-flash --dir <pasta-da-ROM-extraída> --keep-data
+#   → usa o scatter oficial *_reserve_userdata* (userdata preservado; sem limpezas).
+#     Use em aparelho funcionando que só precisa da ROM mais nova.
+
 # 2) Se o aparelho já foi gravado mas ficou preso (tela preta/PreLoader):
 software-fix mtk-fix-boot
 ```
