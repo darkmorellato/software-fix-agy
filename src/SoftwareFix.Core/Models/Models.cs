@@ -16,7 +16,7 @@ public class ApiResponse<T>
     public bool Success { get; set; }
 
     [JsonProperty("content")]
-    public T Content { get; set; }
+    public T? Content { get; set; }
 }
 
 public class DeviceRescueInfo
