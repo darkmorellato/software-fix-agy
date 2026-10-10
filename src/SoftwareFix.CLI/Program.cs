@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using SoftwareFix.Core;
 using SoftwareFix.Core.Models;
@@ -304,10 +306,131 @@ class Program
                 return 0;
             }
 
+            case "odm-server":
+            {
+                string? imei = GetArg(args, "--imei");
+                if (string.IsNullOrEmpty(imei))
+                {
+                    Console.WriteLine("Usage: software-fix odm-server --imei <IMEI> [--user <usuário>] [--port <porta>]");
+                    Console.WriteLine("  Servidor local de assinatura ODM (\"GPS auth\") em 127.0.0.1:5000 —");
+                    Console.WriteLine("  usado no resgate de modelos Motorola MediaTek (handshake SLA do fastboot).");
+                    return 1;
+                }
+
+                string? user = GetArg(args, "--user") ?? Environment.GetEnvironmentVariable("SOFTWARE_FIX_ODM_USER");
+                if (string.IsNullOrEmpty(user))
+                {
+                    Console.Write("[*] Usuário do serviço (conta Motorola): ");
+                    user = Console.ReadLine()?.Trim();
+                }
+                string? password = Environment.GetEnvironmentVariable("SOFTWARE_FIX_ODM_PASSWORD");
+                if (string.IsNullOrEmpty(password))
+                {
+                    password = PromptPassword("[*] Senha do serviço (não aparece na tela): ");
+                }
+                if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))
+                {
+                    Console.WriteLine("[-] Usuário e senha do serviço são obrigatórios (a assinatura usa a conta Motorola).");
+                    return 1;
+                }
+
+                int port = int.TryParse(GetArg(args, "--port") ?? Environment.GetEnvironmentVariable("SOFTWARE_FIX_ODM_PORT"), out int parsedPort)
+                    ? parsedPort
+                    : OdmSocketServer.DefaultPort;
+
+                using var cts = new CancellationTokenSource();
+                Console.CancelKeyPress += (_, e) => { e.Cancel = true; cts.Cancel(); };
+
+                Console.WriteLine($"[*] IMEI: {imei}");
+                Console.WriteLine($"[*] Servidor ODM no ar em 127.0.0.1:{port} (Ctrl+C encerra).");
+                Console.WriteLine("[*] Deixe este processo rodando durante o resgate — o lado fastboot conecta aqui para assinar o hash (SLA).");
+                var odmServer = new OdmSocketServer(imei, user!, password!, port);
+                await odmServer.RunAsync(cts.Token);
+                return 0;
+            }
+
+            case "odm-sign":
+            {
+                string? imei = GetArg(args, "--imei");
+                if (string.IsNullOrEmpty(imei))
+                {
+                    Console.WriteLine("Usage: software-fix odm-sign --imei <IMEI> [--data <hash-hex>] [--user <usuário>]");
+                    Console.WriteLine("  Testa o contrato de assinatura ODM contra o serviço real da Motorola.");
+                    return 1;
+                }
+                string data = GetArg(args, "--data") ?? new string('0', 64);
+
+                string? user = GetArg(args, "--user") ?? Environment.GetEnvironmentVariable("SOFTWARE_FIX_ODM_USER");
+                if (string.IsNullOrEmpty(user))
+                {
+                    Console.Write("[*] Usuário do serviço (conta Motorola): ");
+                    user = Console.ReadLine()?.Trim();
+                }
+                string? password = Environment.GetEnvironmentVariable("SOFTWARE_FIX_ODM_PASSWORD");
+                if (string.IsNullOrEmpty(password))
+                {
+                    password = PromptPassword("[*] Senha do serviço (não aparece na tela): ");
+                }
+                if (string.IsNullOrEmpty(user) || string.IsNullOrEmpty(password))
+                {
+                    Console.WriteLine("[-] Usuário e senha do serviço são obrigatórios.");
+                    return 1;
+                }
+
+                Console.WriteLine($"[*] Assinando hash de teste com IMEI {imei}... (sem --data: 64 zeros)");
+                var odmClient = new OdmSigningClient(user!, password) { Log = Console.WriteLine };
+                try
+                {
+                    string signed = await odmClient.SignDataWithRetryAsync(
+                        imei, OdmSocketServer.DefaultMascId, OdmSocketServer.ClientIp, OdmSocketServer.DefaultClientReqType,
+                        OdmSocketServer.DefaultLogId, OdmSocketServer.DefaultProdId, OdmSocketServer.DefaultKeyType,
+                        OdmSocketServer.DefaultKeyName, data);
+                    Console.WriteLine($"[+] ASSINATURA RECEBIDA: {signed.Length} chars hex = {signed.Length / 2} bytes.");
+                    Console.WriteLine("    " + signed[..Math.Min(80, signed.Length)] + (signed.Length > 80 ? "..." : ""));
+                    return 0;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[!] Falha na assinatura: {ex.Message}");
+                    return 1;
+                }
+            }
+
             default:
                 PrintUsage();
                 return 1;
         }
+    }
+
+    static string? GetArg(string[] args, string name)
+    {
+        for (int i = 1; i < args.Length - 1; i++)
+        {
+            if (args[i].Equals(name, StringComparison.OrdinalIgnoreCase)) return args[i + 1];
+        }
+        return null;
+    }
+
+    static string PromptPassword(string prompt)
+    {
+        Console.Write(prompt);
+        if (Console.IsInputRedirected)
+        {
+            return Console.ReadLine()?.Trim() ?? string.Empty;
+        }
+        var sb = new StringBuilder();
+        while (true)
+        {
+            ConsoleKeyInfo key = Console.ReadKey(intercept: true);
+            if (key.Key == ConsoleKey.Enter) { Console.WriteLine(); break; }
+            if (key.Key == ConsoleKey.Backspace)
+            {
+                if (sb.Length > 0) { sb.Length--; Console.Write("\b \b"); }
+                continue;
+            }
+            if (!char.IsControl(key.KeyChar)) { sb.Append(key.KeyChar); Console.Write('*'); }
+        }
+        return sb.ToString();
     }
 
     static void PrintUsage()
@@ -319,6 +442,8 @@ class Program
         Console.WriteLine("  software-fix flash <flashfile.xml> Flash firmware using Motorola fastboot steps");
         Console.WriteLine("  software-fix login                 Autenticar com Lenovo ID (OAuth) e salvar a sessão");
         Console.WriteLine("  software-fix api-test              Testar os contratos da API Lenovo (smoke test)");
+        Console.WriteLine("  software-fix odm-server --imei <IMEI>  Servidor de assinatura ODM (SLA/MediaTek) em 127.0.0.1:5000");
+        Console.WriteLine("  software-fix odm-sign --imei <IMEI>    Testa a assinatura ODM contra o serviço da Motorola");
         Console.WriteLine("  software-fix help                  Show this help message\n");
     }
 }

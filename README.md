@@ -64,11 +64,12 @@ Depois:
 
 ### Limitações conhecidas
 
-* **Modelos Motorola MediaTek recentes** (ex.: Moto G17, G24, G34, G54, G84) exigem
-  uma etapa de **autenticação por assinatura** no resgate (o "GPS auth" / `SLA_Challenge`
-  do app oficial — handshake `ODMSocketServer` + `DataSignODM` em
-  `ebiz-esb.cloud.motorola.net`). Essa etapa ainda **não** está implementada neste port;
-  aparelhos Qualcomm (fluxo testado) não a utilizam.
+* **Modelos Motorola MediaTek recentes** (ex.: Moto G17, G24, G34, G54, G84): a
+  **autenticação por assinatura** do resgate ("GPS auth" / `SLA_Challenge`) está
+  **implementada no port** — `software-fix odm-server` / `odm-sign` (detalhes em
+  `docs/ODM_SLA_AUTH.md`) — mas ainda **não validada em aparelho real** e **não
+  integrada** ao fluxo automático de flash (o cliente do socket usado pelo fluxo
+  oficial segue em investigação). Aparelhos Qualcomm (fluxo testado) não a utilizam.
 
 ---
 

@@ -51,7 +51,19 @@ pendentes para execução com o aparelho real.
       fastboot + ROM oficial → acompanhar o log: cada partição deve ser gravada na
       mesma ordem do app oficial; conferir o encerramento com reboot.
 
-## 5. Extras de verificação
+## 5. Autenticação ODM/SLA (MediaTek — "GPS auth")
+
+* [x] **Servidor + cliente (offline, real)**: `python3 tests/odm/test_odm_e2e.py`
+      → sonda `IsRunning`→`0`, assinatura → 512 bytes (256 da assinatura + zeros),
+      contrato do POST (campos/auth Basic) conferido campo a campo, falha → zeros ✔
+* [ ] **Contrato ao vivo (pendente)**: `software-fix odm-sign --imei <IMEI>` com a
+      conta de serviço — o host `ebiz-esb.cloud.motorola.net` não resolve publicamente
+      (ver `docs/ODM_SLA_AUTH.md` §3).
+* [ ] **Com aparelho MediaTek em fastboot (pendente)**: rodar `software-fix odm-server`
+      durante o resgate e instalar a assinatura com `fastboot signature <arquivo>` —
+      validar o desbloqueio do flash no bootloader.
+
+## 6. Extras de verificação
 
 * [x] Build da solução completa (6 projetos): **0 erros, 0 warnings**
 * [x] Interface Avalonia: abre e executa sem exceções (smoke de 8 s)
@@ -79,4 +91,9 @@ dotnet run --project src/SoftwareFix.CLI -- scan
 dotnet run --project src/SoftwareFix.CLI -- login        # autentica via Lenovo ID (navegador)
 dotnet run --project src/SoftwareFix.CLI -- match        # consulta firmware oficial
 dotnet run --project src/SoftwareFix.CLI -- flash <rom>/flashfile.xml
+
+# 4) Autenticação ODM/SLA (MediaTek)
+python3 tests/odm/test_odm_e2e.py          # e2e offline (mock do serviço Motorola)
+software-fix odm-sign --imei <IMEI>        # contrato ao vivo (conta de serviço)
+software-fix odm-server --imei <IMEI>      # servidor durante o resgate MTK
 ```
