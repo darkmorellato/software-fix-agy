@@ -9,7 +9,8 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 DIST_DIR="$ROOT_DIR/dist"
 
-mkdir -p "$DIST_DIR"
+mkdir -p "$DIST_DIR/cli" "$DIST_DIR/ui"
+rm -f "$DIST_DIR/cli/SoftwareFix.CLI" "$DIST_DIR/ui/SoftwareFix.UI"
 
 echo "[1/3] Publicando SoftwareFix.CLI (Console)..."
 dotnet publish "$ROOT_DIR/src/SoftwareFix.CLI/SoftwareFix.CLI.csproj" \
