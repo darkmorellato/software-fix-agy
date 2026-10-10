@@ -104,6 +104,29 @@ apenas como diagnóstico do gate.
 `mtk-flash --verify` relê as partições gravadas e compara **o prefixo** de cada uma com o
 arquivo da ROM (as imagens costumam ser menores que a partição), reportando OK/DIVERGENTE.
 
+## Primeiro boot / resgate do estado de boot (VALIDADO 10/10 no G17)
+
+Aparelho que ficou preso no PreLoader depois do flash (tela preta, loop de `0e8d:2000`):
+a causa observada foi o **bloco de controle de slot corrompido no `misc`** (magic `BCAB`
+em `0x804` com sufixo ativo ilegível + contadores zerados + CRC 0 → o bootloader não acha
+nenhum slot válido e morre em silêncio) + `metadata` velho. Receita que resgatou o aparelho:
+
+    r misc <arquivo>      # diagnóstico: sadio = boot_slot "a" + successful 1 + CRC ok
+    e metadata            # o "format" do DA FUNCIONA mesmo no DA FORBID (64MB)
+    e misc                # limpar o bloco corrompido → bootloader cai no default (slot A)
+    reset                 # reboot em bootmode=1 (sistema) — ou power cycle manual
+
+Achados relevantes:
+- O `e`/format do DA **não passa pelo gate de assinatura** — dá para apagar partições
+  mesmo em DA "FORBID" (foi o que salvou: metadata + misc).
+- Fastboot inalcançável ≠ fim: este caminho via DA substitui os passos
+  `fastboot set_active a` / `erase metadata` / `erase misc` do fluxo oficial.
+- Preloader: o tool oficial grava `preloader` **e** `preloader_backup` (região
+  EMMC_BOOT1/BOOT2; nomes não aparecem no GPT/DA). Exigem o **arm**
+  `CC_START_DL_INFO` (0x80001) antes — sem ele o DA recusa com `0xc0010001`
+  (env `SOFTWARE_FIX_MTK_DL_ARM=1`). `CC_SET_HOST_INFO` = recusado (`0xc0010004`,
+  "not supported") e o tool oficial segue do mesmo jeito.
+
 ## Limitações desta versão (v1)
 
 - `mtk-flash` **não regrava `preloader` nem a tabela (`PGPT`)** por segurança.

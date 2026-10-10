@@ -172,4 +172,46 @@ patch(
     "mtk_da_handler: rota download no da_write",
 )
 
-print("[*] Concluído. Use SOFTWARE_FIX_MTK_DOWNLOAD=1 com o DA 'FORBID' ao gravar.")
+# --- 4) reset com bootmode configurável (ex.: mandar para fastboot) -----------
+OLD_RESET = '''            mtk.daloader.shutdown(bootmode=0)
+            print("Reset command was sent. Disconnect usb cable to power off.")'''
+NEW_RESET = '''            # bootmode via env: 0=shutdown (padrão), 1=home screen, 2=FASTBOOT
+            # (usado pelo port para mandar o aparelho ao fastboot sem combinação de botões)
+            _bootmode = int(os.environ.get("SOFTWARE_FIX_MTK_BOOTMODE", "0"))
+            mtk.daloader.shutdown(bootmode=_bootmode)
+            print(f"Reset command was sent (bootmode={_bootmode}). Disconnect usb cable to power off.")'''
+patch(
+    DAH,
+    OLD_RESET,
+    NEW_RESET,
+    'SOFTWARE_FIX_MTK_BOOTMODE',
+    "mtk_da_handler: reset com bootmode via env",
+)
+
+# --- 5) arming de download (CC_START_DL_INFO) no caminho download -------------
+OLD_ARM = '''        if (os.environ.get("SOFTWARE_FIX_MTK_DOWNLOAD") == "1"
+                and hasattr(self.mtk.daloader.da, "download_partition")):
+            for partition, partfilename in zip(partitions, filenames):'''
+NEW_ARM = '''        if (os.environ.get("SOFTWARE_FIX_MTK_DOWNLOAD") == "1"
+                and hasattr(self.mtk.daloader.da, "download_partition")):
+            # Coreografia do tool oficial (trace GLB, "DOWNLOAD START"): DEVICE_CTRL +
+            # CC_START_DL_INFO (0x80001) "arma" o download — sem isso o DA recusa a
+            # gravação do preloader com 0xc0010001. Ativado por SOFTWARE_FIX_MTK_DL_ARM=1.
+            if os.environ.get("SOFTWARE_FIX_MTK_DL_ARM") == "1":
+                da = self.mtk.daloader.da
+                try:
+                    resp = da.send_devctrl(da.cmd.START_DL_INFO)
+                    print(f"Download armed (START_DL_INFO ok, resp={resp!r})")
+                except Exception as ex:
+                    print(f"[!] arm START_DL_INFO: {ex}")
+            for partition, partfilename in zip(partitions, filenames):'''
+patch(
+    DAH,
+    OLD_ARM,
+    NEW_ARM,
+    'SOFTWARE_FIX_MTK_DL_ARM',
+    "mtk_da_handler: arming START_DL_INFO no download",
+)
+
+print("[*] Concluído. Use SOFTWARE_FIX_MTK_DOWNLOAD=1 com o DA 'FORBID' ao gravar;")
+print("    SOFTWARE_FIX_MTK_DL_ARM=1 para preloader; SOFTWARE_FIX_MTK_BOOTMODE=2→fastboot, 1→sistema.")
