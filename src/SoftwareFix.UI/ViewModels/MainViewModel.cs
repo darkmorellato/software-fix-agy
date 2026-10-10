@@ -304,6 +304,9 @@ public partial class MainViewModel : ViewModelBase
             {
                 AddLog("[Nuvem] Modo offline ativo ou conexão aguardando restabelecimento.");
             }
+
+            // Tela inicial de login (quando ainda não há sessão salva)
+            AutoOpenLoginIfNeeded();
         });
     }
 
@@ -342,9 +345,28 @@ public partial class MainViewModel : ViewModelBase
 
     private void InitializeCatalogModels()
     {
-        // Seed common Motorola devices for instant offline manual match
+        // Lista local (fallback offline). Quando o app tem internet, o catálogo OFICIAL
+        // completo (linha Brasil) é baixado com acesso de convidado (guestLogin) e
+        // substitui esta lista — ver LoadOfficialCatalogAsync.
         var seeds = new[]
         {
+            // Linha 2025–2026 (modelos de loja)
+            new DeviceModelInfoModel { MarketName = "moto g17", ModelName = "XT2623-1", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "moto g06", ModelName = "XT2535", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "moto g06 power", ModelName = "XT2535-13", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "moto g56 5G", ModelName = "XT2529", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "moto g57", ModelName = "XT2537", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "moto g67", ModelName = "XT2621", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "moto g05", ModelName = "XT2523", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "edge 60 fusion", ModelName = "XT2503", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "edge 60", ModelName = "XT2505", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "edge 60 pro", ModelName = "XT2507", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "edge 60 neo", ModelName = "XT2509-1", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "edge 60 stylus", ModelName = "XT2517-4", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "edge 70", ModelName = "XT2601", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "edge 70 fusion", ModelName = "XT2605", HwCode = "" },
+            new DeviceModelInfoModel { MarketName = "edge (2025)", ModelName = "XT2519", HwCode = "" },
+            // Linha 2024
             new DeviceModelInfoModel { MarketName = "moto g54 5G", ModelName = "XT2343-1", HwCode = "PAYW" },
             new DeviceModelInfoModel { MarketName = "moto g84 5G", ModelName = "XT2347-2", HwCode = "PAYW" },
             new DeviceModelInfoModel { MarketName = "moto g24", ModelName = "XT2423-1", HwCode = "PAYW" },
@@ -368,7 +390,26 @@ public partial class MainViewModel : ViewModelBase
     {
         try
         {
+            // Catálogo completo SEM Lenovo ID: usa o LOGIN DE CONVIDADO (guestLogin) —
+            // é o que o app oficial faz para listar os modelos de uma região.
+            if (!_api.HasSession)
+            {
+                AddLog("[Nuvem] Sem sessão Lenovo — obtendo acesso de convidado (catálogo de modelos)...");
+                var guest = await _api.GuestLoginAsync(_api.ClientUuid);
+                AddLog(guest.Success
+                    ? "[Nuvem] Acesso de convidado OK."
+                    : $"[Nuvem] Acesso de convidado indisponível ({guest.Desc}) — mantendo a lista local.");
+            }
+
             var res = await _api.GetAllModelNamesAsync("Phone");
+
+            // token velho/expirado? renova como convidado e tenta de novo (uma vez).
+            if (res == null || res.ModelList.Count == 0)
+            {
+                var renew = await _api.GuestLoginAsync(_api.ClientUuid);
+                if (renew.Success) res = await _api.GetAllModelNamesAsync("Phone");
+            }
+
             if (res != null && res.ModelList.Count > 0)
             {
                 Avalonia.Threading.Dispatcher.UIThread.Post(() =>

@@ -304,6 +304,33 @@ class Program
                 {
                     Console.WriteLine("    [i] Sem sessão salva — rode 'software-fix login' para autenticar.");
                 }
+
+                Console.WriteLine("[*] Teste 5: login de CONVIDADO + catálogo de modelos (getModelNames)");
+                var guestClient = new LenovoApiClient();
+                await guestClient.FetchPublicKeyAsync();
+                var guest = await guestClient.GuestLoginAsync(guestClient.ClientUuid);
+                Console.WriteLine(guest.Success
+                    ? "    [+] guestLogin OK — token de convidado obtido"
+                    : $"    [-] guestLogin: code={guest.Code} desc={guest.Desc}");
+                if (guest.Success)
+                {
+                    var catalog = await guestClient.GetAllModelNamesAsync("Phone");
+                    Console.WriteLine(catalog != null && catalog.ModelList.Count > 0
+                        ? $"    [+] Catálogo oficial recebido: {catalog.ModelList.Count} modelos Motorola (Brasil)"
+                        : "    [-] Catálogo vazio/falhou (a GUI usa a lista local como fallback).");
+                }
+
+                Console.WriteLine("[*] Teste 6: bootstrap /client/initToken.jhtml (token inicial)");
+                var initClient = new LenovoApiClient();
+                await initClient.FetchPublicKeyAsync();
+                var init = await initClient.InitTokenAsync();
+                Console.WriteLine($"    [i] initToken: code={init.Code} desc={init.Desc}");
+                if (init.Content != null)
+                {
+                    string preview = init.Content.ToString()!;
+                    string shown = preview.Length > 160 ? preview.Substring(0, 160) + "..." : preview;
+                    Console.WriteLine($"    [i] conteúdo: {shown}");
+                }
                 return 0;
             }
 

@@ -100,6 +100,10 @@
 
                 <!-- Ícones Utilitários no Topo Direito -->
                 <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" Margin="0,0,16,0">
+                    <Button Classes="SecondaryPill" Command="{Binding OpenLoginScreenCommand}" ToolTip.Tip="Entrar / Conta Lenovo ID">
+                        <PathIcon Data="{StaticResource IconPerson}" Width="14" Height="14" Foreground="#9FAEBF" />
+                    </Button>
+
                     <Button Classes="SecondaryPill" Command="{Binding ToggleLogsDrawerCommand}" ToolTip.Tip="Console de Logs">
                         <PathIcon Data="{StaticResource IconTerminal}" Width="14" Height="14" Foreground="#9FAEBF" />
                     </Button>
@@ -1056,6 +1060,48 @@
                         </StackPanel>
                     </Grid>
                 </Grid>
+            </Grid>
+
+            <!-- ============================================================== -->
+            <!-- TELA INICIAL DE LOGIN — LENOVO ID / GOOGLE                     -->
+            <!-- ============================================================== -->
+            <Grid IsVisible="{Binding IsLoginOpen}" Background="#001429" ZIndex="105">
+                <Border Width="560" Background="#0C233B" CornerRadius="16" BorderBrush="#1B3855" BorderThickness="1"
+                        Padding="28" VerticalAlignment="Center" HorizontalAlignment="Center" BoxShadow="0 12 40 #00000090">
+                    <StackPanel Spacing="13">
+                        <StackPanel Spacing="6" HorizontalAlignment="Center">
+                            <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="40" Height="40" />
+                            <TextBlock Text="Entrar no Software Fix" FontSize="22" FontWeight="Bold" Foreground="#FFFFFF" HorizontalAlignment="Center" />
+                            <TextBlock Text="{Binding LoginWelcomeText}" FontSize="12" Foreground="#9FAEBF" TextAlignment="Center" TextWrapping="Wrap" />
+                        </StackPanel>
+
+                        <Border Height="1" Background="#1B3855" />
+
+                        <TextBlock Text="1. Abra a página de login no navegador e entre com sua conta Google / Lenovo ID:" FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
+                        <Button Classes="ActionPill" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                                Command="{Binding OpenLoginInBrowserCommand}" IsEnabled="{Binding !LoginBusy}">
+                            <TextBlock Text="Abrir página de login no navegador" FontWeight="Bold" />
+                        </Button>
+                        <TextBox Text="{Binding LoginUrlText}" IsReadOnly="True" FontSize="10" MinHeight="30"
+                                 Background="#061628" Foreground="#9FAEBF" BorderBrush="#1B3855" TextWrapping="NoWrap" />
+
+                        <TextBlock Text="2. No navegador, faça login — você chegará numa página de SUCESSO do Lenovo ID." FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
+                        <TextBlock Text="3. Copie a URL COMPLETA dessa página (contém lenovoid.wust=...) e cole abaixo:" FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
+                        <TextBox Text="{Binding LoginPastedText}" Watermark="Cole aqui a URL da página de sucesso (ou apenas o código wust)"
+                                 Background="#061628" Foreground="#FFFFFF" BorderBrush="#25476D" Padding="10" FontSize="12" />
+
+                        <Button Classes="ActionPill" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                                Command="{Binding ValidateLoginCommand}" IsEnabled="{Binding !LoginBusy}">
+                            <TextBlock Text="Validar login" FontWeight="Bold" />
+                        </Button>
+
+                        <TextBlock Text="{Binding LoginStatusText}" FontSize="12" Foreground="#40A995" TextWrapping="Wrap" />
+
+                        <Button Classes="SecondaryPill" HorizontalAlignment="Center" Command="{Binding CloseLoginScreenCommand}">
+                            <TextBlock Text="Continuar sem conta (modo local)" FontSize="12" />
+                        </Button>
+                    </StackPanel>
+                </Border>
             </Grid>
 
             <!-- ============================================================== -->

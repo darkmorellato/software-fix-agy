@@ -62,7 +62,8 @@ public class LenovoApiClient
         "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.79 Safari/537.36";
 
     private static readonly Regex WustRegex = new(
-        @"lenovoid\.wust=([^&]+)|lenovoid\.wust=(.*?)(?=&|$)", RegexOptions.IgnoreCase);
+        @"lenovoid\.wust=(?<token>[^&\s]+)|(?<=\?|&)Authorization=(?<token>[^&\s]+)|(?<=\?|&)wust=(?<token>[^&\s]+)",
+        RegexOptions.IgnoreCase);
 
     private readonly HttpClient _http;
     private RSA? _rsaPublicKey;
@@ -72,6 +73,7 @@ public class LenovoApiClient
 
     public string? JwtToken => _jwtToken;
     public bool HasSession => !string.IsNullOrEmpty(_jwtToken);
+    public string ClientUuid => _clientUuid;
 
     public LenovoApiClient(HttpClient? httpClient = null)
     {
@@ -208,19 +210,6 @@ public class LenovoApiClient
         response.Dispose();
     }
 
-    /// <summary>Não utilizado pelo app oficial; mantido para investigação.</summary>
-    public async Task InitTokenAsync()
-    {
-        var response = await SendWithRetryAsync(HttpMethod.Post, WebApiUrl.INIT_TOKEN,
-            new { clientUUID = _clientUuid }, authorize: false);
-        if (response.IsSuccessStatusCode)
-        {
-            var json = JObject.Parse(await response.Content.ReadAsStringAsync());
-            _jwtToken = json["content"]?["token"]?.ToString() ?? json["content"]?.ToString();
-        }
-        response.Dispose();
-    }
-
     // ------------------------------------------------------------------
     // Fluxo de login Lenovo ID (OAuth + PKCE)
     // ------------------------------------------------------------------
@@ -297,10 +286,8 @@ public class LenovoApiClient
         var m = WustRegex.Match(input);
         if (m.Success)
         {
-            string keyed = m.Groups["token"]?.Success == true && m.Groups["token"].Value.Length > 0
-                ? m.Groups["token"].Value
-                : m.Groups[2].Value;
-            return keyed.Trim();
+            string keyed = m.Groups["token"].Value;
+            if (!string.IsNullOrEmpty(keyed)) return keyed.Trim();
         }
         // sem parâmetro: assume que já é o token (sem espaços/URL)
         string trimmed = input.Trim();
@@ -329,6 +316,19 @@ public class LenovoApiClient
             _jwtToken = json["content"]!["token"]!.ToString();
             SaveSession();
         }
+        return result;
+    }
+
+    /// <summary>
+    /// POST /client/initToken.jhtml {clientUUID} — token inicial de bootstrap do cliente
+    /// (o app oficial obtém este token antes de operações sem login de usuário).
+    /// </summary>
+    public async Task<ApiResponse> InitTokenAsync()
+    {
+        var json = await PostJsonAsync(WebApiUrl.INIT_TOKEN, new { clientUUID = _clientUuid }, authorize: true);
+        var result = new ApiResponse(json);
+        if (json["content"] != null)
+            result.Content = json["content"];
         return result;
     }
 
@@ -637,16 +637,29 @@ public class LenovoApiClient
         request.Headers.Add("language", "pt-BR");
         request.Headers.Add("clientUUID", _clientUuid);
 
-        // Authorization + fingerprint
-        string? authHeaderValue = null;
-        if (authorize && !string.IsNullOrEmpty(_jwtToken))
+        // Authorization + fingerprint.
+        // IMPORTANTE: o guestLogin (catálogo sem Lenovo ID) precisa do fingerprint MESMO
+        // sem token — por isso o fingerprint é anexado sempre que authorize=true (com o
+        // header Authorization vazio quando não há sessão), igual ao fluxo pós-hit do SDK.
+        if (authorize)
         {
-            authHeaderValue = "Bearer " + _jwtToken;
-            request.Headers.TryAddWithoutValidation("Authorization", authHeaderValue);
+            string authHeaderValue = "";
+            if (!string.IsNullOrEmpty(_jwtToken))
+            {
+                authHeaderValue = "Bearer " + _jwtToken;
+                request.Headers.TryAddWithoutValidation("Authorization", authHeaderValue);
+            }
             if (_rsaPublicKey != null && url != WebApiUrl.GET_PUBLIC_KEY)
             {
-                string fingerprint = RsaHelper.GenerateDeviceFingerprint(_rsaPublicKey, authHeaderValue, url);
-                request.Headers.Add("X-Device-Fingerprint", fingerprint);
+                try
+                {
+                    string fingerprint = RsaHelper.GenerateDeviceFingerprint(_rsaPublicKey, authHeaderValue, url);
+                    request.Headers.Add("X-Device-Fingerprint", fingerprint);
+                }
+                catch
+                {
+                    // sem fingerprint: o servidor responderá 410 (comportamento anterior)
+                }
             }
         }
 
