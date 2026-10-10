@@ -1,7 +1,7 @@
 [Desktop Entry]
 Name=Software Fix
 Comment=Lenovo & Motorola Rescue and Smart Assistant
-Exec=SoftwareFix.UI
+Exec=software-fix-ui
 Terminal=false
 Type=Application
 Icon=software-fix

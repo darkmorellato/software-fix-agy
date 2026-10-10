@@ -19,54 +19,30 @@ O projeto foi decomposto em bibliotecas limpas e modulares que eliminam todas as
 
 ---
 
-## 🛠️ Requisitos no Linux
+## 🛠️ Instalação (todas as distros Linux)
 
-1. **.NET 8 SDK ou Runtime**:
-   ```bash
-   # Ubuntu/Debian:
-   sudo apt install -y dotnet-sdk-8.0 android-tools-adb android-tools-fastboot
+> 📖 **Guia completo** (Ubuntu, Debian, Mint, Fedora, Arch, CachyOS, Manjaro, openSUSE e mais — com tabelas de dependências por distro, regras USB e troubleshooting): **[INSTALL.md](INSTALL.md)**
 
-   # Fedora:
-   sudo dnf install -y dotnet-sdk-8.0 android-tools
+**Instalação rápida** (requer apenas o .NET 8 SDK — veja o INSTALL.md para instalar por distro):
 
-   # Arch Linux:
-   sudo pacman -S dotnet-sdk android-tools
-   ```
-
-2. **Regras udev (Permissões de USB sem root)**:
-   Para que o Fastboot e o ADB acessem as portas USB do Motorola/Lenovo sem exigir `sudo`:
-   ```bash
-   sudo cp udev/51-motorola-lenovo.rules /etc/udev/rules.d/
-   sudo udevadm control --reload-rules && sudo udevadm trigger
-   sudo usermod -aG plugdev $USER
-   ```
-
----
-
-## 📦 Como Compilar e Executar
-
-### 1. Executar a Interface Gráfica (Desktop):
 ```bash
-cd src/SoftwareFix.UI
-dotnet run
+git clone https://github.com/darkmorellato/software-fix-agy.git
+cd software-fix-agy
+./scripts/install-user.sh --with-udev   # compila, instala no ~/.local e configura o USB
 ```
 
-### 2. Executar a Ferramenta CLI:
-```bash
-cd src/SoftwareFix.CLI
-dotnet run -- scan
-dotnet run -- match
-dotnet run -- flash /caminho/para/flashfile.xml
-```
+Depois:
+- **GUI:** `software-fix-ui` (ou no menu de aplicativos → "Software Fix")
+- **CLI:** `software-fix --help`
 
-### 3. Gerar Binários Autônomos (Self-Contained) para Linux:
+**Sem instalar** (execução direta da pasta do projeto):
 ```bash
-chmod +x scripts/build-linux.sh
 ./scripts/build-linux.sh
+./dist/ui/SoftwareFix.UI                # GUI
+./dist/cli/SoftwareFix.CLI api-test     # CLI (teste de contrato ao vivo)
 ```
-Os executáveis prontos serão gerados na pasta `dist/`:
-- `dist/ui/SoftwareFix.UI` (Interface Desktop)
-- `dist/cli/SoftwareFix.CLI` (Linha de Comando)
+
+**Diagnóstico do ambiente USB:** `./scripts/check_device_env.sh`
 
 ---
 
@@ -85,6 +61,14 @@ Os executáveis prontos serão gerados na pasta `dist/`:
   checklist completo em `docs/HOMOLOGACAO.md`.
 * **Referência de engenharia reversa** — código descompilado em `src_decompiled/`
   (6.282 `.cs` + 358 `.xaml` + assets; relatório em `docs/RELATORIO_DESCOMPILACAO.md`).
+
+### Limitações conhecidas
+
+* **Modelos Motorola MediaTek recentes** (ex.: Moto G17, G24, G34, G54, G84) exigem
+  uma etapa de **autenticação por assinatura** no resgate (o "GPS auth" / `SLA_Challenge`
+  do app oficial — handshake `ODMSocketServer` + `DataSignODM` em
+  `ebiz-esb.cloud.motorola.net`). Essa etapa ainda **não** está implementada neste port;
+  aparelhos Qualcomm (fluxo testado) não a utilizam.
 
 ---
 
