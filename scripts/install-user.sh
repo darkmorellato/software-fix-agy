@@ -95,13 +95,14 @@ echo "[4/5] Instalando ícone e atalho no menu de aplicativos..."
 if [ -f "$ROOT_DIR/src/SoftwareFix.UI/Assets/software-fix.png" ]; then
     SRC_ICON="$ROOT_DIR/src/SoftwareFix.UI/Assets/software-fix.png"
     install -m 0644 "$SRC_ICON" "$ICON_DIR/software-fix.png"
-    # gera os demais tamanhos (menus, docks e lançadores pedem vários)
+    # gera os demais tamanhos (menus, docks e lançadores pedem 16..512; PNG32 evita
+    # paletas quantizadas que alguns lançadores renderizam como "ícone quebrado")
     if command -v magick >/dev/null 2>&1 || command -v convert >/dev/null 2>&1; then
         MAGICK="$(command -v magick || command -v convert)"
-        for s in 512 128 64 48 32 16; do
+        for s in 512 256 128 96 64 48 32 24 22 16; do
             d="$HOME/.local/share/icons/hicolor/${s}x${s}/apps"
             mkdir -p "$d"
-            "$MAGICK" "$SRC_ICON" -resize "${s}x${s}" "$d/software-fix.png" 2>/dev/null || true
+            "$MAGICK" "$SRC_ICON" -resize "${s}x${s}" -strip PNG32:"$d/software-fix.png" 2>/dev/null || true
         done
     fi
     command -v gtk-update-icon-cache >/dev/null 2>&1 && gtk-update-icon-cache -f -t "$HOME/.local/share/icons/hicolor" >/dev/null 2>&1 || true
@@ -114,10 +115,11 @@ fi
 for theme in Papirus Papirus-Dark breeze breeze-dark Adwaita; do
     if [ -d "/usr/share/icons/$theme" ] && [ -f "$HOME/.local/share/icons/hicolor/256x256/apps/software-fix.png" ]; then
         [ -f "$HOME/.local/share/icons/$theme/index.theme" ] || cp "/usr/share/icons/$theme/index.theme" "$HOME/.local/share/icons/$theme/" 2>/dev/null || true
-        for s in 48x48 64x64 128x128 256x256; do
+        for s in 256x256 128x128 64x64 48x48 32x32 24x24 22x22 16x16; do
             d="$HOME/.local/share/icons/$theme/$s/apps"
             mkdir -p "$d"
-            cp -f "$HOME/.local/share/icons/hicolor/$s/apps/software-fix.png" "$d/software-fix.png"
+            hb="$HOME/.local/share/icons/hicolor/$s/apps/software-fix.png"
+            [ -f "$hb" ] && cp -f "$hb" "$d/software-fix.png"
         done
         command -v gtk-update-icon-cache >/dev/null 2>&1 && gtk-update-icon-cache -f -t "$HOME/.local/share/icons/$theme" >/dev/null 2>&1 || true
     fi
