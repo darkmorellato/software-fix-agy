@@ -5,9 +5,26 @@ namespace SoftwareFix.Core;
 
 public static class Configurations
 {
-    public const string Version = "7.6.2-linux";
+    public const string Version = "7.4.2.13";
     public const string BaseHttpUrl = "https://lsa.lenovo.com";
-    public static string ServiceInterfaceUrl => BaseHttpUrl;
+    public static string ServiceInterfaceUrl => BaseHttpUrl + "/Interface";
+
+    // Official Web Service Endpoints (from WebApiUrl.cs and WebServicesContext.cs)
+    public static string UrlPublicKey => ServiceInterfaceUrl + "/common/rsa.jhtml";
+    public static string UrlInitToken => ServiceInterfaceUrl + "/client/initToken.jhtml";
+    public static string UrlDeviceInfo => ServiceInterfaceUrl + "/device/getDeviceInfo.jhtml";
+    public static string UrlRomMatchParams => ServiceInterfaceUrl + "/rescueDevice/getRomMatchParams.jhtml";
+    public static string UrlGetRom => ServiceInterfaceUrl + "/rescueDevice/getNewResource.jhtml";
+    public static string UrlGetRomByImei => ServiceInterfaceUrl + "/rescueDevice/getNewResourceByImei.jhtml";
+    public static string UrlGetRomBySn => ServiceInterfaceUrl + "/rescueDevice/getNewResourceBySN.jhtml";
+    public static string UrlGetModelNames => ServiceInterfaceUrl + "/rescueDevice/getModelNames.jhtml";
+    public static string UrlGetRescueModelRecipe => ServiceInterfaceUrl + "/rescueDevice/getRescueModelRecipe.jhtml";
+    public static string UrlSmartMarketNames => ServiceInterfaceUrl + "/rescueDevice/smartMarketNames.jhtml";
+    public static string UrlCallApi => ServiceInterfaceUrl + "/dictionary/getApiInfo.jhtml";
+    public static string UrlRescueFlashInfo => ServiceInterfaceUrl + "/dataCollection/RescueflashInfo.jhtml";
+    public static string UrlRescueDegradeInfo => ServiceInterfaceUrl + "/dataCollection/rescueDegradeInfo.jhtml";
+    public static string UrlUploadLog => ServiceInterfaceUrl + "/dataCollection/nativeToolLog.jhtml";
+    public static string UrlCheckMaVersion => ServiceInterfaceUrl + "/apk/download.jhtml";
 
     public static string UserHome => Environment.GetFolderPath(Environment.SpecialFolder.UserProfile);
 

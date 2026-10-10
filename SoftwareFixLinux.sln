@@ -5,17 +5,17 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D7177D3-2945-4EE1-B63E-5A14A805F1D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareFix.CLI", "src\SoftwareFix.CLI\SoftwareFix.CLI.csproj", "{E644877E-44DD-4682-8AC8-92ECE5C93703}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftwareFix.CLI", "src\SoftwareFix.CLI\SoftwareFix.CLI.csproj", "{E644877E-44DD-4682-8AC8-92ECE5C93703}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareFix.Core", "src\SoftwareFix.Core\SoftwareFix.Core.csproj", "{2B4B1D92-075C-4D91-BFAB-B2037BDCE82C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftwareFix.Core", "src\SoftwareFix.Core\SoftwareFix.Core.csproj", "{2B4B1D92-075C-4D91-BFAB-B2037BDCE82C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareFix.Device", "src\SoftwareFix.Device\SoftwareFix.Device.csproj", "{FCA39E24-720A-4DD1-8C1F-61F617CF4F7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftwareFix.Device", "src\SoftwareFix.Device\SoftwareFix.Device.csproj", "{FCA39E24-720A-4DD1-8C1F-61F617CF4F7B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareFix.Download", "src\SoftwareFix.Download\SoftwareFix.Download.csproj", "{490D4A8F-674D-4132-AE15-24757B9331DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftwareFix.Download", "src\SoftwareFix.Download\SoftwareFix.Download.csproj", "{490D4A8F-674D-4132-AE15-24757B9331DD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareFix.Flash", "src\SoftwareFix.Flash\SoftwareFix.Flash.csproj", "{238320EC-6F37-49A4-8C9D-E77D1CD0313C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftwareFix.Flash", "src\SoftwareFix.Flash\SoftwareFix.Flash.csproj", "{238320EC-6F37-49A4-8C9D-E77D1CD0313C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoftwareFix.UI", "src\SoftwareFix.UI\SoftwareFix.UI.csproj", "{F2F7FB7D-03BC-40C5-8DFD-636F07C9277C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SoftwareFix.UI", "src\SoftwareFix.UI\SoftwareFix.UI.csproj", "{F2F7FB7D-03BC-40C5-8DFD-636F07C9277C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

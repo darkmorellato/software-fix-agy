@@ -58,15 +58,18 @@ public static class FlashFileParser
                 }
             }
 
-            int timeout = op switch
+            int timeout = op.ToLowerInvariant() switch
             {
                 "flash" => 300000,
+                "flashall" => 600000,
                 "erase" => 60000,
                 "format" => 60000,
                 "oem" => 60000,
+                "getvar" => 20000,
                 "reboot" => 20000,
-                "reboot-bootloader" => 15000,
-                _ => 60000
+                "reboot-bootloader" => 10000,
+                "continue" => 10000,
+                _ => 120000
             };
 
             var cmd = new FlashCommand

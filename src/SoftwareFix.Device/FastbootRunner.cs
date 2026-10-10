@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using SoftwareFix.Core.Models;
@@ -57,6 +58,34 @@ public class FastbootRunner
         return vars;
     }
 
+    public async Task<string> GetCurrentSlotAsync(string? serial = null)
+    {
+        string cmd = string.IsNullOrEmpty(serial) ? "getvar current-slot" : $"-s {serial} getvar current-slot";
+        var output = await RunCommandAsync(cmd, 5000);
+        var match = Regex.Match(output, @"current-slot:\s*(?<slot>[a-zA-Z0-9_]+)", RegexOptions.IgnoreCase);
+        if (match.Success)
+        {
+            return match.Groups["slot"].Value.Trim();
+        }
+        return "a";
+    }
+
+    public async Task<int?> GetDeviceSecurityVersionAsync(string? serial = null)
+    {
+        string cmd = string.IsNullOrEmpty(serial) ? "oem read_sv" : $"-s {serial} oem read_sv";
+        var output = await RunCommandAsync(cmd, 6000);
+        if (string.IsNullOrEmpty(output)) return null;
+
+        // Matches outputs from FastbootDeviceMatchCheck.cs: "signinfo id sum:" or "device rollback id sum:"
+        var match = Regex.Match(output, @"(?:rollback|security|sv)[\s\w]*:\s*(?<ver>\d+)", RegexOptions.IgnoreCase);
+        if (match.Success && int.TryParse(match.Groups["ver"].Value, out int ver))
+        {
+            return ver;
+        }
+
+        return null;
+    }
+
     public async Task<DeviceRescueInfo?> InspectDeviceAsync(string? serial = null)
     {
         var vars = await GetAllVariablesAsync(serial);
@@ -64,7 +93,27 @@ public class FastbootRunner
 
         var info = new DeviceRescueInfo();
         info.SerialNumber = serial ?? vars.GetValueOrDefault("serialno", "");
-        info.Sku = vars.GetValueOrDefault("sku", vars.GetValueOrDefault("ro.boot.hardware.sku", ""));
+        
+        // Primary sku lookup with fallback to ro.boot.hardware.sku
+        string sku = vars.GetValueOrDefault("sku", "");
+        if (string.IsNullOrEmpty(sku))
+        {
+            sku = vars.GetValueOrDefault("ro.boot.hardware.sku", "");
+        }
+
+        // Secondary retry if still missing (matching FastbootDeviceMatchCheck.cs lines 653-696)
+        if (string.IsNullOrEmpty(sku))
+        {
+            string cmdSku = string.IsNullOrEmpty(serial) ? "getvar sku" : $"-s {serial} getvar sku";
+            var outSku = await RunCommandAsync(cmdSku, 3000);
+            var m = Regex.Match(outSku, @"sku:\s*(?<val>[^\r\n]*)");
+            if (m.Success && !m.Groups["val"].Value.Contains("not found"))
+            {
+                sku = m.Groups["val"].Value.Trim();
+            }
+        }
+
+        info.Sku = sku;
         info.ModelName = info.Sku;
         info.Imei = vars.GetValueOrDefault("imei", "");
         info.RoCarrier = vars.GetValueOrDefault("ro.carrier", "");
