@@ -131,6 +131,42 @@ Dentro do zip: `SLA_Challenge.dll` (PE32 nativo), `flash_tool.exe` (SP Flash Too
   **local**). Conclusão provável: **no lamuc o SLA é satisfeito localmente pelo bundle
   LamuC** (sem conta/servidor) — a via Linux segue mtkclient de qualquer forma.
 
+### 1.5 ✅ Fluxo VALIDADO no aparelho (10/10) — PreLoader + DA assinado (sem Windows!)
+
+Receita que funcionou no moto g17 real (XT2623-1, MT6768/MT6769 k68v1):
+
+1. Aparelho DESLIGADO; **iniciar o mtkclient ANTES de conectar**; conectar segurando
+   **Volume ↓** (entra PreLoader `0e8d:2000`).
+
+   ⚠️ **Gotcha do argparse**: opções DEVEM vir **depois** do subcomando
+   (`mtk printgpt --loader X`). Se vierem antes (`mtk --loader X printgpt`), o subparser
+   as **descarta silenciosamente** (default clobber) — foi o que nos custou várias rodadas.
+
+2. Comando:
+   ```bash
+   mtk printgpt --loader DA_A15_lamuc_FORBID_SIGNED.bin --loglevel debug
+   ```
+
+3. O fluxo observado: `Device is protected` → `Device is in Preloader-Mode` → **sobe o DA1
+   assinado pela Motorola** (DAA OK) → `Successfully received DA sync` → stage 2 (o DA
+   vendor "FORBID_SIGNED"; carbonara N/A: "V5 Device is patched against carbonara") →
+   **DA SLA tratado localmente pelo mtkclient** (`Trying lamu ....` → `SLA Signature was
+   accepted.`) → EMMC info (`AKL21X`, USER `0x3a40000000`) + **GPT lido com sucesso**
+   (≈ 256 GB, slots A/B: super, userdata, boot_a/b, lk, tee, otp, …).
+
+Evidência: `~/.local/share/software-fix/analysis-2026-10-10/sucesso_gpt_read_g17.log`
+(+ `gpt_g17_2026-10-10.txt`). Ficam fora do repo (dados do aparelho).
+
+Notas de campo:
+- O DA **do próprio mtkclient** (`MTK_DA_V5.bin`, 2023) é **rejeitado** pelo bootloader:
+  `DAA_SIG_VERIFY_FAILED (0x7024)` — é obrigatório usar o DA assinado da Motorola como
+  `--loader`.
+- Se o PreLoader "travar" (handshake falhando em loop depois de tentativas de crash),
+  é preciso **desligar o aparelho** (Power 20–30 s) antes de reconectar — recriar a
+  sessão só com replug não basta (o estado travado está dentro do telefone).
+- BROM é inacessível por botões neste aparelho (bloqueado por eFuse — prática Lenovo/Moto
+  pós-2022) — e nem é necessário: o caminho é PreLoader + DA assinado, como no LMSA/SPFT.
+
 ---
 
 ## 2. Mecanismo B — ODM socket + DataSignODM (implementado no port)
