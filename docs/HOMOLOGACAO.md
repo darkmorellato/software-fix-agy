@@ -58,10 +58,14 @@ pendentes para execução com o aparelho real.
       contrato do POST (campos/auth Basic) conferido campo a campo, falha → zeros ✔
 * [ ] **Contrato ao vivo (pendente)**: `software-fix odm-sign --imei <IMEI>` com a
       conta de serviço — o host `ebiz-esb.cloud.motorola.net` não resolve publicamente
-      (ver `docs/ODM_SLA_AUTH.md` §3).
-* [ ] **Com aparelho MediaTek em fastboot (pendente)**: rodar `software-fix odm-server`
-      durante o resgate e instalar a assinatura com `fastboot signature <arquivo>` —
-      validar o desbloqueio do flash no bootloader.
+      (ver `docs/ODM_SLA_AUTH.md` §2/§4).
+* [x] **Fluxo real identificado (10/10/2026)**: resgate do Moto G17 (XT2623-1) = SP
+      Flash Tool Console "LamuC" em modo BROM + `SLA_Challenge.dll` → serviço TSDC
+      (HTTP). Protocolo do DA (`CC_GET_DEV_FW_SEC_INFO` → desafio; `CC_SET_REMOTE_SEC_POLICY`
+      com 256 bytes assinados) e API do TSDC mapeados dos logs de um resgate real —
+      ver `docs/ODM_SLA_AUTH.md` §1.
+* [ ] **Fluxo LamuC no Linux (pendente/roadmap)**: capturar host/credenciais do TSDC
+      ao vivo (Windows) e avaliar **mtkclient** para BROM (MT6768) no Linux.
 
 ## 6. Extras de verificação
 

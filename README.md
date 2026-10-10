@@ -64,12 +64,14 @@ Depois:
 
 ### Limitações conhecidas
 
-* **Modelos Motorola MediaTek recentes** (ex.: Moto G17, G24, G34, G54, G84): a
-  **autenticação por assinatura** do resgate ("GPS auth" / `SLA_Challenge`) está
-  **implementada no port** — `software-fix odm-server` / `odm-sign` (detalhes em
-  `docs/ODM_SLA_AUTH.md`) — mas ainda **não validada em aparelho real** e **não
-  integrada** ao fluxo automático de flash (o cliente do socket usado pelo fluxo
-  oficial segue em investigação). Aparelhos Qualcomm (fluxo testado) não a utilizam.
+* **Modelos Motorola MediaTek recentes** (ex.: **Moto G17/XT2623**, família `lamuc`;
+  também G24/G34/G54/G84): o resgate oficial roda em **modo BROM/Preloader** com o
+  **SP Flash Tool Console customizado ("LamuC")** e exige o handshake **SLA (Serial
+  Link Authentication)** via `SLA_Challenge.dll` → serviço **TSDC** (HTTP). O port
+  implementa o mecanismo de assinatura do framework (`odm-server`/`odm-sign`,
+  validado offline) e documenta o fluxo real em **docs/ODM_SLA_AUTH.md**; replicar o
+  fluxo LamuC 100% no Linux (ex.: via mtkclient) é o roadmap pendente. Aparelhos
+  Qualcomm (fluxo testado) não usam SLA.
 
 ---
 
