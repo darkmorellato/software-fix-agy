@@ -123,9 +123,13 @@ Dentro do zip: `SLA_Challenge.dll` (PE32 nativo), `flash_tool.exe` (SP Flash Too
   (683 linhas — o fluxo completo, incluindo a linha de comando do flash_tool) +
   `flashrecords/rescueddevice/options/…check.json`. Cópias em
   `~/.local/share/software-fix/analysis-2026-10-10/` (contém dados pessoais — não versionar).
-- **Onde as credenciais TSDC NÃO estão**: receita, linha de comando do flash_tool, hives de
-  registro (ASCII nem UTF-16). Hipótese atual: default embutido/obfuscado no bundle LamuC
-  (ou configuração efêmera da execução).
+- **Onde as credenciais TSDC NÃO estão — e evidência de SLA LOCAL**: a receita, a linha de
+  comando e os hives de registro (ASCII/UTF-16) não têm credenciais; e o **monitor rodado
+  durante o resgate real** (`Temp/claude/.../softwarefix_monitor.log`, 17:44–18:46 — loga
+  processos + conexões TCP) **não registrou NENHUMA conexão remota do `flash_tool.exe`**
+  durante o SLA (17:52:20–21). Bate com o release note "本地DA SLA鉴权" (autenticação SLA
+  **local**). Conclusão provável: **no lamuc o SLA é satisfeito localmente pelo bundle
+  LamuC** (sem conta/servidor) — a via Linux segue mtkclient de qualquer forma.
 
 ---
 
@@ -174,8 +178,8 @@ DA_...bin -s MT6768_Android_scatter.txt -u <user> -w <pwd>`), lendo o progresso 
 ## 4. Pendências / próximos passos
 
 1. **Teste com o aparelho (preparado, aguardando o usuário)** — com o G17 em BROM
-   (desligado + volume + USB): rodar **mtkclient** (já instalado no venv de análise:
-   `~/.hermes/cache/scratch/venv-dpapi/bin/mtk`) para handshake/leitura e avaliar se o
+   (desligado + volume + USB): rodar **mtkclient** (instalado em
+   `~/.venvs/lmsa-tools/bin/mtk`) para handshake/leitura e avaliar se o
    MT6768 é destravável via **payload genérico (sem SLA)** ou se precisaremos da
    assinatura. Regra udev para `0e8d` já instalada; o port já identificou o aparelho
    (`scan`: SKU XT2623-1 / moto g17).
