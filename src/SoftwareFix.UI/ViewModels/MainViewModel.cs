@@ -79,6 +79,15 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     private bool _showFastbootGuideModal;
 
+    [ObservableProperty]
+    private bool _showPreFlashConfirmModal;
+
+    [ObservableProperty]
+    private bool _eraseUserData = true;
+
+    [ObservableProperty]
+    private string _cleanupStatusText = "";
+
     // Device Properties
     [ObservableProperty]
     private string _connectionStatus = "Aguardando dispositivo...";
@@ -237,6 +246,53 @@ public partial class MainViewModel : ViewModelBase
     public void CloseFastbootGuide()
     {
         ShowFastbootGuideModal = false;
+    }
+
+    [RelayCommand]
+    public void RequestStartFlash()
+    {
+        ShowPreFlashConfirmModal = true;
+    }
+
+    [RelayCommand]
+    public void CancelPreFlashConfirm()
+    {
+        ShowPreFlashConfirmModal = false;
+    }
+
+    [RelayCommand]
+    public async Task ConfirmAndExecuteFlashAsync()
+    {
+        ShowPreFlashConfirmModal = false;
+        await StartFlashAsync();
+    }
+
+    [RelayCommand]
+    public void DeleteDownloadedFirmware()
+    {
+        try
+        {
+            if (Directory.Exists(Configurations.RomPath))
+            {
+                var files = Directory.GetFiles(Configurations.RomPath);
+                foreach (var f in files)
+                {
+                    try { File.Delete(f); } catch { }
+                }
+                var dirs = Directory.GetDirectories(Configurations.RomPath);
+                foreach (var d in dirs)
+                {
+                    try { Directory.Delete(d, true); } catch { }
+                }
+            }
+            CleanupStatusText = "Arquivo de firmware removido com sucesso. Espaço em disco liberado!";
+            AddLog("[Disco] Arquivos de firmware excluídos do computador.");
+            IsRomReady = false;
+        }
+        catch (Exception ex)
+        {
+            AddLog($"[Disco] Erro ao excluir arquivos: {ex.Message}");
+        }
     }
 
     [RelayCommand]
@@ -487,7 +543,7 @@ public partial class MainViewModel : ViewModelBase
             var commands = FlashFileParser.ParseXml(CurrentXmlPath);
             AddLog($"[Flash] {commands.Count} comandos identificados no flashfile.xml. Iniciando gravação...");
 
-            bool ok = await _flashEngine.FlashDeviceAsync(_monitor.CurrentSerial, commands);
+            bool ok = await _flashEngine.FlashDeviceAsync(_monitor.CurrentSerial, commands, EraseUserData);
             if (ok)
             {
                 AddLog("[Flash] RESGATE CONCLUÍDO COM SUCESSO! SEU APARELHO ESTÁ RESTAURADO.");

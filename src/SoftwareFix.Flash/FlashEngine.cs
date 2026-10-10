@@ -29,7 +29,7 @@ public class FlashEngine
         _fastboot = fastboot ?? new FastbootRunner();
     }
 
-    public async Task<bool> FlashDeviceAsync(string? serial, List<FlashCommand> commands, CancellationToken cancellationToken = default)
+    public async Task<bool> FlashDeviceAsync(string? serial, List<FlashCommand> commands, bool eraseUserData = true, CancellationToken cancellationToken = default)
     {
         if (commands.Count == 0) return false;
 
@@ -47,6 +47,16 @@ public class FlashEngine
             if (cancellationToken.IsCancellationRequested) return false;
 
             var cmd = commands[i];
+
+            // If user opted to keep data, skip erasing userdata/metadata
+            if (!eraseUserData && (cmd.Partition.Equals("userdata", StringComparison.OrdinalIgnoreCase) || 
+                                  cmd.Partition.Equals("metadata", StringComparison.OrdinalIgnoreCase) ||
+                                  cmd.Operation.Equals("format", StringComparison.OrdinalIgnoreCase) && cmd.Partition.Contains("data", StringComparison.OrdinalIgnoreCase)))
+            {
+                LogReceived?.Invoke($"[{i + 1}/{commands.Count}] [SKIP] Preservando partição {cmd.Partition} (Opção 'Manter Dados' ativada)");
+                continue;
+            }
+
             string fastbootArg = serialPrefix + cmd.ToFastbootArgument();
 
             LogReceived?.Invoke($"[{i + 1}/{commands.Count}] Running: fastboot {fastbootArg}");

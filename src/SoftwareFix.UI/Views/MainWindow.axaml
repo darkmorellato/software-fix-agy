@@ -403,7 +403,7 @@
 
                                     <!-- Botão de Resgate (Após o download) -->
                                     <Button Classes="ActionPill" Width="200" HorizontalAlignment="Left"
-                                            IsVisible="{Binding IsRomReady}" Command="{Binding StartFlashCommand}">
+                                            IsVisible="{Binding IsRomReady}" Command="{Binding RequestStartFlashCommand}">
                                         <TextBlock Text="Rescue" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                     </Button>
 
@@ -459,6 +459,19 @@
                         <TextBlock Text="Congratulations! Your device has successfully completed the Rescue software update." 
                                    FontSize="14" Foreground="#64748B" HorizontalAlignment="Center" TextAlignment="Center" />
 
+                        <!-- Diálogo de Limpeza Pós-Resgate (Igual ao Vídeo Oficial do Software Fix) -->
+                        <Border Background="#F1F5F9" CornerRadius="12" Padding="16" Margin="0,14,0,0" MaxWidth="520">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="Desde que você concluiu o resgate, gostaria de remover o arquivo grande de firmware baixado (4.4 GB) para liberar espaço no disco?" 
+                                           FontSize="12" Foreground="#334155" TextWrapping="Wrap" HorizontalAlignment="Center" TextAlignment="Center" />
+                                
+                                <StackPanel Orientation="Horizontal" Spacing="10" HorizontalAlignment="Center">
+                                    <Button Content="Excluir Arquivo do Disco" Classes="SecondaryPill" Command="{Binding DeleteDownloadedFirmwareCommand}" />
+                                    <TextBlock Text="{Binding CleanupStatusText}" FontSize="11" Foreground="#10B981" FontWeight="SemiBold" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </StackPanel>
+                        </Border>
+
                         <!-- Botão OK Pill -->
                         <Button Classes="ActionPill" Width="180" HorizontalAlignment="Center" Margin="0,10,0,0"
                                 Command="{Binding FinishRescueCommand}">
@@ -474,6 +487,39 @@
                     </Grid>
                 </Grid>
             </Grid>
+
+            <!-- ============================================================== -->
+            <!-- MODAL: CONFIRMAÇÃO DE RESGATE E OPÇÃO DE DADOS (WIPE / KEEP)    -->
+            <!-- ============================================================== -->
+            <Border Background="#80000000" IsVisible="{Binding ShowPreFlashConfirmModal}" ZIndex="100">
+                <Border Width="500" Background="#0C233B" CornerRadius="14" BorderBrush="#1B3855" BorderThickness="1" 
+                        Padding="24" VerticalAlignment="Center" HorizontalAlignment="Center" BoxShadow="0 10 30 #00000070">
+                    <StackPanel Spacing="16">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="Confirmar Resgate de Software" FontSize="16" FontWeight="Bold" Foreground="#FFFFFF" />
+                            <TextBlock Text="O firmware oficial será regravado em todas as partições do aparelho." FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" />
+                        </StackPanel>
+
+                        <!-- Box de Opção de Preservação de Dados (Destaque do vídeo oficial) -->
+                        <Border Background="#061628" CornerRadius="10" Padding="14" BorderBrush="#1B3855" BorderThickness="1">
+                            <StackPanel Spacing="8">
+                                <CheckBox IsChecked="{Binding EraseUserData}" Foreground="#FFFFFF" FontWeight="SemiBold" FontSize="13">
+                                    <TextBlock Text="Apagar dados do usuário (Restauração Limpa de Fábrica)" TextWrapping="Wrap" />
+                                </CheckBox>
+                                <TextBlock Text="⚠️ Recomendado para resolver travamentos, loops infinitos ou falhas graves de sistema. Caso queira tentar reparar o sistema mantendo as fotos e arquivos pessoais, desmarque esta opção." 
+                                           FontSize="11" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
+                            </StackPanel>
+                        </Border>
+
+                        <TextBlock Text="Certifique-se de manter o cabo USB conectado com firmeza até a conclusão." FontSize="11" Foreground="{StaticResource NoticeOrangeBrush}" FontWeight="Medium" />
+
+                        <Grid ColumnDefinitions="*,*">
+                            <Button Grid.Column="0" Content="Cancelar" Classes="SecondaryPill" Command="{Binding CancelPreFlashConfirmCommand}" Margin="0,0,6,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                            <Button Grid.Column="1" Content="Continuar Resgate" Classes="ActionPill" Command="{Binding ConfirmAndExecuteFlashCommand}" Margin="6,0,0,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                        </Grid>
+                    </StackPanel>
+                </Border>
+            </Border>
 
             <!-- ============================================================== -->
             <!-- MODAL: ENTRADA MANUAL DE IMEI                                  -->
