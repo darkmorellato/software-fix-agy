@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -396,6 +397,222 @@ class Program
                 }
             }
 
+            case "mtk-status":
+            {
+                var mtk = new MtkClientRunner();
+                Console.WriteLine("[*] Fluxo MediaTek (PreLoader + DA assinado) — configuração:");
+                Console.WriteLine($"    - mtkclient:    {mtk.MtkBinary}" + (mtk.BinaryAvailable ? "  [ok]" : "  [AUSENTE]"));
+                Console.WriteLine($"    - DA assinado:  {mtk.DaFile}" + (mtk.DaAvailable ? "  [ok]" : "  [AUSENTE]"));
+                Console.WriteLine($"    - logs:         {Configurations.MtkLogDir}");
+                Console.WriteLine();
+
+                var usb = MtkClientRunner.GetMtkUsbDevices();
+                if (usb.Count == 0)
+                {
+                    Console.WriteLine("[i] Nenhum aparelho MediaTek/Motorola no USB agora.");
+                }
+                else
+                {
+                    Console.WriteLine("[i] Dispositivos MediaTek/Motorola no USB agora:");
+                    foreach (var d in usb)
+                    {
+                        Console.WriteLine($"    - {d.Vid}:{d.Pid} {d.Info}");
+                    }
+                    if (usb.Any(d => d.Vid == "0e8d"))
+                    {
+                        Console.WriteLine("[!] MediaTek presente: desconecte (e desligue com Power 20-30s se estiver travado) antes de rodar mtk-connect/mtk-dump.");
+                    }
+                }
+                if (!mtk.BinaryAvailable)
+                {
+                    Console.WriteLine("[i] Instale o mtkclient (ex.: venv em ~/.venvs/lmsa-tools) ou defina SOFTWARE_FIX_MTK.");
+                }
+                if (!mtk.DaAvailable)
+                {
+                    Console.WriteLine($"[i] Coloque o DA assinado em {Configurations.MtkDaDefaultFile} (ou defina SOFTWARE_FIX_MTK_DA).");
+                }
+                return 0;
+            }
+
+            case "mtk-connect":
+            {
+                var mtk = new MtkClientRunner();
+                if (!CheckMtkPrereqs(mtk)) return 1;
+                if (!await MtkClientRunner.EnsureDeviceAbsentAsync(TimeSpan.FromSeconds(300), !HasFlag(args, "--no-wait"))) return 1;
+                PrintConnectRitual("CONEXÃO (somente leitura: lê o GPT/tabela de partições)");
+                Console.WriteLine("[*] Iniciando mtkclient — ele vai AGUARDAR o aparelho aparecer...");
+                var r = await RunMtkStreaming(mtk, "printgpt", "", "connect", TimeSpan.FromSeconds(ParseTimeout(args, 900)));
+                return ReportMtkResult(r, "Conexão OK — GPT/tabela de partições lido do aparelho.");
+            }
+
+            case "mtk-dump":
+            {
+                var mtk = new MtkClientRunner();
+                if (!CheckMtkPrereqs(mtk)) return 1;
+                const string defaultParts = "lk_a,lk_b,boot_a,boot_b,init_boot_a,init_boot_b,dtbo_a,dtbo_b,vbmeta_a,vbmeta_b,vbmeta_system_a,vbmeta_system_b,vbmeta_vendor_a,vbmeta_vendor_b,tee_a,tee_b,logo_a,logo_b,mrdump";
+                string partsCsv = GetArg(args, "--partitions") ?? defaultParts;
+                string outDir = GetArg(args, "--out") ?? Path.Combine(Configurations.DumpDir, DateTime.Now.ToString("yyyyMMdd-HHmmss"));
+                if (outDir.Contains(' '))
+                {
+                    Console.WriteLine("[-] O caminho de saída não pode conter espaços (limitação do mtkclient).");
+                    return 1;
+                }
+                Directory.CreateDirectory(outDir);
+                var parts = partsCsv.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+                if (parts.Length == 0) { Console.WriteLine("[-] Lista de partições vazia."); return 1; }
+                var files = parts.Select(p => Path.Combine(outDir, p + ".img")).ToArray();
+
+                Console.WriteLine($"[*] Dump (SOMENTE LEITURA) de {parts.Length} partição(ões) → {outDir}");
+                for (int i = 0; i < parts.Length; i++)
+                {
+                    Console.WriteLine($"    - {parts[i]} → {Path.GetFileName(files[i])}");
+                }
+                if (!await MtkClientRunner.EnsureDeviceAbsentAsync(TimeSpan.FromSeconds(300), !HasFlag(args, "--no-wait"))) return 1;
+                PrintConnectRitual("LEITURA (dump de partições — nada é gravado)");
+                Console.WriteLine("[*] Iniciando mtkclient — aguardando o aparelho...");
+                var r = await RunMtkStreaming(mtk, "r", $"{string.Join(',', parts)} {string.Join(',', files)}", "dump", TimeSpan.FromSeconds(ParseTimeout(args, 3600)));
+                int report = ReportMtkResult(r, "Dump concluído.");
+                if (report == 0)
+                {
+                    foreach (var f in files)
+                    {
+                        Console.WriteLine($"    - {Path.GetFileName(f)}: {(File.Exists(f) ? new FileInfo(f).Length / 1024 + " KB" : "AUSENTE")}");
+                    }
+                }
+                return report;
+            }
+
+            case "mtk-write-test":
+            {
+                var mtk = new MtkClientRunner();
+                if (!CheckMtkPrereqs(mtk)) return 1;
+                string part = GetArg(args, "--partition") ?? "mrdump";
+                string outDir = GetArg(args, "--out") ?? Path.Combine(Configurations.DumpDir, "write-test-" + DateTime.Now.ToString("yyyyMMdd-HHmmss"));
+                if (outDir.Contains(' ')) { Console.WriteLine("[-] Caminho sem espaços, por favor."); return 1; }
+                Directory.CreateDirectory(outDir);
+                string orig = Path.Combine(outDir, part + ".orig.img");
+                string reread = Path.Combine(outDir, part + ".reread.img");
+                string script = Path.Combine(outDir, "write-test.script");
+
+                Console.WriteLine($"[*] TESTE DE ESCRITA em '{part}': lê → regrava os MESMOS bytes → lê de novo → compara SHA-256.");
+                Console.WriteLine("    (Homologação da escrita: o conteúdo final é idêntico ao original.)");
+                if (!HasFlag(args, "--yes"))
+                {
+                    Console.Write("Continuar? (y/N): ");
+                    if (Console.ReadLine()?.Trim().ToLowerInvariant() != "y") { Console.WriteLine("Abortado."); return 0; }
+                }
+                File.WriteAllLines(script, new[] { $"r {part} {orig}", $"w {part} {orig}", $"r {part} {reread}" });
+
+                if (!await MtkClientRunner.EnsureDeviceAbsentAsync(TimeSpan.FromSeconds(300), !HasFlag(args, "--no-wait"))) return 1;
+                PrintConnectRitual("TESTE DE ESCRITA (leitura + regravação idêntica + verificação)");
+                Console.WriteLine("[*] Iniciando mtkclient — aguardando o aparelho...");
+                var r = await RunMtkStreaming(mtk, "script", $"\"{script}\"", "write-test", TimeSpan.FromSeconds(ParseTimeout(args, 1800)));
+                int report = ReportMtkResult(r, "");
+                if (report != 0) return report;
+
+                if (!File.Exists(orig) || !File.Exists(reread))
+                {
+                    Console.WriteLine("[-] Arquivos de verificação ausentes (a gravação/leitura não completou?).");
+                    return 1;
+                }
+                string h1 = Sha256File(orig);
+                string h2 = Sha256File(reread);
+                Console.WriteLine($"    SHA-256 (antes):  {h1}");
+                Console.WriteLine($"    SHA-256 (depois): {h2}");
+                if (h1 == h2)
+                {
+                    Console.WriteLine("[+] VERIFY OK — escrita validada: releitura idêntica byte a byte.");
+                    return 0;
+                }
+                Console.WriteLine("[-] VERIFY FALHOU — os bytes mudaram. NÃO prossiga com flash até investigar.");
+                return 1;
+            }
+
+            case "mtk-flash":
+            {
+                var mtk = new MtkClientRunner();
+                if (!CheckMtkPrereqs(mtk)) return 1;
+                string? dir = GetArg(args, "--dir");
+                if (string.IsNullOrEmpty(dir) || !Directory.Exists(dir))
+                {
+                    Console.WriteLine("Usage: software-fix mtk-flash --dir <pasta-da-ROM-extraída> [--dry-run] [--only p1,p2] [--slotted] [--verify] [--yes]");
+                    Console.WriteLine("  Usa o *scatter*.txt da ROM para montar o plano partição→imagem.");
+                    return 1;
+                }
+
+                var plan = MtkFlashPlan.Build(dir, GetArg(args, "--only"), HasFlag(args, "--slotted"));
+                if (plan.Count == 0)
+                {
+                    Console.WriteLine("[-] Nenhum par partição→imagem encontrado (procurei *scatter*.txt na pasta).");
+                    return 1;
+                }
+
+                Console.WriteLine($"[*] Plano de flash: {plan.Count} partição(ões) a partir de {dir}");
+                long total = 0;
+                foreach (var (p, f) in plan)
+                {
+                    long size = new FileInfo(f).Length;
+                    total += size;
+                    Console.WriteLine($"    - {p} ← {Path.GetFileName(f)} ({size / (1024 * 1024)} MB)");
+                }
+                Console.WriteLine($"    TOTAL: {total / (1024 * 1024)} MB");
+
+                if (HasFlag(args, "--dry-run"))
+                {
+                    Console.WriteLine("[i] --dry-run: nada foi gravado.");
+                    return 0;
+                }
+
+                Console.WriteLine("[!] ATENÇÃO: isto vai SOBRESCREVER partições do aparelho (conforme o plano acima).");
+                if (!HasFlag(args, "--yes"))
+                {
+                    Console.Write("Digite 'FLASH' para confirmar: ");
+                    if (Console.ReadLine()?.Trim() != "FLASH") { Console.WriteLine("Abortado."); return 0; }
+                }
+
+                string outDir = Path.Combine(Configurations.MtkLogDir, "flash-" + DateTime.Now.ToString("yyyyMMdd-HHmmss"));
+                Directory.CreateDirectory(outDir);
+                string script = Path.Combine(outDir, "flash.script");
+                File.WriteAllLines(script, plan.Select(x => $"w {x.Partition} {x.File}"));
+
+                if (!await MtkClientRunner.EnsureDeviceAbsentAsync(TimeSpan.FromSeconds(300), !HasFlag(args, "--no-wait"))) return 1;
+                PrintConnectRitual("FLASH (gravação das partições do plano)");
+                Console.WriteLine("[*] Iniciando mtkclient — aguardando o aparelho...");
+                var r = await RunMtkStreaming(mtk, "script", $"\"{script}\"", "flash", TimeSpan.FromSeconds(ParseTimeout(args, 7200)));
+                int report = ReportMtkResult(r, "");
+                if (report != 0) return report;
+
+                if (HasFlag(args, "--verify"))
+                {
+                    Console.WriteLine("[*] Verificação pós-flash (releitura + SHA-256)...");
+                    string vdir = Path.Combine(outDir, "verify");
+                    Directory.CreateDirectory(vdir);
+                    var vparts = plan.Select(x => x.Partition).ToArray();
+                    var vfiles = vparts.Select(p => Path.Combine(vdir, p + ".img")).ToArray();
+                    var vr = await RunMtkStreaming(mtk, "r", $"{string.Join(',', vparts)} {string.Join(',', vfiles)}", "flash-verify", TimeSpan.FromSeconds(3600));
+                    if (vr.Success)
+                    {
+                        bool allOk = true;
+                        for (int i = 0; i < plan.Count; i++)
+                        {
+                            string a = Sha256File(plan[i].File);
+                            string b = File.Exists(vfiles[i]) ? Sha256File(vfiles[i]) : "(ausente)";
+                            bool ok = a == b;
+                            allOk &= ok;
+                            Console.WriteLine($"    - {plan[i].Partition}: {(ok ? "OK" : "DIVERGENTE")}");
+                        }
+                        Console.WriteLine(allOk
+                            ? "[+] Verificação completa: todas as partições conferem."
+                            : "[!] Houve divergências — investigar antes de considerar o resgate concluído.");
+                    }
+                    else
+                    {
+                        Console.WriteLine("[!] A verificação não completou (ver log).");
+                    }
+                }
+                return report;
+            }
+
             default:
                 PrintUsage();
                 return 1;
@@ -433,6 +650,102 @@ class Program
         return sb.ToString();
     }
 
+    static bool HasFlag(string[] args, string name) =>
+        args.Any(a => a.Equals(name, StringComparison.OrdinalIgnoreCase));
+
+    static int ParseTimeout(string[] args, int defaultSeconds) =>
+        int.TryParse(GetArg(args, "--timeout"), out int t) && t > 0 ? t : defaultSeconds;
+
+    static bool CheckMtkPrereqs(MtkClientRunner mtk)
+    {
+        if (!mtk.BinaryAvailable)
+        {
+            Console.WriteLine($"[!] mtkclient não encontrado em '{mtk.MtkBinary}'.");
+            Console.WriteLine("    Instale (ex.: python -m venv ~/.venvs/lmsa-tools && ~/.venvs/lmsa-tools/bin/pip install git+https://github.com/bkerler/mtkclient)");
+            Console.WriteLine("    ou aponte com: export SOFTWARE_FIX_MTK=/caminho/do/mtk");
+            return false;
+        }
+        if (!mtk.DaAvailable)
+        {
+            Console.WriteLine($"[!] DA assinado não encontrado em '{mtk.DaFile}'.");
+            Console.WriteLine("    Copie o DA do pacote LamuC (ex.: 'DA_A15_lamuc_FORBID_SIGNED.bin') para esse caminho");
+            Console.WriteLine("    ou aponte com: export SOFTWARE_FIX_MTK_DA=/caminho/do/DA.bin");
+            return false;
+        }
+        return true;
+    }
+
+    static void PrintConnectRitual(string title)
+    {
+        Console.WriteLine();
+        Console.WriteLine("==============================================================");
+        Console.WriteLine($" {title}");
+        Console.WriteLine();
+        Console.WriteLine(" No aparelho (moto g17 / MediaTek):");
+        Console.WriteLine("  1) DEIXE-O DESLIGADO (segure Power 20-30s se estiver ligado);");
+        Console.WriteLine("  2) Segure VOLUME ↓ e conecte o cabo USB;");
+        Console.WriteLine("  3) Mantenha ~10s — o mtkclient assume a conexão.");
+        Console.WriteLine("==============================================================");
+    }
+
+    static void PrintWedgedHelp()
+    {
+        Console.WriteLine();
+        Console.WriteLine("[!] PreLoader TRAVADO (handshake falhando em loop).");
+        Console.WriteLine("    Solução: segure o Power por 20-30s para desligar o aparelho, reconecte");
+        Console.WriteLine("    segurando Volume ↓ e rode o comando novamente.");
+    }
+
+    static async Task<MtkRunResult> RunMtkStreaming(MtkClientRunner mtk, string command, string cmdArgs, string logName, TimeSpan timeout)
+    {
+        void Handler(string line) => Console.WriteLine("  | " + line);
+        mtk.LogReceived += Handler;
+        try
+        {
+            return await mtk.RunAsync(command, cmdArgs, logName, timeout);
+        }
+        finally
+        {
+            mtk.LogReceived -= Handler;
+        }
+    }
+
+    static int ReportMtkResult(MtkRunResult r, string successMessage)
+    {
+        if (r.Wedged)
+        {
+            PrintWedgedHelp();
+            Console.WriteLine($"    (log: {r.LogFile})");
+            return 2;
+        }
+        if (r.NeedsReconnect)
+        {
+            Console.WriteLine("[!] O aparelho apareceu ANTES do mtkclient iniciar (o DaHandler aborta nesse caso).");
+            Console.WriteLine("    Desconecte, desligue o aparelho, rode o comando de novo e só então reconecte segurando Volume ↓.");
+            Console.WriteLine($"    (log: {r.LogFile})");
+            return 2;
+        }
+        if (r.TimedOut)
+        {
+            Console.WriteLine($"[-] Tempo esgotado. (log: {r.LogFile})");
+            return 1;
+        }
+        if (r.Success)
+        {
+            if (!string.IsNullOrEmpty(successMessage)) Console.WriteLine($"[+] {successMessage}");
+            Console.WriteLine($"[i] Log: {r.LogFile}");
+            return 0;
+        }
+        Console.WriteLine($"[-] O mtkclient terminou com erro (exit={r.ExitCode}). (log: {r.LogFile})");
+        return 1;
+    }
+
+    static string Sha256File(string path)
+    {
+        using var s = File.OpenRead(path);
+        return Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(s)).ToLowerInvariant();
+    }
+
     static void PrintUsage()
     {
         Console.WriteLine("\nUsage:");
@@ -444,6 +757,12 @@ class Program
         Console.WriteLine("  software-fix api-test              Testar os contratos da API Lenovo (smoke test)");
         Console.WriteLine("  software-fix odm-server --imei <IMEI>  Servidor de assinatura ODM (SLA/MediaTek) em 127.0.0.1:5000");
         Console.WriteLine("  software-fix odm-sign --imei <IMEI>    Testa a assinatura ODM contra o serviço da Motorola");
+        Console.WriteLine("  --- Fluxo MediaTek (PreLoader + DA assinado; ver docs/MTK_RESCUE.md) ---");
+        Console.WriteLine("  software-fix mtk-status                Mostra configuração do fluxo MTK e dispositivos USB");
+        Console.WriteLine("  software-fix mtk-connect               Conecta via PreLoader e lê o GPT (somente leitura)");
+        Console.WriteLine("  software-fix mtk-dump [--partitions p1,p2] [--out dir]   Dump (leitura) de partições");
+        Console.WriteLine("  software-fix mtk-write-test [--partition mrdump]         Teste de escrita (regrava idêntico + verifica)");
+        Console.WriteLine("  software-fix mtk-flash --dir <rom> [--dry-run] [--verify]  Flash das partições via scatter da ROM");
         Console.WriteLine("  software-fix help                  Show this help message\n");
     }
 }

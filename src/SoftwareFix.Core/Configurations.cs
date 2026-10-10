@@ -77,6 +77,15 @@ public static class Configurations
     public static string SessionFile => Path.Combine(ConfigPath, "session.json");
     public static string ClientUuidFile => Path.Combine(ConfigPath, "client_uuid");
 
+    // --- MediaTek / MTK (mtkclient) -----------------------------------------
+    // Fluxo validado no moto g17 (XT2623-1, MT6768 k68v1): PreLoader (0e8d:2000)
+    // + DA assinado do vendor como --loader. Ver docs/MTK_RESCUE.md.
+    public static string MtkDaDir => Path.Combine(BaseDataPath, "da");
+    public const string MtkDaDefaultFileName = "DA_A15_lamuc_FORBID_SIGNED.bin";
+    public static string MtkDaDefaultFile => Path.Combine(MtkDaDir, MtkDaDefaultFileName);
+    public static string MtkLogDir => Path.Combine(LogPath, "mtk");
+    public static string DumpDir => Path.Combine(BaseDataPath, "Dump");
+
     static Configurations()
     {
         Directory.CreateDirectory(BaseDataPath);
@@ -86,5 +95,8 @@ public static class Configurations
         Directory.CreateDirectory(ToolPath);
         Directory.CreateDirectory(LogPath);
         Directory.CreateDirectory(TempPath);
+        Directory.CreateDirectory(MtkDaDir);
+        Directory.CreateDirectory(MtkLogDir);
+        Directory.CreateDirectory(DumpDir);
     }
 }

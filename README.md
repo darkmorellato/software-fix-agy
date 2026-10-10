@@ -59,19 +59,23 @@ Depois:
   descompilado (ver `docs/DESIGN_TOKENS.md`).
 * **Testes de paridade sem hardware** — mocks de fastboot/adb em `tests/parity/`,
   checklist completo em `docs/HOMOLOGACAO.md`.
+* **Fluxo MediaTek (PreLoader + DA assinado)** — `software-fix mtk-status / mtk-connect /
+  mtk-dump / mtk-write-test / mtk-flash`: resgate MTK 100% no Linux, sem Windows
+  (receita e regras em **docs/MTK_RESCUE.md**; validado no moto g17 em 10/10/2026).
 * **Referência de engenharia reversa** — código descompilado em `src_decompiled/`
   (6.282 `.cs` + 358 `.xaml` + assets; relatório em `docs/RELATORIO_DESCOMPILACAO.md`).
 
 ### Limitações conhecidas
 
 * **Modelos Motorola MediaTek recentes** (ex.: **Moto G17/XT2623**, família `lamuc`;
-  também G24/G34/G54/G84): o resgate oficial roda em **modo BROM/Preloader** com o
-  **SP Flash Tool Console customizado ("LamuC")** e exige o handshake **SLA (Serial
-  Link Authentication)** via `SLA_Challenge.dll` → serviço **TSDC** (HTTP). O port
-  implementa o mecanismo de assinatura do framework (`odm-server`/`odm-sign`,
-  validado offline) e documenta o fluxo real em **docs/ODM_SLA_AUTH.md**; replicar o
-  fluxo LamuC 100% no Linux (ex.: via mtkclient) é o roadmap pendente. Aparelhos
-  Qualcomm (fluxo testado) não usam SLA.
+  também G24/G34/G54/G84): o resgate oficial roda em **modo PreLoader** com o
+  **SP Flash Tool Console customizado ("LamuC")** e o **DA assinado**
+  (`DA_A15_lamuc_FORBID_SIGNED.bin`). O port **já replica esse fluxo no Linux** via
+  `mtkclient` — validado no aparelho em 10/10/2026 (DA assinado aceito pelo bootloader,
+  SLA tratado localmente, **GPT/tabela de partições lida**): comandos `mtk-connect`,
+  `mtk-dump`, `mtk-write-test` e `mtk-flash`, com as regras de campo em
+  **docs/MTK_RESCUE.md**. A validação de **gravação completa** (flash end-to-end) é o
+  passo em andamento. Aparelhos Qualcomm (fluxo testado) não usam SLA.
 
 ---
 

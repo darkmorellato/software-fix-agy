@@ -28,5 +28,9 @@ src_decompiled/
 configs_and_manifests/
 decompilacao.log
 
+# Estado do mtkclient (gerado durante execuções)
+hwparam.json
+logs/
+
 # Logs gerados pelos mocks de teste de paridade
 tests/parity/*.log
