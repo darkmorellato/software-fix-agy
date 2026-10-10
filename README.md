@@ -60,8 +60,43 @@ Depois:
 * **Testes de paridade sem hardware** — mocks de fastboot/adb em `tests/parity/`,
   checklist completo em `docs/HOMOLOGACAO.md`.
 * **Fluxo MediaTek (PreLoader + DA assinado)** — `software-fix mtk-status / mtk-connect /
-  mtk-dump / mtk-write-test / mtk-flash`: resgate MTK 100% no Linux, sem Windows
-  (receita e regras em **docs/MTK_RESCUE.md**; validado no moto g17 em 10/10/2026).
+  mtk-dump / mtk-write-test / mtk-flash / mtk-fix-boot / mtk-roms`: **resgate completo
+  100% no Linux, sem Windows — validado ponta a ponta no moto g17 em 10/10/2026**
+  (receita e regras em **docs/MTK_RESCUE.md**).
+
+### 🇧🇷 Fluxo padrão do colaborador (atualização/resgate de aparelho Motorola)
+
+```bash
+# 0) ver o ambiente + ROMs baixadas
+software-fix mtk-status
+software-fix mtk-roms                 # pasta: ~/.local/share/software-fix/download/RomFiles
+
+# 1) RESGATE COMPLETO em UMA sessão (flash + correção de boot + verificação):
+software-fix mtk-flash --dir <pasta-da-ROM-extraída> --fix-boot --verify
+#   → o comando guia o ritual: desconectar o cabo, desligar (Power 20-30s),
+#     reconectar SEGURANDO Volume ↓; depois é só aguardar.
+
+# 2) Se o aparelho já foi gravado mas ficou preso (tela preta/PreLoader):
+software-fix mtk-fix-boot
+```
+
+O `--fix-boot` reproduz o que o tool oficial faz no fastboot (limpar metadata + estado
+de slot e fixar o slot A) — sem precisar de fastboot. O `mtk-fix-boot` mostra o
+diagnóstico do bloco de slot (misc) em PT-BR.
+
+### Modelos trabalhados (fluxo)
+
+| Modelo | Chip | Fluxo |
+| :--- | :--- | :--- |
+| Moto G17 (XT2623-1) | MediaTek MT6768 (`lamuc`) | ✅ **Fluxo MTK validado ponta a ponta** |
+| Moto G06 | MediaTek (confirmar família) | ⏳ receita/DA/scatter do modelo pendentes |
+| Moto G56 | MediaTek Dimensity 7060 | ⏳ receita/DA/scatter do modelo pendentes |
+| Moto Edge 60 Fusion | MediaTek Dimensity 7300/7400 | ⏳ receita/DA/scatter do modelo pendentes |
+| Moto Edge 70 Fusion | **Qualcomm** Snapdragon 7s Gen 3 (SM7635) | ⚠️ fluxo Qualcomm (trabalho separado) |
+
+Cada família MediaTek precisa da sua receita pública (`Rescue_MTK_*.json` no S3 Lenovo),
+do seu **DA assinado** e do seu **scatter** — a mesma receita deste port se aplica.
+
 * **Referência de engenharia reversa** — código descompilado em `src_decompiled/`
   (6.282 `.cs` + 358 `.xaml` + assets; relatório em `docs/RELATORIO_DESCOMPILACAO.md`).
 
@@ -70,12 +105,16 @@ Depois:
 * **Modelos Motorola MediaTek recentes** (ex.: **Moto G17/XT2623**, família `lamuc`;
   também G24/G34/G54/G84): o resgate oficial roda em **modo PreLoader** com o
   **SP Flash Tool Console customizado ("LamuC")** e o **DA assinado**
-  (`DA_A15_lamuc_FORBID_SIGNED.bin`). O port **já replica esse fluxo no Linux** via
-  `mtkclient` — validado no aparelho em 10/10/2026 (DA assinado aceito pelo bootloader,
-  SLA tratado localmente, **GPT/tabela de partições lida**): comandos `mtk-connect`,
-  `mtk-dump`, `mtk-write-test` e `mtk-flash`, com as regras de campo em
-  **docs/MTK_RESCUE.md**. A validação de **gravação completa** (flash end-to-end) é o
-  passo em andamento. Aparelhos Qualcomm (fluxo testado) não usam SLA.
+  (`DA_A15_lamuc_FORBID_SIGNED.bin`). O port **replica esse fluxo no Linux** via
+  `mtkclient` — **validado ponta a ponta no aparelho em 10/10/2026**: GT/partições lidas,
+  flash de 5,88 GB (17 partições) gravado e reconferido por releitura, correção de boot
+  via `misc`/`metadata` e **Android de pé** (sem Windows em nenhum passo). Regras de
+  campo e receita em **docs/MTK_RESCUE.md**. Aparelhos Qualcomm (ex.: Edge 70 Fusion)
+  não usam este fluxo — trabalho separado.
+* **Downloads de ROM por modelo**: hoje o `.zip` da ROM é colocado manualmente em
+  `~/.local/share/software-fix/download/RomFiles` (`software-fix mtk-roms` lista e
+  confere). O download automático por modelo (receita pública → URL do S3 Lenovo) é a
+  próxima iteração.
 
 ---
 

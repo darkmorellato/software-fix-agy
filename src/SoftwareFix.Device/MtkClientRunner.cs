@@ -173,6 +173,7 @@ public class MtkClientRunner
         string commandArgs = "",
         string? logName = null,
         TimeSpan? timeout = null,
+        IReadOnlyDictionary<string, string>? env = null,
         int wedgedThreshold = 8,
         CancellationToken ct = default)
     {
@@ -196,6 +197,13 @@ public class MtkClientRunner
                 CreateNoWindow = true,
                 WorkingDirectory = Configurations.MtkLogDir,
             };
+
+            // Modo download (CMD_DOWNLOAD) SEMPRE ligado: é o ÚNICO caminho de escrita aceito
+            // pelo DA "FORBID_SIGNED" do vendor (o write normal é recusado com 0xc002000c).
+            psi.Environment["SOFTWARE_FIX_MTK_DOWNLOAD"] = "1";
+            if (env != null)
+                foreach (var kv in env)
+                    psi.Environment[kv.Key] = kv.Value;
 
             var proc = new Process { StartInfo = psi };
             int handshakeFails = 0;

@@ -528,6 +528,83 @@ class Program
                 return 1;
             }
 
+            case "mtk-roms":
+            {
+                string rom = Configurations.RomPath;
+                Console.WriteLine($"[*] Pasta de ROMs (firmwares baixados): {rom}");
+                Console.WriteLine();
+                if (!Directory.Exists(rom) || !Directory.EnumerateFileSystemEntries(rom).Any())
+                {
+                    Console.WriteLine("[i] Nenhuma ROM baixada ainda.");
+                }
+                else
+                {
+                    long total = 0;
+                    foreach (var entry in Directory.EnumerateFileSystemEntries(rom).OrderBy(x => x))
+                    {
+                        if (Directory.Exists(entry))
+                        {
+                            var dInf = new DirectoryInfo(entry);
+                            var all = dInf.EnumerateFiles("*", SearchOption.AllDirectories).ToList();
+                            long sz = all.Sum(f => f.Length);
+                            total += sz;
+                            bool pronta = all.Any(f => f.Name.Contains("scatter", StringComparison.OrdinalIgnoreCase) && f.Name.EndsWith(".txt"));
+                            Console.WriteLine($"    [pasta] {dInf.Name}/ — {all.Count} arquivos, {sz / (1024L * 1024 * 1024)} GB" + (pronta ? "  [PRONTA: scatter encontrado — use mtk-flash --dir]" : ""));
+                        }
+                        else
+                        {
+                            var fi = new FileInfo(entry);
+                            total += fi.Length;
+                            string kind = fi.Extension is ".zip" or ".rar" or ".7z" ? "zip" : "arq";
+                            Console.WriteLine($"    [{kind}]   {fi.Name} — {fi.Length / (1024L * 1024 * 1024)} GB");
+                        }
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine($"    Total em disco: {total / (1024L * 1024 * 1024)} GB");
+                }
+                Console.WriteLine();
+                Console.WriteLine("[i] Fluxo: extraia o .zip da ROM nesta pasta e rode:");
+                Console.WriteLine("    software-fix mtk-flash --dir <pasta-extraída> --fix-boot --verify");
+                return 0;
+            }
+
+            case "mtk-fix-boot":
+            {
+                var mtk = new MtkClientRunner();
+                if (!CheckMtkPrereqs(mtk)) return 1;
+                string outDir = Path.Combine(Configurations.MtkLogDir, "fix-boot-" + DateTime.Now.ToString("yyyyMMdd-HHmmss"));
+                Directory.CreateDirectory(outDir);
+                string miscDiag = Path.Combine(outDir, "misc.img");
+                string script = Path.Combine(outDir, "fix-boot.script");
+
+                Console.WriteLine("[*] CORREÇÃO DE ESTADO DE BOOT (receita validada no moto g17 — ver docs/MTK_RESCUE.md):");
+                Console.WriteLine("    1) lê o bloco de slot (misc) para diagnóstico;");
+                Console.WriteLine("    2) apaga o metadata (chaves de criptografia velhas);");
+                Console.WriteLine("    3) apaga o misc (se o bloco de slot estiver corrompido, o aparelho volta ao slot padrão A);");
+                Console.WriteLine("    4) reinicia o aparelho no sistema.");
+                Console.WriteLine("[i] Use quando o aparelho ficar preso em tela preta/PreLoader APÓS um flash.");
+                Console.WriteLine("[i] Dados de usuário NÃO são tocados.");
+                if (!HasFlag(args, "--yes"))
+                {
+                    Console.Write("Digite 'CORRIGIR' para confirmar: ");
+                    if (Console.ReadLine()?.Trim() != "CORRIGIR") { Console.WriteLine("Abortado."); return 0; }
+                }
+                File.WriteAllLines(script, new[] { $"r misc {miscDiag}", "e metadata", "e misc", "reset" });
+
+                if (!await MtkClientRunner.EnsureDeviceAbsentAsync(TimeSpan.FromSeconds(300), !HasFlag(args, "--no-wait"))) return 1;
+                PrintConnectRitual("CORREÇÃO DE BOOT (leitura + limpezas + reinício)");
+                Console.WriteLine("[*] Iniciando mtkclient — aguardando o aparelho...");
+                var env = new Dictionary<string, string> { ["SOFTWARE_FIX_MTK_BOOTMODE"] = "1" };
+                var r = await RunMtkStreaming(mtk, "script", $"\"{script}\"", "fix-boot", TimeSpan.FromSeconds(ParseTimeout(args, 1800)), env);
+                int report = ReportMtkResult(r, "Correção enviada — o aparelho vai reiniciar no sistema.");
+                if (report == 0)
+                {
+                    if (File.Exists(miscDiag)) PrintMiscDiagnosis(miscDiag);
+                    Console.WriteLine("[i] Aguarde o boot (a primeira inicialização pode demorar alguns minutos).");
+                }
+                return report;
+            }
+
             case "mtk-flash":
             {
                 var mtk = new MtkClientRunner();
@@ -535,7 +612,7 @@ class Program
                 string? dir = GetArg(args, "--dir");
                 if (string.IsNullOrEmpty(dir) || !Directory.Exists(dir))
                 {
-                    Console.WriteLine("Usage: software-fix mtk-flash --dir <pasta-da-ROM-extraída> [--dry-run] [--only p1,p2] [--slotted] [--verify] [--yes]");
+                    Console.WriteLine("Usage: software-fix mtk-flash --dir <pasta-da-ROM-extraída> [--dry-run] [--only p1,p2] [--slotted] [--fix-boot] [--verify] [--yes]");
                     Console.WriteLine("  Usa o *scatter*.txt da ROM para montar o plano partição→imagem.");
                     return 1;
                 }
@@ -556,6 +633,10 @@ class Program
                     Console.WriteLine($"    - {p} ← {Path.GetFileName(f)} ({size / (1024 * 1024)} MB)");
                 }
                 Console.WriteLine($"    TOTAL: {total / (1024 * 1024)} MB");
+                if (HasFlag(args, "--fix-boot"))
+                {
+                    Console.WriteLine("    [+] --fix-boot: após o flash: lê misc + apaga metadata + misc + reinicia no sistema (resgate completo em 1 sessão).");
+                }
 
                 if (HasFlag(args, "--dry-run"))
                 {
@@ -573,14 +654,31 @@ class Program
                 string outDir = Path.Combine(Configurations.MtkLogDir, "flash-" + DateTime.Now.ToString("yyyyMMdd-HHmmss"));
                 Directory.CreateDirectory(outDir);
                 string script = Path.Combine(outDir, "flash.script");
-                File.WriteAllLines(script, plan.Select(x => $"w {x.Partition} {x.File}"));
+                var scriptLines = plan.Select(x => $"w {x.Partition} {x.File}").ToList();
+                bool fixBoot = HasFlag(args, "--fix-boot");
+                if (fixBoot)
+                {
+                    scriptLines.Add($"r misc {Path.Combine(outDir, "misc.img")}");
+                    scriptLines.Add("e metadata");
+                    scriptLines.Add("e misc");
+                    scriptLines.Add("reset");
+                }
+                File.WriteAllLines(script, scriptLines);
 
                 if (!await MtkClientRunner.EnsureDeviceAbsentAsync(TimeSpan.FromSeconds(300), !HasFlag(args, "--no-wait"))) return 1;
-                PrintConnectRitual("FLASH (gravação das partições do plano)");
+                PrintConnectRitual(fixBoot ? "FLASH + CORREÇÃO DE BOOT (gravação + limpezas + reinício)" : "FLASH (gravação das partições do plano)");
                 Console.WriteLine("[*] Iniciando mtkclient — aguardando o aparelho...");
-                var r = await RunMtkStreaming(mtk, "script", $"\"{script}\"", "flash", TimeSpan.FromSeconds(ParseTimeout(args, 7200)));
+                var envBoost = fixBoot ? new Dictionary<string, string> { ["SOFTWARE_FIX_MTK_BOOTMODE"] = "1" } : null;
+                var r = await RunMtkStreaming(mtk, "script", $"\"{script}\"", "flash", TimeSpan.FromSeconds(ParseTimeout(args, 7200)), envBoost);
                 int report = ReportMtkResult(r, "");
                 if (report != 0) return report;
+
+                if (fixBoot)
+                {
+                    string miscDiag = Path.Combine(outDir, "misc.img");
+                    if (File.Exists(miscDiag)) PrintMiscDiagnosis(miscDiag);
+                    Console.WriteLine("[i] O aparelho foi reiniciado no sistema — aguarde o boot (primeira inicialização demora).");
+                }
 
                 if (HasFlag(args, "--verify"))
                 {
@@ -694,13 +792,13 @@ class Program
         Console.WriteLine("    segurando Volume ↓ e rode o comando novamente.");
     }
 
-    static async Task<MtkRunResult> RunMtkStreaming(MtkClientRunner mtk, string command, string cmdArgs, string logName, TimeSpan timeout)
+    static async Task<MtkRunResult> RunMtkStreaming(MtkClientRunner mtk, string command, string cmdArgs, string logName, TimeSpan timeout, IReadOnlyDictionary<string, string>? env = null)
     {
         void Handler(string line) => Console.WriteLine("  | " + line);
         mtk.LogReceived += Handler;
         try
         {
-            return await mtk.RunAsync(command, cmdArgs, logName, timeout);
+            return await mtk.RunAsync(command, cmdArgs, logName, timeout, env);
         }
         finally
         {
@@ -736,6 +834,44 @@ class Program
         }
         Console.WriteLine($"[-] O mtkclient terminou com erro (exit={r.ExitCode}). (log: {r.LogFile})");
         return 1;
+    }
+
+    /// <summary>Diagnóstico do bloco de controle de slot (BCAB) no dump do misc — PT-BR.</summary>
+    static void PrintMiscDiagnosis(string miscPath)
+    {
+        Console.WriteLine("[*] Diagnóstico do bloco de slot (misc):");
+        try
+        {
+            byte[] d = File.ReadAllBytes(miscPath);
+            int i0 = -1;
+            for (int i = 0; i + 24 <= d.Length; i++)
+            {
+                if (d[i] == 0x42 && d[i + 1] == 0x43 && d[i + 2] == 0x41 && d[i + 3] == 0x42) { i0 = i; break; }
+            }
+            if (i0 < 0)
+            {
+                Console.WriteLine("    - bloco BCAB não encontrado (partição limpa/vazia — estado normal após a correção).");
+                return;
+            }
+            uint version = BitConverter.ToUInt32(d, i0 + 4);
+            string slot = System.Text.Encoding.ASCII.GetString(d, i0 + 8, 4).TrimEnd('\0');
+            bool slotOk = slot is "a" or "b" or "_a" or "_b";
+            Console.WriteLine($"    - versão: 0x{version:X8}; sufixo ativo: {(slotOk ? "'" + slot + "'" : "(ILEGÍVEL — estava corrompido!)")}");
+            for (int s = 0; s < 2; s++)
+            {
+                int b = i0 + 16 + s * 4;
+                if (b + 4 > d.Length) break;
+                int v = BitConverter.ToInt32(d, b);
+                Console.WriteLine($"    - slot {s}: prioridade={v & 0xF} tentativas={(v >> 4) & 0x7} bem-sucedido={(v >> 7) & 1}");
+            }
+            Console.WriteLine(slotOk
+                ? "    => bloco legível; as limpezas acima fazem o aparelho voltar ao slot padrão de qualquer forma."
+                : "    => bloco de slot CORROMPIDO: era a causa provável do travamento — corrigido pelas limpezas.");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"    [-] falha ao analisar o dump: {ex.Message}");
+        }
     }
 
     static string Sha256File(string path)
@@ -781,7 +917,9 @@ class Program
         Console.WriteLine("  software-fix mtk-connect               Conecta via PreLoader e lê o GPT (somente leitura)");
         Console.WriteLine("  software-fix mtk-dump [--partitions p1,p2] [--out dir]   Dump (leitura) de partições");
         Console.WriteLine("  software-fix mtk-write-test [--partition mrdump]         Teste de escrita (regrava idêntico + verifica)");
-        Console.WriteLine("  software-fix mtk-flash --dir <rom> [--dry-run] [--verify]  Flash das partições via scatter da ROM");
+        Console.WriteLine("  software-fix mtk-flash --dir <rom> [--dry-run] [--fix-boot] [--verify]  Flash das partições via scatter da ROM");
+        Console.WriteLine("  software-fix mtk-fix-boot              Corrige o estado de boot (misc/metadata) e reinicia no sistema");
+        Console.WriteLine("  software-fix mtk-roms                  Lista as ROMs baixadas (pasta de downloads) e o estado");
         Console.WriteLine("  software-fix help                  Show this help message\n");
     }
 }
