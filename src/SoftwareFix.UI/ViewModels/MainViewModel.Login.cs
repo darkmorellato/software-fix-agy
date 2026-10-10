@@ -57,10 +57,19 @@ public partial class MainViewModel
     partial void OnLoginSuccessChanged(bool value)
     {
         OnPropertyChanged(nameof(LoginWelcomeText));
-        if (value) IsAccountConnected = true;
+        IsAccountConnected = value;
     }
 
-    partial void OnLoginUserNameChanged(string value) => OnPropertyChanged(nameof(LoginWelcomeText));
+    partial void OnLoginUserNameChanged(string value)
+    {
+        OnPropertyChanged(nameof(LoginWelcomeText));
+        OnPropertyChanged(nameof(LoginAccountText));
+    }
+
+    /// <summary>Texto do painel "Logado" (aba Entrar/Conta).</summary>
+    public string LoginAccountText => string.IsNullOrEmpty(LoginUserName)
+        ? "Sua conta está conectada — o catálogo oficial de firmware está disponível."
+        : $"Conta conectada: {LoginUserName}";
 
     // ---- Tela inicial (réplica do oficial): aceites + fluxo ----
     [ObservableProperty] private bool _acceptPrivacy = true;
@@ -105,8 +114,9 @@ public partial class MainViewModel
         }
         else if (_loginApi.TryLoadSession())
         {
-            // sessão salva: valida ao vivo e já mostra como conectado
-            LoginStatusText = "Sessão salva encontrada — validando com o servidor...";
+            // sessão salva: mostra "Logado" imediatamente e valida ao vivo
+            LoginSuccess = true;
+            LoginStatusText = "Validando sessão salva com o servidor...";
             _ = ValidateSavedSessionAsync();
         }
         else
@@ -181,7 +191,8 @@ public partial class MainViewModel
             }
             else
             {
-                LoginStatusText = "Sessão expirada — faça login novamente abaixo.";
+                LoginSuccess = false;
+                LoginStatusText = "Sessão expirada — faça login novamente.";
             }
         }
         catch

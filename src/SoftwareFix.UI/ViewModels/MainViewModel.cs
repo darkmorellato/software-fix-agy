@@ -56,6 +56,8 @@ public partial class MainViewModel : ViewModelBase
         {
             SelectedSectionIndex = idx;
         }
+        // Navegar por outra aba fecha a tela de conta (ela cobre a janela inteira)
+        IsLoginOpen = false;
     }
 
     // ==========================================

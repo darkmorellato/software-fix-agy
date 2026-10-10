@@ -1085,7 +1085,7 @@
                     <TextBlock Text="Software Fix" FontSize="26" FontWeight="SemiBold" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,16,0,2" />
                     <TextBlock Text="{Binding AppVersionText}" FontSize="13" Foreground="#4C9FD6" HorizontalAlignment="Center" />
 
-                    <Border Background="#0F2A49" BorderBrush="#1E4270" BorderThickness="1" CornerRadius="12" Padding="18,16" Margin="0,26,0,0">
+                    <Border IsVisible="{Binding !LoginSuccess}" Background="#0F2A49" BorderBrush="#1E4270" BorderThickness="1" CornerRadius="12" Padding="18,16" Margin="0,26,0,0">
                         <StackPanel Spacing="14">
                             <CheckBox IsChecked="{Binding AcceptPrivacy}" VerticalContentAlignment="Center">
                                 <StackPanel Orientation="Horizontal">
@@ -1099,8 +1099,22 @@
                         </StackPanel>
                     </Border>
 
-                    <Button Classes="BigLogin" Content="Login" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                    <Button IsVisible="{Binding !LoginSuccess}" Classes="BigLogin" Content="Login" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
                             Command="{Binding StartLoginFlowCommand}" IsEnabled="{Binding CanLogin}" Margin="0,22,0,0" />
+
+                    <!-- Estado LOGADO: mensagem de conexão na aba Entrar/Conta -->
+                    <Border IsVisible="{Binding LoginSuccess}" Background="#0E2F22" BorderBrush="#1E7A4A" BorderThickness="1"
+                            CornerRadius="12" Padding="18,16" Margin="0,26,0,0">
+                        <StackPanel Spacing="6">
+                            <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center">
+                                <Ellipse Width="10" Height="10" Fill="#22C55E" VerticalAlignment="Center" />
+                                <TextBlock Text="Logado" FontSize="18" FontWeight="Bold" Foreground="#7CE6A8" VerticalAlignment="Center" />
+                            </StackPanel>
+                            <TextBlock Text="{Binding LoginAccountText}" FontSize="12" Foreground="#BFE8D2" TextAlignment="Center" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Border>
+                    <Button IsVisible="{Binding LoginSuccess}" Classes="SecondaryPill" Content="Fechar" FontSize="12"
+                            HorizontalAlignment="Center" Margin="0,18,0,0" Command="{Binding CloseLoginScreenCommand}" />
                 </StackPanel>
 
                 <Button Classes="LinkLike" Content="Continuar sem conta (modo local)" HorizontalAlignment="Center" VerticalAlignment="Bottom"
