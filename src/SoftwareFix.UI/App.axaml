@@ -202,6 +202,50 @@
             <Setter Property="Background" Value="#004E6B" />
         </Style>
 
+        <!-- Tela inicial de login (réplica do app oficial): botão grande azul, pill de
+             Feedback, fechar e links-texto -->
+        <Style Selector="Button.BigLogin">
+            <Setter Property="Background" Value="#0F7CB2" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="FontSize" Value="17" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Height" Value="48" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button.BigLogin:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#1390CD" />
+        </Style>
+        <Style Selector="Button.BigLogin:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#0B6390" />
+        </Style>
+        <Style Selector="Button.FeedbackPill">
+            <Setter Property="Background" Value="#3A74AC" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="CornerRadius" Value="16" />
+            <Setter Property="Padding" Value="16,6" />
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button.WindowClose">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Foreground" Value="#FFFFFF" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Padding" Value="10,4" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button.LinkLike">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Foreground" Value="#55ACDF" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+
         <!-- Botão Secundário / Voltar / Feedback / "Testar" -->
         <Style Selector="Button.SecondaryPill">
             <Setter Property="Background" Value="Transparent" />

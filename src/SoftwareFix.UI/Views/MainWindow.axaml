@@ -1063,45 +1063,63 @@
             </Grid>
 
             <!-- ============================================================== -->
-            <!-- TELA INICIAL DE LOGIN — LENOVO ID / GOOGLE                     -->
+            <!-- TELA INICIAL DE LOGIN — réplica da tela oficial do Software Fix -->
+            <!-- (logo + versão + aceites + Login; fluxo do navegador abaixo)    -->
             <!-- ============================================================== -->
-            <Grid IsVisible="{Binding IsLoginOpen}" Background="#001429" ZIndex="105">
-                <Border Width="560" Background="#0C233B" CornerRadius="16" BorderBrush="#1B3855" BorderThickness="1"
-                        Padding="28" VerticalAlignment="Center" HorizontalAlignment="Center" BoxShadow="0 12 40 #00000090">
-                    <StackPanel Spacing="13">
-                        <StackPanel Spacing="6" HorizontalAlignment="Center">
-                            <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="40" Height="40" />
-                            <TextBlock Text="Entrar no Software Fix" FontSize="22" FontWeight="Bold" Foreground="#FFFFFF" HorizontalAlignment="Center" />
-                            <TextBlock Text="{Binding LoginWelcomeText}" FontSize="12" Foreground="#9FAEBF" TextAlignment="Center" TextWrapping="Wrap" />
+            <Grid IsVisible="{Binding IsLoginOpen}" ZIndex="105">
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="50%,0%" EndPoint="50%,100%">
+                        <GradientStop Color="#0E2C4C" Offset="0" />
+                        <GradientStop Color="#081A31" Offset="1" />
+                    </LinearGradientBrush>
+                </Grid.Background>
+
+                <!-- topo direito: Feedback + fechar -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,14,16,0" Spacing="8">
+                    <Button Classes="FeedbackPill" Content="Feedback" ToolTip.Tip="Enviar feedback (em breve)" />
+                    <Button Classes="WindowClose" Content="✕" Command="{Binding CloseLoginScreenCommand}" ToolTip.Tip="Fechar" />
+                </StackPanel>
+
+                <StackPanel Width="360" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="0">
+                    <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="112" Height="112" HorizontalAlignment="Center" />
+                    <TextBlock Text="Software Fix" FontSize="26" FontWeight="SemiBold" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,16,0,2" />
+                    <TextBlock Text="{Binding AppVersionText}" FontSize="13" Foreground="#4C9FD6" HorizontalAlignment="Center" />
+
+                    <Border Background="#0F2A49" BorderBrush="#1E4270" BorderThickness="1" CornerRadius="12" Padding="18,16" Margin="0,26,0,0">
+                        <StackPanel Spacing="14">
+                            <CheckBox IsChecked="{Binding AcceptPrivacy}" VerticalContentAlignment="Center">
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Aceito a " Foreground="#E6EFF8" FontSize="13" VerticalAlignment="Center" />
+                                    <Button Classes="LinkLike" Content="Política de Privacidade da Lenovo" Command="{Binding OpenPrivacyPolicyCommand}" VerticalAlignment="Center" />
+                                </StackPanel>
+                            </CheckBox>
+                            <CheckBox IsChecked="{Binding AcceptGoogleNotice}">
+                                <TextBlock Text="Estou ciente de que o Software Fix NÃO pode remover contas Google" Foreground="#E6EFF8" FontSize="13" TextWrapping="Wrap" />
+                            </CheckBox>
                         </StackPanel>
+                    </Border>
 
-                        <Border Height="1" Background="#1B3855" />
+                    <Button Classes="BigLogin" Content="Login" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                            Command="{Binding StartLoginFlowCommand}" IsEnabled="{Binding CanLogin}" Margin="0,22,0,0" />
 
-                        <TextBlock Text="1. Abra a página de login no navegador e entre com sua conta Google / Lenovo ID:" FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
-                        <Button Classes="ActionPill" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
-                                Command="{Binding OpenLoginInBrowserCommand}" IsEnabled="{Binding !LoginBusy}">
-                            <TextBlock Text="Abrir página de login no navegador" FontWeight="Bold" />
-                        </Button>
-                        <TextBox Text="{Binding LoginUrlText}" IsReadOnly="True" FontSize="10" MinHeight="30"
-                                 Background="#061628" Foreground="#9FAEBF" BorderBrush="#1B3855" TextWrapping="NoWrap" />
-
-                        <TextBlock Text="2. Faça login no navegador (Google ou Lenovo ID). Ao terminar, o navegador vai tentar abrir o Software Fix sozinho — se aparecer o aviso &quot;Abrir Software Fix Login Callback?&quot;, clique em Abrir." FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
-                        <TextBlock Text="3. Se o app não conectar sozinho em alguns segundos, copie a URL COMPLETA da página de sucesso (pelo histórico do navegador, Ctrl+H, se preciso) e cole abaixo:" FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
-                        <TextBox Text="{Binding LoginPastedText}" Watermark="Cole aqui a URL da página de sucesso (ou apenas o código wust)"
-                                 Background="#061628" Foreground="#FFFFFF" BorderBrush="#25476D" Padding="10" FontSize="12" />
-
+                    <!-- fluxo do navegador (aparece após clicar Login) -->
+                    <StackPanel IsVisible="{Binding LoginFlowStarted}" Spacing="10" Margin="0,20,0,0">
+                        <TextBlock Text="2. Faça login no navegador (Google ou Lenovo ID). Ao terminar, o navegador vai tentar abrir o Software Fix sozinho — se aparecer o aviso &quot;Abrir Software Fix Login Callback?&quot;, clique em Abrir." FontSize="12" Foreground="#D6E4F2" TextWrapping="Wrap" />
+                        <TextBlock Text="3. Se o app não conectar sozinho em alguns segundos, copie a URL COMPLETA da página de sucesso (pelo histórico do navegador, Ctrl+H, se preciso) e cole abaixo:" FontSize="12" Foreground="#D6E4F2" TextWrapping="Wrap" />
+                        <TextBox Text="{Binding LoginPastedText}" Watermark="Cole aqui a URL da página de sucesso"
+                                 Background="#0A2138" Foreground="#FFFFFF" BorderBrush="#25476D" Padding="10" FontSize="12" />
                         <Button Classes="ActionPill" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
                                 Command="{Binding ValidateLoginCommand}" IsEnabled="{Binding !LoginBusy}">
                             <TextBlock Text="Validar login" FontWeight="Bold" />
                         </Button>
-
                         <TextBlock Text="{Binding LoginStatusText}" FontSize="12" Foreground="#40A995" TextWrapping="Wrap" />
-
-                        <Button Classes="SecondaryPill" HorizontalAlignment="Center" Command="{Binding CloseLoginScreenCommand}">
-                            <TextBlock Text="Continuar sem conta (modo local)" FontSize="12" />
-                        </Button>
+                        <Button Classes="LinkLike" Content="Abrir o link de login no navegador novamente" HorizontalAlignment="Center"
+                                Command="{Binding OpenLoginInBrowserCommand}" IsEnabled="{Binding !LoginBusy}" />
                     </StackPanel>
-                </Border>
+                </StackPanel>
+
+                <Button Classes="LinkLike" Content="Continuar sem conta (modo local)" HorizontalAlignment="Center" VerticalAlignment="Bottom"
+                        Margin="0,0,0,18" Command="{Binding CloseLoginScreenCommand}" />
             </Grid>
 
             <!-- ============================================================== -->

@@ -74,8 +74,16 @@ echo "[2/5] Copiando aplicação para $APP_DIR ..."
 mkdir -p "$APP_DIR" "$BIN_DIR" "$DESKTOP_DIR" "$ICON_DIR"
 # copia TUDO (executável + DLLs + libs nativas libSkiaSharp.so/libHarfBuzzSharp.so —
 # sem as nativas o Avalonia não inicia: "Unable to load shared library 'libSkiaSharp'")
-cp -a "$DIST_DIR/ui/."  "$APP_DIR/"
-cp -a "$DIST_DIR/cli/." "$APP_DIR/"
+# Staging + mv: o mv substitui até um executável EM EXECUÇÃO (cp falha com ETXTBSY
+# quando o app está aberto — o processo em curso segue no inode antigo, sem quebrar)
+STAGE="$APP_DIR/.stage-install"
+rm -rf "$STAGE"; mkdir -p "$STAGE"
+cp -a "$DIST_DIR/ui/."  "$STAGE/"
+cp -a "$DIST_DIR/cli/." "$STAGE/"
+shopt -s dotglob
+for f in "$STAGE"/*; do mv -f "$f" "$APP_DIR/$(basename "$f")"; done
+shopt -u dotglob
+rm -rf "$STAGE"
 chmod +x "$APP_DIR/SoftwareFix.UI" "$APP_DIR/SoftwareFix.CLI"
 
 # ---------------------------------------------------------------- 3) wrappers

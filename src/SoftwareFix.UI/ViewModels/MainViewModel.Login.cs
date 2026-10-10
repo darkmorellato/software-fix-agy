@@ -41,6 +41,39 @@ public partial class MainViewModel
     partial void OnLoginSuccessChanged(bool value) => OnPropertyChanged(nameof(LoginWelcomeText));
     partial void OnLoginUserNameChanged(string value) => OnPropertyChanged(nameof(LoginWelcomeText));
 
+    // ---- Tela inicial (réplica do oficial): aceites + fluxo ----
+    [ObservableProperty] private bool _acceptPrivacy = true;
+    [ObservableProperty] private bool _acceptGoogleNotice = true;
+    [ObservableProperty] private bool _loginFlowStarted;
+
+    public bool CanLogin => AcceptPrivacy && AcceptGoogleNotice;
+    public string AppVersionText => "Versão: 7.6.2.10";
+
+    partial void OnAcceptPrivacyChanged(bool value) => OnPropertyChanged(nameof(CanLogin));
+    partial void OnAcceptGoogleNoticeChanged(bool value) => OnPropertyChanged(nameof(CanLogin));
+
+    [RelayCommand]
+    private void StartLoginFlow()
+    {
+        LoginFlowStarted = true;
+        AddLog("[Login] Fluxo de login iniciado (tela inicial).");
+        if (CanLogin)
+        {
+            _ = OpenLoginInBrowserAsync();
+        }
+    }
+
+    [RelayCommand]
+    private void OpenPrivacyPolicy()
+    {
+        try
+        {
+            Process.Start(new ProcessStartInfo("xdg-open", "https://www.lenovo.com/br/pt/privacy/") { UseShellExecute = false });
+            AddLog("[Login] Política de Privacidade da Lenovo aberta no navegador.");
+        }
+        catch { }
+    }
+
     [RelayCommand]
     private void OpenLoginScreen()
     {
