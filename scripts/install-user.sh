@@ -106,6 +106,22 @@ if [ -f "$ROOT_DIR/src/SoftwareFix.UI/Assets/software-fix.png" ]; then
     fi
     command -v gtk-update-icon-cache >/dev/null 2>&1 && gtk-update-icon-cache -f -t "$HOME/.local/share/icons/hicolor" >/dev/null 2>&1 || true
 fi
+
+# Alguns lançadores (fuzzel, rofi, docks) resolvem ícones pelo TEMA ATIVO —
+# que costuma ser Papirus-Dark/breeze etc., não o hicolor. Sem o index.theme no
+# hicolor do usuário ou sem o ícone DENTRO do tema ativo, o atalho fica sem imagem.
+[ -f "$HOME/.local/share/icons/hicolor/index.theme" ] || cp /usr/share/icons/hicolor/index.theme "$HOME/.local/share/icons/hicolor/index.theme" 2>/dev/null || true
+for theme in Papirus Papirus-Dark breeze breeze-dark Adwaita; do
+    if [ -d "/usr/share/icons/$theme" ] && [ -f "$HOME/.local/share/icons/hicolor/256x256/apps/software-fix.png" ]; then
+        [ -f "$HOME/.local/share/icons/$theme/index.theme" ] || cp "/usr/share/icons/$theme/index.theme" "$HOME/.local/share/icons/$theme/" 2>/dev/null || true
+        for s in 48x48 64x64 128x128 256x256; do
+            d="$HOME/.local/share/icons/$theme/$s/apps"
+            mkdir -p "$d"
+            cp -f "$HOME/.local/share/icons/hicolor/$s/apps/software-fix.png" "$d/software-fix.png"
+        done
+        command -v gtk-update-icon-cache >/dev/null 2>&1 && gtk-update-icon-cache -f -t "$HOME/.local/share/icons/$theme" >/dev/null 2>&1 || true
+    fi
+done
 cat > "$DESKTOP_DIR/software-fix.desktop" <<EOF
 [Desktop Entry]
 Name=Software Fix
