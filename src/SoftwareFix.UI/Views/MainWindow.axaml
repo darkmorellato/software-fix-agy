@@ -3,181 +3,438 @@
         xmlns:vm="using:SoftwareFix.UI.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="1050" d:DesignHeight="700"
-        Width="1050" Height="700"
+        mc:Ignorable="d" d:DesignWidth="1120" d:DesignHeight="760"
+        Width="1120" Height="760"
+        MinWidth="980" MinHeight="660"
         x:Class="SoftwareFix.UI.Views.MainWindow"
         x:DataType="vm:MainViewModel"
-        Title="Lenovo / Motorola Software Fix (Linux Edition)"
-        Background="#18191c">
+        Title="Motorola &amp; Lenovo Software Fix - Linux Edition"
+        Background="{StaticResource BgDarkBrush}">
 
-    <Grid RowDefinitions="Auto,*">
-        <!-- Top App Bar -->
-        <Border Grid.Row="0" Background="#212328" Padding="18,12" BorderBrush="#31343d" BorderThickness="0,0,0,1">
-            <Grid ColumnDefinitions="Auto,*,Auto">
-                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
-                    <TextBlock Text="🛠️" FontSize="24" VerticalAlignment="Center" />
-                    <StackPanel VerticalAlignment="Center">
-                        <TextBlock Text="SOFTWARE FIX" FontSize="16" FontWeight="Bold" Foreground="#FFFFFF" />
-                        <TextBlock Text="Rescue &amp; Smart Assistant - Linux Edition" FontSize="11" Foreground="#8f95a3" />
+    <Grid ColumnDefinitions="250,*">
+        <!-- ========================================== -->
+        <!-- SIDEBAR DE NAVEGAÇÃO LATERAL (ESTILO LMSA) -->
+        <!-- ========================================== -->
+        <Border Grid.Column="0" Background="{StaticResource SidebarBgBrush}" 
+                BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="0,0,1,0">
+            <Grid RowDefinitions="Auto,*,Auto">
+                
+                <!-- Cabeçalho / Logo da Sidebar -->
+                <StackPanel Grid.Row="0" Margin="22,24,22,28" Spacing="10">
+                    <StackPanel Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                        <Border Background="{StaticResource MotoPrimaryGradient}" CornerRadius="10" Width="38" Height="38">
+                            <PathIcon Data="{StaticResource IconMotorola}" Foreground="#FFFFFF" Width="22" Height="22" />
+                        </Border>
+                        <StackPanel VerticalAlignment="Center">
+                            <TextBlock Text="SOFTWARE FIX" FontSize="15" FontWeight="Bold" Foreground="#FFFFFF" LetterSpacing="0.5" />
+                            <TextBlock Text="Linux Edition • v7.6.2" FontSize="11" Foreground="{StaticResource MotoCyanBrush}" FontWeight="Medium" />
+                        </StackPanel>
                     </StackPanel>
+                    
+                    <Border Height="1" Background="{StaticResource BorderDarkBrush}" Margin="0,10,0,0" />
                 </StackPanel>
 
-                <!-- Status Badge -->
-                <Border Grid.Column="2" Background="#2a2d34" CornerRadius="16" Padding="14,6" VerticalAlignment="Center">
-                    <StackPanel Orientation="Horizontal" Spacing="8">
-                        <TextBlock Text="{Binding ConnectionStatus}" 
-                                   FontSize="12" 
-                                   Foreground="#d0d4de" 
-                                   VerticalAlignment="Center" />
-                    </StackPanel>
+                <!-- Botões de Navegação -->
+                <StackPanel Grid.Row="1" Margin="14,0" Spacing="6">
+                    <!-- 1. Resgate -->
+                    <Button Classes="NavBtn" Classes.Active="{Binding IsSectionRescue}"
+                            Command="{Binding SelectSectionCommand}" CommandParameter="0">
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <PathIcon Data="{StaticResource IconShieldRescue}" Width="16" Height="16" />
+                            <TextBlock Text="Resgate (Rescue)" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+
+                    <!-- 2. Diagnóstico -->
+                    <Button Classes="NavBtn" Classes.Active="{Binding IsSectionDiagnostics}"
+                            Command="{Binding SelectSectionCommand}" CommandParameter="1">
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <PathIcon Data="{StaticResource IconTools}" Width="16" Height="16" />
+                            <TextBlock Text="Diagnóstico &amp; Specs" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+
+                    <!-- 3. Downloads / ROMs -->
+                    <Button Classes="NavBtn" Classes.Active="{Binding IsSectionDownloads}"
+                            Command="{Binding SelectSectionCommand}" CommandParameter="2">
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <PathIcon Data="{StaticResource IconDownload}" Width="16" Height="16" />
+                            <TextBlock Text="Gerenciador de ROMs" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+
+                    <!-- 4. Configurações -->
+                    <Button Classes="NavBtn" Classes.Active="{Binding IsSectionSettings}"
+                            Command="{Binding SelectSectionCommand}" CommandParameter="3">
+                        <StackPanel Orientation="Horizontal" Spacing="12">
+                            <PathIcon Data="{StaticResource IconSettings}" Width="16" Height="16" />
+                            <TextBlock Text="Configurações &amp; Linux" VerticalAlignment="Center" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <!-- Rodapé da Sidebar: Card do Aparelho Ativo -->
+                <Border Grid.Row="2" Margin="14,16" Background="{StaticResource CardBgBrush}" 
+                        CornerRadius="12" Padding="14" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1">
+                    <Grid ColumnDefinitions="Auto,*" ColumnSpan="1">
+                        <Border Grid.Column="0" Width="10" Height="10" CornerRadius="5" 
+                                Background="{Binding ConnectionLedColor}" VerticalAlignment="Center" Margin="0,0,10,0" />
+                        <StackPanel Grid.Column="1" Spacing="2">
+                            <TextBlock Text="{Binding DeviceModel}" FontSize="12" FontWeight="SemiBold" 
+                                       Foreground="#FFFFFF" TextTrimming="CharacterEllipsis" />
+                            <TextBlock Text="{Binding ConnectionStatus}" FontSize="10" Foreground="{StaticResource TextMutedBrush}" 
+                                       TextTrimming="CharacterEllipsis" />
+                        </StackPanel>
+                    </Grid>
                 </Border>
             </Grid>
         </Border>
 
-        <!-- Main Content Area -->
-        <TabControl Grid.Row="1" TabStripPlacement="Top" Margin="10,0">
-            <!-- Tab: Rescue -->
-            <TabItem Header="🛡️ Resgate (Rescue)">
-                <Grid ColumnDefinitions="*,*" Margin="10">
-                    <!-- Left: Device Details & Actions -->
-                    <StackPanel Grid.Column="0" Spacing="16" Margin="0,0,8,0">
-                        <!-- Device Info Card -->
-                        <Border Background="#212328" CornerRadius="8" Padding="16" BorderBrush="#31343d" BorderThickness="1">
-                            <StackPanel Spacing="12">
-                                <TextBlock Text="Informações do Aparelho" FontSize="15" FontWeight="SemiBold" Foreground="#4c9aff" />
-                                
-                                <Grid ColumnDefinitions="130,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
-                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Modelo / SKU:" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding DeviceModel}" Foreground="#FFFFFF" FontWeight="Medium" Margin="0,3" />
-
-                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Número de Série:" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding DeviceSerial}" Foreground="#FFFFFF" Margin="0,3" />
-
-                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Modo de Conexão:" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding DeviceMode}" Foreground="#57d9a3" FontWeight="Bold" Margin="0,3" />
-
-                                    <TextBlock Grid.Row="3" Grid.Column="0" Text="IMEI:" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="3" Grid.Column="1" Text="{Binding DeviceImei}" Foreground="#FFFFFF" Margin="0,3" />
-
-                                    <TextBlock Grid.Row="4" Grid.Column="0" Text="Operadora / Carrier:" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="4" Grid.Column="1" Text="{Binding DeviceCarrier}" Foreground="#FFFFFF" Margin="0,3" />
-
-                                    <TextBlock Grid.Row="5" Grid.Column="0" Text="Baseband (FSG):" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="5" Grid.Column="1" Text="{Binding DeviceBaseband}" Foreground="#FFFFFF" Margin="0,3" />
-                                </Grid>
-
-                                <StackPanel Orientation="Horizontal" Spacing="10" Margin="0,10,0,0">
-                                    <Button Content="Buscar ROM Novamente" Command="{Binding SearchRomCommand}" IsEnabled="{Binding !IsBusy}" Background="#2e384d" Foreground="#FFFFFF" />
-                                    <Button Content="Reiniciar em Fastboot" Command="{Binding RebootToBootloaderCommand}" IsEnabled="{Binding IsDeviceConnected}" Background="#3e382d" Foreground="#ffa500" />
-                                </StackPanel>
+        <!-- ========================================== -->
+        <!-- ÁREA CENTRAL DE CONTEÚDO                   -->
+        <!-- ========================================== -->
+        <Grid Grid.Column="1" RowDefinitions="Auto,*,Auto">
+            
+            <!-- Barra Superior de Status -->
+            <Border Grid.Row="0" Background="{StaticResource CardBgBrush}" Padding="24,14" 
+                    BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="0,0,0,1">
+                <Grid ColumnDefinitions="*,Auto">
+                    <!-- Status do Dispositivo Conectado -->
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
+                        <Border Background="{StaticResource CardElevatedBgBrush}" CornerRadius="16" Padding="12,6" 
+                                BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1">
+                            <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                <Ellipse Width="8" Height="8" Fill="{Binding ConnectionLedColor}" />
+                                <TextBlock Text="{Binding ConnectionStatus}" FontSize="12" FontWeight="Medium" 
+                                           Foreground="{StaticResource TextSecondaryBrush}" VerticalAlignment="Center" />
                             </StackPanel>
                         </Border>
 
-                        <!-- ROM Firmware Card -->
-                        <Border Background="#212328" CornerRadius="8" Padding="16" BorderBrush="#31343d" BorderThickness="1">
-                            <StackPanel Spacing="12">
-                                <TextBlock Text="Firmware Oficial Correspondente" FontSize="15" FontWeight="SemiBold" Foreground="#57d9a3" />
-
-                                <TextBlock Text="{Binding RomStatus}" FontSize="12" Foreground="#8f95a3" />
-
-                                <Grid ColumnDefinitions="120,*" RowDefinitions="Auto,Auto,Auto">
-                                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Nome da ROM:" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding RomName}" Foreground="#FFFFFF" TextWrapping="Wrap" Margin="0,3" />
-
-                                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Versão:" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding RomVersion}" Foreground="#FFFFFF" Margin="0,3" />
-
-                                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Tamanho:" Foreground="#8f95a3" Margin="0,3" />
-                                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding RomSize}" Foreground="#FFFFFF" Margin="0,3" />
-                                </Grid>
-
-                                <StackPanel Spacing="10" Margin="0,10,0,0">
-                                    <Button Content="Baixar Firmware Oficial" 
-                                            Command="{Binding DownloadRomCommand}" 
-                                            IsEnabled="{Binding IsRomReady}" 
-                                            HorizontalAlignment="Stretch" 
-                                            HorizontalContentAlignment="Center"
-                                            Background="#0052cc" Foreground="#FFFFFF" FontWeight="Bold" Padding="12" />
-
-                                    <Button Content="Iniciar Resgate / Gravar Firmware (Flash)" 
-                                            Command="{Binding StartFlashCommand}" 
-                                            IsEnabled="{Binding !IsBusy}" 
-                                            HorizontalAlignment="Stretch" 
-                                            HorizontalContentAlignment="Center"
-                                            Background="#de350b" Foreground="#FFFFFF" FontWeight="Bold" Padding="14" />
-                                </StackPanel>
-                            </StackPanel>
+                        <Border Background="#162238" CornerRadius="16" Padding="10,5" IsVisible="{Binding IsDeviceConnected}">
+                            <TextBlock Text="{Binding DeviceMode}" FontSize="11" FontWeight="Bold" Foreground="{StaticResource MotoCyanBrush}" />
                         </Border>
                     </StackPanel>
 
-                    <!-- Right: Progress, Status & Terminal Logs -->
-                    <Grid Grid.Column="1" RowDefinitions="Auto,*" Margin="8,0,0,0">
-                        <!-- Progress Card -->
-                        <Border Grid.Row="0" Background="#212328" CornerRadius="8" Padding="16" BorderBrush="#31343d" BorderThickness="1" Margin="0,0,0,12">
-                            <StackPanel Spacing="8">
-                                <Grid ColumnDefinitions="*,Auto">
-                                    <TextBlock Grid.Column="0" Text="Progresso da Operação" FontWeight="SemiBold" Foreground="#FFFFFF" />
-                                    <TextBlock Grid.Column="1" Text="{Binding StatusMessage}" Foreground="#8f95a3" FontSize="12" />
+                    <!-- Botões de Ação Rápida no Topo -->
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                        <Button Classes="SecondaryAction" Command="{Binding SearchRomCommand}" IsEnabled="{Binding !IsBusy}" ToolTip.Tip="Atualizar detecção">
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <PathIcon Data="{StaticResource IconRefresh}" Width="14" Height="14" />
+                                <TextBlock Text="Sincronizar" FontSize="12" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+
+                        <Button Classes="SecondaryAction" Command="{Binding ToggleLogsDrawerCommand}">
+                            <StackPanel Orientation="Horizontal" Spacing="6">
+                                <PathIcon Data="{StaticResource IconTerminal}" Width="14" Height="14" />
+                                <TextBlock Text="Terminal Logs" FontSize="12" VerticalAlignment="Center" />
+                            </StackPanel>
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Conteúdo Principal Dinâmico -->
+            <Grid Grid.Row="1" Margin="24">
+                
+                <!-- ========================================== -->
+                <!-- SEÇÃO 0: RESGATE (RESCUE)                  -->
+                <!-- ========================================== -->
+                <Grid IsVisible="{Binding IsSectionRescue}" ColumnDefinitions="330,*">
+                    
+                    <!-- LADO ESQUERDO: Mockup do Smartphone Motorola -->
+                    <Border Grid.Column="0" Background="{StaticResource CardBgBrush}" CornerRadius="16" 
+                            BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1" 
+                            Padding="20" Margin="0,0,16,0">
+                        <Grid RowDefinitions="Auto,*,Auto">
+                            
+                            <!-- Título do Card -->
+                            <TextBlock Grid.Row="0" Text="DISPOSITIVO DETECTADO" FontSize="11" FontWeight="Bold" 
+                                       Foreground="{StaticResource MotoCyanBrush}" LetterSpacing="0.8" Margin="0,0,0,14" />
+
+                            <!-- Mockup Visual do Smartphone -->
+                            <Border Grid.Row="1" Width="230" Height="360" CornerRadius="28" 
+                                    Background="#111317" BorderBrush="#353A47" BorderThickness="3" 
+                                    HorizontalAlignment="Center" VerticalAlignment="Center" BoxShadow="0 8 28 #00000070">
+                                <Grid RowDefinitions="Auto,*,Auto" Margin="14,12">
+                                    
+                                    <!-- Câmera Frontal (Notch) -->
+                                    <Border Grid.Row="0" Width="10" Height="10" CornerRadius="5" Background="#1D212A" 
+                                            HorizontalAlignment="Center" Margin="0,4,0,14" />
+
+                                    <!-- Conteúdo na Tela do Aparelho -->
+                                    <StackPanel Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="10">
+                                        <!-- Logo Central -->
+                                        <Border Width="52" Height="52" CornerRadius="26" Background="#1B2333" 
+                                                HorizontalAlignment="Center" BorderBrush="#253552" BorderThickness="1">
+                                            <PathIcon Data="{StaticResource IconMotorola}" Width="30" Height="30" Foreground="{StaticResource MotoCyanBrush}" />
+                                        </Border>
+
+                                        <TextBlock Text="{Binding DeviceModel}" FontSize="15" FontWeight="Bold" Foreground="#FFFFFF" 
+                                                   HorizontalAlignment="Center" TextAlignment="Center" TextWrapping="Wrap" />
+
+                                        <!-- Badge de Modo -->
+                                        <Border Background="#1C2B42" CornerRadius="12" Padding="12,5" HorizontalAlignment="Center">
+                                            <TextBlock Text="{Binding DeviceMode}" FontSize="11" FontWeight="Bold" Foreground="{StaticResource MotoCyanBrush}" />
+                                        </Border>
+
+                                        <TextBlock Text="{Binding DeviceCarrier}" FontSize="12" Foreground="{StaticResource TextMutedBrush}" 
+                                                   HorizontalAlignment="Center" />
+                                    </StackPanel>
+
+                                    <!-- Rodapé da Tela -->
+                                    <TextBlock Grid.Row="2" Text="{Binding DeviceSerial}" FontSize="10" 
+                                               Foreground="{StaticResource TextMutedBrush}" HorizontalAlignment="Center" Margin="0,0,0,6" />
                                 </Grid>
-                                <ProgressBar Value="{Binding ProgressValue}" Minimum="0" Maximum="100" Height="14" Foreground="#4c9aff" Background="#111215" />
-                                <TextBlock Text="{Binding ProgressText}" FontSize="12" Foreground="#8f95a3" HorizontalAlignment="Center" />
+                            </Border>
+
+                            <!-- Ações Rápidas do Aparelho -->
+                            <StackPanel Grid.Row="2" Spacing="8" Margin="0,16,0,0">
+                                <Button Content="Reiniciar em Modo Fastboot" Classes="SecondaryAction" 
+                                        Command="{Binding RebootToBootloaderCommand}" 
+                                        IsEnabled="{Binding IsDeviceConnected}" 
+                                        HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" FontSize="12" />
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+
+                    <!-- LADO DIREITO: Firmware Oficial e Ações de Gravação -->
+                    <Grid Grid.Column="1" RowDefinitions="Auto,Auto,*" Margin="8,0,0,0">
+                        
+                        <!-- Card: Firmware Oficial -->
+                        <Border Grid.Row="0" Background="{StaticResource CardBgBrush}" CornerRadius="16" 
+                                BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1" Padding="22" Margin="0,0,0,16">
+                            <StackPanel Spacing="14">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <TextBlock Grid.Column="0" Text="FIRMWARE OFICIAL (LENOVO / MOTOROLA)" FontSize="12" FontWeight="Bold" 
+                                               Foreground="{StaticResource SuccessGreenBrush}" LetterSpacing="0.8" />
+                                    <Border Grid.Column="1" Background="#142E28" CornerRadius="10" Padding="10,4" IsVisible="{Binding IsRomReady}">
+                                        <TextBlock Text="Assinado Digitalmente" FontSize="10" FontWeight="Bold" Foreground="{StaticResource SuccessGreenBrush}" />
+                                    </Border>
+                                </Grid>
+
+                                <TextBlock Text="{Binding RomName}" FontSize="16" FontWeight="SemiBold" Foreground="#FFFFFF" TextWrapping="Wrap" />
+
+                                <!-- Tabela de Especificações do Firmware -->
+                                <Border Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1">
+                                    <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto">
+                                        <StackPanel Grid.Column="0" Margin="6,2">
+                                            <TextBlock Text="VERSÃO / BUILD" FontSize="10" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                            <TextBlock Text="{Binding RomVersion}" FontSize="13" Foreground="#FFFFFF" FontWeight="Medium" Margin="0,3,0,0" />
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="1" Margin="6,2">
+                                            <TextBlock Text="TAMANHO DO ARQUIVO" FontSize="10" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                            <TextBlock Text="{Binding RomSize}" FontSize="13" Foreground="#FFFFFF" FontWeight="Medium" Margin="0,3,0,0" />
+                                        </StackPanel>
+
+                                        <StackPanel Grid.Column="2" Margin="6,2">
+                                            <TextBlock Text="CANAL / REGIÃO" FontSize="10" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                            <TextBlock Text="{Binding DeviceCarrier}" FontSize="13" Foreground="{StaticResource MotoCyanBrush}" FontWeight="Medium" Margin="0,3,0,0" />
+                                        </StackPanel>
+                                    </Grid>
+                                </Border>
+
+                                <!-- Botões de Download e Flash -->
+                                <Grid ColumnDefinitions="*,*" Margin="0,6,0,0">
+                                    <Button Grid.Column="0" Classes="PrimaryAction" Command="{Binding DownloadRomCommand}" 
+                                            IsEnabled="{Binding IsRomReady}" Margin="0,0,8,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                                        <StackPanel Orientation="Horizontal" Spacing="8">
+                                            <PathIcon Data="{StaticResource IconDownload}" Width="16" Height="16" />
+                                            <TextBlock Text="Baixar Firmware Oficial" FontSize="13" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                    </Button>
+
+                                    <Button Grid.Column="1" Classes="DangerAction" Command="{Binding StartFlashCommand}" 
+                                            IsEnabled="{Binding !IsBusy}" Margin="8,0,0,0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
+                                        <StackPanel Orientation="Horizontal" Spacing="8">
+                                            <PathIcon Data="{StaticResource IconFlash}" Width="16" Height="16" />
+                                            <TextBlock Text="Iniciar Resgate (Flash)" FontSize="13" VerticalAlignment="Center" />
+                                        </StackPanel>
+                                    </Button>
+                                </Grid>
                             </StackPanel>
                         </Border>
 
-                        <!-- Terminal Logs Card -->
-                        <Border Grid.Row="1" Background="#111215" CornerRadius="8" Padding="12" BorderBrush="#31343d" BorderThickness="1">
-                            <Grid RowDefinitions="Auto,*">
-                                <TextBlock Grid.Row="0" Text="Logs de Execução em Tempo Real" FontSize="12" FontWeight="SemiBold" Foreground="#8f95a3" Margin="0,0,0,8" />
-                                <ScrollViewer Grid.Row="1">
-                                    <ItemsControl ItemsSource="{Binding Logs}">
-                                        <ItemsControl.ItemTemplate>
-                                            <DataTemplate>
-                                                <TextBlock Text="{Binding}" FontFamily="Cascadia Code, Consolas, monospace" FontSize="11" Foreground="#c0c5d0" TextWrapping="Wrap" />
-                                            </DataTemplate>
-                                        </ItemsControl.ItemTemplate>
-                                    </ItemsControl>
-                                </ScrollViewer>
-                            </Grid>
+                        <!-- Card: Telemetria de Progresso -->
+                        <Border Grid.Row="1" Background="{StaticResource CardBgBrush}" CornerRadius="16" 
+                                BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1" Padding="20">
+                            <StackPanel Spacing="10">
+                                <Grid ColumnDefinitions="*,Auto,Auto">
+                                    <TextBlock Grid.Column="0" Text="{Binding StatusMessage}" FontSize="13" FontWeight="SemiBold" Foreground="#FFFFFF" />
+                                    <TextBlock Grid.Column="1" Text="{Binding SpeedText}" FontSize="12" FontWeight="Bold" Foreground="{StaticResource MotoCyanBrush}" Margin="0,0,14,0" />
+                                    <TextBlock Grid.Column="2" Text="{Binding ProgressText}" FontSize="12" Foreground="{StaticResource TextMutedBrush}" />
+                                </Grid>
+
+                                <ProgressBar Value="{Binding ProgressValue}" Minimum="0" Maximum="100" Height="10" 
+                                             CornerRadius="5" Foreground="{StaticResource MotoPrimaryGradient}" Background="#111317" />
+                            </StackPanel>
                         </Border>
                     </Grid>
                 </Grid>
-            </TabItem>
 
-            <!-- Tab: Settings / Linux Configuration -->
-            <TabItem Header="⚙️ Configurações &amp; Linux">
-                <StackPanel Margin="20" Spacing="16" MaxWidth="700" HorizontalAlignment="Left">
-                    <TextBlock Text="Configurações do Ambiente Linux" FontSize="18" FontWeight="Bold" Foreground="#FFFFFF" />
-                    <TextBlock Text="O Software Fix Linux utiliza ferramentas nativas do sistema (fastboot e adb) e regras udev para gerenciar permissões de portas USB." Foreground="#8f95a3" TextWrapping="Wrap" />
+                <!-- ========================================== -->
+                <!-- SEÇÃO 1: DIAGNÓSTICO & SPECS               -->
+                <!-- ========================================== -->
+                <Border IsVisible="{Binding IsSectionDiagnostics}" Background="{StaticResource CardBgBrush}" 
+                        CornerRadius="16" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1" Padding="26">
+                    <StackPanel Spacing="20">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="DIAGNÓSTICO DETALHADO DO APARELHO" FontSize="18" FontWeight="Bold" Foreground="#FFFFFF" />
+                            <TextBlock Text="Informações detalhadas lidas diretamente do hardware e bootloader do Motorola/Lenovo." FontSize="13" Foreground="{StaticResource TextMutedBrush}" />
+                        </StackPanel>
 
-                    <Border Background="#212328" CornerRadius="8" Padding="16" BorderBrush="#31343d" BorderThickness="1">
-                        <StackPanel Spacing="12">
-                            <TextBlock Text="Regras udev (Permissões USB sem necessidade de Root)" FontWeight="SemiBold" Foreground="#4c9aff" />
-                            <TextBlock Text="Para que o Fastboot e o ADB reconheçam seus aparelhos sem precisar rodar como sudo, instale o arquivo udev incluído no projeto:" Foreground="#c0c5d0" TextWrapping="Wrap" />
-                            
-                            <Border Background="#111215" CornerRadius="4" Padding="10">
-                                <TextBlock Text="sudo cp udev/51-motorola-lenovo.rules /etc/udev/rules.d/&#x0a;sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger" 
-                                           FontFamily="Cascadia Code, Consolas, monospace" FontSize="12" Foreground="#57d9a3" />
+                        <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto" Margin="0,10,0,0">
+                            <!-- Coluna 1 -->
+                            <Border Grid.Row="0" Grid.Column="0" Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" Margin="0,0,10,12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Modelo / SKU Hardware" FontSize="11" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding DeviceModel}" FontSize="14" FontWeight="Bold" Foreground="#FFFFFF" />
+                                </StackPanel>
                             </Border>
+
+                            <Border Grid.Row="1" Grid.Column="0" Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" Margin="0,0,10,12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="IMEI do Dispositivo" FontSize="11" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding DeviceImei}" FontSize="14" Foreground="#FFFFFF" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="2" Grid.Column="0" Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" Margin="0,0,10,12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Baseband (FSG)" FontSize="11" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding DeviceBaseband}" FontSize="14" Foreground="#FFFFFF" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="3" Grid.Column="0" Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" Margin="0,0,10,0">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Channel ID" FontSize="11" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding DeviceChannelId}" FontSize="14" Foreground="#FFFFFF" />
+                                </StackPanel>
+                            </Border>
+
+                            <!-- Coluna 2 -->
+                            <Border Grid.Row="0" Grid.Column="1" Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" Margin="10,0,0,12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Número de Série (SN)" FontSize="11" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding DeviceSerial}" FontSize="14" Foreground="#FFFFFF" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="1" Grid.Column="1" Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" Margin="10,0,0,12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Carrier / Operadora" FontSize="11" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding DeviceCarrier}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource MotoCyanBrush}" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="2" Grid.Column="1" Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" Margin="10,0,0,12">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Memória RAM" FontSize="11" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding DeviceRam}" FontSize="14" Foreground="#FFFFFF" />
+                                </StackPanel>
+                            </Border>
+
+                            <Border Grid.Row="3" Grid.Column="1" Background="{StaticResource CardElevatedBgBrush}" CornerRadius="10" Padding="14" Margin="10,0,0,0">
+                                <StackPanel Spacing="4">
+                                    <TextBlock Text="Estado de Segurança (Secure Boot)" FontSize="11" Foreground="{StaticResource TextMutedBrush}" FontWeight="SemiBold" />
+                                    <TextBlock Text="{Binding DeviceSecureState}" FontSize="14" FontWeight="Bold" Foreground="{StaticResource SuccessGreenBrush}" />
+                                </StackPanel>
+                            </Border>
+                        </Grid>
+                    </StackPanel>
+                </Border>
+
+                <!-- ========================================== -->
+                <!-- SEÇÃO 2: GERENCIADOR DE ROMS               -->
+                <!-- ========================================== -->
+                <Border IsVisible="{Binding IsSectionDownloads}" Background="{StaticResource CardBgBrush}" 
+                        CornerRadius="16" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1" Padding="26">
+                    <StackPanel Spacing="18">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="GERENCIADOR DE FIRMWARES &amp; ARQUIVOS" FontSize="18" FontWeight="Bold" Foreground="#FFFFFF" />
+                            <TextBlock Text="Repositório local de firmwares baixados e pacotes descompactados." FontSize="13" Foreground="{StaticResource TextMutedBrush}" />
                         </StackPanel>
-                    </Border>
 
-                    <Border Background="#212328" CornerRadius="8" Padding="16" BorderBrush="#31343d" BorderThickness="1">
-                        <StackPanel Spacing="12">
-                            <TextBlock Text="Diretórios do Sistema" FontWeight="SemiBold" Foreground="#4c9aff" />
-                            <Grid ColumnDefinitions="180,*" RowDefinitions="Auto,Auto,Auto">
-                                <TextBlock Grid.Row="0" Grid.Column="0" Text="Download de ROMs:" Foreground="#8f95a3" Margin="0,3" />
-                                <TextBlock Grid.Row="0" Grid.Column="1" Text="~/.local/share/software-fix/download/RomFiles" Foreground="#c0c5d0" Margin="0,3" />
+                        <Border Background="{StaticResource CardElevatedBgBrush}" CornerRadius="12" Padding="18" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1">
+                            <Grid ColumnDefinitions="140,*" RowDefinitions="Auto,Auto,Auto">
+                                <TextBlock Grid.Row="0" Grid.Column="0" Text="ROM Atual:" Foreground="{StaticResource TextMutedBrush}" Margin="0,6" />
+                                <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding RomName}" FontWeight="SemiBold" Foreground="#FFFFFF" Margin="0,6" />
 
-                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Configurações:" Foreground="#8f95a3" Margin="0,3" />
-                                <TextBlock Grid.Row="1" Grid.Column="1" Text="~/.config/software-fix" Foreground="#c0c5d0" Margin="0,3" />
+                                <TextBlock Grid.Row="1" Grid.Column="0" Text="Arquivo XML:" Foreground="{StaticResource TextMutedBrush}" Margin="0,6" />
+                                <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding CurrentXmlPath}" Foreground="{StaticResource MotoCyanBrush}" TextWrapping="Wrap" Margin="0,6" />
 
-                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Logs:" Foreground="#8f95a3" Margin="0,3" />
-                                <TextBlock Grid.Row="2" Grid.Column="1" Text="~/.local/share/software-fix/logs" Foreground="#c0c5d0" Margin="0,3" />
+                                <TextBlock Grid.Row="2" Grid.Column="0" Text="Diretório Local:" Foreground="{StaticResource TextMutedBrush}" Margin="0,6" />
+                                <TextBlock Grid.Row="2" Grid.Column="1" Text="~/.local/share/software-fix/download/RomFiles" Foreground="#FFFFFF" Margin="0,6" />
                             </Grid>
+                        </Border>
+                    </StackPanel>
+                </Border>
+
+                <!-- ========================================== -->
+                <!-- SEÇÃO 3: CONFIGURAÇÕES & LINUX             -->
+                <!-- ========================================== -->
+                <Border IsVisible="{Binding IsSectionSettings}" Background="{StaticResource CardBgBrush}" 
+                        CornerRadius="16" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1" Padding="26">
+                    <StackPanel Spacing="18" MaxWidth="760" HorizontalAlignment="Left">
+                        <StackPanel Spacing="4">
+                            <TextBlock Text="CONFIGURAÇÕES DO AMBIENTE LINUX" FontSize="18" FontWeight="Bold" Foreground="#FFFFFF" />
+                            <TextBlock Text="Integração nativa com o subsistema USB do Linux (Fastboot, ADB e udev)." FontSize="13" Foreground="{StaticResource TextMutedBrush}" />
                         </StackPanel>
+
+                        <!-- Card udev -->
+                        <Border Background="{StaticResource CardElevatedBgBrush}" CornerRadius="12" Padding="18" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="1">
+                            <StackPanel Spacing="10">
+                                <TextBlock Text="Regras udev (Permissões de USB sem Root)" FontWeight="Bold" Foreground="{StaticResource MotoCyanBrush}" />
+                                <TextBlock Text="Com as regras udev instaladas, o Fastboot e o ADB acessam as portas USB do seu Motorola sem exigir permissões de superusuário (sudo)." Foreground="{StaticResource TextSecondaryBrush}" TextWrapping="Wrap" FontSize="13" />
+
+                                <Border Background="#0D0F14" CornerRadius="8" Padding="12" Margin="0,6,0,0">
+                                    <TextBlock Text="sudo cp udev/51-motorola-lenovo.rules /etc/udev/rules.d/&#x0a;sudo udevadm control --reload-rules &amp;&amp; sudo udevadm trigger" 
+                                               FontFamily="Cascadia Code, Consolas, monospace" FontSize="12" Foreground="{StaticResource SuccessGreenBrush}" />
+                                </Border>
+                            </StackPanel>
+                        </Border>
+                    </StackPanel>
+                </Border>
+            </Grid>
+
+            <!-- ========================================== -->
+            <!-- DRAWER INFERIOR: TERMINAL DE LOGS          -->
+            <!-- ========================================== -->
+            <Border Grid.Row="2" Background="#0C0D11" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="0,1,0,0" 
+                    Height="200" IsVisible="{Binding ShowLogsDrawer}">
+                <Grid RowDefinitions="Auto,*">
+                    <!-- Barra de Topo do Terminal -->
+                    <Border Grid.Row="0" Background="#14161D" Padding="16,8" BorderBrush="{StaticResource BorderDarkBrush}" BorderThickness="0,0,0,1">
+                        <Grid ColumnDefinitions="*,Auto,Auto">
+                            <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
+                                <PathIcon Data="{StaticResource IconTerminal}" Width="14" Height="14" Foreground="{StaticResource MotoCyanBrush}" />
+                                <TextBlock Text="CONSOLE DE LOGS EM TEMPO REAL" FontSize="11" FontWeight="Bold" Foreground="#FFFFFF" LetterSpacing="0.5" />
+                            </StackPanel>
+
+                            <Button Grid.Column="1" Classes="SecondaryAction" Command="{Binding ClearLogsCommand}" Padding="8,4" FontSize="11" Margin="0,0,8,0">
+                                <TextBlock Text="Limpar" />
+                            </Button>
+
+                            <Button Grid.Column="2" Classes="SecondaryAction" Command="{Binding ToggleLogsDrawerCommand}" Padding="8,4" FontSize="11">
+                                <TextBlock Text="✕ Fechar" />
+                            </Button>
+                        </Grid>
                     </Border>
-                </StackPanel>
-            </TabItem>
-        </TabControl>
+
+                    <!-- Lista de Logs -->
+                    <ScrollViewer Grid.Row="1" Padding="14,10">
+                        <ItemsControl ItemsSource="{Binding Logs}">
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding}" FontFamily="Cascadia Code, Consolas, monospace" FontSize="11" Foreground="#C8CED9" Margin="0,1" />
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </ScrollViewer>
+                </Grid>
+            </Border>
+        </Grid>
     </Grid>
 </Window>
