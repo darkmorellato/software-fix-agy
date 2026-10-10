@@ -158,9 +158,9 @@
                                            Foreground="{StaticResource TextMutedBlueBrush}" HorizontalAlignment="Center" />
                             </StackPanel>
 
-                            <!-- Grade 2x2 com os 4 Cards Oficiais -->
-                            <Grid ColumnDefinitions="420,420" RowDefinitions="130,130" Margin="0,16,0,0">
-                                
+                            <!-- Grade 2x2 com os 4 Cards Oficiais (artes originais do app) -->
+                            <Grid ColumnDefinitions="420,420" RowDefinitions="150,150" Margin="0,16,0,0">
+
                                 <!-- Card 1: Input IMEI -->
                                 <Button Grid.Row="0" Grid.Column="0" Classes="WelcomeOptionCard" Margin="8"
                                         Command="{Binding OpenImeiModalCommand}">
@@ -172,16 +172,11 @@
                                         </StackPanel>
                                         <Grid Grid.Column="1">
                                             <Border VerticalAlignment="Top" HorizontalAlignment="Right" 
-                                                    Background="{StaticResource GreenSuccessBrush}" CornerRadius="4" Padding="6,2" Margin="0,-10,-10,0">
+                                                    Background="{StaticResource GreenSuccessBrush}" CornerRadius="4" Padding="6,2" Margin="0,-12,-12,0">
                                                 <TextBlock Text="Recomendado" FontSize="10" FontWeight="Bold" Foreground="#FFFFFF" />
                                             </Border>
-                                            <Border Width="64" Height="90" CornerRadius="8" Background="#061A2D" 
-                                                    BorderBrush="#1B3855" BorderThickness="1" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="4">
-                                                    <TextBlock Text="*#06#" FontSize="9" FontWeight="Bold" Foreground="{StaticResource GreenSuccessBrush}" HorizontalAlignment="Center" />
-                                                    <PathIcon Data="{StaticResource IconKeypad}" Width="28" Height="28" Foreground="#4A6B8A" />
-                                                </StackPanel>
-                                            </Border>
+                                            <Image Source="avares://SoftwareFix.UI/Assets/welcome/card-imei.png"
+                                                   Width="92" Height="92" HorizontalAlignment="Right" VerticalAlignment="Center" />
                                         </Grid>
                                     </Grid>
                                 </Button>
@@ -194,9 +189,8 @@
                                             <TextBlock Text="Conecte o celular via&#x0a;Wi-Fi para ler o IMEI" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
-                                        <Border Grid.Column="1" Width="80" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                            <PathIcon Data="{StaticResource IconWifi}" Width="44" Height="44" Foreground="#38BDF8" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        </Border>
+                                        <Image Grid.Column="1" Source="avares://SoftwareFix.UI/Assets/welcome/card-wifi.png"
+                                               Width="158" HorizontalAlignment="Right" VerticalAlignment="Center" />
                                     </Grid>
                                 </Button>
 
@@ -209,9 +203,8 @@
                                             <TextBlock Text="Siga o guia passo a passo para&#x0a;conectar o aparelho via cabo&#x0a;USB e localizar o firmware" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
-                                        <Border Grid.Column="1" Width="80" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                            <PathIcon Data="{StaticResource IconFastboot}" Width="40" Height="40" Foreground="#40A995" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        </Border>
+                                        <Image Grid.Column="1" Source="avares://SoftwareFix.UI/Assets/welcome/card-fastboot.png"
+                                               Width="196" HorizontalAlignment="Right" VerticalAlignment="Center" />
                                     </Grid>
                                 </Button>
 
@@ -224,9 +217,8 @@
                                             <TextBlock Text="Escolha manualmente o seu&#x0a;celular na lista de modelos" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
-                                        <Border Grid.Column="1" Width="80" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center">
-                                            <PathIcon Data="{StaticResource IconHardwareTest}" Width="42" Height="42" Foreground="#9FAEBF" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                                        </Border>
+                                        <Image Grid.Column="1" Source="avares://SoftwareFix.UI/Assets/welcome/card-model.png"
+                                               Width="158" HorizontalAlignment="Right" VerticalAlignment="Center" />
                                     </Grid>
                                 </Button>
                             </Grid>
@@ -248,6 +240,8 @@
                             <Button Grid.Column="0" Classes="SecondaryPill" Command="{Binding BackToWelcomeCommand}">
                                 <TextBlock Text="🏠 Início" FontSize="12" VerticalAlignment="Center" />
                             </Button>
+                            <Button Grid.Column="2" Classes="SecondaryPill" Content="Feedback" FontSize="12"
+                                    ToolTip.Tip="Enviar feedback (em breve)" />
                         </Grid>
                     </Grid>
                 </Grid>
