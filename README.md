@@ -51,9 +51,13 @@ Depois:
 * **Contratos de rede 1:1** — headers, envelope JSON e assinatura `X-Device-Fingerprint` (RSA)
   replicados de `lenovo.mbg.service.common.webservices` e validados ao vivo contra
   `lsa.lenovo.com` (ver `docs/CONTRATOS_REDE.md`).
-* **Login Lenovo ID** — `software-fix login` obtém a URL OAuth2/PKCE oficial, abre no
-  navegador e valida o token WUST em `/user/getSFUserInfo.jhtml`, salvando a sessão em
-  `~/.config/software-fix/session.json`.
+* **Login Lenovo ID (fluxo novo, com captura automática)** — `software-fix login` obtém a
+  URL OAuth2/PKCE oficial e abre no navegador; ao final, a página da Lenovo devolve o deep
+  link `softwareFix://authcallback?...` — o app registra esse scheme no Linux (handler +
+  `xdg-mime`) e captura o login sozinho, e a janela do app detecta a sessão em segundos.
+  Alternativa manual: `software-fix login --url "<url-da-página>"` (aceita o deep link, a
+  URL com `code=` — completando a cadeia OAuth2 sozinho — ou o wust). Sessão em
+  `~/.config/software-fix/session.json`; validação em `/user/getSFUserInfo.jhtml`.
 * **Smoke test dos contratos** — `software-fix api-test`.
 * **Design tokens oficiais** — paleta, tipografia e componentes extraídos do tema v6
   descompilado (ver `docs/DESIGN_TOKENS.md`).
