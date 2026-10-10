@@ -13,7 +13,7 @@
         Icon="/Assets/software-fix.ico"
         Background="{StaticResource TopBarBgBrush}">
 
-    <Grid RowDefinitions="64,*">
+    <Grid RowDefinitions="76,*">
         <!-- ========================================== -->
         <!-- TOP APP BAR & NAVIGATION TABS OFICIAIS     -->
         <!-- ========================================== -->
@@ -26,74 +26,74 @@
                     <TextBlock Text="Software Fix v7.6.2.10" FontSize="13" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" />
                 </StackPanel>
 
-                <!-- Abas Centrais Oficiais -->
+                <!-- Abas Centrais Oficiais (ícone sobre rótulo, como na arte do app) -->
                 <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="2" VerticalAlignment="Stretch">
-                    
+
                     <!-- Seletor de Múltiplos Dispositivos -->
-                    <Button Classes="TopTab" Padding="14,10">
-                        <PathIcon Data="{StaticResource IconDevicesThree}" Width="24" Height="24" Foreground="#9FAEBF" />
+                    <Button Classes="TopTab" Padding="14,6" ToolTip.Tip="Dispositivos conectados">
+                        <PathIcon Data="{StaticResource IconDevicesThree}" Width="22" Height="22" Foreground="#C9D6E4" VerticalAlignment="Center" />
                     </Button>
 
-                    <!-- Aba 1: Rescue (Ativa por padrão com destaque Teal) -->
+                    <!-- Aba 1: Rescue (Ativa por padrão com bloco azul) -->
                     <Button Classes="TopTab" Classes.Active="{Binding IsSectionRescue}"
-                            Command="{Binding SelectSectionCommand}" CommandParameter="0">
-                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <PathIcon Data="{StaticResource IconRescueTools}" Width="18" Height="18" Foreground="#FFFFFF" />
-                            <TextBlock Text="Resgate" FontWeight="Bold" FontSize="13" Foreground="#FFFFFF" VerticalAlignment="Center" />
+                            Command="{Binding SelectSectionCommand}" CommandParameter="0" ToolTip.Tip="Resgate e atualização">
+                        <StackPanel Spacing="5" VerticalAlignment="Center">
+                            <PathIcon Data="{StaticResource IconRescueTools}" Width="22" Height="22" Foreground="#FFFFFF" HorizontalAlignment="Center" />
+                            <TextBlock Text="Resgate" FontSize="11.5" FontWeight="SemiBold" Foreground="#FFFFFF" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
                     <!-- Aba 2: Backup & Restore -->
                     <Button Classes="TopTab" Classes.Active="{Binding IsSectionBackup}"
-                            Command="{Binding SelectSectionCommand}" CommandParameter="1">
-                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <PathIcon Data="{StaticResource IconBackupRestore}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Backup e Restauração" FontSize="12" VerticalAlignment="Center" />
+                            Command="{Binding SelectSectionCommand}" CommandParameter="1" ToolTip.Tip="Backup e restauração">
+                        <StackPanel Spacing="5" VerticalAlignment="Center">
+                            <PathIcon Data="{StaticResource IconBackupRestore}" Width="22" Height="22" Foreground="#C9D6E4" HorizontalAlignment="Center" />
+                            <TextBlock Text="Backup e&#x0a;Restauração" FontSize="11.5" TextAlignment="Center" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
                     <!-- Aba 3: Hardware Test -->
                     <Button Classes="TopTab" Classes.Active="{Binding IsSectionHardware}"
-                            Command="{Binding SelectSectionCommand}" CommandParameter="2">
-                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <PathIcon Data="{StaticResource IconHardwareTest}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Teste de Hardware" FontSize="12" VerticalAlignment="Center" />
+                            Command="{Binding SelectSectionCommand}" CommandParameter="2" ToolTip.Tip="Teste de hardware">
+                        <StackPanel Spacing="5" VerticalAlignment="Center">
+                            <PathIcon Data="{StaticResource IconHardwareTest}" Width="22" Height="22" Foreground="#C9D6E4" HorizontalAlignment="Center" />
+                            <TextBlock Text="Teste de&#x0a;Hardware" FontSize="11.5" TextAlignment="Center" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
                     <!-- Aba 4: Data Transfer -->
                     <Button Classes="TopTab" Classes.Active="{Binding IsSectionTransfer}"
-                            Command="{Binding SelectSectionCommand}" CommandParameter="3">
-                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <PathIcon Data="{StaticResource IconDataTransfer}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Transferência de Dados" FontSize="12" VerticalAlignment="Center" />
+                            Command="{Binding SelectSectionCommand}" CommandParameter="3" ToolTip.Tip="Transferência de dados">
+                        <StackPanel Spacing="5" VerticalAlignment="Center">
+                            <PathIcon Data="{StaticResource IconDataTransfer}" Width="22" Height="22" Foreground="#C9D6E4" HorizontalAlignment="Center" />
+                            <TextBlock Text="Transferência&#x0a;de Dados" FontSize="11.5" TextAlignment="Center" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
                     <!-- Aba 5: My Device -->
                     <Button Classes="TopTab" Classes.Active="{Binding IsSectionMyDevice}"
-                            Command="{Binding SelectSectionCommand}" CommandParameter="4">
-                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <PathIcon Data="{StaticResource IconMyDevice}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Meu Aparelho" FontSize="12" VerticalAlignment="Center" />
+                            Command="{Binding SelectSectionCommand}" CommandParameter="4" ToolTip.Tip="Meu aparelho">
+                        <StackPanel Spacing="5" VerticalAlignment="Center">
+                            <PathIcon Data="{StaticResource IconMyDevice}" Width="22" Height="22" Foreground="#C9D6E4" HorizontalAlignment="Center" />
+                            <TextBlock Text="Meu Aparelho" FontSize="11.5" TextAlignment="Center" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
                     <!-- Aba 6: Toolbox -->
                     <Button Classes="TopTab" Classes.Active="{Binding IsSectionToolbox}"
-                            Command="{Binding SelectSectionCommand}" CommandParameter="5">
-                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <PathIcon Data="{StaticResource IconToolbox}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Ferramentas" FontSize="12" VerticalAlignment="Center" />
+                            Command="{Binding SelectSectionCommand}" CommandParameter="5" ToolTip.Tip="Ferramentas">
+                        <StackPanel Spacing="5" VerticalAlignment="Center">
+                            <PathIcon Data="{StaticResource IconToolbox}" Width="22" Height="22" Foreground="#C9D6E4" HorizontalAlignment="Center" />
+                            <TextBlock Text="Ferramentas" FontSize="11.5" TextAlignment="Center" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
                     <!-- Aba 7: Support -->
                     <Button Classes="TopTab" Classes.Active="{Binding IsSectionSupport}"
-                            Command="{Binding SelectSectionCommand}" CommandParameter="6">
-                        <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
-                            <PathIcon Data="{StaticResource IconSupport}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Suporte" FontSize="12" VerticalAlignment="Center" />
+                            Command="{Binding SelectSectionCommand}" CommandParameter="6" ToolTip.Tip="Suporte">
+                        <StackPanel Spacing="5" VerticalAlignment="Center">
+                            <PathIcon Data="{StaticResource IconSupportChat}" Width="22" Height="22" Foreground="#C9D6E4" HorizontalAlignment="Center" />
+                            <TextBlock Text="Suporte" FontSize="11.5" TextAlignment="Center" HorizontalAlignment="Center" />
                         </StackPanel>
                     </Button>
                 </StackPanel>
