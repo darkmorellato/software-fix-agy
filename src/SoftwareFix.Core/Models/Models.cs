@@ -294,12 +294,42 @@ public class LoginUrlModel
     public string? TokenUrl { get; set; }
 }
 
-public class DiagnosticItem
+/// <summary>
+/// Item de diagnóstico de hardware exibido na tabela de Hardware Test.
+/// Implementa INotifyPropertyChanged para que a UI reaja em tempo real
+/// às transições de status (Não testado → Testando… → Aprovado/Falhou).
+/// </summary>
+public class DiagnosticItem : System.ComponentModel.INotifyPropertyChanged
 {
+    public event System.ComponentModel.PropertyChangedEventHandler? PropertyChanged;
+
+    private void Set<T>(ref T field, T value, string propertyName)
+    {
+        if (EqualityComparer<T>.Default.Equals(field, value)) return;
+        field = value;
+        PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+    }
+
     public string Id { get; set; } = string.Empty;
     public string Name { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
-    public string Status { get; set; } = "Não testado";
-    public string StatusColor { get; set; } = "#8FA7C2";
+
+    private string _status = "Não testado";
+    public string Status
+    {
+        get => _status;
+        set => Set(ref _status, value, nameof(Status));
+    }
+
+    private string _statusColor = "#9FAEBF";
+    public string StatusColor
+    {
+        get => _statusColor;
+        set => Set(ref _statusColor, value, nameof(StatusColor));
+    }
+
     public bool IsPassed { get; set; }
+
+    /// <summary>Linha ímpar na coluna — usada para o zebra striping da tabela.</summary>
+    public bool IsAlternate { get; set; }
 }

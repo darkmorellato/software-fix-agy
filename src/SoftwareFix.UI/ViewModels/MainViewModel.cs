@@ -255,6 +255,12 @@ public partial class MainViewModel : ViewModelBase
     public ObservableCollection<DeviceModelInfoModel> FilteredModels { get; } = new();
     public ObservableCollection<DiagnosticItem> DiagnosticsList { get; } = new();
 
+    /// <summary>Metade esquerda da tabela de Hardware Test (4 itens).</summary>
+    public ObservableCollection<DiagnosticItem> DiagnosticsLeft { get; } = new();
+
+    /// <summary>Metade direita da tabela de Hardware Test (3 itens).</summary>
+    public ObservableCollection<DiagnosticItem> DiagnosticsRight { get; } = new();
+
     public MainViewModel()
     {
         _monitor.DeviceConnected += OnDeviceConnected;
@@ -273,6 +279,13 @@ public partial class MainViewModel : ViewModelBase
             && initialSection >= 0 && initialSection <= 6)
         {
             SelectedSectionIndex = initialSection;
+        }
+
+        // QA: permite abrir o My Device já numa categoria (SOFTWARE_FIX_MYDEVICE_CATEGORY=0..7)
+        if (int.TryParse(Environment.GetEnvironmentVariable("SOFTWARE_FIX_MYDEVICE_CATEGORY"), out int initialCategory)
+            && initialCategory >= 0 && initialCategory <= 7)
+        {
+            SelectedMyDeviceCategory = initialCategory;
         }
 
         AddLog("[Sistema] Software Fix v7.6.2.10 (Linux Edition) iniciado.");
@@ -296,13 +309,35 @@ public partial class MainViewModel : ViewModelBase
 
     private void InitializeDiagnosticItems()
     {
-        DiagnosticsList.Add(new DiagnosticItem { Id = "display", Name = "Display & Touchscreen", Description = "Verificação de pixels mortos e resposta multitoque", Status = "Não testado", StatusColor = "#8FA7C2" });
-        DiagnosticsList.Add(new DiagnosticItem { Id = "audio", Name = "Áudio & Microfones", Description = "Alto-falante estéreo, fone de ouvido e cancelamento de ruído", Status = "Não testado", StatusColor = "#8FA7C2" });
-        DiagnosticsList.Add(new DiagnosticItem { Id = "camera", Name = "Câmeras Frontal & Traseira", Description = "Foco óptico, sensor de luminosidade e gravação de vídeo", Status = "Não testado", StatusColor = "#8FA7C2" });
-        DiagnosticsList.Add(new DiagnosticItem { Id = "battery", Name = "Saúde da Bateria & Carga", Description = "Ciclos de carga, voltagem, temperatura e TurboPower", Status = "Não testado", StatusColor = "#8FA7C2" });
-        DiagnosticsList.Add(new DiagnosticItem { Id = "vibration", Name = "Motor de Vibração", Description = "Resposta tátil háptica e frequência de ressonância", Status = "Não testado", StatusColor = "#8FA7C2" });
-        DiagnosticsList.Add(new DiagnosticItem { Id = "sensors", Name = "Sensores Físicos", Description = "Acelerômetro, Giroscópio, Proximidade e Bússola Digital", Status = "Não testado", StatusColor = "#8FA7C2" });
-        DiagnosticsList.Add(new DiagnosticItem { Id = "connectivity", Name = "Rede & Conectividade", Description = "5G, Wi-Fi 6, Bluetooth 5.3, GPS e NFC", Status = "Não testado", StatusColor = "#8FA7C2" });
+        // Os 7 módulos da tabela oficial de Hardware Test, distribuídos em duas
+        // colunas (4 + 3) com zebra striping — estilo "Test item / Result".
+        var defs = new (string Id, string Name, string Desc)[]
+        {
+            ("display",      "Display & Touchscreen",      "Pixels mortos, brilho e resposta multitoque"),
+            ("audio",        "Áudio & Microfones",         "Alto-falante estéreo, fone de ouvido e cancelamento de ruído"),
+            ("camera",       "Câmeras Frontal & Traseira", "Foco óptico, sensor de luminosidade e gravação de vídeo"),
+            ("battery",      "Saúde da Bateria & Carga",   "Ciclos de carga, voltagem, temperatura e TurboPower"),
+            ("vibration",    "Motor de Vibração",          "Resposta tátil háptica e frequência de ressonância"),
+            ("sensors",      "Sensores Físicos",           "Acelerômetro, Giroscópio, Proximidade e Bússola Digital"),
+            ("connectivity", "Rede & Conectividade",      "5G, Wi-Fi 6, Bluetooth 5.3, GPS e NFC"),
+            ("ports",        "Botões & Portas de Carga",  "Botão de energia, volume e conector USB-C de carga"),
+        };
+
+        for (int i = 0; i < defs.Length; i++)
+        {
+            var item = new DiagnosticItem
+            {
+                Id = defs[i].Id,
+                Name = defs[i].Name,
+                Description = defs[i].Desc,
+                Status = "Não testado",
+                StatusColor = "#9FAEBF",
+                IsAlternate = i % 2 == 1
+            };
+
+            DiagnosticsList.Add(item);
+            (i < 4 ? DiagnosticsLeft : DiagnosticsRight).Add(item);
+        }
     }
 
     private void InitializeCatalogModels()
@@ -835,10 +870,10 @@ public partial class MainViewModel : ViewModelBase
         foreach (var item in DiagnosticsList)
         {
             item.Status = "Testando...";
-            item.StatusColor = "#F59E0B";
+            item.StatusColor = "#FAAD14";
             await Task.Delay(350);
             item.Status = "Aprovado ✓";
-            item.StatusColor = "#10B981";
+            item.StatusColor = "#40A995";
             item.IsPassed = true;
         }
         AddLog("[Diagnóstico] Todos os módulos de hardware foram validados com êxito!");
@@ -849,13 +884,26 @@ public partial class MainViewModel : ViewModelBase
     {
         if (item == null) return;
         item.Status = "Testando...";
-        item.StatusColor = "#F59E0B";
+        item.StatusColor = "#FAAD14";
         AddLog($"[Diagnóstico] Executando teste: {item.Name}...");
         await Task.Delay(800);
         item.Status = "Aprovado ✓";
-        item.StatusColor = "#10B981";
+        item.StatusColor = "#40A995";
         item.IsPassed = true;
         AddLog($"[Diagnóstico] Teste '{item.Name}' concluído com sucesso.");
+    }
+
+    /// <summary>Limpa os resultados da tabela de Hardware Test (volta a "Não testado").</summary>
+    [RelayCommand]
+    private void ClearDiagnostics()
+    {
+        foreach (var item in DiagnosticsList)
+        {
+            item.Status = "Não testado";
+            item.StatusColor = "#9FAEBF";
+            item.IsPassed = false;
+        }
+        AddLog("[Diagnóstico] Resultados limpos. Pronto para uma nova bateria de testes.");
     }
 
     [RelayCommand]
@@ -908,6 +956,46 @@ public partial class MainViewModel : ViewModelBase
     public void JumpToRescueFromMyDevice()
     {
         SelectedSectionIndex = 0; // Jump to Rescue
+    }
+
+    // ==========================================
+    // MY DEVICE — SIDEBAR DE CATEGORIAS
+    // ==========================================
+    /// <summary>Categoria selecionada na sidebar do My Device (0 = Home).</summary>
+    [ObservableProperty]
+    private int _selectedMyDeviceCategory;
+
+    public bool IsMyDeviceHomeSelected => SelectedMyDeviceCategory == 0;
+
+    public string MyDeviceCategoryName => SelectedMyDeviceCategory switch
+    {
+        1 => "Apps",
+        2 => "Pictures",
+        3 => "Music",
+        4 => "Videos",
+        5 => "Contacts",
+        6 => "File",
+        7 => "One-click clone",
+        _ => "Home"
+    };
+
+    partial void OnSelectedMyDeviceCategoryChanged(int value)
+    {
+        OnPropertyChanged(nameof(IsMyDeviceHomeSelected));
+        OnPropertyChanged(nameof(MyDeviceCategoryName));
+    }
+
+    /// <summary>
+    /// Seleciona a categoria da sidebar do My Device.
+    /// Recebe string do CommandParameter (XAML) e converte — ver SelectSection.
+    /// </summary>
+    [RelayCommand]
+    private void SelectMyDeviceCategory(string indexStr)
+    {
+        if (int.TryParse(indexStr, out int index) && index >= 0 && index <= 7)
+        {
+            SelectedMyDeviceCategory = index;
+        }
     }
 
     private void OnDownloadProgress(object? sender, DownloadProgressEventArgs e)
