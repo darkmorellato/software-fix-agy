@@ -35,6 +35,13 @@ colors:
   card-hover: "#133152"
   card-pressed: "#0A1E33"
   field: "#061A2D"
+  # --- Tabelas e sidebar (padrões Hardware Test / My Device) ---
+  surface-alt: "#F1F4F8"      # painéis de conteúdo (Data Transfer)
+  surface-subtle: "#F5F8FB"   # linha alternada das tabelas (zebra)
+  table-header: "#ECEFF3"     # cabeçalho de tabela
+  chip-bg: "#E4F0F7"          # chip circular de ícone
+  hover-tint: "#EAF2F8"       # hover de itens de sidebar
+  row-title: "#334155"        # texto de linhas de tabela / itens de sidebar
   # --- Semânticas ---
   success: "#40A995"
   danger: "#FF4042"
@@ -204,6 +211,48 @@ components:
   status-warning:
     textColor: "{colors.warning}"
     typography: "{typography.body-sm}"
+  # --- Tabelas (Hardware Test) ---
+  table-head:
+    backgroundColor: "{colors.table-header}"
+    textColor: "{colors.row-title}"
+    typography: "{typography.body-sm}"
+    height: 40px
+  table-row:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.row-title}"
+    typography: "{typography.body-sm}"
+    height: 46px
+  table-row-alt:
+    backgroundColor: "{colors.surface-subtle}"
+    textColor: "{colors.row-title}"
+  icon-chip:
+    backgroundColor: "{colors.chip-bg}"
+    textColor: "{colors.primary}"
+    rounded: "{rounded.full}"
+    size: 28px
+  # --- Sidebar de categorias (My Device) ---
+  sidebar-item:
+    textColor: "{colors.row-title}"
+    typography: "{typography.body}"
+    rounded: "{rounded.pill}"
+    padding: 14px
+  sidebar-item-hover:
+    backgroundColor: "{colors.hover-tint}"
+    textColor: "{colors.primary}"
+  sidebar-item-active:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.white}"
+  # --- Painéis e rodapé ---
+  transfer-panel:
+    backgroundColor: "{colors.surface-alt}"
+    rounded: "{rounded.xl}"
+    padding: 18px
+  feedback-button:
+    backgroundColor: "{colors.primary}"
+    textColor: "{colors.white}"
+    typography: "{typography.caption}"
+    rounded: "{rounded.full}"
+    padding: 16px
 ---
 
 ## Overview
