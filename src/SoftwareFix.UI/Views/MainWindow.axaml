@@ -580,7 +580,7 @@
                                                 <TextBlock Text="{Binding Status}" FontSize="12" FontWeight="SemiBold" Foreground="{Binding StatusColor}" />
                                             </Border>
                                             <Button Grid.Column="3" Content="Testar" Classes="SecondaryPill" 
-                                                    Command="{Binding $parent[Window].((vm:MainViewModel)DataContext).RunSingleDiagnosticCommand}" 
+                                                    Command="{ReflectionBinding $parent[Window].DataContext.RunSingleDiagnosticCommand}" 
                                                     CommandParameter="{Binding}" VerticalAlignment="Center" />
                                         </Grid>
                                     </Border>
@@ -777,7 +777,7 @@
                                                 <TextBlock Grid.Column="0" Text="{Binding MarketName}" FontSize="13" FontWeight="Bold" Foreground="#FFFFFF" VerticalAlignment="Center" />
                                                 <TextBlock Grid.Column="1" Text="{Binding ModelName}" FontSize="12" Foreground="#9FAEBF" VerticalAlignment="Center" Margin="0,0,14,0" />
                                                 <Button Grid.Column="2" Content="Selecionar" Classes="ActionPill" Padding="12,4"
-                                                        Command="{Binding $parent[Window].((vm:MainViewModel)DataContext).SelectManualModelCommand}" 
+                                                        Command="{ReflectionBinding $parent[Window].DataContext.SelectManualModelCommand}" 
                                                         CommandParameter="{Binding}" VerticalAlignment="Center" />
                                             </Grid>
                                         </Border>

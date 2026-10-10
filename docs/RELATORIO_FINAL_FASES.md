@@ -97,6 +97,18 @@
   `App.axaml`, `MainWindow.axaml`, `Program.cs` (CLI), `README.md`.
 * **Sem alteração de contrato:** `SoftwareFix.Download`, `FlashFileParser` (já corretos).
 
+## Correção pós-homologação (10/10/2026)
+
+* **Crash ao clicar na aba "Hardware Test"** — exceção não tratada
+  (`ArgumentException: Unable to resolve type vm:MainViewModel`) no binding com cast de
+  tipo (`((vm:MainViewModel)DataContext)`) dentro de `DataTemplate` (closures do Avalonia
+  não resolvem o prefixo de namespace em runtime). Corrigido com `ReflectionBinding`
+  (`$parent[Window].DataContext.Command`) nos dois pontos afetados — o mesmo padrão
+  latente existia no modal de seleção de modelos (corrigido preventivamente).
+* Validação: build `--no-incremental` limpo; as **7 seções** abrem sem crash
+  (`SOFTWARE_FIX_SECTION=0..6`, hook de QA adicionado ao MainViewModel); verificação
+  visual por captura de tela da seção Hardware Test.
+
 ## Pendências (requerem hardware físico — do usuário)
 
 1. `software-fix login` com sua conta Lenovo ID (fluxo no navegador).

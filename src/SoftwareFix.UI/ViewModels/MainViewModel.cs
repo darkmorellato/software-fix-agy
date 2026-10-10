@@ -268,7 +268,14 @@ public partial class MainViewModel : ViewModelBase
         InitializeDiagnosticItems();
         InitializeCatalogModels();
 
-        AddLog("[Sistema] Software Fix v7.4.2.13 (Linux Edition) iniciado.");
+        // QA: permite iniciar direto em uma seção (SOFTWARE_FIX_SECTION=0..6) para testes
+        if (int.TryParse(Environment.GetEnvironmentVariable("SOFTWARE_FIX_SECTION"), out int initialSection)
+            && initialSection >= 0 && initialSection <= 6)
+        {
+            SelectedSectionIndex = initialSection;
+        }
+
+        AddLog("[Sistema] Software Fix v7.6.2.10 (Linux Edition) iniciado.");
         AddLog($"[Sistema] Diretório de ROMs: {Configurations.RomPath}");
 
         Task.Run(async () =>
