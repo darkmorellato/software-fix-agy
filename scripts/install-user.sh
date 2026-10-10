@@ -72,8 +72,11 @@ done
 # ---------------------------------------------------------------- 2) copiar
 echo "[2/5] Copiando aplicação para $APP_DIR ..."
 mkdir -p "$APP_DIR" "$BIN_DIR" "$DESKTOP_DIR" "$ICON_DIR"
-install -m 0755 "$DIST_DIR/ui/SoftwareFix.UI"  "$APP_DIR/SoftwareFix.UI"
-install -m 0755 "$DIST_DIR/cli/SoftwareFix.CLI" "$APP_DIR/SoftwareFix.CLI"
+# copia TUDO (executável + DLLs + libs nativas libSkiaSharp.so/libHarfBuzzSharp.so —
+# sem as nativas o Avalonia não inicia: "Unable to load shared library 'libSkiaSharp'")
+cp -a "$DIST_DIR/ui/."  "$APP_DIR/"
+cp -a "$DIST_DIR/cli/." "$APP_DIR/"
+chmod +x "$APP_DIR/SoftwareFix.UI" "$APP_DIR/SoftwareFix.CLI"
 
 # ---------------------------------------------------------------- 3) wrappers
 echo "[3/5] Criando comandos em $BIN_DIR ..."
@@ -90,18 +93,32 @@ chmod +x "$BIN_DIR/software-fix-ui" "$BIN_DIR/software-fix"
 # ---------------------------------------------------------------- 4) menu
 echo "[4/5] Instalando ícone e atalho no menu de aplicativos..."
 if [ -f "$ROOT_DIR/src/SoftwareFix.UI/Assets/software-fix.png" ]; then
-    install -m 0644 "$ROOT_DIR/src/SoftwareFix.UI/Assets/software-fix.png" "$ICON_DIR/software-fix.png"
+    SRC_ICON="$ROOT_DIR/src/SoftwareFix.UI/Assets/software-fix.png"
+    install -m 0644 "$SRC_ICON" "$ICON_DIR/software-fix.png"
+    # gera os demais tamanhos (menus, docks e lançadores pedem vários)
+    if command -v magick >/dev/null 2>&1 || command -v convert >/dev/null 2>&1; then
+        MAGICK="$(command -v magick || command -v convert)"
+        for s in 512 128 64 48 32 16; do
+            d="$HOME/.local/share/icons/hicolor/${s}x${s}/apps"
+            mkdir -p "$d"
+            "$MAGICK" "$SRC_ICON" -resize "${s}x${s}" "$d/software-fix.png" 2>/dev/null || true
+        done
+    fi
+    command -v gtk-update-icon-cache >/dev/null 2>&1 && gtk-update-icon-cache -f -t "$HOME/.local/share/icons/hicolor" >/dev/null 2>&1 || true
 fi
 cat > "$DESKTOP_DIR/software-fix.desktop" <<EOF
 [Desktop Entry]
 Name=Software Fix
-Comment=Lenovo & Motorola Rescue and Smart Assistant
+GenericName=Atualizar Motorola & Lenovo
+Comment=Resgatar, atualizar e baixar firmware oficial de Motorola e Lenovo
 Exec=$BIN_DIR/software-fix-ui
 Terminal=false
 Type=Application
 Icon=software-fix
 Categories=Utility;Development;
-Keywords=motorola;lenovo;rescue;fastboot;flash;rom;
+Keywords=motorola;lenovo;rescue;fastboot;flash;rom;atualizar;firmware;
+StartupNotify=true
+StartupWMClass=SoftwareFix.UI
 EOF
 command -v update-desktop-database >/dev/null 2>&1 && update-desktop-database "$DESKTOP_DIR" >/dev/null 2>&1 || true
 
