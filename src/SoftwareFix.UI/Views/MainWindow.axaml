@@ -226,6 +226,17 @@
                                     </Grid>
                                 </Button>
                             </Grid>
+
+                            <!-- Banner: Assistente MTK (fluxo Linux validado — atualizar/resgatar) -->
+                            <Button Classes="WelcomeOptionCard" Width="840" Margin="8,16,8,0" Height="66" Command="{Binding OpenMtkWizardCommand}">
+                                <Grid ColumnDefinitions="*,Auto">
+                                    <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="4">
+                                        <TextBlock Text="Assistente MTK — Atualizar / Resgatar aparelho (Linux)" FontSize="15" FontWeight="Bold" Foreground="#FFFFFF" />
+                                        <TextBlock Text="Moto G17 · G56 · G06 · Edge 60 Fusion — grava a ROM oficial + corrige o boot, guiado nesta tela" FontSize="11" Foreground="{StaticResource TextMutedBlueBrush}" />
+                                    </StackPanel>
+                                    <PathIcon Grid.Column="1" Data="{StaticResource IconHardwareTest}" Width="26" Height="26" Foreground="#40A995" VerticalAlignment="Center" Margin="12,0,6,0" />
+                                </Grid>
+                            </Button>
                         </StackPanel>
 
                         <!-- Rodapé -->
@@ -945,6 +956,99 @@
                             </Grid>
                         </Border>
                     </StackPanel>
+                </Grid>
+            </Grid>
+
+            <!-- ============================================================== -->
+            <!-- ASSISTENTE MTK — FLUXO GUIADO (ATUALIZAR / RESGATAR)           -->
+            <!-- ============================================================== -->
+            <Grid IsVisible="{Binding IsMtkWizardOpen}" Background="{StaticResource ConnectedWhiteBgBrush}" ZIndex="88">
+                <Grid RowDefinitions="Auto,*,Auto" Margin="36,22,56,18">
+                    <!-- Cabeçalho -->
+                    <Grid Grid.Row="0" ColumnDefinitions="*,Auto">
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Assistente MTK — Atualizar / Resgatar aparelho" FontSize="22" FontWeight="Bold" Foreground="#001429" />
+                            <TextBlock Text="Fluxo guiado para Motos MediaTek (PreLoader + DA assinado): grava a ROM oficial, corrige o estado de boot e reinicia — tudo nesta tela." FontSize="13" Foreground="#64748B" TextWrapping="Wrap" />
+                        </StackPanel>
+                        <Button Grid.Column="1" Classes="SecondaryPill" Command="{Binding CloseMtkWizardCommand}" VerticalAlignment="Top">
+                            <TextBlock Text="← Voltar" FontSize="12" Foreground="#475569" />
+                        </Button>
+                    </Grid>
+
+                    <Grid Grid.Row="1" ColumnDefinitions="*,440" Margin="0,16,0,0">
+                        <!-- Coluna esquerda: ambiente + passo a passo + status -->
+                        <ScrollViewer Grid.Column="0" Margin="0,0,18,0">
+                            <StackPanel Spacing="12">
+                                <Border Background="#F8FAFC" CornerRadius="12" BorderBrush="#E2E8F0" BorderThickness="1" Padding="16">
+                                    <StackPanel Spacing="4">
+                                        <TextBlock Text="Ambiente" FontSize="14" FontWeight="Bold" Foreground="#001429" />
+                                        <TextBlock Text="{Binding MtkPrereqText}" FontSize="12" Foreground="#334155" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Background="#FFFFFF" CornerRadius="12" BorderBrush="#E2E8F0" BorderThickness="1" Padding="16">
+                                    <StackPanel Spacing="10">
+                                        <TextBlock Text="Como fazer (o assistente avisa em cada etapa)" FontSize="14" FontWeight="Bold" Foreground="#001429" />
+                                        <TextBlock Text="1. Selecione a ROM oficial ao lado (pasta extraída com o scatter)." FontSize="12" Foreground="#334155" TextWrapping="Wrap" />
+                                        <TextBlock Text="2. Clique em INICIAR RESGATE e siga o que aparecer aqui." FontSize="12" Foreground="#334155" TextWrapping="Wrap" />
+                                        <TextBlock Text="3. Quando pedido, DESCONECTE o cabo; depois desligue o aparelho (segure Power 20-30s)." FontSize="12" Foreground="#334155" TextWrapping="Wrap" />
+                                        <TextBlock Text="4. Reconecte SEGURANDO Volume ↓ (modo PreLoader). Depois disso, não aperte mais nada." FontSize="12" Foreground="#334155" TextWrapping="Wrap" />
+                                        <TextBlock Text="5. Aguarde: gravação (5–15 min) + correção de boot + reinício. NÃO mexa no aparelho." FontSize="12" Foreground="#334155" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Background="#F1F5F9" CornerRadius="12" Padding="16" BorderBrush="#E2E8F0" BorderThickness="1">
+                                    <StackPanel Spacing="4">
+                                        <TextBlock Text="Aparelho (detecção ao vivo)" FontSize="14" FontWeight="Bold" Foreground="#001429" />
+                                        <TextBlock Text="{Binding MtkDeviceStatus}" FontSize="13" FontWeight="SemiBold" Foreground="#005D7F" TextWrapping="Wrap" />
+                                        <TextBlock Text="{Binding MtkDeviceHint}" FontSize="11" Foreground="#64748B" TextWrapping="Wrap" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Background="#FFFFFF" CornerRadius="12" BorderBrush="#E2E8F0" BorderThickness="1" Padding="16" IsVisible="{Binding MtkRunning}">
+                                    <StackPanel Spacing="8">
+                                        <TextBlock Text="{Binding MtkStatusText}" FontSize="12" Foreground="#334155" TextWrapping="Wrap" />
+                                        <ProgressBar Value="{Binding MtkProgress}" Minimum="0" Maximum="100" Height="10" CornerRadius="5" Foreground="#40A995" Background="#E2E8F0" />
+                                    </StackPanel>
+                                </Border>
+
+                                <Border Background="#F1F5F9" CornerRadius="12" Padding="16" BorderBrush="#E2E8F0" BorderThickness="1" IsVisible="{Binding !!MtkResultText.Length}">
+                                    <StackPanel Spacing="6">
+                                        <TextBlock Text="{Binding MtkResultText}" FontSize="13" FontWeight="SemiBold" Foreground="#001429" TextWrapping="Wrap" />
+                                        <TextBlock Text="{Binding MtkMiscDiag}" FontSize="11" Foreground="#334155" FontFamily="Cascadia Code, Consolas, monospace" TextWrapping="Wrap" IsVisible="{Binding !!MtkMiscDiag.Length}" />
+                                    </StackPanel>
+                                </Border>
+
+                                <TextBlock Text="{Binding MtkStatusText}" FontSize="12" Foreground="#64748B" TextWrapping="Wrap" IsVisible="{Binding !MtkRunning}" />
+                            </StackPanel>
+                        </ScrollViewer>
+
+                        <!-- Coluna direita: ROM + botão iniciar -->
+                        <StackPanel Grid.Column="1" Spacing="12">
+                            <Border Background="#F8FAFC" CornerRadius="12" BorderBrush="#E2E8F0" BorderThickness="1" Padding="16">
+                                <StackPanel Spacing="10">
+                                    <TextBlock Text="ROM oficial (~/.local/share/software-fix/download/RomFiles)" FontSize="13" FontWeight="Bold" Foreground="#001429" TextWrapping="Wrap" />
+                                    <ComboBox ItemsSource="{Binding MtkRoms}" SelectedItem="{Binding MtkSelectedRom}" HorizontalAlignment="Stretch">
+                                        <ComboBox.ItemTemplate>
+                                            <DataTemplate x:DataType="vm:MtkRomEntry">
+                                                <TextBlock Text="{Binding Display}" FontSize="12" TextTrimming="CharacterEllipsis" />
+                                            </DataTemplate>
+                                        </ComboBox.ItemTemplate>
+                                    </ComboBox>
+                                    <Button Content="Atualizar lista" Classes="SecondaryPill" Command="{Binding RefreshMtkRomsCommand}" HorizontalAlignment="Left" />
+                                    <CheckBox IsChecked="{Binding MtkFixBoot}" Foreground="#334155" FontSize="12">
+                                        <TextBlock Text="Corrigir estado de boot no final (recomendado — limpa metadata/misc e reinicia)" TextWrapping="Wrap" />
+                                    </CheckBox>
+                                </StackPanel>
+                            </Border>
+
+                            <Button Classes="ActionPill" Height="52" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                                    IsEnabled="{Binding MtkCanStart}" Command="{Binding StartMtkRescueCommand}">
+                                <TextBlock Text="INICIAR RESGATE" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" />
+                            </Button>
+                            <TextBlock Text="O aparelho NÃO precisa estar conectado para clicar: o assistente pede os passos certos na hora certa." FontSize="11" Foreground="#64748B" TextWrapping="Wrap" />
+                        </StackPanel>
+                    </Grid>
                 </Grid>
             </Grid>
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace SoftwareFix.CLI;
+namespace SoftwareFix.Device;
 
 /// <summary>
 /// Constrói o plano de flash (partição → imagem) a partir de uma ROM extraída com
@@ -11,7 +11,7 @@ namespace SoftwareFix.CLI;
 /// Formato do scatter: blocos com "partition_index:" / "partition_name:" /
 /// "file_name:" / "is_download:".
 /// </summary>
-internal static class MtkFlashPlan
+public static class MtkFlashPlan
 {
     public static List<(string Partition, string File)> Build(string dir, string? onlyCsv, bool slotted)
     {
