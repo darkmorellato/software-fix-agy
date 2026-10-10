@@ -657,7 +657,7 @@
                         </Border.Background>
                         <Grid ColumnDefinitions="*,Auto">
                             <StackPanel Grid.Column="0" Spacing="3">
-                                <TextBlock Text="Hardware Test &amp; Diagnóstico" FontSize="21" FontWeight="Bold" Foreground="#FFFFFF" />
+                                <TextBlock Text="Rode seus próprios testes de hardware" FontSize="21" FontWeight="Bold" Foreground="#FFFFFF" />
                                 <TextBlock Text="Verifique rapidamente se o seu dispositivo apresenta algum problema de hardware" FontSize="13" Foreground="#9FBFE0" />
                             </StackPanel>
                             <PathIcon Grid.Column="1" Data="{StaticResource IconHardwareTest}" Width="30" Height="30" Foreground="#3E7CB0" VerticalAlignment="Center" Opacity="0.6" />
@@ -865,65 +865,88 @@
                     </Border>
 
                     <Grid Grid.Row="1" RowDefinitions="Auto,*">
-                        <!-- Abas internas: Backup | Restauração (arte oficial) -->
-                        <StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="8" Margin="0,0,0,14">
-                            <Button Classes="SubTab" Classes.Active="{Binding IsBackupTabActive}" Height="40"
-                                    Command="{Binding ShowBackupTabCommand}">
-                                <TextBlock Text="Backup" FontSize="13" FontWeight="SemiBold" />
-                            </Button>
-                            <Button Classes="SubTab" Classes.Active="{Binding IsRestoreTabActive}" Height="40"
-                                    Command="{Binding ShowRestoreTabCommand}">
-                                <TextBlock Text="Restauração" FontSize="13" FontWeight="SemiBold" />
-                            </Button>
-                        </StackPanel>
+                        <!-- Cabeçalho oficial: armazenamento + radios Backup | Restore -->
+                        <Grid Grid.Row="0" ColumnDefinitions="Auto,Auto,Auto,*" Margin="0,0,0,14">
+                            <TextBlock Grid.Column="0" Text="Escolher armazenamento:" FontSize="13" Foreground="#334155" VerticalAlignment="Center" Margin="0,0,10,0" />
+                            <ComboBox Grid.Column="1" SelectedIndex="0" Width="140" FontSize="12" VerticalAlignment="Center" Margin="0,0,24,0">
+                                <ComboBoxItem Content="Interno" />
+                                <ComboBoxItem Content="Cartão SD" />
+                            </ComboBox>
+                            <RadioButton Grid.Column="2" GroupName="bkMode" Content="Backup" FontSize="13" Foreground="#005D7F" VerticalAlignment="Center" Margin="0,0,20,0"
+                                         IsChecked="{Binding IsBackupTabActive, Mode=OneWay}" Command="{Binding ShowBackupTabCommand}" />
+                            <RadioButton Grid.Column="3" GroupName="bkMode" Content="Restauração" FontSize="13" Foreground="#005D7F" VerticalAlignment="Center" HorizontalAlignment="Left"
+                                         IsChecked="{Binding IsRestoreTabActive, Mode=OneWay}" Command="{Binding ShowRestoreTabCommand}" />
+                        </Grid>
 
                         <Grid Grid.Row="1">
-                            <!-- ABA BACKUP (arte oficial: grid de categorias + pasta + criptografia) -->
+                            <!-- ABA BACKUP (arte oficial: 7 categorias + local + observações + criptografia) -->
                             <Border IsVisible="{Binding IsBackupTabActive}" Background="#FFFFFF" CornerRadius="14"
                                     BorderBrush="#E2E8F0" BorderThickness="1" Padding="24">
-                                <StackPanel Spacing="18">
-                                    <TextBlock Text="Selecione o que deseja incluir no backup:" FontSize="14" FontWeight="SemiBold" Foreground="#001429" />
-
-                                    <Grid ColumnDefinitions="*,*,*,*">
-                                        <Border Grid.Column="0" Background="#F1F5F9" CornerRadius="12" Padding="14" Margin="0,0,10,0">
-                                            <StackPanel Spacing="8" HorizontalAlignment="Center">
-                                                <CheckBox IsChecked="True" HorizontalAlignment="Center" />
-                                                <PathIcon Data="{StaticResource IconPerson}" Width="26" Height="26" Foreground="#005D7F" HorizontalAlignment="Center" />
-                                                <TextBlock Text="Contatos" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
-                                            </StackPanel>
-                                        </Border>
-                                        <Border Grid.Column="1" Background="#F1F5F9" CornerRadius="12" Padding="14" Margin="5,0">
-                                            <StackPanel Spacing="8" HorizontalAlignment="Center">
-                                                <CheckBox IsChecked="True" HorizontalAlignment="Center" />
-                                                <PathIcon Data="{StaticResource IconMusic}" Width="26" Height="26" Foreground="#005D7F" HorizontalAlignment="Center" />
-                                                <TextBlock Text="Músicas" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
-                                            </StackPanel>
-                                        </Border>
-                                        <Border Grid.Column="2" Background="#F1F5F9" CornerRadius="12" Padding="14" Margin="5,0">
-                                            <StackPanel Spacing="8" HorizontalAlignment="Center">
-                                                <CheckBox IsChecked="True" HorizontalAlignment="Center" />
-                                                <PathIcon Data="{StaticResource IconPicture}" Width="26" Height="26" Foreground="#005D7F" HorizontalAlignment="Center" />
+                                <StackPanel Spacing="16">
+                                    <Grid ColumnDefinitions="*,*,*,*" RowDefinitions="Auto,Auto">
+                                        <Border Grid.Row="0" Grid.Column="0" Background="#F8FAFC" CornerRadius="10" BorderBrush="#E2E8F0" BorderThickness="1" Padding="12" Margin="0,0,10,10">
+                                            <StackPanel Spacing="6" HorizontalAlignment="Center">
+                                                <CheckBox IsChecked="True" HorizontalAlignment="Left" />
+                                                <PathIcon Data="{StaticResource IconPicture}" Width="30" Height="30" Foreground="#E8A33D" HorizontalAlignment="Center" />
                                                 <TextBlock Text="Fotos" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
                                             </StackPanel>
                                         </Border>
-                                        <Border Grid.Column="3" Background="#F1F5F9" CornerRadius="12" Padding="14" Margin="10,0,0,0">
-                                            <StackPanel Spacing="8" HorizontalAlignment="Center">
-                                                <CheckBox IsChecked="True" HorizontalAlignment="Center" />
-                                                <PathIcon Data="{StaticResource IconVideo}" Width="26" Height="26" Foreground="#005D7F" HorizontalAlignment="Center" />
+                                        <Border Grid.Row="0" Grid.Column="1" Background="#F8FAFC" CornerRadius="10" BorderBrush="#E2E8F0" BorderThickness="1" Padding="12" Margin="5,0,5,10">
+                                            <StackPanel Spacing="6" HorizontalAlignment="Center">
+                                                <CheckBox IsChecked="True" HorizontalAlignment="Left" />
+                                                <PathIcon Data="{StaticResource IconMusic}" Width="30" Height="30" Foreground="#7C5CBF" HorizontalAlignment="Center" />
+                                                <TextBlock Text="Músicas" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Grid.Row="0" Grid.Column="2" Background="#F8FAFC" CornerRadius="10" BorderBrush="#E2E8F0" BorderThickness="1" Padding="12" Margin="5,0,5,10">
+                                            <StackPanel Spacing="6" HorizontalAlignment="Center">
+                                                <CheckBox IsChecked="True" HorizontalAlignment="Left" />
+                                                <PathIcon Data="{StaticResource IconVideo}" Width="30" Height="30" Foreground="#3B82C4" HorizontalAlignment="Center" />
                                                 <TextBlock Text="Vídeos" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Grid.Row="0" Grid.Column="3" Background="#F8FAFC" CornerRadius="10" BorderBrush="#E2E8F0" BorderThickness="1" Padding="12" Margin="10,0,0,10">
+                                            <StackPanel Spacing="6" HorizontalAlignment="Center">
+                                                <CheckBox IsChecked="True" HorizontalAlignment="Left" />
+                                                <PathIcon Data="{StaticResource IconPerson}" Width="30" Height="30" Foreground="#43A047" HorizontalAlignment="Center" />
+                                                <TextBlock Text="Contatos" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Grid.Row="1" Grid.Column="0" Background="#F8FAFC" CornerRadius="10" BorderBrush="#E2E8F0" BorderThickness="1" Padding="12" Margin="0,0,10,0">
+                                            <StackPanel Spacing="6" HorizontalAlignment="Center">
+                                                <CheckBox IsChecked="True" HorizontalAlignment="Left" />
+                                                <PathIcon Data="{StaticResource IconFolder}" Width="30" Height="30" Foreground="#7CB342" HorizontalAlignment="Center" />
+                                                <TextBlock Text="Arquivos" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Grid.Row="1" Grid.Column="1" Background="#F8FAFC" CornerRadius="10" BorderBrush="#E2E8F0" BorderThickness="1" Padding="12" Margin="5,0,5,0">
+                                            <StackPanel Spacing="6" HorizontalAlignment="Center">
+                                                <CheckBox IsChecked="True" HorizontalAlignment="Left" />
+                                                <PathIcon Data="{StaticResource IconSupportChat}" Width="30" Height="30" Foreground="#26A69A" HorizontalAlignment="Center" />
+                                                <TextBlock Text="SMS" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
+                                            </StackPanel>
+                                        </Border>
+                                        <Border Grid.Row="1" Grid.Column="2" Background="#F8FAFC" CornerRadius="10" BorderBrush="#E2E8F0" BorderThickness="1" Padding="12" Margin="5,0,5,0">
+                                            <StackPanel Spacing="6" HorizontalAlignment="Center">
+                                                <CheckBox IsChecked="True" HorizontalAlignment="Left" />
+                                                <PathIcon Data="{StaticResource IconPhone}" Width="30" Height="30" Foreground="#5C6BC0" HorizontalAlignment="Center" />
+                                                <TextBlock Text="Chamadas" FontSize="12" FontWeight="SemiBold" Foreground="#334155" HorizontalAlignment="Center" />
                                             </StackPanel>
                                         </Border>
                                     </Grid>
 
+                                    <TextBlock Text="Local:" FontSize="12" FontWeight="SemiBold" Foreground="#334155" />
                                     <Grid ColumnDefinitions="*,Auto">
-                                        <TextBlock Grid.Column="0" Text="Pasta de salvamento:  ~/software-fix/Backups" FontSize="12"
-                                                   Foreground="#64748B" VerticalAlignment="Center" />
-                                        <Button Grid.Column="1" Content="Alterar" Classes="SecondaryPill" FontSize="12" />
+                                        <TextBox Grid.Column="0" Text="~/software-fix/Backups" FontSize="12" />
+                                        <Button Grid.Column="1" Content="Alterar" Classes="SecondaryPill" FontSize="12" Margin="10,0,0,0" />
                                     </Grid>
 
-                                    <CheckBox Content="Criptografar backup (protege o arquivo com senha)" FontSize="12" Foreground="#334155" />
+                                    <TextBlock Text="Observações (opcional):" FontSize="12" FontWeight="SemiBold" Foreground="#334155" />
+                                    <TextBox FontSize="12" Watermark="Ex.: backup antes da atualização" />
 
-                                    <Button Classes="ActionPill" Content="Fazer Backup" Width="190" HorizontalAlignment="Left" />
+                                    <CheckBox Content="Criptografar backup" FontSize="12" Foreground="#334155" />
+
+                                    <Button Classes="ActionPill" Content="Backup" Width="200" HorizontalAlignment="Center" />
                                 </StackPanel>
                             </Border>
 
