@@ -969,14 +969,14 @@ public partial class MainViewModel : ViewModelBase
 
     public string MyDeviceCategoryName => SelectedMyDeviceCategory switch
     {
-        1 => "Apps",
-        2 => "Pictures",
-        3 => "Music",
-        4 => "Videos",
-        5 => "Contacts",
-        6 => "File",
-        7 => "One-click clone",
-        _ => "Home"
+        1 => "Aplicativos",
+        2 => "Fotos",
+        3 => "Músicas",
+        4 => "Vídeos",
+        5 => "Contatos",
+        6 => "Arquivos",
+        7 => "Clonagem com 1 clique",
+        _ => "Início"
     };
 
     partial void OnSelectedMyDeviceCategoryChanged(int value)

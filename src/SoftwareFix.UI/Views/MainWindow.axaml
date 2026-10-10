@@ -39,7 +39,7 @@
                             Command="{Binding SelectSectionCommand}" CommandParameter="0">
                         <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <PathIcon Data="{StaticResource IconRescueTools}" Width="18" Height="18" Foreground="#FFFFFF" />
-                            <TextBlock Text="Rescue" FontWeight="Bold" FontSize="13" Foreground="#FFFFFF" VerticalAlignment="Center" />
+                            <TextBlock Text="Resgate" FontWeight="Bold" FontSize="13" Foreground="#FFFFFF" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
@@ -48,7 +48,7 @@
                             Command="{Binding SelectSectionCommand}" CommandParameter="1">
                         <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <PathIcon Data="{StaticResource IconBackupRestore}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Backup &amp; Restore" FontSize="12" VerticalAlignment="Center" />
+                            <TextBlock Text="Backup e Restauração" FontSize="12" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
@@ -57,7 +57,7 @@
                             Command="{Binding SelectSectionCommand}" CommandParameter="2">
                         <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <PathIcon Data="{StaticResource IconHardwareTest}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Hardware Test" FontSize="12" VerticalAlignment="Center" />
+                            <TextBlock Text="Teste de Hardware" FontSize="12" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
@@ -66,7 +66,7 @@
                             Command="{Binding SelectSectionCommand}" CommandParameter="3">
                         <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <PathIcon Data="{StaticResource IconDataTransfer}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Data Transfer" FontSize="12" VerticalAlignment="Center" />
+                            <TextBlock Text="Transferência de Dados" FontSize="12" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
@@ -75,7 +75,7 @@
                             Command="{Binding SelectSectionCommand}" CommandParameter="4">
                         <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <PathIcon Data="{StaticResource IconMyDevice}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="My Device" FontSize="12" VerticalAlignment="Center" />
+                            <TextBlock Text="Meu Aparelho" FontSize="12" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
@@ -84,7 +84,7 @@
                             Command="{Binding SelectSectionCommand}" CommandParameter="5">
                         <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <PathIcon Data="{StaticResource IconToolbox}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Toolbox" FontSize="12" VerticalAlignment="Center" />
+                            <TextBlock Text="Ferramentas" FontSize="12" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
 
@@ -93,7 +93,7 @@
                             Command="{Binding SelectSectionCommand}" CommandParameter="6">
                         <StackPanel Orientation="Horizontal" Spacing="8" VerticalAlignment="Center">
                             <PathIcon Data="{StaticResource IconSupport}" Width="16" Height="16" Foreground="#9FAEBF" />
-                            <TextBlock Text="Support" FontSize="12" VerticalAlignment="Center" />
+                            <TextBlock Text="Suporte" FontSize="12" VerticalAlignment="Center" />
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -148,9 +148,9 @@
                     <Grid RowDefinitions="*,Auto" Margin="40,30,40,20">
                         <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="24">
                             <StackPanel Spacing="6" HorizontalAlignment="Center">
-                                <TextBlock Text="Welcome to Software Fix" FontSize="26" FontWeight="Bold" 
+                                <TextBlock Text="Bem-vindo ao Software Fix" FontSize="26" FontWeight="Bold" 
                                            Foreground="#FFFFFF" HorizontalAlignment="Center" />
-                                <TextBlock Text="The easy way to update the software on your phone" FontSize="14" 
+                                <TextBlock Text="A forma fácil de atualizar o software do seu celular" FontSize="14" 
                                            Foreground="{StaticResource TextMutedBlueBrush}" HorizontalAlignment="Center" />
                             </StackPanel>
 
@@ -162,14 +162,14 @@
                                         Command="{Binding OpenImeiModalCommand}">
                                     <Grid ColumnDefinitions="*,Auto">
                                         <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="6">
-                                            <TextBlock Text="Input IMEI" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
-                                            <TextBlock Text="Manually enter the IMEI for&#x0a;your device" 
+                                            <TextBlock Text="Digitar IMEI" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
+                                            <TextBlock Text="Informe manualmente o IMEI&#x0a;do seu aparelho" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
                                         <Grid Grid.Column="1">
                                             <Border VerticalAlignment="Top" HorizontalAlignment="Right" 
                                                     Background="{StaticResource GreenSuccessBrush}" CornerRadius="4" Padding="6,2" Margin="0,-10,-10,0">
-                                                <TextBlock Text="Recommended" FontSize="10" FontWeight="Bold" Foreground="#FFFFFF" />
+                                                <TextBlock Text="Recomendado" FontSize="10" FontWeight="Bold" Foreground="#FFFFFF" />
                                             </Border>
                                             <Border Width="64" Height="90" CornerRadius="8" Background="#061A2D" 
                                                     BorderBrush="#1B3855" BorderThickness="1" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -186,8 +186,8 @@
                                 <Button Grid.Row="0" Grid.Column="1" Classes="WelcomeOptionCard" Margin="8">
                                     <Grid ColumnDefinitions="*,Auto">
                                         <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="6">
-                                            <TextBlock Text="WiFi Connection" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
-                                            <TextBlock Text="Connect your phone using&#x0a;Wi-Fi to read the IMEI" 
+                                            <TextBlock Text="Conexão Wi-Fi" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
+                                            <TextBlock Text="Conecte o celular via&#x0a;Wi-Fi para ler o IMEI" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
                                         <Border Grid.Column="1" Width="80" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -201,8 +201,8 @@
                                         Command="{Binding OpenFastbootGuideCommand}">
                                     <Grid ColumnDefinitions="*,Auto">
                                         <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="6">
-                                            <TextBlock Text="Fastboot Connection..." FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
-                                            <TextBlock Text="Follow the step-by-step guide&#x0a;to connect your device using a&#x0a;USB cable to match firmware" 
+                                            <TextBlock Text="Conexão Fastboot" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
+                                            <TextBlock Text="Siga o guia passo a passo para&#x0a;conectar o aparelho via cabo&#x0a;USB e localizar o firmware" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
                                         <Border Grid.Column="1" Width="80" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -216,8 +216,8 @@
                                         Command="{Binding OpenModelSelectModalCommand}">
                                     <Grid ColumnDefinitions="*,Auto">
                                         <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="6">
-                                            <TextBlock Text="Model Selection" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
-                                            <TextBlock Text="Manually select your phone&#x0a;from the list of models" 
+                                            <TextBlock Text="Seleção de Modelo" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
+                                            <TextBlock Text="Escolha manualmente o seu&#x0a;celular na lista de modelos" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
                                         <Border Grid.Column="1" Width="80" Height="80" HorizontalAlignment="Right" VerticalAlignment="Center">
@@ -242,7 +242,7 @@
                         <!-- Rodapé -->
                         <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto" Margin="0,16,0,0">
                             <Button Grid.Column="0" Classes="SecondaryPill" Command="{Binding BackToWelcomeCommand}">
-                                <TextBlock Text="🏠 Home" FontSize="12" VerticalAlignment="Center" />
+                                <TextBlock Text="🏠 Início" FontSize="12" VerticalAlignment="Center" />
                             </Button>
                         </Grid>
                     </Grid>
@@ -268,22 +268,22 @@
                                                 <!-- Card 'Warranty & Services' Real -->
                                                 <Border Grid.Row="1" Background="#FFFFFF" CornerRadius="10" Padding="10,12" BoxShadow="0 4 12 #00000025">
                                                     <StackPanel Spacing="5">
-                                                        <TextBlock Text="Warranty &amp; Services" FontSize="11" FontWeight="Bold" Foreground="#001429" HorizontalAlignment="Center" />
+                                                        <TextBlock Text="Garantia e Serviços" FontSize="11" FontWeight="Bold" Foreground="#001429" HorizontalAlignment="Center" />
                                                         <Grid ColumnDefinitions="Auto,*" Margin="0,4,0,0">
                                                             <TextBlock Grid.Column="0" Text="Status :" FontSize="9" Foreground="#64748B" />
                                                             <TextBlock Grid.Column="1" Text="{Binding WarrantyStatus}" FontSize="9" FontWeight="Bold" 
                                                                        Foreground="{Binding IsInWarranty, Converter={x:Null}}" HorizontalAlignment="Right" />
                                                         </Grid>
                                                         <Grid ColumnDefinitions="Auto,*">
-                                                            <TextBlock Grid.Column="0" Text="Start date :" FontSize="9" Foreground="#64748B" />
+                                                            <TextBlock Grid.Column="0" Text="Início :" FontSize="9" Foreground="#64748B" />
                                                             <TextBlock Grid.Column="1" Text="{Binding WarrantyStartDate}" FontSize="9" Foreground="#1E293B" HorizontalAlignment="Right" />
                                                         </Grid>
                                                         <Grid ColumnDefinitions="Auto,*">
-                                                            <TextBlock Grid.Column="0" Text="End date :" FontSize="9" Foreground="#64748B" />
+                                                            <TextBlock Grid.Column="0" Text="Término :" FontSize="9" Foreground="#64748B" />
                                                             <TextBlock Grid.Column="1" Text="{Binding WarrantyEndDate}" FontSize="9" Foreground="#1E293B" HorizontalAlignment="Right" />
                                                         </Grid>
                                                         <Grid ColumnDefinitions="Auto,*">
-                                                            <TextBlock Grid.Column="0" Text="Days remaining :" FontSize="9" Foreground="#64748B" />
+                                                            <TextBlock Grid.Column="0" Text="Dias restantes :" FontSize="9" Foreground="#64748B" />
                                                             <TextBlock Grid.Column="1" Text="{Binding WarrantyDaysRemaining}" FontSize="9" Foreground="#1E293B" HorizontalAlignment="Right" />
                                                         </Grid>
                                                     </StackPanel>
@@ -301,11 +301,11 @@
                                     <StackPanel Spacing="4">
                                         <Grid ColumnDefinitions="Auto,*">
                                             <PathIcon Grid.Column="0" Data="{StaticResource IconPhone}" Width="13" Height="13" Foreground="#64748B" Margin="0,0,8,0" />
-                                            <TextBlock Grid.Column="1" Text="{Binding DeviceModel, StringFormat='Model Name: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
+                                            <TextBlock Grid.Column="1" Text="{Binding DeviceModel, StringFormat='Modelo: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto,*">
                                             <PathIcon Grid.Column="0" Data="{StaticResource IconHardwareTest}" Width="13" Height="13" Foreground="#64748B" Margin="0,0,8,0" />
-                                            <TextBlock Grid.Column="1" Text="{Binding SalesModel, StringFormat='Sales Model: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
+                                            <TextBlock Grid.Column="1" Text="{Binding SalesModel, StringFormat='Modelo comercial: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto,*,Auto">
                                             <PathIcon Grid.Column="0" Data="{StaticResource IconKeypad}" Width="13" Height="13" Foreground="#64748B" Margin="0,0,8,0" />
@@ -314,7 +314,7 @@
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto,*,Auto">
                                             <PathIcon Grid.Column="0" Data="{StaticResource IconKeypad}" Width="13" Height="13" Foreground="#64748B" Margin="0,0,8,0" />
-                                            <TextBlock Grid.Column="1" Text="{Binding DeviceSerial, StringFormat='SN: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
+                                            <TextBlock Grid.Column="1" Text="{Binding DeviceSerial, StringFormat='Nº de série: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
                                             <PathIcon Grid.Column="2" Data="{StaticResource IconCopy}" Width="12" Height="12" Foreground="#005D7F" Cursor="Hand" />
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto,*">
@@ -323,7 +323,7 @@
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto,*">
                                             <PathIcon Grid.Column="0" Data="{StaticResource IconWifi}" Width="13" Height="13" Foreground="#64748B" Margin="0,0,8,0" />
-                                            <TextBlock Grid.Column="1" Text="{Binding DeviceCarrier, StringFormat='Ro.carrier: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
+                                            <TextBlock Grid.Column="1" Text="{Binding DeviceCarrier, StringFormat='Operadora: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto,*">
                                             <PathIcon Grid.Column="0" Data="{StaticResource IconDevicesThree}" Width="13" Height="13" Foreground="#64748B" Margin="0,0,8,0" />
@@ -331,11 +331,11 @@
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto,*">
                                             <PathIcon Grid.Column="0" Data="{StaticResource IconAndroid}" Width="13" Height="13" Foreground="#64748B" Margin="0,0,8,0" />
-                                            <TextBlock Grid.Column="1" Text="{Binding AndroidVersion, StringFormat='Android version: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
+                                            <TextBlock Grid.Column="1" Text="{Binding AndroidVersion, StringFormat='Versão do Android: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
                                         </Grid>
                                         <Grid ColumnDefinitions="Auto,*">
                                             <PathIcon Grid.Column="0" Data="{StaticResource IconSupport}" Width="13" Height="13" Foreground="#64748B" Margin="0,0,8,0" />
-                                            <TextBlock Grid.Column="1" Text="{Binding RomVersion, StringFormat='Current version: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
+                                            <TextBlock Grid.Column="1" Text="{Binding RomVersion, StringFormat='Versão atual: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
                                         </Grid>
                                     </StackPanel>
 
@@ -343,14 +343,14 @@
 
                                     <!-- Target Firmware Section -->
                                     <StackPanel Spacing="3">
-                                        <TextBlock Text="Target firmware:" FontSize="13" FontWeight="Bold" Foreground="#001429" />
-                                        <TextBlock Text="{Binding RomVersion, StringFormat='Firmware version: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
-                                        <TextBlock Text="{Binding AndroidVersion, StringFormat='Android version: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
+                                        <TextBlock Text="Firmware de destino:" FontSize="13" FontWeight="Bold" Foreground="#001429" />
+                                        <TextBlock Text="{Binding RomVersion, StringFormat='Versão do firmware: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
+                                        <TextBlock Text="{Binding AndroidVersion, StringFormat='Versão do Android: {0}'}" FontSize="12" Foreground="{StaticResource TextSpecsValueBrush}" />
                                     </StackPanel>
 
                                     <!-- Downloaded File Section -->
                                     <StackPanel Spacing="3">
-                                        <TextBlock Text="Downloaded File:" FontSize="13" FontWeight="Bold" Foreground="#001429" />
+                                        <TextBlock Text="Arquivo baixado:" FontSize="13" FontWeight="Bold" Foreground="#001429" />
                                         <TextBlock Text="{Binding RomName}" FontSize="11" FontWeight="Medium" Foreground="#005D7F" TextWrapping="Wrap" />
                                     </StackPanel>
 
@@ -360,13 +360,13 @@
                                                 IsVisible="{Binding !IsRomReady}" Command="{Binding DownloadRomCommand}">
                                             <StackPanel Orientation="Horizontal" Spacing="8" HorizontalAlignment="Center">
                                                 <PathIcon Data="{StaticResource IconDownload}" Width="14" Height="14" Foreground="#FFFFFF" />
-                                                <TextBlock Text="Download" VerticalAlignment="Center" />
+                                                <TextBlock Text="Baixar" VerticalAlignment="Center" />
                                             </StackPanel>
                                         </Button>
 
                                         <Button Classes="ActionPill" Width="200" HorizontalAlignment="Left"
                                                 IsVisible="{Binding IsRomReady}" Command="{Binding RequestStartFlashCommand}">
-                                            <TextBlock Text="Rescue" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                            <TextBlock Text="Resgatar" HorizontalAlignment="Center" VerticalAlignment="Center" />
                                         </Button>
 
                                         <StackPanel Spacing="4" IsVisible="{Binding IsBusy}">
@@ -377,10 +377,10 @@
                                     </StackPanel>
 
                                     <StackPanel Spacing="3" Margin="0,10,0,0">
-                                        <TextBlock Text="Please note:" FontSize="12" FontWeight="Bold" Foreground="{StaticResource NoticeOrangeBrush}" />
-                                        <TextBlock Text="1. Please check the downloaded firmware matches your device model." FontSize="11" Foreground="#64748B" />
-                                        <TextBlock Text="2. Device rescue is a risk-taking behavior, we recommend you backup user data firstly before rescue. (For Enterprise device, rescue will not remove device data)" FontSize="11" Foreground="#64748B" TextWrapping="Wrap" />
-                                        <TextBlock Text="3. The software update does not remove an existing Google account from the device for security reasons." FontSize="11" Foreground="#64748B" TextWrapping="Wrap" />
+                                        <TextBlock Text="Observações importantes:" FontSize="12" FontWeight="Bold" Foreground="{StaticResource NoticeOrangeBrush}" />
+                                        <TextBlock Text="1. Confira se o firmware baixado corresponde ao modelo do seu aparelho." FontSize="11" Foreground="#64748B" />
+                                        <TextBlock Text="2. O resgate de software envolve riscos — recomendamos fazer backup dos dados antes. (Em aparelhos corporativos, o resgate não remove os dados.)" FontSize="11" Foreground="#64748B" TextWrapping="Wrap" />
+                                        <TextBlock Text="3. Por segurança, a atualização não remove uma conta Google já existente no aparelho." FontSize="11" Foreground="#64748B" TextWrapping="Wrap" />
                                     </StackPanel>
                                 </StackPanel>
                             </ScrollViewer>
@@ -388,7 +388,7 @@
 
                         <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto" Margin="0,12,0,0">
                             <Button Grid.Column="0" Classes="SecondaryPill" Command="{Binding BackToWelcomeCommand}">
-                                <TextBlock Text="← Back" FontSize="12" Foreground="#475569" VerticalAlignment="Center" />
+                                <TextBlock Text="← Voltar" FontSize="12" Foreground="#475569" VerticalAlignment="Center" />
                             </Button>
                         </Grid>
                     </Grid>
@@ -403,8 +403,8 @@
                                 <PathIcon Data="{StaticResource IconCheckCircle}" Width="48" Height="48" Foreground="#FFFFFF" HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
 
-                            <TextBlock Text="Rescue completed." FontSize="24" FontWeight="Bold" Foreground="#001429" HorizontalAlignment="Center" />
-                            <TextBlock Text="Congratulations! Your device has successfully completed the Rescue software update." 
+                            <TextBlock Text="Resgate concluído." FontSize="24" FontWeight="Bold" Foreground="#001429" HorizontalAlignment="Center" />
+                            <TextBlock Text="Parabéns! O seu aparelho concluiu com sucesso a atualização de software." 
                                        FontSize="14" Foreground="#64748B" HorizontalAlignment="Center" TextAlignment="Center" />
 
                             <Border Background="#F1F5F9" CornerRadius="12" Padding="16" Margin="0,14,0,0" MaxWidth="520">
@@ -436,7 +436,7 @@
                     <!-- Cabeçalho -->
                     <Grid Grid.Row="0" ColumnDefinitions="*,Auto" Margin="0,0,0,16">
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text="My Device" FontSize="22" FontWeight="Bold" Foreground="#001429" />
+                            <TextBlock Text="Meu Aparelho" FontSize="22" FontWeight="Bold" Foreground="#001429" />
                             <TextBlock Text="Gerenciamento de conteúdo e informações do dispositivo" FontSize="13" Foreground="#64748B" />
                         </StackPanel>
                         <Button Grid.Column="1" Classes="ActionPill" Command="{Binding JumpToRescueFromMyDeviceCommand}" Width="160" VerticalAlignment="Center">
@@ -452,49 +452,49 @@
                                 <Button Classes="SideItem" Classes.Active="{Binding SelectedMyDeviceCategory, Converter={StaticResource EqualsConverter}, ConverterParameter=0}" Command="{Binding SelectMyDeviceCategoryCommand}" CommandParameter="0">
                                     <StackPanel Orientation="Horizontal" Spacing="10">
                                         <PathIcon Data="{StaticResource IconHome}" Width="17" Height="17" VerticalAlignment="Center" />
-                                        <TextBlock Text="Home" VerticalAlignment="Center" />
+                                        <TextBlock Text="Início" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="SideItem" Classes.Active="{Binding SelectedMyDeviceCategory, Converter={StaticResource EqualsConverter}, ConverterParameter=1}" Command="{Binding SelectMyDeviceCategoryCommand}" CommandParameter="1">
                                     <StackPanel Orientation="Horizontal" Spacing="10">
                                         <PathIcon Data="{StaticResource IconApps}" Width="17" Height="17" VerticalAlignment="Center" />
-                                        <TextBlock Text="Apps" VerticalAlignment="Center" />
+                                        <TextBlock Text="Aplicativos" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="SideItem" Classes.Active="{Binding SelectedMyDeviceCategory, Converter={StaticResource EqualsConverter}, ConverterParameter=2}" Command="{Binding SelectMyDeviceCategoryCommand}" CommandParameter="2">
                                     <StackPanel Orientation="Horizontal" Spacing="10">
                                         <PathIcon Data="{StaticResource IconPicture}" Width="17" Height="17" VerticalAlignment="Center" />
-                                        <TextBlock Text="Pictures" VerticalAlignment="Center" />
+                                        <TextBlock Text="Fotos" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="SideItem" Classes.Active="{Binding SelectedMyDeviceCategory, Converter={StaticResource EqualsConverter}, ConverterParameter=3}" Command="{Binding SelectMyDeviceCategoryCommand}" CommandParameter="3">
                                     <StackPanel Orientation="Horizontal" Spacing="10">
                                         <PathIcon Data="{StaticResource IconMusic}" Width="17" Height="17" VerticalAlignment="Center" />
-                                        <TextBlock Text="Music" VerticalAlignment="Center" />
+                                        <TextBlock Text="Músicas" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="SideItem" Classes.Active="{Binding SelectedMyDeviceCategory, Converter={StaticResource EqualsConverter}, ConverterParameter=4}" Command="{Binding SelectMyDeviceCategoryCommand}" CommandParameter="4">
                                     <StackPanel Orientation="Horizontal" Spacing="10">
                                         <PathIcon Data="{StaticResource IconVideo}" Width="17" Height="17" VerticalAlignment="Center" />
-                                        <TextBlock Text="Videos" VerticalAlignment="Center" />
+                                        <TextBlock Text="Vídeos" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="SideItem" Classes.Active="{Binding SelectedMyDeviceCategory, Converter={StaticResource EqualsConverter}, ConverterParameter=5}" Command="{Binding SelectMyDeviceCategoryCommand}" CommandParameter="5">
                                     <StackPanel Orientation="Horizontal" Spacing="10">
                                         <PathIcon Data="{StaticResource IconPerson}" Width="17" Height="17" VerticalAlignment="Center" />
-                                        <TextBlock Text="Contacts" VerticalAlignment="Center" />
+                                        <TextBlock Text="Contatos" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="SideItem" Classes.Active="{Binding SelectedMyDeviceCategory, Converter={StaticResource EqualsConverter}, ConverterParameter=6}" Command="{Binding SelectMyDeviceCategoryCommand}" CommandParameter="6">
                                     <StackPanel Orientation="Horizontal" Spacing="10">
                                         <PathIcon Data="{StaticResource IconFolder}" Width="17" Height="17" VerticalAlignment="Center" />
-                                        <TextBlock Text="File" VerticalAlignment="Center" />
+                                        <TextBlock Text="Arquivos" VerticalAlignment="Center" />
                                     </StackPanel>
                                 </Button>
                                 <Button Classes="SideItem" Classes.Active="{Binding SelectedMyDeviceCategory, Converter={StaticResource EqualsConverter}, ConverterParameter=7}" Command="{Binding SelectMyDeviceCategoryCommand}" CommandParameter="7">
                                     <StackPanel Orientation="Horizontal" Spacing="10">
                                         <PathIcon Data="{StaticResource IconCopy}" Width="17" Height="17" VerticalAlignment="Center" />
-                                        <TextBlock Text="One-click clone" VerticalAlignment="Center" TextWrapping="Wrap" />
+                                        <TextBlock Text="Clonagem com 1 clique" VerticalAlignment="Center" TextWrapping="Wrap" />
                                     </StackPanel>
                                 </Button>
                             </StackPanel>
@@ -510,7 +510,7 @@
                                     <StackPanel Spacing="16" HorizontalAlignment="Center">
                                         <PathIcon Data="{StaticResource IconPhone}" Width="84" Height="84" Foreground="#005D7F" HorizontalAlignment="Center" />
                                         <TextBlock Text="{Binding DeviceModel}" FontSize="18" FontWeight="Bold" Foreground="#001429" HorizontalAlignment="Center" />
-                                        <TextBlock Text="{Binding DeviceSerial, StringFormat='S/N: {0}'}" FontSize="12" Foreground="#64748B" HorizontalAlignment="Center" />
+                                        <TextBlock Text="{Binding DeviceSerial, StringFormat='Nº de série: {0}'}" FontSize="12" Foreground="#64748B" HorizontalAlignment="Center" />
 
                                         <!-- Barra de Bateria -->
                                         <Border Background="#FFFFFF" CornerRadius="10" Padding="14" BorderBrush="#E2E8F0" BorderThickness="1" Width="250">
@@ -647,12 +647,12 @@
                             <Grid Grid.Row="0" Background="#ECEFF3" Height="40">
                                 <Grid ColumnDefinitions="*,*">
                                     <Grid Grid.Column="0" ColumnDefinitions="*,120" Margin="18,0,18,0">
-                                        <TextBlock Grid.Column="0" Text="Test item" FontSize="13" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center" />
-                                        <TextBlock Grid.Column="1" Text="Result" FontSize="13" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center" />
+                                        <TextBlock Grid.Column="0" Text="Item de teste" FontSize="13" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center" />
+                                        <TextBlock Grid.Column="1" Text="Resultado" FontSize="13" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center" />
                                     </Grid>
                                     <Grid Grid.Column="1" ColumnDefinitions="*,120" Margin="18,0,18,0">
-                                        <TextBlock Grid.Column="0" Text="Test item" FontSize="13" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center" />
-                                        <TextBlock Grid.Column="1" Text="Result" FontSize="13" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center" />
+                                        <TextBlock Grid.Column="0" Text="Item de teste" FontSize="13" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center" />
+                                        <TextBlock Grid.Column="1" Text="Resultado" FontSize="13" FontWeight="Bold" Foreground="#334155" VerticalAlignment="Center" />
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -734,7 +734,7 @@
             <Grid IsVisible="{Binding IsSectionToolbox}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="40,24,40,24">
                     <StackPanel Grid.Row="0" Margin="0,0,0,20">
-                        <TextBlock Text="Toolbox" FontSize="22" FontWeight="Bold" Foreground="#001429" />
+                        <TextBlock Text="Ferramentas" FontSize="22" FontWeight="Bold" Foreground="#001429" />
                         <TextBlock Text="Ferramentas avançadas de manutenção para dispositivos Motorola" FontSize="13" Foreground="#64748B" />
                     </StackPanel>
 
@@ -814,7 +814,7 @@
             <Grid IsVisible="{Binding IsSectionBackup}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="40,24,40,24">
                     <StackPanel Grid.Row="0" Margin="0,0,0,20">
-                        <TextBlock Text="Backup &amp; Restore" FontSize="22" FontWeight="Bold" Foreground="#001429" />
+                        <TextBlock Text="Backup e Restauração" FontSize="22" FontWeight="Bold" Foreground="#001429" />
                         <TextBlock Text="Faça cópias de segurança locais dos seus dados antes de executar operações de reparo" FontSize="13" Foreground="#64748B" />
                     </StackPanel>
 
@@ -859,32 +859,32 @@
                             <StackPanel Spacing="10">
                                 <TextBlock Text="De (Origem):" FontSize="14" FontWeight="Bold" Foreground="#005D7F" />
                                 <TextBlock Text="{Binding DeviceModel}" FontSize="15" FontWeight="Bold" Foreground="#001429" />
-                                <TextBlock Text="{Binding DeviceSerial, StringFormat='S/N: {0}'}" FontSize="12" Foreground="#64748B" />
+                                <TextBlock Text="{Binding DeviceSerial, StringFormat='Nº de série: {0}'}" FontSize="12" Foreground="#64748B" />
 
                                 <!-- Conteúdo disponível para transferência -->
                                 <Border Background="#FFFFFF" CornerRadius="10" BorderBrush="#E2E8F0" BorderThickness="1" Padding="10,4" Margin="0,4,0,0">
                                     <StackPanel>
                                         <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,7">
                                             <CheckBox Grid.Column="0" IsChecked="False" IsEnabled="False" VerticalAlignment="Center" />
-                                            <TextBlock Grid.Column="1" Text="Contacts" FontSize="13" Foreground="#334155" VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Text="Contatos" FontSize="13" Foreground="#334155" VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="2" Text="--" FontSize="12" Foreground="#94A3B8" VerticalAlignment="Center" />
                                         </Grid>
                                         <Border Height="1" Background="#EEF2F6" />
                                         <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,7">
                                             <CheckBox Grid.Column="0" IsChecked="False" IsEnabled="False" VerticalAlignment="Center" />
-                                            <TextBlock Grid.Column="1" Text="Pictures" FontSize="13" Foreground="#334155" VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Text="Fotos" FontSize="13" Foreground="#334155" VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="2" Text="--" FontSize="12" Foreground="#94A3B8" VerticalAlignment="Center" />
                                         </Grid>
                                         <Border Height="1" Background="#EEF2F6" />
                                         <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,7">
                                             <CheckBox Grid.Column="0" IsChecked="False" IsEnabled="False" VerticalAlignment="Center" />
-                                            <TextBlock Grid.Column="1" Text="Music" FontSize="13" Foreground="#334155" VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Text="Músicas" FontSize="13" Foreground="#334155" VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="2" Text="--" FontSize="12" Foreground="#94A3B8" VerticalAlignment="Center" />
                                         </Grid>
                                         <Border Height="1" Background="#EEF2F6" />
                                         <Grid ColumnDefinitions="Auto,*,Auto" Margin="0,7">
                                             <CheckBox Grid.Column="0" IsChecked="False" IsEnabled="False" VerticalAlignment="Center" />
-                                            <TextBlock Grid.Column="1" Text="Videos" FontSize="13" Foreground="#334155" VerticalAlignment="Center" />
+                                            <TextBlock Grid.Column="1" Text="Vídeos" FontSize="13" Foreground="#334155" VerticalAlignment="Center" />
                                             <TextBlock Grid.Column="2" Text="--" FontSize="12" Foreground="#94A3B8" VerticalAlignment="Center" />
                                         </Grid>
                                     </StackPanel>
