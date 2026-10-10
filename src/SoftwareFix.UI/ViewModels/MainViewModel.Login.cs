@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
+using Avalonia.Media;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -38,7 +39,27 @@ public partial class MainViewModel
         ? $"Conta conectada: {LoginUserName}"
         : "Use sua conta Lenovo ID ou Google para acessar o catálogo oficial de firmware.";
 
-    partial void OnLoginSuccessChanged(bool value) => OnPropertyChanged(nameof(LoginWelcomeText));
+    // ---- Status da conta (header: abaixo de "Software Fix v7.6.2.10") ----
+    private static readonly IBrush _statusGreen = new SolidColorBrush(Color.Parse("#22C55E"));
+    private static readonly IBrush _statusRed = new SolidColorBrush(Color.Parse("#EF4444"));
+
+    [ObservableProperty] private bool _isAccountConnected;
+
+    public string AccountStatusText => IsAccountConnected ? "Conectado" : "Não conectado";
+    public IBrush AccountStatusBrush => IsAccountConnected ? _statusGreen : _statusRed;
+
+    partial void OnIsAccountConnectedChanged(bool value)
+    {
+        OnPropertyChanged(nameof(AccountStatusText));
+        OnPropertyChanged(nameof(AccountStatusBrush));
+    }
+
+    partial void OnLoginSuccessChanged(bool value)
+    {
+        OnPropertyChanged(nameof(LoginWelcomeText));
+        if (value) IsAccountConnected = true;
+    }
+
     partial void OnLoginUserNameChanged(string value) => OnPropertyChanged(nameof(LoginWelcomeText));
 
     // ---- Tela inicial (réplica do oficial): aceites + fluxo ----

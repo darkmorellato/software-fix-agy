@@ -20,10 +20,16 @@
         <Border Grid.Row="0" Background="{StaticResource TopBarBgBrush}" BorderBrush="#10253B" BorderThickness="0,0,0,1">
             <Grid ColumnDefinitions="Auto,*,Auto">
                 
-                <!-- Título e Logo Oficial no Topo Esquerdo -->
-                <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="10" VerticalAlignment="Center" Margin="16,0,24,0">
-                    <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="22" Height="22" VerticalAlignment="Center" />
-                    <TextBlock Text="Software Fix v7.6.2.10" FontSize="13" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" />
+                <!-- Título, Logo e Status da Conta no Topo Esquerdo -->
+                <StackPanel Grid.Column="0" Spacing="2" VerticalAlignment="Center" Margin="16,0,24,0">
+                    <StackPanel Orientation="Horizontal" Spacing="10" VerticalAlignment="Center">
+                        <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="22" Height="22" VerticalAlignment="Center" />
+                        <TextBlock Text="Software Fix v7.6.2.10" FontSize="13" FontWeight="SemiBold" Foreground="#FFFFFF" VerticalAlignment="Center" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Spacing="6" Margin="32,0,0,0">
+                        <Ellipse Width="8" Height="8" Fill="{Binding AccountStatusBrush}" VerticalAlignment="Center" />
+                        <TextBlock Text="{Binding AccountStatusText}" FontSize="10.5" Foreground="{Binding AccountStatusBrush}" VerticalAlignment="Center" />
+                    </StackPanel>
                 </StackPanel>
 
                 <!-- Abas Centrais Oficiais (ícone sobre rótulo, como na arte do app) -->
@@ -1095,21 +1101,6 @@
 
                     <Button Classes="BigLogin" Content="Login" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
                             Command="{Binding StartLoginFlowCommand}" IsEnabled="{Binding CanLogin}" Margin="0,22,0,0" />
-
-                    <!-- fluxo do navegador (aparece após clicar Login) -->
-                    <StackPanel IsVisible="{Binding LoginFlowStarted}" Spacing="10" Margin="0,20,0,0">
-                        <TextBlock Text="2. Faça login no navegador (Google ou Lenovo ID). Ao terminar, o navegador vai tentar abrir o Software Fix sozinho — se aparecer o aviso &quot;Abrir Software Fix Login Callback?&quot;, clique em Abrir." FontSize="12" Foreground="#D6E4F2" TextWrapping="Wrap" />
-                        <TextBlock Text="3. Se o app não conectar sozinho em alguns segundos, copie a URL COMPLETA da página de sucesso (pelo histórico do navegador, Ctrl+H, se preciso) e cole abaixo:" FontSize="12" Foreground="#D6E4F2" TextWrapping="Wrap" />
-                        <TextBox Text="{Binding LoginPastedText}" Watermark="Cole aqui a URL da página de sucesso"
-                                 Background="#0A2138" Foreground="#FFFFFF" BorderBrush="#25476D" Padding="10" FontSize="12" />
-                        <Button Classes="ActionPill" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
-                                Command="{Binding ValidateLoginCommand}" IsEnabled="{Binding !LoginBusy}">
-                            <TextBlock Text="Validar login" FontWeight="Bold" />
-                        </Button>
-                        <TextBlock Text="{Binding LoginStatusText}" FontSize="12" Foreground="#40A995" TextWrapping="Wrap" />
-                        <Button Classes="LinkLike" Content="Abrir o link de login no navegador novamente" HorizontalAlignment="Center"
-                                Command="{Binding OpenLoginInBrowserCommand}" IsEnabled="{Binding !LoginBusy}" />
-                    </StackPanel>
                 </StackPanel>
 
                 <Button Classes="LinkLike" Content="Continuar sem conta (modo local)" HorizontalAlignment="Center" VerticalAlignment="Bottom"

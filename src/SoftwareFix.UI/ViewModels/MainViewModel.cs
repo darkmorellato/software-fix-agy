@@ -295,6 +295,7 @@ public partial class MainViewModel : ViewModelBase
         {
             AddLog("[Nuvem] Conectando aos servidores oficiais da Lenovo (lsa.lenovo.com)...");
             bool ok = await _api.InitializeAsync();
+            IsAccountConnected = _api.HasSession;
             if (ok)
             {
                 AddLog("[Nuvem] Autenticado com sucesso na API Lenovo (Sessão Segura RSA/JWT).");
