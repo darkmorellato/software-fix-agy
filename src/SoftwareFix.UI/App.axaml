@@ -182,6 +182,34 @@
             <Setter Property="CornerRadius" Value="8,8,0,0" />
         </Style>
 
+        <!-- Abas internas claras (sub-navegação das seções, ex.: Backup | Restauração) -->
+        <Style Selector="Button.SubTab">
+            <Setter Property="Background" Value="#FFFFFF" />
+            <Setter Property="Foreground" Value="#334155" />
+            <Setter Property="BorderBrush" Value="#E2E8F0" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="Padding" Value="22,8" />
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button.SubTab:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#F1F5F9" />
+            <Setter Property="BorderBrush" Value="#CBD5E1" />
+        </Style>
+        <Style Selector="Button.SubTab.Active">
+            <Setter Property="Foreground" Value="#FFFFFF" />
+        </Style>
+        <Style Selector="Button.SubTab.Active /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{StaticResource TopTabActiveBrush}" />
+            <Setter Property="BorderBrush" Value="{StaticResource TopTabActiveBrush}" />
+        </Style>
+        <Style Selector="Button.SubTab.Active:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#1B84BB" />
+            <Setter Property="BorderBrush" Value="#1B84BB" />
+        </Style>
+
         <!-- Botão de Ação Pill Oficial (Teal #005D7F) -->
         <Style Selector="Button.ActionPill">
             <Setter Property="Background" Value="{StaticResource ActionPillTealBrush}" />

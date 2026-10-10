@@ -101,6 +101,23 @@ public partial class MainViewModel : ViewModelBase
     [RelayCommand]
     private void OpenFeedback() => ShowFeedbackModal = true;
 
+    // ---- Abas internas do Backup (estilo oficial: Backup | Restauração) ----
+    [ObservableProperty] private bool _restoreTabActive;
+    public bool IsBackupTabActive => !RestoreTabActive;
+    public bool IsRestoreTabActive => RestoreTabActive;
+
+    partial void OnRestoreTabActiveChanged(bool value)
+    {
+        OnPropertyChanged(nameof(IsBackupTabActive));
+        OnPropertyChanged(nameof(IsRestoreTabActive));
+    }
+
+    [RelayCommand]
+    private void ShowBackupTab() => RestoreTabActive = false;
+
+    [RelayCommand]
+    private void ShowRestoreTab() => RestoreTabActive = true;
+
     [RelayCommand]
     private void CloseFeedback()
     {
