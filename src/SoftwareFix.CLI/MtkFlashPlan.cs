@@ -64,7 +64,8 @@ internal static class MtkFlashPlan
         foreach (var raw in File.ReadAllLines(scatterPath))
         {
             var line = raw.Trim();
-            if (line.StartsWith("partition_index:", StringComparison.OrdinalIgnoreCase)) { Flush(); continue; }
+            // Blocos começam com "- partition_index: SYSn" (com traço) no scatter do SP Flash Tool
+            if (line.StartsWith("- partition_index:") || line.StartsWith("partition_index:")) { Flush(); continue; }
             if (line.StartsWith("partition_name:", StringComparison.OrdinalIgnoreCase))
                 part = line["partition_name:".Length..].Trim();
             else if (line.StartsWith("file_name:", StringComparison.OrdinalIgnoreCase))

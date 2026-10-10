@@ -83,21 +83,44 @@ public class MtkClientRunner
     }
 
     /// <summary>
-    /// Monta os argumentos do mtkclient. O subcomando vem PRIMEIRO e as opções DEPOIS
-    /// (o argparse do mtkclient descarta opções antes do subcomando — default clobber
-    /// do subparser com parents=[base]).
+    /// Subcomandos cujo parser NÃO herda o grupo base (parents=[base]): nesses, as opções
+    /// globais precisam vir ANTES do subcomando (o parser principal as aceita e o subparser
+    /// não as redefine — sem o clobber que afeta `printgpt`/`r`/`w`).
+    /// </summary>
+    static readonly HashSet<string> BareSubcommands = new(StringComparer.Ordinal) { "script", "multi", "devices" };
+
+    /// <summary>
+    /// Monta os argumentos do mtkclient. Regra dupla (aprendida na prática):
+    ///  - subcomandos COM `parents=[base]` (printgpt, r, w...): opções DEPOIS do subcomando
+    ///    (antes seriam descartadas pelo default clobber do subparser);
+    ///  - subcomandos SEM base (script, multi): opções ANTES do subcomando (depois dão
+    ///    "unrecognized arguments").
     /// </summary>
     public string BuildArguments(string command, string commandArgs = "", bool debugLog = true)
     {
         var sb = new StringBuilder();
-        sb.Append(command);
-        if (!string.IsNullOrWhiteSpace(commandArgs))
+        if (BareSubcommands.Contains(command))
         {
-            sb.Append(' ');
-            sb.Append(commandArgs);
+            sb.Append("--loader \"").Append(DaFile).Append('"');
+            if (debugLog) sb.Append(" --loglevel debug");
+            sb.Append(' ').Append(command);
+            if (!string.IsNullOrWhiteSpace(commandArgs))
+            {
+                sb.Append(' ');
+                sb.Append(commandArgs);
+            }
         }
-        sb.Append(" --loader \"").Append(DaFile).Append('"');
-        if (debugLog) sb.Append(" --loglevel debug");
+        else
+        {
+            sb.Append(command);
+            if (!string.IsNullOrWhiteSpace(commandArgs))
+            {
+                sb.Append(' ');
+                sb.Append(commandArgs);
+            }
+            sb.Append(" --loader \"").Append(DaFile).Append('"');
+            if (debugLog) sb.Append(" --loglevel debug");
+        }
         return sb.ToString();
     }
 

@@ -71,6 +71,31 @@ software-fix mtk-flash       # gravação pelo plano partição→imagem do *sca
    comparando SHA-256 com os arquivos da ROM.
 5. Ao final, o aparelho sai do modo de download — desligue/reconecte ou aguarde o boot.
 
+## Gravação (por que existe o modo "download")
+
+O DA `FORBID_SIGNED` da Motorola **recusa o comando padrão de escrita** do mtkclient
+(`CMD_WRITE_DATA` → `0xc002000c Write data not allowed`) **e valida as imagens** ao final
+do download (`0xc0020007 Image verify fail` para conteúdo não assinado). O caminho aceito
+é o **`CMD_DOWNLOAD`** — o mesmo que o SP Flash Tool usa — com este formato, extraído do
+log GLB do resgate real (09/10) e validado byte a byte contra o `preloader_lamu.bin` da
+ROM oficial (checksum bateu exato):
+
+    DOWNLOAD → status; nome da partição → tamanho (u64) → status (parameter check);
+    por bloco (≤ 2 MB): host_status(0), checksum (soma dos bytes & 0xFFFF), dados;
+    → status por bloco; +1 status final.
+
+Ativação: `scripts/mtkclient-patches/apply_mtkclient_patches.py` (aplica no mtkclient do
+venv: habilita `CC_START_DL_INFO`, adiciona `download_partition()` e a rota no `da_write`)
++ env **`SOFTWARE_FIX_MTK_DOWNLOAD=1`** nas gravações.
+Consequência prática: **apenas imagens oficiais assinadas passam** — exatamente o que o
+flash das ROMs oficiais faz. O `mtk-write-test` com bytes brutos NÃO passa neste DA; use-o
+apenas como diagnóstico do gate.
+
+## Verificação pós-flash
+
+`mtk-flash --verify` relê as partições gravadas e compara **o prefixo** de cada uma com o
+arquivo da ROM (as imagens costumam ser menores que a partição), reportando OK/DIVERGENTE.
+
 ## Limitações desta versão (v1)
 
 - `mtk-flash` **não regrava `preloader` nem a tabela (`PGPT`)** por segurança.

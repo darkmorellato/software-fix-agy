@@ -584,7 +584,7 @@ class Program
 
                 if (HasFlag(args, "--verify"))
                 {
-                    Console.WriteLine("[*] Verificação pós-flash (releitura + SHA-256)...");
+                    Console.WriteLine("[*] Verificação pós-flash (releitura + comparação byte a byte do prefixo)...");
                     string vdir = Path.Combine(outDir, "verify");
                     Directory.CreateDirectory(vdir);
                     var vparts = plan.Select(x => x.Partition).ToArray();
@@ -595,9 +595,7 @@ class Program
                         bool allOk = true;
                         for (int i = 0; i < plan.Count; i++)
                         {
-                            string a = Sha256File(plan[i].File);
-                            string b = File.Exists(vfiles[i]) ? Sha256File(vfiles[i]) : "(ausente)";
-                            bool ok = a == b;
+                            bool ok = File.Exists(vfiles[i]) && FileMatchesPrefix(vfiles[i], plan[i].File);
                             allOk &= ok;
                             Console.WriteLine($"    - {plan[i].Partition}: {(ok ? "OK" : "DIVERGENTE")}");
                         }
@@ -744,6 +742,27 @@ class Program
     {
         using var s = File.OpenRead(path);
         return Convert.ToHexString(System.Security.Cryptography.SHA256.HashData(s)).ToLowerInvariant();
+    }
+
+    /// <summary>Compara o PREFIXO do arquivo lido (partição, possivelmente maior) com a imagem.</summary>
+    static bool FileMatchesPrefix(string readbackPath, string imagePath)
+    {
+        long n = new FileInfo(imagePath).Length;
+        using var a = File.OpenRead(imagePath);
+        using var b = File.OpenRead(readbackPath);
+        var bufA = new byte[1024 * 1024];
+        var bufB = new byte[1024 * 1024];
+        long remaining = n;
+        while (remaining > 0)
+        {
+            int toRead = (int)Math.Min(bufA.Length, remaining);
+            int ra = a.Read(bufA, 0, toRead);
+            int rb = b.Read(bufB, 0, toRead);
+            if (ra != rb || ra != toRead) return false;
+            if (!bufA.AsSpan(0, ra).SequenceEqual(bufB.AsSpan(0, rb))) return false;
+            remaining -= ra;
+        }
+        return true;
     }
 
     static void PrintUsage()
