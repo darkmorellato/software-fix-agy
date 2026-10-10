@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Software Fix Login Callback
+Comment=Recebe o retorno do login Lenovo ID (scheme softwareFix://) e conecta o Software Fix
+Exec=software-fix-login-callback %u
+MimeType=x-scheme-handler/softwarefix;
+NoDisplay=true
+Terminal=false

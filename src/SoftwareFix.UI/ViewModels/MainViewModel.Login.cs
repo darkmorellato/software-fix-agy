@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using System.IO;
 using System.Threading.Tasks;
 using Avalonia.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -22,6 +23,8 @@ public partial class MainViewModel
 {
     private readonly LenovoApiClient _loginApi = new();
     private string? _loginUrlCache;
+    private DispatcherTimer? _loginPollTimer;
+    private DateTime _sessionSeenAt = DateTime.MinValue;
 
     [ObservableProperty] private bool _isLoginOpen;
     [ObservableProperty] private string _loginStatusText = "";
@@ -57,7 +60,53 @@ public partial class MainViewModel
             LoginStatusText = "Passo 1 — clique em \"Abrir página de login no navegador\".";
         }
         _ = EnsureLoginUrlAsync();
+        StartLoginPoll();
         AddLog("[Login] Tela de login aberta.");
+    }
+
+    /// <summary>
+    /// Vigia o arquivo de sessão enquanto a tela de login estiver aberta: quando o
+    /// handler do scheme "softwareFix://" (navegador) salvar o login, a GUI se
+    /// conecta sozinha — sem o usuário precisar colar nada.
+    /// </summary>
+    private void StartLoginPoll()
+    {
+        try
+        {
+            if (File.Exists(Configurations.SessionFile))
+                _sessionSeenAt = File.GetLastWriteTime(Configurations.SessionFile);
+        }
+        catch { }
+        if (_loginPollTimer is null)
+        {
+            _loginPollTimer = new DispatcherTimer { Interval = TimeSpan.FromSeconds(2.5) };
+            _loginPollTimer.Tick += (_, _) => PollLoginSession();
+        }
+        _loginPollTimer.Start();
+    }
+
+    private void PollLoginSession()
+    {
+        if (!IsLoginOpen || LoginSuccess)
+        {
+            _loginPollTimer?.Stop();
+            return;
+        }
+        try
+        {
+            if (File.Exists(Configurations.SessionFile))
+            {
+                var mtime = File.GetLastWriteTime(Configurations.SessionFile);
+                if (mtime > _sessionSeenAt)
+                {
+                    _sessionSeenAt = mtime;
+                    LoginStatusText = "Login capturado do navegador! Validando...";
+                    AddLog("[Login] Sessão salva detectada no disco — validando.");
+                    _ = ValidateSavedSessionAsync();
+                }
+            }
+        }
+        catch { }
     }
 
     private async Task ValidateSavedSessionAsync()
@@ -95,6 +144,7 @@ public partial class MainViewModel
     private void CloseLoginScreen()
     {
         IsLoginOpen = false;
+        _loginPollTimer?.Stop();
         AddLog("[Login] Tela fechada.");
     }
 

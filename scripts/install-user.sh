@@ -38,7 +38,8 @@ done
 # ---------------------------------------------------------------- desinstalar
 if [ "$UNINSTALL" = 1 ]; then
     rm -f "$BIN_DIR/software-fix-ui" "$BIN_DIR/software-fix"
-    rm -f "$DESKTOP_DIR/software-fix.desktop"
+    rm -f "$BIN_DIR/software-fix-login-callback"
+    rm -f "$DESKTOP_DIR/software-fix.desktop" "$DESKTOP_DIR/software-fix-auth.desktop"
     rm -f "$ICON_DIR/software-fix.png"
     rm -rf "$APP_DIR"
     command -v update-desktop-database >/dev/null 2>&1 && update-desktop-database "$DESKTOP_DIR" >/dev/null 2>&1 || true
@@ -103,6 +104,20 @@ Categories=Utility;Development;
 Keywords=motorola;lenovo;rescue;fastboot;flash;rom;
 EOF
 command -v update-desktop-database >/dev/null 2>&1 && update-desktop-database "$DESKTOP_DIR" >/dev/null 2>&1 || true
+
+# Handler do scheme "softwareFix://" — captura o retorno do login novo (Lenovo ID
+# devolve o deep link softwareFix://authcallback?Authorization=... e o nosso
+# handler conclui o login pelo CLI, salvando a sessão para a GUI detectar).
+if [ -f "$SCRIPT_DIR/software-fix-login-callback.sh" ] && [ -f "$SCRIPT_DIR/software-fix-auth.desktop" ]; then
+    install -m 0755 "$SCRIPT_DIR/software-fix-login-callback.sh" "$BIN_DIR/software-fix-login-callback"
+    install -m 0644 "$SCRIPT_DIR/software-fix-auth.desktop" "$DESKTOP_DIR/software-fix-auth.desktop"
+    if command -v xdg-mime >/dev/null 2>&1; then
+        xdg-mime default software-fix-auth.desktop x-scheme-handler/softwarefix >/dev/null 2>&1 || true
+        xdg-mime default software-fix-auth.desktop "x-scheme-handler/softwareFix" >/dev/null 2>&1 || true
+    fi
+    command -v update-desktop-database >/dev/null 2>&1 && update-desktop-database "$DESKTOP_DIR" >/dev/null 2>&1 || true
+    echo "    [i] Login automático ativo: scheme softwareFix:// → captura o login do navegador."
+fi
 
 # ---------------------------------------------------------------- 5) udev
 if [ "$WITH_UDEV" = 1 ]; then

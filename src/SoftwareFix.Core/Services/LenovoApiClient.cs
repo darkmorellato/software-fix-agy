@@ -332,6 +332,60 @@ public class LenovoApiClient
         return result;
     }
 
+    /// <summary>
+    /// Completa a cadeia do NOVO fluxo de retorno de login (página /Tips/lenovoIdSuccess.html):
+    ///   ?code&scope&state  →  GET /Tips/lmsa/tips/getOauth2Url.jhtml  →  {base}
+    ///   →  GET {base}/Interface/user/oauth2/callback.jhtml?code..  →  deep link
+    ///   softwareFix://authcallback?Authorization=&lt;wust&gt;&fullName=...
+    /// (idêntico ao JavaScript lenovoIdSuccess.js + o handler do app oficial).
+    /// </summary>
+    public async Task<ApiResponse> CompleteLoginChainAsync(string code, string scope, string state)
+    {
+        var result = new ApiResponse { Success = false };
+        try
+        {
+            string qs = $"code={Uri.EscapeDataString(code)}&scope={Uri.EscapeDataString(scope)}&state={Uri.EscapeDataString(state)}";
+            var urlRes = await GetRawJsonAsync("https://lsa.lenovo.com/Tips/lmsa/tips/getOauth2Url.jhtml");
+            string callbackBase = urlRes["msg"]?.ToString() ?? "";
+            if (string.IsNullOrEmpty(callbackBase) || !callbackBase.StartsWith("http", StringComparison.OrdinalIgnoreCase))
+                callbackBase = "https://lsa.lenovo.com/Interface/user/oauth2/callback.jhtml";
+
+            var cb = await GetRawJsonAsync(callbackBase + "?" + qs);
+            string deep = cb["content"]?.ToString() ?? cb["msg"]?.ToString() ?? "";
+            if (!deep.StartsWith("softwareFix://", StringComparison.OrdinalIgnoreCase))
+            {
+                result.Desc = "O servidor não retornou o link do cliente (softwareFix://). Faça o login novamente.";
+                return result;
+            }
+            string wust = ExtractWust(deep);
+            if (string.IsNullOrEmpty(wust))
+            {
+                result.Desc = "O link do cliente não contém o token de login.";
+                return result;
+            }
+            return await LoginWithWustAsync(wust);
+        }
+        catch (Exception ex)
+        {
+            result.Desc = "Falha ao completar o login: " + ex.Message;
+            return result;
+        }
+    }
+
+    /// <summary>GET simples (sem envelope/fingerprint) para os endpoints auxiliares (tips/oauth2).</summary>
+    private async Task<JObject> GetRawJsonAsync(string url)
+    {
+        using var req = new HttpRequestMessage(HttpMethod.Get, url);
+        req.Headers.TryAddWithoutValidation("Accept", "application/json, text/plain, */*");
+        req.Headers.TryAddWithoutValidation("User-Agent",
+            "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36");
+        var response = await _http.SendAsync(req);
+        string content = await response.Content.ReadAsStringAsync();
+        response.Dispose();
+        try { return JObject.Parse(content); }
+        catch { return new JObject { ["raw"] = content }; }
+    }
+
     // ------------------------------------------------------------------
     // Serviços de negócio (mantidos da versão anterior; assinaturas iguais)
     // ------------------------------------------------------------------

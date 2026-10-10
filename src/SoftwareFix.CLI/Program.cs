@@ -208,6 +208,14 @@ class Program
                 Console.WriteLine("[*] Preparando cliente (chave pública RSA)...");
                 await loginClient.InitializeAsync();
 
+                // Modo NÃO-INTERATIVO (usado pelo handler do scheme softwareFix://):
+                //   software-fix login --url "<url do navegador / deep link / wust>"
+                string? urlArg = GetArg(args, "--url");
+                if (!string.IsNullOrWhiteSpace(urlArg))
+                {
+                    return await RunLoginWithUrlAsync(loginClient, urlArg);
+                }
+
                 if (loginClient.HasSession)
                 {
                     Console.WriteLine("[+] Sessão salva encontrada. Validando com o servidor...");
@@ -943,6 +951,67 @@ class Program
             remaining -= ra;
         }
         return true;
+    }
+
+    /// <summary>
+    /// Login não-interativo a partir de: deep link softwareFix://authcallback?...,
+    /// URL da página lenovoIdSuccess.html (code/scope/state) ou o wust puro.
+    /// Usado pelo handler do scheme (botão "Go to the Software Fix client") e por --url.
+    /// </summary>
+    static async Task<int> RunLoginWithUrlAsync(LenovoApiClient client, string input)
+    {
+        input = input.Trim();
+        ApiResponse result;
+
+        if (input.StartsWith("softwarefix://", StringComparison.OrdinalIgnoreCase))
+        {
+            Console.WriteLine("[*] Deep link do cliente detectado — validando token...");
+            result = await client.LoginWithWustAsync(input);
+        }
+        else if (input.Contains("lenovoIdSuccess", StringComparison.OrdinalIgnoreCase) ||
+                 input.Contains("code=", StringComparison.OrdinalIgnoreCase))
+        {
+            string code = GetQueryValue(input, "code");
+            if (string.IsNullOrEmpty(code))
+            {
+                // URLs do fluxo antigo trazem o wust direto na query
+                string w = LenovoApiClient.ExtractWust(input);
+                if (!string.IsNullOrEmpty(w))
+                {
+                    Console.WriteLine("[*] Token presente na URL — validando...");
+                    result = await client.LoginWithWustAsync(w);
+                }
+                else
+                {
+                    Console.WriteLine("[-] URL sem 'code' nem token — copie a URL COMPLETA da página de sucesso.");
+                    return 1;
+                }
+            }
+            else
+            {
+                Console.WriteLine("[*] Completando a cadeia OAuth2 com os servidores Lenovo...");
+                result = await client.CompleteLoginChainAsync(code, GetQueryValue(input, "scope"), GetQueryValue(input, "state"));
+            }
+        }
+        else
+        {
+            result = await client.LoginWithWustAsync(input);
+        }
+
+        if (result.Success)
+        {
+            Console.WriteLine("[+] Login validado! Sessão salva em: " + Configurations.SessionFile);
+            Console.WriteLine("    O Software Fix (GUI) detecta a sessão automaticamente.");
+            return 0;
+        }
+        Console.WriteLine($"[-] Falha no login: code={result.Code} desc={result.Desc}");
+        return 1;
+    }
+
+    static string GetQueryValue(string url, string key)
+    {
+        var m = System.Text.RegularExpressions.Regex.Match(url, $@"[?&]{key}=([^&]+)");
+        return m.Success ? Uri.UnescapeDataString(m.Groups[1].Value) : "";
     }
 
     static void PrintUsage()

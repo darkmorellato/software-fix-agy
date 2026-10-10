@@ -1085,8 +1085,8 @@
                         <TextBox Text="{Binding LoginUrlText}" IsReadOnly="True" FontSize="10" MinHeight="30"
                                  Background="#061628" Foreground="#9FAEBF" BorderBrush="#1B3855" TextWrapping="NoWrap" />
 
-                        <TextBlock Text="2. No navegador, faça login — você chegará numa página de SUCESSO do Lenovo ID." FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
-                        <TextBlock Text="3. Copie a URL COMPLETA dessa página (contém lenovoid.wust=...) e cole abaixo:" FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
+                        <TextBlock Text="2. Faça login no navegador (Google ou Lenovo ID). Ao terminar, o navegador vai tentar abrir o Software Fix sozinho — se aparecer o aviso &quot;Abrir Software Fix Login Callback?&quot;, clique em Abrir." FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
+                        <TextBlock Text="3. Se o app não conectar sozinho em alguns segundos, copie a URL COMPLETA da página de sucesso (pelo histórico do navegador, Ctrl+H, se preciso) e cole abaixo:" FontSize="12" Foreground="#FFFFFF" TextWrapping="Wrap" />
                         <TextBox Text="{Binding LoginPastedText}" Watermark="Cole aqui a URL da página de sucesso (ou apenas o código wust)"
                                  Background="#061628" Foreground="#FFFFFF" BorderBrush="#25476D" Padding="10" FontSize="12" />
 
