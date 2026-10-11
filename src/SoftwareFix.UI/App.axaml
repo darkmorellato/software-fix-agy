@@ -218,6 +218,15 @@
             <Setter Property="Padding" Value="26,22" />
             <Setter Property="Width" Value="208" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="RenderTransform" Value="scale(1.0)" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.16" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button.DeviceTypeCard:pointerover">
+            <Setter Property="RenderTransform" Value="scale(1.025)" />
         </Style>
         <Style Selector="Button.DeviceTypeCard:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="#123055" />
@@ -227,9 +236,38 @@
             <Setter Property="Background" Value="#0A2340" />
         </Style>
 
+        <!-- ✨ Transições suaves de hover em TODOS os botões (polimento artístico) -->
+        <Style Selector="Button /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Transitions">
+                <Transitions>
+                    <BrushTransition Property="Background" Duration="0:0:0.16" />
+                    <BrushTransition Property="BorderBrush" Duration="0:0:0.16" />
+                </Transitions>
+            </Setter>
+        </Style>
+
+        <!-- ✨ Badge "Recomendado": pulso suave e vivo -->
+        <Style Selector="Border.BadgePulse">
+            <Style.Animations>
+                <Animation Duration="0:0:2.2" IterationCount="INFINITE" PlaybackDirection="Alternate">
+                    <KeyFrame Cue="0%">
+                        <Setter Property="Opacity" Value="1.0" />
+                    </KeyFrame>
+                    <KeyFrame Cue="100%">
+                        <Setter Property="Opacity" Value="0.72" />
+                    </KeyFrame>
+                </Animation>
+            </Style.Animations>
+        </Style>
+
         <!-- Botão de Ação Pill Oficial (Teal #005D7F) -->
         <Style Selector="Button.ActionPill">
-            <Setter Property="Background" Value="{StaticResource ActionPillTealBrush}" />
+            <Setter Property="Background">
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Color="#0B7199" Offset="0" />
+                    <GradientStop Color="#00536F" Offset="1" />
+                </LinearGradientBrush>
+            </Setter>
             <Setter Property="Foreground" Value="#FFFFFF" />
             <Setter Property="FontWeight" Value="Bold" />
             <Setter Property="FontSize" Value="14" />
@@ -252,7 +290,12 @@
         <!-- Tela inicial de login (réplica do app oficial): botão grande azul, pill de
              Feedback, fechar e links-texto -->
         <Style Selector="Button.BigLogin">
-            <Setter Property="Background" Value="#0F7CB2" />
+            <Setter Property="Background">
+                <LinearGradientBrush StartPoint="0%,0%" EndPoint="0%,100%">
+                    <GradientStop Color="#1290C4" Offset="0" />
+                    <GradientStop Color="#0B6390" Offset="1" />
+                </LinearGradientBrush>
+            </Setter>
             <Setter Property="Foreground" Value="#FFFFFF" />
             <Setter Property="FontSize" Value="17" />
             <Setter Property="FontWeight" Value="SemiBold" />
@@ -329,6 +372,15 @@
             <Setter Property="HorizontalAlignment" Value="Stretch" />
             <Setter Property="VerticalAlignment" Value="Stretch" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="RenderTransform" Value="scale(1.0)" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.16" />
+                </Transitions>
+            </Setter>
+        </Style>
+        <Style Selector="Button.WelcomeOptionCard:pointerover">
+            <Setter Property="RenderTransform" Value="scale(1.015)" />
         </Style>
         <Style Selector="Button.WelcomeOptionCard:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="{StaticResource WelcomeCardHoverBrush}" />

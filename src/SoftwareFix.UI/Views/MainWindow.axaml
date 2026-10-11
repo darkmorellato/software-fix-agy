@@ -17,8 +17,19 @@
         <!-- ========================================== -->
         <!-- TOP APP BAR & NAVIGATION TABS OFICIAIS     -->
         <!-- ========================================== -->
-        <Border Grid.Row="0" Background="{StaticResource TopBarBgBrush}" BorderBrush="#10253B" BorderThickness="0,0,0,1">
+        <Border Grid.Row="0" Background="{StaticResource TopBarBgBrush}" BorderThickness="0">
             <Grid ColumnDefinitions="Auto,*,Auto">
+
+                <!-- Linha luminosa (gradiente) na base do header — detalhe artístico -->
+                <Border Grid.Column="0" Grid.ColumnSpan="3" Height="1.5" VerticalAlignment="Bottom" IsHitTestVisible="False">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
+                            <GradientStop Color="#002E6E9E" Offset="0" />
+                            <GradientStop Color="#772E6E9E" Offset="0.5" />
+                            <GradientStop Color="#002E6E9E" Offset="1" />
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
                 
                 <!-- Título, Logo e Status da Conta no Topo Esquerdo -->
                 <StackPanel Grid.Column="0" Spacing="2" VerticalAlignment="Center" Margin="16,0,24,0">
@@ -232,7 +243,7 @@
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
                                         <Grid Grid.Column="1">
-                                            <Border VerticalAlignment="Top" HorizontalAlignment="Center" 
+                                            <Border Classes="BadgePulse" VerticalAlignment="Top" HorizontalAlignment="Center" 
                                                     Background="{StaticResource GreenSuccessBrush}" CornerRadius="4" Padding="6,2" Margin="0,-12,0,0">
                                                 <TextBlock Text="Recomendado" FontSize="10" FontWeight="Bold" Foreground="#FFFFFF" />
                                             </Border>
@@ -493,7 +504,7 @@
                 <Grid RowDefinitions="Auto,*" Margin="28,20,56,18">
 
                     <!-- Cabeçalho hero (arte oficial) -->
-                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16" BoxShadow="0 8 20 #040A14A6">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                                 <GradientStop Color="#10304F" Offset="0" />
@@ -703,7 +714,7 @@
                 <Grid RowDefinitions="Auto,Auto,*,Auto" Margin="40,24,56,16">
 
                     <!-- Cabeçalho hero (arte oficial: faixa azul-marinho) -->
-                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16" BoxShadow="0 8 20 #040A14A6">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                                 <GradientStop Color="#10304F" Offset="0" />
@@ -812,7 +823,7 @@
             <!-- ============================================================== -->
             <Grid IsVisible="{Binding IsSectionToolbox}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="40,24,40,24">
-                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16" BoxShadow="0 8 20 #040A14A6">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                                 <GradientStop Color="#10304F" Offset="0" />
@@ -903,7 +914,7 @@
             <!-- ============================================================== -->
             <Grid IsVisible="{Binding IsSectionBackup}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="40,24,40,24">
-                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16" BoxShadow="0 8 20 #040A14A6">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                                 <GradientStop Color="#10304F" Offset="0" />
@@ -1030,7 +1041,7 @@
             <!-- ============================================================== -->
             <Grid IsVisible="{Binding IsSectionTransfer}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*,Auto" Margin="40,24,56,20">
-                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16" BoxShadow="0 8 20 #040A14A6">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                                 <GradientStop Color="#10304F" Offset="0" />
@@ -1126,7 +1137,7 @@
 
             <Grid IsVisible="{Binding IsSectionSupport}" Background="{StaticResource ConnectedWhiteBgBrush}">
                 <Grid RowDefinitions="Auto,*" Margin="40,24,40,24">
-                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16">
+                    <Border Grid.Row="0" CornerRadius="12" Padding="24,16" Margin="0,0,0,16" BoxShadow="0 8 20 #040A14A6">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,0%">
                                 <GradientStop Color="#10304F" Offset="0" />
@@ -1282,11 +1293,23 @@
                 </StackPanel>
 
                 <StackPanel Width="360" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="0">
-                    <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="112" Height="112" HorizontalAlignment="Center" />
+                    <Grid Width="200" Height="164" HorizontalAlignment="Center">
+                        <!-- Glow azul atrás do logo (profundidade) -->
+                        <Ellipse Width="160" Height="160" HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Ellipse.Fill>
+                                <RadialGradientBrush>
+                                    <GradientStop Color="#552E6E9E" Offset="0" />
+                                    <GradientStop Color="#00000000" Offset="1" />
+                                </RadialGradientBrush>
+                            </Ellipse.Fill>
+                        </Ellipse>
+                        <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="112" Height="112" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                    </Grid>
                     <TextBlock Text="Software Fix" FontSize="26" FontWeight="SemiBold" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,16,0,2" />
                     <TextBlock Text="{Binding AppVersionText}" FontSize="13" Foreground="#4C9FD6" HorizontalAlignment="Center" />
 
-                    <Border IsVisible="{Binding !LoginSuccess}" Background="#0F2A49" BorderBrush="#1E4270" BorderThickness="1" CornerRadius="12" Padding="18,16" Margin="0,26,0,0">
+                    <Border IsVisible="{Binding !LoginSuccess}" Background="#0F2A49" BorderBrush="#1E4270" BorderThickness="1" CornerRadius="12" Padding="18,16" Margin="0,26,0,0"
+                            BoxShadow="0 12 30 #040A1499">
                         <StackPanel Spacing="14">
                             <CheckBox IsChecked="{Binding AcceptPrivacy}" VerticalContentAlignment="Center">
                                 <StackPanel Orientation="Horizontal">
