@@ -168,7 +168,7 @@
                 <Grid IsVisible="{Binding IsDeviceTypeVisible}" Background="{StaticResource WelcomeGradientBrush}" ZIndex="2">
                     <Grid RowDefinitions="*,Auto" Margin="40,30,40,20">
                         <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="28">
-                            <TextBlock Text="Selecione o Tipo de Dispositivo" FontSize="27" FontWeight="Bold" Foreground="#FFFFFF" HorizontalAlignment="Center" />
+                            <TextBlock Text="Selecione o Tipo de Dispositivo" FontSize="27" FontWeight="Bold" LetterSpacing="0.3" Foreground="#FFFFFF" HorizontalAlignment="Center" />
                             <StackPanel Orientation="Horizontal" Spacing="28" HorizontalAlignment="Center">
                                 <!-- PHONES -->
                                 <Button Classes="DeviceTypeCard" Command="{Binding ChooseDeviceTypeCommand}" CommandParameter="Celulares">
@@ -224,7 +224,7 @@
                     <Grid RowDefinitions="*,Auto" Margin="40,30,40,20">
                         <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="24">
                             <StackPanel Spacing="6" HorizontalAlignment="Center">
-                                <TextBlock Text="Bem-vindo ao Software Fix" FontSize="26" FontWeight="Bold" 
+                                <TextBlock Text="Bem-vindo ao Software Fix" FontSize="26" FontWeight="Bold" LetterSpacing="0.3"
                                            Foreground="#FFFFFF" HorizontalAlignment="Center" />
                                 <TextBlock Text="A forma fácil de atualizar o software do seu celular" FontSize="14" 
                                            Foreground="{StaticResource TextMutedBlueBrush}" HorizontalAlignment="Center" />
@@ -1312,7 +1312,7 @@
                         </Ellipse>
                         <Image Source="avares://SoftwareFix.UI/Assets/software-fix.png" Width="112" Height="112" HorizontalAlignment="Center" VerticalAlignment="Center" />
                     </Grid>
-                    <TextBlock Text="Software Fix" FontSize="26" FontWeight="SemiBold" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,16,0,2" />
+                    <TextBlock Text="Software Fix" FontSize="26" FontWeight="SemiBold" LetterSpacing="0.5" Foreground="#FFFFFF" HorizontalAlignment="Center" Margin="0,16,0,2" />
                     <TextBlock Text="{Binding AppVersionText}" FontSize="13" Foreground="#4C9FD6" HorizontalAlignment="Center" />
 
                     <Border IsVisible="{Binding !LoginSuccess}" Background="#0F2A49" BorderBrush="#1E4270" BorderThickness="1" CornerRadius="12" Padding="18,16" Margin="0,26,0,0"

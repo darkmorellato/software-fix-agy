@@ -260,6 +260,52 @@
             </Style.Animations>
         </Style>
 
+        <!-- ✨ Polimento global: progress, tooltips, scroll, seleção -->
+        <Style Selector="ProgressBar">
+            <Setter Property="Foreground" Value="#2E9BDC" />
+            <Setter Property="Background" Value="#12304E" />
+            <Setter Property="CornerRadius" Value="4" />
+        </Style>
+        <Style Selector="ScrollBar">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style Selector="ScrollBar /template/ Thumb">
+            <Setter Property="Background" Value="#2E5578" />
+        </Style>
+        <Style Selector="ScrollBar /template/ Thumb:pointerover">
+            <Setter Property="Background" Value="#3E7CB0" />
+        </Style>
+        <Style Selector="ToolTip">
+            <Setter Property="Background" Value="#0B2038" />
+            <Setter Property="BorderBrush" Value="#2E6E9E" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="6" />
+            <Setter Property="Foreground" Value="#D6E4F2" />
+            <Setter Property="Padding" Value="10,6" />
+            <Setter Property="FontSize" Value="12" />
+        </Style>
+        <Style Selector="TextBox">
+            <Setter Property="SelectionBrush" Value="#2E6E9E" />
+            <Setter Property="CaretBrush" Value="#7EB8E0" />
+        </Style>
+        <Style Selector="TextBox:focus">
+            <Setter Property="BorderBrush" Value="#2E6E9E" />
+        </Style>
+
+        <!-- ✨ "Feel" tátil: botões de ação crescem no hover e encolhem ao clicar -->
+        <Style Selector="Button.ActionPill:pointerover">
+            <Setter Property="RenderTransform" Value="scale(1.02)" />
+        </Style>
+        <Style Selector="Button.ActionPill:pressed">
+            <Setter Property="RenderTransform" Value="scale(0.97)" />
+        </Style>
+        <Style Selector="Button.BigLogin:pointerover">
+            <Setter Property="RenderTransform" Value="scale(1.015)" />
+        </Style>
+        <Style Selector="Button.BigLogin:pressed">
+            <Setter Property="RenderTransform" Value="scale(0.97)" />
+        </Style>
+
         <!-- Botão de Ação Pill Oficial (Teal #005D7F) -->
         <Style Selector="Button.ActionPill">
             <Setter Property="Background">
@@ -275,6 +321,12 @@
             <Setter Property="Padding" Value="28,9" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="RenderTransform" Value="scale(1.0)" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.14" />
+                </Transitions>
+            </Setter>
         </Style>
         <Style Selector="Button.ActionPill:pointerover">
             <Setter Property="Foreground" Value="#FFFFFF" />
@@ -303,6 +355,12 @@
             <Setter Property="CornerRadius" Value="12" />
             <Setter Property="BorderThickness" Value="0" />
             <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="RenderTransform" Value="scale(1.0)" />
+            <Setter Property="Transitions">
+                <Transitions>
+                    <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.14" />
+                </Transitions>
+            </Setter>
         </Style>
         <Style Selector="Button.BigLogin:pointerover /template/ ContentPresenter#PART_ContentPresenter">
             <Setter Property="Background" Value="#1390CD" />
