@@ -8,6 +8,7 @@ using SoftwareFix.Core;
 using SoftwareFix.Core.Models;
 using SoftwareFix.Core.Services;
 using SoftwareFix.Device;
+using SoftwareFix.Device.Rescue;
 using SoftwareFix.Download;
 using SoftwareFix.Flash;
 
@@ -563,6 +564,87 @@ class Program
                 return 1;
             }
 
+            case "rescue-detect":
+            {
+                Console.WriteLine("[*] Detectando aparelho (fastboot / EDL Qualcomm / PreLoader MTK)...");
+                var fbDevices = await RescuePlanExecutor.ListFastbootDevicesAsync();
+                Console.WriteLine(fbDevices.Count > 0
+                    ? $"[✓] FASTBOOT: {string.Join(", ", fbDevices)}"
+                    : "[ ] Nenhum aparelho em modo FASTBOOT");
+                var lsusbOut = await RunShellAsync("lsusb");
+                Console.WriteLine(lsusbOut.Contains("05c6:9008", StringComparison.OrdinalIgnoreCase)
+                    ? "[✓] Qualcomm EDL (05c6:9008) detectado!"
+                    : "[ ] Sem EDL Qualcomm (05c6:9008)");
+                Console.WriteLine(lsusbOut.Contains("0e8d:2000", StringComparison.OrdinalIgnoreCase)
+                    ? "[✓] MediaTek PreLoader (0e8d:2000) detectado!"
+                    : "[ ] Sem PreLoader MTK (0e8d:2000)");
+                Console.WriteLine(lsusbOut.Contains("1782:", StringComparison.OrdinalIgnoreCase)
+                    ? "[?] Possível Unisoc/SPD detectado (1782:*)"
+                    : "[ ] Sem Unisoc/SPD evidente");
+                return 0;
+            }
+            case "rescue-plan":
+            {
+                string? planDir = GetArg(args, "--dir");
+                if (string.IsNullOrEmpty(planDir))
+                {
+                    Console.WriteLine("[-] Use: software-fix rescue-plan --dir <pasta-da-rom> [--data-reset no]");
+                    return 1;
+                }
+                bool planErase = (GetArg(args, "--data-reset") ?? "yes").ToLowerInvariant() is "yes" or "1" or "sim";
+                var plan = RescuePlanBuilder.BuildFromRomDir(Path.GetFullPath(planDir), planErase);
+                if (plan == null)
+                {
+                    Console.WriteLine("[-] Pacote não reconhecido: não encontrei flashall.sh, flashfile.xml, rawprogram*.xml nem .pac nessa pasta.");
+                    return 1;
+                }
+                Console.WriteLine();
+                Console.WriteLine("═══════════ PLANO DE RESGATE (somente leitura) ═══════════");
+                Console.WriteLine(plan.RenderPlan());
+                Console.WriteLine($"  Modo: {(planErase ? "APAGA os dados (flashfile)" : "MANTÉM os dados do cliente (servicefile)")}");
+                return 0;
+            }
+            case "rescue-run":
+            {
+                string? runDir = GetArg(args, "--dir");
+                if (string.IsNullOrEmpty(runDir))
+                {
+                    Console.WriteLine("[-] Use: software-fix rescue-run --dir <rom> [--data-reset no] [--serial X] [--dry-run] --yes");
+                    return 1;
+                }
+                bool runErase = (GetArg(args, "--data-reset") ?? "yes").ToLowerInvariant() is "yes" or "1" or "sim";
+                bool runDry = args.Contains("--dry-run");
+                bool runYes = args.Contains("--yes");
+                string? runSerial = GetArg(args, "--serial");
+                if (!runYes && !runDry)
+                {
+                    Console.WriteLine("[-] Por segurança: confirme com --yes (ou use --dry-run para apenas listar os comandos).");
+                    return 1;
+                }
+                var runPlan = RescuePlanBuilder.BuildFromRomDir(Path.GetFullPath(runDir), runErase);
+                if (runPlan == null)
+                {
+                    Console.WriteLine("[-] Pacote não reconhecido (sem flashall.sh/flashfile.xml/rawprogram/.pac).");
+                    return 1;
+                }
+                Console.WriteLine();
+                Console.WriteLine("═══════════ PLANO DE RESGATE ═══════════");
+                Console.WriteLine(runPlan.RenderPlan(runSerial));
+                Console.WriteLine(runDry ? "[i] DRY-RUN — nada será executado." : "[!] EXECUTANDO — não desconecte o cabo USB!");
+                Console.WriteLine();
+                if (!runDry)
+                {
+                    Console.Write("Digite CONFIRMAR para prosseguir: ");
+                    var typed = Console.ReadLine()?.Trim() ?? "";
+                    if (!string.Equals(typed, "CONFIRMAR", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Console.WriteLine("[i] Cancelado.");
+                        return 1;
+                    }
+                }
+                var runOk = await RescuePlanExecutor.ExecuteAsync(runPlan, Path.GetFullPath(runDir), runSerial, runDry, m => Console.WriteLine("  " + m));
+                return runOk || runDry ? 0 : 1;
+            }
             case "mtk-roms":
             {
                 string rom = Configurations.RomPath;
@@ -1012,6 +1094,27 @@ class Program
     {
         var m = System.Text.RegularExpressions.Regex.Match(url, $@"[?&]{key}=([^&]+)");
         return m.Success ? Uri.UnescapeDataString(m.Groups[1].Value) : "";
+    }
+
+    /// <summary>Roda um comando shell simples e devolve o stdout (ex.: lsusb).</summary>
+    static async Task<string> RunShellAsync(string cmd)
+    {
+        try
+        {
+            var psi = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = "/bin/bash",
+                RedirectStandardOutput = true,
+                UseShellExecute = false,
+            };
+            psi.ArgumentList.Add("-c");
+            psi.ArgumentList.Add(cmd);
+            using var p = System.Diagnostics.Process.Start(psi)!;
+            var output = await p.StandardOutput.ReadToEndAsync();
+            await p.WaitForExitAsync();
+            return output;
+        }
+        catch { return ""; }
     }
 
     static void PrintUsage()

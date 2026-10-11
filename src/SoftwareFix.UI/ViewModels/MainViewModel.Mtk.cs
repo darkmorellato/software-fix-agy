@@ -52,7 +52,48 @@ public partial class MainViewModel
 
     public ObservableCollection<MtkRomEntry> MtkRoms { get; } = new();
 
-    partial void OnMtkSelectedRomChanged(MtkRomEntry? value) => UpdateMtkCanStart();
+    partial void OnMtkSelectedRomChanged(MtkRomEntry? value)
+    {
+        UpdateMtkCanStart();
+        UpdateRescuePlanPreview(value);
+    }
+
+    // ---- Plano de resgate AUTOMÁTICO (flashall.sh / flashfile.xml / EDL / Unisoc) ----
+    [ObservableProperty] private string _mtkPlanPreview = "";
+    [ObservableProperty] private bool _mtkHasPlan;
+
+    /// <summary>
+    /// Analisa o pacote assim que a ROM é escolhida (ou o modo muda) e monta o
+    /// plano de resgate real — mesmo motor dos comandos rescue-plan/rescue-run.
+    /// </summary>
+    private void UpdateRescuePlanPreview(MtkRomEntry? rom)
+    {
+        try
+        {
+            if (rom is not { Ready: true } || string.IsNullOrEmpty(rom.Path))
+            {
+                MtkPlanPreview = "";
+                MtkHasPlan = false;
+                return;
+            }
+            bool keepData = MtkModeIndex == 1;
+            var plan = SoftwareFix.Device.Rescue.RescuePlanBuilder.BuildFromRomDir(rom.Path, eraseUserdata: !keepData);
+            if (plan == null)
+            {
+                MtkPlanPreview = "Pacote não reconhecido pelo planejador (sem flashall.sh / flashfile.xml / rawprogram / .pac).";
+                MtkHasPlan = true;
+                return;
+            }
+            MtkPlanPreview = plan.RenderPlan();
+            MtkHasPlan = true;
+            AddLog($"[Resgate] Plano automático: {plan.MethodDisplay} — {plan.Commands.Count} passos ({plan.FlashCount} flashes) — {plan.SourceFile}");
+        }
+        catch (Exception ex)
+        {
+            MtkPlanPreview = "Falha ao analisar o pacote: " + ex.Message;
+            MtkHasPlan = true;
+        }
+    }
 
     partial void OnMtkModeIndexChanged(int value)
     {
@@ -62,6 +103,7 @@ public partial class MainViewModel
         AddLog(keep
             ? "[Assistente MTK] Modo: MANTER DADOS do cliente (userdata preservado; correção de boot desativada)."
             : "[Assistente MTK] Modo: resgate completo (apaga os dados do aparelho).");
+        UpdateRescuePlanPreview(MtkSelectedRom);
     }
 
     // ============================ COMANDOS ============================
