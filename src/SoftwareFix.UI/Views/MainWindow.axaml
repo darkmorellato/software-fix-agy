@@ -153,6 +153,61 @@
             <!-- ============================================================== -->
             <Grid IsVisible="{Binding IsSectionRescue}">
 
+                <!-- ESTADO -1: SELECIONE O TIPO DE DISPOSITIVO (arte oficial v7) -->
+                <Grid IsVisible="{Binding IsDeviceTypeVisible}" Background="{StaticResource WelcomeGradientBrush}" ZIndex="2">
+                    <Grid RowDefinitions="*,Auto" Margin="40,30,40,20">
+                        <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Spacing="28">
+                            <TextBlock Text="Selecione o Tipo de Dispositivo" FontSize="27" FontWeight="Bold" Foreground="#FFFFFF" HorizontalAlignment="Center" />
+                            <StackPanel Orientation="Horizontal" Spacing="28" HorizontalAlignment="Center">
+                                <!-- PHONES -->
+                                <Button Classes="DeviceTypeCard" Command="{Binding ChooseDeviceTypeCommand}" CommandParameter="Celulares">
+                                    <StackPanel Spacing="14" HorizontalAlignment="Center">
+                                        <Border Width="140" Height="160" Background="Transparent">
+                                            <Image Source="avares://SoftwareFix.UI/Assets/welcome/dev-phones.png" Stretch="Uniform" />
+                                        </Border>
+                                        <TextBlock Text="CELULARES" FontSize="13" FontWeight="SemiBold" Foreground="#FFFFFF" HorizontalAlignment="Center" />
+                                    </StackPanel>
+                                </Button>
+                                <!-- TABLETS (mockup desenhado, estilo do oficial) -->
+                                <Button Classes="DeviceTypeCard" Command="{Binding ChooseDeviceTypeCommand}" CommandParameter="Tablets">
+                                    <StackPanel Spacing="14" HorizontalAlignment="Center">
+                                        <Border Width="140" Height="160" Background="Transparent">
+                                            <Border Width="96" Height="132" CornerRadius="10" Background="#0B1F36" BorderBrush="#3E7CB0" BorderThickness="2"
+                                                    HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                <Border Width="78" Height="108" CornerRadius="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                                    <Border.Background>
+                                                        <LinearGradientBrush StartPoint="0%,0%" EndPoint="100%,100%">
+                                                            <GradientStop Color="#7C5CBF" Offset="0" />
+                                                            <GradientStop Color="#2E6E9E" Offset="0.5" />
+                                                            <GradientStop Color="#E8A33D" Offset="1" />
+                                                        </LinearGradientBrush>
+                                                    </Border.Background>
+                                                </Border>
+                                            </Border>
+                                        </Border>
+                                        <TextBlock Text="TABLETS" FontSize="13" FontWeight="SemiBold" Foreground="#FFFFFF" HorizontalAlignment="Center" />
+                                    </StackPanel>
+                                </Button>
+                                <!-- SMART DEVICES -->
+                                <Button Classes="DeviceTypeCard" Command="{Binding ChooseDeviceTypeCommand}" CommandParameter="Dispositivos Smart">
+                                    <StackPanel Spacing="14" HorizontalAlignment="Center">
+                                        <Border Width="140" Height="160" Background="Transparent">
+                                            <Image Source="avares://SoftwareFix.UI/Assets/welcome/dev-smart.png" Stretch="Uniform" />
+                                        </Border>
+                                        <TextBlock Text="DISPOSITIVOS SMART" FontSize="13" FontWeight="SemiBold" Foreground="#FFFFFF" HorizontalAlignment="Center" />
+                                    </StackPanel>
+                                </Button>
+                            </StackPanel>
+                            <TextBlock Text="*O Software Fix é o novo nome do Rescue and Smart Assistant (RSA)." FontSize="12"
+                                       Foreground="#7E97B8" HorizontalAlignment="Center" />
+                        </StackPanel>
+                        <Grid Grid.Row="1" ColumnDefinitions="*,Auto" Margin="0,16,0,0">
+                            <Button Grid.Column="1" Classes="SecondaryPill" Content="Feedback" FontSize="12"
+                                    ToolTip.Tip="Enviar feedback" Command="{Binding OpenFeedbackCommand}" />
+                        </Grid>
+                    </Grid>
+                </Grid>
+
                 <!-- ESTADO 0: WELCOME TO SOFTWARE FIX (SCREENSHOT 1) -->
                 <Grid IsVisible="{Binding IsStateWelcome}" Background="{StaticResource WelcomeGradientBrush}">
                     <Grid RowDefinitions="*,Auto" Margin="40,30,40,20">
@@ -164,25 +219,25 @@
                                            Foreground="{StaticResource TextMutedBlueBrush}" HorizontalAlignment="Center" />
                             </StackPanel>
 
-                            <!-- Grade 2x2 com os 4 Cards Oficiais (artes originais do app) -->
+                            <!-- Grade 2x2 com os 4 Cards Oficiais (ordem do app v7: Fastboot recomendado) -->
                             <Grid ColumnDefinitions="420,420" RowDefinitions="150,150" Margin="0,16,0,0">
 
-                                <!-- Card 1: Input IMEI -->
+                                <!-- Card 1: Fastboot Connection (RECOMENDADO — como no app oficial) -->
                                 <Button Grid.Row="0" Grid.Column="0" Classes="WelcomeOptionCard" Margin="8"
-                                        Command="{Binding OpenImeiModalCommand}">
+                                        Command="{Binding OpenFastbootGuideCommand}">
                                     <Grid ColumnDefinitions="*,Auto">
                                         <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="6">
-                                            <TextBlock Text="Digitar IMEI" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
-                                            <TextBlock Text="Informe manualmente o IMEI&#x0a;do seu aparelho" 
+                                            <TextBlock Text="Conexão Fastboot" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
+                                            <TextBlock Text="Siga o guia passo a passo para&#x0a;conectar o aparelho via cabo&#x0a;USB e localizar o firmware" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
                                         <Grid Grid.Column="1">
-                                            <Border VerticalAlignment="Top" HorizontalAlignment="Right" 
-                                                    Background="{StaticResource GreenSuccessBrush}" CornerRadius="4" Padding="6,2" Margin="0,-12,-12,0">
+                                            <Border VerticalAlignment="Top" HorizontalAlignment="Center" 
+                                                    Background="{StaticResource GreenSuccessBrush}" CornerRadius="4" Padding="6,2" Margin="0,-12,0,0">
                                                 <TextBlock Text="Recomendado" FontSize="10" FontWeight="Bold" Foreground="#FFFFFF" />
                                             </Border>
-                                            <Image Source="avares://SoftwareFix.UI/Assets/welcome/card-imei.png"
-                                                   Width="92" Height="92" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                            <Image Source="avares://SoftwareFix.UI/Assets/welcome/card-fastboot.png"
+                                                   Width="196" HorizontalAlignment="Right" VerticalAlignment="Center" />
                                         </Grid>
                                     </Grid>
                                 </Button>
@@ -200,17 +255,17 @@
                                     </Grid>
                                 </Button>
 
-                                <!-- Card 3: Fastboot Connection -->
+                                <!-- Card 3: Input IMEI -->
                                 <Button Grid.Row="1" Grid.Column="0" Classes="WelcomeOptionCard" Margin="8"
-                                        Command="{Binding OpenFastbootGuideCommand}">
+                                        Command="{Binding OpenImeiModalCommand}">
                                     <Grid ColumnDefinitions="*,Auto">
                                         <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="6">
-                                            <TextBlock Text="Conexão Fastboot" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
-                                            <TextBlock Text="Siga o guia passo a passo para&#x0a;conectar o aparelho via cabo&#x0a;USB e localizar o firmware" 
+                                            <TextBlock Text="Digitar IMEI" FontSize="17" FontWeight="Bold" Foreground="#FFFFFF" />
+                                            <TextBlock Text="Informe manualmente o IMEI&#x0a;do seu aparelho" 
                                                        FontSize="12" Foreground="{StaticResource TextMutedBlueBrush}" TextWrapping="Wrap" />
                                         </StackPanel>
-                                        <Image Grid.Column="1" Source="avares://SoftwareFix.UI/Assets/welcome/card-fastboot.png"
-                                               Width="196" HorizontalAlignment="Right" VerticalAlignment="Center" />
+                                        <Image Grid.Column="1" Source="avares://SoftwareFix.UI/Assets/welcome/card-imei.png"
+                                               Width="92" Height="92" HorizontalAlignment="Right" VerticalAlignment="Center" />
                                     </Grid>
                                 </Button>
 
@@ -243,7 +298,7 @@
 
                         <!-- Rodapé -->
                         <Grid Grid.Row="1" ColumnDefinitions="Auto,*,Auto" Margin="0,16,0,0">
-                            <Button Grid.Column="0" Classes="SecondaryPill" Command="{Binding BackToWelcomeCommand}">
+                            <Button Grid.Column="0" Classes="SecondaryPill" Command="{Binding GoRescueHomeCommand}">
                                 <TextBlock Text="🏠 Início" FontSize="12" VerticalAlignment="Center" />
                             </Button>
                             <Button Grid.Column="2" Classes="SecondaryPill" Content="Feedback" FontSize="12"

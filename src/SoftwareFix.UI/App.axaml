@@ -209,6 +209,24 @@
             <Setter Property="BorderBrush" Value="#1B84BB" />
         </Style>
 
+        <!-- Tela "Selecione o Tipo de Dispositivo" (arte oficial, primeiro passo do Resgate) -->
+        <Style Selector="Button.DeviceTypeCard">
+            <Setter Property="Background" Value="#0C2540" />
+            <Setter Property="BorderBrush" Value="#1E4270" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="12" />
+            <Setter Property="Padding" Value="26,22" />
+            <Setter Property="Width" Value="208" />
+            <Setter Property="Cursor" Value="Hand" />
+        </Style>
+        <Style Selector="Button.DeviceTypeCard:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#123055" />
+            <Setter Property="BorderBrush" Value="#2E6E9E" />
+        </Style>
+        <Style Selector="Button.DeviceTypeCard:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#0A2340" />
+        </Style>
+
         <!-- Botão de Ação Pill Oficial (Teal #005D7F) -->
         <Style Selector="Button.ActionPill">
             <Setter Property="Background" Value="{StaticResource ActionPillTealBrush}" />

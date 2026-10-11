@@ -47,6 +47,35 @@ public partial class MainViewModel : ViewModelBase
         OnPropertyChanged(nameof(IsSectionMyDevice));
         OnPropertyChanged(nameof(IsSectionToolbox));
         OnPropertyChanged(nameof(IsSectionSupport));
+        OnPropertyChanged(nameof(IsDeviceTypeVisible));
+    }
+
+    // ==========================================
+    // TELA INICIAL DO RESGATE: "Selecione o Tipo de Dispositivo" (arte oficial)
+    // ==========================================
+    [ObservableProperty]
+    private bool _showDeviceType = true;
+
+    public bool IsDeviceTypeVisible => IsSectionRescue && ShowDeviceType;
+
+    partial void OnShowDeviceTypeChanged(bool value)
+    {
+        OnPropertyChanged(nameof(IsDeviceTypeVisible));
+        OnPropertyChanged(nameof(IsStateWelcome));
+    }
+
+    [RelayCommand]
+    private void ChooseDeviceType(string type)
+    {
+        ShowDeviceType = false;
+        AddLog($"[Resgate] Tipo de dispositivo escolhido: {type}");
+    }
+
+    [RelayCommand]
+    private void GoRescueHome()
+    {
+        ShowDeviceType = true;
+        CurrentRescueState = 0;
     }
 
     [RelayCommand]
@@ -66,7 +95,7 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     private int _currentRescueState = 0;
 
-    public bool IsStateWelcome => CurrentRescueState == 0;
+    public bool IsStateWelcome => CurrentRescueState == 0 && !ShowDeviceType;
     public bool IsStateConnected => CurrentRescueState == 1;
     public bool IsStateCompleted => CurrentRescueState == 2;
 
@@ -618,6 +647,7 @@ public partial class MainViewModel : ViewModelBase
     [RelayCommand]
     public void BackToWelcome()
     {
+        ShowDeviceType = false; // "voltar" das seções leva aos cards de conexão
         CurrentRescueState = 0;
     }
 
@@ -729,6 +759,7 @@ public partial class MainViewModel : ViewModelBase
     {
         Avalonia.Threading.Dispatcher.UIThread.Post(async () =>
         {
+            ShowDeviceType = false; // aparelho conectado: sai da tela de tipo de dispositivo
             IsDeviceConnected = true;
             DeviceMode = mode.ToString().ToUpperInvariant();
             DeviceSerial = device.SerialNumber;
